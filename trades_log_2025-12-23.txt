@@ -1,0 +1,26 @@
+DATA/HORA            | ATIVO  | LADO |   VOLUME |  ENTRY |   EXIT |     P&L R$    |   %    | MOTIVO
+--------------------------------------------------------------------------------------------
+2025-12-23 10:45:08 | ENTRADA  | JHSF3  | BUY  | Vol:   20000 | Price:    7.82 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição (XP3_INIT)
+2025-12-23 10:58:12 | ENTRADA  | SANB11 | BUY  | Vol:   10000 | Price:   33.10 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição (XP3_INIT)
+2025-12-23 10:58:13 | ENTRADA  | CYRE3  | SELL | Vol:   10000 | Price:   29.15 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição (XP3_INIT)
+2025-12-23 11:00:32 | ENTRADA  | LREN3  | BUY  | Vol:   20000 | Price:   13.23 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição (XP3_INIT)
+2025-12-23 11:00:33 | ENTRADA  | IRBR3  | BUY  | Vol:    5000 | Price:   54.35 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição (XP3_INIT)
+2025-12-23 11:17:54 | ENTRADA  | CSMG3  | BUY  | Vol:   10000 | Price:   43.77 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição (XP3_INIT)
+2025-12-23 11:19:13 | ENTRADA  | BBAS3  | BUY  | Vol:   10000 | Price:   21.45 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição (XP3_INIT)
+2025-12-23 11:24:12 | ENTRADA  | TUPY3  | BUY  | Vol:   20000 | Price:   12.16 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição (XP3_INIT)
+2025-12-23 11:24:42 | ENTRADA  | JHSF3  | BUY  | Vol:   10000 | Price:    7.90 | P&L:    +0.00 R$ (+0.00%) | Motivo: Piramidação XP3_PYR_1
+2025-12-23 11:39:04 | ENTRADA  | AURA33 | BUY  | Vol:    5000 | Price:   96.52 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição (XP3_INIT)
+2025-12-23 12:00:31 | SAÍDA    | BBAS3  | BUY  | Vol:   10000 | Price:   21.61 | P&L:  +1600.00 R$ (+0.74%) | Motivo: Take Profit [tp 21.61]
+2025-12-23 12:03:29 | SAÍDA    | CYRE3  | SELL | Vol:   15000 | Price:   29.49 | P&L:  -4049.99 R$ (-0.92%) | Motivo: Stop Piramidação XP3_PYR_2
+2025-12-23 12:07:39 | SAÍDA    | AURA33 | BUY  | Vol:    5000 | Price:   94.80 | P&L:  -8600.00 R$ (-1.78%) | Motivo: Stop Loss [sl 94.80]
+2025-12-23 12:33:17 | SAÍDA    | TUPY3  | BUY  | Vol:   10000 | Price:   12.01 | P&L:   -900.00 R$ (-0.74%) | Motivo: Redução de Risco XP3_PYR_2
+2025-12-23 13:38:22 | SAÍDA    | CSMG3  | BUY  | Vol:   10000 | Price:   44.34 | P&L:  +5700.00 R$ (+1.30%) | Motivo: Take Profit [tp 44.34]
+2025-12-23 15:10:17 | SAÍDA    | SANB11 | BUY  | Vol:   30000 | Price:   33.62 | P&L:  +8750.00 R$ (+0.87%) | Motivo: Stop Móvel [sl 33.62]
+2025-12-23 15:39:28 | SAÍDA    | CSMG3  | BUY  | Vol:   10000 | Price:   44.07 | P&L:  -4500.00 R$ (-1.01%) | Motivo: Stop Loss [sl 44.07]
+2025-12-23 17:09:20 | SAÍDA    | JHSF3  | BUY  | Vol:   60000 | Price:    7.90 | P&L:   +100.00 R$ (+0.02%) | Motivo: Saída no Breakeven [sl 7.90]
+2025-12-23 17:38:26 | SAÍDA    | IRBR3  | BUY  | Vol:    7500 | Price:   53.75 | P&L:  -3825.00 R$ (-0.94%) | Motivo: Stop Loss [sl 53.75]
+2025-12-23 18:11:27 | SAÍDA    | LREN3  | BUY  | Vol:   50000 | Price:   13.54 | P&L: +10600.00 R$ (+1.59%) | Motivo: XP3 Close - HARD (Final do Dia)
+2025-12-23 18:11:29 | SAÍDA    | TUPY3  | BUY  | Vol:   30000 | Price:   11.91 | P&L:  -5700.00 R$ (-1.57%) | Motivo: XP3 Close - HARD (Final do Dia)
+2025-12-23 18:11:30 | SAÍDA    | BBAS3  | BUY  | Vol:   15000 | Price:   21.73 | P&L:  +1800.00 R$ (+0.56%) | Motivo: XP3 Close - HARD (Final do Dia)
+2025-12-23 18:11:30 | SAÍDA    | SANB11 | BUY  | Vol:   10000 | Price:   34.09 | P&L:  +4600.00 R$ (+1.37%) | Motivo: XP3 Close - HARD (Final do Dia)
+2025-12-23 18:11:31 | SAÍDA    | CMIG4  | BUY  | Vol:   20000 | Price:   11.15 | P&L:   -400.00 R$ (-0.18%) | Motivo: XP3 Close - HARD (Final do Dia)

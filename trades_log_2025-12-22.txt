@@ -1,0 +1,6 @@
+DATA/HORA            | ATIVO  | LADO |   VOLUME |  ENTRY |   EXIT |     P&L R$    |   %    | MOTIVO
+--------------------------------------------------------------------------------------------
+2025-12-22 16:55:08 | BBAS3  | SELL | Vol:   10000 | Entry:  21.29 | Exit:  21.30 | P&L:  -100.00 R$ (-0.05%) | Motivo: Time-stop
+2025-12-22 16:56:42 | CSMG3  | BUY  | Vol:   42800 | Entry:  43.19 | Exit:  43.19 | P&L:    +0.00 R$ (+0.00%) | Motivo: Time-stop
+2025-12-22 17:03:42 | LREN3  | SELL | Vol:   10000 | Entry:  13.11 | Exit:  13.11 | P&L:    +0.00 R$ (+0.00%) | Motivo: Time-stop
+2025-12-22 17:25:19 | BBAS3  | SELL | Vol:   10000 | Entry:  21.28 | Exit:  21.29 | P&L:  -100.00 R$ (-0.05%) | Motivo: Time-stop

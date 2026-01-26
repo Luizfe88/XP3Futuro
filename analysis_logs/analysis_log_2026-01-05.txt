@@ -1,0 +1,159 @@
+================================================================================
+📊 XP3 PRO FOREX - LOG DE ANÁLISES
+📅 Data: 05/01/2026
+================================================================================
+
+--------------------------------------------------------------------------------
+🕐 17:40:07 | CSMG3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 21
+📈 Indicadores:
+   • RSI: 43.2
+   • ADX: 16.6
+   • Spread: 0.00 pips
+   • Volume: 0.37x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 21 < 35 (aguardando setup)
+--------------------------------------------------------------------------------
+🕐 17:40:09 | CEAB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 1
+📈 Indicadores:
+   • RSI: 0.9
+   • ADX: 51.0
+   • Spread: 0.00 pips
+   • Volume: 1.34x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 1 < 35 (aguardando setup)
+--------------------------------------------------------------------------------
+🕐 17:40:12 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 1
+📈 Indicadores:
+   • RSI: 26.8
+   • ADX: 22.8
+   • Spread: 0.00 pips
+   • Volume: 0.46x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 1 < 35 (aguardando setup)
+--------------------------------------------------------------------------------
+🕐 17:40:12 | CSAN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 21
+📈 Indicadores:
+   • RSI: 36.8
+   • ADX: 18.4
+   • Spread: 0.00 pips
+   • Volume: 1.23x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 21 < 35 (aguardando setup)
+--------------------------------------------------------------------------------
+🕐 17:40:12 | FRAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 1
+📈 Indicadores:
+   • RSI: 10.0
+   • ADX: 30.7
+   • Spread: 0.00 pips
+   • Volume: 1.10x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 1 < 35 (aguardando setup)
+--------------------------------------------------------------------------------
+🕐 17:40:13 | WEGE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 21
+📈 Indicadores:
+   • RSI: 34.6
+   • ADX: 14.0
+   • Spread: 0.00 pips
+   • Volume: 0.70x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 21 < 35 (aguardando setup)
+--------------------------------------------------------------------------------
+🕐 17:40:13 | GOAU4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 21
+📈 Indicadores:
+   • RSI: 42.9
+   • ADX: 13.2
+   • Spread: 0.00 pips
+   • Volume: 1.13x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 21 < 35 (aguardando setup)
+--------------------------------------------------------------------------------
+🕐 17:40:17 | CSMG3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 21
+📈 Indicadores:
+   • RSI: 43.2
+   • ADX: 16.6
+   • Spread: 0.00 pips
+   • Volume: 0.37x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 21 < 35 (aguardando setup)
+--------------------------------------------------------------------------------
+🕐 17:40:17 | CEAB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 1
+📈 Indicadores:
+   • RSI: 0.9
+   • ADX: 51.0
+   • Spread: 0.00 pips
+   • Volume: 1.34x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 1 < 35 (aguardando setup)
+--------------------------------------------------------------------------------
+🕐 17:40:17 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 1
+📈 Indicadores:
+   • RSI: 26.8
+   • ADX: 22.8
+   • Spread: 0.00 pips
+   • Volume: 0.46x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 1 < 35 (aguardando setup)
+--------------------------------------------------------------------------------
+🕐 17:40:17 | CSAN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 21
+📈 Indicadores:
+   • RSI: 36.8
+   • ADX: 18.4
+   • Spread: 0.00 pips
+   • Volume: 1.23x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 21 < 35 (aguardando setup)
+--------------------------------------------------------------------------------
+🕐 17:40:17 | FRAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 1
+📈 Indicadores:
+   • RSI: 10.0
+   • ADX: 30.7
+   • Spread: 0.00 pips
+   • Volume: 1.10x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 1 < 35 (aguardando setup)
+--------------------------------------------------------------------------------
+🕐 17:40:17 | WEGE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 21
+📈 Indicadores:
+   • RSI: 34.6
+   • ADX: 14.0
+   • Spread: 0.00 pips
+   • Volume: 0.70x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 21 < 35 (aguardando setup)
+--------------------------------------------------------------------------------
+🕐 17:40:17 | GOAU4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE | Score: 21
+📈 Indicadores:
+   • RSI: 42.9
+   • ADX: 13.2
+   • Spread: 0.00 pips
+   • Volume: 1.13x
+   • Tendência EMA: DOWN
+💬 Motivo: 📊 Score 21 < 35 (aguardando setup)

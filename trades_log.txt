@@ -1,0 +1,6 @@
+2025-12-22 16:55:08 | BBAS3  | SELL | Vol:   10000 | Entry:  21.29 | Exit:  21.30 | P&L:  -100.00 R$ (-0.05%) | Motivo: Time-stop
+2025-12-22 16:56:42 | CSMG3  | BUY  | Vol:   42800 | Entry:  43.19 | Exit:  43.19 | P&L:    +0.00 R$ (+0.00%) | Motivo: Time-stop
+2025-12-22 17:03:42 | LREN3  | SELL | Vol:   10000 | Entry:  13.11 | Exit:  13.11 | P&L:    +0.00 R$ (+0.00%) | Motivo: Time-stop
+2025-12-22 17:25:19 | BBAS3  | SELL | Vol:   10000 | Entry:  21.28 | Exit:  21.29 | P&L:  -100.00 R$ (-0.05%) | Motivo: Time-stop
+2025-12-23 12:01:09 | JHSF3  | BUY  | Vol:   15000 | Entry:   7.85 | Exit:   7.95 | P&L: +1550.00 R$ (+1.32%) | Motivo: Partial (+2.4ATR)
+2025-12-23 13:56:57 | SANB11 | BUY  | Vol:   15000 | Entry:  33.33 | Exit:  33.75 | P&L: +6325.00 R$ (+1.27%) | Motivo: Partial (+3.4ATR)

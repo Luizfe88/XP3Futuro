@@ -1,0 +1,23 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-01-20 11:20:56 | ENTRADA  | RAIL3  | SELL | Vol:   35300 | Price:  13.38 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-20 11:31:38 | ENTRADA  | VIVT3  | BUY  | Vol:   15900 | Price:  33.07 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-20 11:37:33 | ENTRADA  | PRIO3  | BUY  | Vol:   12000 | Price:  45.10 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-20 11:45:17 | ENTRADA  | BBDC4  | BUY  | Vol:   27700 | Price:  19.16 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-20 11:45:31 | ENTRADA  | B3SA3  | BUY  | Vol:   42000 | Price:  15.20 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-20 11:47:28 | ENTRADA  | PETR4  | BUY  | Vol:   27200 | Price:  32.42 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-20 12:06:18 | ENTRADA  | B3SA3  | BUY  | Vol:   36700 | Price:  15.13 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-20 12:14:52 | ENTRADA  | BBDC4  | BUY  | Vol:   22100 | Price:  19.09 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-20 13:18:27 | ENTRADA  | AXIA3  | BUY  | Vol:   12500 | Price:  51.50 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-20 14:51:06 | SAÍDA    | RAIL3  | SELL | Vol:   35300 | Price:  13.38 | P&L: -4589.00 R$ (-0.97%) | Motivo: Stop Loss
+2026-01-20 14:51:06 | SAÍDA    | B3SA3  | BUY  | Vol:   42000 | Price:  15.20 | P&L: -6300.00 R$ (-0.99%) | Motivo: Stop Loss
+2026-01-20 14:51:06 | SAÍDA    | BBDC4  | BUY  | Vol:   27700 | Price:  19.16 | P&L: -4155.00 R$ (-0.78%) | Motivo: Stop Loss
+2026-01-20 14:51:06 | SAÍDA    | B3SA3  | BUY  | Vol:   36700 | Price:  15.13 | P&L: -6239.00 R$ (-1.12%) | Motivo: Stop Loss
+2026-01-20 14:51:06 | SAÍDA    | VIVT3  | BUY  | Vol:   15900 | Price:  33.07 | P&L: +7632.00 R$ (+1.45%) | Motivo: Take Profit
+2026-01-20 14:51:06 | SAÍDA    | AXIA3  | BUY  | Vol:   12500 | Price:  51.50 | P&L: -5500.00 R$ (-0.85%) | Motivo: Stop Loss
+2026-01-20 14:51:06 | SAÍDA    | PETR4  | BUY  | Vol:   27200 | Price:  32.42 | P&L: -4896.00 R$ (-0.56%) | Motivo: Stop Loss
+2026-01-20 15:00:40 | ENTRADA  | PETR4  | BUY  | Vol:   16300 | Price:  32.33 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-20 15:35:36 | SAÍDA    | PRIO3  | BUY  | Vol:   12000 | Price:  45.10 | P&L: +5760.00 R$ (+1.06%) | Motivo: Take Profit
+2026-01-20 16:36:03 | SAÍDA    | PETR4  | BUY  | Vol:   16300 | Price:  32.33 | P&L: -2771.00 R$ (-0.53%) | Motivo: Stop Loss
+2026-01-20 16:40:11 | SAÍDA    | BBDC4  | BUY  | Vol:   22100 | Price:  19.09 | P&L:    -0.00 R$ (-0.00%) | Motivo: Day-Only Close
+2026-01-20 16:41:04 | SAÍDA    | BBDC4  | BUY  | Vol:   22100 | Price:  19.09 | P&L:  -221.00 R$ (-0.05%) | Motivo: Fechamento

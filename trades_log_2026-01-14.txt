@@ -1,0 +1,8 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-01-14 14:41:35 | ENTRADA  | PETR4  | BUY  | Vol:     100 | Price:  32.11 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-14 14:47:22 | ENTRADA  | B3SA3  | BUY  | Vol:     100 | Price:  14.60 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-14 14:54:24 | ENTRADA  | SBSP3  | SELL | Vol:     100 | Price: 123.46 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-14 15:00:55 | ENTRADA  | PRIO3  | BUY  | Vol:     100 | Price:  43.65 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-14 15:01:31 | ENTRADA  | ITSA4  | BUY  | Vol:     100 | Price:  12.01 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-14 15:46:41 | ENTRADA  | BBAS3  | SELL | Vol:     100 | Price:  21.25 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição

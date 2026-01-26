@@ -1,0 +1,15 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-01-23 13:30:21 | ENTRADA  | B3SA3  | BUY  | Vol:   15600 | Price:  15.65 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-23 13:30:42 | ENTRADA  | ABEV3  | BUY  | Vol:   39600 | Price:  14.68 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-23 13:31:20 | ENTRADA  | VIVT3  | BUY  | Vol:    8300 | Price:  36.59 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-23 13:38:28 | ENTRADA  | RECV3  | BUY  | Vol:   35600 | Price:  11.01 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-23 13:45:46 | ENTRADA  | RAIL3  | BUY  | Vol:   12100 | Price:  14.58 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-23 14:03:46 | ENTRADA  | PRIO3  | BUY  | Vol:    4400 | Price:  48.29 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-23 15:30:36 | SAÍDA    | B3SA3  | BUY  | Vol:   15600 | Price:  15.67 | P&L:  +312.00 R$ (+0.13%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2329500834
+2026-01-23 15:30:42 | SAÍDA    | B3SA3  | BUY  | Vol:   15600 | Price:  15.67 | P&L:  +312.00 R$ (+0.13%) | Motivo: Fechamento | DealId: 1703183076 | Pos: 2329500834
+2026-01-23 15:31:19 | SAÍDA    | ABEV3  | BUY  | Vol:   39600 | Price:  14.72 | P&L: +1980.00 R$ (+0.34%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2329501265
+2026-01-23 15:31:34 | SAÍDA    | VIVT3  | BUY  | Vol:    8300 | Price:  36.70 | P&L:  +913.00 R$ (+0.30%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2329501714
+2026-01-23 15:31:42 | SAÍDA    | RECV3  | BUY  | Vol:   35600 | Price:  10.95 | P&L: -1780.00 R$ (-0.45%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2329515994
+2026-01-23 15:31:49 | SAÍDA    | RAIL3  | BUY  | Vol:   12100 | Price:  14.59 | P&L:  +242.00 R$ (+0.14%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2329522947
+2026-01-23 15:31:55 | SAÍDA    | PRIO3  | BUY  | Vol:    4400 | Price:  47.98 | P&L: -1364.00 R$ (-0.64%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2329554268

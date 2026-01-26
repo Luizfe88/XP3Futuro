@@ -1,0 +1,1 @@
+{"weights": {"rf": 0.25, "gb": 0.25, "xgb": 0.25, "ridge": 0.25}, "scaler_fitted": true, "models_present": ["rf", "gb", "ridge", "xgb"]}

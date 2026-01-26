@@ -1,0 +1,1072 @@
+11:03:20 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:03:21 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:03:23 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.22x < 1.2x)
+11:03:25 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.32x < 1.2x)
+11:03:31 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.66x < 1.2x)
+11:03:35 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:03:37 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:03:41 | ❌ [BBAS3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+11:04:28 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:04:29 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:04:32 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.22x < 1.2x)
+11:04:35 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.32x < 1.2x)
+11:04:37 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.66x < 1.2x)
+11:04:39 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:04:40 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:04:44 | ❌ [BBAS3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+11:05:31 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:05:32 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:05:34 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.22x < 1.2x)
+11:05:35 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.32x < 1.2x)
+11:05:38 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.66x < 1.2x)
+11:05:40 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:05:41 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:05:45 | ❌ [BBAS3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+11:06:31 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:06:33 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:06:34 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.22x < 1.2x)
+11:06:35 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.32x < 1.2x)
+11:06:38 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.66x < 1.2x)
+11:06:40 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:06:41 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:06:45 | ❌ [BBAS3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+11:07:34 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:07:36 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:07:38 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.22x < 1.2x)
+11:07:39 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.32x < 1.2x)
+11:07:42 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.2x)
+11:07:44 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.66x < 1.2x)
+11:07:46 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:07:47 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:07:50 | ❌ [BBAS3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+11:08:44 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:08:45 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:08:47 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.22x < 1.2x)
+11:08:49 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.32x < 1.2x)
+11:08:52 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.2x)
+11:08:54 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.66x < 1.2x)
+11:08:55 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:08:57 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:09:00 | ❌ [BBAS3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+11:09:48 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:09:49 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:09:50 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.22x < 1.2x)
+11:09:52 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.32x < 1.2x)
+11:09:55 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.2x)
+11:09:56 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.66x < 1.2x)
+11:10:08 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.53x < 1.2x)
+11:10:10 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:10:11 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:10:14 | ❌ [BBAS3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+11:15:16 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:15:18 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:15:21 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.22x < 1.2x)
+11:15:23 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.32x < 1.2x)
+11:15:26 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.2x)
+11:15:28 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.66x < 1.2x)
+11:15:30 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.2x)
+11:15:49 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:16:00 | ❌ [BBAS3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+11:38:35 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.57x < 1.2x)
+11:38:36 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.36x < 1.2x)
+11:38:42 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.03x < 1.2x)
+11:38:44 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:38:50 | ❌ [BBAS3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+11:39:43 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.89x < 1.2x)
+11:39:45 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.2x)
+11:39:47 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.57x < 1.2x)
+11:39:50 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.40x < 1.2x)
+11:40:02 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.2x)
+11:40:03 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.03x < 1.2x)
+11:40:05 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:40:10 | ❌ [BBAS3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+11:41:01 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.89x < 1.2x)
+11:41:03 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.2x)
+11:41:04 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.57x < 1.2x)
+11:41:09 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.40x < 1.2x)
+11:41:14 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.2x)
+11:41:16 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.03x < 1.2x)
+11:41:17 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:41:21 | ❌ [BBAS3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+11:43:50 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.2x)
+11:43:52 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.57x < 1.2x)
+11:43:57 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.40x < 1.2x)
+11:44:23 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.2x)
+11:44:24 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.03x < 1.2x)
+11:44:26 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:44:30 | ❌ [BBAS3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+11:45:31 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.2x)
+11:45:32 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.57x < 1.2x)
+11:45:37 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.40x < 1.2x)
+11:45:42 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.2x)
+11:45:44 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.47x < 1.2x)
+11:45:49 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.97x < 1.2x)
+11:46:02 | ❌ [ANIM3] [MTF_Confirmation] H1 EMA 200 desalinhada
+11:46:06 | ❌ [BBAS3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+11:46:53 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.2x)
+11:46:58 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.2x)
+11:46:59 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.78x < 1.2x)
+11:47:01 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:47:02 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:47:04 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.47x < 1.2x)
+11:47:05 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.97x < 1.2x)
+11:47:10 | ❌ [ANIM3] [MTF_Confirmation] H1 EMA 200 desalinhada
+11:48:01 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.2x)
+11:48:05 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.2x)
+11:48:07 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.78x < 1.2x)
+11:48:09 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:48:10 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.71x < 1.2x)
+11:48:12 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:48:13 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.47x < 1.2x)
+11:48:15 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.97x < 1.2x)
+11:49:08 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.2x)
+11:49:13 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.2x)
+11:49:15 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.78x < 1.2x)
+11:49:17 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:49:18 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.71x < 1.2x)
+11:49:20 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:49:22 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.47x < 1.2x)
+11:49:23 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.97x < 1.2x)
+11:50:26 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.2x)
+11:50:31 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.2x)
+11:50:33 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.78x < 1.2x)
+11:50:34 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:50:36 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.71x < 1.2x)
+11:50:37 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:50:39 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.47x < 1.2x)
+11:50:40 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.97x < 1.2x)
+11:51:33 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.2x)
+11:51:37 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.2x)
+11:51:39 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.78x < 1.2x)
+11:51:40 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:51:42 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.71x < 1.2x)
+11:51:45 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:51:46 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.47x < 1.2x)
+11:51:48 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.97x < 1.2x)
+11:52:39 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.2x)
+11:52:44 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.2x)
+11:52:46 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.78x < 1.2x)
+11:52:47 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:52:49 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.71x < 1.2x)
+11:52:51 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:52:53 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.47x < 1.2x)
+11:52:54 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.97x < 1.2x)
+11:53:46 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.2x)
+11:53:51 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.2x)
+11:53:53 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.78x < 1.2x)
+11:53:55 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:53:57 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.71x < 1.2x)
+11:53:58 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:54:00 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.47x < 1.2x)
+11:54:01 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.97x < 1.2x)
+11:55:02 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.2x)
+11:55:04 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.78x < 1.2x)
+11:55:06 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:55:08 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:55:09 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.47x < 1.2x)
+11:55:11 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.97x < 1.2x)
+11:56:05 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.2x)
+11:56:09 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.2x)
+11:56:11 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.78x < 1.2x)
+11:56:12 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:56:14 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.71x < 1.2x)
+11:56:15 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:56:17 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.47x < 1.2x)
+11:56:18 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.97x < 1.2x)
+11:57:11 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.2x)
+11:57:15 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.2x)
+11:57:17 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.78x < 1.2x)
+11:57:18 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:57:20 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.71x < 1.2x)
+11:57:22 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:57:23 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.47x < 1.2x)
+11:57:25 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.97x < 1.2x)
+11:58:19 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.2x)
+11:58:23 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.2x)
+11:58:25 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.78x < 1.2x)
+11:58:26 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:58:28 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:58:29 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.47x < 1.2x)
+11:58:31 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.48x < 1.2x)
+11:58:33 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.97x < 1.2x)
+11:59:24 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.2x)
+11:59:29 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.2x)
+11:59:32 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.78x < 1.2x)
+11:59:34 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.42x < 1.2x)
+11:59:36 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.54x < 1.2x)
+11:59:38 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.57x < 1.2x)
+11:59:40 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.47x < 1.2x)
+11:59:42 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.48x < 1.2x)
+11:59:45 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.97x < 1.2x)
+12:01:32 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:01:34 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:01:38 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:01:42 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:01:57 | ❌ [RECV3] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:03:35 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:03:37 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:03:41 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:03:46 | ❌ [RECV3] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:03:58 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:05:00 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:05:02 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:05:08 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:05:12 | ❌ [RECV3] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:05:24 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:06:31 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:06:32 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:06:37 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:06:40 | ❌ [RECV3] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:06:53 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:08:11 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:08:12 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:08:16 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:08:20 | ❌ [RECV3] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:08:30 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:09:31 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:09:32 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:09:36 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:09:40 | ❌ [RECV3] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:09:52 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:11:14 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:11:15 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:11:19 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:11:20 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.48x < 0.5x)
+12:11:24 | ❌ [RECV3] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:11:34 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:12:32 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:12:34 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:12:37 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:12:41 | ❌ [RECV3] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:12:54 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:14:03 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:14:04 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:14:08 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:14:12 | ❌ [RECV3] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:14:23 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:15:27 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:15:28 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:15:32 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:15:36 | ❌ [RECV3] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:15:42 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:16:30 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+12:16:40 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+12:16:47 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:16:51 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:16:53 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+12:16:57 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:17:03 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:17:55 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+12:18:06 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+12:18:11 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:18:15 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:18:16 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+12:18:20 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:18:26 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:19:15 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+12:19:23 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+12:19:27 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:19:31 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:19:32 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+12:19:36 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:19:42 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:20:30 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+12:20:40 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+12:20:45 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:20:50 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:20:52 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+12:20:56 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:21:03 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:21:49 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+12:21:58 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+12:22:02 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:22:05 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:22:07 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+12:22:12 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:22:15 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:22:19 | ❌ [RECV3] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:22:23 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:23:19 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+12:23:23 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:23:26 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:23:28 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+12:23:31 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:23:37 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:23:40 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:24:21 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+12:24:29 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+12:24:33 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:24:36 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:24:38 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+12:24:42 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:24:46 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:24:51 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:24:54 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:25:43 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+12:26:06 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:26:10 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:26:11 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+12:26:15 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:26:19 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:26:23 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:26:26 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:27:08 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+12:27:16 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+12:27:20 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:27:23 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:27:25 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+12:27:28 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:27:34 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:27:37 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:28:27 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+12:28:30 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:28:34 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:28:35 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+12:28:39 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:28:45 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:28:48 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:29:31 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+12:29:39 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+12:29:45 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:29:52 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:29:54 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+12:29:58 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:30:06 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:30:09 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:31:14 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:31:17 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:31:19 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:31:23 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:31:31 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:32:30 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:32:33 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:32:35 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:32:38 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:32:47 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:33:50 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:33:55 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:33:57 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:34:01 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:34:10 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:35:13 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:35:17 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:35:18 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:35:22 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:35:32 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:36:34 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:36:38 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:36:40 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:36:44 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:36:54 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:37:58 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:38:02 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:38:04 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:38:08 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:38:17 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:39:20 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:39:25 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:39:26 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:39:30 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:39:39 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:40:42 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:40:47 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:40:49 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:40:54 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:41:03 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:42:06 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:42:10 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:42:12 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:42:15 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:42:24 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:43:32 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:43:35 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:43:37 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:43:41 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:43:51 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+12:44:56 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:45:00 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:45:01 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:45:05 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:46:17 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:46:21 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:46:23 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:46:27 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:46:40 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.46x < 0.5x)
+12:47:38 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:47:42 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:47:44 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:47:48 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:48:04 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.46x < 0.5x)
+12:49:06 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:49:10 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:49:12 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:49:15 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:49:28 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.46x < 0.5x)
+12:50:28 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:50:32 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:50:34 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:50:37 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:50:52 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.46x < 0.5x)
+12:51:51 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:51:56 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:51:57 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:52:01 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:52:14 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.46x < 0.5x)
+12:53:13 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:53:17 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:53:18 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:53:22 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:53:34 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.46x < 0.5x)
+12:54:32 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:54:36 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:54:38 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:54:41 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:54:54 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.46x < 0.5x)
+12:55:43 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+12:55:53 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:55:57 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:55:59 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:56:03 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:56:13 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.46x < 0.5x)
+12:57:05 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+12:57:17 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:57:21 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:57:22 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+12:57:26 | ❌ [ITSA4] [MTF_Confirmation] H1 EMA 200 desalinhada
+12:57:37 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.46x < 0.5x)
+13:01:59 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+13:02:01 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.37x < 0.5x)
+13:02:04 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:02:08 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:02:10 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+13:02:20 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:02:23 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:03:14 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+13:03:21 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.39x < 0.5x)
+13:03:23 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.37x < 0.5x)
+13:03:31 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:03:33 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:03:36 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.35x < 0.5x)
+13:03:37 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+13:03:57 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.10x < 0.5x)
+13:04:45 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+13:04:52 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.39x < 0.5x)
+13:04:55 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.37x < 0.5x)
+13:05:05 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:05:08 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.35x < 0.5x)
+13:05:09 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+13:05:10 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.10x < 0.5x)
+13:05:57 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+13:06:05 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.39x < 0.5x)
+13:06:06 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.37x < 0.5x)
+13:06:14 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:06:17 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.35x < 0.5x)
+13:06:19 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+13:06:20 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.10x < 0.5x)
+13:07:07 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+13:07:13 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.39x < 0.5x)
+13:07:14 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.37x < 0.5x)
+13:07:24 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:07:26 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:07:29 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.35x < 0.5x)
+13:07:30 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+13:07:32 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.10x < 0.5x)
+13:08:19 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+13:08:24 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.39x < 0.5x)
+13:08:26 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.37x < 0.5x)
+13:08:36 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:08:38 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:08:41 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.35x < 0.5x)
+13:08:42 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+13:08:44 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.10x < 0.5x)
+13:09:28 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+13:09:35 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.39x < 0.5x)
+13:09:36 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.37x < 0.5x)
+13:09:45 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:09:47 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:09:50 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.35x < 0.5x)
+13:09:51 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+13:09:53 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.10x < 0.5x)
+13:10:37 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+13:10:45 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.39x < 0.5x)
+13:10:47 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.37x < 0.5x)
+13:10:56 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:10:58 | ❌ [ANIM3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+13:10:59 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.35x < 0.5x)
+13:11:01 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.5x)
+13:11:02 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.10x < 0.5x)
+13:11:49 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+13:11:56 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.39x < 0.5x)
+13:11:58 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.37x < 0.5x)
+13:12:07 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:12:09 | ❌ [ANIM3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+13:12:11 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.35x < 0.5x)
+13:12:15 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.10x < 0.5x)
+13:12:18 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.38x < 0.5x)
+13:13:09 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+13:13:31 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.49x < 0.5x)
+13:13:32 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.39x < 0.5x)
+13:13:34 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.37x < 0.5x)
+13:13:45 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:13:46 | ❌ [ANIM3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.45x < 0.5x)
+13:13:48 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.35x < 0.5x)
+13:13:51 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.10x < 0.5x)
+13:13:53 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.38x < 0.5x)
+13:17:29 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.47x < 0.5x)
+13:17:51 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.39x < 0.5x)
+13:17:52 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.29x < 0.5x)
+13:17:57 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:18:02 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:18:03 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:18:07 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.35x < 0.5x)
+13:18:10 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.10x < 0.5x)
+13:18:11 | ❌ [SBSP3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.38x < 0.5x)
+13:19:19 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.29x < 0.5x)
+13:19:21 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+13:19:25 | ❌ [BBAS3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:19:29 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:19:34 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:19:36 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:19:39 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.38x < 0.5x)
+13:19:40 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.37x < 0.5x)
+13:22:40 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.29x < 0.5x)
+13:22:42 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+13:22:50 | ❌ [BBAS3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:22:56 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:23:01 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:23:02 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:23:05 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.38x < 0.5x)
+13:23:07 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.37x < 0.5x)
+13:24:12 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.29x < 0.5x)
+13:24:13 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+13:24:18 | ❌ [BBAS3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:24:22 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:24:25 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:24:28 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:24:29 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:24:33 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.38x < 0.5x)
+13:26:09 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.29x < 0.5x)
+13:26:13 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+13:26:18 | ❌ [BBAS3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:26:27 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:26:34 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:26:38 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:26:42 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.38x < 0.5x)
+13:26:56 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.37x < 0.5x)
+13:28:15 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.29x < 0.5x)
+13:28:17 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.44x < 0.5x)
+13:31:30 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.23x < 0.4x)
+13:31:34 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:31:46 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:31:47 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:31:49 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.22x < 0.4x)
+13:31:50 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.11x < 0.4x)
+13:32:50 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.23x < 0.4x)
+13:32:59 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:33:15 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:33:17 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:33:19 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:33:20 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.22x < 0.4x)
+13:34:21 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.23x < 0.4x)
+13:34:25 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:34:35 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:34:37 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:34:38 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:34:40 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.22x < 0.4x)
+13:35:35 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.23x < 0.4x)
+13:35:39 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:35:52 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:35:53 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:35:57 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.22x < 0.4x)
+13:36:57 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.23x < 0.4x)
+13:37:01 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:37:12 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:37:14 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:37:17 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.22x < 0.4x)
+13:38:17 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:38:32 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:38:33 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:38:35 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:38:36 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.22x < 0.4x)
+13:39:38 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:39:50 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:39:51 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:39:54 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:39:55 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.22x < 0.4x)
+13:40:53 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.23x < 0.4x)
+13:40:57 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:41:08 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:41:10 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:41:11 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.22x < 0.4x)
+13:41:13 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.11x < 0.4x)
+13:42:15 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.23x < 0.4x)
+13:42:19 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:42:32 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:42:34 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:42:35 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.22x < 0.4x)
+13:42:37 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.11x < 0.4x)
+13:43:38 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.23x < 0.4x)
+13:43:42 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:44:02 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:44:04 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:44:05 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.22x < 0.4x)
+13:44:07 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.11x < 0.4x)
+13:45:08 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.23x < 0.4x)
+13:45:12 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:45:27 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:45:29 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:45:31 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.22x < 0.4x)
+13:45:32 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.11x < 0.4x)
+13:46:32 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.4x)
+13:46:36 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:46:43 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:46:50 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:46:53 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:46:56 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:47:55 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.4x)
+13:47:59 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:48:07 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:48:12 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:48:14 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:48:17 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:49:18 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.4x)
+13:49:22 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:49:30 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:49:39 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:49:41 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:49:46 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:50:47 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.4x)
+13:50:51 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:51:01 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:51:07 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:51:09 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:51:11 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:52:09 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.4x)
+13:52:13 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:52:21 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:52:27 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:52:28 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:52:31 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:53:29 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.4x)
+13:53:33 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:53:40 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:53:47 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:53:49 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:53:52 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:54:51 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.4x)
+13:54:57 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:55:05 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:55:12 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:55:13 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:55:16 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:56:18 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.4x)
+13:56:22 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:56:31 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:56:37 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:56:39 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:56:42 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:58:01 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.4x)
+13:58:05 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:58:13 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:58:19 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:58:21 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:58:23 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:59:24 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Almoço (0.28x < 0.4x)
+13:59:29 | ❌ [ITUB4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:59:40 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:59:49 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:59:51 | ❌ [VIVT3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+13:59:56 | ❌ [ANIM3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+14:00:41 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.66x < 0.8x)
+14:00:43 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:00:46 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:00:52 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.48x < 0.8x)
+14:00:54 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:00:55 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+14:01:02 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.36x < 0.8x)
+14:01:03 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.26x < 0.8x)
+14:01:05 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.10x < 0.8x)
+14:01:54 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:01:55 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:02:03 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.48x < 0.8x)
+14:02:05 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:02:06 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+14:02:13 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.36x < 0.8x)
+14:02:14 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.26x < 0.8x)
+14:02:16 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.24x < 0.8x)
+14:03:08 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:03:09 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:03:16 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.48x < 0.8x)
+14:03:18 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:03:20 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+14:03:26 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.36x < 0.8x)
+14:03:27 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.26x < 0.8x)
+14:03:29 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.24x < 0.8x)
+14:04:19 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:04:20 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:04:28 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.48x < 0.8x)
+14:04:29 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:04:31 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+14:04:36 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.36x < 0.8x)
+14:04:38 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.26x < 0.8x)
+14:04:40 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.24x < 0.8x)
+14:05:28 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:05:29 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:05:36 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.48x < 0.8x)
+14:05:37 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:05:39 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+14:05:46 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.36x < 0.8x)
+14:05:48 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.26x < 0.8x)
+14:05:49 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.24x < 0.8x)
+14:06:34 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:06:36 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:06:44 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.48x < 0.8x)
+14:06:47 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+14:06:55 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.36x < 0.8x)
+14:06:56 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.26x < 0.8x)
+14:06:58 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.24x < 0.8x)
+14:07:42 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:07:45 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:07:53 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.48x < 0.8x)
+14:07:55 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:07:56 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+14:08:02 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.36x < 0.8x)
+14:08:04 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.26x < 0.8x)
+14:08:05 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.24x < 0.8x)
+14:08:51 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:08:55 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:09:05 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.48x < 0.8x)
+14:09:07 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:09:08 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+14:09:14 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.36x < 0.8x)
+14:09:16 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.26x < 0.8x)
+14:09:17 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.24x < 0.8x)
+14:10:07 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:10:08 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:10:27 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.48x < 0.8x)
+14:10:28 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:10:29 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+14:10:35 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.36x < 0.8x)
+14:10:37 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.26x < 0.8x)
+14:10:38 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.24x < 0.8x)
+14:11:27 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:11:28 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:11:35 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.48x < 0.8x)
+14:11:36 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:11:38 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+14:11:46 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.36x < 0.8x)
+14:11:47 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.26x < 0.8x)
+14:11:48 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.24x < 0.8x)
+14:12:36 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:12:37 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:12:44 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.48x < 0.8x)
+14:12:46 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:12:47 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+14:12:54 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.36x < 0.8x)
+14:12:55 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.26x < 0.8x)
+14:12:57 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.24x < 0.8x)
+14:13:42 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:13:43 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:13:51 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.48x < 0.8x)
+14:13:53 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:13:55 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+14:14:01 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.36x < 0.8x)
+14:14:02 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.26x < 0.8x)
+14:14:04 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.24x < 0.8x)
+14:14:51 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:14:53 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:15:01 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.48x < 0.8x)
+14:15:03 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:15:05 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+14:15:11 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.36x < 0.8x)
+14:15:13 | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.26x < 0.8x)
+14:15:14 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.24x < 0.8x)
+14:16:07 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.56x < 0.8x)
+14:16:09 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:16:10 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+14:16:12 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.44x < 0.8x)
+14:16:16 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:16:22 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.62x < 0.8x)
+14:16:23 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.53x < 0.8x)
+14:16:26 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:16:31 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+14:17:23 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.56x < 0.8x)
+14:17:24 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:17:25 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+14:17:27 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.44x < 0.8x)
+14:17:31 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:17:36 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.62x < 0.8x)
+14:17:38 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.53x < 0.8x)
+14:17:41 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:17:46 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+14:18:37 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.56x < 0.8x)
+14:18:39 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:18:40 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+14:18:42 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.44x < 0.8x)
+14:18:48 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:18:55 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.62x < 0.8x)
+14:18:56 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.53x < 0.8x)
+14:18:59 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:19:02 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.54x < 0.8x)
+14:19:05 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+14:19:58 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.56x < 0.8x)
+14:20:00 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:20:01 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+14:20:03 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.44x < 0.8x)
+14:20:08 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:20:14 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.62x < 0.8x)
+14:20:15 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.53x < 0.8x)
+14:20:18 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:20:23 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+14:21:17 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.56x < 0.8x)
+14:21:18 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:21:20 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+14:21:21 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.44x < 0.8x)
+14:21:25 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:21:31 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.62x < 0.8x)
+14:21:32 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.53x < 0.8x)
+14:21:35 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:21:38 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.54x < 0.8x)
+14:21:40 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+14:22:32 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.56x < 0.8x)
+14:22:34 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:22:35 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+14:22:37 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.44x < 0.8x)
+14:22:41 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:22:47 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.62x < 0.8x)
+14:22:49 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.53x < 0.8x)
+14:22:53 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:22:57 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.54x < 0.8x)
+14:22:59 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+14:23:49 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.56x < 0.8x)
+14:23:51 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:23:53 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+14:23:56 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.44x < 0.8x)
+14:24:00 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:24:05 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.62x < 0.8x)
+14:24:07 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.53x < 0.8x)
+14:24:10 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:24:13 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.54x < 0.8x)
+14:24:14 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+14:25:04 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.56x < 0.8x)
+14:25:05 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:25:07 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+14:25:08 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.44x < 0.8x)
+14:25:12 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:25:17 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.62x < 0.8x)
+14:25:19 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.53x < 0.8x)
+14:25:22 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:25:26 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+14:26:19 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.56x < 0.8x)
+14:26:20 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:26:22 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+14:26:23 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.44x < 0.8x)
+14:26:27 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:26:32 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.62x < 0.8x)
+14:26:33 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.53x < 0.8x)
+14:26:37 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:26:41 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+14:27:37 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.56x < 0.8x)
+14:27:38 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:27:40 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+14:27:41 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.44x < 0.8x)
+14:27:46 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:27:51 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.62x < 0.8x)
+14:27:54 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.53x < 0.8x)
+14:27:57 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:28:00 | ❌ [VIVT3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.54x < 0.8x)
+14:28:01 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+14:28:51 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.56x < 0.8x)
+14:28:54 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:28:56 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+14:28:57 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.44x < 0.8x)
+14:29:01 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:29:06 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.62x < 0.8x)
+14:29:08 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.53x < 0.8x)
+14:29:10 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:29:15 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+14:30:10 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.56x < 0.8x)
+14:30:12 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.45x < 0.8x)
+14:30:13 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+14:30:14 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.44x < 0.8x)
+14:30:18 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:30:23 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.62x < 0.8x)
+14:30:25 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.53x < 0.8x)
+14:30:28 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.58x < 0.8x)
+14:30:32 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+14:31:26 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.73x < 0.8x)
+14:31:28 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.34x < 0.8x)
+14:31:29 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.60x < 0.8x)
+14:31:33 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:31:38 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.51x < 0.8x)
+14:31:40 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.47x < 0.8x)
+14:31:44 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.42x < 0.8x)
+14:32:39 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.73x < 0.8x)
+14:32:41 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.34x < 0.8x)
+14:32:43 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.60x < 0.8x)
+14:32:48 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:32:54 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.51x < 0.8x)
+14:32:55 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.47x < 0.8x)
+14:32:58 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.42x < 0.8x)
+14:33:03 | ❌ [ANIM3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:33:56 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.73x < 0.8x)
+14:33:58 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.34x < 0.8x)
+14:33:59 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.60x < 0.8x)
+14:34:03 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:34:08 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.51x < 0.8x)
+14:34:10 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.47x < 0.8x)
+14:34:16 | ❌ [ANIM3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:35:12 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.73x < 0.8x)
+14:35:14 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.34x < 0.8x)
+14:35:15 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.60x < 0.8x)
+14:35:20 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:35:25 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.51x < 0.8x)
+14:35:27 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.67x < 0.8x)
+14:35:30 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.47x < 0.8x)
+14:36:31 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.73x < 0.8x)
+14:36:33 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.34x < 0.8x)
+14:36:34 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.60x < 0.8x)
+14:36:38 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:36:45 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.51x < 0.8x)
+14:36:46 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.67x < 0.8x)
+14:36:48 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.47x < 0.8x)
+14:36:51 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.42x < 0.8x)
+14:37:50 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.73x < 0.8x)
+14:37:51 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.34x < 0.8x)
+14:37:53 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.60x < 0.8x)
+14:37:57 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:38:03 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.51x < 0.8x)
+14:38:05 | ❌ [RENT3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.68x < 0.8x)
+14:38:07 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.67x < 0.8x)
+14:38:08 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.47x < 0.8x)
+14:38:10 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.42x < 0.8x)
+14:39:12 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.73x < 0.8x)
+14:39:13 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.34x < 0.8x)
+14:39:15 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.60x < 0.8x)
+14:39:19 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:39:25 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.51x < 0.8x)
+14:39:26 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.67x < 0.8x)
+14:39:28 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.47x < 0.8x)
+14:39:30 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.42x < 0.8x)
+14:40:35 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.73x < 0.8x)
+14:40:36 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.34x < 0.8x)
+14:40:38 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.60x < 0.8x)
+14:40:42 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:41:13 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.51x < 0.8x)
+14:41:14 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.67x < 0.8x)
+14:41:16 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.47x < 0.8x)
+14:42:15 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.73x < 0.8x)
+14:42:17 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.34x < 0.8x)
+14:42:18 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.60x < 0.8x)
+14:42:22 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:42:31 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.51x < 0.8x)
+14:42:33 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.67x < 0.8x)
+14:42:34 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.47x < 0.8x)
+14:42:37 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.42x < 0.8x)
+14:43:54 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.73x < 0.8x)
+14:44:02 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.34x < 0.8x)
+14:44:04 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.60x < 0.8x)
+14:44:28 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:44:38 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.51x < 0.8x)
+14:44:41 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.67x < 0.8x)
+14:44:47 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.47x < 0.8x)
+14:44:51 | ❌ [ITSA4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.42x < 0.8x)
+14:46:08 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.52x < 0.8x)
+14:46:13 | ❌ [RADL3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.64x < 0.8x)
+14:46:23 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.21x < 0.8x)
+14:46:25 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.28x < 0.8x)
+14:46:27 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.78x < 0.8x)
+14:46:39 | ❌ [RECV3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.57x < 0.8x)
+14:46:45 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.39x < 0.8x)
+14:46:47 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.35x < 0.8x)
+14:46:48 | ❌ [MGLU3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.32x < 0.8x)
+15:12:03 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.46x < 0.8x)
+15:12:05 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.78x < 0.8x)
+15:12:38 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.69x < 0.8x)
+15:12:44 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.16x < 0.8x)
+15:12:48 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.60x < 0.8x)
+15:12:50 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.71x < 0.8x)
+15:12:52 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.43x < 0.8x)
+15:12:53 | ❌ [MOVI3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.42x < 0.8x)
+15:12:55 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.66x < 0.8x)
+15:12:59 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:14:06 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.46x < 0.8x)
+15:14:07 | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.78x < 0.8x)
+15:14:24 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.69x < 0.8x)
+15:14:33 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.16x < 0.8x)
+15:14:35 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.60x < 0.8x)
+15:14:36 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.71x < 0.8x)
+15:14:38 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.43x < 0.8x)
+15:14:39 | ❌ [MOVI3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.42x < 0.8x)
+15:14:41 | ❌ [HAPV3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.66x < 0.8x)
+15:14:47 | ❌ [ITSA4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:15:37 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.46x < 0.8x)
+15:15:44 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:15:53 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.69x < 0.8x)
+15:16:03 | ❌ [ANIM3] [SpreadFilter] Spread alto: 0.247% > 0.15%
+15:16:06 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.09x < 0.8x)
+15:16:07 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.60x < 0.8x)
+15:19:01 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:19:02 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.57x < 0.8x)
+15:19:09 | ❌ [ANIM3] [SpreadFilter] Spread alto: 0.247% > 0.15%
+15:19:12 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+15:19:13 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.09x < 0.8x)
+15:19:15 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+15:19:17 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:19:32 | ❌ [BBDC4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:19:39 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:19:40 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.31x < 0.8x)
+15:20:29 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:20:31 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.57x < 0.8x)
+15:20:36 | ❌ [ANIM3] [SpreadFilter] Spread alto: 0.247% > 0.15%
+15:20:39 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+15:20:41 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.09x < 0.8x)
+15:20:42 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+15:20:44 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:20:53 | ❌ [BBDC4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:20:54 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:20:56 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.31x < 0.8x)
+15:21:49 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:21:51 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.57x < 0.8x)
+15:21:58 | ❌ [ANIM3] [SpreadFilter] Spread alto: 0.247% > 0.15%
+15:22:01 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+15:22:03 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.09x < 0.8x)
+15:22:04 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+15:22:06 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:22:14 | ❌ [BBDC4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:22:16 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:22:17 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.31x < 0.8x)
+15:23:20 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:23:22 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.57x < 0.8x)
+15:23:57 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+15:23:58 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.09x < 0.8x)
+15:24:00 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+15:24:02 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:24:05 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:24:10 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.31x < 0.8x)
+15:25:34 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.57x < 0.8x)
+15:25:41 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+15:25:43 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.09x < 0.8x)
+15:25:45 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+15:25:46 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:25:59 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:26:03 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.31x < 0.8x)
+15:27:04 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:27:13 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.57x < 0.8x)
+15:27:17 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+15:27:19 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.09x < 0.8x)
+15:27:22 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+15:27:24 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:27:40 | ❌ [BBDC4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:27:41 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:27:45 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.31x < 0.8x)
+15:28:50 | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:28:57 | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.57x < 0.8x)
+15:29:03 | ❌ [ANIM3] [SpreadFilter] Spread alto: 0.248% > 0.15%
+15:29:06 | ❌ [PETR4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.27x < 0.8x)
+15:29:07 | ❌ [BBAS3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.09x < 0.8x)
+15:29:09 | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.61x < 0.8x)
+15:29:10 | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.72x < 0.8x)
+15:29:17 | ❌ [BBDC4] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:29:18 | ❌ [RECV3] [ScoreGate] 📊 Setup abaixo do mínimo-base: Score 25 < 35
+15:29:22 | ❌ [LWSA3] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.31x < 0.8x)

@@ -1,0 +1,14 @@
+ELITE_SYMBOLS = {
+    "B3SA3": {'ema_short': 5, 'ema_long': 111, 'rsi_low': 23, 'rsi_high': 71, 'adx_threshold': 17, 'mom_min': 0.08000000000000002},
+    "MGLU3": {'ema_short': 17, 'ema_long': 41, 'rsi_low': 33, 'rsi_high': 76, 'adx_threshold': 35, 'mom_min': 0.07},
+    "SBSP3": {'ema_short': 34, 'ema_long': 47, 'rsi_low': 27, 'rsi_high': 56, 'adx_threshold': 26, 'mom_min': 0.08000000000000002},
+    "MDIA3": {'ema_short': 6, 'ema_long': 52, 'rsi_low': 40, 'rsi_high': 59, 'adx_threshold': 18, 'mom_min': 0.12000000000000002},
+    "YDUQ3": {'ema_short': 35, 'ema_long': 45, 'rsi_low': 27, 'rsi_high': 56, 'adx_threshold': 29, 'mom_min': 0.15},
+    "AURE3": {'ema_short': 20, 'ema_long': 52, 'rsi_low': 37, 'rsi_high': 76, 'adx_threshold': 35, 'mom_min': 0.09},
+    "RECV3": {'ema_short': 12, 'ema_long': 52, 'rsi_low': 34, 'rsi_high': 57, 'adx_threshold': 16, 'mom_min': 0.11000000000000001},
+    "CSAN3": {'ema_short': 34, 'ema_long': 41, 'rsi_low': 33, 'rsi_high': 79, 'adx_threshold': 29, 'mom_min': 0.0},
+    "ENEV3": {'ema_short': 5, 'ema_long': 43, 'rsi_low': 27, 'rsi_high': 61, 'adx_threshold': 33, 'mom_min': 0.09},
+    "CEAB3": {'ema_short': 5, 'ema_long': 55, 'rsi_low': 20, 'rsi_high': 64, 'adx_threshold': 39, 'mom_min': 0.05000000000000002},
+    "CSED3": {'ema_short': 29, 'ema_long': 40, 'rsi_low': 31, 'rsi_high': 67, 'adx_threshold': 20, 'mom_min': 0.1},
+    "DXCO3": {'ema_short': 5, 'ema_long': 95, 'rsi_low': 36, 'rsi_high': 71, 'adx_threshold': 26, 'mom_min': 0.08000000000000002},
+}

@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-01-17T14:53:44.546482",
+  "recommendation": {
+    "recommended_n": 5,
+    "n_assets_effective": 5,
+    "sharpe": 1.3733786986127294,
+    "max_drawdown": 0.01,
+    "calmar": 2.106590841479195,
+    "reason": "Maximiza score (Sharpe - 1.25*DD + 0.15*Calmar) com custos embutidos no backtest"
+  }
+}

@@ -1,0 +1,9 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-01-26 10:41:01 | SAÍDA    | B3SA3  | BUY  | Vol:   13500 | Price:  15.50 | P&L: -3240.00 R$ (-1.52%) | Motivo: Stop Loss | DealId: 1703636712 | Pos: 2330322373
+2026-01-26 10:54:53 | ENTRADA  | WEGE3  | BUY  | Vol:    3100 | Price:  50.83 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-26 11:33:10 | SAÍDA    | COGN3  | BUY  | Vol:   35300 | Price:   4.47 | P&L: +3883.00 R$ (+2.52%) | Motivo: Take Profit | DealId: 1703774719 | Pos: 2330335590
+2026-01-26 13:31:03 | ENTRADA  | VIVT3  | SELL | Vol:    5100 | Price:  36.78 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-26 13:45:19 | ENTRADA  | BPAC11 | BUY  | Vol:    2900 | Price:  59.94 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-26 13:46:37 | ENTRADA  | BBDC4  | BUY  | Vol:   10000 | Price:  20.73 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-26 14:00:14 | ENTRADA  | ABEV3  | BUY  | Vol:   38500 | Price:  14.94 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição

@@ -1,0 +1,28 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-01-02 10:30:31 | ENTRADA  | ITUB4  | BUY  | Vol:   10000 | Price:  39.75 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 10:30:31 | ENTRADA  | BBDC3  | BUY  | Vol:   20000 | Price:  15.79 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 10:31:19 | ENTRADA  | CEAB3  | SELL | Vol:   20000 | Price:  12.66 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 10:34:18 | ENTRADA  | CSMG3  | BUY  | Vol:   10000 | Price:  43.88 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 10:39:16 | ENTRADA  | UGPA3  | SELL | Vol:   10000 | Price:  20.87 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 10:46:39 | ENTRADA  | FRAS3  | BUY  | Vol:   10000 | Price:  24.50 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 10:47:17 | ENTRADA  | CEAB3  | SELL | Vol:   20000 | Price:  12.81 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 10:55:09 | ENTRADA  | BBDC4  | BUY  | Vol:   20000 | Price:  18.37 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 10:56:40 | ENTRADA  | ITUB4  | BUY  | Vol:   10000 | Price:  39.48 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 11:30:02 | ENTRADA  | CSNA3  | SELL | Vol:   20000 | Price:   8.77 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 11:30:35 | SAÍDA    | CEAB3  | SELL | Vol:   10000 | Price:  12.81 | P&L: +1600.00 R$ (+1.25%) | Motivo: Partial (+2.5ATR)
+2026-01-02 12:00:52 | ENTRADA  | CEAB3  | SELL | Vol:   20000 | Price:  12.55 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 12:06:49 | ENTRADA  | AURA33 | SELL | Vol:    5000 | Price:  91.14 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 12:15:40 | ENTRADA  | FRAS3  | BUY  | Vol:   10000 | Price:  24.27 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 13:52:32 | ENTRADA  | WEGE3  | BUY  | Vol:   10000 | Price:  48.73 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 13:52:33 | ENTRADA  | SUZB3  | SELL | Vol:    5000 | Price:  51.61 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 13:53:17 | ENTRADA  | BBDC3  | SELL | Vol:   20000 | Price:  15.64 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 13:53:18 | ENTRADA  | UGPA3  | SELL | Vol:   10000 | Price:  20.86 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 14:00:24 | ENTRADA  | ITUB4  | SELL | Vol:   10000 | Price:  39.36 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 14:09:42 | ENTRADA  | CSMG3  | BUY  | Vol:   10000 | Price:  43.78 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-02 16:43:02 | SAÍDA    | CEAB3  | SELL | Vol:   20000 | Price:  12.55 | P&L:  +800.00 R$ (+0.32%) | Motivo: EOD - Tentativa 1
+2026-01-02 16:43:06 | SAÍDA    | AURA33 | SELL | Vol:    5000 | Price:  91.14 | P&L: +7350.00 R$ (+1.61%) | Motivo: EOD - Tentativa 1
+2026-01-02 16:43:10 | SAÍDA    | FRAS3  | BUY  | Vol:   10000 | Price:  24.27 | P&L: -1000.00 R$ (-0.41%) | Motivo: EOD - Tentativa 1
+2026-01-02 16:43:13 | SAÍDA    | BBDC3  | SELL | Vol:   20000 | Price:  15.64 | P&L:  -400.00 R$ (-0.13%) | Motivo: EOD - Tentativa 1
+2026-01-02 16:43:17 | SAÍDA    | UGPA3  | SELL | Vol:   10000 | Price:  20.86 | P&L:    +0.00 R$ (+0.00%) | Motivo: EOD - Tentativa 1
+2026-01-02 16:43:17 | SAÍDA    | ITUB4  | SELL | Vol:   10000 | Price:  39.36 | P&L:  +300.00 R$ (+0.08%) | Motivo: EOD - Tentativa 1

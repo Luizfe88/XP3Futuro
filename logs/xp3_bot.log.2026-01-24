@@ -1,0 +1,78 @@
+2026-01-24 11:57:00,637 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-24 11:57:00,706 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-24 11:57:14,100 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-24 11:57:14,103 | INFO | 📋 Sincronizando Market Watch (Strict Mode)...
+2026-01-24 11:57:14,111 | WARNING | ⚠️ 65 ativos falharam ao adicionar: ['SLCE3', 'BBSE3', 'HAPV3', 'SMALL$', 'WING26', 'EQTL3', 'DESK3', 'GGBR4', 'BRFS3', 'RAIL3', 'RENT3', 'RDOR3', 'MULT3', 'WDOG26', 'LREN3', 'RADL3', 'VBBR3', 'BEEF3', 'RAIZ4', 'CYRE3', 'ODPV3', 'SBSP3', 'IGTI11', 'VIVT3', 'AURA33', 'BBDC4', 'MRVE3', 'CSNA3', 'TIMS3', 'KLBN11', 'AZUL4', 'SUZB3', 'B3SA3', 'ITUB4', 'TOTS3', 'WSPH26', 'PRIO3', 'YDUQ3', 'QUAL3', 'ABCB4', 'NEOE3', 'VALE3', 'ENEV3', 'TEND3', 'IBOV', 'MDNE3', 'LWSA3', 'JBSS3', 'COGN3', 'BBAS3', 'PINE4', 'USIM5', 'RECV3', 'AXIA3', 'ABEV3', 'CRFB3', 'ANIM3', 'CCRO3', 'MOVI3', 'BPAC11', 'ONCO3', 'PETR4', 'MGLU3', 'WEGE3', 'ITSA4']
+2026-01-24 11:57:14,120 | INFO | 🧹 Limpando ativos desnecessários do Market Watch...
+2026-01-24 11:57:25,242 | INFO | ✅ Market Watch Sincronizado: 0 ativos mantidos/adicionados, 4940 removidos.
+2026-01-24 11:57:25,356 | INFO | 📊 Executando análise retrospectiva inicial (backtest)...
+2026-01-24 11:57:25,358 | INFO | 📊 Análise Diária: 6 trades | Win Rate: 66.7%
+2026-01-24 11:57:25,363 | WARNING | ⚠️ Bot iniciando em modo PAUSADO/RESTRITO: OK (WR: 50.0%)
+2026-01-24 11:57:25,363 | INFO | 📦 Verificando estado diário anterior...
+2026-01-24 11:57:25,385 | INFO | 🔄 Estado anterior era de 2026-01-23 - Iniciando novo dia
+2026-01-24 11:57:25,385 | INFO | 🆕 Iniciando com estado limpo (novo dia)
+2026-01-24 11:57:25,385 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-24 11:57:25,402 | INFO | 📉 Loss streak carregado | 11 símbolos | 0 bloqueados
+2026-01-24 11:57:25,421 | INFO | Parâmetros carregados do JSON (20 ativos elite): optimizer_output/elite_symbols_latest.json
+2026-01-24 11:57:25,421 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-24 11:57:25,446 | INFO | 🧠 Pesos adaptativos carregados: 201 símbolos | 12 setores
+2026-01-24 11:57:25,447 | INFO | ✅ Dados anti-chop carregados
+2026-01-24 11:57:25,450 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-24 11:57:25,452 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-24 11:57:25,454 | INFO | ✅ Dados anti-chop carregados
+2026-01-24 11:57:25,455 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-24 11:57:25,456 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-24 11:57:25,456 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-24 11:57:25,456 | INFO | Parâmetros carregados do ELITE_SYMBOLS (20 ativos elite)
+2026-01-24 11:57:35,587 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-24 11:57:35,588 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-24 11:57:35,850 | INFO | ✅ Matriz de correlação atualizada
+2026-01-24 11:57:35,853 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-01-24 11:57:35,854 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-24 11:57:35,864 | INFO | 
+============================================================
+2026-01-24 11:57:35,868 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-24 11:57:35,869 | INFO | ============================================================
+2026-01-24 11:57:35,871 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-24 11:57:35,877 | INFO | ✅ Cooldown progressivo: True
+2026-01-24 11:57:35,881 | INFO | ✅ Máx posições: 8
+2026-01-24 11:57:35,883 | INFO | ✅ Máx por setor: 2
+2026-01-24 11:57:35,883 | INFO | ✅ Máx bancos: 2
+2026-01-24 11:57:35,884 | INFO | ✅ ADX mínimo (abertura): 25
+2026-01-24 11:57:35,886 | INFO | ✅ ADX mínimo (intraday): 25
+2026-01-24 11:57:35,921 | INFO | ============================================================
+
+2026-01-24 11:57:35,932 | INFO | 📅 Ciclo de trading iniciado: 24/01/2026
+2026-01-24 11:57:35,936 | INFO | 🧵 Iniciando threads de execução...
+2026-01-24 11:57:35,945 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-24 11:57:35,949 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-24 11:57:35,950 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-24 11:57:35,950 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-24 11:57:35,951 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-01-24 11:57:35,953 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-24 11:57:35,962 | INFO | 🧠 Treino diário ML iniciado (histórico: 27 trades | por ativo: True)
+2026-01-24 11:57:35,963 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-24 11:57:35,969 | WARNING | Feature faltante no histórico ML: rsi
+2026-01-24 11:57:35,997 | INFO | ✅ Treino diário ML finalizado
+2026-01-24 11:57:36,003 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-24 11:57:36,003 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-24 11:57:36,012 | WARNING | ⚠️ Símbolos insuficientes para calcular correlação (< 2 ativos)
+2026-01-24 11:57:36,018 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-24 11:57:36,030 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-24 11:57:36,035 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-24 11:57:36,036 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-24 11:57:36,047 | INFO | 🚀 Total de 7 threads ativas
+2026-01-24 11:57:37,810 | INFO | 🚀 Iniciando Dashboard via Streamlit...
+2026-01-24 11:57:40,833 | INFO | ✅ Dashboard iniciado com sucesso na porta 8501!
+2026-01-24 11:57:40,957 | INFO | ✅ Estado de pausa por win rate resetado (meia-noite)
+2026-01-24 11:57:40,974 | INFO | ✅ Estado de pausa por win rate resetado (diário)
+2026-01-24 11:57:40,979 | WARNING | 🔄 Reset diário do Circuit Breaker
+2026-01-24 11:57:40,981 | WARNING | ⛔ Trading PAUSADO globalmente: ⏸️ Pausa de almoço institucional
+2026-01-24 11:57:48,751 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-24 11:57:48,783 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-24 11:57:59,961 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-24 11:57:59,974 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-24 11:58:10,855 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-24 11:58:10,864 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-24 11:58:21,686 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-24 11:58:21,706 | INFO | ✅ Dados ML salvos com sucesso.

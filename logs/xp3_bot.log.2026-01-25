@@ -1,0 +1,285 @@
+2026-01-25 20:44:50,916 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-25 20:44:51,465 | INFO | 🧹 1 logs antigos removidos (0.02 MB)
+2026-01-25 20:44:51,484 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-25 20:44:51,508 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-25 20:44:51,524 | INFO | 📋 Sincronizando Market Watch (Strict Mode)...
+2026-01-25 20:44:51,689 | WARNING | ⚠️ 6 ativos falharam ao adicionar: ['BRFS3', 'SMALL$', 'AZUL4', 'CRFB3', 'JBSS3', 'CCRO3']
+2026-01-25 20:44:51,693 | INFO | 🧹 Limpando ativos desnecessários do Market Watch...
+2026-01-25 20:45:07,188 | INFO | ✅ Market Watch Sincronizado: 59 ativos mantidos/adicionados, 1 removidos.
+2026-01-25 20:45:07,457 | INFO | 📊 Executando análise retrospectiva inicial (backtest)...
+2026-01-25 20:45:07,502 | INFO | 📦 Verificando estado diário anterior...
+2026-01-25 20:45:07,528 | INFO | 🔄 Estado anterior era de 2026-01-23 - Iniciando novo dia
+2026-01-25 20:45:07,529 | INFO | 🆕 Iniciando com estado limpo (novo dia)
+2026-01-25 20:45:07,530 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-25 20:45:07,545 | INFO | 📉 Loss streak carregado | 11 símbolos | 0 bloqueados
+2026-01-25 20:45:07,572 | INFO | Parâmetros carregados do JSON (20 ativos elite): optimizer_output/elite_symbols_latest.json
+2026-01-25 20:45:07,578 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-25 20:45:07,604 | INFO | 🧠 Pesos adaptativos carregados: 201 símbolos | 12 setores
+2026-01-25 20:45:07,613 | INFO | ✅ Dados anti-chop carregados
+2026-01-25 20:45:07,623 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-25 20:45:07,629 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-25 20:45:07,641 | INFO | ✅ Dados anti-chop carregados
+2026-01-25 20:45:07,650 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-25 20:45:07,658 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-25 20:45:07,666 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-25 20:45:07,673 | INFO | Parâmetros carregados do ELITE_SYMBOLS (20 ativos elite)
+2026-01-25 20:45:32,053 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-25 20:45:32,256 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-25 20:45:32,501 | INFO | ✅ Matriz de correlação atualizada
+2026-01-25 20:45:32,680 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-01-25 20:45:32,767 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-25 20:45:32,907 | INFO | 
+============================================================
+2026-01-25 20:45:32,942 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-25 20:45:33,042 | INFO | ============================================================
+2026-01-25 20:45:33,107 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-25 20:45:33,221 | INFO | ✅ Cooldown progressivo: True
+2026-01-25 20:45:33,334 | INFO | ✅ Máx posições: 8
+2026-01-25 20:45:33,486 | INFO | ✅ Máx por setor: 2
+2026-01-25 20:45:33,666 | INFO | ✅ Máx bancos: 2
+2026-01-25 20:45:33,748 | INFO | ✅ ADX mínimo (abertura): 25
+2026-01-25 20:45:33,867 | INFO | ✅ ADX mínimo (intraday): 25
+2026-01-25 20:45:33,908 | INFO | ============================================================
+
+2026-01-25 20:45:34,025 | INFO | 📅 Ciclo de trading iniciado: 25/01/2026
+2026-01-25 20:45:34,193 | INFO | 🧵 Iniciando threads de execução...
+2026-01-25 20:45:34,318 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-25 20:45:34,692 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-25 20:45:34,692 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-25 20:45:34,891 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-25 20:45:34,919 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-01-25 20:45:34,986 | WARNING | ⏰ INICIANDO FECHAMENTO EOD | Tempo até deadline: -245.6 min
+2026-01-25 20:45:34,987 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-25 20:45:35,009 | INFO | ✅ Todas as posições fechadas!
+2026-01-25 20:45:35,053 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-25 20:45:35,083 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-25 20:45:35,083 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-25 20:45:35,152 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-25 20:45:35,153 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-25 20:45:35,236 | WARNING | ⚠️ Símbolos insuficientes para calcular correlação (< 2 ativos)
+2026-01-25 20:45:35,336 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-25 20:45:35,419 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-25 20:45:35,453 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-25 20:45:35,453 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-25 20:45:35,458 | INFO | 🚀 Total de 7 threads ativas
+2026-01-25 20:45:42,686 | INFO | ✅ Relatório enviado com sucesso
+2026-01-25 20:45:42,821 | INFO | 
+📋 RELATÓRIO DE REJEIÇÕES DIÁRIAS
+===================================
+• B3SA3  | 20:45:12 | Score: 100 | ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+• SUZB3  | 20:45:15 | Score: 100 | ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+• TOTS3  | 20:45:22 | Score: 100 | ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+• VBBR3  | 20:45:17 | Score:  80 | Aguardando correção (RSI Esticado)
+• BPAC11 | 20:45:19 | Score:  80 | Aguardando correção (RSI Esticado)
+• RAIL3  | 20:45:20 | Score:  80 | Aguardando correção (RSI Esticado)
+• RDOR3  | 20:45:22 | Score:  80 | Aguardando correção (RSI Esticado)
+• VALE3  | 20:45:09 | Score:  75 | Volume institucional insuficiente
+• ITUB4  | 20:45:09 | Score:  75 | Volume institucional insuficiente
+• BBDC4  | 20:45:10 | Score:  75 | Volume institucional insuficiente
+• BBAS3  | 20:45:12 | Score:  75 | Volume institucional insuficiente
+• VIVT3  | 20:45:13 | Score:  75 | Volume institucional insuficiente
+• AXIA3  | 20:45:14 | Score:  75 | Sem força de tendência (ADX Baixo)
+• WEGE3  | 20:45:21 | Score:  75 | Volume institucional insuficiente
+• PRIO3  | 20:45:26 | Score:  75 | Volume institucional insuficiente
+• COGN3  | 20:45:30 | Score:  75 | Volume institucional insuficiente
+• RAIZ4  | 20:45:31 | Score:  75 | Sem força de tendência (ADX Baixo)
+• ABEV3  | 20:45:11 | Score:  55 | Aguardando correção (RSI Esticado)
+• AURA33 | 20:45:29 | Score:  45 | Sem força de tendência (ADX Baixo)
+2026-01-25 20:45:43,667 | INFO | 💾 Loss streak salvo.
+2026-01-25 20:45:43,880 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-25 20:45:44,140 | INFO | 🚀 Iniciando Dashboard via Streamlit...
+2026-01-25 20:45:47,717 | INFO | ✅ Dashboard iniciado com sucesso na porta 8501!
+2026-01-25 20:45:49,169 | INFO | ✅ Estado de pausa por win rate resetado (meia-noite)
+2026-01-25 20:45:49,246 | INFO | ✅ Estado de pausa por win rate resetado (diário)
+2026-01-25 20:45:49,338 | WARNING | 🔄 Reset diário do Circuit Breaker
+2026-01-25 20:45:49,456 | WARNING | ⛔ Trading PAUSADO globalmente: ⏰ Fim do horário seguro (fechamento em breve)
+2026-01-25 20:45:56,832 | INFO | ✅ Relatório enviado com sucesso
+2026-01-25 20:45:56,852 | INFO | 
+📋 RELATÓRIO DE REJEIÇÕES DIÁRIAS
+===================================
+• B3SA3  | 20:45:54 | Score: 100 | ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+• SUZB3  | 20:45:56 | Score: 100 | ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+• TOTS3  | 20:45:22 | Score: 100 | ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+• VBBR3  | 20:45:17 | Score:  80 | Aguardando correção (RSI Esticado)
+• BPAC11 | 20:45:19 | Score:  80 | Aguardando correção (RSI Esticado)
+• RAIL3  | 20:45:20 | Score:  80 | Aguardando correção (RSI Esticado)
+• RDOR3  | 20:45:22 | Score:  80 | Aguardando correção (RSI Esticado)
+• VALE3  | 20:45:50 | Score:  75 | Volume institucional insuficiente
+• ITUB4  | 20:45:51 | Score:  75 | Volume institucional insuficiente
+• BBDC4  | 20:45:52 | Score:  75 | Volume institucional insuficiente
+• BBAS3  | 20:45:54 | Score:  75 | Volume institucional insuficiente
+• VIVT3  | 20:45:55 | Score:  75 | Volume institucional insuficiente
+• AXIA3  | 20:45:56 | Score:  75 | Sem força de tendência (ADX Baixo)
+• WEGE3  | 20:45:21 | Score:  75 | Volume institucional insuficiente
+• PRIO3  | 20:45:26 | Score:  75 | Volume institucional insuficiente
+• COGN3  | 20:45:30 | Score:  75 | Volume institucional insuficiente
+• RAIZ4  | 20:45:31 | Score:  75 | Sem força de tendência (ADX Baixo)
+• PETR4  | 20:45:49 | Score:  75 | Volume institucional insuficiente
+• ABEV3  | 20:45:54 | Score:  55 | Aguardando correção (RSI Esticado)
+• AURA33 | 20:45:29 | Score:  45 | Sem força de tendência (ADX Baixo)
+2026-01-25 20:45:56,896 | INFO | 💾 Loss streak salvo.
+2026-01-25 20:45:56,952 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-25 20:45:57,079 | INFO | 🧠 Treino diário ML iniciado (histórico: 27 trades | por ativo: True)
+2026-01-25 20:45:57,149 | ERROR | Erro ao treinar ensemble ML: 'str' object has no attribute 'fillna'
+2026-01-25 20:45:57,705 | WARNING | Features incompletas: 14/50
+2026-01-25 20:45:57,770 | INFO | ✅ Treino diário ML finalizado
+2026-01-25 20:45:59,659 | ERROR | ❌ Erro crítico ao atualizar bot_bridge: [WinError 5] Acesso negado: 'bot_bridge.json.tmp' -> 'bot_bridge.json'
+2026-01-25 20:46:04,667 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-25 20:46:06,424 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-25 20:46:06,434 | INFO | 💾 Loss streak salvo.
+2026-01-25 20:46:06,686 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-25 22:48:02,676 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-25 22:48:02,879 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-25 22:48:02,896 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-25 22:48:02,898 | INFO | 📋 Sincronizando Market Watch (Strict Mode)...
+2026-01-25 22:48:02,931 | WARNING | ⚠️ Corretora : Falha ao adicionar SMALL$ - Símbolo não existe na corretora
+2026-01-25 22:48:02,979 | WARNING | ⚠️ Corretora : Falha ao adicionar BRFS3 - Símbolo não existe na corretora
+2026-01-25 22:48:03,014 | WARNING | ⚠️ Corretora : Falha ao adicionar AZUL4 - Símbolo não existe na corretora
+2026-01-25 22:48:03,044 | WARNING | ⚠️ Corretora : Falha ao adicionar CRFB3 - Símbolo não existe na corretora
+2026-01-25 22:48:03,067 | WARNING | ⚠️ Corretora : Falha ao adicionar CCRO3 - Símbolo não existe na corretora
+2026-01-25 22:48:03,080 | WARNING | ⚠️ Corretora : Falha ao adicionar JBSS3 - Símbolo não existe na corretora
+2026-01-25 22:48:03,101 | WARNING | ⚠️ 5 ativos falharam ao adicionar: ['SMALL$', 'BRFS3', 'AZUL4', 'CRFB3', 'CCRO3']
+2026-01-25 22:48:03,106 | INFO | 🧹 Limpando ativos desnecessários do Market Watch...
+2026-01-25 22:48:07,466 | INFO | ✅ Market Watch Sincronizado: 60 ativos mantidos/adicionados, 0 removidos.
+2026-01-25 22:48:07,680 | INFO | 📊 Executando análise retrospectiva inicial (backtest)...
+2026-01-25 22:48:07,691 | INFO | 📦 Verificando estado diário anterior...
+2026-01-25 22:48:07,714 | INFO | 🔄 Estado anterior era de 2026-01-23 - Iniciando novo dia
+2026-01-25 22:48:07,715 | INFO | 🆕 Iniciando com estado limpo (novo dia)
+2026-01-25 22:48:07,718 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-25 22:48:07,751 | INFO | 📉 Loss streak carregado | 11 símbolos | 0 bloqueados
+2026-01-25 22:48:07,816 | INFO | Parâmetros carregados do JSON (20 ativos elite): optimizer_output/elite_symbols_latest.json
+2026-01-25 22:48:07,817 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-25 22:48:07,912 | INFO | 🧠 Pesos adaptativos carregados: 205 símbolos | 13 setores
+2026-01-25 22:48:07,926 | INFO | ✅ Dados anti-chop carregados
+2026-01-25 22:48:07,948 | INFO | ✅ Limites diários carregados
+2026-01-25 22:48:07,950 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-25 22:48:07,966 | INFO | ✅ Dados anti-chop carregados
+2026-01-25 22:48:07,981 | INFO | ✅ Limites diários carregados
+2026-01-25 22:48:07,983 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-25 22:48:07,993 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-25 22:48:07,995 | INFO | Parâmetros carregados do ELITE_SYMBOLS (20 ativos elite)
+2026-01-25 22:48:19,442 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-25 22:48:19,445 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-25 22:48:19,706 | INFO | ✅ Matriz de correlação atualizada
+2026-01-25 22:48:19,713 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-01-25 22:48:19,728 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-25 22:48:19,744 | INFO | 
+============================================================
+2026-01-25 22:48:19,768 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-25 22:48:19,773 | INFO | ============================================================
+2026-01-25 22:48:19,774 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-25 22:48:19,775 | INFO | ✅ Cooldown progressivo: True
+2026-01-25 22:48:19,776 | INFO | ✅ Máx posições: 8
+2026-01-25 22:48:19,777 | INFO | ✅ Máx por setor: 2
+2026-01-25 22:48:19,777 | INFO | ✅ Máx bancos: 2
+2026-01-25 22:48:19,781 | INFO | ✅ ADX mínimo (abertura): 25
+2026-01-25 22:48:19,797 | INFO | ✅ ADX mínimo (intraday): 25
+2026-01-25 22:48:19,802 | INFO | ============================================================
+
+2026-01-25 22:48:19,804 | INFO | 📅 Ciclo de trading iniciado: 25/01/2026
+2026-01-25 22:48:19,806 | INFO | 🧵 Iniciando threads de execução...
+2026-01-25 22:48:19,811 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-25 22:48:19,821 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-25 22:48:19,821 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-25 22:48:19,823 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-25 22:48:19,825 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-01-25 22:48:19,826 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-25 22:48:19,828 | WARNING | ⏰ INICIANDO FECHAMENTO EOD | Tempo até deadline: -368.3 min
+2026-01-25 22:48:19,840 | INFO | ✅ Todas as posições fechadas!
+2026-01-25 22:48:19,843 | WARNING | ⏰ INICIANDO FECHAMENTO EOD | Tempo até deadline: -368.3 min
+2026-01-25 22:48:19,843 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-25 22:48:19,843 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-25 22:48:19,846 | INFO | ✅ Todas as posições fechadas!
+2026-01-25 22:48:19,861 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-25 22:48:19,861 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-25 22:48:19,863 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-25 22:48:19,873 | WARNING | ⚠️ Símbolos insuficientes para calcular correlação (< 2 ativos)
+2026-01-25 22:48:19,877 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-25 22:48:19,897 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-25 22:48:19,929 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-25 22:48:19,929 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-25 22:48:19,947 | INFO | 🚀 Total de 7 threads ativas
+2026-01-25 22:48:23,879 | INFO | 🚀 Iniciando Dashboard via Streamlit...
+2026-01-25 22:48:25,495 | INFO | ✅ Relatório enviado com sucesso
+2026-01-25 22:48:25,512 | INFO | 
+📋 RELATÓRIO DE REJEIÇÕES DIÁRIAS
+===================================
+• B3SA3  | 22:48:14 | Score: 100 | ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+• SUZB3  | 22:48:16 | Score: 100 | ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+• TOTS3  | 22:48:17 | Score: 100 | ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+• VBBR3  | 22:48:16 | Score:  80 | Aguardando correção (RSI Esticado)
+• BPAC11 | 22:48:16 | Score:  80 | Aguardando correção (RSI Esticado)
+• RAIL3  | 22:48:16 | Score:  80 | Aguardando correção (RSI Esticado)
+• RDOR3  | 22:48:18 | Score:  80 | Aguardando correção (RSI Esticado)
+• PETR4  | 22:48:08 | Score:  75 | Volume institucional insuficiente
+• VALE3  | 22:48:09 | Score:  75 | Volume institucional insuficiente
+• ITUB4  | 22:48:11 | Score:  75 | Volume institucional insuficiente
+• BBDC4  | 22:48:12 | Score:  75 | Volume institucional insuficiente
+• BBAS3  | 22:48:13 | Score:  75 | Volume institucional insuficiente
+• VIVT3  | 22:48:14 | Score:  75 | Volume institucional insuficiente
+• AXIA3  | 22:48:15 | Score:  75 | Sem força de tendência (ADX Baixo)
+• WEGE3  | 22:48:17 | Score:  75 | Volume institucional insuficiente
+• PRIO3  | 22:48:18 | Score:  75 | Volume institucional insuficiente
+• COGN3  | 22:48:18 | Score:  75 | Volume institucional insuficiente
+• RAIZ4  | 22:48:19 | Score:  75 | Sem força de tendência (ADX Baixo)
+• ABEV3  | 22:48:13 | Score:  55 | Aguardando correção (RSI Esticado)
+• AURA33 | 22:48:18 | Score:  45 | Sem força de tendência (ADX Baixo)
+2026-01-25 22:48:26,062 | INFO | 💾 Loss streak salvo.
+2026-01-25 22:48:26,647 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-25 22:48:26,893 | INFO | ✅ Dashboard iniciado com sucesso na porta 8501!
+2026-01-25 22:48:28,057 | INFO | 🧠 Treino diário ML iniciado (histórico: 27 trades | por ativo: True)
+2026-01-25 22:48:28,074 | ERROR | Erro ao treinar ensemble ML: 'str' object has no attribute 'fillna'
+2026-01-25 22:48:28,156 | WARNING | Features incompletas: 14/50
+2026-01-25 22:48:28,163 | INFO | ✅ Treino diário ML finalizado
+2026-01-25 22:48:41,851 | INFO | ✅ Relatório enviado com sucesso
+2026-01-25 22:48:41,910 | INFO | 
+📋 RELATÓRIO DE REJEIÇÕES DIÁRIAS
+===================================
+• B3SA3  | 22:48:14 | Score: 100 | ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+• SUZB3  | 22:48:16 | Score: 100 | ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+• TOTS3  | 22:48:17 | Score: 100 | ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+• VBBR3  | 22:48:16 | Score:  80 | Aguardando correção (RSI Esticado)
+• BPAC11 | 22:48:16 | Score:  80 | Aguardando correção (RSI Esticado)
+• RAIL3  | 22:48:16 | Score:  80 | Aguardando correção (RSI Esticado)
+• RDOR3  | 22:48:18 | Score:  80 | Aguardando correção (RSI Esticado)
+• PETR4  | 22:48:08 | Score:  75 | Volume institucional insuficiente
+• VALE3  | 22:48:09 | Score:  75 | Volume institucional insuficiente
+• ITUB4  | 22:48:11 | Score:  75 | Volume institucional insuficiente
+• BBDC4  | 22:48:12 | Score:  75 | Volume institucional insuficiente
+• BBAS3  | 22:48:13 | Score:  75 | Volume institucional insuficiente
+• VIVT3  | 22:48:14 | Score:  75 | Volume institucional insuficiente
+• AXIA3  | 22:48:15 | Score:  75 | Sem força de tendência (ADX Baixo)
+• WEGE3  | 22:48:17 | Score:  75 | Volume institucional insuficiente
+• PRIO3  | 22:48:18 | Score:  75 | Volume institucional insuficiente
+• COGN3  | 22:48:18 | Score:  75 | Volume institucional insuficiente
+• RAIZ4  | 22:48:19 | Score:  75 | Sem força de tendência (ADX Baixo)
+• ABEV3  | 22:48:13 | Score:  55 | Aguardando correção (RSI Esticado)
+• AURA33 | 22:48:18 | Score:  45 | Sem força de tendência (ADX Baixo)
+2026-01-25 22:48:42,127 | INFO | 💾 Loss streak salvo.
+2026-01-25 22:48:42,754 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-25 22:48:51,118 | INFO | ✅ Estado de pausa por win rate resetado (meia-noite)
+2026-01-25 22:48:52,491 | INFO | ✅ Estado de pausa por win rate resetado (diário)
+2026-01-25 22:48:52,540 | WARNING | 🔄 Reset diário do Circuit Breaker
+2026-01-25 22:48:52,977 | WARNING | ⛔ Trading PAUSADO globalmente: ⏰ Fim do horário seguro (fechamento em breve)
+2026-01-25 22:49:04,293 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-25 22:49:04,916 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-25 22:49:05,166 | INFO | 💾 Loss streak salvo.
+2026-01-25 22:49:05,716 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-25 22:49:20,203 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-25 22:49:20,330 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-25 22:49:20,413 | INFO | 💾 Loss streak salvo.
+2026-01-25 22:49:20,791 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-25 22:49:37,164 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-25 22:49:38,705 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-25 22:49:39,045 | INFO | 💾 Loss streak salvo.
+2026-01-25 22:49:40,978 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-25 22:50:02,168 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-25 22:50:03,743 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-25 22:50:04,818 | INFO | 💾 Loss streak salvo.
+2026-01-25 22:50:05,940 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-25 22:50:06,607 | ERROR | ❌ Erro ao salvar JSON atômico: [WinError 183] Não é possível criar um arquivo já existente: 'anti_chop_data.json.tmp' -> 'anti_chop_data.json'
+2026-01-25 22:50:09,587 | ERROR | ❌ Erro ao salvar JSON atômico: [WinError 183] Não é possível criar um arquivo já existente: 'daily_symbol_limits.json.tmp' -> 'daily_symbol_limits.json'
+2026-01-25 22:50:32,921 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-25 22:50:33,284 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-25 22:50:33,401 | INFO | 💾 Loss streak salvo.
+2026-01-25 22:50:33,814 | INFO | 💾 Pesos adaptativos salvos com sucesso.

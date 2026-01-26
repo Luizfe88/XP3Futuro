@@ -1,0 +1,53 @@
+2025-12-31 09:14:02,185 | INFO | Bot do Telegram inicializado com sucesso
+2025-12-31 09:59:41,492 | INFO | Bot do Telegram inicializado com sucesso
+2025-12-31 09:59:41,548 | INFO | 🧹 Limpeza inicial de logs concluída
+2025-12-31 09:59:47,787 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2025-12-31 09:59:47,793 | INFO | 📦 Verificando estado diário anterior...
+2025-12-31 09:59:48,020 | INFO | 🔄 Estado anterior era de 2025-12-30 - Iniciando novo dia
+2025-12-31 09:59:48,021 | INFO | 🆕 Iniciando com estado limpo (novo dia)
+2025-12-31 09:59:48,031 | INFO | 📦 Carregando dados persistentes e otimizações...
+2025-12-31 09:59:48,066 | INFO | 📉 Dados de loss streak carregados.
+2025-12-31 09:59:48,091 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2025-12-31 09:59:48,093 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2025-12-31 09:59:48,104 | INFO | 🧠 Pesos adaptativos carregados com sucesso.
+2025-12-31 09:59:48,114 | INFO | ✅ Dados anti-chop carregados
+2025-12-31 09:59:48,117 | INFO | ✅ Dados anti-chop e limites carregados
+2025-12-31 09:59:48,118 | INFO | ✅ Dados anti-chop carregados
+2025-12-31 09:59:48,119 | INFO | ✅ Dados anti-chop e limites carregados
+2025-12-31 09:59:48,119 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2025-12-31 09:59:48,119 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2025-12-31 09:59:53,154 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2025-12-31 09:59:53,160 | INFO | 📊 Atualizando correlação para 15 ativos...
+2025-12-31 09:59:53,402 | INFO | ✅ Matriz de correlação atualizada
+2025-12-31 09:59:53,403 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2025-12-31 09:59:53,415 | INFO | 
+============================================================
+2025-12-31 09:59:53,415 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2025-12-31 09:59:53,416 | INFO | ============================================================
+2025-12-31 09:59:53,416 | INFO | ✅ Cooldown após SL: 120 min
+2025-12-31 09:59:53,416 | INFO | ✅ Cooldown progressivo: True
+2025-12-31 09:59:53,417 | INFO | ✅ Máx posições: 8
+2025-12-31 09:59:53,417 | INFO | ✅ Máx por setor: 2
+2025-12-31 09:59:53,418 | INFO | ✅ Máx bancos: 2
+2025-12-31 09:59:53,418 | INFO | ✅ ADX mínimo (abertura): 15
+2025-12-31 09:59:53,430 | INFO | ✅ ADX mínimo (intraday): 12
+2025-12-31 09:59:53,431 | INFO | ============================================================
+
+2025-12-31 09:59:53,434 | INFO | 📅 Ciclo de trading iniciado: 31/12/2025
+2025-12-31 09:59:53,434 | INFO | 🧵 Iniciando threads de execução...
+2025-12-31 09:59:53,435 | INFO |    -> Thread 'TelegramPolling' adicionada (/lucro, /status ativados)
+2025-12-31 09:59:53,437 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2025-12-31 09:59:53,437 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2025-12-31 09:59:53,440 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2025-12-31 09:59:53,444 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2025-12-31 09:59:53,446 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2025-12-31 09:59:53,451 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2025-12-31 09:59:53,452 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2025-12-31 09:59:53,554 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2025-12-31 09:59:53,644 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2025-12-31 09:59:53,706 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2025-12-31 09:59:53,707 | INFO | 🚀 Total de 7 threads ativas
+2025-12-31 09:59:55,031 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2025-12-31 09:59:55,570 | INFO | 🖥️ Painel de controle ativo
+2025-12-31 10:09:55,091 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2025-12-31 10:19:55,190 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)

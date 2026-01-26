@@ -1,0 +1,16 @@
+# XP3 V5 - ELITE PORTFOLIO
+# Gerado em: 2026-01-11 19:19:15.173707
+ELITE_SYMBOLS = {
+ "ITUB4": {
+  "category": "BLUE CHIP",
+  "weight": 0.20, # 20.0%
+  "ema_short": 12,
+  "ema_long": 97,
+  "rsi_low": 37,
+  "rsi_high": 73,
+  "adx_threshold": 13,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 1.9,
+  "tp_mult": 3.0
+ },
+}

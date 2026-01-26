@@ -1,0 +1,24 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-01-22 11:30:29 | ENTRADA  | RAIL3  | BUY  | Vol:    8400 | Price:  14.28 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-22 11:44:15 | ENTRADA  | RENT3  | BUY  | Vol:    4000 | Price:  43.67 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-22 13:15:40 | ENTRADA  | PETR4  | BUY  | Vol:    6400 | Price:  33.76 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-22 13:15:47 | ENTRADA  | B3SA3  | BUY  | Vol:   11500 | Price:  15.83 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-22 13:16:35 | ENTRADA  | RECV3  | BUY  | Vol:   32600 | Price:  11.00 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-22 13:32:33 | ENTRADA  | BBDC4  | BUY  | Vol:    9100 | Price:  20.23 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-22 13:32:52 | ENTRADA  | PRIO3  | BUY  | Vol:    4500 | Price:  46.69 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-22 14:01:02 | ENTRADA  | WEGE3  | BUY  | Vol:    6500 | Price:  49.06 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-22 14:26:44 | SAÍDA    | B3SA3  | BUY  | Vol:   11500 | Price:  15.55 | P&L: -3220.00 R$ (-1.77%) | Motivo: Stop Loss | DealId: 1702198822 | Pos: 2328049367
+2026-01-22 14:26:44 | SAÍDA    | RECV3  | BUY  | Vol:   32600 | Price:  10.88 | P&L: -3912.00 R$ (-1.09%) | Motivo: Stop Loss | DealId: 1702206038 | Pos: 2328052336
+2026-01-22 14:40:21 | ENTRADA  | B3SA3  | BUY  | Vol:   11500 | Price:  15.68 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-22 14:45:28 | ENTRADA  | VIVT3  | BUY  | Vol:    6700 | Price:  35.90 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+
+2026-01-22 16:07:05 | SAÍDA    | PRIO3  | BUY  | Vol:    4500 | Price:  46.20 | P&L: -2205.00 R$ (-1.05%) | Motivo: Stop Loss | DealId: 1702364027 | Pos: 2328098820
+2026-01-22 16:17:14 | SAÍDA    | PETR4  | BUY  | Vol:    6400 | Price:  33.33 | P&L: -2752.00 R$ (-1.27%) | Motivo: Stop Loss | DealId: 1702374274 | Pos: 2328048853
+2026-01-22 16:40:09 | SAÍDA    | RAIL3  | BUY  | Vol:    8400 | Price:  14.33 | P&L:  +504.00 R$ (+0.42%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2327656837
+2026-01-22 16:42:33 | SAÍDA    | RAIL3  | BUY  | Vol:    8400 | Price:  14.33 | P&L:  +420.00 R$ (+0.35%) | Motivo: Fechamento | DealId: 1702399407 | Pos: 2327656837
+2026-01-22 16:42:33 | SAÍDA    | RENT3  | BUY  | Vol:    4000 | Price:  44.21 | P&L: +2160.00 R$ (+1.24%) | Motivo: Fechamento | DealId: 1702399445 | Pos: 2327708528
+2026-01-22 16:42:33 | SAÍDA    | BBDC4  | BUY  | Vol:    9100 | Price:  20.29 | P&L:  +546.00 R$ (+0.30%) | Motivo: Fechamento | DealId: 1702399505 | Pos: 2328097641
+2026-01-22 16:42:33 | SAÍDA    | WEGE3  | BUY  | Vol:    6500 | Price:  49.45 | P&L: +2535.00 R$ (+0.79%) | Motivo: Fechamento | DealId: 1702399534 | Pos: 2328170015
+2026-01-22 16:42:33 | SAÍDA    | B3SA3  | BUY  | Vol:   11500 | Price:  15.67 | P&L:  -115.00 R$ (-0.06%) | Motivo: Fechamento | DealId: 1702399594 | Pos: 2328276782
+2026-01-22 16:42:33 | SAÍDA    | VIVT3  | BUY  | Vol:    6700 | Price:  35.81 | P&L:  -603.00 R$ (-0.25%) | Motivo: Fechamento | DealId: 1702399629 | Pos: 2328283924

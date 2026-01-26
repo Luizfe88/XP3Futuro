@@ -1,0 +1,300 @@
+2026-01-08 10:00:08,307 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-08 10:00:08,371 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-08 10:00:25,679 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-08 10:00:25,704 | INFO | 📦 Verificando estado diário anterior...
+2026-01-08 10:00:25,730 | INFO | 🔄 Estado anterior era de 2026-01-07 - Iniciando novo dia
+2026-01-08 10:00:25,731 | INFO | 🆕 Iniciando com estado limpo (novo dia)
+2026-01-08 10:00:25,732 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-08 10:00:25,765 | INFO | 📉 Dados de loss streak carregados.
+2026-01-08 10:00:25,767 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-08 10:00:25,805 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-08 10:00:25,836 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 0 setores
+2026-01-08 10:00:25,874 | INFO | ✅ Dados anti-chop carregados
+2026-01-08 10:00:25,920 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-08 10:00:25,931 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-08 10:00:25,935 | INFO | ✅ Dados anti-chop carregados
+2026-01-08 10:00:25,938 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-08 10:00:25,943 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-08 10:00:25,948 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-08 10:00:25,963 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-08 10:00:33,357 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:33,359 | INFO | 🔥 CSMG3: Score 71 (próximo de setup)
+2026-01-08 10:00:35,416 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:36,057 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:36,058 | INFO | 🔥 CEAB3: Score 71 (próximo de setup)
+2026-01-08 10:00:36,406 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:36,863 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:36,865 | INFO | 🔥 CSNA3: Score 71 (próximo de setup)
+2026-01-08 10:00:37,209 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:37,670 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:38,099 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:42,197 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:42,381 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:42,382 | INFO | 🔥 FRAS3: Score 71 (próximo de setup)
+2026-01-08 10:00:42,605 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:42,606 | INFO | 🔥 MDNE3: Score 71 (próximo de setup)
+2026-01-08 10:00:42,853 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:42,854 | INFO | 🔥 USIM3: Score 71 (próximo de setup)
+2026-01-08 10:00:43,077 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:43,286 | WARNING | Redis set error: MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-01-08 10:00:43,286 | INFO | 🔥 GOAU4: Score 71 (próximo de setup)
+2026-01-08 10:00:43,299 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-08 10:00:43,300 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-08 10:00:44,506 | INFO | ✅ Matriz de correlação atualizada
+2026-01-08 10:00:44,507 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-08 10:00:44,514 | INFO | 
+============================================================
+2026-01-08 10:00:44,514 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-08 10:00:44,515 | INFO | ============================================================
+2026-01-08 10:00:44,515 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-08 10:00:44,515 | INFO | ✅ Cooldown progressivo: True
+2026-01-08 10:00:44,515 | INFO | ✅ Máx posições: 8
+2026-01-08 10:00:44,517 | INFO | ✅ Máx por setor: 2
+2026-01-08 10:00:44,518 | INFO | ✅ Máx bancos: 2
+2026-01-08 10:00:44,522 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-08 10:00:44,523 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-08 10:00:44,523 | INFO | ============================================================
+
+2026-01-08 10:00:44,523 | INFO | 📅 Ciclo de trading iniciado: 08/01/2026
+2026-01-08 10:00:44,524 | INFO | 🧵 Iniciando threads de execução...
+2026-01-08 10:00:44,525 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-08 10:00:44,526 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-08 10:00:44,526 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-08 10:00:44,527 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-08 10:00:44,535 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-08 10:00:44,535 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-08 10:00:44,542 | INFO | ML retreinado diariamente
+2026-01-08 10:00:44,542 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-08 10:00:44,543 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-08 10:00:44,543 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-08 10:00:44,944 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-08 10:00:45,737 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-08 10:00:45,741 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-08 10:00:45,742 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-08 10:00:46,001 | INFO | 🚀 Total de 7 threads ativas
+2026-01-08 10:00:51,526 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2026-01-08 10:00:51,665 | INFO | 🖥️ Painel de controle ativo
+2026-01-08 11:42:05,827 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-08 11:42:05,963 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-08 11:42:20,793 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-08 11:42:20,796 | INFO | 📦 Verificando estado diário anterior...
+2026-01-08 11:42:20,822 | INFO | ============================================================
+2026-01-08 11:42:20,874 | INFO | ✅ ESTADO DIÁRIO RESTAURADO COM SUCESSO
+2026-01-08 11:42:20,991 | INFO | ============================================================
+2026-01-08 11:42:21,018 | INFO | 📅 Data: 2026-01-08
+2026-01-08 11:42:21,060 | INFO | 💰 Equity Inicial: R$987,305.26
+2026-01-08 11:42:21,094 | INFO | 📈 Max Equity: R$987,305.26
+2026-01-08 11:42:21,142 | INFO | 📊 Símbolos com trades: 0
+2026-01-08 11:42:21,175 | INFO | ⏱️ Cooldowns ativos: 0
+2026-01-08 11:42:21,222 | INFO | 📍 Posições salvas: 0
+2026-01-08 11:42:21,250 | INFO | 🔄 Ciclo completo: Não
+2026-01-08 11:42:21,261 | INFO | ============================================================
+2026-01-08 11:42:21,298 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-08 11:42:21,367 | INFO | 📉 Dados de loss streak carregados.
+2026-01-08 11:42:21,383 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-08 11:42:21,402 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-08 11:42:21,415 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 0 setores
+2026-01-08 11:42:21,435 | INFO | ✅ Dados anti-chop carregados
+2026-01-08 11:42:21,478 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-08 11:42:21,492 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-08 11:42:21,510 | INFO | ✅ Dados anti-chop carregados
+2026-01-08 11:42:21,521 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-08 11:42:21,533 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-08 11:42:21,544 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-08 11:42:21,554 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-08 11:42:21,885 | INFO | 🔥 CURY3: Score 51 (próximo de setup)
+2026-01-08 11:42:22,312 | INFO | 🔥 CSMG3: Score 51 (próximo de setup)
+2026-01-08 11:42:22,597 | INFO | 🔥 CAML3: Score 71 (próximo de setup)
+2026-01-08 11:42:22,732 | INFO | 🔥 CEAB3: Score 51 (próximo de setup)
+2026-01-08 11:42:23,385 | INFO | 🔥 BPAN4: Score 71 (próximo de setup)
+2026-01-08 11:42:23,788 | INFO | 🔥 FRAS3: Score 71 (próximo de setup)
+2026-01-08 11:42:23,931 | INFO | 🔥 MDNE3: Score 51 (próximo de setup)
+2026-01-08 11:42:24,390 | INFO | 🔥 GOAU4: Score 71 (próximo de setup)
+2026-01-08 11:42:24,409 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-08 11:42:24,416 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-08 11:42:24,624 | INFO | ✅ Matriz de correlação atualizada
+2026-01-08 11:42:24,627 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-08 11:42:24,641 | INFO | 
+============================================================
+2026-01-08 11:42:24,643 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-08 11:42:24,647 | INFO | ============================================================
+2026-01-08 11:42:24,650 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-08 11:42:24,651 | INFO | ✅ Cooldown progressivo: True
+2026-01-08 11:42:24,651 | INFO | ✅ Máx posições: 8
+2026-01-08 11:42:24,651 | INFO | ✅ Máx por setor: 2
+2026-01-08 11:42:24,651 | INFO | ✅ Máx bancos: 2
+2026-01-08 11:42:24,652 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-08 11:42:24,654 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-08 11:42:24,660 | INFO | ============================================================
+
+2026-01-08 11:42:24,665 | INFO | 📅 Ciclo de trading iniciado: 08/01/2026
+2026-01-08 11:42:24,668 | INFO | 🧵 Iniciando threads de execução...
+2026-01-08 11:42:24,676 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-08 11:42:24,694 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-08 11:42:24,694 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-08 11:42:24,697 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-08 11:42:24,711 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-08 11:42:24,712 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-08 11:42:24,727 | INFO | ML retreinado diariamente
+2026-01-08 11:42:24,728 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-08 11:42:24,743 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-08 11:42:24,743 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-08 11:42:24,872 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-08 11:42:24,889 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-08 11:42:24,960 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-08 11:42:24,961 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-08 11:42:25,035 | INFO | 🚀 Total de 7 threads ativas
+2026-01-08 11:42:25,815 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2026-01-08 11:42:26,047 | INFO | 🖥️ Painel de controle ativo
+2026-01-08 15:41:23,953 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-08 15:41:24,043 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-08 15:41:24,049 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-08 15:41:24,051 | INFO | 📦 Verificando estado diário anterior...
+2026-01-08 15:41:24,083 | INFO | ============================================================
+2026-01-08 15:41:24,088 | INFO | ✅ ESTADO DIÁRIO RESTAURADO COM SUCESSO
+2026-01-08 15:41:24,090 | INFO | ============================================================
+2026-01-08 15:41:24,093 | INFO | 📅 Data: 2026-01-08
+2026-01-08 15:41:24,095 | INFO | 💰 Equity Inicial: R$987,305.26
+2026-01-08 15:41:24,096 | INFO | 📈 Max Equity: R$987,305.26
+2026-01-08 15:41:24,096 | INFO | 📊 Símbolos com trades: 2
+2026-01-08 15:41:24,096 | INFO |    Contadores:
+2026-01-08 15:41:24,097 | INFO |    • CSAN3: 0 trades
+2026-01-08 15:41:24,097 | INFO |    • CURY3: 0 trades
+2026-01-08 15:41:24,097 | INFO | ⏱️ Cooldowns ativos: 0
+2026-01-08 15:41:24,098 | INFO | 📍 Posições salvas: 0
+2026-01-08 15:41:24,098 | INFO | 🔄 Ciclo completo: Não
+2026-01-08 15:41:24,098 | INFO | ============================================================
+2026-01-08 15:41:24,099 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-08 15:41:24,102 | INFO | 📉 Dados de loss streak carregados.
+2026-01-08 15:41:24,102 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-08 15:41:24,104 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-08 15:41:24,136 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 0 setores
+2026-01-08 15:41:24,141 | INFO | ✅ Dados anti-chop carregados
+2026-01-08 15:41:24,163 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-08 15:41:24,164 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-08 15:41:24,165 | INFO | ✅ Dados anti-chop carregados
+2026-01-08 15:41:24,167 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-08 15:41:24,168 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-08 15:41:24,168 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-08 15:41:24,169 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-08 15:41:24,284 | INFO | 🔥 CURY3: Score 71 (próximo de setup)
+2026-01-08 15:41:24,351 | INFO | 🔥 CSMG3: Score 71 (próximo de setup)
+2026-01-08 15:41:24,472 | INFO | 🔥 CEAB3: Score 71 (próximo de setup)
+2026-01-08 15:41:24,599 | INFO | 🔥 CSNA3: Score 71 (próximo de setup)
+2026-01-08 15:41:24,732 | INFO | 🔥 AURA33: Score 51 (próximo de setup)
+2026-01-08 15:41:24,850 | INFO | 🔥 BPAN4: Score 71 (próximo de setup)
+2026-01-08 15:41:25,363 | INFO | 🔥 CSAN3: Score 71 (próximo de setup)
+2026-01-08 15:41:25,845 | INFO | 🔥 MDNE3: Score 71 (próximo de setup)
+2026-01-08 15:41:25,914 | INFO | 🔥 USIM3: Score 71 (próximo de setup)
+2026-01-08 15:41:26,114 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-08 15:41:26,118 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-08 15:41:26,128 | INFO | ✅ Matriz de correlação atualizada
+2026-01-08 15:41:26,132 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-08 15:41:26,140 | INFO | 
+============================================================
+2026-01-08 15:41:26,141 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-08 15:41:26,141 | INFO | ============================================================
+2026-01-08 15:41:26,141 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-08 15:41:26,142 | INFO | ✅ Cooldown progressivo: True
+2026-01-08 15:41:26,143 | INFO | ✅ Máx posições: 8
+2026-01-08 15:41:26,143 | INFO | ✅ Máx por setor: 2
+2026-01-08 15:41:26,144 | INFO | ✅ Máx bancos: 2
+2026-01-08 15:41:26,144 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-08 15:41:26,144 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-08 15:41:26,145 | INFO | ============================================================
+
+2026-01-08 15:41:26,148 | INFO | 📅 Ciclo de trading iniciado: 08/01/2026
+2026-01-08 15:41:26,151 | INFO | 🧵 Iniciando threads de execução...
+2026-01-08 15:41:26,154 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-08 15:41:26,168 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-08 15:41:26,168 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-08 15:41:26,171 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-08 15:41:26,174 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-08 15:41:26,176 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-08 15:41:26,180 | INFO | ML retreinado diariamente
+2026-01-08 15:41:26,181 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-08 15:41:26,187 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-08 15:41:26,187 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-08 15:41:26,205 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-08 15:41:26,224 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-08 15:41:26,234 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-08 15:41:26,234 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-08 15:41:26,243 | INFO | 🚀 Total de 7 threads ativas
+2026-01-08 15:41:26,376 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2026-01-08 15:41:26,946 | INFO | 🖥️ Painel de controle ativo
+2026-01-08 17:08:54,353 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-08 17:08:54,399 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-08 17:09:12,815 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-08 17:09:12,820 | INFO | 📦 Verificando estado diário anterior...
+2026-01-08 17:09:12,878 | INFO | ============================================================
+2026-01-08 17:09:12,899 | INFO | ✅ ESTADO DIÁRIO RESTAURADO COM SUCESSO
+2026-01-08 17:09:12,904 | INFO | ============================================================
+2026-01-08 17:09:12,906 | INFO | 📅 Data: 2026-01-08
+2026-01-08 17:09:12,919 | INFO | 💰 Equity Inicial: R$987,305.26
+2026-01-08 17:09:12,926 | INFO | 📈 Max Equity: R$987,305.26
+2026-01-08 17:09:12,931 | INFO | 📊 Símbolos com trades: 0
+2026-01-08 17:09:12,932 | INFO | ⏱️ Cooldowns ativos: 0
+2026-01-08 17:09:12,933 | INFO | 📍 Posições salvas: 0
+2026-01-08 17:09:12,933 | INFO | 🔄 Ciclo completo: Não
+2026-01-08 17:09:12,934 | INFO | ============================================================
+2026-01-08 17:09:12,935 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-08 17:09:12,965 | INFO | 📉 Dados de loss streak carregados.
+2026-01-08 17:09:12,971 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-08 17:09:12,977 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-08 17:09:13,002 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 0 setores
+2026-01-08 17:09:13,011 | INFO | ✅ Dados anti-chop carregados
+2026-01-08 17:09:13,052 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-08 17:09:13,066 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-08 17:09:13,070 | INFO | ✅ Dados anti-chop carregados
+2026-01-08 17:09:13,080 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-08 17:09:13,086 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-08 17:09:13,088 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-08 17:09:13,093 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-08 17:09:13,999 | INFO | 🔥 CURY3: Score 71 (próximo de setup)
+2026-01-08 17:09:14,433 | INFO | 🔥 CSMG3: Score 71 (próximo de setup)
+2026-01-08 17:09:15,232 | INFO | 🔥 CEAB3: Score 71 (próximo de setup)
+2026-01-08 17:09:15,900 | INFO | 🔥 CSNA3: Score 71 (próximo de setup)
+2026-01-08 17:09:16,331 | INFO | 🔥 AURA33: Score 71 (próximo de setup)
+2026-01-08 17:09:16,799 | INFO | 🔥 BPAN4: Score 71 (próximo de setup)
+2026-01-08 17:09:17,019 | INFO | 🔥 SUZB3: Score 71 (próximo de setup)
+2026-01-08 17:09:18,027 | INFO | 🔥 USIM3: Score 71 (próximo de setup)
+2026-01-08 17:09:18,937 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-08 17:09:18,938 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-08 17:09:19,125 | INFO | ✅ Matriz de correlação atualizada
+2026-01-08 17:09:19,126 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-08 17:09:19,132 | INFO | 
+============================================================
+2026-01-08 17:09:19,132 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-08 17:09:19,132 | INFO | ============================================================
+2026-01-08 17:09:19,133 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-08 17:09:19,134 | INFO | ✅ Cooldown progressivo: True
+2026-01-08 17:09:19,134 | INFO | ✅ Máx posições: 8
+2026-01-08 17:09:19,137 | INFO | ✅ Máx por setor: 2
+2026-01-08 17:09:19,140 | INFO | ✅ Máx bancos: 2
+2026-01-08 17:09:19,141 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-08 17:09:19,143 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-08 17:09:19,146 | INFO | ============================================================
+
+2026-01-08 17:09:19,149 | INFO | 📅 Ciclo de trading iniciado: 08/01/2026
+2026-01-08 17:09:19,149 | INFO | 🧵 Iniciando threads de execução...
+2026-01-08 17:09:19,150 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-08 17:09:19,151 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-08 17:09:19,151 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-08 17:09:19,152 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-08 17:09:19,168 | WARNING | ⏰ INICIANDO FECHAMENTO EOD | Tempo até deadline: -24.3 min
+2026-01-08 17:09:19,170 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-08 17:09:19,170 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-08 17:09:19,171 | INFO | ✅ Todas as posições fechadas!
+2026-01-08 17:09:19,173 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-08 17:09:19,174 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-08 17:09:19,175 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-08 17:09:19,199 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-08 17:09:19,199 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-08 17:09:19,698 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-08 17:09:19,840 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-08 17:09:19,857 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-08 17:09:19,858 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-08 17:09:19,916 | INFO | 🚀 Total de 7 threads ativas
+2026-01-08 17:09:21,080 | INFO | 📊 Histórico ML carregado: 4 trades
+2026-01-08 17:09:21,313 | INFO | 🧠 Q-Table carregada
+2026-01-08 17:09:21,798 | INFO | 🖥️ Painel de controle ativo

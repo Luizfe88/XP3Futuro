@@ -1,0 +1,688 @@
+2026-01-09 07:58:16,969 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 07:58:17,049 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-09 07:58:17,117 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-09 07:58:17,125 | INFO | 📦 Verificando estado diário anterior...
+2026-01-09 07:58:17,162 | INFO | 🔄 Estado anterior era de 2026-01-08 - Iniciando novo dia
+2026-01-09 07:58:17,163 | INFO | 🆕 Iniciando com estado limpo (novo dia)
+2026-01-09 07:58:17,171 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-09 07:58:18,123 | INFO | 📉 Dados de loss streak carregados.
+2026-01-09 07:58:18,126 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 07:58:18,208 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-09 07:58:18,283 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 0 setores
+2026-01-09 07:58:18,347 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 07:58:18,411 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 07:58:18,414 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 07:58:18,416 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 07:58:18,424 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 07:58:18,428 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 07:58:18,433 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-09 07:58:18,447 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 07:58:18,979 | INFO | 🔥 CURY3: Score 71 (próximo de setup)
+2026-01-09 07:58:19,389 | INFO | 🔥 CSMG3: Score 71 (próximo de setup)
+2026-01-09 07:58:20,521 | INFO | 🔥 CEAB3: Score 71 (próximo de setup)
+2026-01-09 07:58:21,044 | INFO | 🔥 CSNA3: Score 51 (próximo de setup)
+2026-01-09 07:58:21,215 | INFO | 🔥 AURA33: Score 71 (próximo de setup)
+2026-01-09 07:58:21,439 | INFO | 🔥 BPAN4: Score 71 (próximo de setup)
+2026-01-09 07:58:21,788 | INFO | 🔥 SUZB3: Score 71 (próximo de setup)
+2026-01-09 07:58:22,806 | INFO | 🔥 USIM3: Score 51 (próximo de setup)
+2026-01-09 07:58:23,467 | INFO | 🔥 GOAU4: Score 51 (próximo de setup)
+2026-01-09 07:58:23,479 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-09 07:58:23,480 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-09 07:58:24,000 | INFO | ✅ Matriz de correlação atualizada
+2026-01-09 07:58:24,000 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-09 07:58:24,010 | INFO | 
+============================================================
+2026-01-09 07:58:24,011 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-09 07:58:24,011 | INFO | ============================================================
+2026-01-09 07:58:24,014 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-09 07:58:24,014 | INFO | ✅ Cooldown progressivo: True
+2026-01-09 07:58:24,014 | INFO | ✅ Máx posições: 8
+2026-01-09 07:58:24,015 | INFO | ✅ Máx por setor: 2
+2026-01-09 07:58:24,015 | INFO | ✅ Máx bancos: 2
+2026-01-09 07:58:24,016 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-09 07:58:24,016 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-09 07:58:24,017 | INFO | ============================================================
+
+2026-01-09 07:58:24,017 | INFO | 📅 Ciclo de trading iniciado: 09/01/2026
+2026-01-09 07:58:24,018 | INFO | 🧵 Iniciando threads de execução...
+2026-01-09 07:58:24,018 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-09 07:58:24,033 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-09 07:58:24,033 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-09 07:58:24,045 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-09 07:58:24,267 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-09 07:58:24,267 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 07:58:24,282 | INFO | ML retreinado diariamente
+2026-01-09 07:58:24,282 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-09 07:58:24,322 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-09 07:58:24,323 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-09 07:58:24,492 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-09 07:58:25,127 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-09 07:58:25,235 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-09 07:58:25,236 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-09 07:58:25,238 | INFO | 🚀 Total de 7 threads ativas
+2026-01-09 07:58:27,564 | INFO | 🖥️ Painel de controle ativo
+2026-01-09 08:30:34,987 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 08:30:35,054 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-09 08:30:35,071 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-09 08:30:35,071 | INFO | 📦 Verificando estado diário anterior...
+2026-01-09 08:30:35,072 | INFO | 🔄 Estado anterior era de 2026-01-08 - Iniciando novo dia
+2026-01-09 08:30:35,072 | INFO | 🆕 Iniciando com estado limpo (novo dia)
+2026-01-09 08:30:35,074 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-09 08:30:35,077 | INFO | 📉 Dados de loss streak carregados.
+2026-01-09 08:30:35,077 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 08:30:35,078 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-09 08:30:35,081 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 0 setores
+2026-01-09 08:30:35,082 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 08:30:35,084 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 08:30:35,084 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 08:30:35,085 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 08:30:35,085 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 08:30:35,085 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 08:30:35,086 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-09 08:30:35,086 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 08:30:35,238 | INFO | 🔥 CURY3: Score 71 (próximo de setup)
+2026-01-09 08:30:35,920 | INFO | 🔥 CSMG3: Score 71 (próximo de setup)
+2026-01-09 08:30:36,148 | INFO | 🔥 CEAB3: Score 71 (próximo de setup)
+2026-01-09 08:30:36,961 | INFO | 🔥 CSNA3: Score 51 (próximo de setup)
+2026-01-09 08:30:37,068 | INFO | 🔥 AURA33: Score 71 (próximo de setup)
+2026-01-09 08:30:37,148 | INFO | 🔥 BPAN4: Score 71 (próximo de setup)
+2026-01-09 08:30:37,271 | INFO | 🔥 SUZB3: Score 71 (próximo de setup)
+2026-01-09 08:30:39,265 | INFO | 🔥 USIM3: Score 51 (próximo de setup)
+2026-01-09 08:30:39,772 | INFO | 🔥 GOAU4: Score 51 (próximo de setup)
+2026-01-09 08:30:39,783 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-09 08:30:39,786 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-09 08:30:40,010 | INFO | ✅ Matriz de correlação atualizada
+2026-01-09 08:30:40,011 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-09 08:30:40,039 | INFO | 
+============================================================
+2026-01-09 08:30:40,040 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-09 08:30:40,042 | INFO | ============================================================
+2026-01-09 08:30:40,043 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-09 08:30:40,044 | INFO | ✅ Cooldown progressivo: True
+2026-01-09 08:30:40,044 | INFO | ✅ Máx posições: 8
+2026-01-09 08:30:40,045 | INFO | ✅ Máx por setor: 2
+2026-01-09 08:30:40,045 | INFO | ✅ Máx bancos: 2
+2026-01-09 08:30:40,045 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-09 08:30:40,046 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-09 08:30:40,047 | INFO | ============================================================
+
+2026-01-09 08:30:40,048 | INFO | 📅 Ciclo de trading iniciado: 09/01/2026
+2026-01-09 08:30:40,049 | INFO | 🧵 Iniciando threads de execução...
+2026-01-09 08:30:40,049 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-09 08:30:40,050 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-09 08:30:40,050 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-09 08:30:40,051 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-09 08:30:40,150 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-09 08:30:40,151 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 08:30:40,158 | INFO | ML retreinado diariamente
+2026-01-09 08:30:40,158 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-09 08:30:40,161 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-09 08:30:40,162 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-09 08:30:40,216 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-09 08:30:40,272 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-09 08:30:40,274 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-09 08:30:40,274 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-09 08:30:40,320 | INFO | 🚀 Total de 7 threads ativas
+2026-01-09 08:30:40,849 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2026-01-09 08:30:41,265 | INFO | 🖥️ Painel de controle ativo
+2026-01-09 09:59:51,830 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 09:59:51,915 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-09 09:59:51,930 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-09 09:59:51,931 | INFO | 📦 Verificando estado diário anterior...
+2026-01-09 09:59:51,932 | INFO | 🔄 Estado anterior era de 2026-01-08 - Iniciando novo dia
+2026-01-09 09:59:51,933 | INFO | 🆕 Iniciando com estado limpo (novo dia)
+2026-01-09 09:59:51,933 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-09 09:59:51,977 | INFO | 📉 Dados de loss streak carregados.
+2026-01-09 09:59:51,982 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 09:59:51,984 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-09 09:59:51,987 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 0 setores
+2026-01-09 09:59:51,996 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 09:59:51,998 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 09:59:51,999 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 09:59:52,000 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 09:59:52,001 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 09:59:52,002 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 09:59:52,003 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-09 09:59:52,003 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 09:59:52,212 | INFO | 🔥 CURY3: Score 71 (próximo de setup)
+2026-01-09 09:59:52,335 | INFO | 🔥 CSMG3: Score 71 (próximo de setup)
+2026-01-09 09:59:52,545 | INFO | 🔥 CEAB3: Score 71 (próximo de setup)
+2026-01-09 09:59:53,209 | INFO | 🔥 CSNA3: Score 51 (próximo de setup)
+2026-01-09 09:59:53,429 | INFO | 🔥 AURA33: Score 71 (próximo de setup)
+2026-01-09 09:59:53,517 | INFO | 🔥 BPAN4: Score 71 (próximo de setup)
+2026-01-09 09:59:53,645 | INFO | 🔥 SUZB3: Score 71 (próximo de setup)
+2026-01-09 09:59:54,212 | INFO | 🔥 USIM3: Score 51 (próximo de setup)
+2026-01-09 09:59:54,399 | INFO | 🔥 GOAU4: Score 51 (próximo de setup)
+2026-01-09 09:59:54,419 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-09 09:59:54,420 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-09 09:59:54,598 | INFO | ✅ Matriz de correlação atualizada
+2026-01-09 09:59:54,599 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-09 09:59:54,631 | INFO | 
+============================================================
+2026-01-09 09:59:54,644 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-09 09:59:54,646 | INFO | ============================================================
+2026-01-09 09:59:54,647 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-09 09:59:54,647 | INFO | ✅ Cooldown progressivo: True
+2026-01-09 09:59:54,648 | INFO | ✅ Máx posições: 8
+2026-01-09 09:59:54,650 | INFO | ✅ Máx por setor: 2
+2026-01-09 09:59:54,650 | INFO | ✅ Máx bancos: 2
+2026-01-09 09:59:54,651 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-09 09:59:54,651 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-09 09:59:54,652 | INFO | ============================================================
+
+2026-01-09 09:59:54,652 | INFO | 📅 Ciclo de trading iniciado: 09/01/2026
+2026-01-09 09:59:54,653 | INFO | 🧵 Iniciando threads de execução...
+2026-01-09 09:59:54,669 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-09 09:59:54,718 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-09 09:59:54,719 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-09 09:59:54,730 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-09 09:59:54,734 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 09:59:54,734 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-09 09:59:54,737 | INFO | ML retreinado diariamente
+2026-01-09 09:59:54,737 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-09 09:59:54,766 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-09 09:59:54,766 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-09 09:59:54,865 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-09 09:59:54,958 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-09 09:59:54,960 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-09 09:59:54,961 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-09 09:59:55,042 | INFO | 🚀 Total de 7 threads ativas
+2026-01-09 09:59:55,991 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2026-01-09 09:59:56,391 | INFO | 🖥️ Painel de controle ativo
+2026-01-09 14:11:48,780 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 14:11:48,864 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-09 14:11:48,877 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-09 14:11:48,877 | INFO | 📦 Verificando estado diário anterior...
+2026-01-09 14:11:48,897 | INFO | ============================================================
+2026-01-09 14:11:48,897 | INFO | ✅ ESTADO DIÁRIO RESTAURADO COM SUCESSO
+2026-01-09 14:11:48,897 | INFO | ============================================================
+2026-01-09 14:11:48,898 | INFO | 📅 Data: 2026-01-09
+2026-01-09 14:11:48,898 | INFO | 💰 Equity Inicial: R$987,305.26
+2026-01-09 14:11:48,898 | INFO | 📈 Max Equity: R$987,305.26
+2026-01-09 14:11:48,898 | INFO | 📊 Símbolos com trades: 0
+2026-01-09 14:11:48,898 | INFO | ⏱️ Cooldowns ativos: 0
+2026-01-09 14:11:48,899 | INFO | 📍 Posições salvas: 0
+2026-01-09 14:11:48,899 | INFO | 🔄 Ciclo completo: Não
+2026-01-09 14:11:48,899 | INFO | ============================================================
+2026-01-09 14:11:48,899 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-09 14:11:48,901 | INFO | 📉 Dados de loss streak carregados.
+2026-01-09 14:11:48,902 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 14:11:48,902 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-09 14:11:48,930 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 0 setores
+2026-01-09 14:11:48,934 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 14:11:48,952 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 14:11:48,952 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 14:11:48,953 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 14:11:48,953 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 14:11:48,954 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 14:11:48,954 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-09 14:11:48,957 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 14:11:49,090 | INFO | 🔥 CURY3: Score 71 (próximo de setup)
+2026-01-09 14:11:49,131 | INFO | 🔥 CSMG3: Score 51 (próximo de setup)
+2026-01-09 14:11:49,167 | INFO | 🔥 CAML3: Score 71 (próximo de setup)
+2026-01-09 14:11:49,213 | INFO | 🔥 CEAB3: Score 71 (próximo de setup)
+2026-01-09 14:11:49,250 | INFO | 🔥 BBDC4: Score 71 (próximo de setup)
+2026-01-09 14:11:49,291 | INFO | 🔥 CSNA3: Score 71 (próximo de setup)
+2026-01-09 14:11:49,335 | INFO | 🔥 AURA33: Score 71 (próximo de setup)
+2026-01-09 14:11:49,376 | INFO | 🔥 BPAN4: Score 71 (próximo de setup)
+2026-01-09 14:11:49,418 | INFO | 🔥 SUZB3: Score 51 (próximo de setup)
+2026-01-09 14:11:49,595 | INFO | 🔥 USIM3: Score 71 (próximo de setup)
+2026-01-09 14:11:49,702 | INFO | 🔥 GOAU4: Score 71 (próximo de setup)
+2026-01-09 14:11:49,717 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-09 14:11:49,717 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-09 14:11:49,728 | INFO | ✅ Matriz de correlação atualizada
+2026-01-09 14:11:49,729 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-09 14:11:49,745 | INFO | 
+============================================================
+2026-01-09 14:11:49,746 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-09 14:11:49,748 | INFO | ============================================================
+2026-01-09 14:11:49,748 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-09 14:11:49,749 | INFO | ✅ Cooldown progressivo: True
+2026-01-09 14:11:49,749 | INFO | ✅ Máx posições: 8
+2026-01-09 14:11:49,750 | INFO | ✅ Máx por setor: 2
+2026-01-09 14:11:49,750 | INFO | ✅ Máx bancos: 2
+2026-01-09 14:11:49,751 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-09 14:11:49,751 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-09 14:11:49,751 | INFO | ============================================================
+
+2026-01-09 14:11:49,752 | INFO | 📅 Ciclo de trading iniciado: 09/01/2026
+2026-01-09 14:11:49,752 | INFO | 🧵 Iniciando threads de execução...
+2026-01-09 14:11:49,753 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-09 14:11:49,759 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-09 14:11:49,759 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-09 14:11:49,760 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-09 14:11:49,763 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 14:11:49,763 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-09 14:11:49,766 | INFO | ML retreinado diariamente
+2026-01-09 14:11:49,766 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-09 14:11:49,768 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-09 14:11:49,768 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-09 14:11:49,770 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-09 14:11:49,786 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-09 14:11:49,797 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-09 14:11:49,799 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-09 14:11:49,800 | INFO | 🚀 Total de 7 threads ativas
+2026-01-09 14:11:49,894 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2026-01-09 14:11:50,615 | INFO | 🖥️ Painel de controle ativo
+2026-01-09 14:22:07,236 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 14:22:07,239 | INFO | 📊 R:R Dinâmico | Regime: RISK_ON | Base: 1.25 | Vol×: 1.00 | DD×: 1.00 | Final: 2.50
+2026-01-09 16:00:53,841 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 16:00:54,012 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-09 16:00:54,049 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-09 16:00:54,050 | INFO | 📊 Executando análise retrospectiva inicial (backtest)...
+2026-01-09 16:00:54,057 | INFO | 📦 Verificando estado diário anterior...
+2026-01-09 16:00:54,128 | INFO | ============================================================
+2026-01-09 16:00:54,129 | INFO | ✅ ESTADO DIÁRIO RESTAURADO COM SUCESSO
+2026-01-09 16:00:54,129 | INFO | ============================================================
+2026-01-09 16:00:54,130 | INFO | 📅 Data: 2026-01-09
+2026-01-09 16:00:54,130 | INFO | 💰 Equity Inicial: R$987,305.26
+2026-01-09 16:00:54,131 | INFO | 📈 Max Equity: R$987,305.26
+2026-01-09 16:00:54,132 | INFO | 📊 Símbolos com trades: 0
+2026-01-09 16:00:54,132 | INFO | ⏱️ Cooldowns ativos: 0
+2026-01-09 16:00:54,132 | INFO | 📍 Posições salvas: 0
+2026-01-09 16:00:54,133 | INFO | 🔄 Ciclo completo: Não
+2026-01-09 16:00:54,133 | INFO | ============================================================
+2026-01-09 16:00:54,133 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-09 16:00:54,173 | INFO | 📉 Dados de loss streak carregados.
+2026-01-09 16:00:54,175 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 16:00:54,176 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-09 16:00:54,217 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 0 setores
+2026-01-09 16:00:54,235 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 16:00:54,241 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 16:00:54,241 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 16:00:54,243 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 16:00:54,244 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 16:00:54,244 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 16:00:54,245 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-09 16:00:54,245 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 16:00:54,472 | INFO | 🔥 CURY3: Score 71 (próximo de setup)
+2026-01-09 16:00:54,628 | INFO | 🔥 CSMG3: Score 71 (próximo de setup)
+2026-01-09 16:00:54,816 | INFO | 🔥 CAML3: Score 71 (próximo de setup)
+2026-01-09 16:00:55,152 | INFO | 🔥 CEAB3: Score 71 (próximo de setup)
+2026-01-09 16:00:55,293 | INFO | 🔥 BBDC4: Score 71 (próximo de setup)
+2026-01-09 16:00:55,400 | INFO | 🔥 CSNA3: Score 51 (próximo de setup)
+2026-01-09 16:00:55,665 | INFO | 🔥 AURA33: Score 71 (próximo de setup)
+2026-01-09 16:00:55,831 | INFO | 🔥 BPAN4: Score 71 (próximo de setup)
+2026-01-09 16:00:56,005 | INFO | 🔥 SUZB3: Score 51 (próximo de setup)
+2026-01-09 16:00:56,266 | INFO | 🔥 CSAN3: Score 71 (próximo de setup)
+2026-01-09 16:00:56,383 | INFO | 🔥 FRAS3: Score 71 (próximo de setup)
+2026-01-09 16:00:56,865 | INFO | 🔥 USIM3: Score 71 (próximo de setup)
+2026-01-09 16:00:57,382 | INFO | 🔥 GOAU4: Score 51 (próximo de setup)
+2026-01-09 16:00:57,398 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-09 16:00:57,399 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-09 16:00:57,595 | INFO | ✅ Matriz de correlação atualizada
+2026-01-09 16:00:57,595 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-09 16:00:57,605 | INFO | 
+============================================================
+2026-01-09 16:00:57,605 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-09 16:00:57,606 | INFO | ============================================================
+2026-01-09 16:00:57,608 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-09 16:00:57,608 | INFO | ✅ Cooldown progressivo: True
+2026-01-09 16:00:57,609 | INFO | ✅ Máx posições: 8
+2026-01-09 16:00:57,610 | INFO | ✅ Máx por setor: 2
+2026-01-09 16:00:57,610 | INFO | ✅ Máx bancos: 2
+2026-01-09 16:00:57,611 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-09 16:00:57,611 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-09 16:00:57,611 | INFO | ============================================================
+
+2026-01-09 16:00:57,612 | INFO | 📅 Ciclo de trading iniciado: 09/01/2026
+2026-01-09 16:00:57,612 | INFO | 🧵 Iniciando threads de execução...
+2026-01-09 16:00:57,612 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-09 16:00:57,613 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-09 16:00:57,613 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-09 16:00:57,614 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-09 16:00:57,761 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-09 16:00:57,761 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 16:00:57,775 | INFO | ML retreinado diariamente
+2026-01-09 16:00:57,775 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-09 16:00:57,777 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-09 16:00:57,777 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-09 16:00:57,844 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-09 16:00:57,902 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-09 16:00:57,907 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-09 16:00:57,908 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-09 16:00:58,005 | INFO | 🚀 Total de 7 threads ativas
+2026-01-09 16:00:59,129 | INFO | 🖥️ Painel de controle ativo
+2026-01-09 16:00:59,131 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:00:59,291 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2026-01-09 16:01:04,225 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:01:09,228 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:01:14,229 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:01:19,231 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:01:24,232 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:01:29,347 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:01:34,350 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:01:39,354 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:01:44,355 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:01:49,357 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:01:54,358 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:06:22,849 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 16:06:22,917 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-09 16:06:22,930 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-09 16:06:22,936 | INFO | 📊 Executando análise retrospectiva inicial (backtest)...
+2026-01-09 16:06:22,937 | INFO | 📦 Verificando estado diário anterior...
+2026-01-09 16:06:22,945 | INFO | ============================================================
+2026-01-09 16:06:22,947 | INFO | ✅ ESTADO DIÁRIO RESTAURADO COM SUCESSO
+2026-01-09 16:06:22,949 | INFO | ============================================================
+2026-01-09 16:06:22,950 | INFO | 📅 Data: 2026-01-09
+2026-01-09 16:06:22,950 | INFO | 💰 Equity Inicial: R$987,305.26
+2026-01-09 16:06:22,950 | INFO | 📈 Max Equity: R$987,305.26
+2026-01-09 16:06:22,951 | INFO | 📊 Símbolos com trades: 0
+2026-01-09 16:06:22,951 | INFO | ⏱️ Cooldowns ativos: 0
+2026-01-09 16:06:22,951 | INFO | 📍 Posições salvas: 0
+2026-01-09 16:06:22,951 | INFO | 🔄 Ciclo completo: Não
+2026-01-09 16:06:22,952 | INFO | ============================================================
+2026-01-09 16:06:22,952 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-09 16:06:22,953 | INFO | 📉 Dados de loss streak carregados.
+2026-01-09 16:06:22,953 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 16:06:22,954 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-09 16:06:22,966 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 0 setores
+2026-01-09 16:06:22,969 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 16:06:22,978 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 16:06:22,981 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 16:06:22,984 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 16:06:22,985 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 16:06:22,986 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 16:06:22,986 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-09 16:06:22,986 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 16:06:23,254 | INFO | 🔥 CURY3: Score 71 (próximo de setup)
+2026-01-09 16:06:23,337 | INFO | 🔥 CSMG3: Score 71 (próximo de setup)
+2026-01-09 16:06:23,446 | INFO | 🔥 CAML3: Score 71 (próximo de setup)
+2026-01-09 16:06:23,579 | INFO | 🔥 CEAB3: Score 71 (próximo de setup)
+2026-01-09 16:06:23,817 | INFO | 🔥 CSNA3: Score 71 (próximo de setup)
+2026-01-09 16:06:23,899 | INFO | 🔥 AURA33: Score 71 (próximo de setup)
+2026-01-09 16:06:24,013 | INFO | 🔥 BPAN4: Score 71 (próximo de setup)
+2026-01-09 16:06:24,135 | INFO | 🔥 SUZB3: Score 51 (próximo de setup)
+2026-01-09 16:06:24,273 | INFO | 🔥 CSAN3: Score 71 (próximo de setup)
+2026-01-09 16:06:24,827 | INFO | 🔥 USIM3: Score 71 (próximo de setup)
+2026-01-09 16:06:25,017 | INFO | 🔥 GOAU4: Score 71 (próximo de setup)
+2026-01-09 16:06:25,033 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-09 16:06:25,036 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-09 16:06:25,101 | INFO | ✅ Matriz de correlação atualizada
+2026-01-09 16:06:25,103 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-09 16:06:25,117 | INFO | 
+============================================================
+2026-01-09 16:06:25,130 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-09 16:06:25,131 | INFO | ============================================================
+2026-01-09 16:06:25,132 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-09 16:06:25,133 | INFO | ✅ Cooldown progressivo: True
+2026-01-09 16:06:25,137 | INFO | ✅ Máx posições: 8
+2026-01-09 16:06:25,149 | INFO | ✅ Máx por setor: 2
+2026-01-09 16:06:25,150 | INFO | ✅ Máx bancos: 2
+2026-01-09 16:06:25,156 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-09 16:06:25,167 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-09 16:06:25,185 | INFO | ============================================================
+
+2026-01-09 16:06:25,188 | INFO | 📅 Ciclo de trading iniciado: 09/01/2026
+2026-01-09 16:06:25,202 | INFO | 🧵 Iniciando threads de execução...
+2026-01-09 16:06:25,204 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-09 16:06:25,220 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-09 16:06:25,221 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-09 16:06:25,235 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-09 16:06:25,252 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 16:06:25,252 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-09 16:06:25,301 | INFO | ML retreinado diariamente
+2026-01-09 16:06:25,301 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-09 16:06:25,320 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-09 16:06:25,320 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-09 16:06:25,352 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-09 16:06:25,368 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-09 16:06:25,384 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-09 16:06:25,384 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-09 16:06:25,396 | INFO | 🚀 Total de 7 threads ativas
+2026-01-09 16:06:25,723 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2026-01-09 16:06:26,481 | INFO | 🖥️ Painel de controle ativo
+2026-01-09 16:06:26,500 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:06:31,511 | ERROR | ❌ Erro na UI (Painel): name 'root_logger' is not defined - O Bot continua rodando em background.
+2026-01-09 16:13:04,244 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 16:13:04,351 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-09 16:13:04,377 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-09 16:13:04,379 | INFO | 📊 Executando análise retrospectiva inicial (backtest)...
+2026-01-09 16:13:04,384 | INFO | 📦 Verificando estado diário anterior...
+2026-01-09 16:13:04,387 | INFO | ============================================================
+2026-01-09 16:13:04,388 | INFO | ✅ ESTADO DIÁRIO RESTAURADO COM SUCESSO
+2026-01-09 16:13:04,389 | INFO | ============================================================
+2026-01-09 16:13:04,390 | INFO | 📅 Data: 2026-01-09
+2026-01-09 16:13:04,390 | INFO | 💰 Equity Inicial: R$987,305.26
+2026-01-09 16:13:04,391 | INFO | 📈 Max Equity: R$987,305.26
+2026-01-09 16:13:04,392 | INFO | 📊 Símbolos com trades: 0
+2026-01-09 16:13:04,394 | INFO | ⏱️ Cooldowns ativos: 0
+2026-01-09 16:13:04,398 | INFO | 📍 Posições salvas: 0
+2026-01-09 16:13:04,400 | INFO | 🔄 Ciclo completo: Não
+2026-01-09 16:13:04,401 | INFO | ============================================================
+2026-01-09 16:13:04,402 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-09 16:13:04,403 | INFO | 📉 Dados de loss streak carregados.
+2026-01-09 16:13:04,404 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 16:13:04,405 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-09 16:13:04,409 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 0 setores
+2026-01-09 16:13:04,413 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 16:13:04,415 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 16:13:04,415 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 16:13:04,416 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 16:13:04,417 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 16:13:04,417 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 16:13:04,417 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-09 16:13:04,418 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 16:13:04,518 | INFO | 🔥 CURY3: Score 71 (próximo de setup)
+2026-01-09 16:13:04,559 | INFO | 🔥 CSMG3: Score 71 (próximo de setup)
+2026-01-09 16:13:04,658 | INFO | 🔥 CAML3: Score 71 (próximo de setup)
+2026-01-09 16:13:04,734 | INFO | 🔥 CEAB3: Score 71 (próximo de setup)
+2026-01-09 16:13:04,847 | INFO | 🔥 CSNA3: Score 71 (próximo de setup)
+2026-01-09 16:13:04,884 | INFO | 🔥 AURA33: Score 71 (próximo de setup)
+2026-01-09 16:13:04,924 | INFO | 🔥 BPAN4: Score 51 (próximo de setup)
+2026-01-09 16:13:04,969 | INFO | 🔥 SUZB3: Score 51 (próximo de setup)
+2026-01-09 16:13:05,006 | INFO | 🔥 CSAN3: Score 71 (próximo de setup)
+2026-01-09 16:13:05,133 | INFO | 🔥 USIM3: Score 71 (próximo de setup)
+2026-01-09 16:13:05,207 | INFO | 🔥 GOAU4: Score 71 (próximo de setup)
+2026-01-09 16:13:05,280 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-09 16:13:05,286 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-09 16:13:05,301 | INFO | ✅ Matriz de correlação atualizada
+2026-01-09 16:13:05,302 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-09 16:13:05,308 | INFO | 
+============================================================
+2026-01-09 16:13:05,308 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-09 16:13:05,308 | INFO | ============================================================
+2026-01-09 16:13:05,308 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-09 16:13:05,309 | INFO | ✅ Cooldown progressivo: True
+2026-01-09 16:13:05,309 | INFO | ✅ Máx posições: 8
+2026-01-09 16:13:05,309 | INFO | ✅ Máx por setor: 2
+2026-01-09 16:13:05,313 | INFO | ✅ Máx bancos: 2
+2026-01-09 16:13:05,315 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-09 16:13:05,315 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-09 16:13:05,316 | INFO | ============================================================
+
+2026-01-09 16:13:05,316 | INFO | 📅 Ciclo de trading iniciado: 09/01/2026
+2026-01-09 16:13:05,317 | INFO | 🧵 Iniciando threads de execução...
+2026-01-09 16:13:05,317 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-09 16:13:05,318 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-09 16:13:05,318 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-09 16:13:05,319 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-09 16:13:05,479 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-09 16:13:05,481 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 16:13:05,486 | INFO | ML retreinado diariamente
+2026-01-09 16:13:05,486 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-09 16:13:05,488 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-09 16:13:05,488 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-09 16:13:05,491 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-09 16:13:05,500 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-09 16:13:05,501 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-09 16:13:05,502 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-09 16:13:05,507 | INFO | 🚀 Total de 7 threads ativas
+2026-01-09 16:13:05,600 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2026-01-09 16:13:06,347 | INFO | 🖥️ Painel de controle ativo
+2026-01-09 16:39:40,857 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 16:39:40,950 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-09 16:39:40,970 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-09 16:39:40,970 | INFO | 📊 Executando análise retrospectiva inicial (backtest)...
+2026-01-09 16:39:40,979 | INFO | 📦 Verificando estado diário anterior...
+2026-01-09 16:39:40,982 | INFO | ============================================================
+2026-01-09 16:39:40,982 | INFO | ✅ ESTADO DIÁRIO RESTAURADO COM SUCESSO
+2026-01-09 16:39:40,983 | INFO | ============================================================
+2026-01-09 16:39:40,984 | INFO | 📅 Data: 2026-01-09
+2026-01-09 16:39:40,986 | INFO | 💰 Equity Inicial: R$987,305.26
+2026-01-09 16:39:40,986 | INFO | 📈 Max Equity: R$987,305.26
+2026-01-09 16:39:40,986 | INFO | 📊 Símbolos com trades: 0
+2026-01-09 16:39:40,986 | INFO | ⏱️ Cooldowns ativos: 0
+2026-01-09 16:39:40,987 | INFO | 📍 Posições salvas: 0
+2026-01-09 16:39:40,987 | INFO | 🔄 Ciclo completo: Não
+2026-01-09 16:39:40,987 | INFO | ============================================================
+2026-01-09 16:39:40,987 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-09 16:39:40,989 | INFO | 📉 Dados de loss streak carregados.
+2026-01-09 16:39:40,989 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 16:39:40,989 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-09 16:39:40,992 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 0 setores
+2026-01-09 16:39:40,993 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 16:39:40,994 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 16:39:40,994 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 16:39:40,995 | INFO | ✅ Dados anti-chop carregados
+2026-01-09 16:39:40,995 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-09 16:39:40,996 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-09 16:39:40,997 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-09 16:39:40,997 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-09 16:39:41,151 | INFO | 🔥 CURY3: Score 71 (próximo de setup)
+2026-01-09 16:39:41,217 | INFO | 🔥 CSMG3: Score 71 (próximo de setup)
+2026-01-09 16:39:41,510 | INFO | 🔥 CAML3: Score 71 (próximo de setup)
+2026-01-09 16:39:42,479 | INFO | 🔥 CEAB3: Score 71 (próximo de setup)
+2026-01-09 16:39:43,825 | INFO | 🔥 CSNA3: Score 71 (próximo de setup)
+2026-01-09 16:39:44,488 | INFO | 🔥 AURA33: Score 71 (próximo de setup)
+2026-01-09 16:39:44,593 | INFO | 🔥 BPAN4: Score 51 (próximo de setup)
+2026-01-09 16:39:44,655 | INFO | 🔥 SUZB3: Score 51 (próximo de setup)
+2026-01-09 16:39:44,710 | INFO | 🔥 CSAN3: Score 51 (próximo de setup)
+2026-01-09 16:39:45,276 | INFO | 🔥 WEGE3: Score 71 (próximo de setup)
+2026-01-09 16:39:45,747 | INFO | 🔥 GOAU4: Score 71 (próximo de setup)
+2026-01-09 16:39:45,826 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-09 16:39:45,827 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-09 16:39:45,840 | INFO | ✅ Matriz de correlação atualizada
+2026-01-09 16:39:45,841 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-09 16:39:45,847 | INFO | 
+============================================================
+2026-01-09 16:39:45,861 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-09 16:39:45,877 | INFO | ============================================================
+2026-01-09 16:39:45,893 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-09 16:39:45,900 | INFO | ✅ Cooldown progressivo: True
+2026-01-09 16:39:45,908 | INFO | ✅ Máx posições: 8
+2026-01-09 16:39:45,914 | INFO | ✅ Máx por setor: 2
+2026-01-09 16:39:45,918 | INFO | ✅ Máx bancos: 2
+2026-01-09 16:39:45,919 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-09 16:39:45,937 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-09 16:39:45,970 | INFO | ============================================================
+
+2026-01-09 16:39:45,994 | INFO | 📅 Ciclo de trading iniciado: 09/01/2026
+2026-01-09 16:39:46,008 | INFO | 🧵 Iniciando threads de execução...
+2026-01-09 16:39:46,020 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-09 16:39:46,043 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-09 16:39:46,044 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-09 16:39:46,062 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-09 16:39:46,323 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-09 16:39:46,324 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 16:39:46,366 | INFO | ML retreinado diariamente
+2026-01-09 16:39:46,366 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-09 16:39:46,377 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-09 16:39:46,377 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-09 16:39:46,438 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-09 16:39:46,536 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-09 16:39:46,549 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-09 16:39:46,549 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-09 16:39:46,552 | INFO | 🚀 Total de 7 threads ativas
+2026-01-09 16:39:47,958 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2026-01-09 16:39:47,997 | INFO | 🚀 Iniciando Dashboard via Streamlit...
+2026-01-09 16:39:51,138 | INFO | ✅ Dashboard iniciado com sucesso!
+2026-01-09 16:40:56,488 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 16:44:45,935 | INFO | ✅ news_calendar.py carregado com sucesso
+2026-01-09 16:44:45,960 | INFO | 📊 Histórico ML carregado: 4 trades
+2026-01-09 16:44:45,963 | INFO | 🧠 Q-Table carregada
+2026-01-09 16:44:46,441 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 16:44:48,009 | INFO | ✅ Redis conectado - cache ativado
+2026-01-09 16:44:48,051 | INFO | 📊 Histórico ML carregado: 4 trades
+2026-01-09 16:44:48,054 | INFO | 🧠 Q-Table carregada
+2026-01-09 16:44:48,080 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 16:49:46,906 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 16:52:54,755 | INFO | ✅ news_calendar.py carregado com sucesso
+2026-01-09 16:52:54,801 | INFO | 📊 Histórico ML carregado: 4 trades
+2026-01-09 16:52:54,809 | INFO | 🧠 Q-Table carregada
+2026-01-09 16:52:56,913 | INFO | ✅ Redis conectado - cache ativado
+2026-01-09 16:53:01,802 | INFO | 📊 Histórico ML carregado: 4 trades
+2026-01-09 16:53:01,845 | INFO | 🧠 Q-Table carregada
+2026-01-09 16:53:02,455 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 16:54:09,784 | INFO | ✅ news_calendar.py carregado com sucesso
+2026-01-09 16:54:10,004 | INFO | 📊 Histórico ML carregado: 4 trades
+2026-01-09 16:54:10,190 | INFO | 🧠 Q-Table carregada
+2026-01-09 16:54:12,564 | INFO | ✅ Redis conectado - cache ativado
+2026-01-09 16:54:16,355 | INFO | 📊 Histórico ML carregado: 4 trades
+2026-01-09 16:54:16,421 | INFO | 🧠 Q-Table carregada
+2026-01-09 16:54:17,097 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 16:54:46,478 | WARNING | ⛔ Trading PAUSADO globalmente: ⏰ Fim do horário seguro (fechamento em breve)
+2026-01-09 16:54:47,339 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 16:54:53,049 | INFO | 🔥 CURY3: Score 71 (próximo de setup)
+2026-01-09 16:54:55,192 | INFO | 🔥 CSMG3: Score 71 (próximo de setup)
+2026-01-09 16:54:56,329 | INFO | 🔥 CAML3: Score 51 (próximo de setup)
+2026-01-09 16:54:57,348 | INFO | 🔥 CEAB3: Score 71 (próximo de setup)
+2026-01-09 16:55:02,257 | INFO | 🔥 AURA33: Score 71 (próximo de setup)
+2026-01-09 16:55:03,197 | INFO | 🔥 BPAN4: Score 71 (próximo de setup)
+2026-01-09 16:55:04,289 | INFO | 🔥 SUZB3: Score 51 (próximo de setup)
+2026-01-09 16:55:05,576 | INFO | 🔥 CSAN3: Score 51 (próximo de setup)
+2026-01-09 16:55:12,356 | INFO | 🔥 GOAU4: Score 71 (próximo de setup)
+2026-01-09 16:55:18,142 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-09 16:55:18,967 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-09 16:55:19,161 | WARNING | ⏰ INICIANDO FECHAMENTO EOD | Tempo até deadline: -10.3 min
+2026-01-09 16:55:19,238 | INFO | ✅ Todas as posições fechadas!
+2026-01-09 16:55:19,272 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-09 16:55:22,350 | INFO | 📊 Histórico ML carregado: 4 trades
+2026-01-09 16:55:22,802 | INFO | 🧠 Q-Table carregada
+2026-01-09 16:55:27,040 | INFO | ✅ Relatório enviado com sucesso
+2026-01-09 16:55:27,120 | INFO | 
+📋 RELATÓRIO DE REJEIÇÕES DIÁRIAS
+===================================
+• BPAN4  | 16:39:44 | Score:  51 | Volume institucional insuficiente
+• SUZB3  | 16:55:04 | Score:  51 | Aguardando correção (RSI Esticado)
+• CSAN3  | 16:55:05 | Score:  51 | Aguardando correção (RSI Esticado)
+• CAML3  | 16:54:56 | Score:  51 | Aguardando correção (RSI Esticado)
+• BBDC4  | 16:54:58 | Score:  21 | Sem força de tendência (ADX Baixo)
+• FRAS3  | 16:55:07 | Score:  21 | Sem força de tendência (ADX Baixo)
+• USIM3  | 16:55:10 | Score:  21 | Volume institucional insuficiente
+• CSNA3  | 16:55:00 | Score:  21 | Volume institucional insuficiente
+• WEGE3  | 16:55:11 | Score:  21 | Sem força de tendência (ADX Baixo)
+• MDNE3  | 16:55:09 | Score:   1 | Volume institucional insuficiente
+2026-01-09 16:55:27,849 | INFO | 💾 Loss streak salvo.
+2026-01-09 16:55:28,836 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-09 16:56:36,266 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-09 16:59:47,640 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 17:04:48,181 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 17:09:48,679 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 17:09:57,222 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2026-01-09 17:10:31,170 | WARNING | ⚠️ CURY3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:31,673 | WARNING | ⚠️ CURY3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:32,033 | WARNING | ⚠️ CSMG3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:32,539 | WARNING | ⚠️ CSMG3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:32,609 | WARNING | ⚠️ CAML3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:33,123 | WARNING | ⚠️ CAML3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:33,135 | WARNING | ⚠️ CEAB3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:33,638 | WARNING | ⚠️ CEAB3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:33,706 | WARNING | ⚠️ BBDC4 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:34,264 | WARNING | ⚠️ BBDC4 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:34,281 | WARNING | ⚠️ CSNA3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:34,808 | WARNING | ⚠️ CSNA3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:34,920 | WARNING | ⚠️ AURA33 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:35,508 | WARNING | ⚠️ AURA33 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:35,564 | WARNING | ⚠️ BPAN4 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:36,131 | WARNING | ⚠️ BPAN4 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:36,177 | WARNING | ⚠️ SUZB3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:36,679 | WARNING | ⚠️ SUZB3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:36,731 | WARNING | ⚠️ CSAN3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:37,424 | WARNING | ⚠️ CSAN3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:37,480 | WARNING | ⚠️ FRAS3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:38,165 | WARNING | ⚠️ FRAS3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:38,245 | WARNING | ⚠️ MDNE3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:38,794 | WARNING | ⚠️ MDNE3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:38,811 | WARNING | ⚠️ USIM3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:39,344 | WARNING | ⚠️ USIM3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:39,363 | WARNING | ⚠️ WEGE3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:39,907 | WARNING | ⚠️ WEGE3 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:40,063 | WARNING | ⚠️ GOAU4 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:40,659 | WARNING | ⚠️ GOAU4 não pôde ser selecionado no Market Watch.
+2026-01-09 17:10:46,107 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-09 17:10:46,437 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-09 17:10:46,555 | INFO | 💾 Loss streak salvo.
+2026-01-09 17:10:46,807 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-09 17:14:49,731 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder
+2026-01-09 17:19:49,785 | WARNING | Símbolo IBOV não encontrado - usando volume placeholder

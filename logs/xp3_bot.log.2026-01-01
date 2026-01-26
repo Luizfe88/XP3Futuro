@@ -1,0 +1,60 @@
+2026-01-01 18:16:11,589 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-01 18:16:11,652 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-01 18:16:24,343 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-01 18:16:24,345 | INFO | 📦 Verificando estado diário anterior...
+2026-01-01 18:16:24,423 | INFO | 🔄 Estado anterior era de 2025-12-31 - Iniciando novo dia
+2026-01-01 18:16:24,423 | INFO | 🆕 Iniciando com estado limpo (novo dia)
+2026-01-01 18:16:24,424 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-01 18:16:24,442 | INFO | 📉 Dados de loss streak carregados.
+2026-01-01 18:16:24,442 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-01 18:16:24,453 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-01 18:16:24,489 | INFO | 🧠 Pesos adaptativos carregados com sucesso.
+2026-01-01 18:16:24,506 | INFO | ✅ Dados anti-chop carregados
+2026-01-01 18:16:24,507 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-01 18:16:24,507 | INFO | ✅ Dados anti-chop carregados
+2026-01-01 18:16:24,508 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-01 18:16:24,508 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-01 18:16:24,508 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2026-01-01 18:16:28,721 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-01 18:16:28,722 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-01 18:16:28,931 | INFO | ✅ Matriz de correlação atualizada
+2026-01-01 18:16:28,931 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-01 18:16:28,938 | INFO | 
+============================================================
+2026-01-01 18:16:28,938 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-01 18:16:28,939 | INFO | ============================================================
+2026-01-01 18:16:28,939 | INFO | ✅ Cooldown após SL: 120 min
+2026-01-01 18:16:28,939 | INFO | ✅ Cooldown progressivo: True
+2026-01-01 18:16:28,940 | INFO | ✅ Máx posições: 8
+2026-01-01 18:16:28,940 | INFO | ✅ Máx por setor: 2
+2026-01-01 18:16:28,940 | INFO | ✅ Máx bancos: 2
+2026-01-01 18:16:28,941 | INFO | ✅ ADX mínimo (abertura): 15
+2026-01-01 18:16:28,941 | INFO | ✅ ADX mínimo (intraday): 12
+2026-01-01 18:16:28,942 | INFO | ============================================================
+
+2026-01-01 18:16:28,944 | INFO | 📅 Ciclo de trading iniciado: 01/01/2026
+2026-01-01 18:16:28,944 | INFO | 🧵 Iniciando threads de execução...
+2026-01-01 18:16:28,945 | INFO |    -> Thread 'TelegramPolling' adicionada (/lucro, /status ativados)
+2026-01-01 18:16:28,947 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-01 18:16:28,947 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-01 18:16:28,947 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-01 18:16:28,949 | WARNING | ⏰ INICIANDO FECHAMENTO EOD | Tempo até deadline: -91.5 min
+2026-01-01 18:16:28,949 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-01 18:16:28,950 | INFO | ✅ Todas as posições fechadas!
+2026-01-01 18:16:28,950 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-01 18:16:28,951 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-01 18:16:28,952 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-01 18:16:28,955 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-01 18:16:28,956 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-01 18:16:29,087 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-01 18:16:29,183 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-01 18:16:29,189 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-01 18:16:29,287 | INFO | 🚀 Total de 7 threads ativas
+2026-01-01 18:16:30,490 | INFO | 🖥️ Painel de controle ativo
+2026-01-01 18:16:31,012 | INFO | ✅ Relatório enviado com sucesso
+2026-01-01 18:16:31,013 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2026-01-01 18:16:31,014 | INFO | ✅ Relatório enviado com sucesso
+2026-01-01 18:16:31,020 | INFO | 💾 Loss streak salvo.
+2026-01-01 18:16:31,021 | INFO | 💾 Loss streak salvo.
+2026-01-01 18:17:01,041 | INFO | 💾 Loss streak salvo.
+2026-01-01 18:17:01,196 | INFO | 💾 Loss streak salvo.

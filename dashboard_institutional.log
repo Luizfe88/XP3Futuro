@@ -1,0 +1,660 @@
+2026-01-11 21:22:54,022 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-11 21:22:54,878 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-11 21:22:54,879 - ml - INFO - 🧠 Q-Table carregada
+2026-01-11 21:22:56,962 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-11 21:22:56,965 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-11 21:22:56,967 - utils - INFO - ✅ Limites diários carregados
+2026-01-11 21:22:56,980 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-11 21:22:56,981 - ml - INFO - 🧠 Q-Table carregada
+2026-01-11 22:05:22,729 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-11 22:05:23,631 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-11 22:05:23,632 - ml - INFO - 🧠 Q-Table carregada
+2026-01-11 22:05:25,706 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-11 22:05:25,709 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-11 22:05:25,711 - utils - INFO - ✅ Limites diários carregados
+2026-01-11 22:05:25,727 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-11 22:05:25,728 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 10:24:03,524 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-12 10:24:22,419 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 10:24:22,424 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 10:24:24,579 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-12 10:24:24,581 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-12 10:24:24,581 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-12 10:24:24,689 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 10:24:24,690 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 11:25:19,203 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-12 11:25:26,977 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 11:25:26,979 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 11:25:29,417 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-12 11:25:29,418 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-12 11:25:29,419 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-12 11:25:29,451 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 11:25:29,452 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 11:30:14,847 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-12 11:30:18,021 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 11:30:18,023 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 11:30:20,178 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-12 11:30:20,179 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-12 11:30:20,180 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-12 11:30:21,331 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 11:30:21,344 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 15:00:00,811 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-12 15:00:03,954 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 15:00:03,957 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 15:00:08,170 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-12 15:00:08,171 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-12 15:00:08,172 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-12 15:00:08,239 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 15:00:08,242 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 15:17:03,776 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-12 15:17:06,002 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 15:17:06,003 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 15:17:08,291 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-12 15:17:08,292 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-12 15:17:08,293 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-12 15:17:09,441 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 15:17:09,442 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 16:32:22,054 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-12 16:32:24,860 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 16:32:24,864 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 16:32:27,011 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-12 16:32:27,012 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-12 16:32:27,013 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-12 16:32:27,382 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 16:32:27,383 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 16:46:04,420 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-12 16:46:06,093 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 16:46:06,096 - ml - INFO - 🧠 Q-Table carregada
+2026-01-12 16:46:08,203 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-12 16:46:08,206 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-12 16:46:08,234 - utils - INFO - ✅ Limites diários carregados
+2026-01-12 16:46:08,477 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-12 16:46:08,477 - ml - INFO - 🧠 Q-Table carregada
+2026-01-13 08:31:00,163 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-13 08:31:06,505 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-13 08:31:06,511 - ml - INFO - 🧠 Q-Table carregada
+2026-01-13 08:31:14,630 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-13 08:31:14,856 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-13 08:31:14,856 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-13 08:31:19,434 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-13 08:31:19,435 - ml - INFO - 🧠 Q-Table carregada
+2026-01-13 10:00:34,961 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-13 10:00:36,851 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-13 10:00:36,855 - ml - INFO - 🧠 Q-Table carregada
+2026-01-13 10:00:38,961 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-13 10:00:38,963 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-13 10:00:38,965 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-13 10:00:43,431 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-13 10:00:43,436 - ml - INFO - 🧠 Q-Table carregada
+2026-01-13 15:18:15,907 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-13 15:18:17,014 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-13 15:18:17,015 - ml - INFO - 🧠 Q-Table carregada
+2026-01-13 15:18:19,100 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-13 15:18:19,101 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-13 15:18:19,101 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-13 15:18:19,264 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-13 15:18:19,264 - ml - INFO - 🧠 Q-Table carregada
+2026-01-13 15:48:04,419 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-13 15:48:05,333 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-13 15:48:05,334 - ml - INFO - 🧠 Q-Table carregada
+2026-01-13 15:48:07,395 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-13 15:48:07,397 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-13 15:48:07,398 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-13 15:48:07,415 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-13 15:48:07,416 - ml - INFO - 🧠 Q-Table carregada
+2026-01-13 15:59:09,667 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-13 15:59:10,657 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-13 15:59:10,658 - ml - INFO - 🧠 Q-Table carregada
+2026-01-13 15:59:12,745 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-13 15:59:12,747 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-13 15:59:12,748 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-13 15:59:12,771 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-13 15:59:12,772 - ml - INFO - 🧠 Q-Table carregada
+2026-01-13 16:03:18,330 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-13 16:03:19,289 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-13 16:03:19,290 - ml - INFO - 🧠 Q-Table carregada
+2026-01-13 16:03:21,366 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-13 16:03:21,367 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-13 16:03:21,368 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-13 16:03:21,387 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-13 16:03:21,388 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 10:42:07,662 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-14 10:42:10,138 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 10:42:10,144 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 10:42:12,263 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-14 10:42:12,264 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-14 10:42:12,264 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-14 10:42:12,293 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 10:42:12,295 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 10:56:22,713 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-14 10:56:27,012 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 10:56:27,017 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 10:56:29,654 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-14 10:56:29,656 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-14 10:56:29,657 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-14 10:56:30,551 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 10:56:30,552 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 11:33:53,694 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-14 11:33:54,738 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 11:33:54,739 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 11:33:56,829 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-14 11:33:56,829 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-14 11:33:56,830 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-14 11:33:57,003 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 11:33:57,004 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 11:57:46,772 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-14 11:57:47,840 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 11:57:47,841 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 11:57:49,907 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-14 11:57:49,908 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-14 11:57:49,909 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-14 11:57:50,277 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 11:57:50,278 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 12:20:45,520 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-14 12:20:47,308 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 12:20:47,309 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 12:20:49,386 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-14 12:20:49,387 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-14 12:20:49,388 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-14 12:20:49,412 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 12:20:49,417 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 12:39:57,022 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-14 12:39:58,197 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 12:39:58,198 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 12:40:00,276 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-14 12:40:00,277 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-14 12:40:00,277 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-14 12:40:00,293 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 12:40:00,294 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 12:52:59,811 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-14 12:53:01,061 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 12:53:01,062 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 12:53:03,133 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-14 12:53:03,134 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-14 12:53:03,134 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-14 12:53:03,149 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 12:53:03,150 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 12:57:09,210 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-14 12:57:10,462 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 12:57:10,463 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 12:57:12,550 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-14 12:57:12,551 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-14 12:57:12,551 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-14 12:57:12,569 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 12:57:12,571 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 13:10:11,513 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-14 13:10:12,454 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 13:10:12,455 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 13:10:14,517 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-14 13:10:14,518 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-14 13:10:14,518 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-14 13:10:14,537 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 13:10:14,539 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 14:36:46,808 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-14 14:36:48,867 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 14:36:48,872 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 14:36:50,980 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-14 14:36:50,981 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-14 14:36:50,982 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-14 14:36:51,194 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 14:36:51,195 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 14:40:45,117 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-14 14:40:48,979 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 14:40:48,980 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 14:40:51,076 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-14 14:40:51,077 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-14 14:40:51,077 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-14 14:40:51,479 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 14:40:51,480 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 14:44:15,726 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-14 14:44:17,639 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 14:44:17,641 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 14:44:19,731 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-14 14:44:19,732 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-14 14:44:19,733 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-14 14:44:19,931 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 14:44:19,942 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 17:21:32,455 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-14 17:21:38,744 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 17:21:38,745 - ml - INFO - 🧠 Q-Table carregada
+2026-01-14 17:21:40,862 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-14 17:21:40,864 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-14 17:21:40,890 - utils - INFO - ✅ Limites diários carregados
+2026-01-14 17:21:41,212 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-14 17:21:41,213 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 10:01:47,518 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 10:01:49,132 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 10:01:49,135 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 10:01:51,262 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 10:01:51,263 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 10:01:51,263 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-15 10:01:51,456 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 10:01:51,459 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 12:12:07,022 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 12:12:10,388 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 12:12:10,393 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 12:12:12,552 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 12:12:12,553 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 12:12:12,557 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-15 12:12:12,626 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 12:12:12,631 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 12:20:47,179 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 12:21:05,027 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 12:21:05,036 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 12:21:07,192 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 12:21:07,194 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 12:21:07,203 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-15 12:21:07,234 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 12:21:07,235 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 14:02:47,560 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 14:02:52,639 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 14:02:52,663 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 14:02:54,969 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 14:02:54,973 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 14:02:54,973 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-15 14:02:55,009 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 14:02:55,014 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 14:12:32,628 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 14:12:33,584 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 14:12:33,585 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 14:12:35,663 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 14:12:35,665 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 14:12:35,665 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-15 14:12:35,685 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 14:12:35,686 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:10:22,666 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 15:10:31,380 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:10:31,387 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:10:33,598 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 15:10:33,599 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 15:10:33,600 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-15 15:10:33,767 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:10:33,769 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:14:56,094 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 15:14:57,886 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:14:57,888 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:14:59,961 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 15:14:59,963 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 15:14:59,965 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-15 15:15:00,001 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:15:00,003 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:19:57,672 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 15:19:58,700 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:19:58,701 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:20:00,784 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 15:20:00,786 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 15:20:00,787 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-15 15:20:00,811 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:20:00,811 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:25:16,933 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 15:25:18,800 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:25:18,849 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:25:21,007 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 15:25:21,009 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 15:25:21,010 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-15 15:25:21,060 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:25:21,062 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:39:54,863 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 15:39:57,641 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:39:57,644 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:39:59,783 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 15:39:59,784 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 15:39:59,784 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-15 15:39:59,803 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:39:59,803 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:43:01,883 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 15:43:03,488 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:43:03,490 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:43:05,579 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 15:43:05,580 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 15:43:05,581 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-15 15:43:05,602 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:43:05,603 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:50:33,726 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 15:50:35,462 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:50:35,465 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:50:37,581 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 15:50:37,582 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 15:50:37,583 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-15 15:50:37,608 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:50:37,609 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:58:50,552 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 15:58:52,410 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:58:52,412 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 15:58:54,506 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 15:58:54,508 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 15:58:54,509 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-15 15:58:54,531 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 15:58:54,532 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 19:23:34,605 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-15 19:23:36,045 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 19:23:36,047 - ml - INFO - 🧠 Q-Table carregada
+2026-01-15 19:23:38,126 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-15 19:23:38,144 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-15 19:23:38,155 - utils - INFO - ✅ Limites diários carregados
+2026-01-15 19:23:38,177 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-15 19:23:38,178 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 10:01:02,795 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-16 10:01:04,384 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 10:01:04,386 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 10:01:06,483 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-16 10:01:06,484 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-16 10:01:06,485 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-16 10:01:06,510 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 10:01:06,511 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 11:37:20,088 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-16 11:37:24,988 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 11:37:24,992 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 11:37:27,196 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-16 11:37:27,197 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-16 11:37:27,198 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-16 11:37:27,268 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 11:37:27,272 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 11:43:23,536 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-16 11:43:24,896 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 11:43:24,898 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 11:43:26,983 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-16 11:43:26,984 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-16 11:43:26,985 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-16 11:43:27,136 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 11:43:27,138 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 13:30:26,401 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-16 13:30:29,402 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 13:30:29,406 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 13:30:31,694 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-16 13:30:31,695 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-16 13:30:31,695 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-16 13:30:31,720 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 13:30:31,721 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 14:56:23,490 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-16 14:56:31,623 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 14:56:31,672 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 14:56:33,894 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-16 14:56:33,897 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-16 14:56:33,898 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-16 14:56:33,935 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 14:56:33,936 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 15:07:56,653 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-16 15:07:59,915 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 15:07:59,917 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 15:08:02,015 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-16 15:08:02,015 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-16 15:08:02,016 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-16 15:08:02,038 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 15:08:02,039 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 15:11:48,727 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-16 15:11:51,071 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 15:11:51,074 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 15:11:53,169 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-16 15:11:53,170 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-16 15:11:53,170 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-16 15:11:53,205 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 15:11:53,207 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 15:18:08,695 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-16 15:18:10,874 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 15:18:10,880 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 15:18:13,007 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-16 15:18:13,008 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-16 15:18:13,009 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-16 15:18:13,026 - ml - INFO - 📊 Histórico ML carregado: 4 trades
+2026-01-16 15:18:13,027 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 15:34:18,938 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-16 15:34:20,653 - ml - INFO - 📊 Histórico ML carregado: 9 trades
+2026-01-16 15:34:20,654 - ml - INFO - 🧠 Q-Table carregada
+2026-01-16 15:34:22,743 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-16 15:34:22,744 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-16 15:34:22,745 - utils - INFO - ✅ Limites diários carregados
+2026-01-16 15:34:22,767 - ml - INFO - 📊 Histórico ML carregado: 9 trades
+2026-01-16 15:34:22,770 - ml - INFO - 🧠 Q-Table carregada
+2026-01-18 19:47:49,776 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-18 19:47:52,443 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-18 19:47:52,446 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-18 19:47:52,448 - utils - INFO - ✅ Limites diários carregados
+2026-01-18 19:47:52,884 - ml - INFO - 📊 Histórico ML carregado: 9 trades
+2026-01-18 19:47:52,900 - ml - INFO - 🧠 Q-Table carregada
+2026-01-18 19:47:52,902 - ml - INFO - 📊 Histórico ML carregado: 9 trades
+2026-01-18 19:47:52,903 - ml - INFO - 🧠 Q-Table carregada
+2026-01-18 21:22:55,800 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-18 21:22:59,591 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-18 21:22:59,592 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-18 21:22:59,592 - utils - INFO - ✅ Limites diários carregados
+2026-01-18 21:23:00,700 - ml - INFO - 📊 Histórico ML carregado: 9 trades
+2026-01-18 21:23:00,703 - ml - INFO - 🧠 Q-Table carregada
+2026-01-18 21:23:00,708 - ml - INFO - 📊 Histórico ML carregado: 9 trades
+2026-01-18 21:23:00,709 - ml - INFO - 🧠 Q-Table carregada
+2026-01-19 10:00:58,257 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-19 10:01:01,473 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-19 10:01:01,476 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-19 10:01:01,477 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-19 10:01:02,526 - ml - INFO - 📊 Histórico ML carregado: 9 trades
+2026-01-19 10:01:02,557 - ml - INFO - 🧠 Q-Table carregada
+2026-01-19 10:01:02,567 - ml - INFO - 📊 Histórico ML carregado: 9 trades
+2026-01-19 10:01:02,568 - ml - INFO - 🧠 Q-Table carregada
+2026-01-20 10:01:13,073 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-20 10:01:16,165 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-20 10:01:16,166 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-20 10:01:16,167 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-20 10:01:17,203 - ml - INFO - 📊 Histórico ML carregado: 10 trades
+2026-01-20 10:01:17,225 - ml - INFO - 🧠 Q-Table carregada
+2026-01-20 10:01:17,232 - ml - INFO - 📊 Histórico ML carregado: 10 trades
+2026-01-20 10:01:17,233 - ml - INFO - 🧠 Q-Table carregada
+2026-01-20 11:37:49,502 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-20 11:37:53,884 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-20 11:37:53,887 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-20 11:37:53,889 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-20 11:37:56,074 - ml - INFO - 📊 Histórico ML carregado: 10 trades
+2026-01-20 11:37:56,108 - ml - INFO - 🧠 Q-Table carregada
+2026-01-20 11:37:56,117 - ml - INFO - 📊 Histórico ML carregado: 10 trades
+2026-01-20 11:37:56,119 - ml - INFO - 🧠 Q-Table carregada
+2026-01-20 14:12:19,051 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-20 14:12:21,999 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-20 14:12:22,000 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-20 14:12:22,001 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-20 14:12:23,979 - ml - INFO - 📊 Histórico ML carregado: 10 trades
+2026-01-20 14:12:24,002 - ml - INFO - 🧠 Q-Table carregada
+2026-01-20 14:12:24,006 - ml - INFO - 📊 Histórico ML carregado: 10 trades
+2026-01-20 14:12:24,007 - ml - INFO - 🧠 Q-Table carregada
+2026-01-20 14:53:29,508 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-20 14:53:32,817 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-20 14:53:32,821 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-20 14:53:32,822 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-20 14:53:35,668 - ml - INFO - 📊 Histórico ML carregado: 10 trades
+2026-01-20 14:53:35,702 - ml - INFO - 🧠 Q-Table carregada
+2026-01-20 14:53:35,706 - ml - INFO - 📊 Histórico ML carregado: 10 trades
+2026-01-20 14:53:35,707 - ml - INFO - 🧠 Q-Table carregada
+2026-01-20 15:27:19,698 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-20 15:27:24,687 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-20 15:27:24,689 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-20 15:27:24,691 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-20 15:27:27,043 - ml - INFO - 📊 Histórico ML carregado: 10 trades
+2026-01-20 15:27:27,053 - ml - INFO - 🧠 Q-Table carregada
+2026-01-20 15:27:27,058 - ml - INFO - 📊 Histórico ML carregado: 10 trades
+2026-01-20 15:27:27,060 - ml - INFO - 🧠 Q-Table carregada
+2026-01-20 15:45:51,212 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-20 15:45:54,216 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-20 15:45:54,217 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-20 15:45:54,237 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-20 15:45:59,626 - ml - INFO - 📊 Histórico ML carregado: 10 trades
+2026-01-20 15:45:59,634 - ml - INFO - 🧠 Q-Table carregada
+2026-01-20 15:45:59,641 - ml - INFO - 📊 Histórico ML carregado: 10 trades
+2026-01-20 15:45:59,641 - ml - INFO - 🧠 Q-Table carregada
+2026-01-21 09:18:30,483 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-21 09:18:33,103 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-21 09:18:33,107 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-21 09:18:33,108 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-21 09:18:33,559 - ml - INFO - 📊 Histórico ML carregado: 11 trades
+2026-01-21 09:18:33,595 - ml - INFO - 🧠 Q-Table carregada
+2026-01-21 09:18:33,598 - ml - INFO - 📊 Histórico ML carregado: 11 trades
+2026-01-21 09:18:33,598 - ml - INFO - 🧠 Q-Table carregada
+2026-01-21 09:26:46,371 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-21 09:26:51,705 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-21 09:26:51,706 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-21 09:26:51,706 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-21 09:26:52,868 - ml - INFO - 📊 Histórico ML carregado: 11 trades
+2026-01-21 09:26:52,873 - ml - INFO - 🧠 Q-Table carregada
+2026-01-21 09:26:52,886 - ml - INFO - 📊 Histórico ML carregado: 11 trades
+2026-01-21 09:26:52,888 - ml - INFO - 🧠 Q-Table carregada
+2026-01-21 09:53:14,985 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-21 09:53:18,522 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-21 09:53:18,522 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-21 09:53:18,523 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-21 09:53:19,854 - ml - INFO - 📊 Histórico ML carregado: 11 trades
+2026-01-21 09:53:19,880 - ml - INFO - 🧠 Q-Table carregada
+2026-01-21 09:53:19,885 - ml - INFO - 📊 Histórico ML carregado: 11 trades
+2026-01-21 09:53:19,886 - ml - INFO - 🧠 Q-Table carregada
+2026-01-21 10:31:45,933 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-21 10:31:50,016 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-21 10:31:50,036 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-21 10:31:50,036 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-21 10:31:51,786 - bot - INFO - ✅ RandomForest carregado
+2026-01-21 10:31:51,788 - bot - INFO - 📊 Histórico ML carregado: 11 trades
+2026-01-21 10:31:51,802 - bot - INFO - 🧠 Q-Table carregada
+2026-01-21 10:31:51,805 - bot - INFO - ✅ RandomForest carregado
+2026-01-21 10:31:51,806 - bot - INFO - 📊 Histórico ML carregado: 11 trades
+2026-01-21 10:31:51,807 - bot - INFO - 🧠 Q-Table carregada
+2026-01-21 12:14:36,858 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-21 12:14:39,986 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-21 12:14:39,989 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-21 12:14:39,990 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-21 12:14:41,587 - bot - INFO - ✅ RandomForest carregado
+2026-01-21 12:14:41,721 - bot - INFO - 📊 Histórico ML carregado: 11 trades
+2026-01-21 12:14:41,765 - bot - INFO - 🧠 Q-Table carregada
+2026-01-21 12:14:41,769 - bot - INFO - ✅ RandomForest carregado
+2026-01-21 12:14:41,770 - bot - INFO - 📊 Histórico ML carregado: 11 trades
+2026-01-21 12:14:41,771 - bot - INFO - 🧠 Q-Table carregada
+2026-01-21 13:56:49,567 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-21 13:56:53,257 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-21 13:56:53,258 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-21 13:56:53,259 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-21 13:56:54,505 - bot - INFO - ✅ RandomForest carregado
+2026-01-21 13:56:54,507 - bot - INFO - 📊 Histórico ML carregado: 11 trades
+2026-01-21 13:56:54,526 - bot - INFO - 🧠 Q-Table carregada
+2026-01-21 13:56:54,531 - bot - INFO - ✅ RandomForest carregado
+2026-01-21 13:56:54,532 - bot - INFO - 📊 Histórico ML carregado: 11 trades
+2026-01-21 13:56:54,534 - bot - INFO - 🧠 Q-Table carregada
+2026-01-21 16:55:40,894 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-21 16:55:44,542 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-21 16:55:44,545 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-21 16:55:44,549 - utils - INFO - ✅ Limites diários carregados
+2026-01-21 16:55:45,930 - bot - INFO - ✅ RandomForest carregado
+2026-01-21 16:55:45,973 - bot - INFO - 📊 Histórico ML carregado: 15 trades
+2026-01-21 16:55:45,993 - bot - INFO - 🧠 Q-Table carregada
+2026-01-21 16:55:45,996 - bot - INFO - ✅ RandomForest carregado
+2026-01-21 16:55:45,997 - bot - INFO - 📊 Histórico ML carregado: 15 trades
+2026-01-21 16:55:45,999 - bot - INFO - 🧠 Q-Table carregada
+2026-01-22 10:01:10,180 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-22 10:01:13,945 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-22 10:01:13,946 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-22 10:01:13,948 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-22 10:01:15,275 - bot - INFO - ✅ RandomForest carregado
+2026-01-22 10:01:15,294 - bot - INFO - 📊 Histórico ML carregado: 15 trades
+2026-01-22 10:01:15,310 - bot - INFO - 🧠 Q-Table carregada
+2026-01-22 10:01:15,315 - bot - INFO - ✅ RandomForest carregado
+2026-01-22 10:01:15,316 - bot - INFO - 📊 Histórico ML carregado: 15 trades
+2026-01-22 10:01:15,317 - bot - INFO - 🧠 Q-Table carregada
+2026-01-22 11:50:00,396 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-22 11:50:03,179 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-22 11:50:03,181 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-22 11:50:03,182 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-22 11:50:04,036 - bot - INFO - ✅ RandomForest carregado
+2026-01-22 11:50:04,057 - bot - INFO - 📊 Histórico ML carregado: 15 trades
+2026-01-22 11:50:04,079 - bot - INFO - 🧠 Q-Table carregada
+2026-01-22 11:50:04,081 - bot - INFO - ✅ RandomForest carregado
+2026-01-22 11:50:04,082 - bot - INFO - 📊 Histórico ML carregado: 15 trades
+2026-01-22 11:50:04,083 - bot - INFO - 🧠 Q-Table carregada
+2026-01-22 15:46:56,065 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-22 15:46:59,566 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-22 15:46:59,568 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-22 15:46:59,576 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-22 15:47:00,683 - bot - INFO - ✅ RandomForest carregado
+2026-01-22 15:47:00,732 - bot - INFO - 📊 Histórico ML carregado: 15 trades
+2026-01-22 15:47:00,759 - bot - INFO - 🧠 Q-Table carregada
+2026-01-22 15:47:00,808 - bot - INFO - ✅ RandomForest carregado
+2026-01-22 15:47:00,809 - bot - INFO - 📊 Histórico ML carregado: 15 trades
+2026-01-22 15:47:00,812 - bot - INFO - 🧠 Q-Table carregada
+2026-01-23 10:01:44,495 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-23 10:01:47,777 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-23 10:01:47,778 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-23 10:01:47,780 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-23 10:01:48,801 - bot - INFO - ✅ RandomForest carregado
+2026-01-23 10:01:48,832 - bot - INFO - 📊 Histórico ML carregado: 21 trades
+2026-01-23 10:01:48,853 - bot - INFO - 🧠 Q-Table carregada
+2026-01-23 10:01:48,853 - bot - INFO - 🎯 Inicializando com 21 trades históricos...
+2026-01-23 10:01:48,856 - bot - WARNING - Feature faltante no histórico ML: rsi
+2026-01-23 10:01:48,858 - bot - INFO - ✅ RandomForest carregado
+2026-01-23 10:01:48,859 - bot - INFO - 📊 Histórico ML carregado: 21 trades
+2026-01-23 10:01:48,860 - bot - INFO - 🧠 Q-Table carregada
+2026-01-23 10:01:48,860 - bot - INFO - 🎯 Inicializando com 21 trades históricos...
+2026-01-23 10:01:48,861 - bot - WARNING - Feature faltante no histórico ML: rsi
+2026-01-23 11:46:40,790 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-23 11:46:44,314 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-23 11:46:44,315 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-23 11:46:44,317 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-23 11:46:45,400 - bot - INFO - ✅ RandomForest carregado
+2026-01-23 11:46:45,403 - bot - INFO - 📊 Histórico ML carregado: 21 trades
+2026-01-23 11:46:45,406 - bot - INFO - 🧠 Q-Table carregada
+2026-01-23 11:46:45,406 - bot - INFO - 🎯 Inicializando com 21 trades históricos...
+2026-01-23 11:46:45,413 - bot - WARNING - Feature faltante no histórico ML: rsi
+2026-01-23 11:46:45,420 - bot - INFO - ✅ RandomForest carregado
+2026-01-23 11:46:45,421 - bot - INFO - 📊 Histórico ML carregado: 21 trades
+2026-01-23 11:46:45,422 - bot - INFO - 🧠 Q-Table carregada
+2026-01-23 11:46:45,422 - bot - INFO - 🎯 Inicializando com 21 trades históricos...
+2026-01-23 11:46:45,424 - bot - WARNING - Feature faltante no histórico ML: rsi
+2026-01-25 22:50:25,249 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-25 22:50:30,032 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-25 22:50:30,104 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-25 22:50:30,138 - utils - INFO - ✅ Limites diários carregados
+2026-01-26 10:44:38,067 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-26 10:44:40,408 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-26 10:44:40,409 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-26 10:44:40,410 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-26 10:44:42,975 - bot - INFO - ✅ RandomForest carregado
+2026-01-26 10:44:42,976 - bot - INFO - 📊 Histórico ML carregado: 27 trades
+2026-01-26 10:44:42,979 - bot - INFO - 🧠 Q-Table carregada
+2026-01-26 10:44:42,979 - bot - INFO - 🎯 Inicializando com 27 trades históricos...
+2026-01-26 10:44:54,831 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-26 10:44:54,832 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-26 10:44:57,630 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-26 10:44:57,658 - bot - INFO - ✅ RandomForest carregado
+2026-01-26 10:44:57,727 - bot - INFO - 📊 Histórico ML carregado: 27 trades
+2026-01-26 10:44:57,795 - bot - INFO - 🧠 Q-Table carregada
+2026-01-26 10:44:57,796 - bot - INFO - 🎯 Inicializando com 27 trades históricos...
+2026-01-26 10:45:05,181 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-26 10:45:05,181 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-26 10:45:06,069 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-26 11:49:42,087 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-26 11:49:44,692 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-26 11:49:44,693 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-26 11:49:44,694 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-26 11:49:46,567 - bot - INFO - ✅ RandomForest carregado
+2026-01-26 11:49:46,613 - bot - INFO - 📊 Histórico ML carregado: 27 trades
+2026-01-26 11:49:46,650 - bot - INFO - 🧠 Q-Table carregada
+2026-01-26 11:49:46,651 - bot - INFO - 🎯 Inicializando com 27 trades históricos...
+2026-01-26 11:49:52,812 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-26 11:49:52,812 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-26 11:49:56,636 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-26 11:49:56,668 - bot - INFO - ✅ RandomForest carregado
+2026-01-26 11:49:56,669 - bot - INFO - 📊 Histórico ML carregado: 27 trades
+2026-01-26 11:49:56,680 - bot - INFO - 🧠 Q-Table carregada
+2026-01-26 11:49:56,680 - bot - INFO - 🎯 Inicializando com 27 trades históricos...
+2026-01-26 11:50:09,472 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-26 11:50:09,472 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-26 11:50:11,298 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-26 13:24:50,212 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-26 13:24:52,403 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-26 13:24:52,405 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-26 13:24:52,407 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-26 13:24:53,326 - bot - INFO - ✅ RandomForest carregado
+2026-01-26 13:24:53,327 - bot - INFO - 📊 Histórico ML carregado: 27 trades
+2026-01-26 13:24:53,328 - bot - INFO - 🧠 Q-Table carregada
+2026-01-26 13:24:53,328 - bot - INFO - 🎯 Inicializando com 27 trades históricos...
+2026-01-26 13:24:55,339 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-26 13:24:55,339 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-26 13:24:55,728 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-26 13:24:55,732 - bot - INFO - ✅ RandomForest carregado
+2026-01-26 13:24:55,749 - bot - INFO - 📊 Histórico ML carregado: 27 trades
+2026-01-26 13:24:55,764 - bot - INFO - 🧠 Q-Table carregada
+2026-01-26 13:24:55,764 - bot - INFO - 🎯 Inicializando com 27 trades históricos...
+2026-01-26 13:24:58,699 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-26 13:24:58,699 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-26 13:24:59,097 - bot - INFO - 💾 Estado do ensemble salvo

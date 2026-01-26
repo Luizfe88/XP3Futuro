@@ -1,0 +1,21 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-01-16 13:31:16 | ENTRADA  | PETR4  | BUY  | Vol:   32300 | Price:  32.09 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-16 13:33:09 | ENTRADA  | MGLU3  | SELL | Vol:   85900 | Price:   8.43 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-16 13:36:42 | ENTRADA  | PETR4  | BUY  | Vol:   16100 | Price:  32.06 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-16 13:38:25 | ENTRADA  | MGLU3  | SELL | Vol:   41000 | Price:   8.47 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-16 13:43:58 | ENTRADA  | MGLU3  | SELL | Vol:   40400 | Price:   8.47 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-16 13:49:34 | ENTRADA  | MGLU3  | SELL | Vol:   42400 | Price:   8.45 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-16 13:50:45 | ENTRADA  | B3SA3  | BUY  | Vol:   27900 | Price:  15.17 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-16 13:51:59 | ENTRADA  | PETR4  | BUY  | Vol:   26500 | Price:  32.06 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-16 13:57:45 | ENTRADA  | PETR4  | BUY  | Vol:   25800 | Price:  32.06 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-16 14:03:06 | ENTRADA  | PETR4  | BUY  | Vol:   16200 | Price:  32.09 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-16 14:46:36 | ENTRADA  | RENT3  | SELL | Vol:    7500 | Price:  40.34 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-16 15:12:01 | SAÍDA    | RENT3  | SELL | Vol:    7500 | Price:  40.34 | P&L:  -675.00 R$ (-0.22%) | Motivo: Profit Lock - Meta Diária Atingida
+2026-01-16 15:19:22 | ENTRADA  | RENT3  | SELL | Vol:    7900 | Price:  40.42 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-16 15:23:51 | ENTRADA  | BBDC4  | BUY  | Vol:   19900 | Price:  18.92 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-16 15:31:10 | SAÍDA    | PETR4  | BUY  | Vol:  116900 | Price:  32.07 | P&L: +10235.00 R$ (+0.27%) | Motivo: Day-Only Close
+2026-01-16 15:31:13 | SAÍDA    | MGLU3  | SELL | Vol:  209700 | Price:   8.45 | P&L: +2007.00 R$ (+0.11%) | Motivo: Day-Only Close
+2026-01-16 15:31:16 | SAÍDA    | B3SA3  | BUY  | Vol:   27900 | Price:  15.17 | P&L: +1116.00 R$ (+0.26%) | Motivo: Day-Only Close
+2026-01-16 15:31:19 | SAÍDA    | RENT3  | SELL | Vol:    7900 | Price:  40.42 | P&L:   -79.00 R$ (-0.02%) | Motivo: Day-Only Close
+2026-01-16 15:31:28 | SAÍDA    | BBDC4  | BUY  | Vol:   19900 | Price:  18.92 | P&L:  -199.00 R$ (-0.05%) | Motivo: Day-Only Close

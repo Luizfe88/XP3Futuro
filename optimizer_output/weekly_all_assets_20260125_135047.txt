@@ -1,0 +1,907 @@
+RELATORIO CONSOLIDADO - OTIMIZADOR SEMANAL
+Gerado em: 25/01/2026 13:50:47
+------------------------------------------------------------
+SIMBOLO: ABEV3
+PARAMETROS:
+  ema_short: 12
+  ema_long: 97
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 20.0%
+  Trades: 5
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: ANIM3
+PARAMETROS:
+  ema_short: 36
+  ema_long: 153
+  rsi_low: 31
+  rsi_high: 74
+  adx_threshold: 18
+  sl_atr_multiplier: 2.9000000000000004
+  tp_ratio: 3.5
+METRICAS OOS:
+  Sharpe: 6.00
+  Win Rate: 25.0%
+  Trades: 12
+  Max Drawdown: 63.4%
+  Profit Factor: 1.55
+------------------------------------------------------------
+SIMBOLO: AURA33
+PARAMETROS:
+  ema_short: 24
+  ema_long: 139
+  rsi_low: 29
+  rsi_high: 70
+  adx_threshold: 22
+  sl_atr_multiplier: 2.9000000000000004
+  tp_ratio: 3.0
+METRICAS OOS:
+  Sharpe: 4.99
+  Win Rate: 77.8%
+  Trades: 9
+  Max Drawdown: 65.1%
+  Profit Factor: 1.52
+------------------------------------------------------------
+SIMBOLO: AXIA3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 31
+  rsi_high: 69
+  adx_threshold: 28
+  sl_atr_multiplier: 4.1
+  tp_ratio: 4.0
+METRICAS OOS:
+  Sharpe: 6.80
+  Win Rate: 27.3%
+  Trades: 11
+  Max Drawdown: 70.4%
+  Profit Factor: 1.69
+------------------------------------------------------------
+SIMBOLO: AZUL4
+PARAMETROS:
+  ema_short: 48
+  ema_long: 76
+  rsi_low: 40
+  rsi_high: 62
+  adx_threshold: 28
+  sl_atr_multiplier: 3.3
+  tp_ratio: 2.5
+METRICAS OOS:
+  Sharpe: 2.30
+  Win Rate: 30.8%
+  Trades: 13
+  Max Drawdown: 35.1%
+  Profit Factor: 1.17
+------------------------------------------------------------
+SIMBOLO: B3SA3
+PARAMETROS:
+  ema_short: 35
+  ema_long: 62
+  rsi_low: 30
+  rsi_high: 67
+  adx_threshold: 22
+  sl_atr_multiplier: 4.5
+  tp_ratio: 3.0
+METRICAS OOS:
+  Sharpe: 5.78
+  Win Rate: 50.0%
+  Trades: 12
+  Max Drawdown: 63.9%
+  Profit Factor: 1.55
+------------------------------------------------------------
+SIMBOLO: BBAS3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 8.3%
+  Trades: 12
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: BBDC4
+PARAMETROS:
+  ema_short: 14
+  ema_long: 58
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 0.0%
+  Trades: 8
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: BBSE3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 28.6%
+  Trades: 14
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: BEEF3
+PARAMETROS:
+  ema_short: 46
+  ema_long: 116
+  rsi_low: 31
+  rsi_high: 65
+  adx_threshold: 17
+  sl_atr_multiplier: 4.5
+  tp_ratio: 3.0
+METRICAS OOS:
+  Sharpe: 2.79
+  Win Rate: 40.0%
+  Trades: 5
+  Max Drawdown: 50.8%
+  Profit Factor: 1.35
+------------------------------------------------------------
+SIMBOLO: BPAC11
+PARAMETROS:
+  ema_short: 25
+  ema_long: 76
+  rsi_low: 37
+  rsi_high: 74
+  adx_threshold: 29
+  sl_atr_multiplier: 3.9000000000000004
+  tp_ratio: 3.0
+METRICAS OOS:
+  Sharpe: 9.54
+  Win Rate: 18.2%
+  Trades: 11
+  Max Drawdown: 81.6%
+  Profit Factor: 2.43
+------------------------------------------------------------
+SIMBOLO: BRFS3
+SEM RESULTADOS DISPONIVEIS
+------------------------------------------------------------
+SIMBOLO: CCRO3
+SEM RESULTADOS DISPONIVEIS
+------------------------------------------------------------
+SIMBOLO: COGN3
+PARAMETROS:
+  ema_short: 46
+  ema_long: 71
+  rsi_low: 30
+  rsi_high: 78
+  adx_threshold: 23
+  sl_atr_multiplier: 3.3
+  tp_ratio: 2.0
+METRICAS OOS:
+  Sharpe: 5.80
+  Win Rate: 55.6%
+  Trades: 9
+  Max Drawdown: 64.2%
+  Profit Factor: 1.63
+------------------------------------------------------------
+SIMBOLO: CRFB3
+SEM RESULTADOS DISPONIVEIS
+------------------------------------------------------------
+SIMBOLO: CSNA3
+PARAMETROS:
+  ema_short: 38
+  ema_long: 107
+  rsi_low: 37
+  rsi_high: 80
+  adx_threshold: 22
+  sl_atr_multiplier: 3.9000000000000004
+  tp_ratio: 3.0
+METRICAS OOS:
+  Sharpe: 5.77
+  Win Rate: 23.1%
+  Trades: 13
+  Max Drawdown: 65.9%
+  Profit Factor: 1.50
+------------------------------------------------------------
+SIMBOLO: CYRE3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 12.5%
+  Trades: 8
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: DESK3
+PARAMETROS:
+  ema_short: 26
+  ema_long: 149
+  rsi_low: 26
+  rsi_high: 75
+  adx_threshold: 28
+  sl_atr_multiplier: 4.5
+  tp_ratio: 3.0
+METRICAS OOS:
+  Sharpe: 4.14
+  Win Rate: 25.0%
+  Trades: 8
+  Max Drawdown: 56.6%
+  Profit Factor: 1.43
+------------------------------------------------------------
+SIMBOLO: ENEV3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 11.1%
+  Trades: 9
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: EQTL3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 9.1%
+  Trades: 11
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: GGBR4
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 0.0%
+  Trades: 9
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: HAPV3
+PARAMETROS:
+  ema_short: 49
+  ema_long: 118
+  rsi_low: 39
+  rsi_high: 77
+  adx_threshold: 25
+  sl_atr_multiplier: 3.3
+  tp_ratio: 4.0
+METRICAS OOS:
+  Sharpe: 0.13
+  Win Rate: 0.0%
+  Trades: 0
+  Max Drawdown: 3.0%
+  Profit Factor: 1.11
+------------------------------------------------------------
+SIMBOLO: IGTI11
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 20.0%
+  Trades: 10
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: ITSA4
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 8.3%
+  Trades: 12
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: ITUB4
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 33.3%
+  Trades: 9
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: JBSS3
+SEM RESULTADOS DISPONIVEIS
+------------------------------------------------------------
+SIMBOLO: KLBN11
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 1.81
+  Win Rate: 0.0%
+  Trades: 1
+  Max Drawdown: 34.7%
+  Profit Factor: 1.39
+------------------------------------------------------------
+SIMBOLO: LREN3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 25.0%
+  Trades: 8
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: LWSA3
+PARAMETROS:
+  ema_short: 41
+  ema_long: 60
+  rsi_low: 39
+  rsi_high: 70
+  adx_threshold: 22
+  sl_atr_multiplier: 4.1
+  tp_ratio: 5.0
+METRICAS OOS:
+  Sharpe: 5.02
+  Win Rate: 33.3%
+  Trades: 12
+  Max Drawdown: 55.2%
+  Profit Factor: 1.41
+------------------------------------------------------------
+SIMBOLO: MDNE3
+PARAMETROS:
+  ema_short: 34
+  ema_long: 112
+  rsi_low: 35
+  rsi_high: 84
+  adx_threshold: 15
+  sl_atr_multiplier: 3.9000000000000004
+  tp_ratio: 4.0
+METRICAS OOS:
+  Sharpe: 5.70
+  Win Rate: 36.4%
+  Trades: 11
+  Max Drawdown: 63.7%
+  Profit Factor: 1.56
+------------------------------------------------------------
+SIMBOLO: MGLU3
+PARAMETROS:
+  ema_short: 40
+  ema_long: 115
+  rsi_low: 25
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 4.1
+  tp_ratio: 2.0
+METRICAS OOS:
+  Sharpe: 3.90
+  Win Rate: 23.1%
+  Trades: 13
+  Max Drawdown: 54.0%
+  Profit Factor: 1.31
+------------------------------------------------------------
+SIMBOLO: MOVI3
+PARAMETROS:
+  ema_short: 31
+  ema_long: 151
+  rsi_low: 35
+  rsi_high: 68
+  adx_threshold: 13
+  sl_atr_multiplier: 3.9000000000000004
+  tp_ratio: 2.0
+METRICAS OOS:
+  Sharpe: 4.17
+  Win Rate: 18.2%
+  Trades: 11
+  Max Drawdown: 39.1%
+  Profit Factor: 1.36
+------------------------------------------------------------
+SIMBOLO: MRVE3
+PARAMETROS:
+  ema_short: 45
+  ema_long: 98
+  rsi_low: 23
+  rsi_high: 62
+  adx_threshold: 11
+  sl_atr_multiplier: 4.300000000000001
+  tp_ratio: 5.0
+METRICAS OOS:
+  Sharpe: 4.95
+  Win Rate: 50.0%
+  Trades: 10
+  Max Drawdown: 56.6%
+  Profit Factor: 1.45
+------------------------------------------------------------
+SIMBOLO: MULT3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 18.8%
+  Trades: 16
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: NEOE3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 1.48
+  Win Rate: 0.0%
+  Trades: 0
+  Max Drawdown: 29.7%
+  Profit Factor: 1.42
+------------------------------------------------------------
+SIMBOLO: ODPV3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 22.2%
+  Trades: 9
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: ONCO3
+PARAMETROS:
+  ema_short: 29
+  ema_long: 72
+  rsi_low: 39
+  rsi_high: 80
+  adx_threshold: 17
+  sl_atr_multiplier: 2.7
+  tp_ratio: 3.0
+METRICAS OOS:
+  Sharpe: 3.07
+  Win Rate: 16.7%
+  Trades: 12
+  Max Drawdown: 46.6%
+  Profit Factor: 1.25
+------------------------------------------------------------
+SIMBOLO: PETR4
+PARAMETROS:
+  ema_short: 11
+  ema_long: 56
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 37.5%
+  Trades: 8
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: PINE4
+PARAMETROS:
+  ema_short: 47
+  ema_long: 123
+  rsi_low: 38
+  rsi_high: 66
+  adx_threshold: 24
+  sl_atr_multiplier: 4.5
+  tp_ratio: 4.0
+METRICAS OOS:
+  Sharpe: 6.50
+  Win Rate: 13.3%
+  Trades: 15
+  Max Drawdown: 60.6%
+  Profit Factor: 1.55
+------------------------------------------------------------
+SIMBOLO: PRIO3
+PARAMETROS:
+  ema_short: 13
+  ema_long: 76
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 6.94
+  Win Rate: 25.0%
+  Trades: 8
+  Max Drawdown: 72.9%
+  Profit Factor: 1.87
+------------------------------------------------------------
+SIMBOLO: QUAL3
+PARAMETROS:
+  ema_short: 46
+  ema_long: 115
+  rsi_low: 21
+  rsi_high: 83
+  adx_threshold: 24
+  sl_atr_multiplier: 2.5
+  tp_ratio: 2.0
+METRICAS OOS:
+  Sharpe: 9.80
+  Win Rate: 16.7%
+  Trades: 18
+  Max Drawdown: 78.1%
+  Profit Factor: 1.86
+------------------------------------------------------------
+SIMBOLO: RADL3
+PARAMETROS:
+  ema_short: 21
+  ema_long: 97
+  rsi_low: 32
+  rsi_high: 74
+  adx_threshold: 15
+  sl_atr_multiplier: 4.300000000000001
+  tp_ratio: 5.0
+METRICAS OOS:
+  Sharpe: 7.05
+  Win Rate: 27.3%
+  Trades: 11
+  Max Drawdown: 71.2%
+  Profit Factor: 1.70
+------------------------------------------------------------
+SIMBOLO: RAIL3
+PARAMETROS:
+  ema_short: 32
+  ema_long: 160
+  rsi_low: 38
+  rsi_high: 80
+  adx_threshold: 22
+  sl_atr_multiplier: 3.9000000000000004
+  tp_ratio: 2.0
+METRICAS OOS:
+  Sharpe: 8.02
+  Win Rate: 45.5%
+  Trades: 11
+  Max Drawdown: 81.7%
+  Profit Factor: 2.08
+------------------------------------------------------------
+SIMBOLO: RAIZ4
+PARAMETROS:
+  ema_short: 28
+  ema_long: 123
+  rsi_low: 33
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 1.5
+  tp_ratio: 3.0
+METRICAS OOS:
+  Sharpe: 8.91
+  Win Rate: 20.0%
+  Trades: 15
+  Max Drawdown: 67.2%
+  Profit Factor: 1.85
+------------------------------------------------------------
+SIMBOLO: RDOR3
+PARAMETROS:
+  ema_short: 12
+  ema_long: 74
+  rsi_low: 26
+  rsi_high: 67
+  adx_threshold: 10
+  sl_atr_multiplier: 4.300000000000001
+  tp_ratio: 5.0
+METRICAS OOS:
+  Sharpe: 8.11
+  Win Rate: 18.2%
+  Trades: 11
+  Max Drawdown: 77.6%
+  Profit Factor: 2.01
+------------------------------------------------------------
+SIMBOLO: RECV3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 28.6%
+  Trades: 7
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: RENT3
+PARAMETROS:
+  ema_short: 36
+  ema_long: 66
+  rsi_low: 36
+  rsi_high: 76
+  adx_threshold: 29
+  sl_atr_multiplier: 4.5
+  tp_ratio: 2.0
+METRICAS OOS:
+  Sharpe: 4.13
+  Win Rate: 16.7%
+  Trades: 6
+  Max Drawdown: 57.4%
+  Profit Factor: 1.52
+------------------------------------------------------------
+SIMBOLO: SBSP3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 0.0%
+  Trades: 9
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: SLCE3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 33.3%
+  Trades: 6
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: SMALL$
+SEM RESULTADOS DISPONIVEIS
+------------------------------------------------------------
+SIMBOLO: SUZB3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 18.2%
+  Trades: 11
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: TEND3
+PARAMETROS:
+  ema_short: 28
+  ema_long: 60
+  rsi_low: 32
+  rsi_high: 67
+  adx_threshold: 10
+  sl_atr_multiplier: 3.9000000000000004
+  tp_ratio: 4.0
+METRICAS OOS:
+  Sharpe: -0.06
+  Win Rate: 0.0%
+  Trades: 0
+  Max Drawdown: 2.5%
+  Profit Factor: 1.08
+------------------------------------------------------------
+SIMBOLO: TIMS3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 16.7%
+  Trades: 6
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: TOTS3
+PARAMETROS:
+  ema_short: 42
+  ema_long: 94
+  rsi_low: 35
+  rsi_high: 60
+  adx_threshold: 12
+  sl_atr_multiplier: 3.9000000000000004
+  tp_ratio: 3.5
+METRICAS OOS:
+  Sharpe: 8.14
+  Win Rate: 41.7%
+  Trades: 12
+  Max Drawdown: 71.2%
+  Profit Factor: 1.87
+------------------------------------------------------------
+SIMBOLO: USIM5
+PARAMETROS:
+  ema_short: 22
+  ema_long: 97
+  rsi_low: 30
+  rsi_high: 78
+  adx_threshold: 27
+  sl_atr_multiplier: 4.5
+  tp_ratio: 4.5
+METRICAS OOS:
+  Sharpe: 5.46
+  Win Rate: 10.0%
+  Trades: 10
+  Max Drawdown: 50.1%
+  Profit Factor: 1.53
+------------------------------------------------------------
+SIMBOLO: VALE3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 33.3%
+  Trades: 9
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: VBBR3
+PARAMETROS:
+  ema_short: 11
+  ema_long: 153
+  rsi_low: 38
+  rsi_high: 84
+  adx_threshold: 30
+  sl_atr_multiplier: 3.7
+  tp_ratio: 5.0
+METRICAS OOS:
+  Sharpe: 9.55
+  Win Rate: 22.2%
+  Trades: 9
+  Max Drawdown: 92.0%
+  Profit Factor: 3.52
+------------------------------------------------------------
+SIMBOLO: VIVT3
+PARAMETROS:
+  ema_short: 8
+  ema_long: 60
+  rsi_low: 30
+  rsi_high: 70
+  adx_threshold: 25
+  sl_atr_multiplier: 2.5
+  tp_mult: 5.0
+METRICAS OOS:
+  Sharpe: 0.00
+  Win Rate: 37.5%
+  Trades: 8
+  Max Drawdown: 100.0%
+  Profit Factor: 0.00
+------------------------------------------------------------
+SIMBOLO: WDOG26
+SEM RESULTADOS DISPONIVEIS
+------------------------------------------------------------
+SIMBOLO: WEGE3
+PARAMETROS:
+  ema_short: 23
+  ema_long: 114
+  rsi_low: 36
+  rsi_high: 68
+  adx_threshold: 14
+  sl_atr_multiplier: 3.9000000000000004
+  tp_ratio: 2.5
+METRICAS OOS:
+  Sharpe: 9.22
+  Win Rate: 14.3%
+  Trades: 14
+  Max Drawdown: 80.9%
+  Profit Factor: 2.06
+------------------------------------------------------------
+SIMBOLO: WING26
+SEM RESULTADOS DISPONIVEIS
+------------------------------------------------------------
+SIMBOLO: WSPH26
+SEM RESULTADOS DISPONIVEIS
+------------------------------------------------------------
+SIMBOLO: YDUQ3
+PARAMETROS:
+  ema_short: 10
+  ema_long: 66
+  rsi_low: 28
+  rsi_high: 77
+  adx_threshold: 30
+  sl_atr_multiplier: 3.9000000000000004
+  tp_ratio: 4.0
+METRICAS OOS:
+  Sharpe: 4.60
+  Win Rate: 50.0%
+  Trades: 8
+  Max Drawdown: 60.7%
+  Profit Factor: 1.52
+------------------------------------------------------------

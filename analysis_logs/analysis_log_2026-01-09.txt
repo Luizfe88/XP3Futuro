@@ -1,0 +1,468 @@
+================================================================================
+📊 XP3 PRO FOREX - LOG DE ANÁLISES
+📅 Data: 09/01/2026
+================================================================================
+
+--------------------------------------------------------------------------------
+🕐 16:06:23 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 38.7
+   • ADX: 9.9
+   • Spread: 0.00 centavos (0.054%)
+   • Volume: 0.77x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 16:06:24 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [█████░░░░░] 51%
+📈 Indicadores:
+   • RSI: 78.8
+   • ADX: 44.3
+   • Spread: 0.00 centavos (0.039%)
+   • Volume: 0.12x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 16:06:24 | FRAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 42.9
+   • ADX: 10.6
+   • Spread: 0.00 centavos (0.127%)
+   • Volume: 1.15x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 16:06:24 | MDNE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 17.6
+   • ADX: 39.8
+   • Spread: 0.00 centavos (0.075%)
+   • Volume: 0.46x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 16:06:24 | WEGE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 51.6
+   • ADX: 23.8
+   • Spread: 0.00 centavos (0.043%)
+   • Volume: 0.82x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 16:13:04 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 38.7
+   • ADX: 10.1
+   • Spread: 0.00 centavos (0.054%)
+   • Volume: 1.36x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 16:13:04 | BPAN4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [█████░░░░░] 51%
+📈 Indicadores:
+   • RSI: 27.8
+   • ADX: 25.2
+   • Spread: 0.00 centavos (0.085%)
+   • Volume: 0.88x
+   • Tendência EMA: UP
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 16:13:04 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [█████░░░░░] 51%
+📈 Indicadores:
+   • RSI: 71.3
+   • ADX: 44.3
+   • Spread: 0.00 centavos (0.020%)
+   • Volume: 0.24x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 16:13:05 | FRAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 36.8
+   • ADX: 10.8
+   • Spread: 0.00 centavos (0.127%)
+   • Volume: 1.85x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 16:13:05 | MDNE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 14.8
+   • ADX: 39.8
+   • Spread: 0.00 centavos (0.038%)
+   • Volume: 0.86x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 16:13:05 | WEGE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 53.2
+   • ADX: 23.7
+   • Spread: 0.00 centavos (0.022%)
+   • Volume: 1.11x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 16:39:43 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 12.3
+   • Spread: 0.00 centavos (0.054%)
+   • Volume: 0.98x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 16:39:44 | BPAN4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [█████░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 25.0
+   • ADX: 22.5
+   • Spread: 0.00 centavos (0.170%)
+   • Volume: 0.45x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 16:39:44 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [█████░░░░░] 51%
+📈 Indicadores:
+   • RSI: 76.1
+   • ADX: 45.3
+   • Spread: 0.00 centavos (0.039%)
+   • Volume: 0.38x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 16:39:44 | CSAN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [████░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 73.3
+   • ADX: 18.6
+   • Spread: 0.00 centavos (0.195%)
+   • Volume: 0.56x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 16:39:44 | FRAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 43.6
+   • ADX: 10.4
+   • Spread: 0.00 centavos (0.127%)
+   • Volume: 0.79x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 16:39:44 | MDNE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 15.3
+   • ADX: 42.0
+   • Spread: 0.00 centavos (0.038%)
+   • Volume: 0.25x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 16:39:44 | USIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 42.1
+   • ADX: 25.0
+   • Spread: 0.00 centavos (0.153%)
+   • Volume: 0.51x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 16:54:56 | CAML3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [█████░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 77.8
+   • ADX: 39.4
+   • Spread: 0.00 centavos (0.174%)
+   • Volume: 0.41x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 16:54:58 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 47.8
+   • ADX: 13.3
+   • Spread: 0.00 centavos (0.054%)
+   • Volume: 0.29x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 16:55:00 | CSNA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 30.0
+   • ADX: 28.2
+   • Spread: 0.00 centavos (0.101%)
+   • Volume: 0.43x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 16:55:04 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [█████░░░░░] 51%
+📈 Indicadores:
+   • RSI: 73.8
+   • ADX: 46.2
+   • Spread: 0.00 centavos (0.020%)
+   • Volume: 0.93x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 16:55:05 | CSAN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [████░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 78.6
+   • ADX: 18.4
+   • Spread: 0.00 centavos (0.195%)
+   • Volume: 0.48x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 16:55:07 | FRAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 42.1
+   • ADX: 10.1
+   • Spread: 0.00 centavos (0.127%)
+   • Volume: 0.37x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 16:55:09 | MDNE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 21.7
+   • ADX: 42.0
+   • Spread: 0.00 centavos (0.075%)
+   • Volume: 1.04x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 16:55:10 | USIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 47.6
+   • ADX: 23.3
+   • Spread: 0.00 centavos (0.153%)
+   • Volume: 1.32x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 16:55:11 | WEGE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.6
+   • ADX: 19.8
+   • Spread: 0.00 centavos (0.022%)
+   • Volume: 0.58x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:31 | CURY3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:32 | CSMG3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:33 | CAML3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:33 | CEAB3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:34 | BBDC4 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:34 | CSNA3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:35 | AURA33 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:36 | BPAN4 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:36 | SUZB3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:37 | CSAN3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:38 | FRAS3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:38 | MDNE3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:39 | USIM3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:40 | WEGE3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 17:10:40 | GOAU4 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: N/A
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 0.0
+   • Spread: 0.00 centavos (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)

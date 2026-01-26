@@ -1,0 +1,3344 @@
+================================================================================
+📊 XP3 PRO FOREX - LOG DE ANÁLISES
+📅 Data: 13/01/2026
+================================================================================
+
+--------------------------------------------------------------------------------
+🕐 08:29:56 | PETR4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 39.3
+   • ADX: 10.0
+   • Spread: 0.00 centavos (0.132%)
+   • Volume: 0.82x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 08:29:56 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 55.9
+   • ADX: 13.0
+   • Spread: 0.00 centavos (1.064%)
+   • Volume: 0.70x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 08:29:57 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 29.2
+   • ADX: 12.2
+   • Spread: 0.00 centavos (1.673%)
+   • Volume: 0.35x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 08:29:58 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 57.9
+   • ADX: 25.7
+   • Spread: 0.00 centavos (0.273%)
+   • Volume: 0.56x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 08:29:59 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 16.7
+   • ADX: 41.6
+   • Spread: 0.00 centavos (1.242%)
+   • Volume: 0.73x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 08:30:00 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 24.3
+   • ADX: 28.7
+   • Spread: 0.00 centavos (0.815%)
+   • Volume: 0.49x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 08:30:01 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [█████░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 71.4
+   • ADX: 27.7
+   • Spread: 0.00 centavos (0.812%)
+   • Volume: 0.39x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 08:30:02 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 45.5
+   • ADX: 17.1
+   • Spread: 0.00 centavos (0.417%)
+   • Volume: 0.49x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 08:30:06 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 22.2
+   • ADX: 36.1
+   • Spread: 0.00 centavos (2.100%)
+   • Volume: 0.74x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 08:30:06 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 54.5
+   • ADX: 7.7
+   • Spread: 0.00 centavos (1.385%)
+   • Volume: 0.49x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 08:30:13 | MOVI3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [█████░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 86.7
+   • ADX: 22.3
+   • Spread: 0.00 centavos (2.990%)
+   • Volume: 0.43x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 08:30:14 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 38.9
+   • ADX: 14.3
+   • Spread: 0.00 centavos (3.491%)
+   • Volume: 0.36x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 08:30:14 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 35.7
+   • ADX: 11.4
+   • Spread: 0.00 centavos (0.854%)
+   • Volume: 1.57x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 08:30:15 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 38.0
+   • ADX: 18.9
+   • Spread: 0.00 centavos (1.105%)
+   • Volume: 0.33x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:00:03 | PETR4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 46.9
+   • ADX: 9.2
+   • Spread: 0.00 centavos (-15.099%)
+   • Volume: 4.25x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:00:04 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 31.2
+   • ADX: 16.8
+   • Spread: 0.00 centavos (1.064%)
+   • Volume: 9.65x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:00:04 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 33.3
+   • ADX: 11.6
+   • Spread: 0.00 centavos (-1.160%)
+   • Volume: 3.41x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:00:04 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 68.2
+   • ADX: 25.1
+   • Spread: 0.00 centavos (-9.091%)
+   • Volume: 3.64x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 10:00:05 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 33.3
+   • ADX: 42.6
+   • Spread: 0.00 centavos (-7.031%)
+   • Volume: 5.10x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 10:00:06 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 35.7
+   • ADX: 28.6
+   • Spread: 0.00 centavos (0.815%)
+   • Volume: 5.77x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 10:00:11 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 30.8
+   • ADX: 20.5
+   • Spread: 0.00 centavos (0.083%)
+   • Volume: 4.11x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 10:00:11 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 10.3
+   • ADX: 40.9
+   • Spread: 0.00 centavos (-29.271%)
+   • Volume: 3.18x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 10:00:12 | RECV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [█████░░░░░] 51%
+📈 Indicadores:
+   • RSI: 71.0
+   • ADX: 38.0
+   • Spread: 0.00 centavos (-18.220%)
+   • Volume: 2.29x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 10:00:12 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 47.1
+   • ADX: 13.5
+   • Spread: 0.00 centavos (-17.675%)
+   • Volume: 3.14x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:00:12 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 34.1
+   • ADX: 12.8
+   • Spread: 0.00 centavos (-6.476%)
+   • Volume: 6.13x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:00:12 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 36.7
+   • ADX: 16.7
+   • Spread: 0.00 centavos (1.105%)
+   • Volume: 4.98x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:15:13 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 20.8
+   • ADX: 23.2
+   • Spread: 0.00 centavos (0.102%)
+   • Volume: 0.04x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:15:13 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 27.3
+   • ADX: 15.1
+   • Spread: 0.00 centavos (0.139%)
+   • Volume: 0.03x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:15:13 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 28.2
+   • ADX: 28.8
+   • Spread: 0.00 centavos (0.110%)
+   • Volume: 0.14x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:15:13 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 36.0
+   • ADX: 13.3
+   • Spread: 0.00 centavos (0.046%)
+   • Volume: 0.14x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:15:13 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 21.6
+   • ADX: 45.6
+   • Spread: 0.00 centavos (0.032%)
+   • Volume: 0.02x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:15:13 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 30.0
+   • ADX: 28.6
+   • Spread: 0.00 centavos (0.130%)
+   • Volume: 0.05x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:15:13 | RENT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 38.4
+   • ADX: 25.2
+   • Spread: 0.00 centavos (0.047%)
+   • Volume: 0.02x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:15:14 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [█████░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 77.2
+   • ADX: 37.5
+   • Spread: 0.00 centavos (0.138%)
+   • Volume: 0.10x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 10:15:14 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 17.6
+   • ADX: 27.1
+   • Spread: 0.00 centavos (0.084%)
+   • Volume: 0.05x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:15:14 | LWSA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 44.0
+   • ADX: 12.5
+   • Spread: 0.00 centavos (0.232%)
+   • Volume: 0.00x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:15:14 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 6.4
+   • ADX: 47.2
+   • Spread: 0.00 centavos (0.119%)
+   • Volume: 0.11x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:15:14 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 33.3
+   • ADX: 8.6
+   • Spread: 0.00 centavos (0.557%)
+   • Volume: 0.03x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:15:14 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 36.2
+   • ADX: 14.4
+   • Spread: 0.00 centavos (0.090%)
+   • Volume: 0.04x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:15:14 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 28.6
+   • ADX: 15.3
+   • Spread: 0.00 centavos (0.249%)
+   • Volume: 1.41x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:15:14 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 17.1
+   • ADX: 19.2
+   • Spread: 0.00 centavos (0.134%)
+   • Volume: 0.06x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:15:15 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 21.5
+   • Spread: 0.00 centavos (1.190%)
+   • Volume: 0.00x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:15:15 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 29.2
+   • ADX: 17.9
+   • Spread: 0.00 centavos (0.169%)
+   • Volume: 0.02x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:30:20 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 19.6
+   • ADX: 26.0
+   • Spread: 0.00 centavos (0.051%)
+   • Volume: 0.12x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:30:20 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 25.0
+   • ADX: 17.6
+   • Spread: 0.00 centavos (0.140%)
+   • Volume: 0.11x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:30:20 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 25.0
+   • ADX: 31.4
+   • Spread: 0.00 centavos (0.110%)
+   • Volume: 0.11x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:30:20 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 34.2
+   • ADX: 14.7
+   • Spread: 0.00 centavos (0.092%)
+   • Volume: 0.10x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:30:20 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 22.6
+   • ADX: 46.9
+   • Spread: 0.00 centavos (0.111%)
+   • Volume: 0.03x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:30:20 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 18.2
+   • ADX: 29.3
+   • Spread: 0.00 centavos (0.074%)
+   • Volume: 0.07x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:30:20 | RENT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 33.3
+   • ADX: 25.6
+   • Spread: 0.00 centavos (0.071%)
+   • Volume: 0.05x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:30:21 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [█████░░░░░] 51%
+📈 Indicadores:
+   • RSI: 80.7
+   • ADX: 40.3
+   • Spread: 0.00 centavos (0.069%)
+   • Volume: 0.12x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 10:30:22 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 18.8
+   • ADX: 28.7
+   • Spread: 0.00 centavos (0.167%)
+   • Volume: 0.24x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:30:22 | LWSA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 36.4
+   • ADX: 12.5
+   • Spread: 0.00 centavos (0.232%)
+   • Volume: 0.32x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:30:22 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 6.4
+   • ADX: 50.0
+   • Spread: 0.00 centavos (0.119%)
+   • Volume: 0.12x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:30:22 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 41.2
+   • ADX: 9.0
+   • Spread: 0.00 centavos (0.278%)
+   • Volume: 0.21x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:30:22 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% (Sem tendência)
+📈 Indicadores:
+   • RSI: 24.2
+   • ADX: 15.6
+   • Spread: 0.00 centavos (0.060%)
+   • Volume: 0.11x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:30:22 | MOVI3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 39.1
+   • ADX: 23.7
+   • Spread: 0.00 centavos (0.208%)
+   • Volume: 0.02x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:30:22 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 29.2
+   • ADX: 18.6
+   • Spread: 0.00 centavos (0.500%)
+   • Volume: 0.04x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:30:23 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 12.2
+   • ADX: 24.2
+   • Spread: 0.00 centavos (0.139%)
+   • Volume: 0.04x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:30:23 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 42.9
+   • ADX: 22.5
+   • Spread: 0.00 centavos (1.205%)
+   • Volume: 0.02x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:30:23 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 44.4
+   • ADX: 17.3
+   • Spread: 0.00 centavos (0.085%)
+   • Volume: 0.04x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:45:29 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 40.0
+   • ADX: 25.1
+   • Spread: 0.00 centavos (0.025%)
+   • Volume: 0.04x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:45:29 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 32.6
+   • ADX: 17.9
+   • Spread: 0.00 centavos (0.070%)
+   • Volume: 0.02x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:45:29 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 44.6
+   • ADX: 30.0
+   • Spread: 0.00 centavos (0.055%)
+   • Volume: 0.00x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:45:29 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 36.8
+   • ADX: 14.9
+   • Spread: 0.00 centavos (0.046%)
+   • Volume: 0.01x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:45:29 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 27.0
+   • ADX: 46.6
+   • Spread: 0.00 centavos (0.024%)
+   • Volume: 0.35x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:45:29 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 34.9
+   • ADX: 28.7
+   • Spread: 0.00 centavos (0.037%)
+   • Volume: 0.02x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:45:29 | RENT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 47.3
+   • ADX: 22.1
+   • Spread: 0.00 centavos (0.047%)
+   • Volume: 0.00x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:45:29 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 40.9
+   • ADX: 27.3
+   • Spread: 0.00 centavos (0.083%)
+   • Volume: 0.00x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:45:29 | LWSA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 48.1
+   • ADX: 11.6
+   • Spread: 0.00 centavos (0.230%)
+   • Volume: 0.14x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:45:29 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 21.1
+   • ADX: 49.4
+   • Spread: 0.00 centavos (0.118%)
+   • Volume: 0.02x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:45:29 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 36.3
+   • ADX: 16.6
+   • Spread: 0.00 centavos (0.060%)
+   • Volume: 0.02x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:45:30 | RECV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [█████░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 71.4
+   • ADX: 40.5
+   • Spread: 0.00 centavos (0.192%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 10:45:30 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 39.3
+   • ADX: 17.8
+   • Spread: 0.00 centavos (0.247%)
+   • Volume: 1.10x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 10:45:30 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 17.8
+   • ADX: 27.8
+   • Spread: 0.00 centavos (0.069%)
+   • Volume: 0.00x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:45:30 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 33.3
+   • ADX: 22.3
+   • Spread: 0.00 centavos (1.205%)
+   • Volume: 0.00x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 10:45:30 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Sem tendência)
+📈 Indicadores:
+   • RSI: 37.5
+   • ADX: 17.4
+   • Spread: 0.00 centavos (0.085%)
+   • Volume: 0.02x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 15:17:54 | PETR4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 51 | Score filtrado: 51
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [████░░░░░░] 51%
+📈 Indicadores:
+   • RSI: 70.6
+   • ADX: 47.9
+   • Spread: 200.00 centavos (0.064%)
+   • Volume: 0.23x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 15:17:54 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 38.0
+   • ADX: 26.4
+   • Spread: 100.00 centavos (0.025%)
+   • Volume: 0.35x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:17:55 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 41.4
+   • ADX: 24.2
+   • Spread: 100.00 centavos (0.070%)
+   • Volume: 0.06x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:17:55 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 45.8
+   • ADX: 28.9
+   • Spread: 100.00 centavos (0.055%)
+   • Volume: 0.30x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:17:55 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 49.3
+   • ADX: 15.2
+   • Spread: 100.00 centavos (0.046%)
+   • Volume: 0.44x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 15:17:55 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 33.6
+   • ADX: 47.4
+   • Spread: 100.00 centavos (0.008%)
+   • Volume: 0.84x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 15:17:55 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 48.0
+   • ADX: 24.6
+   • Spread: 200.00 centavos (0.038%)
+   • Volume: 1.34x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 15:17:56 | RENT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 47.6
+   • ADX: 19.7
+   • Spread: 100.00 centavos (0.024%)
+   • Volume: 0.20x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 15:17:56 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 41.2
+   • ADX: 24.8
+   • Spread: 100.00 centavos (0.084%)
+   • Volume: 0.54x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:17:56 | LWSA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 51.6
+   • ADX: 11.9
+   • Spread: 100.00 centavos (0.230%)
+   • Volume: 0.66x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 15:17:56 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 23.8
+   • ADX: 49.5
+   • Spread: 100.00 centavos (0.122%)
+   • Volume: 0.51x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:17:57 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 35.4
+   • ADX: 19.0
+   • Spread: 100.00 centavos (0.031%)
+   • Volume: 1.41x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 15:17:57 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 40.0
+   • ADX: 16.0
+   • Spread: 200.00 centavos (0.513%)
+   • Volume: 0.83x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 15:17:58 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 24.6
+   • ADX: 35.2
+   • Spread: 200.00 centavos (0.143%)
+   • Volume: 1.03x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...--------------------------------------------------------------------------------
+🕐 15:17:58 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 20.0
+   • Spread: 100.00 centavos (1.190%)
+   • Volume: 0.12x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:17:58 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 48.9
+   • ADX: 18.7
+   • Spread: 100.00 centavos (0.042%)
+   • Volume: 0.32x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 15:32:59 | PETR4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 51 | Score filtrado: 51
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [████░░░░░░] 51%
+📈 Indicadores:
+   • RSI: 73.2
+   • ADX: 48.9
+   • Spread: 100.00 centavos (0.032%)
+   • Volume: 0.14x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 15:32:59 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 58.2
+   • ADX: 20.8
+   • Spread: 100.00 centavos (0.025%)
+   • Volume: 0.41x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:32:59 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 54.2
+   • ADX: 24.2
+   • Spread: 100.00 centavos (0.070%)
+   • Volume: 0.47x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:32:59 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 56.3
+   • ADX: 24.2
+   • Spread: 100.00 centavos (0.055%)
+   • Volume: 0.08x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:32:59 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 18.4
+   • ADX: 38.2
+   • Spread: 100.00 centavos (0.046%)
+   • Volume: 0.23x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:32:59 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 50.3
+   • ADX: 40.9
+   • Spread: 400.00 centavos (0.032%)
+   • Volume: 0.08x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:32:59 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 40.4
+   • ADX: 32.6
+   • Spread: 300.00 centavos (0.056%)
+   • Volume: 0.10x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:32:59 | RENT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 22.4
+   • ADX: 28.9
+   • Spread: 100.00 centavos (0.024%)
+   • Volume: 0.18x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:32:59 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 40.8
+   • ADX: 26.2
+   • Spread: 100.00 centavos (0.023%)
+   • Volume: 0.39x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:32:59 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 46.2
+   • ADX: 17.9
+   • Spread: 100.00 centavos (0.084%)
+   • Volume: 0.48x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 15:32:59 | LWSA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 46.7
+   • ADX: 12.0
+   • Spread: 100.00 centavos (0.232%)
+   • Volume: 0.20x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 15:32:59 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 39.1
+   • ADX: 50.4
+   • Spread: 100.00 centavos (0.122%)
+   • Volume: 0.09x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:32:59 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 28.6
+   • ADX: 31.9
+   • Spread: 100.00 centavos (0.283%)
+   • Volume: 0.42x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:32:59 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 26.0
+   • ADX: 50.0
+   • Spread: 100.00 centavos (0.031%)
+   • Volume: 0.17x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:32:59 | MOVI3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 39.2
+   • ADX: 27.4
+   • Spread: 100.00 centavos (0.106%)
+   • Volume: 0.07x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:33:00 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 8.3
+   • ADX: 28.0
+   • Spread: 100.00 centavos (0.256%)
+   • Volume: 0.03x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:33:00 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 47.3
+   • ADX: 53.1
+   • Spread: 200.00 centavos (0.143%)
+   • Volume: 0.17x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:33:00 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 33.3
+   • ADX: 12.0
+   • Spread: 100.00 centavos (1.190%)
+   • Volume: 0.04x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 15:33:00 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 62.5
+   • ADX: 15.2
+   • Spread: 200.00 centavos (0.085%)
+   • Volume: 0.15x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)--------------------------------------------------------------------------------
+🕐 15:33:48 | RECV3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 0 | Score filtrado: 0
+📊 Sinal: BUY | Estratégia: ML_ENSEMBLE
+📊 Filtros de Setup: [░░░░░░░░░░] 0%
+📈 Indicadores:
+   • RSI: 56.3
+   • ADX: 30.8
+   • Spread: 1.00 centavos (0.096%)
+   • Volume: 0.03x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente--------------------------------------------------------------------------------
+🕐 15:33:52 | PETR4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 0 | Score filtrado: 0
+📊 Sinal: BUY | Estratégia: ML_ENSEMBLE
+📊 Filtros de Setup: [░░░░░░░░░░] 0%
+📈 Indicadores:
+   • RSI: 73.2
+   • ADX: 48.9
+   • Spread: 1.00 centavos (0.032%)
+   • Volume: 0.14x
+   • Tendência EMA: N/A
+💬 Motivo: Aguardando correção (RSI Esticado)--------------------------------------------------------------------------------
+🕐 15:47:55 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+   • Spread: 0 centavos (0.025%)
+📈 Indicadores:
+   • RSI: 64.0
+   • ADX: 19.6
+   • Spread: 0.00 centavos (0.025%)
+   • Volume: 0.23x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+   • Spread: 0 centavos (0.140%)
+📈 Indicadores:
+   • RSI: 60.9
+   • ADX: 23.4
+   • Spread: 0.00 centavos (0.140%)
+   • Volume: 0.16x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+   • Spread: 0 centavos (0.055%)
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 23.4
+   • Spread: 0.00 centavos (0.055%)
+   • Volume: 0.12x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+   • Spread: 0 centavos (0.047%)
+📈 Indicadores:
+   • RSI: 13.2
+   • ADX: 39.3
+   • Spread: 0.00 centavos (0.047%)
+   • Volume: 0.13x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+   • Spread: 0 centavos (0.008%)
+📈 Indicadores:
+   • RSI: 52.6
+   • ADX: 40.1
+   • Spread: 0.00 centavos (0.008%)
+   • Volume: 0.28x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+   • Spread: 0 centavos (0.019%)
+📈 Indicadores:
+   • RSI: 36.4
+   • ADX: 32.2
+   • Spread: 0.00 centavos (0.019%)
+   • Volume: 0.20x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | RENT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+   • Spread: 0 centavos (0.024%)
+📈 Indicadores:
+   • RSI: 24.3
+   • ADX: 30.3
+   • Spread: 0.00 centavos (0.024%)
+   • Volume: 0.24x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+   • Spread: 0 centavos (0.023%)
+📈 Indicadores:
+   • RSI: 38.2
+   • ADX: 24.9
+   • Spread: 0.00 centavos (0.023%)
+   • Volume: 0.07x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+   • Spread: 0 centavos (0.084%)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 17.9
+   • Spread: 0.00 centavos (0.084%)
+   • Volume: 0.11x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | LWSA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+   • Spread: 0 centavos (0.232%)
+📈 Indicadores:
+   • RSI: 46.7
+   • ADX: 12.7
+   • Spread: 0.00 centavos (0.232%)
+   • Volume: 0.12x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+   • Spread: 0 centavos (0.244%)
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 48.6
+   • Spread: 0.00 centavos (0.244%)
+   • Volume: 0.17x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+   • Spread: 0 centavos (0.284%)
+📈 Indicadores:
+   • RSI: 28.6
+   • ADX: 33.2
+   • Spread: 0.00 centavos (0.284%)
+   • Volume: 0.19x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+   • Spread: 0 centavos (0.031%)
+📈 Indicadores:
+   • RSI: 13.6
+   • ADX: 50.6
+   • Spread: 0.00 centavos (0.031%)
+   • Volume: 0.21x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | MOVI3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+   • Spread: 0 centavos (0.107%)
+📈 Indicadores:
+   • RSI: 35.2
+   • ADX: 29.4
+   • Spread: 0.00 centavos (0.107%)
+   • Volume: 0.66x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+   • Spread: 0 centavos (0.518%)
+📈 Indicadores:
+   • RSI: 6.7
+   • ADX: 30.5
+   • Spread: 0.00 centavos (0.518%)
+   • Volume: 0.32x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+   • Spread: 0 centavos (0.142%)
+📈 Indicadores:
+   • RSI: 54.5
+   • ADX: 51.7
+   • Spread: 0.00 centavos (0.142%)
+   • Volume: 0.24x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+   • Spread: 0 centavos (1.190%)
+📈 Indicadores:
+   • RSI: 33.3
+   • ADX: 13.4
+   • Spread: 0.00 centavos (1.190%)
+   • Volume: 0.07x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 15:47:55 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+   • Spread: 0 centavos (0.043%)
+📈 Indicadores:
+   • RSI: 52.8
+   • ADX: 15.1
+   • Spread: 0.00 centavos (0.043%)
+   • Volume: 0.28x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:03:08 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 54.4
+   • ADX: 20.0
+   • Spread: R$ 0.0000 (0.025%)
+   • Volume: 0.93x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:03:08 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 55.6
+   • ADX: 23.6
+   • Spread: R$ 0.0000 (0.070%)
+   • Volume: 0.86x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:03:08 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 60.0
+   • ADX: 23.6
+   • Spread: R$ 0.0000 (0.055%)
+   • Volume: 0.56x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:03:08 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 11.9
+   • ADX: 41.3
+   • Spread: R$ 0.0000 (0.047%)
+   • Volume: 0.80x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:03:08 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 40.4
+   • ADX: 39.9
+   • Spread: R$ 0.0000 (0.016%)
+   • Volume: 0.78x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:03:08 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 47.9
+   • ADX: 33.9
+   • Spread: R$ 0.0000 (0.038%)
+   • Volume: 1.86x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:03:08 | RENT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 28.6
+   • ADX: 31.2
+   • Spread: R$ 0.0000 (0.024%)
+   • Volume: 1.10x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:03:08 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 38.8
+   • ADX: 23.4
+   • Spread: R$ 0.0000 (0.023%)
+   • Volume: 0.35x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:03:08 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 43.7
+   • ADX: 18.6
+   • Spread: R$ 0.0000 (0.084%)
+   • Volume: 0.82x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:03:08 | LWSA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 37.5
+   • ADX: 15.2
+   • Spread: R$ 0.0000 (0.233%)
+   • Volume: 3.00x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:03:08 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 46.8
+   • Spread: R$ 0.0000 (0.122%)
+   • Volume: 0.49x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:03:08 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 36.4
+   • ADX: 34.4
+   • Spread: R$ 0.0000 (0.284%)
+   • Volume: 0.53x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:03:09 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 15.0
+   • ADX: 51.3
+   • Spread: R$ 0.0000 (0.031%)
+   • Volume: 0.77x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:03:09 | MOVI3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 37.3
+   • ADX: 30.6
+   • Spread: R$ 0.0000 (0.106%)
+   • Volume: 1.84x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:03:09 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 14.3
+   • ADX: 32.2
+   • Spread: R$ 0.0000 (0.258%)
+   • Volume: 0.74x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:03:09 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 54.4
+   • ADX: 50.5
+   • Spread: R$ 0.0000 (0.071%)
+   • Volume: 0.80x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:03:09 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 40.0
+   • ADX: 13.7
+   • Spread: R$ 0.0000 (1.190%)
+   • Volume: 0.17x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:03:09 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 46.6
+   • ADX: 15.4
+   • Spread: R$ 0.0000 (0.043%)
+   • Volume: 0.80x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 47.5
+   • ADX: 21.0
+   • Spread: R$ 0.0000 (0.025%)
+   • Volume: 1.13x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 59.3
+   • ADX: 24.0
+   • Spread: R$ 0.0000 (0.070%)
+   • Volume: 1.63x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 58.6
+   • ADX: 23.8
+   • Spread: R$ 0.0000 (0.055%)
+   • Volume: 0.81x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 16.7
+   • ADX: 43.0
+   • Spread: R$ 0.0000 (0.047%)
+   • Volume: 0.93x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 42.3
+   • ADX: 40.0
+   • Spread: R$ 0.0000 (0.016%)
+   • Volume: 1.30x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 37.2
+   • ADX: 34.9
+   • Spread: R$ 0.0000 (0.038%)
+   • Volume: 1.24x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | RENT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 30.6
+   • ADX: 32.0
+   • Spread: R$ 0.0000 (0.024%)
+   • Volume: 1.73x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 39.3
+   • ADX: 22.0
+   • Spread: R$ 0.0000 (0.023%)
+   • Volume: 0.84x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 35.3
+   • ADX: 20.4
+   • Spread: R$ 0.0000 (0.084%)
+   • Volume: 1.97x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | LWSA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 37.5
+   • ADX: 16.6
+   • Spread: R$ 0.0000 (0.233%)
+   • Volume: 0.58x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 71.9
+   • ADX: 44.4
+   • Spread: R$ 0.0000 (0.121%)
+   • Volume: 0.38x
+   • Tendência EMA: DOWN
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 40.0
+   • ADX: 34.2
+   • Spread: R$ 0.0000 (0.282%)
+   • Volume: 1.30x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 18.4
+   • ADX: 52.2
+   • Spread: R$ 0.0000 (0.031%)
+   • Volume: 0.71x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | MOVI3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 33.9
+   • ADX: 31.8
+   • Spread: R$ 0.0000 (0.107%)
+   • Volume: 2.00x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:18:09 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 26.7
+   • ADX: 33.1
+   • Spread: R$ 0.0000 (0.258%)
+   • Volume: 1.19x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:18:10 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 50.6
+   • ADX: 49.4
+   • Spread: R$ 0.0000 (0.071%)
+   • Volume: 0.63x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:18:10 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 40.0
+   • ADX: 13.9
+   • Spread: R$ 0.0000 (1.190%)
+   • Volume: 0.19x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:18:10 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 45.3
+   • ADX: 15.5
+   • Spread: R$ 0.0000 (0.043%)
+   • Volume: 0.61x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 51.7
+   • ADX: 21.6
+   • Spread: R$ 0.0000 (0.025%)
+   • Volume: 1.21x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 24.4
+   • Spread: R$ 0.0000 (0.070%)
+   • Volume: 0.84x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 63.0
+   • ADX: 24.2
+   • Spread: R$ 0.0000 (0.055%)
+   • Volume: 0.80x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 14.3
+   • ADX: 44.8
+   • Spread: R$ 0.0000 (0.047%)
+   • Volume: 0.59x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 50.8
+   • ADX: 39.5
+   • Spread: R$ 0.0000 (0.008%)
+   • Volume: 0.60x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 43.7
+   • ADX: 35.8
+   • Spread: R$ 0.0000 (0.038%)
+   • Volume: 1.35x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | RENT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 29.5
+   • ADX: 33.2
+   • Spread: R$ 0.0000 (0.024%)
+   • Volume: 1.22x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 36.2
+   • ADX: 20.6
+   • Spread: R$ 0.0000 (0.023%)
+   • Volume: 1.00x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 41.2
+   • ADX: 21.5
+   • Spread: R$ 0.0000 (0.084%)
+   • Volume: 0.51x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | LWSA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 35.3
+   • ADX: 19.0
+   • Spread: R$ 0.0000 (0.234%)
+   • Volume: 1.34x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 42.4
+   • Spread: R$ 0.0000 (0.122%)
+   • Volume: 0.48x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 44.4
+   • ADX: 32.8
+   • Spread: R$ 0.0000 (0.282%)
+   • Volume: 0.75x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 26.5
+   • ADX: 52.9
+   • Spread: R$ 0.0000 (0.031%)
+   • Volume: 0.52x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | MOVI3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 30.9
+   • ADX: 34.0
+   • Spread: R$ 0.0000 (0.108%)
+   • Volume: 3.00x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 25.0
+   • ADX: 32.9
+   • Spread: R$ 0.0000 (0.258%)
+   • Volume: 1.14x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 48.5
+   • Spread: R$ 0.0000 (0.071%)
+   • Volume: 0.58x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:33:15 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 33.3
+   • ADX: 12.4
+   • Spread: R$ 0.0000 (1.205%)
+   • Volume: 3.00x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:33:16 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 15.0
+   • Spread: R$ 0.0000 (0.043%)
+   • Volume: 0.48x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:48:21 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 51.6
+   • ADX: 19.6
+   • Spread: R$ 0.0000 (0.025%)
+   • Volume: 1.27x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:48:21 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 53.8
+   • ADX: 24.8
+   • Spread: R$ 0.0000 (0.070%)
+   • Volume: 1.37x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:48:21 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 59.3
+   • ADX: 22.7
+   • Spread: R$ 0.0000 (0.055%)
+   • Volume: 0.76x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:48:21 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 17.9
+   • ADX: 46.6
+   • Spread: R$ 0.0000 (0.047%)
+   • Volume: 0.59x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:48:21 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 50.6
+   • ADX: 38.3
+   • Spread: R$ 0.0000 (0.016%)
+   • Volume: 0.84x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:48:21 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 53.6
+   • ADX: 33.6
+   • Spread: R$ 0.0000 (0.056%)
+   • Volume: 1.02x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:48:21 | RENT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 36.1
+   • ADX: 34.0
+   • Spread: R$ 0.0000 (0.048%)
+   • Volume: 1.19x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:48:21 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 37.6
+   • ADX: 19.4
+   • Spread: R$ 0.0000 (0.046%)
+   • Volume: 0.39x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:48:22 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 44.4
+   • ADX: 20.3
+   • Spread: R$ 0.0000 (0.084%)
+   • Volume: 1.07x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:48:22 | LWSA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 36.8
+   • ADX: 20.8
+   • Spread: R$ 0.0000 (0.234%)
+   • Volume: 1.06x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:48:22 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 67.6
+   • ADX: 41.1
+   • Spread: R$ 0.0000 (0.244%)
+   • Volume: 0.70x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:48:22 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 55.6
+   • ADX: 32.4
+   • Spread: R$ 0.0000 (0.282%)
+   • Volume: 0.95x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:48:22 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 19.1
+   • ADX: 53.5
+   • Spread: R$ 0.0000 (0.031%)
+   • Volume: 0.71x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:48:22 | MOVI3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 36.5
+   • ADX: 35.7
+   • Spread: R$ 0.0000 (0.108%)
+   • Volume: 2.47x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:48:22 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 45.0
+   • ADX: 29.4
+   • Spread: R$ 0.0000 (0.255%)
+   • Volume: 2.59x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 16:48:22 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 57.3
+   • ADX: 46.7
+   • Spread: R$ 0.0000 (0.142%)
+   • Volume: 0.59x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 16:48:22 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 20.0
+   • ADX: 11.9
+   • Spread: R$ 0.0000 (1.205%)
+   • Volume: 0.22x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 16:48:22 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 52.9
+   • ADX: 14.6
+   • Spread: R$ 0.0000 (0.043%)
+   • Volume: 0.47x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 42.3
+   • ADX: 18.7
+   • Spread: R$ 0.0000 (0.025%)
+   • Volume: 0.69x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 57.7
+   • ADX: 23.7
+   • Spread: R$ 0.0000 (0.070%)
+   • Volume: 2.41x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 52.4
+   • ADX: 22.1
+   • Spread: R$ 0.0000 (0.055%)
+   • Volume: 0.74x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 9.7
+   • ADX: 48.3
+   • Spread: R$ 0.0000 (0.047%)
+   • Volume: 0.71x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 42.0
+   • ADX: 37.1
+   • Spread: R$ 0.0000 (0.008%)
+   • Volume: 1.13x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 51.9
+   • ADX: 31.9
+   • Spread: R$ 0.0000 (0.019%)
+   • Volume: 1.02x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | RENT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 41.3
+   • ADX: 31.7
+   • Spread: R$ 0.0000 (0.024%)
+   • Volume: 1.94x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 33.6
+   • ADX: 18.2
+   • Spread: R$ 0.0000 (0.023%)
+   • Volume: 0.68x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 37.5
+   • ADX: 20.2
+   • Spread: R$ 0.0000 (0.084%)
+   • Volume: 0.58x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | LWSA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 36.8
+   • ADX: 21.6
+   • Spread: R$ 0.0000 (0.233%)
+   • Volume: 0.57x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 61.3
+   • ADX: 39.9
+   • Spread: R$ 0.0000 (0.122%)
+   • Volume: 0.57x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 60.0
+   • ADX: 31.1
+   • Spread: R$ 0.0000 (0.281%)
+   • Volume: 0.93x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 24.4
+   • ADX: 53.6
+   • Spread: R$ 0.0000 (0.031%)
+   • Volume: 0.82x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | MOVI3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 25.5
+   • ADX: 37.2
+   • Spread: R$ 0.0000 (0.108%)
+   • Volume: 1.61x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 47.6
+   • ADX: 27.7
+   • Spread: R$ 0.0000 (0.254%)
+   • Volume: 1.55x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 71.1
+   • ADX: 42.7
+   • Spread: R$ 0.0000 (0.070%)
+   • Volume: 1.31x
+   • Tendência EMA: DOWN
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 40.0
+   • ADX: 11.4
+   • Spread: R$ 0.0000 (1.205%)
+   • Volume: 0.19x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 17:03:29 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 46.3
+   • ADX: 15.1
+   • Spread: R$ 0.0000 (0.043%)
+   • Volume: 0.56x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 17:18:34 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 39.3
+   • ADX: 18.8
+   • Spread: R$ 0.0000 (0.025%)
+   • Volume: 1.89x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 17:18:34 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 60.0
+   • ADX: 23.2
+   • Spread: R$ 0.0000 (0.070%)
+   • Volume: 0.97x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:18:34 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 43.5
+   • ADX: 22.5
+   • Spread: R$ 0.0000 (0.055%)
+   • Volume: 1.27x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:18:34 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 8.6
+   • ADX: 50.5
+   • Spread: R$ 0.0000 (0.094%)
+   • Volume: 1.59x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 44.5
+   • ADX: 36.1
+   • Spread: R$ 0.0000 (0.008%)
+   • Volume: 1.08x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 55.3
+   • ADX: 30.7
+   • Spread: R$ 0.0000 (0.019%)
+   • Volume: 0.48x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | RENT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 46.7
+   • ADX: 29.8
+   • Spread: R$ 0.0000 (0.024%)
+   • Volume: 2.91x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 36.3
+   • ADX: 17.1
+   • Spread: R$ 0.0000 (0.046%)
+   • Volume: 2.81x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 31.2
+   • ADX: 21.0
+   • Spread: R$ 0.0000 (0.084%)
+   • Volume: 1.13x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | LWSA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 36.8
+   • ADX: 22.5
+   • Spread: R$ 0.0000 (0.233%)
+   • Volume: 0.48x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 65.5
+   • ADX: 37.8
+   • Spread: R$ 0.0000 (0.122%)
+   • Volume: 0.71x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 29.9
+   • Spread: R$ 0.0000 (0.281%)
+   • Volume: 0.46x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 28.3
+   • ADX: 52.9
+   • Spread: R$ 0.0000 (0.031%)
+   • Volume: 0.77x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | MOVI3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 28.8
+   • ADX: 38.2
+   • Spread: R$ 0.0000 (0.108%)
+   • Volume: 2.66x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 42.9
+   • ADX: 26.2
+   • Spread: R$ 0.0000 (0.255%)
+   • Volume: 0.88x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 64.7
+   • ADX: 39.7
+   • Spread: R$ 0.0000 (0.071%)
+   • Volume: 1.40x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 40.0
+   • ADX: 10.9
+   • Spread: R$ 0.0000 (1.205%)
+   • Volume: 0.32x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 17:18:35 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 41.4
+   • ADX: 14.2
+   • Spread: R$ 0.0000 (0.043%)
+   • Volume: 1.36x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 17:33:40 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 39.0
+   • ADX: 19.0
+   • Spread: R$ 0.0000 (0.025%)
+   • Volume: 0.99x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 17:33:40 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 54.5
+   • ADX: 22.4
+   • Spread: R$ 0.0000 (0.070%)
+   • Volume: 1.13x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:33:40 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 31.8
+   • ADX: 22.9
+   • Spread: R$ 0.0000 (0.055%)
+   • Volume: 0.90x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:33:40 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 14.5
+   • ADX: 53.3
+   • Spread: R$ 0.0000 (0.047%)
+   • Volume: 2.99x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:33:40 | SBSP3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 33.5
+   • ADX: 36.6
+   • Spread: R$ 0.0000 (0.008%)
+   • Volume: 1.29x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 53.0
+   • ADX: 29.4
+   • Spread: R$ 0.0000 (0.019%)
+   • Volume: 1.24x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | RENT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 47.7
+   • ADX: 28.2
+   • Spread: R$ 0.0000 (0.024%)
+   • Volume: 1.67x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 37.6
+   • ADX: 17.5
+   • Spread: R$ 0.0000 (0.023%)
+   • Volume: 0.48x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | ITSA4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 29.4
+   • ADX: 21.4
+   • Spread: R$ 0.0000 (0.084%)
+   • Volume: 1.57x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | LWSA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 36.8
+   • ADX: 22.5
+   • Spread: R$ 0.0000 (0.232%)
+   • Volume: 0.44x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | MGLU3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 53.3
+   • ADX: 37.1
+   • Spread: R$ 0.0000 (0.122%)
+   • Volume: 1.71x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 28.7
+   • Spread: R$ 0.0000 (0.281%)
+   • Volume: 0.51x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 16.3
+   • ADX: 53.4
+   • Spread: R$ 0.0000 (0.031%)
+   • Volume: 0.55x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | MOVI3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 27.1
+   • ADX: 38.8
+   • Spread: R$ 0.0000 (0.108%)
+   • Volume: 1.90x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | RECV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 1 | Score filtrado: 1
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [░░░░░░░░░░] 1%
+📈 Indicadores:
+   • RSI: 23.8
+   • ADX: 22.0
+   • Spread: R$ 0.0000 (0.096%)
+   • Volume: 1.14x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | ANIM3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 47.8
+   • ADX: 24.7
+   • Spread: R$ 0.0000 (0.253%)
+   • Volume: 1.25x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | HAPV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21%
+📈 Indicadores:
+   • RSI: 67.1
+   • ADX: 37.3
+   • Spread: R$ 0.0000 (0.071%)
+   • Volume: 0.84x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 40.0
+   • ADX: 10.4
+   • Spread: R$ 0.0000 (1.205%)
+   • Volume: 0.32x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 17:33:41 | RADL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 21 | Score filtrado: 21
+📊 Sinal: NONE | Estratégia: ELITE
+📊 Filtros de Setup: [██░░░░░░░░] 21% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 40.0
+   • ADX: 13.6
+   • Spread: R$ 0.0000 (0.043%)
+   • Volume: 0.85x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+

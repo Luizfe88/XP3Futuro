@@ -1,0 +1,33 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.11, pytest-9.0.2, pluggy-1.6.0
+rootdir: C:\Users\luizf\Documents\xp3v5
+plugins: anyio-4.10.0, dash-3.3.0
+collected 8 items
+
+tests\test_core_logic.py .......F                                        [100%]
+
+================================== FAILURES ===================================
+_______________ test_validate_subsetor_exposure_limit_exceeded ________________
+
+mock_acc = <MagicMock name='account_info' id='2071804038512'>
+mock_pos = <MagicMock name='positions_get' id='2071804037504'>
+
+    @patch('utils.mt5.positions_get')
+    @patch('utils.mt5.account_info')
+    def test_validate_subsetor_exposure_limit_exceeded(mock_acc, mock_pos):
+        # Simula conta com 100k e 25k em PETR4 (Subsetor Petróleo)
+        mock_acc.return_value = MagicMock(equity=100000.0)
+        mock_pos.return_value = [
+            MagicMock(symbol="PETR4", volume=1000, price_open=25.0)
+        ]
+    
+        # Garantir que o mapa tenha o subsetor
+        with patch.dict('config.SUBSETOR_MAP', {"PETR4": "Petróleo"}):
+            allowed, reason = utils.validate_subsetor_exposure("PETR3") # PETR3 também é Petróleo
+>           assert allowed is False
+E           assert True is False
+
+tests\test_core_logic.py:101: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_core_logic.py::test_validate_subsetor_exposure_limit_exceeded
+========================= 1 failed, 7 passed in 6.88s =========================

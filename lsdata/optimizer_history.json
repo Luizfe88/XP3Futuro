@@ -1,0 +1,67 @@
+[
+  {
+    "regime": "STRONG_BULL",
+    "side": "COMPRA",
+    "score": -1.0,
+    "ema_fast": 6,
+    "ema_slow": 18,
+    "rsi_level": 60,
+    "momentum_min": 0.0,
+    "adx_min": 18,
+    "sl_atr_mult": 2.0,
+    "tp_mult": 1.5,
+    "data_otimizacao": "2025-12-06 14:36"
+  },
+  {
+    "regime": "BULL",
+    "side": "COMPRA",
+    "score": -1.0,
+    "ema_fast": 6,
+    "ema_slow": 18,
+    "rsi_level": 60,
+    "momentum_min": 0.0,
+    "adx_min": 18,
+    "sl_atr_mult": 2.0,
+    "tp_mult": 1.5,
+    "data_otimizacao": "2025-12-06 14:36"
+  },
+  {
+    "regime": "SIDEWAYS",
+    "side": "COMPRA",
+    "score": -1.0,
+    "ema_fast": 6,
+    "ema_slow": 18,
+    "rsi_level": 60,
+    "momentum_min": 0.0,
+    "adx_min": 18,
+    "sl_atr_mult": 2.0,
+    "tp_mult": 1.5,
+    "data_otimizacao": "2025-12-06 14:36"
+  },
+  {
+    "regime": "BEAR",
+    "side": "VENDA",
+    "score": -1.0,
+    "ema_fast": 6,
+    "ema_slow": 18,
+    "rsi_level": 60,
+    "momentum_min": 0.0,
+    "adx_min": 18,
+    "sl_atr_mult": 2.0,
+    "tp_mult": 1.5,
+    "data_otimizacao": "2025-12-06 14:37"
+  },
+  {
+    "regime": "CRISIS",
+    "side": "NEUTRO",
+    "score": -1.0,
+    "ema_fast": 6,
+    "ema_slow": 18,
+    "rsi_level": 60,
+    "momentum_min": 0.0,
+    "adx_min": 18,
+    "sl_atr_mult": 2.0,
+    "tp_mult": 1.5,
+    "data_otimizacao": "2025-12-06 14:37"
+  }
+]

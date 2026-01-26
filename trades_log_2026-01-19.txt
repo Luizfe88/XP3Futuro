@@ -1,0 +1,4 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-01-19 12:53:44 | ENTRADA  | RENT3  | SELL | Vol:   12200 | Price:  40.48 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-19 16:40:09 | SAÍDA    | RENT3  | SELL | Vol:   12200 | Price:  40.48 | P&L: -1830.00 R$ (-0.37%) | Motivo: Day-Only Close

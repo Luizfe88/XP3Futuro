@@ -1,0 +1,88 @@
+c:\Users\luizf\Documents\xp3v5\config.py#L921-931
+RELATORIO DE OTIMIZACAO - FUTUROS B3
+Gerado em: 24/01/2026 07:09:13
+------------------------------------------------------------
+SIMBOLO: WING26 - Mini Índice (Fev/26)
+PARAMETROS:
+  ema_fast: 14
+  ema_slow: 48
+  adx_threshold: 16
+  rsi_low: 40
+  rsi_high: 73
+  sl_atr_mult: 3.764483927733468
+  tp_atr_mult: 5.304877104638433
+METRICAS OOS:
+  Sharpe: 1.12
+  Win Rate: 100.0%
+  Trades: 1
+  Max Drawdown: 0.0%
+  Profit Factor: 0.00
+  EMA Fast (último): 108925.19
+  EMA Slow (último): 108096.76
+  ADX (último): 28.00
+  VOL Ratio (média): 1.01
+  MOM (média): 0.0010
+------------------------------------------------------------
+SIMBOLO: WDOG26 - Mini Dólar (Fev/26)
+PARAMETROS:
+  ema_fast: 15
+  ema_slow: 27
+  adx_threshold: 15
+  rsi_low: 35
+  rsi_high: 66
+  sl_atr_mult: 1.6236796285500597
+  tp_atr_mult: 5.565827545685877
+METRICAS OOS:
+  Sharpe: 1.16
+  Win Rate: 100.0%
+  Trades: 2
+  Max Drawdown: 0.0%
+  Profit Factor: 0.00
+  EMA Fast (último): 6503.69
+  EMA Slow (último): 6591.65
+  ADX (último): 38.70
+  VOL Ratio (média): 1.00
+  MOM (média): -0.0174
+------------------------------------------------------------
+SIMBOLO: WSPH26 - Micro S&P 500 (Mar/26)
+PARAMETROS:
+  ema_fast: 14
+  ema_slow: 33
+  adx_threshold: 17
+  rsi_low: 40
+  rsi_high: 67
+  sl_atr_mult: 1.5774288434343036
+  tp_atr_mult: 3.196531663257534
+METRICAS OOS:
+  Sharpe: 0.83
+  Win Rate: 33.3%
+  Trades: 3
+  Max Drawdown: 0.5%
+  Profit Factor: 3.92
+  EMA Fast (último): 2874.60
+  EMA Slow (último): 2831.17
+  ADX (último): 28.47
+  VOL Ratio (média): 0.99
+  MOM (média): 0.0060
+------------------------------------------------------------
+SIMBOLO: BGIG26 - BGI (Fev/26)
+PARAMETROS:
+  ema_fast: 15
+  ema_slow: 23
+  adx_threshold: 16
+  rsi_low: 36
+  rsi_high: 60
+  sl_atr_mult: 3.945998554876499
+  tp_atr_mult: 4.306339060587547
+METRICAS OOS:
+  Sharpe: 0.69
+  Win Rate: 66.7%
+  Trades: 3
+  Max Drawdown: 2.0%
+  Profit Factor: 2.08
+  EMA Fast (último): 1593.42
+  EMA Slow (último): 1612.44
+  ADX (último): 19.64
+  VOL Ratio (média): 1.00
+  MOM (média): -0.0425
+------------------------------------------------------------

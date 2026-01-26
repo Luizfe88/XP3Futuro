@@ -1,0 +1,10 @@
+2026-01-11 20:18:26,767 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-11 20:18:29,202 - ml - INFO - 🆕 Arquivo de histórico criado: ml_trade_history.json
+2026-01-11 20:18:29,206 - ml - INFO - 🆕 Arquivo Q-Table criado: qtable.npy
+2026-01-11 20:18:31,324 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-11 20:18:32,663 - fundamentals - INFO - 🔍 Buscando dados fundamentistas para UNK.SA...
+2026-01-11 20:18:34,033 - yfinance - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: UNK.SA"}}}
+2026-01-11 20:20:07,441 - news_calendar - INFO - ✅ news_calendar.py carregado com sucesso
+2026-01-11 20:20:09,708 - ml - INFO - 📊 Histórico ML carregado: 0 trades
+2026-01-11 20:20:09,767 - ml - INFO - 🧠 Q-Table carregada
+2026-01-11 20:20:11,947 - utils - INFO - ✅ Redis conectado - cache ativado

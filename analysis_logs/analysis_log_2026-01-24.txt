@@ -1,0 +1,1641 @@
+--------------------------------------------------------------------------------
+🕐 11:57:25 | VALE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 65.7
+   • ADX: 26.4
+   • Spread: R$ 0.0000 (0.164%)
+   • Volume: 1.24x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:26 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 60.6
+   • ADX: 25.6
+   • Spread: R$ 0.0000 (0.253%)
+   • Volume: 1.24x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:26 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 67.2
+   • ADX: 39.9
+   • Spread: R$ 0.0000 (0.048%)
+   • Volume: 2.63x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:27 | ABEV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 55
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 73.9
+   • ADX: 26.2
+   • Spread: R$ 0.0000 (1.075%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+--------------------------------------------------------------------------------
+🕐 11:57:27 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 68.4
+   • ADX: 38.2
+   • Spread: R$ 0.0000 (0.329%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:27 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 63.0
+   • ADX: 27.3
+   • Spread: R$ 0.0000 (0.063%)
+   • Volume: 1.81x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:27 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 66.9
+   • ADX: 50.0
+   • Spread: R$ 0.0000 (0.271%)
+   • Volume: 1.97x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:28 | AXIA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 62.6
+   • ADX: 16.7
+   • Spread: R$ 0.0000 (0.314%)
+   • Volume: 0.95x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:28 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 69.6
+   • ADX: 34.3
+   • Spread: R$ 0.0000 (0.287%)
+   • Volume: 0.72x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:30 | VBBR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 39.5
+   • Spread: R$ 0.0000 (0.384%)
+   • Volume: 0.88x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:31 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 58.2
+   • ADX: 23.3
+   • Spread: R$ 0.0000 (0.572%)
+   • Volume: 0.86x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:31 | RAIL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 61.8
+   • ADX: 37.7
+   • Spread: R$ 0.0000 (0.474%)
+   • Volume: 0.85x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:31 | TOTS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 55.2
+   • ADX: 20.8
+   • Spread: R$ 0.0000 (0.790%)
+   • Volume: 1.21x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:32 | RDOR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 70.4
+   • ADX: 35.6
+   • Spread: R$ 0.0000 (0.523%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:32 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 58.3
+   • ADX: 29.3
+   • Spread: R$ 0.0000 (0.783%)
+   • Volume: 0.87x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:33 | AURA33 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 45
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 45%
+📈 Indicadores:
+   • RSI: 57.3
+   • ADX: 20.6
+   • Spread: R$ 0.0000 (0.008%)
+   • Volume: 0.96x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+--------------------------------------------------------------------------------
+🕐 11:57:33 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 63.2
+   • ADX: 29.8
+   • Spread: R$ 0.0000 (0.905%)
+   • Volume: 1.09x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:34 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 16.1
+   • Spread: R$ 0.0000 (1.235%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:35 | QUAL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 60.0
+   • ADX: 14.9
+   • Spread: R$ 0.0000 (1.702%)
+   • Volume: 0.45x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:41 | PETR4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 62.5
+   • ADX: 51.4
+   • Spread: R$ 0.0000 (0.228%)
+   • Volume: 0.03x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:41 | VALE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 69.4
+   • ADX: 31.1
+   • Spread: R$ 0.0000 (0.164%)
+   • Volume: 0.09x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:41 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 68.9
+   • ADX: 25.9
+   • Spread: R$ 0.0000 (0.253%)
+   • Volume: 0.01x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:41 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 38.0
+   • Spread: R$ 0.0000 (0.048%)
+   • Volume: 0.00x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:41 | ABEV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 55
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 73.9
+   • ADX: 26.2
+   • Spread: R$ 0.0000 (1.075%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+--------------------------------------------------------------------------------
+🕐 11:57:41 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 68.4
+   • ADX: 38.2
+   • Spread: R$ 0.0000 (0.329%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:41 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 61.4
+   • ADX: 27.8
+   • Spread: R$ 0.0000 (0.063%)
+   • Volume: 2.56x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:41 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 59.7
+   • ADX: 51.7
+   • Spread: R$ 0.0000 (0.271%)
+   • Volume: 0.01x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:41 | AXIA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 66.1
+   • ADX: 15.3
+   • Spread: R$ 0.0000 (0.314%)
+   • Volume: 0.01x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:41 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 61.6
+   • ADX: 34.3
+   • Spread: R$ 0.0000 (0.287%)
+   • Volume: 2.06x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:41 | VBBR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 76.0
+   • ADX: 42.1
+   • Spread: R$ 0.0000 (0.384%)
+   • Volume: 2.28x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:41 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 70.3
+   • ADX: 24.7
+   • Spread: R$ 0.0000 (0.572%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:42 | RAIL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 70.3
+   • ADX: 37.3
+   • Spread: R$ 0.0000 (0.474%)
+   • Volume: 1.89x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:42 | TOTS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 68.7
+   • ADX: 22.6
+   • Spread: R$ 0.0000 (0.790%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:42 | RDOR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 70.4
+   • ADX: 35.6
+   • Spread: R$ 0.0000 (0.523%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:42 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 60.9
+   • ADX: 31.4
+   • Spread: R$ 0.0000 (0.783%)
+   • Volume: 0.04x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:42 | AURA33 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 40
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 68.9
+   • ADX: 19.5
+   • Spread: R$ 0.0000 (0.008%)
+   • Volume: 1.13x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 11:57:43 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 69.6
+   • ADX: 29.3
+   • Spread: R$ 0.0000 (0.905%)
+   • Volume: 0.20x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:43 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 44.4
+   • ADX: 16.1
+   • Spread: R$ 0.0000 (1.235%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:43 | QUAL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 46.2
+   • ADX: 13.9
+   • Spread: R$ 0.0000 (1.702%)
+   • Volume: 0.11x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 11:57:53 | PETR4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 62.5
+   • ADX: 51.4
+   • Spread: R$ 0.0000 (0.228%)
+   • Volume: 0.03x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:53 | VALE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 69.4
+   • ADX: 31.1
+   • Spread: R$ 0.0000 (0.164%)
+   • Volume: 0.09x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:53 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 68.9
+   • ADX: 25.9
+   • Spread: R$ 0.0000 (0.253%)
+   • Volume: 0.01x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 38.0
+   • Spread: R$ 0.0000 (0.048%)
+   • Volume: 0.00x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | ABEV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 55
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 73.9
+   • ADX: 26.2
+   • Spread: R$ 0.0000 (1.075%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 68.4
+   • ADX: 38.2
+   • Spread: R$ 0.0000 (0.329%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 61.4
+   • ADX: 27.8
+   • Spread: R$ 0.0000 (0.063%)
+   • Volume: 2.56x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 59.7
+   • ADX: 51.7
+   • Spread: R$ 0.0000 (0.271%)
+   • Volume: 0.01x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | AXIA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 66.1
+   • ADX: 15.3
+   • Spread: R$ 0.0000 (0.314%)
+   • Volume: 0.01x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 61.6
+   • ADX: 34.3
+   • Spread: R$ 0.0000 (0.287%)
+   • Volume: 2.06x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | VBBR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 76.0
+   • ADX: 42.1
+   • Spread: R$ 0.0000 (0.384%)
+   • Volume: 2.28x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 70.3
+   • ADX: 24.7
+   • Spread: R$ 0.0000 (0.572%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | RAIL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 70.3
+   • ADX: 37.3
+   • Spread: R$ 0.0000 (0.474%)
+   • Volume: 1.89x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | TOTS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 68.7
+   • ADX: 22.6
+   • Spread: R$ 0.0000 (0.790%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | RDOR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 70.4
+   • ADX: 35.6
+   • Spread: R$ 0.0000 (0.523%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 60.9
+   • ADX: 31.4
+   • Spread: R$ 0.0000 (0.783%)
+   • Volume: 0.04x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | AURA33 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 40
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 68.9
+   • ADX: 19.5
+   • Spread: R$ 0.0000 (0.008%)
+   • Volume: 1.13x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 69.6
+   • ADX: 29.3
+   • Spread: R$ 0.0000 (0.905%)
+   • Volume: 0.20x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 44.4
+   • ADX: 16.1
+   • Spread: R$ 0.0000 (1.235%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:57:54 | QUAL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 46.2
+   • ADX: 13.9
+   • Spread: R$ 0.0000 (1.702%)
+   • Volume: 0.11x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | PETR4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 62.5
+   • ADX: 51.4
+   • Spread: R$ 0.0000 (0.228%)
+   • Volume: 0.03x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | VALE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 69.4
+   • ADX: 31.1
+   • Spread: R$ 0.0000 (0.164%)
+   • Volume: 0.09x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 68.9
+   • ADX: 25.9
+   • Spread: R$ 0.0000 (0.253%)
+   • Volume: 0.01x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 38.0
+   • Spread: R$ 0.0000 (0.048%)
+   • Volume: 0.00x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | ABEV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 55
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 73.9
+   • ADX: 26.2
+   • Spread: R$ 0.0000 (1.075%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 68.4
+   • ADX: 38.2
+   • Spread: R$ 0.0000 (0.329%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 61.4
+   • ADX: 27.8
+   • Spread: R$ 0.0000 (0.063%)
+   • Volume: 2.56x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 59.7
+   • ADX: 51.7
+   • Spread: R$ 0.0000 (0.271%)
+   • Volume: 0.01x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | AXIA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 66.1
+   • ADX: 15.3
+   • Spread: R$ 0.0000 (0.314%)
+   • Volume: 0.01x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 61.6
+   • ADX: 34.3
+   • Spread: R$ 0.0000 (0.287%)
+   • Volume: 2.06x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | VBBR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 76.0
+   • ADX: 42.1
+   • Spread: R$ 0.0000 (0.384%)
+   • Volume: 2.28x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 70.3
+   • ADX: 24.7
+   • Spread: R$ 0.0000 (0.572%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | RAIL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 70.3
+   • ADX: 37.3
+   • Spread: R$ 0.0000 (0.474%)
+   • Volume: 1.89x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | TOTS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 68.7
+   • ADX: 22.6
+   • Spread: R$ 0.0000 (0.790%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | RDOR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 70.4
+   • ADX: 35.6
+   • Spread: R$ 0.0000 (0.523%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 60.9
+   • ADX: 31.4
+   • Spread: R$ 0.0000 (0.783%)
+   • Volume: 0.04x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | AURA33 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 40
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 68.9
+   • ADX: 19.5
+   • Spread: R$ 0.0000 (0.008%)
+   • Volume: 1.13x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 69.6
+   • ADX: 29.3
+   • Spread: R$ 0.0000 (0.905%)
+   • Volume: 0.20x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 44.4
+   • ADX: 16.1
+   • Spread: R$ 0.0000 (1.235%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:05 | QUAL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 46.2
+   • ADX: 13.9
+   • Spread: R$ 0.0000 (1.702%)
+   • Volume: 0.11x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 11:58:15 | PETR4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 62.5
+   • ADX: 51.4
+   • Spread: R$ 0.0000 (0.228%)
+   • Volume: 0.03x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:15 | VALE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 69.4
+   • ADX: 31.1
+   • Spread: R$ 0.0000 (0.164%)
+   • Volume: 0.09x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 68.9
+   • ADX: 25.9
+   • Spread: R$ 0.0000 (0.253%)
+   • Volume: 0.01x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 38.0
+   • Spread: R$ 0.0000 (0.048%)
+   • Volume: 0.00x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | ABEV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 55
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 73.9
+   • ADX: 26.2
+   • Spread: R$ 0.0000 (1.075%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 68.4
+   • ADX: 38.2
+   • Spread: R$ 0.0000 (0.329%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 61.4
+   • ADX: 27.8
+   • Spread: R$ 0.0000 (0.063%)
+   • Volume: 2.56x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 59.7
+   • ADX: 51.7
+   • Spread: R$ 0.0000 (0.271%)
+   • Volume: 0.01x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | AXIA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 66.1
+   • ADX: 15.3
+   • Spread: R$ 0.0000 (0.314%)
+   • Volume: 0.01x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 61.6
+   • ADX: 34.3
+   • Spread: R$ 0.0000 (0.287%)
+   • Volume: 2.06x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | VBBR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 76.0
+   • ADX: 42.1
+   • Spread: R$ 0.0000 (0.384%)
+   • Volume: 2.28x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 70.3
+   • ADX: 24.7
+   • Spread: R$ 0.0000 (0.572%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | RAIL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 70.3
+   • ADX: 37.3
+   • Spread: R$ 0.0000 (0.474%)
+   • Volume: 1.89x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | TOTS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 68.7
+   • ADX: 22.6
+   • Spread: R$ 0.0000 (0.790%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | RDOR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 70.4
+   • ADX: 35.6
+   • Spread: R$ 0.0000 (0.523%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 60.9
+   • ADX: 31.4
+   • Spread: R$ 0.0000 (0.783%)
+   • Volume: 0.04x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | AURA33 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 40
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 68.9
+   • ADX: 19.5
+   • Spread: R$ 0.0000 (0.008%)
+   • Volume: 1.13x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 69.6
+   • ADX: 29.3
+   • Spread: R$ 0.0000 (0.905%)
+   • Volume: 0.20x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 44.4
+   • ADX: 16.1
+   • Spread: R$ 0.0000 (1.235%)
+   • Volume: 0.02x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+--------------------------------------------------------------------------------
+🕐 11:58:16 | QUAL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 46.2
+   • ADX: 13.9
+   • Spread: R$ 0.0000 (1.702%)
+   • Volume: 0.11x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+

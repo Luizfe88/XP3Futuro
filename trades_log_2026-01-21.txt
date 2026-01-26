@@ -1,0 +1,18 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-01-21 10:25:58 | ENTRADA  | PETR4  | BUY  | Vol:   12800 | Price:  32.61 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-21 11:38:04 | SAÍDA    | PETR4  | BUY  | Vol:   12800 | Price:  32.61 | P&L: +2944.00 R$ (+0.71%) | Motivo: Take Profit
+2026-01-21 13:30:53 | ENTRADA  | BBDC4  | BUY  | Vol:   11600 | Price:  19.70 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-21 13:30:59 | ENTRADA  | B3SA3  | BUY  | Vol:   14000 | Price:  15.23 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-21 13:31:27 | ENTRADA  | PRIO3  | BUY  | Vol:    5700 | Price:  46.31 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-21 13:33:01 | ENTRADA  | RAIL3  | BUY  | Vol:    9800 | Price:  13.79 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-21 13:37:15 | ENTRADA  | RENT3  | BUY  | Vol:    3700 | Price:  42.12 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-21 13:58:42 | ENTRADA  | VALE3  | BUY  | Vol:    6300 | Price:  82.28 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-21 15:28:44 | ENTRADA  | VIVT3  | BUY  | Vol:    9200 | Price:  34.15 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-21 15:41:59 | SAÍDA    | PRIO3  | BUY  | Vol:    5700 | Price:  46.31 | P&L: +2793.00 R$ (+1.06%) | Motivo: Take Profit
+2026-01-21 16:02:03 | SAÍDA    | RAIL3  | BUY  | Vol:    9800 | Price:  13.79 | P&L: +2744.00 R$ (+2.03%) | Motivo: Fechamento
+2026-01-21 16:02:03 | SAÍDA    | B3SA3  | BUY  | Vol:   14000 | Price:  15.23 | P&L: +1960.00 R$ (+0.92%) | Motivo: Fechamento
+2026-01-21 16:02:03 | SAÍDA    | RENT3  | BUY  | Vol:    3700 | Price:  42.12 | P&L: +1591.00 R$ (+1.02%) | Motivo: Fechamento
+2026-01-21 16:02:03 | SAÍDA    | VIVT3  | BUY  | Vol:    9200 | Price:  34.15 | P&L: +1748.00 R$ (+0.56%) | Motivo: Fechamento
+2026-01-21 16:07:05 | SAÍDA    | BBDC4  | BUY  | Vol:   11600 | Price:  19.70 | P&L: -1392.00 R$ (-0.61%) | Motivo: Stop Loss
+2026-01-21 16:29:10 | SAÍDA    | VALE3  | BUY  | Vol:    6300 | Price:  82.28 | P&L: -3528.00 R$ (-0.68%) | Motivo: Stop Loss

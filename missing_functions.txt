@@ -1,0 +1,24 @@
+[OK] Configurações carregadas de config.yaml
+send_telegram_trade: EXITS
+send_telegram_exit: EXITS
+get_telegram_bot: EXITS
+check_and_close_orphans: EXITS
+calculate_signal_score: EXITS
+safe_copy_rates: EXITS
+detect_market_regime: EXITS
+calculate_sector_exposure_pct: EXITS
+macro_trend_ok: EXITS
+adjust_global_sl_after_pyr: EXITS
+send_order_with_sl_tp: EXITS
+is_valid_dataframe: EXITS
+load_anti_chop_data: MISSING
+save_anti_chop_data: MISSING
+load_daily_limits: MISSING
+save_daily_limits: MISSING
+reset_daily_limits: MISSING
+register_sl_hit: MISSING
+check_anti_chop_filter: MISSING
+check_daily_symbol_limit: MISSING
+register_trade_result: MISSING
+check_pyramid_eligibility: MISSING
+check_minimum_price_movement: MISSING

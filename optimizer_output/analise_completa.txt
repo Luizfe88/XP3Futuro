@@ -1,0 +1,127 @@
+ANÁLISE COMPLETA - ATIVOS (B3)
+Timestamp: 2026-01-17T14:53:42.323482
+
+METODOLOGIA
+- Liquidez: avg(volume * close) nos últimos 20 pregões (proxy volume financeiro)
+- Volatilidade: desvio padrão dos retornos D1 anualizado (janela configurável)
+- Correlação IBOV: correlação dos retornos D1 com IBOV (^BVSP quando necessário)
+- Market cap: Yahoo Finance (yfinance) via campo marketCap
+- Pesos score_total: liquidez 0.35, vol 0.2, mcap 0.25, diversificação 0.2
+- Regra de viabilidade: Viável se Liquidez >= mediana e pelo menos 3/4 critérios passam (liq/vol/corr/mcap).
+
+RESUMO
+- Total analisados: 55
+- Viáveis: 27
+- Blue chips definidas: VALE3, PETR4, PETR3, ITUB4, BBDC4, BBAS3, ABEV3, WEGE3, B3SA3, ELET3, SUZB3, JBSS3
+
+DETALHES POR ATIVO (ordenado por rank_total)
+  1 | IGTI11 | tier A | viável=NÃO | liq=R$ 216.626 | vol=24,29% | corr=0,808 | mcap=R$ 0 | src=mt5
+     justificativa: Liquidez NOK (R$ 216.626; lim=R$ 318.889); Vol OK (24,29%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,808; lim=0,635); MCap NOK (R$ 0; lim=R$ 6.132.724.480)
+  2 |  QUAL3 | tier A | viável=NÃO | liq=R$ 3.968 | vol=52,24% | corr=0,566 | mcap=R$ 658.865.536 | src=mt5
+     justificativa: Liquidez NOK (R$ 3.968; lim=R$ 318.889); Vol OK (52,24%; faixa=21,54%–57,52%); Corr OK (|corr|=0,566; lim=0,635); MCap NOK (R$ 658.865.536; lim=R$ 6.132.724.480)
+  3 |  ABCB4 | tier A | viável=NÃO | liq=R$ 69.538 | vol=19,84% | corr=0,513 | mcap=R$ 5.778.596.864 | src=mt5
+     justificativa: Liquidez NOK (R$ 69.538; lim=R$ 318.889); Vol NOK (19,84%; faixa=21,54%–57,52%); Corr OK (|corr|=0,513; lim=0,635); MCap NOK (R$ 5.778.596.864; lim=R$ 6.132.724.480)
+  4 |  LWSA3 | tier A | viável=NÃO | liq=R$ 20.534 | vol=38,32% | corr=0,524 | mcap=R$ 2.383.369.728 | src=mt5
+     justificativa: Liquidez NOK (R$ 20.534; lim=R$ 318.889); Vol OK (38,32%; faixa=21,54%–57,52%); Corr OK (|corr|=0,524; lim=0,635); MCap NOK (R$ 2.383.369.728; lim=R$ 6.132.724.480)
+  5 |  ANIM3 | tier A | viável=NÃO | liq=R$ 24.356 | vol=60,33% | corr=0,608 | mcap=R$ 1.515.218.432 | src=mt5
+     justificativa: Liquidez NOK (R$ 24.356; lim=R$ 318.889); Vol NOK (60,33%; faixa=21,54%–57,52%); Corr OK (|corr|=0,608; lim=0,635); MCap NOK (R$ 1.515.218.432; lim=R$ 6.132.724.480)
+  6 |  RECV3 | tier A | viável=NÃO | liq=R$ 92.245 | vol=25,56% | corr=0,429 | mcap=R$ 3.026.460.160 | src=mt5
+     justificativa: Liquidez NOK (R$ 92.245; lim=R$ 318.889); Vol OK (25,56%; faixa=21,54%–57,52%); Corr OK (|corr|=0,429; lim=0,635); MCap NOK (R$ 3.026.460.160; lim=R$ 6.132.724.480)
+  7 |  SLCE3 | tier A | viável=NÃO | liq=R$ 103.696 | vol=18,61% | corr=0,351 | mcap=R$ 7.564.187.136 | src=mt5
+     justificativa: Liquidez NOK (R$ 103.696; lim=R$ 318.889); Vol NOK (18,61%; faixa=21,54%–57,52%); Corr OK (|corr|=0,351; lim=0,635); MCap OK (R$ 7.564.187.136; lim=R$ 6.132.724.480)
+  8 |  PINE4 | tier A | viável=NÃO | liq=R$ 13.466 | vol=36,73% | corr=0,251 | mcap=R$ 3.138.035.200 | src=mt5
+     justificativa: Liquidez NOK (R$ 13.466; lim=R$ 318.889); Vol OK (36,73%; faixa=21,54%–57,52%); Corr OK (|corr|=0,251; lim=0,635); MCap NOK (R$ 3.138.035.200; lim=R$ 6.132.724.480)
+  9 |  YDUQ3 | tier A | viável=NÃO | liq=R$ 87.412 | vol=43,36% | corr=0,605 | mcap=R$ 3.191.640.320 | src=mt5
+     justificativa: Liquidez NOK (R$ 87.412; lim=R$ 318.889); Vol OK (43,36%; faixa=21,54%–57,52%); Corr OK (|corr|=0,605; lim=0,635); MCap NOK (R$ 3.191.640.320; lim=R$ 6.132.724.480)
+ 10 |  COGN3 | tier A | viável=NÃO | liq=R$ 59.935 | vol=44,22% | corr=0,584 | mcap=R$ 7.323.808.768 | src=mt5
+     justificativa: Liquidez NOK (R$ 59.935; lim=R$ 318.889); Vol OK (44,22%; faixa=21,54%–57,52%); Corr OK (|corr|=0,584; lim=0,635); MCap OK (R$ 7.323.808.768; lim=R$ 6.132.724.480)
+ 11 |  MDNE3 | tier A | viável=NÃO | liq=R$ 136.590 | vol=40,07% | corr=0,506 | mcap=R$ 2.039.419.392 | src=mt5
+     justificativa: Liquidez NOK (R$ 136.590; lim=R$ 318.889); Vol OK (40,07%; faixa=21,54%–57,52%); Corr OK (|corr|=0,506; lim=0,635); MCap NOK (R$ 2.039.419.392; lim=R$ 6.132.724.480)
+ 11 |  ODPV3 | tier A | viável=NÃO | liq=R$ 59.233 | vol=27,65% | corr=0,300 | mcap=R$ 5.827.045.888 | src=mt5
+     justificativa: Liquidez NOK (R$ 59.233; lim=R$ 318.889); Vol OK (27,65%; faixa=21,54%–57,52%); Corr OK (|corr|=0,300; lim=0,635); MCap NOK (R$ 5.827.045.888; lim=R$ 6.132.724.480)
+ 13 |  MOVI3 | tier B | viável=NÃO | liq=R$ 80.963 | vol=58,72% | corr=0,599 | mcap=R$ 3.266.070.272 | src=mt5
+     justificativa: Liquidez NOK (R$ 80.963; lim=R$ 318.889); Vol NOK (58,72%; faixa=21,54%–57,52%); Corr OK (|corr|=0,599; lim=0,635); MCap NOK (R$ 3.266.070.272; lim=R$ 6.132.724.480)
+ 14 |  TEND3 | tier B | viável=NÃO | liq=R$ 211.409 | vol=47,03% | corr=0,633 | mcap=R$ 2.769.006.336 | src=mt5
+     justificativa: Liquidez NOK (R$ 211.409; lim=R$ 318.889); Vol OK (47,03%; faixa=21,54%–57,52%); Corr OK (|corr|=0,633; lim=0,635); MCap NOK (R$ 2.769.006.336; lim=R$ 6.132.724.480)
+ 15 |  NEOE3 | tier B | viável=NÃO | liq=R$ 56.677 | vol=22,43% | corr=0,325 | mcap=R$ 38.877.925.376 | src=mt5
+     justificativa: Liquidez NOK (R$ 56.677; lim=R$ 318.889); Vol OK (22,43%; faixa=21,54%–57,52%); Corr OK (|corr|=0,325; lim=0,635); MCap OK (R$ 38.877.925.376; lim=R$ 6.132.724.480)
+ 16 |  ITSA4 | tier B | viável=NÃO | liq=R$ 252.477 | vol=19,67% | corr=0,855 | mcap=R$ 134.872.498.176 | src=mt5
+     justificativa: Liquidez NOK (R$ 252.477; lim=R$ 318.889); Vol NOK (19,67%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,855; lim=0,635); MCap OK (R$ 134.872.498.176; lim=R$ 6.132.724.480)
+ 17 |  MRVE3 | tier B | viável=NÃO | liq=R$ 89.229 | vol=42,77% | corr=0,501 | mcap=R$ 4.209.933.568 | src=mt5
+     justificativa: Liquidez NOK (R$ 89.229; lim=R$ 318.889); Vol OK (42,77%; faixa=21,54%–57,52%); Corr OK (|corr|=0,501; lim=0,635); MCap NOK (R$ 4.209.933.568; lim=R$ 6.132.724.480)
+ 18 |  MULT3 | tier B | viável=SIM | liq=R$ 441.645 | vol=24,36% | corr=0,803 | mcap=R$ 14.239.464.448 | src=mt5
+     justificativa: Liquidez OK (R$ 441.645; lim=R$ 318.889); Vol OK (24,36%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,803; lim=0,635); MCap OK (R$ 14.239.464.448; lim=R$ 6.132.724.480)
+ 19 |  RAIZ4 | tier B | viável=NÃO | liq=R$ 8.994 | vol=52,63% | corr=0,370 | mcap=R$ 8.481.354.752 | src=mt5
+     justificativa: Liquidez NOK (R$ 8.994; lim=R$ 318.889); Vol OK (52,63%; faixa=21,54%–57,52%); Corr OK (|corr|=0,370; lim=0,635); MCap OK (R$ 8.481.354.752; lim=R$ 6.132.724.480)
+ 20 |  BEEF3 | tier B | viável=NÃO | liq=R$ 67.712 | vol=39,01% | corr=0,248 | mcap=R$ 5.439.456.768 | src=mt5
+     justificativa: Liquidez NOK (R$ 67.712; lim=R$ 318.889); Vol OK (39,01%; faixa=21,54%–57,52%); Corr OK (|corr|=0,248; lim=0,635); MCap NOK (R$ 5.439.456.768; lim=R$ 6.132.724.480)
+ 21 |  ONCO3 | tier B | viável=NÃO | liq=R$ 12.239 | vol=96,99% | corr=0,037 | mcap=R$ 2.415.317.248 | src=mt5
+     justificativa: Liquidez NOK (R$ 12.239; lim=R$ 318.889); Vol NOK (96,99%; faixa=21,54%–57,52%); Corr OK (|corr|=0,037; lim=0,635); MCap NOK (R$ 2.415.317.248; lim=R$ 6.132.724.480)
+ 22 |  USIM5 | tier B | viável=NÃO | liq=R$ 61.078 | vol=39,07% | corr=0,337 | mcap=R$ 7.902.652.416 | src=mt5
+     justificativa: Liquidez NOK (R$ 61.078; lim=R$ 318.889); Vol OK (39,07%; faixa=21,54%–57,52%); Corr OK (|corr|=0,337; lim=0,635); MCap OK (R$ 7.902.652.416; lim=R$ 6.132.724.480)
+ 23 |  LREN3 | tier B | viável=SIM | liq=R$ 318.889 | vol=36,32% | corr=0,637 | mcap=R$ 13.092.715.520 | src=mt5
+     justificativa: Liquidez OK (R$ 318.889; lim=R$ 318.889); Vol OK (36,32%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,637; lim=0,635); MCap OK (R$ 13.092.715.520; lim=R$ 6.132.724.480)
+ 24 |  DESK3 | tier B | viável=NÃO | liq=R$ 68.031 | vol=63,66% | corr=0,162 | mcap=R$ 2.063.968.640 | src=mt5
+     justificativa: Liquidez NOK (R$ 68.031; lim=R$ 318.889); Vol NOK (63,66%; faixa=21,54%–57,52%); Corr OK (|corr|=0,162; lim=0,635); MCap NOK (R$ 2.063.968.640; lim=R$ 6.132.724.480)
+ 25 |  MGLU3 | tier B | viável=NÃO | liq=R$ 138.869 | vol=55,71% | corr=0,545 | mcap=R$ 6.881.353.728 | src=mt5
+     justificativa: Liquidez NOK (R$ 138.869; lim=R$ 318.889); Vol OK (55,71%; faixa=21,54%–57,52%); Corr OK (|corr|=0,545; lim=0,635); MCap OK (R$ 6.881.353.728; lim=R$ 6.132.724.480)
+ 26 |  ENEV3 | tier C | viável=SIM | liq=R$ 357.555 | vol=24,59% | corr=0,641 | mcap=R$ 39.465.570.304 | src=mt5
+     justificativa: Liquidez OK (R$ 357.555; lim=R$ 318.889); Vol OK (24,59%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,641; lim=0,635); MCap OK (R$ 39.465.570.304; lim=R$ 6.132.724.480)
+ 27 |  CYRE3 | tier C | viável=SIM | liq=R$ 444.720 | vol=33,47% | corr=0,725 | mcap=R$ 9.047.880.704 | src=mt5
+     justificativa: Liquidez OK (R$ 444.720; lim=R$ 318.889); Vol OK (33,47%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,725; lim=0,635); MCap OK (R$ 9.047.880.704; lim=R$ 6.132.724.480)
+ 28 |  EQTL3 | tier C | viável=SIM | liq=R$ 794.208 | vol=22,17% | corr=0,817 | mcap=R$ 47.108.534.272 | src=mt5
+     justificativa: Liquidez OK (R$ 794.208; lim=R$ 318.889); Vol OK (22,17%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,817; lim=0,635); MCap OK (R$ 47.108.534.272; lim=R$ 6.132.724.480)
+ 29 |  RAIL3 | tier C | viável=NÃO | liq=R$ 213.517 | vol=34,81% | corr=0,466 | mcap=R$ 25.238.691.840 | src=mt5
+     justificativa: Liquidez NOK (R$ 213.517; lim=R$ 318.889); Vol OK (34,81%; faixa=21,54%–57,52%); Corr OK (|corr|=0,466; lim=0,635); MCap OK (R$ 25.238.691.840; lim=R$ 6.132.724.480)
+ 30 |  VBBR3 | tier C | viável=SIM | liq=R$ 451.810 | vol=25,52% | corr=0,633 | mcap=R$ 30.564.724.736 | src=mt5
+     justificativa: Liquidez OK (R$ 451.810; lim=R$ 318.889); Vol OK (25,52%; faixa=21,54%–57,52%); Corr OK (|corr|=0,633; lim=0,635); MCap OK (R$ 30.564.724.736; lim=R$ 6.132.724.480)
+ 31 |  GGBR4 | tier C | viável=SIM | liq=R$ 331.275 | vol=21,95% | corr=0,439 | mcap=R$ 43.532.173.312 | src=mt5
+     justificativa: Liquidez OK (R$ 331.275; lim=R$ 318.889); Vol OK (21,95%; faixa=21,54%–57,52%); Corr OK (|corr|=0,439; lim=0,635); MCap OK (R$ 43.532.173.312; lim=R$ 6.132.724.480)
+ 32 |  CSNA3 | tier C | viável=NÃO | liq=R$ 116.498 | vol=41,52% | corr=0,387 | mcap=R$ 12.611.153.920 | src=mt5
+     justificativa: Liquidez NOK (R$ 116.498; lim=R$ 318.889); Vol OK (41,52%; faixa=21,54%–57,52%); Corr OK (|corr|=0,387; lim=0,635); MCap OK (R$ 12.611.153.920; lim=R$ 6.132.724.480)
+ 33 |  BBSE3 | tier C | viável=SIM | liq=R$ 417.630 | vol=15,33% | corr=0,427 | mcap=R$ 68.175.462.400 | src=mt5
+     justificativa: Liquidez OK (R$ 417.630; lim=R$ 318.889); Vol NOK (15,33%; faixa=21,54%–57,52%); Corr OK (|corr|=0,427; lim=0,635); MCap OK (R$ 68.175.462.400; lim=R$ 6.132.724.480)
+ 34 |  VIVT3 | tier C | viável=SIM | liq=R$ 352.507 | vol=21,56% | corr=0,529 | mcap=R$ 103.761.338.368 | src=mt5
+     justificativa: Liquidez OK (R$ 352.507; lim=R$ 318.889); Vol OK (21,56%; faixa=21,54%–57,52%); Corr OK (|corr|=0,529; lim=0,635); MCap OK (R$ 103.761.338.368; lim=R$ 6.132.724.480)
+ 35 |  TIMS3 | tier C | viável=SIM | liq=R$ 349.538 | vol=20,84% | corr=0,415 | mcap=R$ 54.652.731.392 | src=mt5
+     justificativa: Liquidez OK (R$ 349.538; lim=R$ 318.889); Vol NOK (20,84%; faixa=21,54%–57,52%); Corr OK (|corr|=0,415; lim=0,635); MCap OK (R$ 54.652.731.392; lim=R$ 6.132.724.480)
+ 36 | KLBN11 | tier C | viável=NÃO | liq=R$ 204.493 | vol=18,95% | corr=0,222 | mcap=R$ 132.243.808.256 | src=mt5
+     justificativa: Liquidez NOK (R$ 204.493; lim=R$ 318.889); Vol NOK (18,95%; faixa=21,54%–57,52%); Corr OK (|corr|=0,222; lim=0,635); MCap OK (R$ 132.243.808.256; lim=R$ 6.132.724.480)
+ 37 |  B3SA3 | tier C | viável=SIM | liq=R$ 460.474 | vol=29,73% | corr=0,766 | mcap=R$ 76.726.714.368 | src=mt5
+     justificativa: Blue chip: marcada como viável por definição (robustez + liquidez estrutural).
+ 38 |  TOTS3 | tier C | viável=SIM | liq=R$ 478.309 | vol=27,20% | corr=0,502 | mcap=R$ 25.321.539.584 | src=mt5
+     justificativa: Liquidez OK (R$ 478.309; lim=R$ 318.889); Vol OK (27,20%; faixa=21,54%–57,52%); Corr OK (|corr|=0,502; lim=0,635); MCap OK (R$ 25.321.539.584; lim=R$ 6.132.724.480)
+ 39 |  ITUB4 | tier D | viável=SIM | liq=R$ 1.046.252 | vol=19,00% | corr=0,856 | mcap=R$ 436.760.641.536 | src=mt5
+     justificativa: Blue chip: marcada como viável por definição (robustez + liquidez estrutural).
+ 40 |  BBDC4 | tier D | viável=SIM | liq=R$ 514.459 | vol=23,30% | corr=0,785 | mcap=R$ 200.011.284.480 | src=mt5
+     justificativa: Blue chip: marcada como viável por definição (robustez + liquidez estrutural).
+ 41 |  ABEV3 | tier D | viável=SIM | liq=R$ 338.391 | vol=20,26% | corr=0,426 | mcap=R$ 220.193.013.760 | src=mt5
+     justificativa: Blue chip: marcada como viável por definição (robustez + liquidez estrutural).
+ 42 |  HAPV3 | tier D | viável=NÃO | liq=R$ 216.993 | vol=74,63% | corr=0,306 | mcap=R$ 6.166.688.768 | src=mt5
+     justificativa: Liquidez NOK (R$ 216.993; lim=R$ 318.889); Vol NOK (74,63%; faixa=21,54%–57,52%); Corr OK (|corr|=0,306; lim=0,635); MCap OK (R$ 6.166.688.768; lim=R$ 6.132.724.480)
+ 43 |  RENT3 | tier D | viável=SIM | liq=R$ 1.064.569 | vol=31,86% | corr=0,792 | mcap=R$ 42.917.515.264 | src=mt5
+     justificativa: Liquidez OK (R$ 1.064.569; lim=R$ 318.889); Vol OK (31,86%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,792; lim=0,635); MCap OK (R$ 42.917.515.264; lim=R$ 6.132.724.480)
+ 44 |  BBAS3 | tier D | viável=SIM | liq=R$ 489.878 | vol=28,58% | corr=0,646 | mcap=R$ 121.988.308.992 | src=mt5
+     justificativa: Blue chip: marcada como viável por definição (robustez + liquidez estrutural).
+ 45 |  RDOR3 | tier D | viável=SIM | liq=R$ 843.225 | vol=27,95% | corr=0,630 | mcap=R$ 88.808.005.632 | src=mt5
+     justificativa: Liquidez OK (R$ 843.225; lim=R$ 318.889); Vol OK (27,95%; faixa=21,54%–57,52%); Corr OK (|corr|=0,630; lim=0,635); MCap OK (R$ 88.808.005.632; lim=R$ 6.132.724.480)
+ 46 |  SBSP3 | tier D | viável=SIM | liq=R$ 2.147.835 | vol=27,13% | corr=0,650 | mcap=R$ 86.589.136.896 | src=mt5
+     justificativa: Liquidez OK (R$ 2.147.835; lim=R$ 318.889); Vol OK (27,13%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,650; lim=0,635); MCap OK (R$ 86.589.136.896; lim=R$ 6.132.724.480)
+ 47 |  PRIO3 | tier D | viável=SIM | liq=R$ 1.045.278 | vol=23,90% | corr=0,303 | mcap=R$ 35.904.335.872 | src=mt5
+     justificativa: Liquidez OK (R$ 1.045.278; lim=R$ 318.889); Vol OK (23,90%; faixa=21,54%–57,52%); Corr OK (|corr|=0,303; lim=0,635); MCap OK (R$ 35.904.335.872; lim=R$ 6.132.724.480)
+ 48 | BPAC11 | tier D | viável=SIM | liq=R$ 1.071.598 | vol=33,03% | corr=0,761 | mcap=R$ 181.809.987.584 | src=mt5
+     justificativa: Liquidez OK (R$ 1.071.598; lim=R$ 318.889); Vol OK (33,03%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,761; lim=0,635); MCap OK (R$ 181.809.987.584; lim=R$ 6.132.724.480)
+ 49 |  RADL3 | tier D | viável=SIM | liq=R$ 476.454 | vol=43,09% | corr=0,435 | mcap=R$ 44.733.452.288 | src=mt5
+     justificativa: Liquidez OK (R$ 476.454; lim=R$ 318.889); Vol OK (43,09%; faixa=21,54%–57,52%); Corr OK (|corr|=0,435; lim=0,635); MCap OK (R$ 44.733.452.288; lim=R$ 6.132.724.480)
+ 50 |  SUZB3 | tier D | viável=SIM | liq=R$ 967.376 | vol=21,48% | corr=0,059 | mcap=R$ 63.772.889.088 | src=mt5
+     justificativa: Blue chip: marcada como viável por definição (robustez + liquidez estrutural).
+ 51 |  PETR4 | tier D | viável=SIM | liq=R$ 1.210.223 | vol=20,10% | corr=0,454 | mcap=R$ 430.539.309.056 | src=mt5
+     justificativa: Blue chip: marcada como viável por definição (robustez + liquidez estrutural).
+ 52 |  VALE3 | tier D | viável=SIM | liq=R$ 3.156.442 | vol=17,79% | corr=0,364 | mcap=R$ 336.721.346.560 | src=mt5
+     justificativa: Blue chip: marcada como viável por definição (robustez + liquidez estrutural).
+ 53 |  AZUL4 | tier D | viável=NÃO | liq=R$ 16.279.281.029 | vol=593479,61% | corr=0,135 | mcap=R$ 748.683.520 | src=yahoo
+     justificativa: Liquidez OK (R$ 16.279.281.029; lim=R$ 318.889); Vol NOK (593479,61%; faixa=21,54%–57,52%); Corr OK (|corr|=0,135; lim=0,635); MCap NOK (R$ 748.683.520; lim=R$ 6.132.724.480)
+ 54 |  WEGE3 | tier D | viável=SIM | liq=R$ 846.846 | vol=27,53% | corr=0,182 | mcap=R$ 194.344.632.320 | src=mt5
+     justificativa: Blue chip: marcada como viável por definição (robustez + liquidez estrutural).
+ 55 | AURA33 | tier D | viável=SIM | liq=R$ 1.806.209 | vol=48,81% | corr=0,057 | mcap=R$ 27.092.271.104 | src=mt5
+     justificativa: Liquidez OK (R$ 1.806.209; lim=R$ 318.889); Vol OK (48,81%; faixa=21,54%–57,52%); Corr OK (|corr|=0,057; lim=0,635); MCap OK (R$ 27.092.271.104; lim=R$ 6.132.724.480)

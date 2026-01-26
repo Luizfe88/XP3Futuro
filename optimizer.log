@@ -1,0 +1,43 @@
+2026-01-18 14:37:58,131 | INFO | Modo: SANDBOX
+2026-01-18 14:37:58,132 | INFO | MT5: Disponível
+2026-01-18 14:37:58,138 | INFO |    Testando 5 ativos
+2026-01-18 14:38:03,730 | ERROR | $PETR4.SA: possibly delisted; no price data found  (period=730d) (Yahoo error = "15m data not available for startTime=1705685883 and endTime=1768757883. The requested range must be within the last 60 days.")
+2026-01-18 14:38:04,548 | INFO |    PETR4: Trades=12 WR=41.7% Ret=90.74%
+2026-01-18 14:38:05,522 | ERROR | $VALE3.SA: possibly delisted; no price data found  (period=730d) (Yahoo error = "15m data not available for startTime=1705685885 and endTime=1768757885. The requested range must be within the last 60 days.")
+2026-01-18 14:38:05,926 | INFO |    VALE3: Trades=8 WR=37.5% Ret=-2.65%
+2026-01-18 14:38:07,591 | ERROR | $ITUB4.SA: possibly delisted; no price data found  (period=730d) (Yahoo error = "15m data not available for startTime=1705685887 and endTime=1768757887. The requested range must be within the last 60 days.")
+2026-01-18 14:38:08,017 | INFO |    ITUB4: Trades=8 WR=37.5% Ret=217.42%
+2026-01-18 14:38:09,396 | ERROR | $BBDC4.SA: possibly delisted; no price data found  (period=730d) (Yahoo error = "15m data not available for startTime=1705685889 and endTime=1768757889. The requested range must be within the last 60 days.")
+2026-01-18 14:38:09,688 | INFO |    BBDC4: Trades=6 WR=33.3% Ret=175.15%
+2026-01-18 14:38:11,047 | ERROR | $ABEV3.SA: possibly delisted; no price data found  (period=730d) (Yahoo error = "15m data not available for startTime=1705685891 and endTime=1768757891. The requested range must be within the last 60 days.")
+2026-01-18 14:38:11,358 | INFO |    ABEV3: Trades=4 WR=50.0% Ret=117.71%
+2026-01-18 14:39:49,102 | INFO | [OK] Config carregado
+2026-01-18 14:39:49,106 | INFO | Modo: SANDBOX
+2026-01-18 14:39:49,107 | INFO | MT5: Disponivel
+2026-01-18 14:39:49,107 | INFO | [1/4] Selecionando ativos...
+2026-01-18 14:39:49,108 | INFO |    Testando 5 ativos
+2026-01-18 14:39:49,109 | INFO | [2/4] Verificando liquidez...
+2026-01-18 14:39:52,225 | INFO |    [OK] 5 ativos aprovados
+2026-01-18 14:39:52,226 | INFO | [3/4] Executando backtests...
+2026-01-18 14:39:52,227 | INFO | [DATA] Carregando PETR4...
+2026-01-18 14:39:54,875 | ERROR | $PETR4.SA: possibly delisted; no price data found  (period=730d) (Yahoo error = "15m data not available for startTime=1705685994 and endTime=1768757994. The requested range must be within the last 60 days.")
+2026-01-18 14:39:55,273 | INFO |   [OK] Yahoo: 730 barras
+2026-01-18 14:39:55,296 | INFO |    PETR4: Trades=12 WR=41.7% Ret=90.74%
+2026-01-18 14:39:55,297 | INFO | [DATA] Carregando VALE3...
+2026-01-18 14:39:56,716 | ERROR | $VALE3.SA: possibly delisted; no price data found  (period=730d) (Yahoo error = "15m data not available for startTime=1705685996 and endTime=1768757996. The requested range must be within the last 60 days.")
+2026-01-18 14:39:57,349 | INFO |   [OK] Yahoo: 730 barras
+2026-01-18 14:39:57,365 | INFO |    VALE3: Trades=8 WR=37.5% Ret=-2.65%
+2026-01-18 14:39:57,365 | INFO | [DATA] Carregando ITUB4...
+2026-01-18 14:39:58,708 | ERROR | $ITUB4.SA: possibly delisted; no price data found  (period=730d) (Yahoo error = "15m data not available for startTime=1705685998 and endTime=1768757998. The requested range must be within the last 60 days.")
+2026-01-18 14:39:59,119 | INFO |   [OK] Yahoo: 730 barras
+2026-01-18 14:39:59,164 | INFO |    ITUB4: Trades=8 WR=37.5% Ret=217.42%
+2026-01-18 14:39:59,205 | INFO | [DATA] Carregando BBDC4...
+2026-01-18 14:40:00,614 | ERROR | $BBDC4.SA: possibly delisted; no price data found  (period=730d) (Yahoo error = "15m data not available for startTime=1705686000 and endTime=1768758000. The requested range must be within the last 60 days.")
+2026-01-18 14:40:01,002 | INFO |   [OK] Yahoo: 730 barras
+2026-01-18 14:40:01,042 | INFO |    BBDC4: Trades=6 WR=33.3% Ret=175.15%
+2026-01-18 14:40:01,070 | INFO | [DATA] Carregando ABEV3...
+2026-01-18 14:40:02,033 | ERROR | $ABEV3.SA: possibly delisted; no price data found  (period=730d) (Yahoo error = "15m data not available for startTime=1705686002 and endTime=1768758002. The requested range must be within the last 60 days.")
+2026-01-18 14:40:02,403 | INFO |   [OK] Yahoo: 730 barras
+2026-01-18 14:40:02,421 | INFO |    ABEV3: Trades=4 WR=50.0% Ret=117.71%
+2026-01-18 14:40:02,422 | INFO | [4/4] Gerando relatorio...
+2026-01-18 14:40:02,461 | INFO |    [OK] Salvo em: optimizer_output\results_20260118_144002.csv

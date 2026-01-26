@@ -1,0 +1,3 @@
+py testedesimbolo.py
+
+pause

@@ -1,0 +1,10 @@
+{
+  "regime": "bear",
+  "sharpe_medio": 0.0,
+  "ema_fast": 5,
+  "ema_slow": 25,
+  "rsi_level": 60,
+  "momentum_min_pct": 0.4,
+  "adx_min": 30,
+  "data": "2025-12-08 07:21"
+}

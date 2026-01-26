@@ -1,0 +1,34 @@
+2025-12-28 18:04:31,534 | INFO | Bot do Telegram inicializado com sucesso
+2025-12-28 18:04:31,591 | INFO | 🧹 Limpeza inicial de logs concluída
+2025-12-28 18:04:57,377 | INFO | Bot do Telegram inicializado com sucesso
+2025-12-28 18:04:57,443 | INFO | 🧹 Limpeza inicial de logs concluída
+2025-12-28 18:04:57,447 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2025-12-28 18:04:57,448 | INFO | 📦 Carregando dados persistentes e otimizações...
+2025-12-28 18:04:57,471 | INFO | 📉 Dados de loss streak carregados.
+2025-12-28 18:04:57,472 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2025-12-28 18:04:57,476 | INFO | 🧠 Pesos adaptativos carregados com sucesso.
+2025-12-28 18:04:57,479 | INFO | ✅ Dados anti-chop e limites carregados
+2025-12-28 18:04:57,479 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2025-12-28 18:04:57,479 | INFO | Parâmetros carregados do ELITE_SYMBOLS (15 ativos elite)
+2025-12-28 18:05:13,557 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2025-12-28 18:05:13,558 | INFO | 📊 Atualizando correlação para 15 ativos...
+2025-12-28 18:05:13,817 | INFO | ✅ Matriz de correlação atualizada
+2025-12-28 18:05:13,818 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2025-12-28 18:05:13,823 | INFO | 📅 Ciclo de trading iniciado: 28/12/2025
+2025-12-28 18:05:13,823 | INFO | 🧵 Iniciando threads de execução...
+2025-12-28 18:05:13,823 | INFO |    -> Thread 'TelegramPolling' adicionada (/lucro, /status ativados)
+2025-12-28 18:05:13,824 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2025-12-28 18:05:13,825 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2025-12-28 18:05:13,825 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2025-12-28 18:05:13,827 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2025-12-28 18:05:13,828 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2025-12-28 18:05:13,911 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2025-12-28 18:05:13,911 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2025-12-28 18:05:14,144 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2025-12-28 18:05:14,250 | INFO | 📡 Iniciando polling do Telegram... (comandos: /lucro, /status, /resumo)
+2025-12-28 18:05:14,251 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2025-12-28 18:05:14,336 | INFO | 🚀 Total de 6 threads ativas
+2025-12-28 18:05:16,243 | INFO | ✅ Matriz de correlação atualizada com sucesso (15 ativos)
+2025-12-28 18:05:16,262 | INFO | ✅ bot_bridge.json atualizado com sucesso (TOP15 sincronizado)
+2025-12-28 18:05:22,802 | INFO | 🖥️ Painel de controle ativo
+2025-12-28 18:05:46,655 | INFO | ✅ bot_bridge.json atualizado com sucesso (TOP15 sincronizado)

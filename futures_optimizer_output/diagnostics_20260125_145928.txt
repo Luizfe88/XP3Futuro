@@ -1,0 +1,27 @@
+DIAGNOSTICOS DE TRADES
+Gerado em: 25/01/2026 14:59:28
+------------------------------------------------------------
+SIMBOLO: WING26
+  Trades: 21 | WR: 0.81
+  Med PNL WIN: 871.87 | Med PNL LOSS: -5143.72
+  Tipos: {"SHORT": 2, "LONG": 19}
+  Saidas: {"TARGET": 16, "STOP": 5}
+------------------------------------------------------------
+SIMBOLO: WDOG26
+  Trades: 17 | WR: 0.35
+  Med PNL WIN: 2215.76 | Med PNL LOSS: -1009.39
+  Tipos: {"SHORT": 17}
+  Saidas: {"TARGET": 6, "STOP": 11}
+------------------------------------------------------------
+SIMBOLO: WSPH26
+  Trades: 10 | WR: 0.30
+  Med PNL WIN: 5096.90 | Med PNL LOSS: -552.20
+  Tipos: {"SHORT": 4, "LONG": 6}
+  Saidas: {"TARGET": 2, "STOP": 8}
+------------------------------------------------------------
+SIMBOLO: BGIG26
+  Trades: 52 | WR: 0.54
+  Med PNL WIN: 2155.24 | Med PNL LOSS: -1762.49
+  Tipos: {"LONG": 42, "SHORT": 10}
+  Saidas: {"TARGET": 28, "STOP": 24}
+------------------------------------------------------------

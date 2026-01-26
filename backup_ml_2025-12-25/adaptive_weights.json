@@ -1,0 +1,1013 @@
+{
+  "symbol": {
+    "ITUB4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BBDC4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BBAS3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "SANB11": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "B3SA3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BPAC11": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ABCB4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "PSSA3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ITSA4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BBSE3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CXSE3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "WIZC3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "IRBR3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "TRAD3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CASH3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "MODL11": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BRSR6": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "PINE4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "IGTI11": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BPAN4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BMGB4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CIEL3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "SANB4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ITUB3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BBDC3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "PETR4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "PETR3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "PRIO3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CSAN3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "VBBR3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "UGPA3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "EQTL3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ELET3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ELET6": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ENEV3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CPLE6": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ENGI11": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "TAEE11": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CMIG4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "SBSP3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CSMG3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "NEOE3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "LIGT3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "SAPR11": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "EGIE3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "VALE3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "GGBR4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "USIM5": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CSNA3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "SUZB3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "KLBN11": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BRKM5": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CMIN3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "GOAU4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "AURA33": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "GGBR3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "USIM3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BRAP4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "FESA4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "UNIP6": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "DXCO3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "RANI3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "EUCA4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ABEV3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "JBSS3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ASAI3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CRFB3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "RADL3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "PCAR3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "MRFG3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BRFS3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "NTCO3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "SMTO3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BEEF3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "SLCE3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "MDIA3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "GMAT3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "HAPV3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "RAIL3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "RAIZ4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "JALL3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "RDOR3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "FLRY3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "QUAL3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BLAU3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "HYPE3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "PARD3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ONCO3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "VVEO3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "KRSA3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "MATD3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "DASA3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "LREN3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "MGLU3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "AMER3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "SOMA3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ARZZ3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "VIVA3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CEAB3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "GUAR3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CYRE3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "MRVE3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CURY3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "TEND3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "YDUQ3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "COGN3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ZAMP3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "VAMO3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "AZUL4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "GOLL4": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "JHSF3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "EVEN3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "DIRR3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ANIM3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "SBFG3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ALSO3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "MEAL3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "WEGE3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "EMBR3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "CCRO3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ECOR3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "TUPY3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "ROMI3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "RENT3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "LOGN3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "KEPL3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "FRAS3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "AERI3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "TOTS3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "LWSA3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "POSI3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "INTB3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "SQIA3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "NGRD3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "VIVT3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "TIMS3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "DESK3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BMKS3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "IFCM3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "BRML3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "MULT3": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "JSRE11": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "HGLG11": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    },
+    "VISC11": {
+      "EMA": 1.0,
+      "RSI_ADX": 1.0,
+      "ATR": 1.0,
+      "MACRO": 1.0,
+      "CORR": 1.0
+    }
+  },
+  "sector": {}
+}

@@ -1,0 +1,232 @@
+# XP3 V5 - ELITE PORTFOLIO
+# Gerado em: 2026-01-18 20:51:18.687098
+ELITE_SYMBOLS = {
+ "PETR4": {
+  "category": "BLUE CHIP",
+  "weight": 0.08, # 8.2%
+  "ema_short": 11,
+  "ema_long": 56,
+  "rsi_low": 20,
+  "rsi_high": 72,
+  "adx_threshold": 12.0,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 3.7,
+  "tp_mult": 3.0
+ },
+ "VALE3": {
+  "category": "BLUE CHIP",
+  "weight": 0.10, # 9.6%
+  "ema_short": 12,
+  "ema_long": 97,
+  "rsi_low": 37,
+  "rsi_high": 73,
+  "adx_threshold": 13.0,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 1.9,
+  "tp_mult": 3.0
+ },
+ "ITUB4": {
+  "category": "BLUE CHIP",
+  "weight": 0.09, # 9.5%
+  "ema_short": 25,
+  "ema_long": 66,
+  "rsi_low": 42,
+  "rsi_high": 63,
+  "adx_threshold": 23.0,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 4.5,
+  "tp_mult": 3.0
+ },
+ "BBDC4": {
+  "category": "BLUE CHIP",
+  "weight": 0.10, # 9.8%
+  "ema_short": 14,
+  "ema_long": 58,
+  "rsi_low": 38,
+  "rsi_high": 61,
+  "adx_threshold": 12.0,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 4.300000000000001,
+  "tp_mult": 3.0
+ },
+ "ABEV3": {
+  "category": "BLUE CHIP",
+  "weight": 0.04, # 4.4%
+  "ema_short": 12,
+  "ema_long": 97,
+  "rsi_low": 37,
+  "rsi_high": 73,
+  "adx_threshold": 13.0,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 1.9,
+  "tp_mult": 3.0
+ },
+ "B3SA3": {
+  "category": "BLUE CHIP",
+  "weight": 0.10, # 9.7%
+  "ema_short": 21,
+  "ema_long": 90,
+  "rsi_low": 34,
+  "rsi_high": 60,
+  "adx_threshold": 28.0,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 3.1,
+  "tp_mult": 3.0
+ },
+ "VIVT3": {
+  "category": "BLUE CHIP",
+  "weight": 0.09, # 8.7%
+  "ema_short": 13,
+  "ema_long": 70,
+  "rsi_low": 28,
+  "rsi_high": 72,
+  "adx_threshold": 29.0,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 3.7,
+  "tp_mult": 3.0
+ },
+ "ELET3": {
+  "category": "BLUE CHIP",
+  "weight": 0.00, # 0.0%
+  "ema_short": 9,
+  "ema_long": 21,
+  "rsi_low": 40,
+  "rsi_high": 70,
+  "adx_threshold": 15,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 2.0,
+  "tp_mult": 3.0
+ },
+ "SUZB3": {
+  "category": "BLUE CHIP",
+  "weight": 0.04, # 4.4%
+  "ema_short": 8,
+  "ema_long": 60,
+  "rsi_low": 30,
+  "rsi_high": 70,
+  "adx_threshold": 25,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 2.5,
+  "tp_mult": 5.0
+ },
+ "RECV3": {
+  "category": "OPORTUNIDADE",
+  "weight": 0.00, # 0.0%
+  "ema_short": 8,
+  "ema_long": 60,
+  "rsi_low": 30,
+  "rsi_high": 70,
+  "adx_threshold": 25,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 2.5,
+  "tp_mult": 5.0
+ },
+ "SLCE3": {
+  "category": "OPORTUNIDADE",
+  "weight": 0.04, # 4.4%
+  "ema_short": 8,
+  "ema_long": 60,
+  "rsi_low": 30,
+  "rsi_high": 70,
+  "adx_threshold": 25,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 2.5,
+  "tp_mult": 5.0
+ },
+ "WEGE3": {
+  "category": "OPORTUNIDADE",
+  "weight": 0.03, # 3.1%
+  "ema_short": 8,
+  "ema_long": 60,
+  "rsi_low": 30,
+  "rsi_high": 70,
+  "adx_threshold": 25,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 2.5,
+  "tp_mult": 5.0
+ },
+ "PRIO3": {
+  "category": "OPORTUNIDADE",
+  "weight": 0.05, # 5.5%
+  "ema_short": 13,
+  "ema_long": 76,
+  "rsi_low": 28,
+  "rsi_high": 80,
+  "adx_threshold": 29.0,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 4.300000000000001,
+  "tp_mult": 3.0
+ },
+ "BPAC11": {
+  "category": "OPORTUNIDADE",
+  "weight": 0.04, # 3.8%
+  "ema_short": 25,
+  "ema_long": 76,
+  "rsi_low": 45,
+  "rsi_high": 55,
+  "adx_threshold": 30.0,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 4.300000000000001,
+  "tp_mult": 3.0
+ },
+ "TOTS3": {
+  "category": "OPORTUNIDADE",
+  "weight": 0.04, # 4.4%
+  "ema_short": 8,
+  "ema_long": 60,
+  "rsi_low": 30,
+  "rsi_high": 70,
+  "adx_threshold": 25,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 2.5,
+  "tp_mult": 5.0
+ },
+ "USIM5": {
+  "category": "OPORTUNIDADE",
+  "weight": 0.03, # 3.5%
+  "ema_short": 33,
+  "ema_long": 107,
+  "rsi_low": 30,
+  "rsi_high": 60,
+  "adx_threshold": 13,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 3.7,
+  "tp_mult": 3.0
+ },
+ "RENT3": {
+  "category": "OPORTUNIDADE",
+  "weight": 0.04, # 3.5%
+  "ema_short": 45,
+  "ema_long": 147,
+  "rsi_low": 32,
+  "rsi_high": 81,
+  "adx_threshold": 28,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 3.9000000000000004,
+  "tp_mult": 3.0
+ },
+ "MDNE3": {
+  "category": "OPORTUNIDADE",
+  "weight": 0.03, # 3.5%
+  "ema_short": 32,
+  "ema_long": 140,
+  "rsi_low": 38,
+  "rsi_high": 72,
+  "adx_threshold": 24,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 3.3,
+  "tp_mult": 3.0
+ },
+ "RAIL3": {
+  "category": "OPORTUNIDADE",
+  "weight": 0.04, # 4.4%
+  "ema_short": 17,
+  "ema_long": 33,
+  "rsi_low": 33,
+  "rsi_high": 60,
+  "adx_threshold": 11.0,
+  "mom_min": 0.0,
+  "sl_atr_multiplier": 4.5,
+  "tp_mult": 3.0
+ },
+}

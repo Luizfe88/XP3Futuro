@@ -1,0 +1,1170 @@
+12:57:42 | ❌ [B3SA3] [VolumeFilter] 0.5x < 1.5x
+12:57:46 | ❌ [BBDC4] [VolumeFilter] 0.7x < 1.5x
+12:57:54 | ❌ [ITSA4] [VolumeFilter] 0.4x < 1.5x
+12:58:00 | ❌ [VIVT3] [VolumeFilter] 0.7x < 1.5x
+12:58:04 | ❌ [RECV3] [VolumeFilter] 0.5x < 1.5x
+12:58:09 | ❌ [PETR4] [VolumeFilter] 1.0x < 1.5x
+12:58:12 | ❌ [ITUB4] [VolumeFilter] 1.1x < 1.5x
+12:58:18 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.5x
+12:59:00 | ❌ [B3SA3] [VolumeFilter] 0.5x < 1.5x
+12:59:04 | ❌ [BBDC4] [VolumeFilter] 0.7x < 1.5x
+12:59:07 | ❌ [BPAC11] [VolumeFilter] 0.9x < 1.5x
+12:59:15 | ❌ [ITSA4] [VolumeFilter] 0.4x < 1.5x
+12:59:21 | ❌ [VIVT3] [VolumeFilter] 0.7x < 1.5x
+12:59:25 | ❌ [RECV3] [VolumeFilter] 0.5x < 1.5x
+12:59:29 | ❌ [PETR4] [VolumeFilter] 1.0x < 1.5x
+12:59:33 | ❌ [ITUB4] [VolumeFilter] 1.1x < 1.5x
+12:59:39 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.5x
+13:00:21 | ❌ [B3SA3] [VolumeFilter] 0.5x < 1.5x
+13:00:25 | ❌ [BBDC4] [VolumeFilter] 0.7x < 1.5x
+13:00:29 | ❌ [BPAC11] [VolumeFilter] 0.9x < 1.5x
+13:00:33 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.5x
+13:00:36 | ❌ [ITSA4] [VolumeFilter] 0.7x < 1.5x
+13:00:43 | ❌ [PETR4] [VolumeFilter] 1.0x < 1.5x
+13:00:47 | ❌ [ITUB4] [VolumeFilter] 1.1x < 1.5x
+13:00:51 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:00:57 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.5x
+13:01:02 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.5x
+13:01:50 | ❌ [BBDC4] [VolumeFilter] 1.4x < 1.5x
+13:01:53 | ❌ [BPAC11] [VolumeFilter] 0.9x < 1.5x
+13:01:57 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.5x
+13:02:05 | ❌ [PETR4] [VolumeFilter] 0.8x < 1.5x
+13:02:12 | ❌ [ITSA4] [VolumeFilter] 0.7x < 1.5x
+13:02:16 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:02:20 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.5x
+13:02:25 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.5x
+13:03:08 | ❌ [B3SA3] [VolumeFilter] 0.7x < 1.5x
+13:03:12 | ❌ [BBDC4] [VolumeFilter] 1.4x < 1.5x
+13:03:17 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.5x
+13:03:25 | ❌ [PETR4] [VolumeFilter] 0.8x < 1.5x
+13:03:33 | ❌ [ITSA4] [VolumeFilter] 0.7x < 1.5x
+13:03:37 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:03:41 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.5x
+13:03:45 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.5x
+13:04:28 | ❌ [B3SA3] [VolumeFilter] 0.7x < 1.5x
+13:04:32 | ❌ [BBDC4] [VolumeFilter] 1.4x < 1.5x
+13:04:35 | ❌ [BPAC11] [VolumeFilter] 0.9x < 1.5x
+13:04:39 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.5x
+13:04:47 | ❌ [PETR4] [VolumeFilter] 0.8x < 1.5x
+13:04:54 | ❌ [ITSA4] [VolumeFilter] 0.7x < 1.5x
+13:04:57 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:05:03 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.5x
+13:05:53 | ❌ [B3SA3] [VolumeFilter] 0.7x < 1.5x
+13:05:58 | ❌ [BBDC4] [VolumeFilter] 1.4x < 1.5x
+13:06:04 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.5x
+13:06:08 | ❌ [ITSA4] [VolumeFilter] 0.7x < 1.5x
+13:06:19 | ❌ [PETR4] [VolumeFilter] 0.8x < 1.5x
+13:06:26 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:06:30 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.5x
+13:06:35 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.5x
+13:07:20 | ❌ [B3SA3] [VolumeFilter] 0.7x < 1.5x
+13:07:24 | ❌ [BBDC4] [VolumeFilter] 1.4x < 1.5x
+13:07:28 | ❌ [BPAC11] [VolumeFilter] 0.9x < 1.5x
+13:07:32 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.5x
+13:07:37 | ❌ [ITSA4] [VolumeFilter] 0.7x < 1.5x
+13:07:43 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:07:50 | ❌ [PETR4] [VolumeFilter] 0.8x < 1.5x
+13:07:57 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.5x
+13:08:03 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.5x
+13:08:48 | ❌ [BBDC4] [VolumeFilter] 1.4x < 1.5x
+13:08:52 | ❌ [BPAC11] [VolumeFilter] 0.9x < 1.5x
+13:10:41 | ❌ [B3SA3] [VolumeFilter] 0.7x < 1.15x
+13:10:45 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:10:49 | ❌ [BPAC11] [VolumeFilter] 0.9x < 1.15x
+13:10:52 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.15x
+13:10:55 | ❌ [ITSA4] [VolumeFilter] 0.7x < 1.15x
+13:10:59 | ❌ [MGLU3] [VolumeFilter] 0.6x < 1.15x
+13:11:04 | ❌ [MOVI3] [VolumeFilter] 0.5x < 1.15x
+13:11:08 | ❌ [PETR4] [VolumeFilter] 0.8x < 1.15x
+13:11:15 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:11:18 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.15x
+13:11:21 | ❌ [ANIM3] [VolumeFilter] 0.4x < 1.15x
+13:11:25 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:12:21 | ❌ [B3SA3] [VolumeFilter] 0.7x < 1.15x
+13:12:29 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:12:39 | ❌ [BPAC11] [VolumeFilter] 0.9x < 1.15x
+13:12:44 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.15x
+13:12:48 | ❌ [ITSA4] [VolumeFilter] 0.7x < 1.15x
+13:12:52 | ❌ [MGLU3] [VolumeFilter] 0.6x < 1.15x
+13:12:57 | ❌ [MOVI3] [VolumeFilter] 0.5x < 1.15x
+13:13:01 | ❌ [PETR4] [VolumeFilter] 0.8x < 1.15x
+13:13:08 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:13:18 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.15x
+13:13:38 | ❌ [ANIM3] [VolumeFilter] 0.4x < 1.15x
+13:13:44 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:14:37 | ❌ [B3SA3] [VolumeFilter] 0.7x < 1.15x
+13:14:40 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:14:45 | ❌ [BPAC11] [VolumeFilter] 0.9x < 1.15x
+13:14:49 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.15x
+13:14:52 | ❌ [ITSA4] [VolumeFilter] 0.7x < 1.15x
+13:14:56 | ❌ [MGLU3] [VolumeFilter] 0.6x < 1.15x
+13:15:01 | ❌ [MOVI3] [VolumeFilter] 0.5x < 1.15x
+13:15:04 | ❌ [PETR4] [VolumeFilter] 0.8x < 1.15x
+13:15:12 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:15:15 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.15x
+13:15:19 | ❌ [ANIM3] [VolumeFilter] 0.4x < 1.15x
+13:15:23 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:16:11 | ❌ [B3SA3] [VolumeFilter] 1.0x < 1.15x
+13:16:15 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+13:16:18 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+13:16:22 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+13:16:28 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:16:32 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:16:35 | ❌ [PETR4] [VolumeFilter] 0.7x < 1.15x
+13:16:39 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:16:42 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:16:46 | ❌ [ITSA4] [VolumeFilter] 0.4x < 1.15x
+13:16:50 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:16:53 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.15x
+13:17:23 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:18:11 | ❌ [B3SA3] [VolumeFilter] 1.0x < 1.15x
+13:18:15 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+13:18:20 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+13:18:25 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:18:29 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:18:33 | ❌ [PETR4] [VolumeFilter] 0.7x < 1.15x
+13:18:37 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:18:41 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:18:44 | ❌ [ITSA4] [VolumeFilter] 0.4x < 1.15x
+13:18:48 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:18:51 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.15x
+13:18:55 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:19:39 | ❌ [B3SA3] [VolumeFilter] 1.0x < 1.15x
+13:19:42 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+13:19:46 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+13:19:50 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+13:19:57 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:20:02 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:20:06 | ❌ [PETR4] [VolumeFilter] 0.7x < 1.15x
+13:20:11 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:20:14 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:20:19 | ❌ [ITSA4] [VolumeFilter] 0.4x < 1.15x
+13:20:22 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:20:26 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.15x
+13:20:30 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:21:14 | ❌ [B3SA3] [VolumeFilter] 1.0x < 1.15x
+13:21:17 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+13:21:23 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+13:21:27 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:21:32 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:21:35 | ❌ [PETR4] [VolumeFilter] 0.7x < 1.15x
+13:21:39 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:21:43 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:21:46 | ❌ [ITSA4] [VolumeFilter] 0.4x < 1.15x
+13:21:50 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:21:54 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.15x
+13:21:58 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:22:42 | ❌ [B3SA3] [VolumeFilter] 1.0x < 1.15x
+13:22:45 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+13:22:48 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+13:22:52 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+13:22:57 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:23:00 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:23:04 | ❌ [PETR4] [VolumeFilter] 0.7x < 1.15x
+13:23:08 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:23:13 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:23:17 | ❌ [ITSA4] [VolumeFilter] 0.4x < 1.15x
+13:23:20 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:23:24 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.15x
+13:23:32 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:24:19 | ❌ [B3SA3] [VolumeFilter] 1.0x < 1.15x
+13:24:22 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+13:24:25 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+13:24:27 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+13:24:31 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:24:35 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:24:55 | ❌ [PETR4] [VolumeFilter] 0.7x < 1.15x
+13:24:58 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:25:01 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:25:04 | ❌ [ITSA4] [VolumeFilter] 0.4x < 1.15x
+13:25:07 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:25:09 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.15x
+13:25:12 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:25:54 | ❌ [B3SA3] [VolumeFilter] 1.0x < 1.15x
+13:25:57 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+13:26:04 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+13:26:07 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+13:26:13 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:26:16 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:26:20 | ❌ [PETR4] [VolumeFilter] 0.7x < 1.15x
+13:26:23 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:26:27 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:26:30 | ❌ [ITSA4] [VolumeFilter] 0.4x < 1.15x
+13:26:33 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:26:37 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.15x
+13:26:43 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:27:28 | ❌ [B3SA3] [VolumeFilter] 1.0x < 1.15x
+13:27:32 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+13:27:35 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+13:27:38 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:27:43 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+13:27:48 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:27:51 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:27:55 | ❌ [PETR4] [VolumeFilter] 0.7x < 1.15x
+13:27:58 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:28:02 | ❌ [ITSA4] [VolumeFilter] 0.4x < 1.15x
+13:28:05 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:28:10 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.15x
+13:28:14 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:29:17 | ❌ [B3SA3] [VolumeFilter] 1.0x < 1.15x
+13:29:20 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+13:29:23 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+13:29:26 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+13:29:30 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:29:33 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:29:36 | ❌ [PETR4] [VolumeFilter] 0.7x < 1.15x
+13:29:38 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:29:41 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:29:44 | ❌ [ITSA4] [VolumeFilter] 0.4x < 1.15x
+13:29:47 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:29:51 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.15x
+13:29:54 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:30:38 | ❌ [B3SA3] [VolumeFilter] 0.8x < 1.15x
+13:30:42 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:30:46 | ❌ [BPAC11] [VolumeFilter] 0.6x < 1.15x
+13:30:50 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:30:55 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:30:58 | ❌ [PETR4] [VolumeFilter] 0.5x < 1.15x
+13:31:02 | ❌ [ITUB4] [VolumeFilter] 0.9x < 1.15x
+13:31:05 | ❌ [ITSA4] [VolumeFilter] 0.4x < 1.15x
+13:31:12 | ❌ [PRIO3] [VolumeFilter] 0.4x < 1.15x
+13:31:15 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:31:19 | ❌ [RECV3] [VolumeFilter] 0.4x < 1.15x
+13:31:22 | ❌ [ANIM3] [VolumeFilter] 0.2x < 1.15x
+13:31:26 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+13:32:26 | ❌ [PETR4] [VolumeFilter] 0.5x < 1.15x
+13:32:30 | ❌ [B3SA3] [VolumeFilter] 0.8x < 1.15x
+13:32:33 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:32:38 | ❌ [BPAC11] [VolumeFilter] 0.6x < 1.15x
+13:32:47 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:32:51 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:32:54 | ❌ [RECV3] [VolumeFilter] 0.6x < 1.15x
+13:32:57 | ❌ [ITUB4] [VolumeFilter] 0.9x < 1.15x
+13:33:01 | ❌ [ITSA4] [VolumeFilter] 0.6x < 1.15x
+13:33:05 | ❌ [PRIO3] [VolumeFilter] 0.4x < 1.15x
+13:33:09 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:33:12 | ❌ [ANIM3] [VolumeFilter] 0.2x < 1.15x
+13:33:16 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+13:33:56 | ❌ [PETR4] [VolumeFilter] 0.5x < 1.15x
+13:33:59 | ❌ [B3SA3] [VolumeFilter] 0.8x < 1.15x
+13:34:03 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:34:06 | ❌ [BPAC11] [VolumeFilter] 0.6x < 1.15x
+13:34:10 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:34:16 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:34:20 | ❌ [RECV3] [VolumeFilter] 0.6x < 1.15x
+13:34:23 | ❌ [ITUB4] [VolumeFilter] 0.9x < 1.15x
+13:34:27 | ❌ [ITSA4] [VolumeFilter] 0.6x < 1.15x
+13:34:32 | ❌ [PRIO3] [VolumeFilter] 0.4x < 1.15x
+13:34:35 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:34:39 | ❌ [ANIM3] [VolumeFilter] 0.2x < 1.15x
+13:34:42 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+13:35:25 | ❌ [PETR4] [VolumeFilter] 0.5x < 1.15x
+13:35:30 | ❌ [B3SA3] [VolumeFilter] 0.8x < 1.15x
+13:35:34 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:35:39 | ❌ [BPAC11] [VolumeFilter] 0.6x < 1.15x
+13:35:43 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:35:48 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:36:07 | ❌ [RECV3] [VolumeFilter] 0.6x < 1.15x
+13:36:17 | ❌ [ITUB4] [VolumeFilter] 0.9x < 1.15x
+13:36:20 | ❌ [ITSA4] [VolumeFilter] 0.6x < 1.15x
+13:36:24 | ❌ [PRIO3] [VolumeFilter] 0.4x < 1.15x
+13:36:27 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:36:30 | ❌ [ANIM3] [VolumeFilter] 0.2x < 1.15x
+13:36:32 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+13:37:06 | ❌ [PETR4] [VolumeFilter] 0.5x < 1.15x
+13:37:09 | ❌ [B3SA3] [VolumeFilter] 0.8x < 1.15x
+13:37:12 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:37:15 | ❌ [BPAC11] [VolumeFilter] 0.6x < 1.15x
+13:37:18 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:37:22 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:37:25 | ❌ [RECV3] [VolumeFilter] 0.6x < 1.15x
+13:37:29 | ❌ [ITUB4] [VolumeFilter] 0.9x < 1.15x
+13:37:32 | ❌ [ITSA4] [VolumeFilter] 0.6x < 1.15x
+13:37:37 | ❌ [PRIO3] [VolumeFilter] 0.4x < 1.15x
+13:37:41 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:37:44 | ❌ [ANIM3] [VolumeFilter] 0.2x < 1.15x
+13:37:48 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+13:38:30 | ❌ [B3SA3] [VolumeFilter] 0.8x < 1.15x
+13:38:33 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:38:37 | ❌ [BPAC11] [VolumeFilter] 0.6x < 1.15x
+13:38:40 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:38:45 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:38:49 | ❌ [RECV3] [VolumeFilter] 0.6x < 1.15x
+13:38:52 | ❌ [PETR4] [VolumeFilter] 0.5x < 1.15x
+13:38:55 | ❌ [ITUB4] [VolumeFilter] 0.9x < 1.15x
+13:38:59 | ❌ [ITSA4] [VolumeFilter] 0.6x < 1.15x
+13:39:04 | ❌ [PRIO3] [VolumeFilter] 0.4x < 1.15x
+13:39:08 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:39:11 | ❌ [ANIM3] [VolumeFilter] 0.2x < 1.15x
+13:39:15 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+13:40:00 | ❌ [PETR4] [VolumeFilter] 0.5x < 1.15x
+13:40:04 | ❌ [B3SA3] [VolumeFilter] 0.8x < 1.15x
+13:40:07 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:40:11 | ❌ [BPAC11] [VolumeFilter] 0.6x < 1.15x
+13:40:14 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:40:19 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:40:23 | ❌ [RECV3] [VolumeFilter] 0.6x < 1.15x
+13:40:26 | ❌ [ITUB4] [VolumeFilter] 0.9x < 1.15x
+13:40:30 | ❌ [ITSA4] [VolumeFilter] 0.6x < 1.15x
+13:40:35 | ❌ [PRIO3] [VolumeFilter] 0.4x < 1.15x
+13:40:39 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:40:43 | ❌ [ANIM3] [VolumeFilter] 0.2x < 1.15x
+13:40:46 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+13:41:29 | ❌ [PETR4] [VolumeFilter] 0.5x < 1.15x
+13:41:32 | ❌ [B3SA3] [VolumeFilter] 0.8x < 1.15x
+13:41:36 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:41:39 | ❌ [BPAC11] [VolumeFilter] 0.6x < 1.15x
+13:41:45 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:41:50 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:41:53 | ❌ [RECV3] [VolumeFilter] 0.6x < 1.15x
+13:41:57 | ❌ [ITUB4] [VolumeFilter] 0.9x < 1.15x
+13:42:01 | ❌ [ITSA4] [VolumeFilter] 0.6x < 1.15x
+13:42:06 | ❌ [PRIO3] [VolumeFilter] 0.4x < 1.15x
+13:42:09 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:42:13 | ❌ [ANIM3] [VolumeFilter] 0.2x < 1.15x
+13:42:17 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+13:42:59 | ❌ [B3SA3] [VolumeFilter] 0.8x < 1.15x
+13:43:02 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:43:06 | ❌ [BPAC11] [VolumeFilter] 0.6x < 1.15x
+13:43:09 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:43:14 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:43:18 | ❌ [RECV3] [VolumeFilter] 0.6x < 1.15x
+13:43:21 | ❌ [PETR4] [VolumeFilter] 0.5x < 1.15x
+13:43:25 | ❌ [ITUB4] [VolumeFilter] 0.9x < 1.15x
+13:43:28 | ❌ [ITSA4] [VolumeFilter] 0.6x < 1.15x
+13:43:33 | ❌ [PRIO3] [VolumeFilter] 0.4x < 1.15x
+13:43:37 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:43:40 | ❌ [ANIM3] [VolumeFilter] 0.2x < 1.15x
+13:43:44 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+13:44:26 | ❌ [B3SA3] [VolumeFilter] 0.8x < 1.15x
+13:44:29 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:44:33 | ❌ [BPAC11] [VolumeFilter] 0.6x < 1.15x
+13:44:37 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:44:42 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+13:44:46 | ❌ [RECV3] [VolumeFilter] 0.6x < 1.15x
+13:44:49 | ❌ [PETR4] [VolumeFilter] 0.5x < 1.15x
+13:44:53 | ❌ [ITUB4] [VolumeFilter] 0.9x < 1.15x
+13:44:57 | ❌ [ITSA4] [VolumeFilter] 0.6x < 1.15x
+13:45:02 | ❌ [PRIO3] [VolumeFilter] 0.4x < 1.15x
+13:45:07 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:45:12 | ❌ [ANIM3] [VolumeFilter] 0.2x < 1.15x
+13:45:16 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+13:46:04 | ❌ [B3SA3] [VolumeFilter] 0.4x < 1.15x
+13:46:08 | ❌ [BBDC4] [VolumeFilter] 0.5x < 1.15x
+13:46:14 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:46:20 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:46:23 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+13:46:27 | ❌ [RECV3] [VolumeFilter] 0.5x < 1.15x
+13:46:30 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:46:34 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:46:41 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:46:44 | ❌ [PETR4] [VolumeFilter] 0.4x < 1.15x
+13:46:50 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:46:56 | ❌ [SBSP3] [VolumeFilter] 0.6x < 1.15x
+13:47:41 | ❌ [B3SA3] [VolumeFilter] 0.4x < 1.15x
+13:47:45 | ❌ [BBDC4] [VolumeFilter] 0.5x < 1.15x
+13:47:50 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:47:56 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:48:00 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+13:48:04 | ❌ [RECV3] [VolumeFilter] 0.5x < 1.15x
+13:48:08 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:48:15 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:48:24 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:48:28 | ❌ [PETR4] [VolumeFilter] 0.4x < 1.15x
+13:48:35 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:48:40 | ❌ [SBSP3] [VolumeFilter] 0.6x < 1.15x
+13:49:25 | ❌ [B3SA3] [VolumeFilter] 0.4x < 1.15x
+13:49:29 | ❌ [BBDC4] [VolumeFilter] 0.5x < 1.15x
+13:49:33 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:49:36 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:49:40 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+13:49:44 | ❌ [RECV3] [VolumeFilter] 0.5x < 1.15x
+13:49:48 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:49:53 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:50:01 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:50:04 | ❌ [PETR4] [VolumeFilter] 0.4x < 1.15x
+13:50:09 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:50:14 | ❌ [SBSP3] [VolumeFilter] 0.6x < 1.15x
+13:50:59 | ❌ [B3SA3] [VolumeFilter] 0.4x < 1.15x
+13:51:03 | ❌ [BBDC4] [VolumeFilter] 0.5x < 1.15x
+13:51:06 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:51:10 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:51:14 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+13:51:17 | ❌ [RECV3] [VolumeFilter] 0.5x < 1.15x
+13:51:21 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:51:25 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:51:33 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:51:36 | ❌ [PETR4] [VolumeFilter] 0.4x < 1.15x
+13:51:42 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:51:47 | ❌ [SBSP3] [VolumeFilter] 0.6x < 1.15x
+13:52:38 | ❌ [B3SA3] [VolumeFilter] 0.4x < 1.15x
+13:52:42 | ❌ [BBDC4] [VolumeFilter] 0.5x < 1.15x
+13:52:46 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:52:51 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:52:54 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+13:52:58 | ❌ [RECV3] [VolumeFilter] 0.5x < 1.15x
+13:53:02 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:53:06 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:53:14 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:53:17 | ❌ [PETR4] [VolumeFilter] 0.4x < 1.15x
+13:53:23 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:54:09 | ❌ [B3SA3] [VolumeFilter] 0.4x < 1.15x
+13:54:12 | ❌ [BBDC4] [VolumeFilter] 0.5x < 1.15x
+13:54:15 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:54:19 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:54:23 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+13:54:26 | ❌ [RECV3] [VolumeFilter] 0.5x < 1.15x
+13:54:30 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:54:34 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:54:41 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:54:46 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:54:50 | ❌ [PETR4] [VolumeFilter] 0.4x < 1.15x
+13:55:37 | ❌ [B3SA3] [VolumeFilter] 0.4x < 1.15x
+13:55:41 | ❌ [BBDC4] [VolumeFilter] 0.5x < 1.15x
+13:55:45 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:55:48 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:55:52 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+13:55:55 | ❌ [RECV3] [VolumeFilter] 0.5x < 1.15x
+13:55:59 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:56:03 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:56:10 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:56:15 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:56:18 | ❌ [PETR4] [VolumeFilter] 0.4x < 1.15x
+13:56:24 | ❌ [SBSP3] [VolumeFilter] 0.6x < 1.15x
+13:57:08 | ❌ [B3SA3] [VolumeFilter] 0.4x < 1.15x
+13:57:13 | ❌ [BBDC4] [VolumeFilter] 0.5x < 1.15x
+13:57:17 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:57:21 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:57:25 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+13:57:29 | ❌ [RECV3] [VolumeFilter] 0.5x < 1.15x
+13:57:33 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:57:37 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:57:47 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:57:55 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:57:59 | ❌ [PETR4] [VolumeFilter] 0.4x < 1.15x
+13:58:48 | ❌ [B3SA3] [VolumeFilter] 0.4x < 1.15x
+13:58:52 | ❌ [BBDC4] [VolumeFilter] 0.5x < 1.15x
+13:58:56 | ❌ [PRIO3] [VolumeFilter] 0.6x < 1.15x
+13:59:01 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+13:59:08 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+13:59:14 | ❌ [RECV3] [VolumeFilter] 0.5x < 1.15x
+13:59:18 | ❌ [RADL3] [VolumeFilter] 0.4x < 1.15x
+13:59:23 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+13:59:31 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+13:59:37 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+13:59:41 | ❌ [PETR4] [VolumeFilter] 0.4x < 1.15x
+13:59:46 | ❌ [SBSP3] [VolumeFilter] 0.6x < 1.15x
+14:00:29 | ❌ [B3SA3] [VolumeFilter] 0.4x < 1.15x
+14:00:33 | ❌ [BBDC4] [VolumeFilter] 0.6x < 1.15x
+14:00:37 | ❌ [MGLU3] [VolumeFilter] 0.6x < 1.15x
+14:00:41 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+14:00:49 | ❌ [RADL3] [VolumeFilter] 0.6x < 1.15x
+14:00:53 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+14:01:00 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.15x
+14:01:04 | ❌ [ANIM3] [VolumeFilter] 0.4x < 1.15x
+14:01:09 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:01:13 | ❌ [PETR4] [VolumeFilter] 0.4x < 1.15x
+14:01:18 | ❌ [SBSP3] [VolumeFilter] 0.6x < 1.15x
+14:02:00 | ❌ [B3SA3] [VolumeFilter] 0.5x < 1.15x
+14:02:04 | ❌ [BBDC4] [VolumeFilter] 0.6x < 1.15x
+14:02:08 | ❌ [MGLU3] [VolumeFilter] 0.6x < 1.15x
+14:02:11 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+14:02:21 | ❌ [RADL3] [VolumeFilter] 0.6x < 1.15x
+14:02:25 | ❌ [PETR4] [VolumeFilter] 0.9x < 1.15x
+14:02:29 | ❌ [ITUB4] [VolumeFilter] 0.6x < 1.15x
+14:02:34 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.15x
+14:02:38 | ❌ [ANIM3] [VolumeFilter] 0.4x < 1.15x
+14:02:43 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:02:50 | ❌ [BBAS3] [VolumeFilter] 0.4x < 1.15x
+14:03:33 | ❌ [B3SA3] [VolumeFilter] 0.5x < 1.15x
+14:03:36 | ❌ [MGLU3] [VolumeFilter] 0.6x < 1.15x
+14:03:40 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+14:03:47 | ❌ [RADL3] [VolumeFilter] 0.6x < 1.15x
+14:03:51 | ❌ [PETR4] [VolumeFilter] 0.9x < 1.15x
+14:03:54 | ❌ [ITUB4] [VolumeFilter] 0.6x < 1.15x
+14:03:58 | ❌ [BBDC4] [VolumeFilter] 0.6x < 1.15x
+14:04:06 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.15x
+14:04:10 | ❌ [ANIM3] [VolumeFilter] 0.4x < 1.15x
+14:04:15 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:04:20 | ❌ [BBAS3] [VolumeFilter] 0.4x < 1.15x
+14:05:08 | ❌ [B3SA3] [VolumeFilter] 0.5x < 1.15x
+14:05:12 | ❌ [MGLU3] [VolumeFilter] 0.6x < 1.15x
+14:05:16 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+14:05:25 | ❌ [RADL3] [VolumeFilter] 0.6x < 1.15x
+14:05:29 | ❌ [PETR4] [VolumeFilter] 0.9x < 1.15x
+14:05:33 | ❌ [ITUB4] [VolumeFilter] 0.6x < 1.15x
+14:05:37 | ❌ [BBDC4] [VolumeFilter] 0.6x < 1.15x
+14:05:47 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.15x
+14:05:52 | ❌ [ANIM3] [VolumeFilter] 0.4x < 1.15x
+14:05:58 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:06:03 | ❌ [BBAS3] [VolumeFilter] 0.4x < 1.15x
+14:06:45 | ❌ [B3SA3] [VolumeFilter] 0.5x < 1.15x
+14:06:49 | ❌ [MGLU3] [VolumeFilter] 0.6x < 1.15x
+14:06:53 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+14:06:59 | ❌ [RADL3] [VolumeFilter] 0.6x < 1.15x
+14:07:03 | ❌ [PETR4] [VolumeFilter] 0.9x < 1.15x
+14:07:07 | ❌ [ITUB4] [VolumeFilter] 0.6x < 1.15x
+14:07:11 | ❌ [BBDC4] [VolumeFilter] 0.6x < 1.15x
+14:07:19 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.15x
+14:07:22 | ❌ [ANIM3] [VolumeFilter] 0.4x < 1.15x
+14:07:28 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:07:33 | ❌ [BBAS3] [VolumeFilter] 0.4x < 1.15x
+14:08:25 | ❌ [B3SA3] [VolumeFilter] 0.5x < 1.15x
+14:08:29 | ❌ [MGLU3] [VolumeFilter] 0.6x < 1.15x
+14:08:34 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+14:08:58 | ❌ [RADL3] [VolumeFilter] 0.6x < 1.15x
+14:09:02 | ❌ [PETR4] [VolumeFilter] 0.9x < 1.15x
+14:09:06 | ❌ [ITUB4] [VolumeFilter] 0.6x < 1.15x
+14:09:11 | ❌ [BBDC4] [VolumeFilter] 0.6x < 1.15x
+14:09:19 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.15x
+14:09:24 | ❌ [ANIM3] [VolumeFilter] 0.4x < 1.15x
+14:09:32 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:09:37 | ❌ [BBAS3] [VolumeFilter] 0.4x < 1.15x
+14:10:25 | ❌ [B3SA3] [VolumeFilter] 0.5x < 1.15x
+14:10:29 | ❌ [MGLU3] [VolumeFilter] 0.6x < 1.15x
+14:10:34 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+14:10:42 | ❌ [RADL3] [VolumeFilter] 0.6x < 1.15x
+14:10:46 | ❌ [PETR4] [VolumeFilter] 0.9x < 1.15x
+14:10:50 | ❌ [ITUB4] [VolumeFilter] 0.6x < 1.15x
+14:10:54 | ❌ [BBDC4] [VolumeFilter] 0.6x < 1.15x
+14:11:02 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.15x
+14:11:05 | ❌ [ANIM3] [VolumeFilter] 0.4x < 1.15x
+14:11:10 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:11:16 | ❌ [BBAS3] [VolumeFilter] 0.4x < 1.15x
+14:11:59 | ❌ [B3SA3] [VolumeFilter] 0.5x < 1.15x
+14:12:03 | ❌ [MGLU3] [VolumeFilter] 0.6x < 1.15x
+14:12:08 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+14:12:15 | ❌ [RADL3] [VolumeFilter] 0.6x < 1.15x
+14:12:19 | ❌ [PETR4] [VolumeFilter] 0.9x < 1.15x
+14:12:23 | ❌ [ITUB4] [VolumeFilter] 0.6x < 1.15x
+14:12:26 | ❌ [BBDC4] [VolumeFilter] 0.6x < 1.15x
+14:12:36 | ❌ [ITSA4] [VolumeFilter] 0.6x < 1.15x
+14:12:41 | ❌ [ANIM3] [VolumeFilter] 0.4x < 1.15x
+14:12:47 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:13:35 | ❌ [B3SA3] [VolumeFilter] 0.5x < 1.15x
+14:13:38 | ❌ [MGLU3] [VolumeFilter] 0.6x < 1.15x
+14:13:43 | ❌ [VIVT3] [VolumeFilter] 0.9x < 1.15x
+14:14:00 | ❌ [RADL3] [VolumeFilter] 0.6x < 1.15x
+14:14:04 | ❌ [PETR4] [VolumeFilter] 0.9x < 1.15x
+14:14:09 | ❌ [ITUB4] [VolumeFilter] 0.6x < 1.15x
+14:14:16 | ❌ [BBDC4] [VolumeFilter] 0.6x < 1.15x
+14:14:26 | ❌ [PRIO3] [VolumeFilter] 0.5x < 1.15x
+14:14:30 | ❌ [ITSA4] [VolumeFilter] 0.6x < 1.15x
+14:14:34 | ❌ [ANIM3] [VolumeFilter] 0.4x < 1.15x
+14:14:40 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:15:28 | ❌ [B3SA3] [VolumeFilter] 0.5x < 1.15x
+14:15:34 | ❌ [VIVT3] [VolumeFilter] 0.7x < 1.15x
+14:15:42 | ❌ [RECV3] [VolumeFilter] 0.7x < 1.15x
+14:15:56 | ❌ [PETR4] [VolumeFilter] 0.9x < 1.15x
+14:16:05 | ❌ [ITUB4] [VolumeFilter] 0.6x < 1.15x
+14:16:14 | ❌ [BBDC4] [VolumeFilter] 0.6x < 1.15x
+14:16:18 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+14:16:23 | ❌ [PRIO3] [VolumeFilter] 0.9x < 1.15x
+14:16:28 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+14:16:43 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:16:49 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+14:17:05 | ❌ [BBAS3] [VolumeFilter] 0.4x < 1.15x
+14:17:57 | ❌ [B3SA3] [VolumeFilter] 0.6x < 1.15x
+14:18:03 | ❌ [VIVT3] [VolumeFilter] 0.7x < 1.15x
+14:18:08 | ❌ [RECV3] [VolumeFilter] 0.7x < 1.15x
+14:18:18 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+14:18:25 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+14:18:29 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+14:18:33 | ❌ [PRIO3] [VolumeFilter] 0.9x < 1.15x
+14:18:38 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+14:18:44 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:18:49 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+14:18:58 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+14:20:15 | ❌ [B3SA3] [VolumeFilter] 0.6x < 1.15x
+14:20:21 | ❌ [VIVT3] [VolumeFilter] 0.7x < 1.15x
+14:20:25 | ❌ [RECV3] [VolumeFilter] 0.7x < 1.15x
+14:20:33 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+14:20:37 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+14:20:41 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+14:20:46 | ❌ [PRIO3] [VolumeFilter] 0.9x < 1.15x
+14:20:50 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+14:20:54 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:20:59 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+14:21:05 | ❌ [SBSP3] [VolumeFilter] 0.5x < 1.15x
+14:21:09 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+14:22:14 | ❌ [B3SA3] [VolumeFilter] 0.6x < 1.15x
+14:22:31 | ❌ [VIVT3] [VolumeFilter] 0.7x < 1.15x
+14:22:42 | ❌ [RECV3] [VolumeFilter] 0.7x < 1.15x
+14:22:48 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+14:22:58 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+14:23:04 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+14:23:13 | ❌ [PRIO3] [VolumeFilter] 0.9x < 1.15x
+14:23:18 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:23:23 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+14:23:31 | ❌ [SBSP3] [VolumeFilter] 0.5x < 1.15x
+14:23:38 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+14:24:54 | ❌ [B3SA3] [VolumeFilter] 0.6x < 1.15x
+14:25:02 | ❌ [VIVT3] [VolumeFilter] 0.7x < 1.15x
+14:25:09 | ❌ [RECV3] [VolumeFilter] 0.7x < 1.15x
+14:25:15 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+14:25:25 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+14:25:30 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+14:25:35 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+14:25:39 | ❌ [PRIO3] [VolumeFilter] 0.9x < 1.15x
+14:25:43 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:25:48 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+14:25:54 | ❌ [SBSP3] [VolumeFilter] 0.5x < 1.15x
+14:25:59 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+14:26:44 | ❌ [B3SA3] [VolumeFilter] 0.6x < 1.15x
+14:26:48 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+14:26:55 | ❌ [VIVT3] [VolumeFilter] 0.7x < 1.15x
+14:26:59 | ❌ [RECV3] [VolumeFilter] 0.7x < 1.15x
+14:27:03 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+14:27:11 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+14:27:16 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+14:27:20 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+14:27:26 | ❌ [PRIO3] [VolumeFilter] 0.9x < 1.15x
+14:27:34 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:27:39 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+14:28:35 | ❌ [B3SA3] [VolumeFilter] 0.6x < 1.15x
+14:28:42 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+14:28:49 | ❌ [VIVT3] [VolumeFilter] 0.7x < 1.15x
+14:28:55 | ❌ [RECV3] [VolumeFilter] 0.7x < 1.15x
+14:28:59 | ❌ [ANIM3] [VolumeFilter] 0.7x < 1.15x
+14:29:07 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+14:29:11 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+14:29:15 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+14:29:20 | ❌ [MOVI3] [VolumeFilter] 0.1x < 1.15x
+14:29:25 | ❌ [RADL3] [VolumeFilter] 0.3x < 1.15x
+14:29:30 | ❌ [SBSP3] [VolumeFilter] 0.5x < 1.15x
+14:30:18 | ❌ [B3SA3] [VolumeFilter] 0.6x < 1.15x
+14:30:29 | ❌ [RADL3] [VolumeFilter] 0.5x < 1.15x
+14:30:37 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+14:30:43 | ❌ [BBDC4] [VolumeFilter] 0.9x < 1.15x
+14:30:48 | ❌ [BPAC11] [VolumeFilter] 0.5x < 1.15x
+14:30:54 | ❌ [PRIO3] [VolumeFilter] 0.9x < 1.15x
+14:30:58 | ❌ [VIVT3] [VolumeFilter] 0.6x < 1.15x
+14:31:03 | ❌ [MOVI3] [VolumeFilter] 1.1x < 1.15x
+14:31:08 | ❌ [RECV3] [VolumeFilter] 0.3x < 1.15x
+14:31:11 | ❌ [SBSP3] [VolumeFilter] 0.5x < 1.15x
+14:31:17 | ❌ [MGLU3] [VolumeFilter] 0.5x < 1.15x
+14:32:15 | ❌ [RADL3] [VolumeFilter] 0.5x < 1.15x
+14:32:25 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+14:32:29 | ❌ [B3SA3] [VolumeFilter] 0.6x < 1.15x
+14:32:34 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:32:38 | ❌ [PRIO3] [VolumeFilter] 0.4x < 1.15x
+14:32:44 | ❌ [VIVT3] [VolumeFilter] 0.6x < 1.15x
+14:32:49 | ❌ [MOVI3] [VolumeFilter] 1.1x < 1.15x
+14:33:01 | ❌ [BPAC11] [VolumeFilter] 0.9x < 1.15x
+14:33:05 | ❌ [RECV3] [VolumeFilter] 0.3x < 1.15x
+14:33:08 | ❌ [SBSP3] [VolumeFilter] 0.6x < 1.15x
+14:33:12 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+14:33:58 | ❌ [RADL3] [VolumeFilter] 0.5x < 1.15x
+14:34:06 | ❌ [ITUB4] [VolumeFilter] 0.5x < 1.15x
+14:34:10 | ❌ [B3SA3] [VolumeFilter] 0.6x < 1.15x
+14:34:13 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:34:18 | ❌ [VIVT3] [VolumeFilter] 0.6x < 1.15x
+14:34:22 | ❌ [MOVI3] [VolumeFilter] 1.1x < 1.15x
+14:34:28 | ❌ [BPAC11] [VolumeFilter] 0.9x < 1.15x
+14:34:32 | ❌ [RECV3] [VolumeFilter] 0.3x < 1.15x
+14:34:37 | ❌ [MGLU3] [VolumeFilter] 0.4x < 1.15x
+14:37:32 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+14:38:16 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+14:38:23 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+14:39:14 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+14:41:29 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+14:41:39 | ❌ [ITUB4] [VolumeFilter] 0.5x < 0.8x
+14:41:43 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+14:41:47 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:41:51 | ❌ [PRIO3] [VolumeFilter] 0.4x < 0.8x
+14:41:56 | ❌ [VIVT3] [VolumeFilter] 0.6x < 0.8x
+14:42:00 | ❌ [MOVI3] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:42:15 | ❌ [BPAC11] [CorrelationFilter] Correlação IBOV Alta: 0.87 > 0.85
+14:42:15 | ❌ [BPAC11] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.87 > 0.85']}
+14:42:18 | ❌ [RECV3] [VolumeFilter] 0.3x < 0.8x
+14:42:22 | ❌ [SBSP3] [VolumeFilter] 0.6x < 0.8x
+14:42:29 | ❌ [MGLU3] [VolumeFilter] 0.4x < 0.8x
+14:45:22 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+14:45:31 | ❌ [ITUB4] [VolumeFilter] 0.5x < 0.8x
+14:45:35 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+14:45:38 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:45:42 | ❌ [PRIO3] [VolumeFilter] 0.4x < 0.8x
+14:45:48 | ❌ [VIVT3] [VolumeFilter] 0.6x < 0.8x
+14:45:52 | ❌ [MOVI3] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:46:01 | ❌ [BPAC11] [CorrelationFilter] Correlação IBOV Alta: 0.87 > 0.85
+14:46:01 | ❌ [BPAC11] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.87 > 0.85']}
+14:46:07 | ❌ [RECV3] [VolumeFilter] 0.3x < 0.8x
+14:46:12 | ❌ [MGLU3] [VolumeFilter] 0.4x < 0.8x
+14:46:59 | ❌ [RECV3] [VolumeFilter] 0.4x < 0.8x
+14:47:03 | ❌ [RADL3] [VolumeFilter] 0.4x < 0.8x
+14:47:13 | ❌ [ITUB4] [VolumeFilter] 0.8x < 0.8x
+14:47:26 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:47:30 | ❌ [BPAC11] [VolumeFilter] 0.6x < 0.8x
+14:47:35 | ❌ [VIVT3] [VolumeFilter] 0.6x < 0.8x
+14:47:38 | ❌ [MOVI3] [VolumeFilter] 0.5x < 0.8x
+14:47:42 | ❌ [ANIM3] [VolumeFilter] 0.3x < 0.8x
+14:47:47 | ❌ [PRIO3] [VolumeFilter] 0.3x < 0.8x
+14:47:52 | ❌ [SBSP3] [SpreadFilter] Spread alto: 5.0 > 4 ticks
+14:47:56 | ❌ [ITSA4] [VolumeFilter] 0.5x < 0.8x
+14:48:44 | ❌ [RECV3] [VolumeFilter] 0.4x < 0.8x
+14:48:49 | ❌ [RADL3] [VolumeFilter] 0.4x < 0.8x
+14:48:56 | ❌ [ITUB4] [VolumeFilter] 0.8x < 0.8x
+14:49:00 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:49:04 | ❌ [BPAC11] [VolumeFilter] 0.6x < 0.8x
+14:49:08 | ❌ [VIVT3] [VolumeFilter] 0.6x < 0.8x
+14:49:12 | ❌ [MOVI3] [VolumeFilter] 0.5x < 0.8x
+14:49:15 | ❌ [ANIM3] [VolumeFilter] 0.3x < 0.8x
+14:49:20 | ❌ [PRIO3] [VolumeFilter] 0.3x < 0.8x
+14:49:26 | ❌ [ITSA4] [VolumeFilter] 0.5x < 0.8x
+14:50:11 | ❌ [RECV3] [VolumeFilter] 0.4x < 0.8x
+14:50:15 | ❌ [RADL3] [VolumeFilter] 0.4x < 0.8x
+14:50:23 | ❌ [ITUB4] [VolumeFilter] 0.8x < 0.8x
+14:50:27 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:50:30 | ❌ [BPAC11] [VolumeFilter] 0.6x < 0.8x
+14:50:35 | ❌ [VIVT3] [VolumeFilter] 0.6x < 0.8x
+14:50:39 | ❌ [MOVI3] [VolumeFilter] 0.5x < 0.8x
+14:50:44 | ❌ [ANIM3] [VolumeFilter] 0.3x < 0.8x
+14:50:50 | ❌ [PRIO3] [VolumeFilter] 0.3x < 0.8x
+14:51:41 | ❌ [RECV3] [VolumeFilter] 0.4x < 0.8x
+14:51:45 | ❌ [RADL3] [VolumeFilter] 0.4x < 0.8x
+14:51:54 | ❌ [ITUB4] [VolumeFilter] 0.8x < 0.8x
+14:51:58 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:52:04 | ❌ [VIVT3] [VolumeFilter] 0.6x < 0.8x
+14:52:08 | ❌ [MOVI3] [VolumeFilter] 0.5x < 0.8x
+14:52:12 | ❌ [ANIM3] [VolumeFilter] 0.3x < 0.8x
+14:52:18 | ❌ [PRIO3] [VolumeFilter] 0.3x < 0.8x
+14:53:36 | ❌ [VIVT3] [VolumeFilter] 0.6x < 0.8x
+14:53:40 | ❌ [RECV3] [VolumeFilter] 0.4x < 0.8x
+14:53:43 | ❌ [RADL3] [VolumeFilter] 0.4x < 0.8x
+14:53:53 | ❌ [ITUB4] [VolumeFilter] 0.8x < 0.8x
+14:54:01 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:54:05 | ❌ [BPAC11] [VolumeFilter] 0.6x < 0.8x
+14:54:08 | ❌ [MOVI3] [VolumeFilter] 0.5x < 0.8x
+14:54:12 | ❌ [ANIM3] [VolumeFilter] 0.3x < 0.8x
+14:54:17 | ❌ [PRIO3] [VolumeFilter] 0.3x < 0.8x
+14:54:27 | ❌ [ITSA4] [VolumeFilter] 0.5x < 0.8x
+14:55:14 | ❌ [VIVT3] [VolumeFilter] 0.6x < 0.8x
+14:55:18 | ❌ [RECV3] [VolumeFilter] 0.4x < 0.8x
+14:55:21 | ❌ [RADL3] [VolumeFilter] 0.4x < 0.8x
+14:55:28 | ❌ [ITUB4] [VolumeFilter] 0.8x < 0.8x
+14:55:33 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:55:37 | ❌ [BPAC11] [VolumeFilter] 0.6x < 0.8x
+14:55:40 | ❌ [MOVI3] [VolumeFilter] 0.5x < 0.8x
+14:55:43 | ❌ [ANIM3] [VolumeFilter] 0.3x < 0.8x
+14:55:48 | ❌ [PRIO3] [VolumeFilter] 0.3x < 0.8x
+14:56:38 | ❌ [VIVT3] [VolumeFilter] 0.6x < 0.8x
+14:56:42 | ❌ [RECV3] [VolumeFilter] 0.4x < 0.8x
+14:56:46 | ❌ [RADL3] [VolumeFilter] 0.4x < 0.8x
+14:56:53 | ❌ [ITUB4] [VolumeFilter] 0.8x < 0.8x
+14:56:57 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:57:01 | ❌ [BPAC11] [VolumeFilter] 0.6x < 0.8x
+14:57:05 | ❌ [ITSA4] [VolumeFilter] 0.5x < 0.8x
+14:57:08 | ❌ [MOVI3] [VolumeFilter] 0.5x < 0.8x
+14:57:12 | ❌ [ANIM3] [VolumeFilter] 0.3x < 0.8x
+14:57:17 | ❌ [PRIO3] [VolumeFilter] 0.3x < 0.8x
+14:58:05 | ❌ [VIVT3] [VolumeFilter] 0.6x < 0.8x
+14:58:08 | ❌ [RECV3] [VolumeFilter] 0.4x < 0.8x
+14:58:12 | ❌ [RADL3] [VolumeFilter] 0.4x < 0.8x
+14:58:19 | ❌ [ITUB4] [VolumeFilter] 0.8x < 0.8x
+14:58:22 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:58:26 | ❌ [BPAC11] [VolumeFilter] 0.6x < 0.8x
+14:58:29 | ❌ [ITSA4] [VolumeFilter] 0.5x < 0.8x
+14:58:33 | ❌ [MOVI3] [VolumeFilter] 0.5x < 0.8x
+14:58:36 | ❌ [ANIM3] [VolumeFilter] 0.3x < 0.8x
+14:58:41 | ❌ [PRIO3] [VolumeFilter] 0.3x < 0.8x
+14:59:26 | ❌ [VIVT3] [VolumeFilter] 0.6x < 0.8x
+14:59:30 | ❌ [RECV3] [VolumeFilter] 0.4x < 0.8x
+14:59:33 | ❌ [RADL3] [VolumeFilter] 0.4x < 0.8x
+14:59:40 | ❌ [ITUB4] [VolumeFilter] 0.8x < 0.8x
+14:59:47 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+14:59:50 | ❌ [BPAC11] [VolumeFilter] 0.6x < 0.8x
+14:59:54 | ❌ [MOVI3] [VolumeFilter] 0.5x < 0.8x
+14:59:57 | ❌ [ANIM3] [VolumeFilter] 0.3x < 0.8x
+15:00:03 | ❌ [PRIO3] [VolumeFilter] 0.3x < 0.8x
+15:00:48 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:01:00 | ❌ [VIVT3] [VolumeFilter] 0.8x < 0.8x
+15:01:03 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:01:07 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:01:11 | ❌ [RADL3] [VolumeFilter] 0.6x < 0.8x
+15:01:14 | ❌ [PETR4] [VolumeFilter] 0.7x < 0.8x
+15:01:18 | ❌ [ITUB4] [VolumeFilter] 0.5x < 0.8x
+15:01:22 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:01:26 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:01:35 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:01:41 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:02:32 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:02:39 | ❌ [VIVT3] [VolumeFilter] 0.8x < 0.8x
+15:02:42 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:02:46 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:02:50 | ❌ [RADL3] [VolumeFilter] 0.6x < 0.8x
+15:02:53 | ❌ [PETR4] [VolumeFilter] 0.7x < 0.8x
+15:02:57 | ❌ [ITUB4] [VolumeFilter] 0.5x < 0.8x
+15:03:00 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:03:07 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:03:12 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:03:55 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:04:04 | ❌ [VIVT3] [VolumeFilter] 0.8x < 0.8x
+15:04:07 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:04:11 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:04:14 | ❌ [RADL3] [VolumeFilter] 0.6x < 0.8x
+15:04:18 | ❌ [PETR4] [VolumeFilter] 0.7x < 0.8x
+15:04:22 | ❌ [ITUB4] [VolumeFilter] 0.5x < 0.8x
+15:04:26 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:04:29 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:04:34 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:04:39 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:05:22 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:05:31 | ❌ [VIVT3] [VolumeFilter] 0.8x < 0.8x
+15:05:34 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:05:38 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:05:42 | ❌ [RADL3] [VolumeFilter] 0.6x < 0.8x
+15:05:46 | ❌ [PETR4] [VolumeFilter] 0.7x < 0.8x
+15:05:51 | ❌ [ITUB4] [VolumeFilter] 0.5x < 0.8x
+15:05:56 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:06:03 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:06:08 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:06:50 | ❌ [PETR4] [VolumeFilter] 0.7x < 0.8x
+15:06:53 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:07:02 | ❌ [VIVT3] [VolumeFilter] 0.8x < 0.8x
+15:07:05 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:07:09 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:07:13 | ❌ [RADL3] [VolumeFilter] 0.6x < 0.8x
+15:07:17 | ❌ [ITUB4] [VolumeFilter] 0.5x < 0.8x
+15:07:21 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:07:24 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:07:39 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:07:44 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:08:27 | ❌ [PETR4] [VolumeFilter] 0.7x < 0.8x
+15:08:31 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:08:39 | ❌ [VIVT3] [VolumeFilter] 0.8x < 0.8x
+15:08:43 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:08:46 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:08:50 | ❌ [RADL3] [VolumeFilter] 0.6x < 0.8x
+15:08:54 | ❌ [ITUB4] [VolumeFilter] 0.5x < 0.8x
+15:08:57 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:09:02 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:09:09 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:09:14 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:09:56 | ❌ [PETR4] [VolumeFilter] 0.7x < 0.8x
+15:09:59 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:10:08 | ❌ [VIVT3] [VolumeFilter] 0.8x < 0.8x
+15:10:12 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:10:15 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:10:19 | ❌ [RADL3] [VolumeFilter] 0.6x < 0.8x
+15:10:23 | ❌ [ITUB4] [VolumeFilter] 0.5x < 0.8x
+15:10:26 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:10:35 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:10:40 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:11:23 | ❌ [PETR4] [VolumeFilter] 0.7x < 0.8x
+15:11:27 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:11:35 | ❌ [VIVT3] [VolumeFilter] 0.8x < 0.8x
+15:11:39 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:11:42 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:11:46 | ❌ [RADL3] [VolumeFilter] 0.6x < 0.8x
+15:11:50 | ❌ [ITUB4] [VolumeFilter] 0.5x < 0.8x
+15:11:53 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:12:02 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:12:07 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:12:49 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:12:59 | ❌ [VIVT3] [VolumeFilter] 0.8x < 0.8x
+15:13:02 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:13:06 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:13:10 | ❌ [RADL3] [VolumeFilter] 0.6x < 0.8x
+15:13:13 | ❌ [PETR4] [VolumeFilter] 0.7x < 0.8x
+15:13:17 | ❌ [ITUB4] [VolumeFilter] 0.5x < 0.8x
+15:13:21 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:13:30 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:13:35 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:14:17 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:14:26 | ❌ [VIVT3] [VolumeFilter] 0.8x < 0.8x
+15:14:29 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:14:33 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:14:37 | ❌ [RADL3] [VolumeFilter] 0.6x < 0.8x
+15:14:40 | ❌ [PETR4] [VolumeFilter] 0.7x < 0.8x
+15:14:44 | ❌ [ITUB4] [VolumeFilter] 0.5x < 0.8x
+15:14:48 | ❌ [BBDC4] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:14:51 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:14:58 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:15:03 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:15:46 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:15:49 | ❌ [PRIO3] [VolumeFilter] 0.6x < 0.8x
+15:15:53 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:16:00 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+15:16:06 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:16:06 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:16:10 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:16:17 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:16:22 | ❌ [RECV3] [VolumeFilter] 0.3x < 0.8x
+15:16:28 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:16:31 | ❌ [PETR4] [VolumeFilter] 0.3x < 0.8x
+15:16:35 | ❌ [BBAS3] [VolumeFilter] 0.6x < 0.8x
+15:17:18 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:17:21 | ❌ [PRIO3] [VolumeFilter] 0.6x < 0.8x
+15:17:25 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:17:32 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+15:17:35 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:17:35 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:17:39 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:17:42 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:17:49 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:17:54 | ❌ [RECV3] [VolumeFilter] 0.3x < 0.8x
+15:17:59 | ❌ [PETR4] [VolumeFilter] 0.3x < 0.8x
+15:18:03 | ❌ [BBAS3] [VolumeFilter] 0.6x < 0.8x
+15:18:45 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:18:49 | ❌ [PRIO3] [VolumeFilter] 0.6x < 0.8x
+15:18:52 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:19:00 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+15:19:03 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:19:03 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:19:07 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:19:11 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:19:18 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:19:23 | ❌ [RECV3] [VolumeFilter] 0.3x < 0.8x
+15:19:28 | ❌ [PETR4] [VolumeFilter] 0.3x < 0.8x
+15:19:32 | ❌ [BBAS3] [VolumeFilter] 0.6x < 0.8x
+15:20:15 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:20:18 | ❌ [PRIO3] [VolumeFilter] 0.6x < 0.8x
+15:20:22 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:20:29 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+15:20:33 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:20:33 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:20:36 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:20:45 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:20:50 | ❌ [RECV3] [VolumeFilter] 0.3x < 0.8x
+15:20:55 | ❌ [PETR4] [VolumeFilter] 0.3x < 0.8x
+15:20:59 | ❌ [BBAS3] [VolumeFilter] 0.6x < 0.8x
+15:21:43 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:21:47 | ❌ [PRIO3] [VolumeFilter] 0.6x < 0.8x
+15:21:50 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:21:58 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+15:22:01 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:22:01 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:22:05 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:22:12 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:22:17 | ❌ [RECV3] [VolumeFilter] 0.3x < 0.8x
+15:22:23 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:22:26 | ❌ [PETR4] [VolumeFilter] 0.3x < 0.8x
+15:22:30 | ❌ [BBAS3] [VolumeFilter] 0.6x < 0.8x
+15:23:12 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:23:16 | ❌ [PRIO3] [VolumeFilter] 0.6x < 0.8x
+15:23:19 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:23:26 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+15:23:30 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:23:30 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:23:34 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:23:41 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:23:46 | ❌ [RECV3] [VolumeFilter] 0.3x < 0.8x
+15:23:51 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:23:54 | ❌ [PETR4] [VolumeFilter] 0.3x < 0.8x
+15:23:58 | ❌ [BBAS3] [VolumeFilter] 0.6x < 0.8x
+15:24:40 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:24:44 | ❌ [PRIO3] [VolumeFilter] 0.6x < 0.8x
+15:24:48 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:24:55 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+15:24:58 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:24:58 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:25:01 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:25:09 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:25:14 | ❌ [RECV3] [VolumeFilter] 0.3x < 0.8x
+15:25:20 | ❌ [PETR4] [VolumeFilter] 0.3x < 0.8x
+15:25:24 | ❌ [BBAS3] [VolumeFilter] 0.6x < 0.8x
+15:26:06 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:26:10 | ❌ [PRIO3] [VolumeFilter] 0.6x < 0.8x
+15:26:13 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:26:20 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+15:26:24 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:26:24 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:26:28 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:26:35 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:26:40 | ❌ [RECV3] [VolumeFilter] 0.3x < 0.8x
+15:26:45 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:26:48 | ❌ [PETR4] [VolumeFilter] 0.3x < 0.8x
+15:26:52 | ❌ [BBAS3] [VolumeFilter] 0.6x < 0.8x
+15:27:35 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:27:38 | ❌ [PRIO3] [VolumeFilter] 0.6x < 0.8x
+15:27:42 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:27:49 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+15:27:52 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:27:52 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:27:56 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:28:03 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:28:08 | ❌ [RECV3] [VolumeFilter] 0.3x < 0.8x
+15:28:13 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:28:17 | ❌ [PETR4] [VolumeFilter] 0.3x < 0.8x
+15:28:20 | ❌ [BBAS3] [VolumeFilter] 0.6x < 0.8x
+15:29:04 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:29:08 | ❌ [PRIO3] [VolumeFilter] 0.6x < 0.8x
+15:29:12 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:29:20 | ❌ [RADL3] [VolumeFilter] 0.5x < 0.8x
+15:29:23 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:29:23 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:29:27 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:29:34 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:29:39 | ❌ [RECV3] [VolumeFilter] 0.3x < 0.8x
+15:29:45 | ❌ [PETR4] [VolumeFilter] 0.3x < 0.8x
+15:29:49 | ❌ [BBAS3] [VolumeFilter] 0.6x < 0.8x
+15:30:31 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:30:38 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:30:42 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:30:45 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:30:49 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:30:52 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:30:52 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:30:56 | ❌ [BBDC4] [VolumeFilter] 0.7x < 0.8x
+15:31:04 | ❌ [MOVI3] [VolumeFilter] 0.6x < 0.8x
+15:31:10 | ❌ [PETR4] [VolumeFilter] 0.3x < 0.8x
+15:31:14 | ❌ [BBAS3] [VolumeFilter] 0.6x < 0.8x
+15:32:01 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:32:05 | ❌ [PRIO3] [VolumeFilter] 0.7x < 0.8x
+15:32:20 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:32:25 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:32:29 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:32:32 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:32:40 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:32:40 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:32:44 | ❌ [BBDC4] [VolumeFilter] 0.7x < 0.8x
+15:32:52 | ❌ [MOVI3] [VolumeFilter] 0.5x < 0.8x
+15:32:57 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:33:01 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:33:43 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:33:47 | ❌ [PRIO3] [VolumeFilter] 0.7x < 0.8x
+15:33:52 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:33:56 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:34:01 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:34:04 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:34:12 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:34:12 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:34:15 | ❌ [BBDC4] [VolumeFilter] 0.7x < 0.8x
+15:34:23 | ❌ [MOVI3] [VolumeFilter] 0.5x < 0.8x
+15:34:30 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:35:13 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:35:16 | ❌ [PRIO3] [VolumeFilter] 0.7x < 0.8x
+15:35:22 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:35:26 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:35:29 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:35:33 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:35:41 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:35:41 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:35:45 | ❌ [BBDC4] [VolumeFilter] 0.7x < 0.8x
+15:35:53 | ❌ [MOVI3] [VolumeFilter] 0.5x < 0.8x
+15:35:58 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:36:01 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:36:44 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:36:51 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:36:56 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:36:59 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:37:04 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:37:11 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:37:11 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:37:15 | ❌ [BBDC4] [VolumeFilter] 0.7x < 0.8x
+15:37:24 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:37:28 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:38:12 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:38:16 | ❌ [PRIO3] [VolumeFilter] 0.7x < 0.8x
+15:38:21 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:38:24 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:38:28 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:38:32 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:38:40 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:38:40 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:38:44 | ❌ [BBDC4] [VolumeFilter] 0.7x < 0.8x
+15:38:53 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:38:56 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:39:43 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:39:47 | ❌ [PRIO3] [VolumeFilter] 0.7x < 0.8x
+15:39:52 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:39:57 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:40:01 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:40:04 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:40:12 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:40:12 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:40:16 | ❌ [BBDC4] [VolumeFilter] 0.7x < 0.8x
+15:40:24 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:40:28 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:41:12 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:41:15 | ❌ [PRIO3] [VolumeFilter] 0.7x < 0.8x
+15:41:21 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:41:26 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:41:30 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:41:33 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:41:41 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:41:41 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:41:47 | ❌ [BBDC4] [VolumeFilter] 0.7x < 0.8x
+15:41:56 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:41:59 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:42:45 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:42:49 | ❌ [PRIO3] [VolumeFilter] 0.7x < 0.8x
+15:42:55 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:43:01 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:43:04 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:43:09 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:43:16 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:43:16 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:43:20 | ❌ [BBDC4] [VolumeFilter] 0.7x < 0.8x
+15:43:30 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:43:35 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:44:22 | ❌ [B3SA3] [VolumeFilter] 0.6x < 0.8x
+15:44:25 | ❌ [PRIO3] [VolumeFilter] 0.7x < 0.8x
+15:44:30 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:44:34 | ❌ [RECV3] [VolumeFilter] 0.6x < 0.8x
+15:44:38 | ❌ [ANIM3] [VolumeFilter] 0.5x < 0.8x
+15:44:41 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:44:49 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:44:49 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:44:55 | ❌ [BBDC4] [VolumeFilter] 0.7x < 0.8x
+15:45:05 | ❌ [BBAS3] [VolumeFilter] 0.7x < 0.8x
+15:45:52 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:45:56 | ❌ [PRIO3] [VolumeFilter] 0.8x < 0.8x
+15:46:01 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:46:06 | ❌ [RECV3] [VolumeFilter] 0.7x < 0.8x
+15:46:10 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:46:17 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:46:17 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:46:21 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:46:29 | ❌ [ANIM3] [VolumeFilter] 0.4x < 0.8x
+15:46:34 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:47:26 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:47:30 | ❌ [PRIO3] [VolumeFilter] 0.8x < 0.8x
+15:47:35 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:47:39 | ❌ [RECV3] [VolumeFilter] 0.7x < 0.8x
+15:47:42 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:47:52 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:47:52 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:47:55 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:48:02 | ❌ [ANIM3] [VolumeFilter] 0.4x < 0.8x
+15:48:07 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:48:54 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:48:58 | ❌ [PRIO3] [VolumeFilter] 0.8x < 0.8x
+15:49:04 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:49:07 | ❌ [RECV3] [VolumeFilter] 0.7x < 0.8x
+15:49:12 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:49:19 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:49:19 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:49:22 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:49:26 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:49:34 | ❌ [ANIM3] [VolumeFilter] 0.4x < 0.8x
+15:50:22 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:50:26 | ❌ [PRIO3] [VolumeFilter] 0.8x < 0.8x
+15:50:31 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:50:35 | ❌ [RECV3] [VolumeFilter] 0.7x < 0.8x
+15:50:39 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:50:47 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:50:47 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:50:52 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:50:55 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:51:03 | ❌ [ANIM3] [VolumeFilter] 0.4x < 0.8x
+15:51:55 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:51:59 | ❌ [PRIO3] [VolumeFilter] 0.8x < 0.8x
+15:52:06 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:52:09 | ❌ [RECV3] [VolumeFilter] 0.7x < 0.8x
+15:52:13 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:52:22 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:52:22 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:52:25 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:52:35 | ❌ [ANIM3] [VolumeFilter] 0.4x < 0.8x
+15:53:28 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x
+15:53:32 | ❌ [PRIO3] [VolumeFilter] 0.8x < 0.8x
+15:53:37 | ❌ [VIVT3] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:53:41 | ❌ [RECV3] [VolumeFilter] 0.7x < 0.8x
+15:53:44 | ❌ [RADL3] [VolumeFilter] 0.7x < 0.8x
+15:53:52 | ❌ [ITUB4] [CorrelationFilter] Correlação IBOV Alta: 0.88 > 0.85
+15:53:52 | ❌ [ITUB4] [OrderValidation] Múltiplos erros | Details: {'errors': ['Correlação IBOV Alta: 0.88 > 0.85']}
+15:53:57 | ❌ [BBDC4] [VolumeFilter] 0.6x < 0.8x
+15:54:00 | ❌ [BPAC11] [MTF_Confirmation] H1 EMA 200 desalinhada
+15:54:08 | ❌ [ANIM3] [VolumeFilter] 0.4x < 0.8x
+15:54:59 | ❌ [B3SA3] [VolumeFilter] 0.5x < 0.8x

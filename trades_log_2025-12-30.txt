@@ -1,0 +1,13 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2025-12-30 11:24:32 | ENTRADA  | ITUB4  | BUY  | Vol:   10000 | Price:  39.48 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2025-12-30 11:29:41 | ENTRADA  | CSNA3  | SELL | Vol:   20000 | Price:   8.94 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2025-12-30 11:31:23 | ENTRADA  | BPAN4  | BUY  | Vol:   20000 | Price:  11.28 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2025-12-30 11:35:17 | ENTRADA  | CEAB3  | BUY  | Vol:   20000 | Price:  12.73 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2025-12-30 11:45:09 | ENTRADA  | BBDC4  | BUY  | Vol:   20000 | Price:  18.44 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2025-12-30 12:12:42 | ENTRADA  | AURA33 | BUY  | Vol:    5000 | Price:  93.30 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2025-12-30 12:15:44 | ENTRADA  | BBDC3  | BUY  | Vol:   20000 | Price:  15.74 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2025-12-30 12:46:53 | ENTRADA  | UGPA3  | BUY  | Vol:   10000 | Price:  21.03 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2025-12-30 13:32:35 | ENTRADA  | AURA33 | SELL | Vol:    5000 | Price:  92.62 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2025-12-30 14:00:42 | ENTRADA  | CURY3  | BUY  | Vol:   10000 | Price:  32.11 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2025-12-30 15:16:35 | ENTRADA  | AURA33 | BUY  | Vol:    5000 | Price:  93.61 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição

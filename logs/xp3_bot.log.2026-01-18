@@ -1,0 +1,298 @@
+2026-01-18 19:47:27,627 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-18 19:47:27,755 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-18 19:47:27,918 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-18 19:47:27,918 | INFO | 📋 Sincronizando Market Watch (Strict Mode)...
+2026-01-18 19:47:27,937 | WARNING | ⚠️ 6 ativos falharam ao adicionar: ['JBSS3', 'ELET3', 'CRFB3', 'BRFS3', 'CCRO3', 'AZUL4']
+2026-01-18 19:47:27,938 | INFO | 🧹 Limpando ativos desnecessários do Market Watch...
+2026-01-18 19:47:31,709 | INFO | ✅ Market Watch Sincronizado: 55 ativos mantidos/adicionados, 114 removidos.
+2026-01-18 19:47:31,846 | INFO | 📊 Executando análise retrospectiva inicial (backtest)...
+2026-01-18 19:47:31,854 | INFO | 📦 Verificando estado diário anterior...
+2026-01-18 19:47:31,882 | INFO | 🔄 Estado anterior era de 2026-01-16 - Iniciando novo dia
+2026-01-18 19:47:31,883 | INFO | 🆕 Iniciando com estado limpo (novo dia)
+2026-01-18 19:47:31,884 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-18 19:47:31,903 | INFO | 📉 Loss streak carregado | 5 símbolos | 0 bloqueados
+2026-01-18 19:47:31,926 | INFO | Parâmetros carregados do JSON (10 ativos elite): optimizer_output/elite_symbols_latest.json
+2026-01-18 19:47:31,928 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-18 19:47:31,961 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 12 setores
+2026-01-18 19:47:31,964 | INFO | ✅ Dados anti-chop carregados
+2026-01-18 19:47:31,965 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-18 19:47:31,965 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-18 19:47:31,966 | INFO | ✅ Dados anti-chop carregados
+2026-01-18 19:47:31,967 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-18 19:47:31,967 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-18 19:47:31,968 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-18 19:47:31,968 | INFO | Parâmetros carregados do ELITE_SYMBOLS (10 ativos elite)
+2026-01-18 19:47:36,053 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 19:47:37,243 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 19:47:37,976 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-18 19:47:37,976 | INFO | 📊 Atualizando correlação para 10 ativos...
+2026-01-18 19:47:38,096 | INFO | ✅ Matriz de correlação atualizada
+2026-01-18 19:47:38,097 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-01-18 19:47:38,097 | INFO | 📑 Subscrevendo ao Book de Ofertas para 10 ativos...
+2026-01-18 19:47:38,102 | WARNING | ⚠️ Não foi possível ler o Book de: ELET3
+2026-01-18 19:47:38,103 | INFO | 
+============================================================
+2026-01-18 19:47:38,103 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-18 19:47:38,103 | INFO | ============================================================
+2026-01-18 19:47:38,103 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-18 19:47:38,104 | INFO | ✅ Cooldown progressivo: True
+2026-01-18 19:47:38,104 | INFO | ✅ Máx posições: 8
+2026-01-18 19:47:38,104 | INFO | ✅ Máx por setor: 2
+2026-01-18 19:47:38,105 | INFO | ✅ Máx bancos: 2
+2026-01-18 19:47:38,105 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-18 19:47:38,105 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-18 19:47:38,106 | INFO | ============================================================
+
+2026-01-18 19:47:38,106 | INFO | 📅 Ciclo de trading iniciado: 18/01/2026
+2026-01-18 19:47:38,106 | INFO | 🧵 Iniciando threads de execução...
+2026-01-18 19:47:38,106 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-18 19:47:38,107 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-18 19:47:38,108 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-18 19:47:38,108 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-18 19:47:38,108 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-01-18 19:47:38,112 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-18 19:47:38,113 | WARNING | ⏰ INICIANDO FECHAMENTO EOD | Tempo até deadline: -187.6 min
+2026-01-18 19:47:38,117 | INFO | ✅ Todas as posições fechadas!
+2026-01-18 19:47:38,118 | WARNING | ⏰ INICIANDO FECHAMENTO EOD | Tempo até deadline: -187.6 min
+2026-01-18 19:47:38,118 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-18 19:47:38,118 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-18 19:47:38,119 | INFO | ✅ Todas as posições fechadas!
+2026-01-18 19:47:38,120 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-18 19:47:38,120 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-18 19:47:38,120 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-18 19:47:38,121 | WARNING | ⚠️ Símbolos insuficientes para calcular correlação (< 2 ativos)
+2026-01-18 19:47:38,122 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-18 19:47:38,128 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-18 19:47:38,136 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-18 19:47:38,136 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-18 19:47:38,141 | INFO | 🚀 Total de 7 threads ativas
+2026-01-18 19:47:38,382 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 19:47:38,934 | INFO | 🚀 Iniciando Dashboard via Streamlit...
+2026-01-18 19:47:38,952 | INFO | ✅ Relatório enviado com sucesso
+2026-01-18 19:47:38,954 | INFO | 
+📋 RELATÓRIO DE REJEIÇÕES DIÁRIAS
+===================================
+• VALE3  | 19:47:33 | Score:  55 | Aguardando correção (RSI Esticado)
+• ABEV3  | 19:47:35 | Score:  55 | Sem força de tendência (ADX Baixo)
+• B3SA3  | 19:47:35 | Score:  55 | Sem força de tendência (ADX Baixo)
+• ITUB4  | 19:47:34 | Score:  20 | Sem força de tendência (ADX Baixo)
+• BBAS3  | 19:47:35 | Score:  20 | Sem força de tendência (ADX Baixo)
+• SUZB3  | 19:47:37 | Score:  20 | Sem força de tendência (ADX Baixo)
+• ELET3  | 19:47:37 | Score:   1 | Sem força de tendência (ADX Baixo)
+• BBDC4  | 19:47:34 | Score:   0 | Sem força de tendência (ADX Baixo)
+• VIVT3  | 19:47:35 | Score:   0 | Sem força de tendência (ADX Baixo)
+2026-01-18 19:47:38,983 | INFO | 💾 Loss streak salvo.
+2026-01-18 19:47:39,008 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 19:47:39,028 | INFO | ML retreinado diariamente
+2026-01-18 19:47:39,049 | INFO | ✅ Relatório enviado com sucesso
+2026-01-18 19:47:39,052 | INFO | 
+📋 RELATÓRIO DE REJEIÇÕES DIÁRIAS
+===================================
+• VALE3  | 19:47:33 | Score:  55 | Aguardando correção (RSI Esticado)
+• ABEV3  | 19:47:35 | Score:  55 | Sem força de tendência (ADX Baixo)
+• B3SA3  | 19:47:35 | Score:  55 | Sem força de tendência (ADX Baixo)
+• ITUB4  | 19:47:34 | Score:  20 | Sem força de tendência (ADX Baixo)
+• BBAS3  | 19:47:35 | Score:  20 | Sem força de tendência (ADX Baixo)
+• SUZB3  | 19:47:37 | Score:  20 | Sem força de tendência (ADX Baixo)
+• ELET3  | 19:47:37 | Score:   1 | Sem força de tendência (ADX Baixo)
+• BBDC4  | 19:47:34 | Score:   0 | Sem força de tendência (ADX Baixo)
+• VIVT3  | 19:47:35 | Score:   0 | Sem força de tendência (ADX Baixo)
+2026-01-18 19:47:39,054 | INFO | 💾 Loss streak salvo.
+2026-01-18 19:47:39,070 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 19:47:41,947 | INFO | ✅ Dashboard iniciado com sucesso na porta 8501!
+2026-01-18 19:47:44,105 | WARNING | ⛔ Trading PAUSADO globalmente: ⏰ Fim do horário seguro (fechamento em breve)
+2026-01-18 19:47:44,839 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 19:47:45,988 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 19:47:51,523 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-18 19:47:51,530 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-18 19:47:51,532 | INFO | 💾 Loss streak salvo.
+2026-01-18 19:47:51,543 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 19:47:53,523 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-18 19:47:57,146 | INFO | 📰 Polygon News: 0 notícias para IBOV
+2026-01-18 19:47:57,301 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 19:47:58,473 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 19:48:04,308 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-18 19:48:04,333 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-18 19:48:04,351 | INFO | 💾 Loss streak salvo.
+2026-01-18 19:48:04,534 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 19:48:11,852 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 19:48:13,018 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:21:49,967 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-18 21:21:50,210 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-18 21:21:50,251 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-18 21:21:50,256 | INFO | 📋 Sincronizando Market Watch (Strict Mode)...
+2026-01-18 21:21:50,297 | WARNING | ⚠️ 6 ativos falharam ao adicionar: ['AZUL4', 'BRFS3', 'CCRO3', 'CRFB3', 'ELET3', 'JBSS3']
+2026-01-18 21:21:50,299 | INFO | 🧹 Limpando ativos desnecessários do Market Watch...
+2026-01-18 21:21:56,077 | INFO | ✅ Market Watch Sincronizado: 55 ativos mantidos/adicionados, 0 removidos.
+2026-01-18 21:21:56,186 | INFO | 📊 Executando análise retrospectiva inicial (backtest)...
+2026-01-18 21:21:56,319 | INFO | 📦 Verificando estado diário anterior...
+2026-01-18 21:21:56,324 | INFO | 🔄 Estado anterior era de 2026-01-16 - Iniciando novo dia
+2026-01-18 21:21:56,326 | INFO | 🆕 Iniciando com estado limpo (novo dia)
+2026-01-18 21:21:56,327 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-18 21:21:56,328 | INFO | 📉 Loss streak carregado | 5 símbolos | 0 bloqueados
+2026-01-18 21:21:56,333 | INFO | Parâmetros carregados do JSON (19 ativos elite): optimizer_output/elite_symbols_latest.json
+2026-01-18 21:21:56,336 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-18 21:21:56,418 | INFO | 🧠 Pesos adaptativos carregados: 200 símbolos | 12 setores
+2026-01-18 21:21:56,423 | INFO | ✅ Dados anti-chop carregados
+2026-01-18 21:21:56,424 | INFO | ✅ Limites diários carregados
+2026-01-18 21:21:56,424 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-18 21:21:56,425 | INFO | ✅ Dados anti-chop carregados
+2026-01-18 21:21:56,426 | INFO | ✅ Limites diários carregados
+2026-01-18 21:21:56,427 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-18 21:21:56,427 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-18 21:21:56,427 | INFO | Parâmetros carregados do ELITE_SYMBOLS (19 ativos elite)
+2026-01-18 21:22:02,102 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:22:03,994 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:22:20,782 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-18 21:22:20,785 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-18 21:22:20,961 | INFO | ✅ Matriz de correlação atualizada
+2026-01-18 21:22:20,978 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-01-18 21:22:20,979 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-18 21:22:20,993 | WARNING | ⚠️ Não foi possível ler o Book de: ELET3
+2026-01-18 21:22:21,007 | INFO | 
+============================================================
+2026-01-18 21:22:21,017 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-18 21:22:21,020 | INFO | ============================================================
+2026-01-18 21:22:21,022 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-18 21:22:21,023 | INFO | ✅ Cooldown progressivo: True
+2026-01-18 21:22:21,024 | INFO | ✅ Máx posições: 8
+2026-01-18 21:22:21,024 | INFO | ✅ Máx por setor: 2
+2026-01-18 21:22:21,024 | INFO | ✅ Máx bancos: 2
+2026-01-18 21:22:21,025 | INFO | ✅ ADX mínimo (abertura): 20
+2026-01-18 21:22:21,025 | INFO | ✅ ADX mínimo (intraday): 18
+2026-01-18 21:22:21,025 | INFO | ============================================================
+
+2026-01-18 21:22:21,025 | INFO | 📅 Ciclo de trading iniciado: 18/01/2026
+2026-01-18 21:22:21,026 | INFO | 🧵 Iniciando threads de execução...
+2026-01-18 21:22:21,026 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-18 21:22:21,027 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-18 21:22:21,027 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-18 21:22:21,027 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-18 21:22:21,028 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-01-18 21:22:21,040 | WARNING | ⏰ INICIANDO FECHAMENTO EOD | Tempo até deadline: -282.4 min
+2026-01-18 21:22:21,186 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-18 21:22:21,188 | INFO | ✅ Todas as posições fechadas!
+2026-01-18 21:22:21,194 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-18 21:22:21,195 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-18 21:22:21,196 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-18 21:22:21,208 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-18 21:22:21,209 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-18 21:22:21,210 | WARNING | ⚠️ Símbolos insuficientes para calcular correlação (< 2 ativos)
+2026-01-18 21:22:21,226 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-18 21:22:21,228 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-18 21:22:21,242 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-18 21:22:21,242 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-18 21:22:21,258 | INFO | 🚀 Total de 7 threads ativas
+2026-01-18 21:22:21,551 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:22:21,952 | INFO | ✅ Relatório enviado com sucesso
+2026-01-18 21:22:21,952 | INFO | 
+📋 RELATÓRIO DE REJEIÇÕES DIÁRIAS
+===================================
+• PETR4  | 21:21:57 | Score:  75 | Sem força de tendência (ADX Baixo)
+• WEGE3  | 21:22:11 | Score:  75 | Sem força de tendência (ADX Baixo)
+• VALE3  | 21:22:00 | Score:  55 | Aguardando correção (RSI Esticado)
+• ABEV3  | 21:22:01 | Score:  55 | Sem força de tendência (ADX Baixo)
+• B3SA3  | 21:22:01 | Score:  55 | Sem força de tendência (ADX Baixo)
+• SLCE3  | 21:22:09 | Score:  45 | Sem força de tendência (ADX Baixo)
+• TOTS3  | 21:22:17 | Score:  45 | Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+• MDNE3  | 21:22:18 | Score:  45 | Volume institucional insuficiente
+• ITUB4  | 21:22:00 | Score:  20 | Sem força de tendência (ADX Baixo)
+• SUZB3  | 21:22:04 | Score:  20 | Sem força de tendência (ADX Baixo)
+• PRIO3  | 21:22:11 | Score:  20 | Volume institucional insuficiente
+• USIM5  | 21:22:18 | Score:  20 | Volume institucional insuficiente
+• RENT3  | 21:22:18 | Score:  20 | Volume institucional insuficiente
+• RAIL3  | 21:22:20 | Score:  20 | Sem força de tendência (ADX Baixo)
+• ELET3  | 21:22:04 | Score:   1 | Sem força de tendência (ADX Baixo)
+• BBDC4  | 21:22:01 | Score:   0 | Sem força de tendência (ADX Baixo)
+• VIVT3  | 21:22:01 | Score:   0 | Sem força de tendência (ADX Baixo)
+• RECV3  | 21:22:06 | Score:   0 | Sem força de tendência (ADX Baixo)
+• BPAC11 | 21:22:11 | Score:   0 | Sem força de tendência (ADX Baixo)
+2026-01-18 21:22:21,955 | INFO | 💾 Loss streak salvo.
+2026-01-18 21:22:22,003 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 21:22:27,022 | WARNING | ⛔ Trading PAUSADO globalmente: ⏰ Fim do horário seguro (fechamento em breve)
+2026-01-18 21:22:27,717 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:22:28,840 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:22:34,723 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-18 21:22:34,732 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-18 21:22:34,733 | INFO | 💾 Loss streak salvo.
+2026-01-18 21:22:34,753 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 21:22:37,063 | INFO | 🚀 Iniciando Dashboard via Streamlit...
+2026-01-18 21:22:37,094 | INFO | ✅ Relatório enviado com sucesso
+2026-01-18 21:22:37,096 | INFO | 
+📋 RELATÓRIO DE REJEIÇÕES DIÁRIAS
+===================================
+• PETR4  | 21:22:27 | Score:  75 | Sem força de tendência (ADX Baixo)
+• WEGE3  | 21:22:29 | Score:  75 | Sem força de tendência (ADX Baixo)
+• VALE3  | 21:22:27 | Score:  55 | Aguardando correção (RSI Esticado)
+• ABEV3  | 21:22:27 | Score:  55 | Sem força de tendência (ADX Baixo)
+• B3SA3  | 21:22:27 | Score:  55 | Sem força de tendência (ADX Baixo)
+• SLCE3  | 21:22:29 | Score:  45 | Sem força de tendência (ADX Baixo)
+• TOTS3  | 21:22:29 | Score:  45 | Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+• MDNE3  | 21:22:29 | Score:  45 | Volume institucional insuficiente
+• ITUB4  | 21:22:27 | Score:  20 | Sem força de tendência (ADX Baixo)
+• SUZB3  | 21:22:29 | Score:  20 | Sem força de tendência (ADX Baixo)
+• PRIO3  | 21:22:29 | Score:  20 | Volume institucional insuficiente
+• USIM5  | 21:22:29 | Score:  20 | Volume institucional insuficiente
+• RENT3  | 21:22:29 | Score:  20 | Volume institucional insuficiente
+• RAIL3  | 21:22:29 | Score:  20 | Sem força de tendência (ADX Baixo)
+• ELET3  | 21:22:29 | Score:   1 | Sem força de tendência (ADX Baixo)
+• BBDC4  | 21:22:27 | Score:   0 | Sem força de tendência (ADX Baixo)
+• VIVT3  | 21:22:27 | Score:   0 | Sem força de tendência (ADX Baixo)
+• RECV3  | 21:22:29 | Score:   0 | Sem força de tendência (ADX Baixo)
+• BPAC11 | 21:22:29 | Score:   0 | Sem força de tendência (ADX Baixo)
+2026-01-18 21:22:37,099 | INFO | 💾 Loss streak salvo.
+2026-01-18 21:22:37,119 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 21:22:37,123 | INFO | ML retreinado diariamente
+2026-01-18 21:22:40,216 | INFO | ✅ Dashboard iniciado com sucesso na porta 8501!
+2026-01-18 21:22:40,254 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:22:41,357 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:22:48,144 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-18 21:22:48,203 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-18 21:22:48,210 | INFO | 💾 Loss streak salvo.
+2026-01-18 21:22:48,270 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 21:22:53,796 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:22:54,926 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:23:01,571 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-18 21:23:01,585 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-18 21:23:01,598 | INFO | 💾 Loss streak salvo.
+2026-01-18 21:23:01,628 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 21:23:01,786 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-18 21:23:08,597 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:23:09,741 | INFO | 📰 Polygon News: 0 notícias para IBOV
+2026-01-18 21:23:09,772 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:23:15,822 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-18 21:23:15,832 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-18 21:23:15,839 | INFO | 💾 Loss streak salvo.
+2026-01-18 21:23:15,866 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 21:23:21,347 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:23:22,482 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:23:28,403 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-18 21:23:28,413 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-18 21:23:28,422 | INFO | 💾 Loss streak salvo.
+2026-01-18 21:23:28,447 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 21:23:34,079 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:23:35,219 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:23:42,068 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-18 21:23:42,078 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-18 21:23:42,081 | INFO | 💾 Loss streak salvo.
+2026-01-18 21:23:42,384 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 21:23:46,884 | INFO | 📰 Polygon News: 0 notícias para IBOV
+2026-01-18 21:23:48,173 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:23:49,267 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:23:55,518 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-18 21:23:55,681 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-18 21:23:55,686 | INFO | 💾 Loss streak salvo.
+2026-01-18 21:23:55,715 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 21:24:01,319 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:24:02,472 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:24:08,623 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-18 21:24:08,636 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-18 21:24:08,639 | INFO | 💾 Loss streak salvo.
+2026-01-18 21:24:08,655 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-18 21:24:14,522 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:24:15,729 | WARNING | ⚠️ MT5 Falhou em ELET3. Acionando Polygon.io fallback...
+2026-01-18 21:24:19,576 | INFO | 📰 Polygon News: 0 notícias para IBOV
+2026-01-18 21:24:21,680 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-18 21:24:21,696 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-18 21:24:21,699 | INFO | 💾 Loss streak salvo.
+2026-01-18 21:24:21,718 | INFO | 💾 Pesos adaptativos salvos com sucesso.

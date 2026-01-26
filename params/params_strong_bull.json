@@ -1,0 +1,12 @@
+{
+  "adx_period": 14,
+  "adx_threshold": 20,
+  "ema_long": 20,
+  "ema_short": 9,
+  "mom_period": 10,
+  "rsi_overbought": 70,
+  "rsi_oversold": 30,
+  "rsi_period": 21,
+  "sl_atr_mult": 1.5,
+  "tp_atr_mult": 2.0
+}
