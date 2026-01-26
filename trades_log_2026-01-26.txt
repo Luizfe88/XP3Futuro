@@ -7,3 +7,4 @@ DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$
 2026-01-26 13:45:19 | ENTRADA  | BPAC11 | BUY  | Vol:    2900 | Price:  59.94 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
 2026-01-26 13:46:37 | ENTRADA  | BBDC4  | BUY  | Vol:   10000 | Price:  20.73 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
 2026-01-26 14:00:14 | ENTRADA  | ABEV3  | BUY  | Vol:   38500 | Price:  14.94 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-26 14:43:49 | ENTRADA  | COGN3  | BUY  | Vol:   40300 | Price:   4.45 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição

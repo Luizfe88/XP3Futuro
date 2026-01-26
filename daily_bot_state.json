@@ -1,8 +1,8 @@
 {
   "date": "2026-01-26",
-  "timestamp": "2026-01-26T14:24:25.880868",
+  "timestamp": "2026-01-26T14:54:26.005900",
   "equity_inicio_dia": 978176.26,
-  "daily_max_equity": 980079.26,
+  "daily_max_equity": 983476.26,
   "daily_trades_per_symbol": {
     "VALE3": 0,
     "VIVT3": 1,
@@ -12,14 +12,16 @@
     "BPAC11": 1,
     "AURA33": 0,
     "ABEV3": 1,
-    "BBAS3": 0
+    "BBAS3": 0,
+    "COGN3": 1
   },
   "last_entry_time": {
     "WEGE3": 1769435685.1843176,
     "VIVT3": 1769445061.6345487,
     "BPAC11": 1769445918.1681156,
     "BBDC4": 1769445996.7190254,
-    "ABEV3": 1769446812.0471714
+    "ABEV3": 1769446812.0471714,
+    "COGN3": 1769449426.7424762
   },
   "current_trading_day": "2026-01-26",
   "daily_cycle_completed": false,
@@ -29,13 +31,15 @@
     "VIVT3": 0,
     "BPAC11": 0,
     "BBDC4": 0,
-    "ABEV3": 0
+    "ABEV3": 0,
+    "COGN3": 0
   },
   "last_entry_price": {
     "VIVT3": 36.78,
     "BPAC11": 59.94,
     "BBDC4": 20.73,
-    "ABEV3": 14.94
+    "ABEV3": 14.94,
+    "COGN3": 4.45
   },
   "open_positions": [
     {
@@ -87,6 +91,16 @@
       "sl": 14.81,
       "tp": 15.11,
       "time": 1769436012
+    },
+    {
+      "ticket": 2331330117,
+      "symbol": "COGN3",
+      "side": "BUY",
+      "volume": 40300.0,
+      "entry_price": 4.45,
+      "sl": 4.38,
+      "tp": 4.54,
+      "time": 1769438627
     }
   ]
 }
