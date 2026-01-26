@@ -1,6 +1,6 @@
 {
   "date": "2026-01-26",
-  "timestamp": "2026-01-26T16:24:27.684832",
+  "timestamp": "2026-01-26T16:39:27.725491",
   "equity_inicio_dia": 978176.26,
   "daily_max_equity": 983476.26,
   "daily_trades_per_symbol": {
@@ -24,7 +24,7 @@
     "COGN3": 1769449426.7424762
   },
   "current_trading_day": "2026-01-26",
-  "daily_cycle_completed": false,
+  "daily_cycle_completed": true,
   "daily_target_hit_day": null,
   "daily_target_hit_pct": null,
   "symbol_pyramid_leg": {

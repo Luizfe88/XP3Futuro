@@ -1,4 +1,37 @@
 {
-  "date": "2026-01-25",
-  "trades": {}
+  "date": "2026-01-26",
+  "trades": {
+    "VIVT3": {
+      "total": 1,
+      "losses": 1
+    },
+    "BBDC4": {
+      "total": 1,
+      "losses": 0
+    },
+    "BPAC11": {
+      "total": 1,
+      "losses": 0
+    },
+    "AURA33": {
+      "total": 0,
+      "losses": 0
+    },
+    "ABEV3": {
+      "total": 1,
+      "losses": 1
+    },
+    "RDOR3": {
+      "total": 0,
+      "losses": 0
+    },
+    "COGN3": {
+      "total": 1,
+      "losses": 0
+    },
+    "WEGE3": {
+      "total": 1,
+      "losses": 0
+    }
+  }
 }

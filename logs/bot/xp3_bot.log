@@ -15840,3 +15840,228 @@ RuntimeError: can't start new thread
 2026-01-26 16:29:00,805 | INFO | ✅ Dados ML salvos com sucesso.
 2026-01-26 16:29:14,917 | INFO | 💾 Forçando salvamento de dados ML...
 2026-01-26 16:29:14,942 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:29:28,324 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:29:28,410 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:29:56,705 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:29:56,776 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:30:10,520 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:30:10,533 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:30:22,237 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:30:22,352 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:30:35,701 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:30:35,716 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:30:49,747 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:30:49,762 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:31:01,909 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:31:02,094 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:31:19,390 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:31:19,435 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:31:31,668 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:31:31,700 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:31:43,990 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:31:44,011 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:31:56,782 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:31:56,853 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:32:09,867 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:32:09,916 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:32:24,142 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:32:24,182 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:32:36,937 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:32:36,956 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:32:49,479 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:32:49,495 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:33:01,416 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:33:01,466 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:33:15,569 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:33:15,597 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:33:28,637 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:33:28,654 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:33:40,411 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:33:40,440 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:33:48,539 | CRITICAL | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 16:33:52,732 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:33:52,756 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:33:57,761 | INFO | ✅ Trading RETOMADO: Trading permitido
+2026-01-26 16:34:06,506 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:34:06,539 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:34:19,456 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:34:19,499 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:34:31,924 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:34:31,951 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:34:45,465 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:34:45,509 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:35:01,048 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:35:01,074 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:35:13,837 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:35:13,880 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:35:26,091 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:35:26,108 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:35:37,647 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:35:37,669 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:35:52,539 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:35:52,561 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:36:04,596 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:36:04,617 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:36:17,851 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:36:17,870 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:36:29,815 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:36:29,834 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:36:41,654 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:36:41,673 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:36:53,809 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:36:53,835 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:37:08,123 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:37:08,168 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:37:19,956 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:37:19,971 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:37:31,717 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:37:31,743 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:37:44,470 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:37:44,493 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:37:56,090 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:37:56,102 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:38:07,963 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:38:07,990 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:38:07,998 | WARNING | ⏰ INICIANDO FECHAMENTO EOD | Tempo até deadline: 1.9 min
+2026-01-26 16:38:08,006 | INFO | ✅ Todas as posições fechadas!
+2026-01-26 16:38:08,012 | INFO | 📧 Enviando relatório de desempenho diário...
+2026-01-26 16:38:10,952 | INFO | ✅ Relatório enviado com sucesso
+2026-01-26 16:38:10,966 | INFO | 
+📋 RELATÓRIO DE REJEIÇÕES DIÁRIAS
+===================================
+• PETR4  | 2026-01-26 16:38:01 | Score: 100 | Sem força de tendência (ADX Baixo)
+• ITUB4  | 2026-01-26 16:38:01 | Score: 100 | Sem força de tendência (ADX Baixo)
+• BBDC4  | 2026-01-26 16:38:01 | Score: 100 | Sem força de tendência (ADX Baixo)
+• ABEV3  | 2026-01-26 16:38:01 | Score: 100 | Sem força de tendência (ADX Baixo)
+• BBAS3  | 2026-01-26 16:38:01 | Score: 100 | Volume institucional insuficiente
+• B3SA3  | 2026-01-26 16:38:01 | Score: 100 | Volume institucional insuficiente
+• BPAC11 | 2026-01-26 16:38:02 | Score: 100 | Sem força de tendência (ADX Baixo)
+• RAIL3  | 2026-01-26 16:38:02 | Score: 100 | ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+• WEGE3  | 2026-01-26 16:38:02 | Score: 100 | Sem força de tendência (ADX Baixo)
+• RDOR3  | 2026-01-26 16:38:02 | Score: 100 | Sem força de tendência (ADX Baixo)
+• PRIO3  | 2026-01-26 16:38:02 | Score: 100 | Aguardando correção (RSI Esticado)
+• VIVT3  | 2026-01-26 16:38:01 | Score:  80 | Aguardando correção (RSI Esticado)
+• SUZB3  | 2026-01-26 16:38:01 | Score:  80 | Sem força de tendência (ADX Baixo)
+• VBBR3  | 2026-01-26 16:38:02 | Score:  80 | Aguardando correção (RSI Esticado)
+• TOTS3  | 2026-01-26 16:38:02 | Score:  80 | Sem força de tendência (ADX Baixo)
+• COGN3  | 2026-01-26 16:38:02 | Score:  80 | Aguardando correção (RSI Esticado)
+• RAIZ4  | 2026-01-26 16:38:02 | Score:  80 | Sem força de tendência (ADX Baixo)
+• VALE3  | 2026-01-26 16:38:01 | Score:  25 | Volume institucional insuficiente
+• AXIA3  | 2026-01-26 16:38:01 | Score:  25 | Sem força de tendência (ADX Baixo)
+• AURA33 | 2026-01-26 16:38:02 | Score:  25 | Sem força de tendência (ADX Baixo)
+2026-01-26 16:38:10,978 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:38:11,027 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:38:25,610 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:38:25,633 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:38:25,645 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:38:25,670 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:38:38,137 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:38:38,157 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:38:38,166 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:38:38,191 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:38:53,902 | CRITICAL | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 16:38:56,023 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:38:56,230 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:38:56,271 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:38:56,567 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:39:01,623 | INFO | ✅ Trading RETOMADO: Trading permitido
+2026-01-26 16:39:10,254 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:39:10,284 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:39:10,294 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:39:10,335 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:39:24,186 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:39:24,206 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:39:24,216 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:39:24,259 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:39:36,310 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:39:36,325 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:39:36,336 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:39:36,360 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:39:47,924 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:39:47,957 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:39:47,972 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:39:48,045 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:39:59,915 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:39:59,932 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:39:59,938 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:40:00,002 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:40:00,042 | WARNING | 🚨 EOD TRIGGER (16:40): Fechando 6 posições abertas.
+2026-01-26 16:40:00,069 | INFO | 🔄 Tentativa 1/5: WEGE3 @ 51.05 (dev 100)
+2026-01-26 16:40:00,183 | INFO | ✅ FECHADO: WEGE3 | P&L: R$+682.00 (+0.43%) | Day-Only Close
+2026-01-26 16:40:00,440 | ERROR | Erro ao extrair features: 'updated_at'
+2026-01-26 16:40:00,474 | INFO | 💾 ML Atualizado | WEGE3 | PnL: +0.00% | Reward: +0.24 (base:+0.04 +cons:+0.20) | Epsilon: 0.0500
+2026-01-26 16:40:00,485 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:40:00,500 | INFO | 🟢 WEGE3 FECHADO | R$+682.00 | Day-Only Close
+2026-01-26 16:40:00,831 | INFO | 🔄 Tentativa 1/5: VIVT3 @ 37.02 (dev 100)
+2026-01-26 16:40:00,898 | INFO | ✅ FECHADO: VIVT3 | P&L: R$-1173.00 (-0.63%) | Day-Only Close
+2026-01-26 16:40:00,973 | ERROR | Erro ao extrair features: 'updated_at'
+2026-01-26 16:40:01,030 | INFO | 💾 ML Atualizado | VIVT3 | PnL: -0.01% | Reward: -0.06 (base:-0.06 +cons:+0.00) | Epsilon: 0.0500
+2026-01-26 16:40:01,064 | WARNING | 🔴 VIVT3: Perda consecutiva #1
+2026-01-26 16:40:01,100 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:40:01,114 | INFO | 🔴 VIVT3 FECHADO | R$-1173.00 | Day-Only Close
+2026-01-26 16:40:01,439 | INFO | 🔄 Tentativa 1/5: BPAC11 @ 59.92 (dev 100)
+2026-01-26 16:40:01,593 | INFO | ✅ FECHADO: BPAC11 | P&L: R$+0.00 (+0.00%) | Day-Only Close
+2026-01-26 16:40:01,738 | ERROR | Erro ao extrair features: 'updated_at'
+2026-01-26 16:40:01,856 | INFO | 💾 ML Atualizado | BPAC11 | PnL: +0.00% | Reward: +0.00 (base:+0.00 +cons:+0.00) | Epsilon: 0.0499
+2026-01-26 16:40:01,884 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:40:01,909 | INFO | 🔴 BPAC11 FECHADO | R$+0.00 | Day-Only Close
+2026-01-26 16:40:02,246 | INFO | 🔄 Tentativa 1/5: BBDC4 @ 20.74 (dev 100)
+2026-01-26 16:40:02,358 | INFO | ✅ FECHADO: BBDC4 | P&L: R$+200.00 (+0.10%) | Day-Only Close
+2026-01-26 16:40:02,421 | ERROR | Erro ao extrair features: 'updated_at'
+2026-01-26 16:40:02,476 | INFO | 💾 ML Atualizado | BBDC4 | PnL: +0.00% | Reward: +0.21 (base:+0.01 +cons:+0.20) | Epsilon: 0.0499
+2026-01-26 16:40:02,497 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:40:02,535 | INFO | 🟢 BBDC4 FECHADO | R$+200.00 | Day-Only Close
+2026-01-26 16:40:02,885 | INFO | 🔄 Tentativa 1/5: ABEV3 @ 14.91 (dev 100)
+2026-01-26 16:40:02,966 | INFO | ✅ FECHADO: ABEV3 | P&L: R$-770.00 (-0.13%) | Day-Only Close
+2026-01-26 16:40:03,018 | ERROR | Erro ao extrair features: 'updated_at'
+2026-01-26 16:40:03,086 | INFO | 💾 ML Atualizado | ABEV3 | PnL: -0.00% | Reward: -0.01 (base:-0.01 +cons:+0.00) | Epsilon: 0.0499
+2026-01-26 16:40:03,106 | WARNING | 🔴 ABEV3: Perda consecutiva #1
+2026-01-26 16:40:03,131 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:40:03,165 | INFO | 🔴 ABEV3 FECHADO | R$-770.00 | Day-Only Close
+2026-01-26 16:40:03,488 | INFO | 🔄 Tentativa 1/5: COGN3 @ 4.50 (dev 100)
+2026-01-26 16:40:03,562 | INFO | ✅ FECHADO: COGN3 | P&L: R$+2418.00 (+1.35%) | Day-Only Close
+2026-01-26 16:40:03,602 | ERROR | Erro ao extrair features: 'updated_at'
+2026-01-26 16:40:03,643 | INFO | 💾 ML Atualizado | COGN3 | PnL: +0.01% | Reward: +0.33 (base:+0.13 +cons:+0.20) | Epsilon: 0.0499
+2026-01-26 16:40:03,659 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:40:03,676 | INFO | 🟢 COGN3 FECHADO | R$+2418.00 | Day-Only Close
+2026-01-26 16:40:09,000 | WARNING | ⛔ Trading PAUSADO globalmente: ⏰ Fim do horário seguro (fechamento em breve)
+2026-01-26 16:40:17,669 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:40:17,752 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:40:17,782 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:40:18,061 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:40:30,663 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:40:30,685 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:40:30,697 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:40:30,744 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:40:42,405 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:40:42,423 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:40:42,429 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:40:42,449 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:40:54,566 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:40:54,729 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:40:54,766 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:40:54,872 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:41:08,003 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:41:08,021 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:41:08,030 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:41:08,063 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:41:20,142 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:41:20,165 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:41:20,172 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:41:20,223 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:41:32,767 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:41:32,790 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:41:32,802 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:41:32,850 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:41:48,832 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:41:48,864 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:41:48,879 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:41:48,935 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:42:00,879 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:42:00,900 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:42:00,912 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:42:00,941 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:42:12,434 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:42:12,448 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:42:12,453 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:42:12,478 | INFO | 💾 Pesos adaptativos salvos com sucesso.
