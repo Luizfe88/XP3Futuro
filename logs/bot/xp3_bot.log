@@ -16065,3 +16065,7 @@ RuntimeError: can't start new thread
 2026-01-26 16:42:12,448 | INFO | ✅ Dados ML salvos com sucesso.
 2026-01-26 16:42:12,453 | INFO | 💾 Loss streak salvo.
 2026-01-26 16:42:12,478 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 16:42:27,554 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 16:42:27,576 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 16:42:27,579 | INFO | 💾 Loss streak salvo.
+2026-01-26 16:42:27,613 | INFO | 💾 Pesos adaptativos salvos com sucesso.
