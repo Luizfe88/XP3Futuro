@@ -14989,3 +14989,58 @@ telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsucc
 2026-01-26 14:52:17,716 | INFO | ✅ Dados ML salvos com sucesso.
 2026-01-26 14:52:28,699 | INFO | 💾 Forçando salvamento de dados ML...
 2026-01-26 14:52:28,715 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:52:44,555 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:52:45,144 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:53:56,582 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:53:56,956 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:54:20,323 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:54:20,435 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:54:26,228 | WARNING | ⚠️ Símbolos insuficientes para calcular correlação (< 2 ativos)
+2026-01-26 14:55:05,732 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:55:05,876 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:55:35,323 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:55:35,484 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:55:48,276 | CRITICAL | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:56:02,605 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:56:02,644 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:56:07,661 | INFO | ✅ Trading RETOMADO: Trading permitido
+2026-01-26 14:56:26,791 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:56:26,827 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:56:42,547 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:56:42,582 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:56:56,575 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:56:57,549 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:57:20,916 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:57:21,231 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:57:38,027 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:57:38,034 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:57:59,817 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:57:59,886 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:58:06,653 | ERROR | Erro crítico no fast_loop: can't start new thread
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3v5\bot.py", line 4873, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3v5\bot.py", line 2653, in build_portfolio_and_top15
+    ind = utils.get_cached_indicators(sym, TIMEFRAME_BASE, 300)
+  File "C:\Users\luizf\Documents\xp3v5\utils.py", line 3522, in get_cached_indicators
+    ind = quick_indicators_custom(symbol, timeframe, df=df)
+  File "C:\Users\luizf\Documents\xp3v5\utils.py", line 1822, in quick_indicators_custom
+    "macro_trend_ok": macro_trend_ok(symbol, side),
+                      ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\luizf\Documents\xp3v5\utils.py", line 1649, in macro_trend_ok
+    df = safe_copy_rates(symbol, TIMEFRAME_MACRO, 300)
+  File "C:\Users\luizf\Documents\xp3v5\utils.py", line 765, in safe_copy_rates
+    t.start()
+    ~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 976, in start
+    _start_joinable_thread(self._bootstrap, handle=self._handle,
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                           daemon=self.daemon)
+                           ^^^^^^^^^^^^^^^^^^^
+RuntimeError: can't start new thread
+2026-01-26 14:58:07,545 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 14:58:07,555 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:58:07,644 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-26 14:58:30,859 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-26 14:58:30,944 | INFO | ✅ Dados ML salvos com sucesso.

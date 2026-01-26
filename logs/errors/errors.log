@@ -1565,3 +1565,27 @@ telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsucc
 2026-01-26 14:43:46,569 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
 2026-01-26 14:45:32,449 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
 2026-01-26 14:50:35,334 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:55:48,276 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:58:06,653 | ERROR | bot | Erro crítico no fast_loop: can't start new thread
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3v5\bot.py", line 4873, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3v5\bot.py", line 2653, in build_portfolio_and_top15
+    ind = utils.get_cached_indicators(sym, TIMEFRAME_BASE, 300)
+  File "C:\Users\luizf\Documents\xp3v5\utils.py", line 3522, in get_cached_indicators
+    ind = quick_indicators_custom(symbol, timeframe, df=df)
+  File "C:\Users\luizf\Documents\xp3v5\utils.py", line 1822, in quick_indicators_custom
+    "macro_trend_ok": macro_trend_ok(symbol, side),
+                      ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\luizf\Documents\xp3v5\utils.py", line 1649, in macro_trend_ok
+    df = safe_copy_rates(symbol, TIMEFRAME_MACRO, 300)
+  File "C:\Users\luizf\Documents\xp3v5\utils.py", line 765, in safe_copy_rates
+    t.start()
+    ~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 976, in start
+    _start_joinable_thread(self._bootstrap, handle=self._handle,
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                           daemon=self.daemon)
+                           ^^^^^^^^^^^^^^^^^^^
+RuntimeError: can't start new thread
