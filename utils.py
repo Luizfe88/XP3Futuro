@@ -700,7 +700,7 @@ def get_vix_br() -> float:
 def is_future(symbol: str) -> bool:
     try:
         s = (symbol or "").upper()
-        return s.startswith("WIN") or s.startswith("WDO") or s.startswith("IND") or s.startswith("DOL")
+        return s.startswith(("WIN", "WDO", "IND", "DOL", "WSP", "BGI"))
     except Exception:
         return False
 
@@ -710,9 +710,9 @@ class AssetInspector:
         s = (symbol or "").upper().strip()
         if "SMALL" in s:
             return {"type": "FUTURE", "point_value": 20.0, "tick_size": 0.1, "fee_type": "FIXED", "fee_val": 0.50}
-        if "WIN" in s or "IND" in s:
+        if any(x in s for x in ["WIN", "IND", "WSP"]):
             return {"type": "FUTURE", "point_value": 0.20, "tick_size": 5.0, "fee_type": "FIXED", "fee_val": 0.25}
-        if "WDO" in s or "DOL" in s:
+        if any(x in s for x in ["WDO", "DOL", "BGI"]):
             return {"type": "FUTURE", "point_value": 10.0, "tick_size": 0.5, "fee_type": "FIXED", "fee_val": 1.10}
         # AÇÃO B3: padrão 4 letras + dígito (ex: PETR4)
         return {"type": "STOCK", "point_value": 1.0, "tick_size": 0.01, "fee_type": "PERCENT", "fee_val": 0.00055}
