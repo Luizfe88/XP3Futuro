@@ -1589,3 +1589,8 @@ Traceback (most recent call last):
                            daemon=self.daemon)
                            ^^^^^^^^^^^^^^^^^^^
 RuntimeError: can't start new thread
+2026-01-26 15:01:04,902 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:06:06,653 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:11:25,396 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:16:28,749 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:21:38,445 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
