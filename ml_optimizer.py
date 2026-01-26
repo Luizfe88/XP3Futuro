@@ -340,17 +340,38 @@ class EnsembleOptimizer:
             if not self.ensemble_trained:
                 return 0.0
             
-            # Converte features para DataFrame
+            asset_type = (features or {}).get('asset_type', '')
+            use_subset = None
+            if str(asset_type).upper() == 'FUTURE' and self.models_futures:
+                use_subset = self.models_futures
+            elif str(asset_type).upper() == 'STOCK' and self.models_stocks:
+                use_subset = self.models_stocks
             df_feat = pd.DataFrame([features])
+            if use_subset and 'cols' in use_subset and use_subset.get('scaler'):
+                cols = [c for c in use_subset['cols'] if c in df_feat.columns]
+                if not cols:
+                    return 0.0
+                X = df_feat[cols].fillna(0).values
+                X_scaled = use_subset['scaler'].transform(X)
+                predictions = {}
+                for name in ('rf', 'gb', 'ridge'):
+                    model = use_subset.get(name)
+                    if model is None:
+                        continue
+                    try:
+                        pred = model.predict(X_scaled)[0]
+                        predictions[name] = pred
+                    except:
+                        predictions[name] = 0.0
+                if not predictions:
+                    return 0.0
+                score = float(np.mean(list(predictions.values())))
+                return score
             numeric_cols = df_feat.select_dtypes(include=[np.number]).columns
             X = df_feat[numeric_cols].fillna(0).values
-            
-            if not self.scaler_fitted:
+            if not self.scaler_fitted or not self.scaler:
                 return 0.0
-            
             X_scaled = self.scaler.transform(X)
-            
-            # Predição com cada modelo + pesos
             predictions = {}
             if 'rf' in self.models:
                 logger.info("🤖 RandomForest: previsão executada")
@@ -360,11 +381,8 @@ class EnsembleOptimizer:
                     predictions[name] = pred
                 except:
                     predictions[name] = 0.0
-            
-            # Combina predições com pesos
-            score = sum(predictions[name] * self.ensemble_weights[name] 
+            score = sum(predictions.get(name, 0.0) * self.ensemble_weights.get(name, 0.0)
                        for name in predictions.keys())
-            
             return float(score)
             
         except Exception as e:
@@ -602,6 +620,7 @@ class EnsembleOptimizer:
                     features['vix'] = float(vix_val or 25.0)
                 except Exception:
                     features['vix'] = 25.0
+            features['asset_type'] = 'FUTURE' if is_fut else 'STOCK'
 
             # ✅ NOVO: SENTIMENT (Placeholder por enquanto, vindo do news_filter)
             from news_filter import get_news_sentiment

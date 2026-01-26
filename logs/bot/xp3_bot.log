@@ -16069,3 +16069,13 @@ RuntimeError: can't start new thread
 2026-01-26 16:42:27,576 | INFO | ✅ Dados ML salvos com sucesso.
 2026-01-26 16:42:27,579 | INFO | 💾 Loss streak salvo.
 2026-01-26 16:42:27,613 | INFO | 💾 Pesos adaptativos salvos com sucesso.
+2026-01-26 17:30:52,854 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-26 17:30:53,406 | WARNING | PETR4: Usando stats globais (poucos trades)
+2026-01-26 17:30:53,626 | WARNING | ⚠️ MT5 Falhou em IBOV. Acionando Polygon.io fallback...
+2026-01-26 17:30:53,628 | ERROR | Erro Kelly PETR4: cannot access local variable 'mt5' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3v5\validation.py", line 423, in calculate_kelly_position_size
+    df = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_M15, 60)
+                                       ^^^
+UnboundLocalError: cannot access local variable 'mt5' where it is not associated with a value
+2026-01-26 17:30:53,665 | WARNING | Sem opções encontradas para PETR4

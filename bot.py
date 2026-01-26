@@ -293,6 +293,71 @@ def validate_mt5_connection():
     logger.critical(f"      3. Não há outro programa usando o terminal")
     
     return False
+def get_asset_class_config(symbol: str) -> dict:
+    s = (symbol or "").upper()
+    is_fut = utils.is_future(s)
+    if is_fut:
+        start = "09:05"
+        end = getattr(config, "FUTURES_CLOSE_ALL_BY", "17:50")
+        bucket_pct = 0.35
+        min_lot = 1
+        if s.startswith(("WIN", "IND")):
+            dev_pts = 80
+        elif s.startswith(("WDO", "DOL")):
+            dev_pts = 20
+        else:
+            dev_pts = 50
+        return {"start": start, "end": end, "bucket_pct": bucket_pct, "min_lot": min_lot, "deviation_points": dev_pts, "lunch_min_vol_ratio": 0.0, "min_tp_cost_multiplier": 1.5}
+    start = "10:10"
+    end = "16:50"
+    bucket_pct = 0.65
+    min_lot = 100
+    return {"start": start, "end": end, "bucket_pct": bucket_pct, "min_lot": min_lot, "deviation_points": 2, "lunch_min_vol_ratio": 1.0, "min_tp_cost_multiplier": 1.2}
+def check_capital_allocation(symbol: str, planned_volume: float, entry_price: float) -> tuple[bool, str]:
+    try:
+        with utils.mt5_lock:
+            acc = mt5.account_info()
+            positions = mt5.positions_get() or []
+        if not acc:
+            return False, "Sem conta MT5"
+        equity = float(acc.equity or acc.balance or 0.0)
+        if equity <= 0:
+            return False, "Equity inválido"
+        fut_exposure = 0.0
+        stk_exposure = 0.0
+        for p in positions:
+            si = mt5.symbol_info(p.symbol)
+            contract = float(si.trade_contract_size) if si else 1.0
+            price = float(getattr(p, "price_current", getattr(p, "price_open", 0.0)) or 0.0)
+            exp = float(p.volume) * (contract if utils.is_future(p.symbol) else 1.0) * price
+            if utils.is_future(p.symbol):
+                fut_exposure += exp
+            else:
+                stk_exposure += exp
+        is_fut = utils.is_future(symbol)
+        si_new = mt5.symbol_info(symbol)
+        contract_new = float(si_new.trade_contract_size) if si_new else 1.0
+        add_exp = float(planned_volume) * (contract_new if is_fut else 1.0) * float(entry_price)
+        cap_fut = equity * 0.35
+        cap_stk = equity * 0.65
+        if is_fut:
+            if fut_exposure + add_exp > cap_fut:
+                return False, f"Exposição Futuros {fut_exposure + add_exp:,.2f} > {cap_fut:,.2f}"
+            return True, "OK"
+        else:
+            if stk_exposure + add_exp > cap_stk:
+                return False, f"Exposição Ações {stk_exposure + add_exp:,.2f} > {cap_stk:,.2f}"
+            return True, "OK"
+    except Exception as e:
+        return False, f"Erro alocação: {e}"
+def get_ibov_adx() -> float:
+    try:
+        df = utils.safe_copy_rates("IBOV", mt5.TIMEFRAME_M15, 120)
+        if df is None or len(df) < 30:
+            return 0.0
+        return float(utils.get_adx(df) or 0.0)
+    except Exception:
+        return 0.0
 def get_market_status() -> dict:
     """
     Retorna status detalhado do mercado (VERSÃO CONTÍNUA)
@@ -3354,6 +3419,17 @@ def try_enter_position(symbol, side, risk_factor=1.0):
             indicators={}
         )
         return
+    asset_cfg = get_asset_class_config(symbol)
+    _now = datetime.now().time()
+    _start = datetime.strptime(asset_cfg["start"], "%H:%M").time()
+    _end = datetime.strptime(asset_cfg["end"], "%H:%M").time()
+    if not (_start <= _now <= _end):
+        daily_logger.log_analysis(
+            symbol=symbol, signal=side, strategy="MARKET_HOURS_ASSET",
+            score=0, rejected=True, reason=f"Horário do ativo: {_start.strftime('%H:%M')}-{_end.strftime('%H:%M')}",
+            indicators={}
+        )
+        return
 
     now_dt = datetime.now()
     if now_dt.weekday() == 4:
@@ -3485,13 +3561,15 @@ def try_enter_position(symbol, side, risk_factor=1.0):
     current_hour = datetime.now().hour
     vol_ratio = ind_data.get("volume_ratio", 0)
     
-    if current_hour < 12:       # Manhã (10h-12h): Alta Volatilidade -> Exige volume forte
+    if current_hour < 12:
         min_vol = 1.2           
         period_name = "Manhã"
-    elif 12 <= current_hour < 14: # Almoço (12h-14h): Marasmo -> Flexibiliza
+    elif 12 <= current_hour < 14:
         min_vol = float(getattr(config, "LUNCH_MIN_VOLUME_RATIO", 0.5) or 0.5)
+        if not utils.is_future(symbol):
+            min_vol = max(min_vol, 1.5)
         period_name = "Almoço"
-    else:                       # Tarde (14h+): Normalização -> Padrão
+    else:
         min_vol = 0.8           
         period_name = "Tarde"
 
@@ -3551,6 +3629,26 @@ def try_enter_position(symbol, side, risk_factor=1.0):
         log_trade_rejection(symbol, "ScoreGate", reason, {"score": score, "min_score": base_min_score, "deficit": round(base_min_score - score, 4), "forced_signal": bool(forced_signal), "adx_exception": bool(adx_exception)})
         return
 
+    # IBOV gating para ações
+    if not utils.is_future(symbol):
+        ibov_strength = get_ibov_adx()
+        if ibov_strength < 25:
+            if side == "BUY" and rsi > 30:
+                daily_logger.log_analysis(
+                    symbol=symbol, signal=side, strategy="IBOV_REGIME",
+                    score=ind_data.get("score", 0),
+                    rejected=True, reason="IBOV lateral: exige RSI ≤ 30 para compra",
+                    indicators=ind_data
+                )
+                return
+            if side == "SELL" and rsi < 70:
+                daily_logger.log_analysis(
+                    symbol=symbol, signal=side, strategy="IBOV_REGIME",
+                    score=ind_data.get("score", 0),
+                    rejected=True, reason="IBOV lateral: exige RSI ≥ 70 para venda",
+                    indicators=ind_data
+                )
+                return
     # ========== VALIDAÇÕES COM LOG ==========
     
     # 1. Horário
@@ -3743,21 +3841,19 @@ def try_enter_position(symbol, side, risk_factor=1.0):
 
     # ✅ NOVO: Validação VWAP (Confirmação de Tendência)
     vwap = ind_data.get("vwap")
-    if vwap:
+    if utils.is_future(symbol) and vwap:
         current_price = tick.bid if side == "BUY" else tick.ask
-        
         if side == "BUY" and current_price < vwap:
-             daily_logger.log_analysis(
+            daily_logger.log_analysis(
                 symbol=symbol, signal=side, strategy="VWAP_FILTER",
-                score=0, rejected=True, reason=f"📉 Abaixo da VWAP ({current_price} < {vwap})",
+                score=0, rejected=True, reason=f"Abaixo da VWAP ({current_price} < {vwap})",
                 indicators=ind_data
             )
-             return
-             
+            return
         if side == "SELL" and current_price > vwap:
             daily_logger.log_analysis(
                 symbol=symbol, signal=side, strategy="VWAP_FILTER",
-                score=0, rejected=True, reason=f"📈 Acima da VWAP ({current_price} > {vwap})",
+                score=0, rejected=True, reason=f"Acima da VWAP ({current_price} > {vwap})",
                 indicators=ind_data
             )
             return
@@ -4010,14 +4106,20 @@ def try_enter_position(symbol, side, risk_factor=1.0):
     base_vol = utils.calculate_position_size_atr(symbol, stop_dist)
     base_vol = base_vol * risk_factor  # ✅ Fator de risco Land Trading
     
-    # ✅ CORREÇÃO: Força o arredondamento para Lote Padrão de 100 (B3)
-    volume = (int(base_vol) // 100) * 100 
-    if is_pyramiding:
-        volume = (int(volume * 0.5) // 100) * 100
+    # ✅ Correção de lote: ações (100), futuros (1)
+    if utils.is_future(symbol):
+        volume = max(1, int(base_vol))
+        if is_pyramiding:
+            volume = max(1, int(volume * 0.5))
+    else:
+        volume = (int(base_vol) // 100) * 100 
+        if is_pyramiding:
+            volume = (int(volume * 0.5) // 100) * 100
 
-    if volume < 100: # ✅ Se for menor que 100, não pode operar ações
-        logger.warning(f"⚠️ {symbol}: Volume {base_vol:.0f} insuficiente para lote de 100.")
-        return
+    if not utils.is_future(symbol):
+        if volume < 100:
+            logger.warning(f"⚠️ {symbol}: Volume {base_vol:.0f} insuficiente para lote de 100.")
+            return
 
     if volume <= 0:
         daily_logger.log_analysis(
@@ -4034,8 +4136,38 @@ def try_enter_position(symbol, side, risk_factor=1.0):
         )
         return
 
+    # Bucket de capital 65/35
+    alloc_ok, alloc_reason = check_capital_allocation(symbol, volume, entry_price)
+    if not alloc_ok:
+        daily_logger.log_analysis(
+            symbol=symbol, signal=side, strategy="CAPITAL_BUCKET",
+            score=ind_data.get("score", 0),
+            rejected=True, reason=alloc_reason,
+            indicators={}
+        )
+        return
     sl, tp = utils.calculate_dynamic_sl_tp(symbol, side, entry_price, ind_data)
 
+    if utils.is_future(symbol):
+        info = mt5.symbol_info(symbol)
+        insp = utils.AssetInspector.detect(symbol)
+        point = info.point if info else 1.0
+        pv = float(insp.get("point_value", 1.0) or 1.0)
+        fee_type = insp.get("fee_type", "FIXED")
+        fee_val = float(insp.get("fee_val", 0.0) or 0.0)
+        spread_money = abs(tick.ask - tick.bid) / max(point, 1e-9) * pv
+        fees_money = fee_val * 2.0 if fee_type == "FIXED" else 0.0
+        min_mult = float(get_asset_class_config(symbol)["min_tp_cost_multiplier"])
+        min_cost_money = (spread_money + fees_money) * min_mult
+        reward_money = abs(tp - entry_price) / max(point, 1e-9) * pv
+        if reward_money < min_cost_money:
+            daily_logger.log_analysis(
+                symbol=symbol, signal=side, strategy="COST_FILTER",
+                score=ind_data.get("score", 0),
+                rejected=True, reason=f"TP insuficiente vs custo ({reward_money:.2f} < {min_cost_money:.2f})",
+                indicators=ind_data
+            )
+            return
     if not utils.validate_order_params(symbol, side, volume, entry_price, sl, tp):
         daily_logger.log_analysis(
             symbol=symbol, signal=side, strategy="ELITE",
@@ -4133,6 +4265,7 @@ def try_enter_position(symbol, side, risk_factor=1.0):
     )
 
     request = order.to_mt5_request(comment=comment)
+    request["deviation"] = utils.get_dynamic_slippage(symbol, datetime.now().hour)
     result = mt5_order_send_safe(request)
 
     if result is None:

@@ -630,7 +630,11 @@ def get_yahoo_rates_fallback(symbol: str, timeframe, count: int) -> Optional[pd.
         if symbol.upper() == "IBOV":
             ticker = "^BVSP"
         else:
-            ticker = symbol if symbol.endswith(".SA") else f"{symbol}.SA"
+            s_up = (symbol or "").upper()
+            if is_future(s_up):
+                ticker = s_up
+            else:
+                ticker = s_up if s_up.endswith(".SA") else f"{s_up}.SA"
         tf_map = {
             mt5.TIMEFRAME_M1: ("1m", "7d"),
             mt5.TIMEFRAME_M5: ("5m", "10d"),
@@ -2338,6 +2342,8 @@ def check_liquidity(symbol: str, threshold_pct: float = 0.4):
     Projeção: (Volume Atual / Minutos Decorridos) * 420 min
     """
     try:
+        if is_future(symbol):
+            return True
         rates_d1 = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_D1, 1, 10)
         if rates_d1 is None or len(rates_d1) < 5:
             return True
@@ -2396,7 +2402,7 @@ def calculate_position_size_atr(symbol: str, atr_dist: float, risk_money: float 
             rp = max(getattr(config, "MIN_RISK_PER_TRADE_PCT", 0.0025), min(rp, getattr(config, "MAX_RISK_PER_TRADE_PCT", 0.005)))
             risk_money = equity * float(rp)
 
-        min_lot = 100
+        min_lot = 1 if is_future(symbol) else 100
         risk_min_lot = min_lot * atr_dist
 
         equity_tolerance_cap = equity * 0.013
