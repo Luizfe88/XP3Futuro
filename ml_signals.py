@@ -377,32 +377,25 @@ class MLSignalPredictor:
     def get_dynamic_threshold(self, symbol: str) -> float:
         """
         Calcula threshold dinâmico baseado em VIX e streak de perdas.
-        Base: 0.60
-        + VIX > 30: +0.10
-        + Loss Streak > 2: +0.08
+        Base: 0.65
+        + VIX > 28: +0.08
+        + Loss Streak ≥ 2: +0.05
         """
-        import utils # Ensure utils is available
-        base = 0.60  # Base aceitável
+        import utils
+        base = 0.65
         
         try:
-            # 1. VIX Penalty
             vix_br = utils.get_vix_br()
-            if vix_br > 30:
-                base += 0.10  # Vai para 0.70
-                
-            # 2. Loss Streak Penalty
-            # Assuming utils has a way to check streak, or we rely on config
-            # Since utils.get_daily_loss_streak might not exist, we'll try to use a safe check
-            # For now, if we can't check, we skip penalty or look at recent performance if available
+            if vix_br > 28:
+                base += 0.08
+
             loss_streak = utils.get_loss_streak(symbol) if hasattr(utils, 'get_loss_streak') else 0
-            
             if loss_streak >= 2:
-                base += 0.08  # Vai para 0.68
-                
+                base += 0.05
         except Exception as e:
             logger.error(f"Erro ao calcular dynamic threshold: {e}")
             
-        self.current_threshold = min(0.85, base)
+        self.current_threshold = min(0.82, base)
         return self.current_threshold
 
     def predict(self, symbol: str, indicators: Dict[str, float], history_df: Optional[pd.DataFrame] = None) -> Dict[str, Any]:
@@ -456,12 +449,11 @@ class MLSignalPredictor:
             except Exception as e:
                 logger.error(f"Erro inferência LSTM: {e}")
 
-        # 2. Média Ponderada (Recalculate weights if LSTM missing)
-        # RF: 25, XGB: 45, LSTM: 30
+        # 2. Média Ponderada – prioriza RF/XGB (0.4 / 0.6); LSTM opcional
         if np.array_equal(lstm_probs, [0.0, 0.0, 1.0]):
-            weights = np.array([0.35, 0.65, 0.0]) # Redistribute weights
+            weights = np.array([0.40, 0.60, 0.0])
         else:
-            weights = np.array([0.25, 0.45, 0.30])
+            weights = np.array([0.40, 0.60, 0.00])
 
         all_probs = np.vstack([rf_probs, xgb_probs, lstm_probs])
         final_probs = np.average(all_probs, axis=0, weights=weights)
@@ -500,6 +492,24 @@ class MLSignalPredictor:
         else:
             threshold = self.get_dynamic_threshold(symbol)
         approved = confidence >= threshold if label != "HOLD" else False
+
+        # ✅ Cache leve de 20s por símbolo (reduz jitter de sinais)
+        try:
+            if not hasattr(self, "_cache"):
+                self._cache = {}
+            now_ts = float(__import__("time").time())
+            cache_key = f"{symbol}:{label}"
+            prev = self._cache.get(symbol)
+            if prev and (now_ts - prev.get("ts", 0.0) < 20.0):
+                # Dentro da janela: mantém decisão anterior se confiança similar
+                if abs(prev.get("confidence", 0.0) - confidence) <= 0.05:
+                    label = prev.get("label", label)
+                    confidence = prev.get("confidence", confidence)
+                    threshold = prev.get("threshold", threshold)
+                    approved = confidence >= threshold if label != "HOLD" else False
+            self._cache[symbol] = {"ts": now_ts, "label": label, "confidence": confidence, "threshold": threshold}
+        except Exception:
+            pass
 
         return {
             "direction": label if approved else "HOLD",

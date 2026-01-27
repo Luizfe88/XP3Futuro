@@ -307,7 +307,7 @@ def get_asset_class_config(symbol: str) -> dict:
             dev_pts = 20
         else:
             dev_pts = 50
-        return {"start": start, "end": end, "bucket_pct": bucket_pct, "min_lot": min_lot, "deviation_points": dev_pts, "lunch_min_vol_ratio": 0.0, "min_tp_cost_multiplier": 1.5}
+        return {"start": start, "end": end, "bucket_pct": bucket_pct, "min_lot": min_lot, "deviation_points": dev_pts, "lunch_min_vol_ratio": 0.0, "min_tp_cost_multiplier": 3.0}
     start = "10:10"
     end = "16:50"
     bucket_pct = 0.65
@@ -1716,6 +1716,12 @@ def manage_positions_refactored():
         except Exception as e:
             logger.error(f"❌ Erro ao gerenciar {pos.symbol}: {e}", exc_info=True)
             continue
+        
+        # ✅ Step Trailing adicional (travamento + trailing agressivo)
+        try:
+            utils.manage_dynamic_trailing(pos.symbol, pos.ticket)
+        except Exception:
+            pass
 
 def calculate_dynamic_trailing(pos, ind: dict, atr: float) -> Optional[float]:
     """
@@ -1854,9 +1860,35 @@ def health_watcher_thread():
     global trading_paused, _last_wr_alert_ts, _last_wr_alert_wr, CIRCUIT_BREAKER_DISABLED
     while True:
         # 1. Reconexão MT5
-        if not mt5.terminal_info().connected:
-            logger.warning("MT5 desconectado - Reconectando...")
-            mt5.initialize(path=config.MT5_TERMINAL_PATH)
+        try:
+            with utils.mt5_lock:
+                terminal = None
+                try:
+                    terminal = mt5.terminal_info()
+                except Exception:
+                    terminal = None
+                if (terminal is None) or (not getattr(terminal, "connected", False)):
+                    logger.warning("MT5 desconectado - Reconectando...")
+                    path = getattr(config, "MT5_TERMINAL_PATH", None)
+                    ok = False
+                    try:
+                        ok = mt5.initialize(path=path) if path else mt5.initialize()
+                    except Exception:
+                        ok = False
+                    if ok:
+                        term2 = None
+                        try:
+                            term2 = mt5.terminal_info()
+                        except Exception:
+                            term2 = None
+                        if term2 and getattr(term2, "connected", False):
+                            logger.info("MT5 reconectado com sucesso")
+                        else:
+                            logger.error("MT5 ainda desconectado após tentativa de reconexão")
+                    else:
+                        logger.error("Falha ao inicializar MT5 na tentativa de reconexão")
+        except Exception as e:
+            logger.error(f"Erro na verificação/reconexão MT5: {e}")
         
         # 2. DD pausa (>5%)
         dd = utils.calculate_daily_dd()
@@ -3558,19 +3590,19 @@ def try_enter_position(symbol, side, risk_factor=1.0):
         return
 
     # 2. Volume Ratio Dinâmico (Smart Liquidity - Land Trading)
-    current_hour = datetime.now().hour
+    current_time = datetime.now().time()
     vol_ratio = ind_data.get("volume_ratio", 0)
-    
-    if current_hour < 12:
-        min_vol = 1.2           
+    if current_time < datetime.strptime("12:00","%H:%M").time():
+        min_vol = 1.2
         period_name = "Manhã"
-    elif 12 <= current_hour < 14:
-        min_vol = float(getattr(config, "LUNCH_MIN_VOLUME_RATIO", 0.5) or 0.5)
-        if not utils.is_future(symbol):
-            min_vol = max(min_vol, 1.5)
+    elif datetime.strptime("12:00","%H:%M").time() <= current_time <= datetime.strptime("13:30","%H:%M").time():
+        if utils.is_future(symbol):
+            min_vol = float(getattr(config, "LUNCH_MIN_VOLUME_RATIO", 0.5) or 0.5)
+        else:
+            min_vol = 0.8
         period_name = "Almoço"
     else:
-        min_vol = 0.8           
+        min_vol = 1.2
         period_name = "Tarde"
 
     if vol_ratio < min_vol:
@@ -3650,24 +3682,6 @@ def try_enter_position(symbol, side, risk_factor=1.0):
                 )
                 return
     # ========== VALIDAÇÕES COM LOG ==========
-    
-    # 1. Horário
-    now = datetime.now().time()
-    start_time = datetime.strptime("10:15", "%H:%M").time() # ✅ Time Filter 10:15
-    no_entry_str = getattr(config, "FRIDAY_NO_ENTRY_AFTER", config.NO_ENTRY_AFTER) if now_dt.weekday() == 4 else config.NO_ENTRY_AFTER
-    no_entry_time = datetime.strptime(no_entry_str, "%H:%M").time()
-
-    if now < start_time:
-        return # Silencioso antes das 10:15
-
-    if now >= no_entry_time:
-        # ✅ LOG
-        daily_logger.log_analysis(
-            symbol=symbol, signal=side, strategy="ELITE", score=0,
-            rejected=True, reason="🕐 Horário: Sem novas entradas",
-            indicators={"rsi": 0, "adx": 0, "spread_pips": 0, "volume_ratio": 0, "ema_trend": "N/A"}
-        )
-        return
 
     # 2. Cooldown de saída
     if time.time() - last_close_time.get(symbol, 0) < 1800:
@@ -5045,6 +5059,12 @@ def fast_loop():
             # ============================================
             if market_status["new_entries_allowed"]:
                 symbols_to_scan = list(optimized_params.keys())
+                current_win = utils.resolve_current_symbol("WIN")
+                current_wdo = utils.resolve_current_symbol("WDO")
+                if current_win and current_win not in symbols_to_scan:
+                    symbols_to_scan.append(current_win)
+                if current_wdo and current_wdo not in symbols_to_scan:
+                    symbols_to_scan.append(current_wdo)
 
                 for sym in symbols_to_scan:
                     ind_data = bot_state.get_indicators(sym)

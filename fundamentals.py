@@ -46,9 +46,20 @@ class FundamentalFetcher:
         cache_key = symbol
         if cache_key in self.cache:
             entry = self.cache[cache_key]
-            updated_at = datetime.strptime(entry['updated_at'], "%Y-%m-%d %H:%M:%S")
-            if (now - updated_at) <= timedelta(minutes=self.cache_validity_minutes):
-                return entry['data']
+            updated_str = entry.get('updated_at')
+            if updated_str:
+                try:
+                    updated_at = datetime.strptime(updated_str, "%Y-%m-%d %H:%M:%S")
+                    if (now - updated_at) <= timedelta(minutes=self.cache_validity_minutes):
+                        return entry.get('data', {})
+                except Exception:
+                    pass
+            else:
+                data = entry.get('data')
+                if isinstance(data, dict) and data:
+                    self.cache[cache_key] = {"updated_at": now.strftime("%Y-%m-%d %H:%M:%S"), "data": data}
+                    self._save_cache()
+                    return data
 
         mt5_symbol = symbol.replace(".SA", "") if symbol.endswith(".SA") else symbol
         try:
@@ -66,7 +77,7 @@ class FundamentalFetcher:
             except Exception:
                 pass
             rates = mt5.copy_rates_from_pos(mt5_symbol, mt5.TIMEFRAME_D1, 0, 300)
-            if not rates:
+            if rates is None or (hasattr(rates, "__len__") and len(rates) == 0):
                 data = {"mt5_bars": 0, "mt5_avg_tick_volume": 0.0, "mt5_atr_pct": 0.0}
             else:
                 df = pd.DataFrame(rates)

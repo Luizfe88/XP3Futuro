@@ -1,0 +1,7 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-01-27 10:25:45 | ENTRADA  | PETR4  | BUY  | Vol:    9600 | Price:  35.53 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-27 10:39:09 | ENTRADA  | RDOR3  | BUY  | Vol:    3700 | Price:  44.41 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-27 10:52:50 | ENTRADA  | B3SA3  | BUY  | Vol:   14300 | Price:  15.99 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-27 10:52:53 | ENTRADA  | RAIL3  | BUY  | Vol:   14900 | Price:  15.06 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-27 10:57:16 | SAÍDA    | PETR4  | BUY  | Vol:    9600 | Price:  35.88 | P&L: +3360.00 R$ (+0.99%) | Motivo: Take Profit | DealId: 1704748339 | Pos: 2332188576

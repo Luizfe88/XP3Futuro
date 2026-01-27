@@ -1,0 +1,1623 @@
+2026-01-26 10:52:04,839 | ERROR | yfinance | $WING26.SA: possibly delisted; no price data found  (period=30d) (Yahoo error = "No data found, symbol may be delisted")
+2026-01-26 10:53:51,639 | ERROR | yfinance | $WING26.SA: possibly delisted; no price data found  (period=30d) (Yahoo error = "No data found, symbol may be delisted")
+2026-01-26 10:55:09,658 | ERROR | yfinance | $WING26.SA: possibly delisted; no price data found  (period=30d) (Yahoo error = "No data found, symbol may be delisted")
+2026-01-26 11:39:13,329 | ERROR | bot | ❌ Erro crítico ao atualizar bot_bridge: [WinError 32] O arquivo já está sendo usado por outro processo: 'bot_bridge.json.tmp' -> 'bot_bridge.json'
+2026-01-26 11:39:25,587 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 11:39:25,702 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 11:39:28,901 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 11:39:53,382 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:39:53,438 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:39:58,513 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:39:58,744 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:00,450 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:00,542 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:05,410 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:05,651 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:08,263 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:08,300 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:11,224 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:11,384 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:12,297 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:12,309 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:14,494 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:14,509 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:15,863 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:15,879 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:19,058 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:19,082 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:19,242 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:19,258 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:22,451 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:22,471 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:24,312 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:24,326 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:25,704 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:25,735 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:29,553 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:29,579 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:33,956 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:34,006 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:40:34,826 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 11:40:34,844 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 11:44:03,232 | ERROR | bot | ❌ Erro crítico ao atualizar bot_bridge: [WinError 5] Acesso negado: 'bot_bridge.json.tmp' -> 'bot_bridge.json'
+2026-01-26 11:44:47,412 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 11:48:59,808 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 12:49:40,320 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 13:24:25,558 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 13:24:27,620 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 13:24:34,665 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:24:34,690 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:24:39,216 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:24:39,237 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:24:40,761 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:24:40,767 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:24:45,461 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:24:45,497 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:24:47,185 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:24:47,193 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:24:52,375 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:24:52,380 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:24:54,556 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:24:54,560 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:24:57,729 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:24:57,734 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:25:00,933 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:25:00,941 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:25:06,123 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:25:06,129 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:25:11,299 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:25:11,305 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:25:20,954 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:25:20,958 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:25:30,136 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:25:30,139 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:25:47,315 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:25:47,318 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:26:04,498 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:26:04,501 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:26:37,689 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:26:37,691 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:26:42,128 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:26:42,132 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:27:43,313 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:27:43,326 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:27:47,765 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:27:47,777 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:28:48,947 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:28:48,952 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:28:53,390 | ERROR | TeleBot | Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-26 13:28:53,432 | ERROR | TeleBot | Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-26 13:30:58,288 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:31:01,463 | ERROR | bot | Erro ao obter sinal ML para VIVT3: 'updated_at'
+2026-01-26 13:33:16,450 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:33:28,783 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:33:54,361 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:34:06,127 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:34:21,825 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:34:36,928 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 13:34:54,896 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:35:10,062 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:35:26,305 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:35:41,306 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:35:58,053 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:36:16,038 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:36:33,524 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:36:47,697 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:37:01,905 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:37:51,632 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:38:07,410 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:38:20,209 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:38:33,256 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:38:45,815 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:39:43,179 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 13:41:18,959 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:44:45,083 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 13:45:02,427 | ERROR | bot | Erro ao obter sinal ML para BBDC4: 'updated_at'
+2026-01-26 13:45:03,512 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:45:04,245 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:45:16,156 | ERROR | bot | Erro ao obter sinal ML para BBDC4: 'updated_at'
+2026-01-26 13:45:16,944 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:45:17,861 | ERROR | bot | Erro ao obter sinal ML para BPAC11: 'updated_at'
+2026-01-26 13:45:20,257 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:45:20,586 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:45:31,924 | ERROR | bot | Erro ao obter sinal ML para BBDC4: 'updated_at'
+2026-01-26 13:45:32,420 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:45:32,977 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:45:33,461 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:45:45,019 | ERROR | bot | Erro ao obter sinal ML para BBDC4: 'updated_at'
+2026-01-26 13:45:45,441 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:45:45,915 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:45:46,651 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:45:58,167 | ERROR | bot | Erro ao obter sinal ML para BBDC4: 'updated_at'
+2026-01-26 13:45:58,697 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:45:59,084 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:45:59,518 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:46:10,816 | ERROR | bot | Erro ao obter sinal ML para BBDC4: 'updated_at'
+2026-01-26 13:46:11,214 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:46:11,733 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:46:12,202 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:46:24,010 | ERROR | bot | Erro ao obter sinal ML para BBDC4: 'updated_at'
+2026-01-26 13:46:24,378 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:46:24,993 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:46:25,314 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:46:36,619 | ERROR | bot | Erro ao obter sinal ML para BBDC4: 'updated_at'
+2026-01-26 13:46:37,715 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:46:38,281 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:46:38,754 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:46:50,008 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:46:50,342 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:46:50,658 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:47:02,388 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:47:02,907 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:47:03,217 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:47:14,757 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:47:15,171 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:47:15,817 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:47:27,567 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:47:28,054 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:47:28,555 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:47:40,328 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:47:40,800 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:47:41,347 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:47:52,877 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:47:53,276 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:47:53,793 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:48:05,051 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:48:05,304 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:48:05,721 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:48:17,139 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:48:17,470 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:48:17,978 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:48:29,518 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:48:29,904 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:48:30,417 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:48:42,197 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:48:42,573 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:48:43,504 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:48:55,144 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:48:55,417 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:48:55,711 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:49:07,015 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:49:07,305 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:49:07,761 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:49:19,165 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:49:19,515 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:49:19,960 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:49:31,272 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:49:31,609 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:49:32,062 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:49:44,254 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:49:45,400 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:49:45,836 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:49:46,222 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:49:47,808 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 13:49:57,491 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:49:58,055 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:49:58,818 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:49:59,208 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:50:11,066 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:50:11,580 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:50:12,211 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:50:12,686 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:50:24,498 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:50:25,035 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:50:25,736 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:50:26,072 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:50:37,834 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:50:38,250 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:50:39,017 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:50:39,615 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:50:50,928 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:50:51,527 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:50:52,079 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:50:52,759 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:51:04,513 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:51:04,869 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:51:05,351 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:51:05,752 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:51:17,554 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:51:17,953 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:51:18,555 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:51:18,946 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:51:30,338 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:51:30,732 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:51:31,007 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:51:31,452 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:51:43,187 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:51:43,751 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:51:44,410 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:51:44,869 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:51:56,040 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:51:56,654 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:51:57,109 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:51:57,564 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:52:09,879 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:52:10,389 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:52:10,878 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:52:11,381 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:52:23,045 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:52:23,620 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:52:24,245 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:52:24,576 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:52:37,384 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:52:38,092 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:52:39,683 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:52:40,622 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:52:54,448 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:52:55,327 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:52:55,798 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:52:56,677 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:53:09,263 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:53:10,620 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:53:11,098 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:53:11,743 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:53:24,787 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:53:25,640 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:53:26,307 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:53:26,816 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:53:39,181 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:53:40,140 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:53:41,089 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:53:41,706 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:53:53,355 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:53:54,061 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:53:54,760 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:53:55,243 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:54:07,095 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:54:07,625 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:54:08,332 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:54:09,200 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:54:20,980 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:54:22,103 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:54:22,482 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:54:22,870 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:54:34,087 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:54:34,491 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:54:34,876 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:54:35,250 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:54:46,560 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:54:47,073 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:54:47,867 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:54:48,161 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:54:49,403 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 13:54:59,456 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:54:59,916 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:55:00,422 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:55:00,789 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:55:12,374 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:55:13,123 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:55:16,333 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:55:29,039 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:55:29,814 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:55:30,231 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:55:30,573 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:55:42,432 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:55:43,449 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:55:43,891 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:55:44,345 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:55:56,481 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:55:56,942 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:55:57,732 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:55:58,148 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:56:09,579 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:56:10,096 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:56:10,584 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:56:11,013 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:56:22,947 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:56:23,470 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:56:24,086 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:56:24,400 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:56:35,522 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:56:36,204 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:56:36,759 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:56:37,549 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:56:48,734 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:56:49,045 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:56:49,501 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:56:49,975 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:57:01,165 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:57:01,540 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:57:01,868 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:57:02,272 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:57:13,600 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:57:14,073 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:57:14,687 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:57:17,151 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:57:29,475 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:57:29,901 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:57:30,750 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:57:31,312 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:57:42,731 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:57:43,346 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:57:43,992 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:57:44,390 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:57:55,712 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:57:56,069 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:57:57,338 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:57:58,090 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:58:10,433 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:58:11,045 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:58:11,511 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:58:11,886 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:58:23,148 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:58:24,101 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:58:24,386 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:58:24,972 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:58:36,414 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:58:36,868 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:58:37,345 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:58:37,862 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:58:49,851 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:58:50,676 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:58:51,708 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:58:52,148 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:59:03,846 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:59:04,309 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:59:04,947 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:59:05,260 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:59:16,720 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:59:17,191 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:59:17,664 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:59:18,032 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:59:29,504 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:59:29,872 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:59:30,910 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:59:31,257 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:59:43,324 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:59:44,022 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:59:44,543 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:59:46,401 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 13:59:52,306 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 13:59:58,262 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 13:59:58,805 | ERROR | bot | Erro ao obter sinal ML para SUZB3: 'updated_at'
+2026-01-26 13:59:59,323 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 13:59:59,687 | ERROR | bot | Erro ao obter sinal ML para AURA33: 'updated_at'
+2026-01-26 14:00:11,302 | ERROR | bot | Erro ao obter sinal ML para ABEV3: 'updated_at'
+2026-01-26 14:00:14,515 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:00:26,106 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:00:37,717 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:00:49,173 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:01:00,684 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:01:12,301 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:01:23,957 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:01:35,413 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:01:46,814 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:01:58,877 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:02:11,462 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:02:23,846 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:02:36,654 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:02:49,058 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:03:02,768 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:03:14,862 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:03:26,409 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:03:39,160 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:03:52,335 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:04:05,571 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:04:17,704 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:04:29,438 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:04:41,280 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:04:53,012 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:04:54,223 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:05:05,200 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:05:21,507 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:05:37,511 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:05:50,925 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:06:04,617 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:06:18,347 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:06:34,719 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:06:46,617 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:06:58,275 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:07:10,505 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:07:23,430 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:07:35,313 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:07:47,031 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:07:58,706 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:08:10,468 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:08:22,226 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:08:33,656 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:08:45,614 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:08:57,782 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:09:09,724 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:09:21,087 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:09:32,626 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:09:44,502 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:09:55,870 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:09:57,448 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:10:07,324 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:10:19,159 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:10:30,963 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:10:46,612 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:10:58,184 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:11:10,525 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:11:23,080 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:11:35,703 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:11:47,417 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:11:59,319 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:12:12,231 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:12:23,780 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:12:35,535 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:12:47,232 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:12:59,308 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:13:10,714 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:13:23,010 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:13:35,403 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:13:48,104 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:13:59,884 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:14:11,820 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:14:23,816 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:14:35,548 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:14:47,678 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:14:59,263 | ERROR | bot | Erro ao obter sinal ML para BBAS3: 'updated_at'
+2026-01-26 14:15:02,750 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:15:11,258 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:15:22,849 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:15:34,602 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:15:47,198 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:15:59,455 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:16:11,428 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:16:22,965 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:16:35,610 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:16:47,758 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:16:59,963 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:17:11,950 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:17:24,121 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:17:35,920 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:17:47,708 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:18:00,399 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:18:16,132 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:18:33,697 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:18:48,684 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:19:00,639 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:19:19,414 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:19:34,467 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:19:48,433 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:20:00,799 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:20:05,806 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:20:12,950 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:20:26,417 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:20:40,796 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:20:53,118 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:21:07,108 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:21:26,744 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:21:39,123 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:21:51,005 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:22:02,618 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:22:14,994 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:22:26,817 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:22:40,039 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:22:52,053 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:23:04,364 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:23:17,149 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:23:28,747 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:23:42,570 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:23:56,326 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:24:09,261 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:24:20,884 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:24:32,917 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:24:52,445 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:25:04,470 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:25:07,311 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:25:16,377 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:25:28,267 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:25:40,357 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:25:53,063 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:26:04,759 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:26:17,131 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:26:28,528 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:26:41,635 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:26:55,537 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:27:07,819 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:27:20,700 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:27:33,409 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:27:47,490 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:27:59,644 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:28:11,690 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:28:23,318 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:28:37,690 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:28:51,157 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:29:04,149 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:29:16,353 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:29:28,161 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:29:40,121 | ERROR | bot | Erro ao obter sinal ML para RDOR3: 'updated_at'
+2026-01-26 14:30:09,847 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:30:19,657 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:30:33,300 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:30:45,191 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:30:56,839 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:31:08,293 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:31:20,769 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:31:32,257 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:31:43,706 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:31:55,206 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:32:06,669 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:32:18,375 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:32:29,946 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:32:41,387 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:32:52,668 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:33:04,046 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:33:15,708 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:33:27,145 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:33:38,923 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:33:51,194 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:34:02,640 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:34:14,433 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:34:25,847 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:34:37,171 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:34:49,057 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:35:01,144 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:35:12,652 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:35:25,105 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:35:36,432 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:35:49,277 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:36:03,064 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:36:15,111 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:36:27,345 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:36:39,290 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:36:51,084 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:37:02,974 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:37:14,481 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:37:14,881 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:37:26,259 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:37:37,938 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:37:38,997 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:37:50,425 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:37:50,829 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:38:02,021 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:38:02,454 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:38:14,167 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:38:14,686 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:38:26,043 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:38:26,435 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:38:37,775 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:38:38,224 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:38:49,457 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:38:50,017 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:39:01,753 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:39:03,316 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:39:15,308 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:39:16,341 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:39:28,149 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:39:28,773 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:39:40,944 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:39:54,598 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:40:06,016 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:40:06,770 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:40:20,138 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:40:20,622 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:40:30,664 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:40:32,341 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:40:32,744 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:40:45,420 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:40:56,974 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:40:57,472 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:41:08,832 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:41:09,244 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:41:20,659 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:41:21,096 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:41:32,502 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:41:33,025 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:41:44,272 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:41:44,831 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:41:56,150 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:42:07,359 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:42:19,023 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:42:30,490 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:42:41,936 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:42:42,351 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:42:54,210 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:43:06,364 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:43:06,832 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:43:19,230 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:43:20,192 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:43:32,004 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:43:32,719 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:43:45,186 | ERROR | bot | Erro ao obter sinal ML para VALE3: 'updated_at'
+2026-01-26 14:43:46,569 | ERROR | bot | Erro ao obter sinal ML para COGN3: 'updated_at'
+2026-01-26 14:45:32,449 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:50:35,334 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:55:48,276 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 14:58:06,653 | ERROR | bot | Erro crítico no fast_loop: can't start new thread
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3v5\bot.py", line 4873, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3v5\bot.py", line 2653, in build_portfolio_and_top15
+    ind = utils.get_cached_indicators(sym, TIMEFRAME_BASE, 300)
+  File "C:\Users\luizf\Documents\xp3v5\utils.py", line 3522, in get_cached_indicators
+    ind = quick_indicators_custom(symbol, timeframe, df=df)
+  File "C:\Users\luizf\Documents\xp3v5\utils.py", line 1822, in quick_indicators_custom
+    "macro_trend_ok": macro_trend_ok(symbol, side),
+                      ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\luizf\Documents\xp3v5\utils.py", line 1649, in macro_trend_ok
+    df = safe_copy_rates(symbol, TIMEFRAME_MACRO, 300)
+  File "C:\Users\luizf\Documents\xp3v5\utils.py", line 765, in safe_copy_rates
+    t.start()
+    ~~~~~~~^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 976, in start
+    _start_joinable_thread(self._bootstrap, handle=self._handle,
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                           daemon=self.daemon)
+                           ^^^^^^^^^^^^^^^^^^^
+RuntimeError: can't start new thread
+2026-01-26 15:01:04,902 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:06:06,653 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:11:25,396 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:16:28,749 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:21:38,445 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:26:48,718 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:32:13,881 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:37:20,187 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:42:35,404 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:47:43,889 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:52:58,565 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 15:58:05,177 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 16:03:09,830 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 16:08:12,908 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 16:13:33,225 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 16:18:35,603 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 16:23:41,532 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 16:28:44,128 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 16:33:48,539 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 16:38:53,902 | CRITICAL | bot | 🛑 Win Rate crítico: 45.0% nas últimas 20 operações. Trading PAUSADO.
+2026-01-26 16:40:00,440 | ERROR | bot | Erro ao extrair features: 'updated_at'
+2026-01-26 16:40:00,973 | ERROR | bot | Erro ao extrair features: 'updated_at'
+2026-01-26 16:40:01,738 | ERROR | bot | Erro ao extrair features: 'updated_at'
+2026-01-26 16:40:02,421 | ERROR | bot | Erro ao extrair features: 'updated_at'
+2026-01-26 16:40:03,018 | ERROR | bot | Erro ao extrair features: 'updated_at'
+2026-01-26 16:40:03,602 | ERROR | bot | Erro ao extrair features: 'updated_at'
+2026-01-26 17:30:53,628 | ERROR | validation | Erro Kelly PETR4: cannot access local variable 'mt5' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3v5\validation.py", line 423, in calculate_kelly_position_size
+    df = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_M15, 60)
+                                       ^^^
+UnboundLocalError: cannot access local variable 'mt5' where it is not associated with a value

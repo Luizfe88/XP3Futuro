@@ -1,106 +1,22 @@
 {
-  "date": "2026-01-26",
-  "timestamp": "2026-01-26T16:39:27.725491",
-  "equity_inicio_dia": 978176.26,
-  "daily_max_equity": 983476.26,
+  "date": "2026-01-27",
+  "timestamp": "2026-01-27T15:23:49.717406",
+  "equity_inicio_dia": 981011.26,
+  "daily_max_equity": 981011.26,
   "daily_trades_per_symbol": {
-    "VALE3": 0,
-    "VIVT3": 1,
-    "BBDC4": 1,
-    "SUZB3": 0,
-    "RDOR3": 0,
-    "BPAC11": 1,
-    "AURA33": 0,
-    "ABEV3": 1,
-    "BBAS3": 0,
-    "COGN3": 1
+    "BBAS3": 0
   },
   "last_entry_time": {
-    "WEGE3": 1769435685.1843176,
-    "VIVT3": 1769445061.6345487,
-    "BPAC11": 1769445918.1681156,
-    "BBDC4": 1769445996.7190254,
-    "ABEV3": 1769446812.0471714,
-    "COGN3": 1769449426.7424762
+    "PETR4": 1769520343.554525,
+    "RDOR3": 1769521147.7972603,
+    "B3SA3": 1769521966.0524132,
+    "RAIL3": 1769521973.5688806
   },
-  "current_trading_day": "2026-01-26",
-  "daily_cycle_completed": true,
+  "current_trading_day": "2026-01-27",
+  "daily_cycle_completed": false,
   "daily_target_hit_day": null,
   "daily_target_hit_pct": null,
-  "symbol_pyramid_leg": {
-    "VIVT3": 0,
-    "BPAC11": 0,
-    "BBDC4": 0,
-    "ABEV3": 0,
-    "COGN3": 0
-  },
-  "last_entry_price": {
-    "VIVT3": 36.78,
-    "BPAC11": 59.94,
-    "BBDC4": 20.73,
-    "ABEV3": 14.94,
-    "COGN3": 4.45
-  },
-  "open_positions": [
-    {
-      "ticket": 2330445344,
-      "symbol": "WEGE3",
-      "side": "BUY",
-      "volume": 3100.0,
-      "entry_price": 50.83,
-      "sl": 50.03,
-      "tp": 52.64,
-      "time": 1769424885
-    },
-    {
-      "ticket": 2331103581,
-      "symbol": "VIVT3",
-      "side": "SELL",
-      "volume": 5100.0,
-      "entry_price": 36.78,
-      "sl": 37.14,
-      "tp": 35.98,
-      "time": 1769434262
-    },
-    {
-      "ticket": 2331153719,
-      "symbol": "BPAC11",
-      "side": "BUY",
-      "volume": 2900.0,
-      "entry_price": 59.94,
-      "sl": 59.18,
-      "tp": 60.89,
-      "time": 1769435118
-    },
-    {
-      "ticket": 2331156851,
-      "symbol": "BBDC4",
-      "side": "BUY",
-      "volume": 10000.0,
-      "entry_price": 20.73,
-      "sl": 20.5,
-      "tp": 21.01,
-      "time": 1769435197
-    },
-    {
-      "ticket": 2331201323,
-      "symbol": "ABEV3",
-      "side": "BUY",
-      "volume": 38500.0,
-      "entry_price": 14.94,
-      "sl": 14.81,
-      "tp": 15.11,
-      "time": 1769436012
-    },
-    {
-      "ticket": 2331330117,
-      "symbol": "COGN3",
-      "side": "BUY",
-      "volume": 40300.0,
-      "entry_price": 4.45,
-      "sl": 4.38,
-      "tp": 4.54,
-      "time": 1769438627
-    }
-  ]
+  "symbol_pyramid_leg": {},
+  "last_entry_price": {},
+  "open_positions": []
 }

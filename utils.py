@@ -169,53 +169,39 @@ def get_polygon_rates_fallback(symbol: str, timeframe, count: int) -> Optional[p
     """
     ✅ Fallback: Obtém dados da Polygon.io se o MT5 falhar.
     """
-    try:
-        pass
-    except Exception:
-        return None
-        # Mapa de timeframe MT5 → Polygon
-        tf_map = {
-            mt5.TIMEFRAME_M1: ("minute", 1),
-            mt5.TIMEFRAME_M5: ("minute", 5),
-            mt5.TIMEFRAME_M15: ("minute", 15),
-            mt5.TIMEFRAME_H1: ("hour", 1),
-            mt5.TIMEFRAME_D1: ("day", 1),
-        }
-        
-        timespan, multiplier = tf_map.get(timeframe, ("minute", 15))
-        ticker = symbol.replace(".SA", "") # Formato B3 simples
-        
-        # Pega últimos 30 dias de histórico
-        end = datetime.now().strftime("%Y-%m-%d")
-        start = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
-        
-        endpoint = f"v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{start}/{end}"
-        params = {
-            "adjusted": "true",
-            "sort": "desc",
-            "limit": count
-        }
-        
-        data = get_polygon_data(endpoint, params)
-        if data:
-            results = data.get("results", [])
-            if results:
-                df = pd.DataFrame(results)
-                # Formata para padrão MT5
-                df = df.rename(columns={
-                    "t": "time", "o": "open", "h": "high", 
-                    "l": "low", "c": "close", "v": "tick_volume", "vw": "vwap"
-                })
-                df["time"] = pd.to_datetime(df["time"], unit="ms")
-                if "real_volume" not in df.columns:
-                    df["real_volume"] = df["tick_volume"] * df["close"]
-
-                
-                df.set_index("time", inplace=True)
-                logger.info(f"✅ Fallback Polygon SUCESSO: {symbol}")
-                return df.sort_index()
-                
-        return None
+    tf_map = {
+        mt5.TIMEFRAME_M1: ("minute", 1),
+        mt5.TIMEFRAME_M5: ("minute", 5),
+        mt5.TIMEFRAME_M15: ("minute", 15),
+        mt5.TIMEFRAME_H1: ("hour", 1),
+        mt5.TIMEFRAME_D1: ("day", 1),
+    }
+    timespan, multiplier = tf_map.get(timeframe, ("minute", 15))
+    ticker = symbol.replace(".SA", "")
+    end = datetime.now().strftime("%Y-%m-%d")
+    start = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
+    endpoint = f"v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{start}/{end}"
+    params = {
+        "adjusted": "true",
+        "sort": "desc",
+        "limit": count
+    }
+    data = get_polygon_data(endpoint, params)
+    if data:
+        results = data.get("results", [])
+        if results:
+            df = pd.DataFrame(results)
+            df = df.rename(columns={
+                "t": "time", "o": "open", "h": "high", 
+                "l": "low", "c": "close", "v": "tick_volume", "vw": "vwap"
+            })
+            df["time"] = pd.to_datetime(df["time"], unit="ms")
+            if "real_volume" not in df.columns:
+                df["real_volume"] = df["tick_volume"] * df["close"]
+            df.set_index("time", inplace=True)
+            logger.info(f"✅ Fallback Polygon SUCESSO: {symbol}")
+            return df.sort_index()
+    return None
 
 def resolve_current_symbol(root_symbol: str) -> Optional[str]:
     try:
@@ -703,6 +689,11 @@ def is_future(symbol: str) -> bool:
         return s.startswith(("WIN", "WDO", "IND", "DOL", "WSP", "BGI"))
     except Exception:
         return False
+def get_asset_type(symbol: str) -> str:
+    try:
+        return "FUTURE" if is_future(symbol) else "STOCK"
+    except Exception:
+        return "STOCK"
 
 class AssetInspector:
     @staticmethod
@@ -743,7 +734,13 @@ except Exception as e:
 # =========================================================
 
 def safe_copy_rates(symbol: str, timeframe, count: int = 500, timeout: int = 12) -> Optional[pd.DataFrame]:
-    # Tenta selecionar, mas continua mesmo se falhar (pode já estar no Market Watch)
+    try:
+        terminal = mt5.terminal_info()
+    except Exception:
+        terminal = None
+    if (terminal is None) or (not getattr(terminal, "connected", False)):
+        df_fb = get_polygon_rates_fallback(symbol, timeframe, count)
+        return df_fb
     if not mt5.symbol_select(symbol, True):
         pass 
 
@@ -2956,10 +2953,16 @@ def get_dynamic_slippage(symbol: str, hour: int) -> int:
     elif s.startswith(("WDO", "DOL")):
         base = 3
     else:
-        base = int(config.SLIPPAGE_MAP.get(
-            symbol,
-            config.SLIPPAGE_MAP.get("DEFAULT", 10)
-        ))
+        # Ações: converte percentuais de SLIPPAGE_MAP para pontos (ticks) dinamicamente
+        pct = float(config.SLIPPAGE_MAP.get(symbol, config.SLIPPAGE_MAP.get("DEFAULT", 0.003)) or 0.003)
+        try:
+            info = mt5.symbol_info(symbol)
+            tick = mt5.symbol_info_tick(symbol)
+            price = float(getattr(tick, "bid", getattr(tick, "ask", 0.0)) or 0.0)
+            tick_size = float(getattr(info, "point", 0.01) or 0.01)
+            base = int(max(2, (pct * price) / tick_size)) if price > 0 and tick_size > 0 else 6
+        except Exception:
+            base = 6
 
     # 2️⃣ ABERTURA (prioridade máxima)
     if 10 <= hour < 11:
@@ -2975,9 +2978,14 @@ def get_dynamic_slippage(symbol: str, hour: int) -> int:
 
     # 5️⃣ LIMITES DE SEGURANÇA
     min_slip = 2
-    max_slip = 50
-
-    base = max(min_slip, min(base, max_slip))
+    # Caps específicos por ativo (B3)
+    if s.startswith(("WIN", "IND")):
+        base = min(base, 20)  # WIN/IND ≤ 20 pontos
+    elif s.startswith(("WDO", "DOL")):
+        base = min(base, 3)   # WDO/DOL ≤ 3 pontos
+    else:
+        base = min(base, 100) # Ações: teto técnico
+    base = max(min_slip, base)
 
     return base
 
@@ -3151,6 +3159,18 @@ def apply_trailing_stop(symbol: str, current_price: float, atr: float):
         return
 
     for pos in positions:
+        try:
+            # Ativa trailing apenas após lucro >= +1.2R
+            # R inicial: distância até SL atual (fallback 2*ATR)
+            initial_r = abs(pos.price_open - (pos.sl or pos.price_open)) or (atr * 2.0)
+            if initial_r <= 0:
+                initial_r = atr * 2.0
+            profit_move = (current_price - pos.price_open) if pos.type == mt5.POSITION_TYPE_BUY else (pos.price_open - current_price)
+            r_ratio = profit_move / initial_r if initial_r > 0 else 0.0
+            if r_ratio < 1.2:
+                continue
+        except Exception:
+            continue
 
         # =========================
         # 🟢 BUY
@@ -3159,8 +3179,9 @@ def apply_trailing_stop(symbol: str, current_price: float, atr: float):
 
             candle_sl = min(df["low"].iloc[-2], df["low"].iloc[-3]) - tick_size
 
-            # 🛡️ Proteção ATR mínima
-            atr_sl = current_price - (atr * 1.2)
+            # 🛡️ Proteção ATR mínima diferenciada por ativo
+            trail_mult = 2.0 if is_future(symbol) else 1.5
+            atr_sl = current_price - (atr * trail_mult)
             candidate_sl = max(candle_sl, atr_sl)
 
             # Respeita distância mínima do preço atual
@@ -3178,7 +3199,8 @@ def apply_trailing_stop(symbol: str, current_price: float, atr: float):
         elif pos.type == mt5.POSITION_TYPE_SELL:
 
             candle_sl = max(df["high"].iloc[-2], df["high"].iloc[-3]) + tick_size
-            atr_sl = current_price + (atr * 1.2)
+            trail_mult = 2.0 if is_future(symbol) else 1.5
+            atr_sl = current_price + (atr * trail_mult)
             candidate_sl = min(candle_sl, atr_sl)
 
             if candidate_sl - current_price < min_stop_distance:
@@ -3213,6 +3235,67 @@ def apply_trailing_stop(symbol: str, current_price: float, atr: float):
                 f"🔄 Trailing {symbol} "
                 f"{'BUY' if pos.type==0 else 'SELL'} -> {new_sl}"
             )
+
+def manage_dynamic_trailing(symbol: str, ticket: int) -> None:
+    """
+    Step Trailing com travamento de lucro:
+    - Ativa breakeven com offset após +1.5R
+      • STOCK: BE + 0.3×ATR
+      • FUTURE: BE + 0.8×ATR
+    - Depois aplica trailing agressivo:
+      • STOCK: 1.5×ATR
+      • FUTURE: 2.0×ATR
+    """
+    try:
+        with mt5_lock:
+            positions = mt5.positions_get(symbol=symbol)
+        if not positions:
+            return
+        pos = next((p for p in positions if int(getattr(p, "ticket", 0)) == int(ticket)), None)
+        if not pos:
+            return
+
+        df = get_fast_rates(symbol, TIMEFRAME_BASE)
+        if not is_valid_dataframe(df) or len(df) < 20:
+            return
+        atr = get_atr(df, 14) or 0.0
+        if atr <= 0:
+            return
+
+        is_fut = is_future(symbol)
+        be_offset = atr * (0.8 if is_fut else 0.3)
+        trail_mult = 2.0 if is_fut else 1.5
+
+        initial_r = abs(pos.price_open - (pos.sl or pos.price_open)) or (atr * 2.0)
+        profit_move = (pos.price_current - pos.price_open) if pos.type == mt5.POSITION_TYPE_BUY else (pos.price_open - pos.price_current)
+        r_ratio = profit_move / initial_r if initial_r > 0 else 0.0
+
+        info = mt5.symbol_info(symbol)
+        if not info:
+            return
+        tick_size = info.point
+        min_stop_distance = info.trade_stops_level * tick_size
+
+        # 1) Travamento de lucro: BE + offset após +1.5R
+        if r_ratio >= 1.5:
+            if pos.type == mt5.POSITION_TYPE_BUY:
+                be_sl = pos.price_open + be_offset
+                if (pos.sl is None or be_sl > pos.sl) and (pos.price_current - be_sl) >= min_stop_distance:
+                    req = {"action": mt5.TRADE_ACTION_SLTP, "position": pos.ticket, "symbol": symbol, "sl": float(round(be_sl / tick_size) * tick_size), "tp": pos.tp, "magic": 2026}
+                    with mt5_lock:
+                        mt5.order_send(req)
+            elif pos.type == mt5.POSITION_TYPE_SELL:
+                be_sl = pos.price_open - be_offset
+                if (pos.sl is None or be_sl < pos.sl) and (be_sl - pos.price_current) >= min_stop_distance:
+                    req = {"action": mt5.TRADE_ACTION_SLTP, "position": pos.ticket, "symbol": symbol, "sl": float(round(be_sl / tick_size) * tick_size), "tp": pos.tp, "magic": 2026}
+                    with mt5_lock:
+                        mt5.order_send(req)
+
+        # 2) Trailing após +1.2R
+        if r_ratio >= 1.2:
+            apply_trailing_stop(symbol, pos.price_current, atr)
+    except Exception:
+        logger.exception(f"manage_dynamic_trailing error for {symbol}:{ticket}")
 
 def can_enter_symbol(symbol: str, equity: float) -> bool:
     """

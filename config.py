@@ -194,11 +194,21 @@ ENABLE_ML_SIGNALS = config_manager.get('ml.enabled', True)
 ML_MIN_CONFIDENCE = config_manager.get('ml.min_confidence', 0.65)  # Reduced from 0.78 to 0.65 for realistic ensemble
 ML_MODEL_TYPE = config_manager.get('ml.model_type', 'ENSEMBLE')
 ML_MIN_SAMPLES_FOR_RETRAIN = config_manager.get('ml.min_samples_for_retrain', 500)
-ML_RETRAIN_THRESHOLD = 50  # Retreino reduzido para 50 trades
+ML_RETRAIN_THRESHOLD = 100  # Retreino após 100 trades (mais estável)
 ML_Q_STATES = 5000  # Aumentado para 5000 estados
 ML_TRAIN_PER_SYMBOL = config_manager.get('ml.train_per_symbol', True)
 ML_PER_SYMBOL_MIN_SAMPLES = config_manager.get('ml.per_symbol_min_samples', 50)
 WR_RESET_GRACE_TRADES = config_manager.get('risk.winrate_reset_grace_trades', 5)
+STOCKS_RISK_PER_TRADE_PCT = 0.003
+FUTURES_RISK_PER_TRADE_PCT = 0.006
+MIN_RR_STOCKS = 1.8
+MIN_RR_FUTURES = 2.5
+MAX_ATR_PCT_STOCKS = 4.5
+MAX_ATR_PCT_FUTURES = 6.0
+PYRAMID_MAX_LEGS_STOCKS = 2
+PYRAMID_MAX_LEGS_FUTURES = 3
+FUTURES_RISK_MULTIPLIER = 1.5
+STOCKS_MIN_LIQ_VOL = 500000
 
 # ✅ KELLY CRITERION & POSITION SIZING
 KELLY_MULTIPLIER = 0.3  # Fractional Kelly (0.3x) for capital preservation
@@ -407,8 +417,8 @@ AB_TEST_GROUPS = {
     "A": {"min_confidence": 0.61, "signal_threshold": 61},
     "B": {"min_confidence": 0.65, "signal_threshold": 65}
 }
-REDIS_CACHE_TTL_TICK = 1    # TTL em segundos para ticks
-REDIS_CACHE_TTL_INFO = 60   # TTL em segundos para symbol_info
+REDIS_CACHE_TTL_TICK = 10    # TTL em segundos para ticks
+REDIS_CACHE_TTL_INFO = 10    # TTL em segundos para symbol_info/indicadores
 
 # =========================================================
 # 🌐 POLYGON.IO API (DADOS B3)

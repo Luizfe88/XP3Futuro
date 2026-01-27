@@ -349,16 +349,16 @@ def validate_subsetor_exposure(symbol: str) -> tuple:
 # ============================================
 # 🎲 MONTE CARLO KELLY
 # ============================================
-def monte_carlo_ruin_check(win_rate: float, rr: float, fraction: float, runs: int = 1000) -> float:
+def monte_carlo_ruin_check(win_rate: float, rr: float, fraction: float, runs: int = 5000) -> float:
     """
-    Simula 1000 trajetórias para calcular probabilidade de ruína (>90% loss).
+    Simula trajetórias para calcular probabilidade de ruína (>90% loss).
     """
     import numpy as np
     ruins = 0
     
     for _ in range(runs):
         balance = 1.0
-        for _ in range(50): # Simula 50 trades
+        for _ in range(200): # Simula 200 trades
             if np.random.random() < win_rate:
                 balance += balance * fraction * rr
             else:
@@ -465,11 +465,11 @@ def calculate_kelly_position_size(symbol: str, entry_price: float, sl: float,
         # 9. Limites & Monte Carlo Check
         adjusted_kelly = min(adjusted_kelly, 0.20)
         
-        # ✅ NOVO: Monte Carlo Ruin Check (Placeholder - Simplificado)
-        # ruin_prob = monte_carlo_ruin_check(win_rate, current_rr, adjusted_kelly)
-        # if ruin_prob > 0.01: 
-        #    logger.warning(f"⚠️ {symbol}: Ruin Prob alta ({ruin_prob:.1%}). Reduzindo Kelly.")
-        #    adjusted_kelly *= 0.5
+        # ✅ NOVO: Monte Carlo Ruin Check (5000 runs)
+        ruin_prob = monte_carlo_ruin_check(win_rate, current_rr, adjusted_kelly, runs=5000)
+        if ruin_prob > 0.01: 
+            logger.warning(f"⚠️ {symbol}: Probabilidade de ruína alta ({ruin_prob:.1%}). Reduzindo Kelly.")
+            adjusted_kelly *= 0.5
         
         # ✅ ATUALIZADO: ULTRA-CONSERVATIVE KELLY (0.3x em vez de 0.5x)
         final_kelly = adjusted_kelly * 0.15
@@ -543,7 +543,7 @@ def calculate_kelly_position_size(symbol: str, entry_price: float, sl: float,
 
 def validate_and_create_order(symbol: str, side: str, volume: float, 
                                entry_price: float, sl: float, tp: float,
-                               use_kelly: bool = False) -> tuple[Optional[OrderParams], Optional[str]]:
+                               use_kelly: bool = True) -> tuple[Optional[OrderParams], Optional[str]]:
     """
     Factory function com validação e Kelly Criterion
     

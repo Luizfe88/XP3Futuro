@@ -658,3 +658,111 @@
 2026-01-26 13:24:58,699 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
 2026-01-26 13:24:58,699 - bot - INFO - ✅ RandomForest: treino concluído
 2026-01-26 13:24:59,097 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-27 11:55:11,685 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-27 11:55:14,119 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-27 11:55:14,120 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-27 11:55:14,120 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-27 11:55:15,553 - bot - INFO - ✅ RandomForest carregado
+2026-01-27 11:55:15,555 - bot - INFO - 📊 Histórico ML carregado: 33 trades
+2026-01-27 11:55:15,556 - bot - INFO - 🧠 Q-Table carregada
+2026-01-27 11:55:15,556 - bot - INFO - 🎯 Inicializando com 33 trades históricos...
+2026-01-27 11:55:17,505 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-27 11:55:17,505 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-27 11:55:17,836 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-27 11:55:17,839 - bot - INFO - ✅ RandomForest carregado
+2026-01-27 11:55:17,855 - bot - INFO - 📊 Histórico ML carregado: 33 trades
+2026-01-27 11:55:17,869 - bot - INFO - 🧠 Q-Table carregada
+2026-01-27 11:55:17,869 - bot - INFO - 🎯 Inicializando com 33 trades históricos...
+2026-01-27 11:55:19,759 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-27 11:55:19,759 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-27 11:55:20,095 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-27 13:07:02,116 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-27 13:07:04,397 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-27 13:07:04,399 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-27 13:07:04,399 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-27 13:07:05,267 - bot - INFO - ✅ RandomForest carregado
+2026-01-27 13:07:05,268 - bot - INFO - 📊 Histórico ML carregado: 33 trades
+2026-01-27 13:07:05,271 - bot - INFO - 🧠 Q-Table carregada
+2026-01-27 13:07:05,271 - bot - INFO - 🎯 Inicializando com 33 trades históricos...
+2026-01-27 13:07:07,282 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-27 13:07:07,282 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-27 13:07:07,661 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-27 13:07:07,668 - bot - INFO - ✅ RandomForest carregado
+2026-01-27 13:07:07,668 - bot - INFO - 📊 Histórico ML carregado: 33 trades
+2026-01-27 13:07:07,669 - bot - INFO - 🧠 Q-Table carregada
+2026-01-27 13:07:07,669 - bot - INFO - 🎯 Inicializando com 33 trades históricos...
+2026-01-27 13:07:09,453 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-27 13:07:09,453 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-27 13:07:09,851 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-27 14:06:54,264 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-27 14:06:56,657 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-27 14:06:56,658 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-27 14:06:56,659 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-27 14:06:57,869 - bot - INFO - ✅ RandomForest carregado
+2026-01-27 14:06:57,870 - bot - INFO - 📊 Histórico ML carregado: 33 trades
+2026-01-27 14:06:57,873 - bot - INFO - 🧠 Q-Table carregada
+2026-01-27 14:06:57,873 - bot - INFO - 🎯 Inicializando com 33 trades históricos...
+2026-01-27 14:07:00,290 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-27 14:07:00,290 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-27 14:07:00,868 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-27 14:07:00,873 - bot - INFO - ✅ RandomForest carregado
+2026-01-27 14:07:00,875 - bot - INFO - 📊 Histórico ML carregado: 33 trades
+2026-01-27 14:07:00,878 - bot - INFO - 🧠 Q-Table carregada
+2026-01-27 14:07:00,878 - bot - INFO - 🎯 Inicializando com 33 trades históricos...
+2026-01-27 14:07:03,788 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-27 14:07:03,788 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-27 14:07:04,108 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-27 14:09:31,652 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-27 14:09:33,919 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-27 14:09:33,921 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-27 14:09:33,923 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-27 14:09:34,903 - bot - INFO - ✅ RandomForest carregado
+2026-01-27 14:09:34,904 - bot - INFO - 📊 Histórico ML carregado: 33 trades
+2026-01-27 14:09:34,906 - bot - INFO - 🧠 Q-Table carregada
+2026-01-27 14:09:34,907 - bot - INFO - 🎯 Inicializando com 33 trades históricos...
+2026-01-27 14:09:37,178 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-27 14:09:37,178 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-27 14:09:37,686 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-27 14:09:37,689 - bot - INFO - ✅ RandomForest carregado
+2026-01-27 14:09:37,690 - bot - INFO - 📊 Histórico ML carregado: 33 trades
+2026-01-27 14:09:37,690 - bot - INFO - 🧠 Q-Table carregada
+2026-01-27 14:09:37,691 - bot - INFO - 🎯 Inicializando com 33 trades históricos...
+2026-01-27 14:09:39,618 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-27 14:09:39,618 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-27 14:09:40,035 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-27 15:30:17,622 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-27 15:30:20,414 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-27 15:30:20,415 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-27 15:30:20,416 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-27 15:30:21,437 - bot - INFO - ✅ RandomForest carregado
+2026-01-27 15:30:21,440 - bot - INFO - 📊 Histórico ML carregado: 33 trades
+2026-01-27 15:30:21,441 - bot - INFO - 🧠 Q-Table carregada
+2026-01-27 15:30:21,442 - bot - INFO - 🎯 Inicializando com 33 trades históricos...
+2026-01-27 15:30:24,700 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-27 15:30:24,700 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-27 15:30:25,213 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-27 15:30:25,217 - bot - INFO - ✅ RandomForest carregado
+2026-01-27 15:30:25,218 - bot - INFO - 📊 Histórico ML carregado: 33 trades
+2026-01-27 15:30:25,219 - bot - INFO - 🧠 Q-Table carregada
+2026-01-27 15:30:25,219 - bot - INFO - 🎯 Inicializando com 33 trades históricos...
+2026-01-27 15:30:29,609 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-27 15:30:29,610 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-27 15:30:30,471 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-27 15:34:58,298 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-27 15:35:00,649 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-27 15:35:00,650 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-27 15:35:00,655 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-27 15:35:02,032 - bot - INFO - ✅ RandomForest carregado
+2026-01-27 15:35:02,033 - bot - INFO - 📊 Histórico ML carregado: 33 trades
+2026-01-27 15:35:02,036 - bot - INFO - 🧠 Q-Table carregada
+2026-01-27 15:35:02,036 - bot - INFO - 🎯 Inicializando com 33 trades históricos...
+2026-01-27 15:35:10,909 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-27 15:35:10,910 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-27 15:35:11,865 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-27 15:35:11,868 - bot - INFO - ✅ RandomForest carregado
+2026-01-27 15:35:11,869 - bot - INFO - 📊 Histórico ML carregado: 33 trades
+2026-01-27 15:35:11,870 - bot - INFO - 🧠 Q-Table carregada
+2026-01-27 15:35:11,870 - bot - INFO - 🎯 Inicializando com 33 trades históricos...
+2026-01-27 15:35:16,334 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-27 15:35:16,335 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-27 15:35:17,011 - bot - INFO - 💾 Estado do ensemble salvo
