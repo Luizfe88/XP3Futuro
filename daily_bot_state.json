@@ -1,23 +1,17 @@
 {
-  "date": "2026-01-27",
-  "timestamp": "2026-01-27T21:24:51.869869",
-  "equity_inicio_dia": 981697.26,
-  "daily_max_equity": 982876.26,
+  "date": "2026-01-28",
+  "timestamp": "2026-01-28T11:10:44.979282",
+  "equity_inicio_dia": 980437.26,
+  "daily_max_equity": 980437.26,
   "daily_trades_per_symbol": {
-    "BBAS3": 0,
-    "BPAC11": 0,
-    "RAIZ4": 0,
-    "VIVT3": 0,
-    "PRIO3": 0
+    "B3SA3": 0,
+    "AXIA3": 0
   },
   "last_entry_time": {
-    "PETR4": 1769520343.554525,
-    "RDOR3": 1769521147.7972603,
-    "B3SA3": 1769521966.0524132,
-    "RAIL3": 1769521973.5688806
+    "RAIL3": 1769607475.0663035
   },
-  "current_trading_day": "2026-01-27",
-  "daily_cycle_completed": true,
+  "current_trading_day": "2026-01-28",
+  "daily_cycle_completed": false,
   "daily_target_hit_day": null,
   "daily_target_hit_pct": null,
   "symbol_pyramid_leg": {},

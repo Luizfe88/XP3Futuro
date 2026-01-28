@@ -3598,16 +3598,16 @@ def try_enter_position(symbol, side, risk_factor=1.0):
     current_time = datetime.now().time()
     vol_ratio = ind_data.get("volume_ratio", 0)
     if current_time < datetime.strptime("12:00","%H:%M").time():
-        min_vol = 1.2
+        min_vol = 1.1
         period_name = "Manhã"
     elif datetime.strptime("12:00","%H:%M").time() <= current_time <= datetime.strptime("13:30","%H:%M").time():
         if utils.is_future(symbol):
             min_vol = float(getattr(config, "LUNCH_MIN_VOLUME_RATIO", 0.5) or 0.5)
         else:
-            min_vol = 0.8
+            min_vol = 0.7
         period_name = "Almoço"
     else:
-        min_vol = 1.2
+        min_vol = 1.4
         period_name = "Tarde"
 
     if vol_ratio < min_vol:

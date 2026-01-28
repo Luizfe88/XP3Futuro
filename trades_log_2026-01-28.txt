@@ -1,0 +1,4 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-01-28 10:38:00 | ENTRADA  | RAIL3  | BUY  | Vol:   15200 | Price:  15.21 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-28 11:00:52 | SAÍDA    | RAIL3  | BUY  | Vol:   34900 | Price:  15.22 | P&L:  +349.00 R$ (+0.07%) | Motivo: Take Profit | DealId: 1705772349 | Pos: 2333754853

@@ -167,3 +167,1200 @@
 2026-01-28 10:30:39,013 | INFO | 💧 ABEV3: Liquidez insuficiente (5,785,406 < 11,461,256)
 2026-01-28 10:32:07,644 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.37x < 1.2x) - Entrada evitada.
 2026-01-28 10:32:07,973 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.37x < 1.2x) | Details: {'vol_ratio': np.float64(0.37), 'min_vol': 1.2, 'deficit': np.float64(0.83), 'period': 'Manhã'}
+2026-01-28 10:32:34,864 | INFO | 🛑 AXIA3: 🛑 Volume fraco para Manhã (1.13x < 1.2x) - Entrada evitada.
+2026-01-28 10:32:34,885 | INFO | ❌ [AXIA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.13x < 1.2x) | Details: {'vol_ratio': np.float64(1.13), 'min_vol': 1.2, 'deficit': np.float64(0.07), 'period': 'Manhã'}
+2026-01-28 10:32:47,584 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:32:47,619 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:33:49,748 | INFO | 🎯 RAIL3: Estratégia selecionada: ML_ENSEMBLE
+2026-01-28 10:35:41,089 | INFO | ✅ RandomForest carregado
+2026-01-28 10:35:41,348 | INFO | ✅ XGBoost carregado
+2026-01-28 10:35:46,898 | WARNING | Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2026-01-28 10:35:47,339 | INFO | ✅ LSTM carregado
+2026-01-28 10:36:02,206 | INFO | 📰 Polygon News: 0 notícias para RAIL3
+2026-01-28 10:37:34,840 | WARNING | MT5 desconectado - Reconectando...
+2026-01-28 10:37:34,949 | INFO | MT5 reconectado com sucesso
+2026-01-28 10:37:54,135 | INFO | 🤖 ML ADVISORY RAIL3 | Conf: 61.5% | Dir: HOLD
+2026-01-28 10:37:54,219 | WARNING | RAIL3: Usando stats globais (poucos trades)
+2026-01-28 10:37:54,289 | ERROR | Erro Kelly RAIL3: cannot access local variable 'mt5' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3v5\validation.py", line 423, in calculate_kelly_position_size
+    df = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_M15, 60)
+                                       ^^^
+UnboundLocalError: cannot access local variable 'mt5' where it is not associated with a value
+2026-01-28 10:37:54,629 | INFO | 🚀 ENVIANDO ENTRADA BUY em RAIL3 | Vol: 15200 @ 15.20
+2026-01-28 10:38:05,278 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:38:05,295 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:38:08,756 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:38:08,760 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:38:13,951 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:38:13,978 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:38:26,927 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:38:26,935 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:38:31,248 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:38:31,250 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:38:34,025 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.45x < 1.2x) - Entrada evitada.
+2026-01-28 10:38:34,027 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.45x < 1.2x) | Details: {'vol_ratio': np.float64(0.45), 'min_vol': 1.2, 'deficit': np.float64(0.75), 'period': 'Manhã'}
+2026-01-28 10:38:36,404 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:38:36,408 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:38:36,414 | INFO | 💧 ABEV3: Liquidez insuficiente (8,581,264 < 11,461,256)
+2026-01-28 10:38:42,204 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:38:42,208 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:38:44,298 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:38:44,301 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:38:46,106 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:38:46,108 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:38:51,148 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:38:51,187 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:38:57,669 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:38:57,673 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:39:00,163 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:00,179 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:39:01,705 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:01,709 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:39:01,713 | INFO | 💧 ABEV3: Liquidez insuficiente (8,492,859 < 11,461,256)
+2026-01-28 10:39:05,414 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:05,416 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:39:07,073 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:07,075 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:39:08,396 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:08,399 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:39:13,419 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:39:13,453 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:39:19,575 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:39:19,579 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:39:20,915 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:20,918 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:39:22,769 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:22,771 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:39:22,774 | INFO | 💧 ABEV3: Liquidez insuficiente (8,500,347 < 11,461,256)
+2026-01-28 10:39:28,901 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:28,909 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:39:30,721 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:30,723 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:39:32,506 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:32,508 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:39:37,541 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:39:37,567 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:39:44,088 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:39:44,095 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:39:45,805 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:45,835 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:39:47,359 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:47,360 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:39:47,362 | INFO | 💧 ABEV3: Liquidez insuficiente (8,487,745 < 11,461,256)
+2026-01-28 10:39:50,205 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:50,206 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:39:51,728 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:51,730 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:39:53,237 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:39:53,239 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:39:58,255 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:39:58,262 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:40:04,592 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:40:04,597 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:40:05,914 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:05,919 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:40:07,504 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.45x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:07,505 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.45x < 1.2x) | Details: {'vol_ratio': np.float64(0.45), 'min_vol': 1.2, 'deficit': np.float64(0.75), 'period': 'Manhã'}
+2026-01-28 10:40:09,510 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:09,515 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:40:09,518 | INFO | 💧 ABEV3: Liquidez insuficiente (8,410,744 < 11,461,256)
+2026-01-28 10:40:12,898 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:12,902 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:40:15,053 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:15,057 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:40:17,310 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:17,313 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:40:22,337 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:40:22,348 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:40:28,637 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:40:28,642 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:40:30,008 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:30,018 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:40:31,570 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.45x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:31,572 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.45x < 1.2x) | Details: {'vol_ratio': np.float64(0.45), 'min_vol': 1.2, 'deficit': np.float64(0.75), 'period': 'Manhã'}
+2026-01-28 10:40:32,938 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:32,940 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:40:32,943 | INFO | 💧 ABEV3: Liquidez insuficiente (8,342,190 < 11,461,256)
+2026-01-28 10:40:36,069 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:36,071 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:40:38,055 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.46x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:38,057 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.46x < 1.2x) | Details: {'vol_ratio': np.float64(0.46), 'min_vol': 1.2, 'deficit': np.float64(0.74), 'period': 'Manhã'}
+2026-01-28 10:40:39,391 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:39,392 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:40:40,596 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:40,597 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:40:45,611 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:40:45,618 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:40:51,731 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:40:51,736 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:40:52,999 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:53,002 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:40:54,828 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.45x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:54,830 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.45x < 1.2x) | Details: {'vol_ratio': np.float64(0.45), 'min_vol': 1.2, 'deficit': np.float64(0.75), 'period': 'Manhã'}
+2026-01-28 10:40:56,231 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:56,233 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:40:56,235 | INFO | 💧 ABEV3: Liquidez insuficiente (8,323,614 < 11,461,256)
+2026-01-28 10:40:57,624 | INFO | 🛑 AXIA3: 🛑 Volume fraco para Manhã (1.13x < 1.2x) - Entrada evitada.
+2026-01-28 10:40:57,625 | INFO | ❌ [AXIA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.13x < 1.2x) | Details: {'vol_ratio': np.float64(1.13), 'min_vol': 1.2, 'deficit': np.float64(0.07), 'period': 'Manhã'}
+2026-01-28 10:41:00,353 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:00,355 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:41:01,582 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.46x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:01,584 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.46x < 1.2x) | Details: {'vol_ratio': np.float64(0.46), 'min_vol': 1.2, 'deficit': np.float64(0.74), 'period': 'Manhã'}
+2026-01-28 10:41:02,801 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:02,803 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:41:04,313 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:04,314 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:41:09,576 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:41:09,587 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:41:17,361 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:41:17,367 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:41:18,795 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:18,798 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:41:21,005 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.45x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:21,007 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.45x < 1.2x) | Details: {'vol_ratio': np.float64(0.45), 'min_vol': 1.2, 'deficit': np.float64(0.75), 'period': 'Manhã'}
+2026-01-28 10:41:22,249 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:22,250 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:41:22,259 | INFO | 💧 ABEV3: Liquidez insuficiente (8,240,413 < 11,461,256)
+2026-01-28 10:41:23,513 | INFO | 🛑 AXIA3: 🛑 Volume fraco para Manhã (1.13x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:23,515 | INFO | ❌ [AXIA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.13x < 1.2x) | Details: {'vol_ratio': np.float64(1.13), 'min_vol': 1.2, 'deficit': np.float64(0.07), 'period': 'Manhã'}
+2026-01-28 10:41:26,847 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:26,853 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:41:28,075 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.46x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:28,080 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.46x < 1.2x) | Details: {'vol_ratio': np.float64(0.46), 'min_vol': 1.2, 'deficit': np.float64(0.74), 'period': 'Manhã'}
+2026-01-28 10:41:29,518 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:29,520 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:41:30,783 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:30,785 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:41:35,821 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:41:35,854 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:41:41,964 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:41:41,972 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:41:43,619 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:43,641 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:41:45,056 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.45x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:45,069 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.45x < 1.2x) | Details: {'vol_ratio': np.float64(0.45), 'min_vol': 1.2, 'deficit': np.float64(0.75), 'period': 'Manhã'}
+2026-01-28 10:41:46,288 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:46,290 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:41:46,303 | INFO | 💧 ABEV3: Liquidez insuficiente (8,162,362 < 11,461,256)
+2026-01-28 10:41:47,500 | INFO | 🛑 AXIA3: 🛑 Volume fraco para Manhã (1.13x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:47,502 | INFO | ❌ [AXIA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.13x < 1.2x) | Details: {'vol_ratio': np.float64(1.13), 'min_vol': 1.2, 'deficit': np.float64(0.07), 'period': 'Manhã'}
+2026-01-28 10:41:49,968 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:49,969 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:41:51,191 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.46x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:51,192 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.46x < 1.2x) | Details: {'vol_ratio': np.float64(0.46), 'min_vol': 1.2, 'deficit': np.float64(0.74), 'period': 'Manhã'}
+2026-01-28 10:41:52,486 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:52,488 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:41:54,158 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:41:54,162 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:41:59,225 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:41:59,249 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:42:05,635 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:42:05,643 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:42:06,951 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:06,956 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:42:08,559 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.45x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:08,561 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.45x < 1.2x) | Details: {'vol_ratio': np.float64(0.45), 'min_vol': 1.2, 'deficit': np.float64(0.75), 'period': 'Manhã'}
+2026-01-28 10:42:10,171 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:10,173 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:42:10,185 | INFO | 💧 ABEV3: Liquidez insuficiente (8,137,111 < 11,461,256)
+2026-01-28 10:42:12,961 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:12,962 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:42:14,199 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.46x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:14,203 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.46x < 1.2x) | Details: {'vol_ratio': np.float64(0.46), 'min_vol': 1.2, 'deficit': np.float64(0.74), 'period': 'Manhã'}
+2026-01-28 10:42:15,393 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:15,399 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:42:17,143 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:17,145 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:42:22,211 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:42:22,237 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:42:28,433 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:42:28,441 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:42:29,777 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:29,781 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:42:31,463 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.45x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:31,465 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.45x < 1.2x) | Details: {'vol_ratio': np.float64(0.45), 'min_vol': 1.2, 'deficit': np.float64(0.75), 'period': 'Manhã'}
+2026-01-28 10:42:32,842 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:32,844 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:42:32,852 | INFO | 💧 ABEV3: Liquidez insuficiente (8,154,691 < 11,461,256)
+2026-01-28 10:42:34,118 | INFO | 🛑 AXIA3: 🛑 Volume fraco para Manhã (1.13x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:34,120 | INFO | ❌ [AXIA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.13x < 1.2x) | Details: {'vol_ratio': np.float64(1.13), 'min_vol': 1.2, 'deficit': np.float64(0.07), 'period': 'Manhã'}
+2026-01-28 10:42:37,568 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:37,636 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:42:40,344 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:40,346 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:42:42,187 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:42,188 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:42:47,223 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:42:47,238 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:42:53,261 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:42:53,270 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:42:55,684 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:55,687 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:42:57,454 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.45x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:57,630 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.45x < 1.2x) | Details: {'vol_ratio': np.float64(0.45), 'min_vol': 1.2, 'deficit': np.float64(0.75), 'period': 'Manhã'}
+2026-01-28 10:42:59,763 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:42:59,764 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:42:59,786 | INFO | 💧 ABEV3: Liquidez insuficiente (8,071,505 < 11,461,256)
+2026-01-28 10:43:01,198 | INFO | 🛑 AXIA3: 🛑 Volume fraco para Manhã (1.13x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:01,200 | INFO | ❌ [AXIA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.13x < 1.2x) | Details: {'vol_ratio': np.float64(1.13), 'min_vol': 1.2, 'deficit': np.float64(0.07), 'period': 'Manhã'}
+2026-01-28 10:43:03,842 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:03,844 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:43:05,365 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.46x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:05,368 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.46x < 1.2x) | Details: {'vol_ratio': np.float64(0.46), 'min_vol': 1.2, 'deficit': np.float64(0.74), 'period': 'Manhã'}
+2026-01-28 10:43:06,737 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:06,741 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:43:08,209 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:08,212 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:43:13,359 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:43:13,384 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:43:19,338 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:43:19,346 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:43:21,196 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:21,205 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:43:22,809 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.45x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:22,812 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.45x < 1.2x) | Details: {'vol_ratio': np.float64(0.45), 'min_vol': 1.2, 'deficit': np.float64(0.75), 'period': 'Manhã'}
+2026-01-28 10:43:24,632 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:24,634 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:43:24,647 | INFO | 💧 ABEV3: Liquidez insuficiente (8,003,171 < 11,461,256)
+2026-01-28 10:43:26,457 | INFO | 🛑 AXIA3: 🛑 Volume fraco para Manhã (1.13x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:26,459 | INFO | ❌ [AXIA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.13x < 1.2x) | Details: {'vol_ratio': np.float64(1.13), 'min_vol': 1.2, 'deficit': np.float64(0.07), 'period': 'Manhã'}
+2026-01-28 10:43:29,437 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:29,438 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:43:31,250 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:31,252 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:43:32,772 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:32,789 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:43:37,823 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:43:37,838 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:43:44,297 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:43:44,305 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:43:45,559 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:45,563 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:43:47,228 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.45x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:47,229 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.45x < 1.2x) | Details: {'vol_ratio': np.float64(0.45), 'min_vol': 1.2, 'deficit': np.float64(0.75), 'period': 'Manhã'}
+2026-01-28 10:43:48,594 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:48,596 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:43:48,609 | INFO | 💧 ABEV3: Liquidez insuficiente (7,933,091 < 11,461,256)
+2026-01-28 10:43:49,834 | INFO | 🛑 AXIA3: 🛑 Volume fraco para Manhã (1.13x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:49,838 | INFO | ❌ [AXIA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.13x < 1.2x) | Details: {'vol_ratio': np.float64(1.13), 'min_vol': 1.2, 'deficit': np.float64(0.07), 'period': 'Manhã'}
+2026-01-28 10:43:52,314 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:52,316 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:43:53,623 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:53,625 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:43:55,052 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.75x < 1.2x) - Entrada evitada.
+2026-01-28 10:43:55,053 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.2x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.2, 'deficit': np.float64(0.45), 'period': 'Manhã'}
+2026-01-28 10:44:00,134 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:44:00,171 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:44:06,726 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:44:06,742 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:44:08,874 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.76x < 1.2x) - Entrada evitada.
+2026-01-28 10:44:08,879 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.76x < 1.2x) | Details: {'vol_ratio': np.float64(0.76), 'min_vol': 1.2, 'deficit': np.float64(0.44), 'period': 'Manhã'}
+2026-01-28 10:44:10,116 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.45x < 1.2x) - Entrada evitada.
+2026-01-28 10:44:10,117 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.45x < 1.2x) | Details: {'vol_ratio': np.float64(0.45), 'min_vol': 1.2, 'deficit': np.float64(0.75), 'period': 'Manhã'}
+2026-01-28 10:44:11,306 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:44:11,309 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:44:11,319 | INFO | 💧 ABEV3: Liquidez insuficiente (7,886,050 < 11,461,256)
+2026-01-28 10:44:12,510 | INFO | 🛑 AXIA3: 🛑 Volume fraco para Manhã (1.13x < 1.2x) - Entrada evitada.
+2026-01-28 10:44:12,512 | INFO | ❌ [AXIA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.13x < 1.2x) | Details: {'vol_ratio': np.float64(1.13), 'min_vol': 1.2, 'deficit': np.float64(0.07), 'period': 'Manhã'}
+2026-01-28 10:44:14,990 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.94x < 1.2x) - Entrada evitada.
+2026-01-28 10:44:14,991 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.94x < 1.2x) | Details: {'vol_ratio': np.float64(0.94), 'min_vol': 1.2, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 10:44:16,758 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.46x < 1.2x) - Entrada evitada.
+2026-01-28 10:44:16,762 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.46x < 1.2x) | Details: {'vol_ratio': np.float64(0.46), 'min_vol': 1.2, 'deficit': np.float64(0.74), 'period': 'Manhã'}
+2026-01-28 10:44:18,363 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.27x < 1.2x) - Entrada evitada.
+2026-01-28 10:44:18,365 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.27x < 1.2x) | Details: {'vol_ratio': np.float64(0.27), 'min_vol': 1.2, 'deficit': np.float64(0.93), 'period': 'Manhã'}
+2026-01-28 10:44:22,470 | INFO | 🎯 PRIO3: Estratégia selecionada: ML_ENSEMBLE
+2026-01-28 10:44:22,596 | INFO | ✅ RandomForest carregado
+2026-01-28 10:44:22,648 | INFO | ✅ XGBoost carregado
+2026-01-28 10:44:22,849 | WARNING | Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2026-01-28 10:44:22,889 | INFO | ✅ LSTM carregado
+2026-01-28 10:44:25,446 | INFO | 📰 Polygon News: 0 notícias para PRIO3
+2026-01-28 10:44:55,360 | INFO | 🤖 ML ADVISORY PRIO3 | Conf: 61.6% | Dir: HOLD
+2026-01-28 10:44:57,102 | WARNING | ⚠️ PRIO3: Volume 0 insuficiente para lote de 100.
+2026-01-28 10:45:08,804 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:45:08,833 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:46:16,606 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:46:16,607 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:46:24,031 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:46:24,040 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:47:35,126 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:47:35,126 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:47:41,352 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:47:41,365 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:47:52,285 | WARNING | MT5 desconectado - Reconectando...
+2026-01-28 10:47:52,289 | INFO | MT5 reconectado com sucesso
+2026-01-28 10:47:54,675 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:47:54,689 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:47:56,421 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.43x < 1.2x) - Entrada evitada.
+2026-01-28 10:47:56,444 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.43x < 1.2x) | Details: {'vol_ratio': np.float64(0.43), 'min_vol': 1.2, 'deficit': np.float64(0.77), 'period': 'Manhã'}
+2026-01-28 10:47:58,230 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.2x) - Entrada evitada.
+2026-01-28 10:47:58,245 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.2x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.2, 'deficit': np.float64(0.58), 'period': 'Manhã'}
+2026-01-28 10:47:58,275 | INFO | 💧 ABEV3: Liquidez insuficiente (7,688,853 < 11,461,256)
+2026-01-28 10:47:59,773 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (1.12x < 1.2x) - Entrada evitada.
+2026-01-28 10:47:59,775 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.12x < 1.2x) | Details: {'vol_ratio': np.float64(1.12), 'min_vol': 1.2, 'deficit': np.float64(0.08), 'period': 'Manhã'}
+2026-01-28 10:48:02,258 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.50x < 1.2x) - Entrada evitada.
+2026-01-28 10:48:02,259 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.50x < 1.2x) | Details: {'vol_ratio': np.float64(0.5), 'min_vol': 1.2, 'deficit': np.float64(0.7), 'period': 'Manhã'}
+2026-01-28 10:48:02,265 | INFO | 💧 BPAC11: Liquidez insuficiente (3,594,297 < 3,605,916)
+2026-01-28 10:48:03,573 | INFO | 🎯 WEGE3: Estratégia selecionada: ML_ENSEMBLE
+2026-01-28 10:48:03,652 | INFO | ✅ RandomForest carregado
+2026-01-28 10:48:03,691 | INFO | ✅ XGBoost carregado
+2026-01-28 10:48:03,843 | WARNING | Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2026-01-28 10:48:03,860 | INFO | ✅ LSTM carregado
+2026-01-28 10:48:06,775 | INFO | 📰 Polygon News: 0 notícias para WEGE3
+2026-01-28 10:48:31,118 | INFO | 🤖 ML ADVISORY WEGE3 | Conf: 61.5% | Dir: HOLD
+2026-01-28 10:48:32,283 | WARNING | ⚠️ WEGE3: Volume 0 insuficiente para lote de 100.
+2026-01-28 10:48:51,680 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:48:51,698 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:50:40,359 | INFO | Bot do Telegram inicializado com sucesso
+2026-01-28 10:50:40,367 | INFO | Modo de operação: AMBOS
+2026-01-28 10:50:40,497 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-01-28 10:50:40,509 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-01-28 10:50:40,516 | INFO | ✅ Validação MT5 concluída para 17 ativos
+2026-01-28 10:50:40,517 | INFO | 📋 Sincronizando Market Watch (Strict Mode)...
+2026-01-28 10:50:40,523 | WARNING | ⚠️ Corretora : Falha ao adicionar BRFS3 - Símbolo não existe na corretora
+2026-01-28 10:50:40,532 | WARNING | ⚠️ Corretora : Falha ao adicionar CRFB3 - Símbolo não existe na corretora
+2026-01-28 10:50:40,543 | WARNING | ⚠️ Corretora : Falha ao adicionar AZUL4 - Símbolo não existe na corretora
+2026-01-28 10:50:40,552 | WARNING | ⚠️ Corretora : Falha ao adicionar CCRO3 - Símbolo não existe na corretora
+2026-01-28 10:50:40,557 | WARNING | ⚠️ Corretora : Falha ao adicionar JBSS3 - Símbolo não existe na corretora
+2026-01-28 10:50:40,573 | WARNING | ⚠️ Corretora : Falha ao adicionar SMALL$ - Símbolo não existe na corretora
+2026-01-28 10:50:40,587 | WARNING | ⚠️ 5 ativos falharam ao adicionar: ['BRFS3', 'CRFB3', 'AZUL4', 'CCRO3', 'SMALL$']
+2026-01-28 10:50:40,590 | INFO | 🧹 Limpando ativos desnecessários do Market Watch...
+2026-01-28 10:50:42,319 | INFO | ✅ Market Watch Sincronizado: 61 ativos mantidos/adicionados, 0 removidos.
+2026-01-28 10:50:42,433 | INFO | 🔍 Iniciando Auto-Discovery de Contratos Futuros...
+2026-01-28 10:50:42,435 | INFO | 📡 Corretora detectada: 
+2026-01-28 10:50:42,441 | INFO | 🎯 Mapeando WIN$ ...
+2026-01-28 10:50:42,447 | WARNING |    Nenhum candidato encontrado
+2026-01-28 10:50:42,456 | WARNING | ❌ Falha ao mapear WIN$
+2026-01-28 10:50:42,463 | WARNING | Fallback aplicado para WIN$ → WING26
+2026-01-28 10:50:42,479 | INFO | 🔍 Iniciando Auto-Discovery de Contratos Futuros...
+2026-01-28 10:50:42,481 | INFO | 📡 Corretora detectada: 
+2026-01-28 10:50:42,481 | INFO | 🎯 Mapeando WDO$ ...
+2026-01-28 10:50:42,482 | WARNING |    Nenhum candidato encontrado
+2026-01-28 10:50:42,482 | WARNING | ❌ Falha ao mapear WDO$
+2026-01-28 10:50:42,483 | WARNING | Fallback aplicado para WDO$ → WDOG26
+2026-01-28 10:50:42,491 | INFO | 🔍 Iniciando Auto-Discovery de Contratos Futuros...
+2026-01-28 10:50:42,493 | INFO | 📡 Corretora detectada: 
+2026-01-28 10:50:42,493 | INFO | 🎯 Mapeando SMALL$ ...
+2026-01-28 10:50:42,494 | WARNING |    Nenhum candidato encontrado
+2026-01-28 10:50:42,494 | WARNING | ❌ Falha ao mapear SMALL$
+2026-01-28 10:50:42,501 | INFO | 🔍 Iniciando Auto-Discovery de Contratos Futuros...
+2026-01-28 10:50:42,508 | INFO | 📡 Corretora detectada: 
+2026-01-28 10:50:42,508 | INFO | 🎯 Mapeando WSP$ ...
+2026-01-28 10:50:42,509 | WARNING |    Nenhum candidato encontrado
+2026-01-28 10:50:42,509 | WARNING | ❌ Falha ao mapear WSP$
+2026-01-28 10:50:42,510 | WARNING | Fallback aplicado para WSP$ → WSPG26
+2026-01-28 10:50:42,515 | INFO | 🔍 Iniciando Auto-Discovery de Contratos Futuros...
+2026-01-28 10:50:42,516 | INFO | 📡 Corretora detectada: 
+2026-01-28 10:50:42,516 | INFO | 🎯 Mapeando BGI$ ...
+2026-01-28 10:50:42,517 | WARNING |    Nenhum candidato encontrado
+2026-01-28 10:50:42,517 | WARNING | ❌ Falha ao mapear BGI$
+2026-01-28 10:50:42,518 | WARNING | Fallback aplicado para BGI$ → BGIG26
+2026-01-28 10:50:42,523 | INFO | 💾 Mapeamentos salvos em: futures_optimizer_output\futures_mappings_20260128_105042.json
+2026-01-28 10:50:42,524 | INFO | Futuros mapeados: {'WIN$': 'WING26', 'WDO$': 'WDOG26', 'WSP$': 'WSPG26', 'BGI$': 'BGIG26'}
+2026-01-28 10:50:42,524 | INFO | 📊 Executando análise retrospectiva inicial (backtest)...
+2026-01-28 10:50:42,527 | INFO | 📊 Análise Diária: 3 trades | Win Rate: 33.3%
+2026-01-28 10:50:42,528 | WARNING | ⚠️ Bot iniciando em modo PAUSADO/RESTRITO: Histórico insuficiente (mín. 20 trades)
+2026-01-28 10:50:42,529 | INFO | 📦 Verificando estado diário anterior...
+2026-01-28 10:50:42,530 | INFO | ============================================================
+2026-01-28 10:50:42,531 | INFO | ✅ ESTADO DIÁRIO RESTAURADO COM SUCESSO
+2026-01-28 10:50:42,531 | INFO | ============================================================
+2026-01-28 10:50:42,531 | INFO | 📅 Data: 2026-01-28
+2026-01-28 10:50:42,532 | INFO | 💰 Equity Inicial: R$979,390.26
+2026-01-28 10:50:42,532 | INFO | 📈 Max Equity: R$981,135.26
+2026-01-28 10:50:42,532 | INFO | 📊 Símbolos com trades: 2
+2026-01-28 10:50:42,532 | INFO |    Contadores:
+2026-01-28 10:50:42,533 | INFO |    • RAIL3: 1 trades
+2026-01-28 10:50:42,533 | INFO |    • PRIO3: 0 trades
+2026-01-28 10:50:42,533 | INFO | ⏱️ Cooldowns ativos: 1
+2026-01-28 10:50:42,533 | INFO | 📍 Posições salvas: 0
+2026-01-28 10:50:42,534 | INFO | 🔄 Ciclo completo: Não
+2026-01-28 10:50:42,534 | INFO | ============================================================
+2026-01-28 10:50:42,534 | WARNING | ⚠️ ATENÇÃO: Estado salvo tinha 0 posições, mas MT5 tem 1 agora!
+2026-01-28 10:50:42,535 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-01-28 10:50:42,537 | INFO | 📉 Loss streak carregado | 13 símbolos | 0 bloqueados
+2026-01-28 10:50:42,547 | INFO | Parâmetros carregados do JSON (20 ativos elite): optimizer_output/elite_symbols_latest.json
+2026-01-28 10:50:42,550 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-01-28 10:50:42,554 | INFO | 🧠 Pesos adaptativos carregados: 206 símbolos | 13 setores
+2026-01-28 10:50:42,566 | INFO | ✅ Dados anti-chop carregados
+2026-01-28 10:50:42,583 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-28 10:50:42,584 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-28 10:50:42,584 | INFO | ✅ Dados anti-chop carregados
+2026-01-28 10:50:42,588 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-01-28 10:50:42,589 | INFO | ✅ Dados anti-chop e limites carregados
+2026-01-28 10:50:42,621 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-01-28 10:50:42,631 | INFO | Parâmetros carregados do ELITE_SYMBOLS (20 ativos elite)
+2026-01-28 10:50:43,682 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-01-28 10:50:43,682 | INFO | 📊 Atualizando correlação para 15 ativos...
+2026-01-28 10:50:43,692 | INFO | ✅ Matriz de correlação atualizada
+2026-01-28 10:50:43,693 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-01-28 10:50:43,694 | INFO | 📑 Subscrevendo ao Book de Ofertas para 15 ativos...
+2026-01-28 10:50:43,698 | INFO | 
+============================================================
+2026-01-28 10:50:43,698 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-01-28 10:50:43,698 | INFO | ============================================================
+2026-01-28 10:50:43,699 | INFO | ✅ Cooldown após SL: 180 min
+2026-01-28 10:50:43,699 | INFO | ✅ Cooldown progressivo: True
+2026-01-28 10:50:43,699 | INFO | ✅ Máx posições: 8
+2026-01-28 10:50:43,699 | INFO | ✅ Máx por setor: 2
+2026-01-28 10:50:43,700 | INFO | ✅ Máx bancos: 2
+2026-01-28 10:50:43,700 | INFO | ✅ ADX mínimo (abertura): 25
+2026-01-28 10:50:43,700 | INFO | ✅ ADX mínimo (intraday): 25
+2026-01-28 10:50:43,700 | INFO | ============================================================
+
+2026-01-28 10:50:43,701 | INFO | 📅 Ciclo de trading iniciado: 28/01/2026
+2026-01-28 10:50:43,701 | INFO | 🧵 Iniciando threads de execução...
+2026-01-28 10:50:43,701 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-01-28 10:50:43,702 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-01-28 10:50:43,702 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-01-28 10:50:43,702 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-01-28 10:50:43,703 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-01-28 10:50:43,705 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-01-28 10:50:43,716 | INFO | 🧠 Treino diário ML iniciado (histórico: 35 trades | por ativo: True)
+2026-01-28 10:50:43,717 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-01-28 10:50:43,751 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-01-28 10:50:43,771 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-01-28 10:50:43,790 | WARNING | ⚠️ Símbolos insuficientes para calcular correlação (< 2 ativos)
+2026-01-28 10:50:43,863 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-01-28 10:50:43,889 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-01-28 10:50:43,918 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-01-28 10:50:43,919 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-01-28 10:50:43,977 | INFO | 🚀 Total de 7 threads ativas
+2026-01-28 10:50:46,657 | INFO | 🚀 Iniciando Dashboard via Streamlit...
+2026-01-28 10:50:48,706 | INFO | ✅ Estado de pausa por win rate resetado (meia-noite)
+2026-01-28 10:50:48,715 | INFO | ✅ Estado de pausa por win rate resetado (diário)
+2026-01-28 10:50:48,732 | WARNING | 🔄 Reset diário do Circuit Breaker
+2026-01-28 10:50:49,438 | INFO | ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-28 10:50:49,463 | INFO | ✅ RandomForest: treino concluído
+2026-01-28 10:50:49,742 | INFO | ✅ Dashboard iniciado com sucesso na porta 8501!
+2026-01-28 10:50:53,187 | INFO | 💾 Estado do ensemble salvo
+2026-01-28 10:50:53,210 | INFO | ✅ Treino diário ML finalizado
+2026-01-28 10:50:54,953 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:50:54,964 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:51:04,987 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.75x < 1.1x) - Entrada evitada.
+2026-01-28 10:51:04,995 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.75x < 1.1x) | Details: {'vol_ratio': np.float64(0.75), 'min_vol': 1.1, 'deficit': np.float64(0.35), 'period': 'Manhã'}
+2026-01-28 10:51:09,873 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.43x < 1.1x) - Entrada evitada.
+2026-01-28 10:51:09,875 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.43x < 1.1x) | Details: {'vol_ratio': np.float64(0.43), 'min_vol': 1.1, 'deficit': np.float64(0.67), 'period': 'Manhã'}
+2026-01-28 10:51:11,638 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 10:51:11,644 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 10:51:11,650 | INFO | 💧 ABEV3: Liquidez insuficiente (7,370,526 < 11,461,256)
+2026-01-28 10:51:13,593 | INFO | 🎯 B3SA3: Estratégia selecionada: ML_ENSEMBLE
+2026-01-28 10:51:24,827 | INFO | ✅ RandomForest carregado
+2026-01-28 10:51:24,868 | INFO | ✅ XGBoost carregado
+2026-01-28 10:51:25,189 | WARNING | Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2026-01-28 10:51:25,202 | INFO | ✅ LSTM carregado
+2026-01-28 10:51:27,702 | INFO | 📰 Polygon News: 0 notícias para B3SA3
+2026-01-28 10:52:08,429 | INFO | 🤖 ML ADVISORY B3SA3 | Conf: 61.6% | Dir: HOLD
+2026-01-28 10:52:12,634 | WARNING | ⚠️ B3SA3: Volume 0 insuficiente para lote de 100.
+2026-01-28 10:53:14,813 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:53:14,824 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:55:14,243 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:55:14,243 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:55:22,530 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:55:22,572 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:55:46,535 | WARNING | MT5 desconectado - Reconectando...
+2026-01-28 10:55:46,538 | INFO | MT5 reconectado com sucesso
+2026-01-28 10:55:57,095 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:55:57,103 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:56:05,048 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.43x < 1.1x) - Entrada evitada.
+2026-01-28 10:56:05,051 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.43x < 1.1x) | Details: {'vol_ratio': np.float64(0.43), 'min_vol': 1.1, 'deficit': np.float64(0.67), 'period': 'Manhã'}
+2026-01-28 10:56:07,740 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 10:56:07,764 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 10:56:07,808 | INFO | 💧 ABEV3: Liquidez insuficiente (6,947,605 < 11,461,256)
+2026-01-28 10:56:12,592 | INFO | 🎯 B3SA3: Estratégia selecionada: ML_ENSEMBLE
+2026-01-28 10:56:13,191 | INFO | ✅ RandomForest carregado
+2026-01-28 10:56:13,262 | INFO | ✅ XGBoost carregado
+2026-01-28 10:56:13,676 | WARNING | Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2026-01-28 10:56:13,711 | INFO | ✅ LSTM carregado
+2026-01-28 10:56:17,468 | INFO | 📰 Polygon News: 0 notícias para B3SA3
+2026-01-28 10:56:21,178 | INFO | 🤖 ML ADVISORY B3SA3 | Conf: 62.1% | Dir: HOLD
+2026-01-28 10:56:24,090 | INFO | 🎯 AXIA3: Estratégia selecionada: ML_ENSEMBLE
+2026-01-28 10:56:24,280 | INFO | ✅ RandomForest carregado
+2026-01-28 10:56:24,333 | INFO | ✅ XGBoost carregado
+2026-01-28 10:56:24,639 | WARNING | Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2026-01-28 10:56:24,675 | INFO | ✅ LSTM carregado
+2026-01-28 10:56:28,713 | INFO | 📰 Polygon News: 0 notícias para AXIA3
+2026-01-28 10:57:21,841 | INFO | 🤖 ML ADVISORY AXIA3 | Conf: 61.5% | Dir: HOLD
+2026-01-28 10:57:24,989 | WARNING | ⚠️ AXIA3: Volume 0 insuficiente para lote de 100.
+2026-01-28 10:58:11,644 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:58:11,694 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 10:59:28,957 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 10:59:28,959 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 10:59:35,193 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 10:59:35,205 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:00:48,196 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:00:48,213 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:00:51,256 | WARNING | MT5 desconectado - Reconectando...
+2026-01-28 11:00:51,260 | INFO | MT5 reconectado com sucesso
+2026-01-28 11:00:55,504 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:00:55,619 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:01:01,907 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:01:01,919 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:01:05,519 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:05,521 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:01:07,406 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:07,409 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:01:08,808 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:08,818 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:01:11,810 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:11,812 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:01:13,832 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:13,834 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:01:15,579 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:15,584 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:01:16,989 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:16,991 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:01:17,730 | INFO | 💧 TOTS3: Liquidez insuficiente (872,266 < 1,336,944)
+2026-01-28 11:01:18,442 | INFO | 💧 RDOR3: Liquidez insuficiente (1,314,654 < 2,256,996)
+2026-01-28 11:01:20,148 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:20,149 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:01:23,266 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:23,269 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:01:24,751 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:24,761 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:01:29,791 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:01:29,802 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:01:36,503 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:01:36,513 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:01:38,619 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.55x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:38,622 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.55x < 1.1x) | Details: {'vol_ratio': np.float64(0.55), 'min_vol': 1.1, 'deficit': np.float64(0.55), 'period': 'Manhã'}
+2026-01-28 11:01:40,206 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:40,209 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:01:41,649 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:41,651 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:01:42,956 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:42,958 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:01:44,367 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:44,369 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:01:45,642 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:45,644 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:01:47,041 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:47,043 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:01:48,309 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:48,311 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:01:48,317 | INFO | 💧 TOTS3: Liquidez insuficiente (865,072 < 1,336,944)
+2026-01-28 11:01:48,320 | INFO | 💧 RDOR3: Liquidez insuficiente (1,308,139 < 2,256,996)
+2026-01-28 11:01:49,956 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:49,959 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:01:51,859 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:51,863 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:01:53,375 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:01:53,377 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:01:58,421 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:01:58,432 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:02:04,755 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:02:04,763 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:02:06,955 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:06,959 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:02:08,495 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:08,497 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:02:10,165 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:10,175 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:02:11,828 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:11,830 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:02:13,396 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:13,397 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:02:14,813 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:14,815 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:02:16,677 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:16,680 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:02:16,688 | INFO | 💧 TOTS3: Liquidez insuficiente (867,271 < 1,336,944)
+2026-01-28 11:02:16,694 | INFO | 💧 RDOR3: Liquidez insuficiente (1,298,881 < 2,256,996)
+2026-01-28 11:02:18,828 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:18,838 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:02:20,464 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:20,467 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:02:21,824 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:21,826 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:02:26,845 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:02:26,874 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:02:33,443 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:02:33,451 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:02:35,221 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:35,245 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:02:37,307 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:37,309 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:02:37,319 | INFO | 💧 ABEV3: Liquidez insuficiente (6,548,625 < 11,461,256)
+2026-01-28 11:02:39,001 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:39,004 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:02:40,691 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:40,696 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:02:42,289 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:42,299 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:02:43,749 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:43,751 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:02:45,100 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:45,102 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:02:45,104 | INFO | 💧 TOTS3: Liquidez insuficiente (864,072 < 1,336,944)
+2026-01-28 11:02:45,112 | INFO | 💧 RDOR3: Liquidez insuficiente (1,301,125 < 2,256,996)
+2026-01-28 11:02:46,364 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:46,366 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:02:47,720 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:47,722 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:02:49,050 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:02:49,051 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:02:54,089 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:02:54,122 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:03:01,970 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:03:01,981 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:03:04,585 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.55x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:04,588 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.55x < 1.1x) | Details: {'vol_ratio': np.float64(0.55), 'min_vol': 1.1, 'deficit': np.float64(0.55), 'period': 'Manhã'}
+2026-01-28 11:03:06,720 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:06,724 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:03:08,226 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:08,230 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:03:08,238 | INFO | 💧 ABEV3: Liquidez insuficiente (6,557,707 < 11,461,256)
+2026-01-28 11:03:09,597 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:09,599 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:03:11,132 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:11,135 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:03:12,582 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:12,584 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:03:14,312 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:14,315 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:03:16,409 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:16,424 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:03:16,441 | INFO | 💧 TOTS3: Liquidez insuficiente (877,517 < 1,336,944)
+2026-01-28 11:03:16,446 | INFO | 💧 RDOR3: Liquidez insuficiente (1,312,954 < 2,256,996)
+2026-01-28 11:03:18,365 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:18,367 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:03:20,173 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:20,178 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:03:21,611 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:21,613 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:03:26,651 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:03:26,670 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:03:33,353 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:03:33,364 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:03:35,126 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:35,131 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:03:37,272 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:37,290 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:03:37,294 | INFO | 💧 ABEV3: Liquidez insuficiente (6,601,536 < 11,461,256)
+2026-01-28 11:03:39,305 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:39,310 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:03:40,782 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:40,784 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:03:42,219 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:42,221 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:03:43,809 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:43,811 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:03:45,328 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:45,339 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:03:45,343 | INFO | 💧 TOTS3: Liquidez insuficiente (880,768 < 1,336,944)
+2026-01-28 11:03:45,348 | INFO | 💧 RDOR3: Liquidez insuficiente (1,312,916 < 2,256,996)
+2026-01-28 11:03:46,756 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:46,757 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:03:48,203 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:48,205 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:03:49,878 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:03:49,881 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:03:54,952 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:03:54,971 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:04:02,574 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:04:02,584 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:04:05,388 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:05,390 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:04:07,322 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:07,324 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:04:07,333 | INFO | 💧 ABEV3: Liquidez insuficiente (6,611,562 < 11,461,256)
+2026-01-28 11:04:08,825 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:08,827 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:04:10,404 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:10,408 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:04:11,781 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:11,782 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:04:13,328 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:13,349 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:04:14,891 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:14,892 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:04:14,897 | INFO | 💧 RDOR3: Liquidez insuficiente (1,323,771 < 2,256,996)
+2026-01-28 11:04:16,314 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:16,318 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:04:17,614 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:17,615 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:04:18,948 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:18,952 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:04:24,002 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:04:24,034 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:04:30,237 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:04:30,246 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:04:31,967 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:31,975 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:04:33,469 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:33,471 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:04:33,481 | INFO | 💧 ABEV3: Liquidez insuficiente (6,647,602 < 11,461,256)
+2026-01-28 11:04:34,817 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:34,818 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:04:36,419 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:36,424 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:04:37,795 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:37,798 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:04:39,209 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:39,211 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:04:40,865 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:40,867 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:04:40,874 | INFO | 💧 RDOR3: Liquidez insuficiente (1,338,935 < 2,256,996)
+2026-01-28 11:04:42,204 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:42,207 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:04:43,504 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:43,507 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:04:45,120 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:45,125 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:04:50,188 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:04:50,209 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:04:57,385 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:04:57,396 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:04:59,811 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:04:59,813 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:05:01,108 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:01,110 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:05:01,125 | INFO | 💧 ABEV3: Liquidez insuficiente (6,794,286 < 11,461,256)
+2026-01-28 11:05:02,293 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:02,295 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:05:03,984 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:03,987 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:05:05,684 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:05,702 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:05:07,225 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:07,226 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:05:08,699 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:08,702 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:05:08,710 | INFO | 💧 RDOR3: Liquidez insuficiente (1,350,676 < 2,256,996)
+2026-01-28 11:05:10,460 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:10,470 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:05:11,924 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:11,934 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:05:13,445 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:13,449 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:05:18,490 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:05:18,506 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:05:25,815 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:05:25,826 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:05:28,022 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:28,024 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:05:29,418 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:29,420 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:05:29,426 | INFO | 💧 ABEV3: Liquidez insuficiente (6,750,481 < 11,461,256)
+2026-01-28 11:05:30,774 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:30,776 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:05:32,308 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:32,311 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:05:33,938 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:33,940 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:05:35,447 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:35,450 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:05:36,862 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:36,865 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:05:36,873 | INFO | 💧 RDOR3: Liquidez insuficiente (1,351,255 < 2,256,996)
+2026-01-28 11:05:38,270 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:38,271 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:05:39,742 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:39,745 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:05:41,120 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:41,122 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:05:46,166 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:05:46,223 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:05:53,021 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:05:53,028 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:05:55,637 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:55,639 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:05:57,116 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:57,118 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:05:57,130 | INFO | 💧 ABEV3: Liquidez insuficiente (6,710,225 < 11,461,256)
+2026-01-28 11:05:58,379 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:05:58,381 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:05:59,152 | INFO | 💧 VIVT3: Liquidez insuficiente (970,026 < 2,274,868)
+2026-01-28 11:06:00,510 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:00,511 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:06:01,767 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:01,768 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:06:03,034 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:03,036 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:06:04,334 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:04,335 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:06:04,343 | INFO | 💧 RDOR3: Liquidez insuficiente (1,437,242 < 2,256,996)
+2026-01-28 11:06:05,560 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:05,562 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:06:07,350 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:07,362 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:06:08,895 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:08,974 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:06:14,036 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:06:14,078 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:06:20,460 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:06:20,473 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:06:22,309 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.55x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:22,323 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.55x < 1.1x) | Details: {'vol_ratio': np.float64(0.55), 'min_vol': 1.1, 'deficit': np.float64(0.55), 'period': 'Manhã'}
+2026-01-28 11:06:23,869 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:23,872 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:06:25,207 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:25,214 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:06:25,225 | INFO | 💧 ABEV3: Liquidez insuficiente (6,665,449 < 11,461,256)
+2026-01-28 11:06:26,943 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:26,944 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:06:26,951 | INFO | 💧 VIVT3: Liquidez insuficiente (963,895 < 2,274,868)
+2026-01-28 11:06:28,541 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:28,545 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:06:30,076 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:30,078 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:06:31,414 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:31,422 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:06:32,664 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:32,668 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:06:32,678 | INFO | 💧 RDOR3: Liquidez insuficiente (1,432,722 < 2,256,996)
+2026-01-28 11:06:34,085 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:34,086 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:06:35,456 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:35,458 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:06:36,719 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:36,721 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:06:41,760 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:06:41,773 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:06:48,165 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:06:48,175 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:06:49,954 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.55x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:49,959 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.55x < 1.1x) | Details: {'vol_ratio': np.float64(0.55), 'min_vol': 1.1, 'deficit': np.float64(0.55), 'period': 'Manhã'}
+2026-01-28 11:06:51,502 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:51,504 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:06:52,647 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:52,649 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:06:52,652 | INFO | 💧 ABEV3: Liquidez insuficiente (6,682,064 < 11,461,256)
+2026-01-28 11:06:54,013 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:54,016 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:06:54,023 | INFO | 💧 VIVT3: Liquidez insuficiente (959,905 < 2,274,868)
+2026-01-28 11:06:55,411 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:55,415 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:06:56,689 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:56,690 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:06:58,047 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:58,049 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:06:59,359 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:06:59,364 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:06:59,372 | INFO | 💧 RDOR3: Liquidez insuficiente (1,423,834 < 2,256,996)
+2026-01-28 11:07:00,838 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:00,841 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:07:02,315 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:02,317 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:07:03,755 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:03,758 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:07:08,786 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:07:08,824 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:07:15,205 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:07:15,213 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:07:16,899 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:16,901 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:07:18,359 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:18,361 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:07:18,367 | INFO | 💧 ABEV3: Liquidez insuficiente (6,641,387 < 11,461,256)
+2026-01-28 11:07:19,620 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:19,622 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:07:19,632 | INFO | 💧 VIVT3: Liquidez insuficiente (953,820 < 2,274,868)
+2026-01-28 11:07:20,938 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:20,940 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:07:22,238 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:22,244 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:07:23,605 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:23,609 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:07:25,079 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:25,081 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:07:25,087 | INFO | 💧 RDOR3: Liquidez insuficiente (1,420,390 < 2,256,996)
+2026-01-28 11:07:26,747 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:26,749 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:07:28,325 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:28,328 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:07:29,719 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:29,721 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:07:34,764 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:07:34,776 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:07:40,745 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:07:40,755 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:07:41,973 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.55x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:41,978 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.55x < 1.1x) | Details: {'vol_ratio': np.float64(0.55), 'min_vol': 1.1, 'deficit': np.float64(0.55), 'period': 'Manhã'}
+2026-01-28 11:07:43,591 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:43,593 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:07:44,798 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:44,801 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:07:44,810 | INFO | 💧 ABEV3: Liquidez insuficiente (6,605,002 < 11,461,256)
+2026-01-28 11:07:46,766 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:46,768 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:07:46,775 | INFO | 💧 VIVT3: Liquidez insuficiente (948,073 < 2,274,868)
+2026-01-28 11:07:48,115 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:48,123 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:07:50,624 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:50,629 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:07:52,263 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:52,265 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:07:57,099 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:57,113 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:07:57,124 | INFO | 💧 TOTS3: Liquidez insuficiente (900,546 < 1,336,944)
+2026-01-28 11:07:57,135 | INFO | 💧 RDOR3: Liquidez insuficiente (1,412,315 < 2,256,996)
+2026-01-28 11:07:59,378 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:07:59,393 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:08:01,345 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:01,346 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:08:03,307 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:03,309 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:08:08,334 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:08:08,370 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:08:15,875 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:08:15,892 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:08:18,562 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.55x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:18,573 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.55x < 1.1x) | Details: {'vol_ratio': np.float64(0.55), 'min_vol': 1.1, 'deficit': np.float64(0.55), 'period': 'Manhã'}
+2026-01-28 11:08:20,676 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:20,679 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:08:22,547 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:22,549 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:08:22,556 | INFO | 💧 ABEV3: Liquidez insuficiente (6,550,374 < 11,461,256)
+2026-01-28 11:08:24,681 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:24,688 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:08:24,701 | INFO | 💧 VIVT3: Liquidez insuficiente (948,522 < 2,274,868)
+2026-01-28 11:08:26,221 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:26,223 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:08:28,454 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:28,456 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:08:30,358 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:30,360 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:08:31,872 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:31,874 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:08:31,881 | INFO | 💧 TOTS3: Liquidez insuficiente (894,773 < 1,336,944)
+2026-01-28 11:08:31,884 | INFO | 💧 RDOR3: Liquidez insuficiente (1,410,186 < 2,256,996)
+2026-01-28 11:08:34,312 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:34,314 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:08:36,287 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:36,289 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:08:39,105 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:39,107 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:08:44,305 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:08:44,354 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:08:50,435 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:08:50,446 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:08:54,604 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:54,606 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:08:56,603 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:08:56,608 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:08:56,615 | INFO | 💧 ABEV3: Liquidez insuficiente (6,659,097 < 11,461,256)
+2026-01-28 11:09:02,194 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:02,197 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:09:02,205 | INFO | 💧 VIVT3: Liquidez insuficiente (981,303 < 2,274,868)
+2026-01-28 11:09:03,994 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:03,996 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:09:06,039 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:06,041 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:09:07,806 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:07,843 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:09:09,538 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:09,548 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:09:09,552 | INFO | 💧 TOTS3: Liquidez insuficiente (894,545 < 1,336,944)
+2026-01-28 11:09:09,560 | INFO | 💧 RDOR3: Liquidez insuficiente (1,399,811 < 2,256,996)
+2026-01-28 11:09:11,403 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:11,404 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:09:13,134 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:13,138 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:09:14,665 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:14,671 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:09:19,718 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:09:19,741 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:09:26,364 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:09:26,375 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:09:28,221 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.55x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:28,223 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.55x < 1.1x) | Details: {'vol_ratio': np.float64(0.55), 'min_vol': 1.1, 'deficit': np.float64(0.55), 'period': 'Manhã'}
+2026-01-28 11:09:29,560 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:29,562 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:09:31,217 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:31,221 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:09:31,227 | INFO | 💧 ABEV3: Liquidez insuficiente (6,605,654 < 11,461,256)
+2026-01-28 11:09:32,946 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:32,957 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:09:32,963 | INFO | 💧 VIVT3: Liquidez insuficiente (974,674 < 2,274,868)
+2026-01-28 11:09:34,328 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:34,331 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:09:35,788 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:35,790 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:09:37,523 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:37,527 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:09:39,236 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:39,237 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:09:39,240 | INFO | 💧 TOTS3: Liquidez insuficiente (888,190 < 1,336,944)
+2026-01-28 11:09:39,259 | INFO | 💧 RDOR3: Liquidez insuficiente (1,397,702 < 2,256,996)
+2026-01-28 11:09:40,834 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:40,839 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:09:42,473 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:42,475 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:09:44,108 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:44,112 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:09:49,150 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:09:49,190 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:09:55,766 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:09:55,774 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:09:57,602 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:57,604 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:09:59,103 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:09:59,112 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:09:59,119 | INFO | 💧 ABEV3: Liquidez insuficiente (6,585,781 < 11,461,256)
+2026-01-28 11:10:00,367 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:00,368 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:10:00,371 | INFO | 💧 VIVT3: Liquidez insuficiente (978,514 < 2,274,868)
+2026-01-28 11:10:01,645 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:01,646 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:10:03,183 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:03,188 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:10:05,670 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:05,672 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:10:08,535 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:08,538 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:10:08,550 | INFO | 💧 TOTS3: Liquidez insuficiente (887,992 < 1,336,944)
+2026-01-28 11:10:08,554 | INFO | 💧 RDOR3: Liquidez insuficiente (1,411,924 < 2,256,996)
+2026-01-28 11:10:10,794 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:10,797 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:10:12,643 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:12,646 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:10:14,318 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:14,320 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:10:19,353 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:10:19,393 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:10:25,726 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:10:25,736 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:10:27,417 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.55x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:27,419 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.55x < 1.1x) | Details: {'vol_ratio': np.float64(0.55), 'min_vol': 1.1, 'deficit': np.float64(0.55), 'period': 'Manhã'}
+2026-01-28 11:10:29,281 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:29,283 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:10:31,124 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:31,126 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:10:31,133 | INFO | 💧 ABEV3: Liquidez insuficiente (6,537,737 < 11,461,256)
+2026-01-28 11:10:32,463 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:32,466 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:10:32,476 | INFO | 💧 VIVT3: Liquidez insuficiente (980,617 < 2,274,868)
+2026-01-28 11:10:33,828 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:33,829 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:10:35,150 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:35,152 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:10:36,556 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:36,582 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:10:37,958 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:37,960 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:10:37,967 | INFO | 💧 TOTS3: Liquidez insuficiente (889,559 < 1,336,944)
+2026-01-28 11:10:37,975 | INFO | 💧 RDOR3: Liquidez insuficiente (1,403,311 < 2,256,996)
+2026-01-28 11:10:39,308 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:39,310 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:10:40,814 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:40,831 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:10:42,710 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:42,724 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:10:47,814 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:10:47,857 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:10:54,739 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:10:54,748 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:10:57,152 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.55x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:57,157 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.55x < 1.1x) | Details: {'vol_ratio': np.float64(0.55), 'min_vol': 1.1, 'deficit': np.float64(0.55), 'period': 'Manhã'}
+2026-01-28 11:10:59,310 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:10:59,314 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:11:01,244 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:01,246 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:11:01,252 | INFO | 💧 ABEV3: Liquidez insuficiente (6,495,667 < 11,461,256)
+2026-01-28 11:11:02,563 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:02,565 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:11:02,571 | INFO | 💧 VIVT3: Liquidez insuficiente (992,612 < 2,274,868)
+2026-01-28 11:11:03,899 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:03,901 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:11:05,404 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:05,406 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:11:06,851 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:06,853 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:11:08,590 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:08,594 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:11:08,608 | INFO | 💧 TOTS3: Liquidez insuficiente (892,028 < 1,336,944)
+2026-01-28 11:11:08,613 | INFO | 💧 RDOR3: Liquidez insuficiente (1,397,372 < 2,256,996)
+2026-01-28 11:11:10,216 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:10,217 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:11:11,611 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:11,613 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:11:12,958 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:12,959 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:11:17,974 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:11:17,986 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:11:24,366 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:11:24,439 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:11:27,351 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.55x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:27,353 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.55x < 1.1x) | Details: {'vol_ratio': np.float64(0.55), 'min_vol': 1.1, 'deficit': np.float64(0.55), 'period': 'Manhã'}
+2026-01-28 11:11:29,236 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:29,238 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:11:31,070 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:31,073 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:11:31,084 | INFO | 💧 ABEV3: Liquidez insuficiente (6,475,762 < 11,461,256)
+2026-01-28 11:11:32,827 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:32,829 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:11:32,838 | INFO | 💧 VIVT3: Liquidez insuficiente (992,658 < 2,274,868)
+2026-01-28 11:11:36,395 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:36,397 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:11:39,222 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:39,225 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:11:42,270 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:42,274 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:11:44,219 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:44,221 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:11:44,231 | INFO | 💧 TOTS3: Liquidez insuficiente (899,282 < 1,336,944)
+2026-01-28 11:11:44,236 | INFO | 💧 RDOR3: Liquidez insuficiente (1,389,905 < 2,256,996)
+2026-01-28 11:11:46,014 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:46,016 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:11:48,232 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:48,234 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:11:50,025 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:11:50,029 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:11:55,054 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:11:55,077 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:12:03,349 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:12:03,360 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:12:06,319 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.55x < 1.1x) - Entrada evitada.
+2026-01-28 11:12:06,329 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.55x < 1.1x) | Details: {'vol_ratio': np.float64(0.55), 'min_vol': 1.1, 'deficit': np.float64(0.55), 'period': 'Manhã'}
+2026-01-28 11:12:08,254 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:12:08,257 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:12:10,574 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:12:10,593 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:12:10,600 | INFO | 💧 ABEV3: Liquidez insuficiente (6,431,802 < 11,461,256)
+2026-01-28 11:12:13,790 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:12:13,801 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:12:13,820 | INFO | 💧 VIVT3: Liquidez insuficiente (997,226 < 2,274,868)
+2026-01-28 11:12:19,189 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:12:19,191 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:12:22,432 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:12:22,434 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:12:25,717 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:12:25,723 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:12:28,809 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:12:28,810 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:12:28,819 | INFO | 💧 TOTS3: Liquidez insuficiente (905,708 < 1,336,944)
+2026-01-28 11:12:28,871 | INFO | 💧 RDOR3: Liquidez insuficiente (1,386,650 < 2,256,996)
+2026-01-28 11:12:31,927 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:12:31,935 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:12:43,623 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:12:43,691 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:12:48,056 | INFO | 🛑 COGN3: 🛑 Volume fraco para Manhã (0.59x < 1.1x) - Entrada evitada.
+2026-01-28 11:12:48,060 | INFO | ❌ [COGN3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.59x < 1.1x) | Details: {'vol_ratio': np.float64(0.59), 'min_vol': 1.1, 'deficit': np.float64(0.51), 'period': 'Manhã'}
+2026-01-28 11:12:53,168 | INFO | 💾 Forçando salvamento de dados ML...
+2026-01-28 11:12:53,210 | INFO | ✅ Dados ML salvos com sucesso.
+2026-01-28 11:13:01,282 | WARNING | Nenhum contrato ativo para WIN$, fallback → WING26
+2026-01-28 11:13:01,297 | WARNING | Nenhum contrato ativo para WDO$, fallback → WDOG26
+2026-01-28 11:13:04,376 | INFO | 🛑 VALE3: 🛑 Volume fraco para Manhã (0.55x < 1.1x) - Entrada evitada.
+2026-01-28 11:13:04,380 | INFO | ❌ [VALE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.55x < 1.1x) | Details: {'vol_ratio': np.float64(0.55), 'min_vol': 1.1, 'deficit': np.float64(0.55), 'period': 'Manhã'}
+2026-01-28 11:13:09,519 | INFO | 🛑 ITUB4: 🛑 Volume fraco para Manhã (0.34x < 1.1x) - Entrada evitada.
+2026-01-28 11:13:09,631 | INFO | ❌ [ITUB4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.34x < 1.1x) | Details: {'vol_ratio': np.float64(0.34), 'min_vol': 1.1, 'deficit': np.float64(0.76), 'period': 'Manhã'}
+2026-01-28 11:13:23,976 | INFO | 🛑 BBDC4: 🛑 Volume fraco para Manhã (0.62x < 1.1x) - Entrada evitada.
+2026-01-28 11:13:24,006 | INFO | ❌ [BBDC4] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.62x < 1.1x) | Details: {'vol_ratio': np.float64(0.62), 'min_vol': 1.1, 'deficit': np.float64(0.48), 'period': 'Manhã'}
+2026-01-28 11:13:24,051 | INFO | 💧 ABEV3: Liquidez insuficiente (6,337,120 < 11,461,256)
+2026-01-28 11:13:28,612 | INFO | 🛑 B3SA3: 🛑 Volume fraco para Manhã (0.58x < 1.1x) - Entrada evitada.
+2026-01-28 11:13:28,614 | INFO | ❌ [B3SA3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.58x < 1.1x) | Details: {'vol_ratio': np.float64(0.58), 'min_vol': 1.1, 'deficit': np.float64(0.52), 'period': 'Manhã'}
+2026-01-28 11:13:28,651 | INFO | 💧 VIVT3: Liquidez insuficiente (987,159 < 2,274,868)
+2026-01-28 11:13:34,963 | INFO | 🛑 VBBR3: 🛑 Volume fraco para Manhã (0.84x < 1.1x) - Entrada evitada.
+2026-01-28 11:13:34,992 | INFO | ❌ [VBBR3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.84x < 1.1x) | Details: {'vol_ratio': np.float64(0.84), 'min_vol': 1.1, 'deficit': np.float64(0.26), 'period': 'Manhã'}
+2026-01-28 11:13:45,559 | INFO | 🛑 BPAC11: 🛑 Volume fraco para Manhã (0.44x < 1.1x) - Entrada evitada.
+2026-01-28 11:13:45,573 | INFO | ❌ [BPAC11] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.44x < 1.1x) | Details: {'vol_ratio': np.float64(0.44), 'min_vol': 1.1, 'deficit': np.float64(0.66), 'period': 'Manhã'}
+2026-01-28 11:13:50,769 | INFO | 🛑 RAIL3: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:13:50,791 | INFO | ❌ [RAIL3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}
+2026-01-28 11:13:56,315 | INFO | 🛑 WEGE3: 🛑 Volume fraco para Manhã (0.38x < 1.1x) - Entrada evitada.
+2026-01-28 11:13:56,342 | INFO | ❌ [WEGE3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.38x < 1.1x) | Details: {'vol_ratio': np.float64(0.38), 'min_vol': 1.1, 'deficit': np.float64(0.72), 'period': 'Manhã'}
+2026-01-28 11:13:56,388 | INFO | 💧 TOTS3: Liquidez insuficiente (912,824 < 1,336,944)
+2026-01-28 11:13:56,427 | INFO | 💧 RDOR3: Liquidez insuficiente (1,410,973 < 2,256,996)
+2026-01-28 11:14:06,505 | INFO | 🛑 PRIO3: 🛑 Volume fraco para Manhã (1.08x < 1.1x) - Entrada evitada.
+2026-01-28 11:14:06,518 | INFO | ❌ [PRIO3] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (1.08x < 1.1x) | Details: {'vol_ratio': np.float64(1.08), 'min_vol': 1.1, 'deficit': np.float64(0.02), 'period': 'Manhã'}
+2026-01-28 11:14:26,787 | INFO | 🛑 AURA33: 🛑 Volume fraco para Manhã (0.96x < 1.1x) - Entrada evitada.
+2026-01-28 11:14:26,843 | INFO | ❌ [AURA33] [VolumeTimeFilter] 🛑 Volume fraco para Manhã (0.96x < 1.1x) | Details: {'vol_ratio': np.float64(0.96), 'min_vol': 1.1, 'deficit': np.float64(0.14), 'period': 'Manhã'}

@@ -1,1 +1,7 @@
 2026-01-28 10:22:47,481 | CRITICAL | bot | ❌ Inicialização abortada. Ativos indisponíveis no MT5: WSPH26: sem barras 15
+2026-01-28 10:37:54,289 | ERROR | validation | Erro Kelly RAIL3: cannot access local variable 'mt5' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3v5\validation.py", line 423, in calculate_kelly_position_size
+    df = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_M15, 60)
+                                       ^^^
+UnboundLocalError: cannot access local variable 'mt5' where it is not associated with a value
