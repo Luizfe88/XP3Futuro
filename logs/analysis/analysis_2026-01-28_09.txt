@@ -1,0 +1,1873 @@
+📊 XP3 PRO FOREX - LOG DE ANÁLISES
+📅 Janela: 28/01/2026 09:00–12:00
+================================================================================
+
+2026-01-28 10:25:24 | INFO | analysis | symbol=PETR4 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:25:24 | PETR4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███████░░░] 80%
+📈 Indicadores:
+   • RSI: 73.8
+   • ADX: 35.2
+   • Spread: R$ 0.0000 (0.027%)
+   • Volume: 1.28x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:25:26 | INFO | analysis | symbol=VALE3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:25:26 | VALE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 56.6
+   • ADX: 16.9
+   • Spread: R$ 0.0000 (0.047%)
+   • Volume: 0.69x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+2026-01-28 10:25:29 | INFO | analysis | symbol=ITUB4 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:25:29 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 64.4
+   • ADX: 32.1
+   • Spread: R$ 0.0000 (0.043%)
+   • Volume: 0.42x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:25:31 | INFO | analysis | symbol=BBDC4 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:25:31 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 64.8
+   • ADX: 28.4
+   • Spread: R$ 0.0000 (0.093%)
+   • Volume: 0.66x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:25:33 | INFO | analysis | symbol=ABEV3 | signal=SELL | strategy=ELITE_V5.5 | score=20 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:25:33 | ABEV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 20 | Score filtrado: 20
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██░░░░░░░░] 20% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 49.0
+   • ADX: 17.3
+   • Spread: R$ 0.0000 (0.067%)
+   • Volume: 0.26x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+2026-01-28 10:25:35 | INFO | analysis | symbol=BBAS3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:25:35 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 64.7
+   • ADX: 21.0
+   • Spread: R$ 0.0000 (0.080%)
+   • Volume: 0.74x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:25:39 | INFO | analysis | symbol=B3SA3 | signal=BUY | strategy=ELITE_V5.5 | score=75 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:25:39 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 61.1
+   • ADX: 27.4
+   • Spread: R$ 0.0000 (0.123%)
+   • Volume: 0.36x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:25:45 | INFO | analysis | symbol=VIVT3 | signal=BUY | strategy=ELITE_V5.5 | score=55 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:25:45 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 75.3
+   • ADX: 16.0
+   • Spread: R$ 0.0000 (0.080%)
+   • Volume: 0.16x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+2026-01-28 10:25:46 | INFO | analysis | symbol=AXIA3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:25:46 | AXIA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 52.7
+   • ADX: 17.6
+   • Spread: R$ 0.0000 (0.018%)
+   • Volume: 0.91x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+2026-01-28 10:25:48 | INFO | analysis | symbol=SUZB3 | signal=SELL | strategy=ELITE_V5.5 | score=45 | rejected=True | reason=Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+--------------------------------------------------------------------------------
+🕐 10:25:48 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 45
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 45%
+📈 Indicadores:
+   • RSI: 36.3
+   • ADX: 28.5
+   • Spread: R$ 0.0000 (0.059%)
+   • Volume: 0.97x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+2026-01-28 10:25:49 | INFO | analysis | symbol=VBBR3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=⏳ Aguardando Gatilho (Score: 100 | Forçado: False)
+--------------------------------------------------------------------------------
+🕐 10:25:49 | VBBR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 45.7
+   • ADX: 22.5
+   • Spread: R$ 0.0000 (0.069%)
+   • Volume: 1.78x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: False)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: False)
+----------------------------------------
+
+2026-01-28 10:25:49 | INFO | analysis | symbol=BPAC11 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+--------------------------------------------------------------------------------
+🕐 10:25:49 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 57.4
+   • ADX: 43.0
+   • Spread: R$ 0.0000 (0.048%)
+   • Volume: 1.08x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+2026-01-28 10:25:50 | INFO | analysis | symbol=RAIL3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=⏳ Aguardando Gatilho (Score: 100 | Forçado: False)
+--------------------------------------------------------------------------------
+🕐 10:25:50 | RAIL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 41.9
+   • ADX: 21.9
+   • Spread: R$ 0.0000 (0.133%)
+   • Volume: 0.83x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: False)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: False)
+----------------------------------------
+
+2026-01-28 10:25:52 | INFO | analysis | symbol=WEGE3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:25:52 | WEGE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 46.5
+   • ADX: 21.5
+   • Spread: R$ 0.0000 (0.095%)
+   • Volume: 0.66x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:25:53 | INFO | analysis | symbol=TOTS3 | signal=BUY | strategy=ELITE_V5.5 | score=35 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:25:53 | TOTS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 35 | Score filtrado: 35
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 35% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 73.4
+   • ADX: 8.9
+   • Spread: R$ 0.0000 (0.085%)
+   • Volume: 0.28x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+2026-01-28 10:25:54 | INFO | analysis | symbol=RDOR3 | signal=SELL | strategy=ELITE_V5.5 | score=20 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:25:54 | RDOR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 20 | Score filtrado: 20
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██░░░░░░░░] 20%
+📈 Indicadores:
+   • RSI: 48.6
+   • ADX: 23.4
+   • Spread: R$ 0.0000 (0.091%)
+   • Volume: 0.18x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+2026-01-28 10:25:56 | INFO | analysis | symbol=PRIO3 | signal=SELL | strategy=ELITE_V5.5 | score=45 | rejected=True | reason=Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+--------------------------------------------------------------------------------
+🕐 10:25:56 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 45
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 45%
+📈 Indicadores:
+   • RSI: 37.8
+   • ADX: 20.4
+   • Spread: R$ 0.0000 (0.059%)
+   • Volume: 1.06x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+2026-01-28 10:25:57 | INFO | analysis | symbol=AURA33 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:25:57 | AURA33 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███████░░░] 80%
+📈 Indicadores:
+   • RSI: 74.5
+   • ADX: 27.1
+   • Spread: R$ 0.0000 (0.065%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:25:58 | INFO | analysis | symbol=COGN3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:25:58 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 58.1
+   • ADX: 21.4
+   • Spread: R$ 0.0000 (0.432%)
+   • Volume: 0.77x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:25:59 | INFO | analysis | symbol=RAIZ4 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:25:59 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 76.0
+   • ADX: 84.8
+   • Spread: R$ 0.0000 (1.010%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:26:21 | INFO | analysis | symbol=PETR4 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:26:21 | PETR4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███████░░░] 80%
+📈 Indicadores:
+   • RSI: 75.2
+   • ADX: 35.2
+   • Spread: R$ 0.0000 (0.027%)
+   • Volume: 1.28x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:26:22 | INFO | analysis | symbol=VALE3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:26:22 | VALE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 59.3
+   • ADX: 16.9
+   • Spread: R$ 0.0000 (0.035%)
+   • Volume: 0.69x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+2026-01-28 10:26:23 | INFO | analysis | symbol=ITUB4 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:26:23 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 65.7
+   • ADX: 32.3
+   • Spread: R$ 0.0000 (0.065%)
+   • Volume: 0.42x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:26:23 | INFO | analysis | symbol=BBDC4 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:26:23 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 28.4
+   • Spread: R$ 0.0000 (0.046%)
+   • Volume: 0.66x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:26:24 | INFO | analysis | symbol=ABEV3 | signal=SELL | strategy=ELITE_V5.5 | score=20 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:26:24 | ABEV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 20 | Score filtrado: 20
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██░░░░░░░░] 20% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 50.9
+   • ADX: 17.3
+   • Spread: R$ 0.0000 (0.134%)
+   • Volume: 0.26x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+2026-01-28 10:26:27 | INFO | analysis | symbol=BBAS3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:26:27 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 67.1
+   • ADX: 21.2
+   • Spread: R$ 0.0000 (0.040%)
+   • Volume: 0.73x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:26:27 | INFO | analysis | symbol=B3SA3 | signal=BUY | strategy=ELITE_V5.5 | score=75 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:26:27 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 61.1
+   • ADX: 27.4
+   • Spread: R$ 0.0000 (0.062%)
+   • Volume: 0.36x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:26:30 | INFO | analysis | symbol=VIVT3 | signal=BUY | strategy=ELITE_V5.5 | score=55 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:26:30 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 73.6
+   • ADX: 16.0
+   • Spread: R$ 0.0000 (0.080%)
+   • Volume: 0.16x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+2026-01-28 10:26:31 | INFO | analysis | symbol=AXIA3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+--------------------------------------------------------------------------------
+🕐 10:26:31 | AXIA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 61.9
+   • ADX: 21.1
+   • Spread: R$ 0.0000 (0.074%)
+   • Volume: 1.01x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+2026-01-28 10:26:33 | INFO | analysis | symbol=SUZB3 | signal=SELL | strategy=ELITE_V5.5 | score=45 | rejected=True | reason=Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+--------------------------------------------------------------------------------
+🕐 10:26:33 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 45
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 45%
+📈 Indicadores:
+   • RSI: 35.9
+   • ADX: 28.5
+   • Spread: R$ 0.0000 (0.059%)
+   • Volume: 0.97x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+2026-01-28 10:26:35 | INFO | analysis | symbol=VBBR3 | signal=BUY | strategy=ELITE_V5.5 | score=75 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:26:35 | VBBR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 25.1
+   • Spread: R$ 0.0000 (0.034%)
+   • Volume: 0.16x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:26:36 | INFO | analysis | symbol=BPAC11 | signal=BUY | strategy=ELITE_V5.5 | score=75 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:26:36 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 69.4
+   • ADX: 45.0
+   • Spread: R$ 0.0000 (0.064%)
+   • Volume: 0.15x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:26:39 | INFO | analysis | symbol=RAIL3 | signal=SELL | strategy=ELITE_V5.5 | score=45 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:26:39 | RAIL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 45
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 45% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 20.9
+   • Spread: R$ 0.0000 (0.133%)
+   • Volume: 0.41x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+2026-01-28 10:26:39 | INFO | analysis | symbol=WEGE3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:26:39 | WEGE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 46.5
+   • ADX: 21.5
+   • Spread: R$ 0.0000 (0.057%)
+   • Volume: 0.66x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:26:40 | INFO | analysis | symbol=TOTS3 | signal=BUY | strategy=ELITE_V5.5 | score=35 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:26:40 | TOTS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 35 | Score filtrado: 35
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 35% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 73.4
+   • ADX: 8.9
+   • Spread: R$ 0.0000 (0.085%)
+   • Volume: 0.28x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+2026-01-28 10:26:41 | INFO | analysis | symbol=RDOR3 | signal=NONE | strategy=ELITE_V5.5 | score=20 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:26:41 | RDOR3 | ⚠️ LIQUIDEZ BAIXA
+--------------------------------------------------------------------------------
+📊 Score real: 20 | Score filtrado: 20
+📊 Sinal: NONE | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██░░░░░░░░] 20% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 23.1
+   • Spread: R$ 0.0000 (0.113%)
+   • Volume: 0.18x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+2026-01-28 10:26:41 | INFO | analysis | symbol=PRIO3 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:26:41 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███████░░░] 80%
+📈 Indicadores:
+   • RSI: 76.6
+   • ADX: 25.3
+   • Spread: R$ 0.0000 (0.079%)
+   • Volume: 1.38x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:26:42 | INFO | analysis | symbol=AURA33 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:26:42 | AURA33 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███████░░░] 80%
+📈 Indicadores:
+   • RSI: 75.8
+   • ADX: 27.1
+   • Spread: R$ 0.0000 (0.073%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:26:45 | INFO | analysis | symbol=COGN3 | signal=SELL | strategy=ELITE_V5.5 | score=45 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:26:45 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 40
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 62.1
+   • ADX: 19.7
+   • Spread: R$ 0.0000 (0.215%)
+   • Volume: 0.76x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+2026-01-28 10:26:46 | INFO | analysis | symbol=RAIZ4 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:26:46 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 77.8
+   • ADX: 84.9
+   • Spread: R$ 0.0000 (1.000%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:27:09 | INFO | analysis | symbol=VALE3 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:27:09 | VALE3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 59.3
+   • ADX: 16.9
+   • Spread: R$ 0.0300 (0.035%)
+   • Volume: 0.69x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+2026-01-28 10:27:33 | INFO | analysis | symbol=ITUB4 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:27:33 | ITUB4 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 65.7
+   • ADX: 32.3
+   • Spread: R$ 0.0300 (0.065%)
+   • Volume: 0.42x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:27:48 | INFO | analysis | symbol=BBDC4 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:27:48 | BBDC4 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 28.4
+   • Spread: R$ 0.0100 (0.046%)
+   • Volume: 0.66x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:27:55 | INFO | analysis | symbol=ABEV3 | signal=SELL | strategy=LIQUIDITY | score=0 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:27:55 | ABEV3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 0 | Score filtrado: 0
+📊 Sinal: SELL | Estratégia: LIQUIDITY
+📊 Filtros de Setup: [░░░░░░░░░░] 0% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 0.0
+   • ADX: 0.0
+   • Spread: R$ 0.0000 (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+2026-01-28 10:28:13 | INFO | analysis | symbol=BBAS3 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:28:13 | BBAS3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 67.1
+   • ADX: 21.2
+   • Spread: R$ 0.0100 (0.040%)
+   • Volume: 0.73x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:28:17 | INFO | analysis | symbol=B3SA3 | signal=BUY | strategy=LIQUIDITY | score=0 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:28:17 | B3SA3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 0 | Score filtrado: 0
+📊 Sinal: BUY | Estratégia: LIQUIDITY
+📊 Filtros de Setup: [░░░░░░░░░░] 0% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 0.0
+   • ADX: 0.0
+   • Spread: R$ 0.0000 (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+2026-01-28 10:28:24 | INFO | analysis | symbol=AXIA3 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=🛑 Volume fraco para Manhã (1.01x < 1.2x)
+--------------------------------------------------------------------------------
+🕐 10:28:24 | AXIA3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 61.9
+   • ADX: 21.1
+   • Spread: R$ 0.0400 (0.074%)
+   • Volume: 1.01x
+   • Tendência EMA: N/A
+💬 Motivo: 🛑 Volume fraco para Manhã (1.01x < 1.2x)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: 🛑 Volume fraco para Manhã (1.01x < 1.2x)
+----------------------------------------
+
+2026-01-28 10:28:28 | INFO | analysis | symbol=SUZB3 | signal=SELL | strategy=ORDER_FLOW_VETO | score=0 | rejected=True | reason=Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+--------------------------------------------------------------------------------
+🕐 10:28:28 | SUZB3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 0 | Score filtrado: 0
+📊 Sinal: SELL | Estratégia: ORDER_FLOW_VETO
+📊 Filtros de Setup: [░░░░░░░░░░] 0%
+📈 Indicadores:
+   • RSI: 35.9
+   • ADX: 28.5
+   • Spread: R$ 0.0300 (0.059%)
+   • Volume: 0.97x
+   • Tendência EMA: N/A
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+2026-01-28 10:28:40 | INFO | analysis | symbol=VBBR3 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=75 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:28:40 | VBBR3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 25.1
+   • Spread: R$ 0.0100 (0.034%)
+   • Volume: 0.16x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:28:48 | INFO | analysis | symbol=BPAC11 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=75 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:28:48 | BPAC11 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 69.4
+   • ADX: 45.0
+   • Spread: R$ 0.0400 (0.064%)
+   • Volume: 0.15x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:28:55 | INFO | analysis | symbol=RAIL3 | signal=SELL | strategy=ORDER_FLOW_VETO | score=0 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:28:55 | RAIL3 | ⚠️ LIQUIDEZ BAIXA
+--------------------------------------------------------------------------------
+📊 Score real: 0 | Score filtrado: 0
+📊 Sinal: SELL | Estratégia: ORDER_FLOW_VETO
+📊 Filtros de Setup: [░░░░░░░░░░] 0% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 20.9
+   • Spread: R$ 0.0200 (0.133%)
+   • Volume: 0.41x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+
+2026-01-28 10:29:00 | INFO | analysis | symbol=WEGE3 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:00 | WEGE3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 46.5
+   • ADX: 21.5
+   • Spread: R$ 0.0300 (0.057%)
+   • Volume: 0.66x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:29:04 | INFO | analysis | symbol=COGN3 | signal=SELL | strategy=ORDER_FLOW_VETO | score=0 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:29:04 | COGN3 | ⚠️ LIQUIDEZ BAIXA
+--------------------------------------------------------------------------------
+📊 Score real: 0 | Score filtrado: 0
+📊 Sinal: SELL | Estratégia: ORDER_FLOW_VETO
+📊 Filtros de Setup: [░░░░░░░░░░] 0% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 62.1
+   • ADX: 19.7
+   • Spread: R$ 0.0100 (0.215%)
+   • Volume: 0.76x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+2026-01-28 10:29:16 | INFO | analysis | symbol=PETR4 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:29:16 | PETR4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███████░░░] 80%
+📈 Indicadores:
+   • RSI: 74.5
+   • ADX: 35.3
+   • Spread: R$ 0.0000 (0.027%)
+   • Volume: 1.28x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:29:17 | INFO | analysis | symbol=VALE3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:29:17 | VALE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 60.2
+   • ADX: 17.2
+   • Spread: R$ 0.0000 (0.059%)
+   • Volume: 0.69x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+2026-01-28 10:29:17 | INFO | analysis | symbol=ITUB4 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:17 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 65.5
+   • ADX: 32.6
+   • Spread: R$ 0.0000 (0.065%)
+   • Volume: 0.42x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:29:18 | INFO | analysis | symbol=BBDC4 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:18 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 67.8
+   • ADX: 28.7
+   • Spread: R$ 0.0000 (0.092%)
+   • Volume: 0.66x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:29:18 | INFO | analysis | symbol=ABEV3 | signal=SELL | strategy=ELITE_V5.5 | score=20 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:29:18 | ABEV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 20 | Score filtrado: 20
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██░░░░░░░░] 20% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 51.9
+   • ADX: 17.3
+   • Spread: R$ 0.0000 (0.134%)
+   • Volume: 0.26x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+2026-01-28 10:29:19 | INFO | analysis | symbol=BBAS3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:19 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 67.9
+   • ADX: 21.4
+   • Spread: R$ 0.0000 (0.040%)
+   • Volume: 0.73x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:29:19 | INFO | analysis | symbol=B3SA3 | signal=BUY | strategy=ELITE_V5.5 | score=75 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:19 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 61.8
+   • ADX: 27.6
+   • Spread: R$ 0.0000 (0.062%)
+   • Volume: 0.36x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:29:19 | INFO | analysis | symbol=VIVT3 | signal=BUY | strategy=ELITE_V5.5 | score=55 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:29:19 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 76.7
+   • ADX: 16.3
+   • Spread: R$ 0.0000 (0.080%)
+   • Volume: 0.16x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+2026-01-28 10:29:20 | INFO | analysis | symbol=AXIA3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+--------------------------------------------------------------------------------
+🕐 10:29:20 | AXIA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 60.5
+   • ADX: 21.1
+   • Spread: R$ 0.0000 (0.018%)
+   • Volume: 1.01x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+2026-01-28 10:29:20 | INFO | analysis | symbol=SUZB3 | signal=SELL | strategy=ELITE_V5.5 | score=45 | rejected=True | reason=Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+--------------------------------------------------------------------------------
+🕐 10:29:20 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 45
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 45%
+📈 Indicadores:
+   • RSI: 38.8
+   • ADX: 28.5
+   • Spread: R$ 0.0000 (0.039%)
+   • Volume: 0.97x
+   • Tendência EMA: DOWN
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+2026-01-28 10:29:20 | INFO | analysis | symbol=VBBR3 | signal=BUY | strategy=ELITE_V5.5 | score=75 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:20 | VBBR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 65.2
+   • ADX: 25.4
+   • Spread: R$ 0.0000 (0.035%)
+   • Volume: 0.16x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:29:21 | INFO | analysis | symbol=BPAC11 | signal=BUY | strategy=ELITE_V5.5 | score=55 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:29:21 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 55
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [█████░░░░░] 55%
+📈 Indicadores:
+   • RSI: 71.6
+   • ADX: 45.2
+   • Spread: R$ 0.0000 (0.064%)
+   • Volume: 0.15x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+2026-01-28 10:29:21 | INFO | analysis | symbol=RAIL3 | signal=SELL | strategy=ELITE_V5.5 | score=45 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:21 | RAIL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 45
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 45% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 20.9
+   • Spread: R$ 0.0000 (0.133%)
+   • Volume: 0.41x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+2026-01-28 10:29:21 | INFO | analysis | symbol=WEGE3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:21 | WEGE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 46.2
+   • ADX: 21.5
+   • Spread: R$ 0.0000 (0.095%)
+   • Volume: 0.66x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:29:21 | INFO | analysis | symbol=TOTS3 | signal=BUY | strategy=ELITE_V5.5 | score=35 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:29:21 | TOTS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 35 | Score filtrado: 35
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 35% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 73.6
+   • ADX: 9.1
+   • Spread: R$ 0.0000 (0.106%)
+   • Volume: 0.28x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+2026-01-28 10:29:21 | INFO | analysis | symbol=RDOR3 | signal=NONE | strategy=ELITE_V5.5 | score=20 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:21 | RDOR3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 20 | Score filtrado: 20
+📊 Sinal: NONE | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██░░░░░░░░] 20%
+📈 Indicadores:
+   • RSI: 50.9
+   • ADX: 23.2
+   • Spread: R$ 0.0000 (0.090%)
+   • Volume: 0.18x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+2026-01-28 10:29:22 | INFO | analysis | symbol=PRIO3 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:29:22 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███████░░░] 80%
+📈 Indicadores:
+   • RSI: 76.8
+   • ADX: 25.4
+   • Spread: R$ 0.0000 (0.079%)
+   • Volume: 1.38x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:29:22 | INFO | analysis | symbol=AURA33 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:29:22 | AURA33 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 71.8
+   • ADX: 27.1
+   • Spread: R$ 0.0000 (0.123%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:29:22 | INFO | analysis | symbol=COGN3 | signal=SELL | strategy=ELITE_V5.5 | score=45 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:29:22 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 40
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 62.1
+   • ADX: 19.7
+   • Spread: R$ 0.0000 (0.432%)
+   • Volume: 0.76x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+2026-01-28 10:29:22 | INFO | analysis | symbol=RAIZ4 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:29:22 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 76.9
+   • ADX: 84.9
+   • Spread: R$ 0.0000 (1.000%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:29:30 | INFO | analysis | symbol=VALE3 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:29:30 | VALE3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 60.2
+   • ADX: 17.2
+   • Spread: R$ 0.0500 (0.059%)
+   • Volume: 0.69x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+2026-01-28 10:29:34 | INFO | analysis | symbol=ITUB4 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:34 | ITUB4 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 65.5
+   • ADX: 32.6
+   • Spread: R$ 0.0300 (0.065%)
+   • Volume: 0.42x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:29:38 | INFO | analysis | symbol=BBDC4 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:38 | BBDC4 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 67.8
+   • ADX: 28.7
+   • Spread: R$ 0.0200 (0.092%)
+   • Volume: 0.66x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:29:38 | INFO | analysis | symbol=ABEV3 | signal=SELL | strategy=LIQUIDITY | score=0 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:29:38 | ABEV3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 0 | Score filtrado: 0
+📊 Sinal: SELL | Estratégia: LIQUIDITY
+📊 Filtros de Setup: [░░░░░░░░░░] 0% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 0.0
+   • ADX: 0.0
+   • Spread: R$ 0.0000 (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+2026-01-28 10:29:42 | INFO | analysis | symbol=BBAS3 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:42 | BBAS3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 67.9
+   • ADX: 21.4
+   • Spread: R$ 0.0100 (0.040%)
+   • Volume: 0.73x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:29:42 | INFO | analysis | symbol=B3SA3 | signal=BUY | strategy=LIQUIDITY | score=0 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:29:42 | B3SA3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 0 | Score filtrado: 0
+📊 Sinal: BUY | Estratégia: LIQUIDITY
+📊 Filtros de Setup: [░░░░░░░░░░] 0% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 0.0
+   • ADX: 0.0
+   • Spread: R$ 0.0000 (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+2026-01-28 10:29:45 | INFO | analysis | symbol=AXIA3 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=🛑 Volume fraco para Manhã (1.01x < 1.2x)
+--------------------------------------------------------------------------------
+🕐 10:29:45 | AXIA3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 60.5
+   • ADX: 21.1
+   • Spread: R$ 0.0100 (0.018%)
+   • Volume: 1.01x
+   • Tendência EMA: N/A
+💬 Motivo: 🛑 Volume fraco para Manhã (1.01x < 1.2x)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: 🛑 Volume fraco para Manhã (1.01x < 1.2x)
+----------------------------------------
+
+2026-01-28 10:29:48 | INFO | analysis | symbol=SUZB3 | signal=SELL | strategy=ORDER_FLOW_VETO | score=0 | rejected=True | reason=Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+--------------------------------------------------------------------------------
+🕐 10:29:48 | SUZB3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 0 | Score filtrado: 0
+📊 Sinal: SELL | Estratégia: ORDER_FLOW_VETO
+📊 Filtros de Setup: [░░░░░░░░░░] 0%
+📈 Indicadores:
+   • RSI: 38.8
+   • ADX: 28.5
+   • Spread: R$ 0.0200 (0.039%)
+   • Volume: 0.97x
+   • Tendência EMA: N/A
+💬 Motivo: Configuração de Risco: Falta cruzamento MACD e Volume abaixo do ideal...
+
+2026-01-28 10:29:50 | INFO | analysis | symbol=VBBR3 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=75 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:50 | VBBR3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 65.2
+   • ADX: 25.4
+   • Spread: R$ 0.0100 (0.035%)
+   • Volume: 0.16x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:29:52 | INFO | analysis | symbol=RAIL3 | signal=SELL | strategy=ORDER_FLOW_VETO | score=0 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:52 | RAIL3 | ⚠️ LIQUIDEZ BAIXA
+--------------------------------------------------------------------------------
+📊 Score real: 0 | Score filtrado: 0
+📊 Sinal: SELL | Estratégia: ORDER_FLOW_VETO
+📊 Filtros de Setup: [░░░░░░░░░░] 0% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 50.0
+   • ADX: 20.9
+   • Spread: R$ 0.0200 (0.133%)
+   • Volume: 0.41x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+
+2026-01-28 10:29:54 | INFO | analysis | symbol=WEGE3 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:29:54 | WEGE3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 46.2
+   • ADX: 21.5
+   • Spread: R$ 0.0500 (0.095%)
+   • Volume: 0.66x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:29:56 | INFO | analysis | symbol=COGN3 | signal=SELL | strategy=ORDER_FLOW_VETO | score=0 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:29:56 | COGN3 | ⚠️ LIQUIDEZ BAIXA
+--------------------------------------------------------------------------------
+📊 Score real: 0 | Score filtrado: 0
+📊 Sinal: SELL | Estratégia: ORDER_FLOW_VETO
+📊 Filtros de Setup: [░░░░░░░░░░] 0% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 62.1
+   • ADX: 19.7
+   • Spread: R$ 0.0200 (0.432%)
+   • Volume: 0.76x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+2026-01-28 10:30:07 | INFO | analysis | symbol=PETR4 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:30:07 | PETR4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███████░░░] 80%
+📈 Indicadores:
+   • RSI: 74.3
+   • ADX: 36.3
+   • Spread: R$ 0.0000 (0.027%)
+   • Volume: 1.23x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:30:07 | INFO | analysis | symbol=VALE3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:30:07 | VALE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 60.3
+   • ADX: 16.8
+   • Spread: R$ 0.0000 (0.059%)
+   • Volume: 0.76x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+2026-01-28 10:30:07 | INFO | analysis | symbol=ITUB4 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:30:07 | ITUB4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 67.6
+   • ADX: 33.4
+   • Spread: R$ 0.0000 (0.043%)
+   • Volume: 0.45x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:30:08 | INFO | analysis | symbol=BBDC4 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:30:08 | BBDC4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 67.7
+   • ADX: 29.6
+   • Spread: R$ 0.0000 (0.092%)
+   • Volume: 0.50x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:30:08 | INFO | analysis | symbol=ABEV3 | signal=SELL | strategy=ELITE_V5.5 | score=20 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:30:08 | ABEV3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 20 | Score filtrado: 20
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██░░░░░░░░] 20% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 56.1
+   • ADX: 17.5
+   • Spread: R$ 0.0000 (0.133%)
+   • Volume: 0.19x
+   • Tendência EMA: DOWN
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+2026-01-28 10:30:08 | INFO | analysis | symbol=BBAS3 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:30:08 | BBAS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███████░░░] 80%
+📈 Indicadores:
+   • RSI: 71.4
+   • ADX: 22.2
+   • Spread: R$ 0.0000 (0.080%)
+   • Volume: 0.74x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:30:08 | INFO | analysis | symbol=B3SA3 | signal=BUY | strategy=ELITE_V5.5 | score=75 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:30:08 | B3SA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 27.8
+   • Spread: R$ 0.0000 (0.061%)
+   • Volume: 0.37x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:30:08 | INFO | analysis | symbol=VIVT3 | signal=BUY | strategy=ELITE_V5.5 | score=55 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:30:08 | VIVT3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 55 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 81.0
+   • ADX: 18.1
+   • Spread: R$ 0.0000 (0.080%)
+   • Volume: 0.11x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+2026-01-28 10:30:08 | INFO | analysis | symbol=AXIA3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+--------------------------------------------------------------------------------
+🕐 10:30:08 | AXIA3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 62.4
+   • ADX: 22.9
+   • Spread: R$ 0.0000 (0.018%)
+   • Volume: 1.13x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+2026-01-28 10:30:08 | INFO | analysis | symbol=SUZB3 | signal=SELL | strategy=ELITE_V5.5 | score=45 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:30:08 | SUZB3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 45 | Score filtrado: 45
+📊 Sinal: SELL | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 45%
+📈 Indicadores:
+   • RSI: 44.0
+   • ADX: 28.0
+   • Spread: R$ 0.0000 (0.078%)
+   • Volume: 0.69x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+2026-01-28 10:30:09 | INFO | analysis | symbol=VBBR3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+--------------------------------------------------------------------------------
+🕐 10:30:09 | VBBR3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 64.8
+   • ADX: 26.5
+   • Spread: R$ 0.0000 (0.069%)
+   • Volume: 0.94x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+2026-01-28 10:30:09 | INFO | analysis | symbol=BPAC11 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:30:09 | BPAC11 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███████░░░] 80%
+📈 Indicadores:
+   • RSI: 71.4
+   • ADX: 46.5
+   • Spread: R$ 0.0000 (0.048%)
+   • Volume: 0.46x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:30:09 | INFO | analysis | symbol=RAIL3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+--------------------------------------------------------------------------------
+🕐 10:30:09 | RAIL3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 54.1
+   • ADX: 20.1
+   • Spread: R$ 0.0000 (0.066%)
+   • Volume: 2.64x
+   • Tendência EMA: UP
+💬 Motivo: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: ⏳ Aguardando Gatilho (Score: 100 | Forçado: True)
+----------------------------------------
+
+2026-01-28 10:30:10 | INFO | analysis | symbol=WEGE3 | signal=BUY | strategy=ELITE_V5.5 | score=75 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:30:10 | WEGE3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 48.4
+   • ADX: 22.1
+   • Spread: R$ 0.0000 (0.114%)
+   • Volume: 0.27x
+   • Tendência EMA: UP
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:30:11 | INFO | analysis | symbol=TOTS3 | signal=BUY | strategy=ELITE_V5.5 | score=35 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:30:11 | TOTS3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 35 | Score filtrado: 35
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 35% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 74.9
+   • ADX: 10.0
+   • Spread: R$ 0.0000 (0.106%)
+   • Volume: 0.25x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+
+2026-01-28 10:30:11 | INFO | analysis | symbol=RDOR3 | signal=NONE | strategy=ELITE_V5.5 | score=20 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:30:11 | RDOR3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 20 | Score filtrado: 20
+📊 Sinal: NONE | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [██░░░░░░░░] 20%
+📈 Indicadores:
+   • RSI: 57.2
+   • ADX: 22.4
+   • Spread: R$ 0.0000 (0.090%)
+   • Volume: 0.13x
+   • Tendência EMA: DOWN
+💬 Motivo: Volume institucional insuficiente
+
+2026-01-28 10:30:11 | INFO | analysis | symbol=PRIO3 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:30:11 | PRIO3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███████░░░] 80%
+📈 Indicadores:
+   • RSI: 75.9
+   • ADX: 27.7
+   • Spread: R$ 0.0000 (0.020%)
+   • Volume: 1.50x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:30:11 | INFO | analysis | symbol=AURA33 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:30:11 | AURA33 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███████░░░] 80%
+📈 Indicadores:
+   • RSI: 76.4
+   • ADX: 28.1
+   • Spread: R$ 0.0000 (0.082%)
+   • Volume: 1.15x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:30:12 | INFO | analysis | symbol=COGN3 | signal=BUY | strategy=ELITE_V5.5 | score=100 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:30:12 | COGN3 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [███░░░░░░░] 40% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 59.3
+   • ADX: 19.1
+   • Spread: R$ 0.0000 (0.216%)
+   • Volume: 0.75x
+   • Tendência EMA: UP
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+2026-01-28 10:30:12 | INFO | analysis | symbol=RAIZ4 | signal=BUY | strategy=ELITE_V5.5 | score=80 | rejected=True | reason=Aguardando correção (RSI Esticado)
+--------------------------------------------------------------------------------
+🕐 10:30:12 | RAIZ4 | ⏳ AGUARDANDO SETUP
+--------------------------------------------------------------------------------
+📊 Score real: 80 | Score filtrado: 80
+📊 Sinal: BUY | Estratégia: ELITE_V5.5
+📊 Filtros de Setup: [████░░░░░░] 50% ⚠️ Spread muito alto para operar
+📈 Indicadores:
+   • RSI: 74.1
+   • ADX: 84.3
+   • Spread: R$ 0.0000 (1.010%)
+   • Volume: 3.00x
+   • Tendência EMA: UP
+💬 Motivo: Aguardando correção (RSI Esticado)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Aguardando correção (RSI Esticado)
+----------------------------------------
+
+2026-01-28 10:30:20 | INFO | analysis | symbol=VALE3 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:30:20 | VALE3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 40
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [███░░░░░░░] 40% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 60.3
+   • ADX: 16.8
+   • Spread: R$ 0.0500 (0.059%)
+   • Volume: 0.76x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Sem força de tendência (ADX Baixo)
+----------------------------------------
+
+2026-01-28 10:30:34 | INFO | analysis | symbol=ITUB4 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:30:34 | ITUB4 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 67.6
+   • ADX: 33.4
+   • Spread: R$ 0.0200 (0.043%)
+   • Volume: 0.45x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:30:38 | INFO | analysis | symbol=BBDC4 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=100 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:30:38 | BBDC4 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 100 | Score filtrado: 100
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [████████░░] 100%
+📈 Indicadores:
+   • RSI: 67.7
+   • ADX: 29.6
+   • Spread: R$ 0.0200 (0.092%)
+   • Volume: 0.50x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+
+2026-01-28 10:30:39 | INFO | analysis | symbol=ABEV3 | signal=SELL | strategy=LIQUIDITY | score=0 | rejected=True | reason=Sem força de tendência (ADX Baixo)
+--------------------------------------------------------------------------------
+🕐 10:30:39 | ABEV3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 0 | Score filtrado: 0
+📊 Sinal: SELL | Estratégia: LIQUIDITY
+📊 Filtros de Setup: [░░░░░░░░░░] 0% (Score reduzido: tendência fraca)
+📈 Indicadores:
+   • RSI: 0.0
+   • ADX: 0.0
+   • Spread: R$ 0.0000 (0.000%)
+   • Volume: 0.00x
+   • Tendência EMA: N/A
+💬 Motivo: Sem força de tendência (ADX Baixo)
+
+2026-01-28 10:32:07 | INFO | analysis | symbol=B3SA3 | signal=BUY | strategy=VOLUME_TIMEFILTER | score=75 | rejected=True | reason=Volume institucional insuficiente
+--------------------------------------------------------------------------------
+🕐 10:32:07 | B3SA3 | ❌ REJEITADA
+--------------------------------------------------------------------------------
+📊 Score real: 75 | Score filtrado: 75
+📊 Sinal: BUY | Estratégia: VOLUME_TIMEFILTER
+📊 Filtros de Setup: [██████░░░░] 75%
+📈 Indicadores:
+   • RSI: 66.7
+   • ADX: 27.8
+   • Spread: R$ 0.0100 (0.061%)
+   • Volume: 0.37x
+   • Tendência EMA: N/A
+💬 Motivo: Volume institucional insuficiente
+----------------------------------------
+⚠️  [ALERTA] Sinal Forte detectado, mas ordem não enviada por: Volume institucional insuficiente
+----------------------------------------
+

@@ -1,6 +1,8 @@
+#config.py
 import os
 import json
 import yaml
+from datetime import time
 from pathlib import Path
 from typing import Dict, Any
 import logging
@@ -239,6 +241,21 @@ MAX_PER_SUBSETOR = {
     "CORRETORAS": 1,  # Máx 1 corretora (B3SA3, BPAC11)
     "SEGUROS": 1,  # Máx 1 seguro (IRBR3, PSSA3)
 }
+
+# ===========================
+# HORÁRIOS ESPECÍFICOS
+# ===========================
+HORARIOS_OPERACAO = {
+    "FUTUROS": [(time(9, 0), time(18, 0))],
+    "ACOES": [(time(10, 0), time(17, 0))],
+    "AMBOS": [(time(10, 0), time(17, 0))],
+    "SO_FUTUROS": [(time(9, 0), time(10, 0)), (time(17, 0), time(18, 0))]
+}
+
+# ===========================
+# PIRÂMIDE: PARCIAL APÓS +2R
+# ===========================
+PYRAMID_PARTIAL_CLOSE = 0.3
 
 # 🆕 Mapa de subsetores
 SUBSETOR_MAP = {

@@ -1,3 +1,4 @@
+#bot.py
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
@@ -2153,6 +2154,7 @@ logger = setup_logging()
 TIMEFRAME_BASE = mt5.TIMEFRAME_M15
 TIMEFRAME_MACRO = getattr(mt5, f"TIMEFRAME_{config.MACRO_TIMEFRAME}", mt5.TIMEFRAME_H1)
 
+CURRENT_MODE = "AMBOS"
 def _get_config_symbols_for_validation():
     syms = []
     try:
@@ -4329,6 +4331,11 @@ def try_enter_position(symbol, side, risk_factor=1.0):
             pnl_pct=0,
             reason="Abertura de Posição",
         )
+        try:
+            if is_pyramiding:
+                utils.apply_partial_exit_after_pyr(symbol)
+        except Exception:
+            logger.exception(f"Erro ao aplicar parcial após pirâmide em {symbol}")
         
         # ✅ LOG: SUCESSO!
         daily_logger.log_analysis(
@@ -5027,6 +5034,10 @@ def fast_loop():
             # ============================================
             new_indicators, new_top15 = build_portfolio_and_top15()
             update_bot_bridge()
+            try:
+                utils.check_and_apply_dynamic_trailing(interval_sec=300)
+            except Exception:
+                logger.exception("Erro ao aplicar trailing dinâmico")
 
             # ============================================
             # 3️⃣ VERIFICA CIRCUIT BREAKER
@@ -5073,6 +5084,10 @@ def fast_loop():
                     symbols_to_scan.append(current_win)
                 if current_wdo and current_wdo not in symbols_to_scan:
                     symbols_to_scan.append(current_wdo)
+                try:
+                    symbols_to_scan = [s for s in symbols_to_scan if utils.is_time_allowed_for_symbol(s, CURRENT_MODE)]
+                except Exception:
+                    pass
 
                 for sym in symbols_to_scan:
                     ind_data = bot_state.get_indicators(sym)
@@ -5816,6 +5831,18 @@ def main():
     Ponto de entrada principal com operação contínua
     """
     global current_trading_day
+    global CURRENT_MODE
+    try:
+        import argparse
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--mode", type=str, default="ambos")
+        args, _ = parser.parse_known_args()
+        CURRENT_MODE = str(args.mode or "ambos").upper()
+        if CURRENT_MODE not in ("AMBOS","FUTUROS","ACOES","SO_FUTUROS"):
+            CURRENT_MODE = "AMBOS"
+        logger.info(f"Modo de operação: {CURRENT_MODE}")
+    except Exception:
+        CURRENT_MODE = "AMBOS"
 
     clear_screen()
     print(f"{C_CYAN}===================================================={C_RESET}")
@@ -5831,6 +5858,12 @@ def main():
     # 1. Inicialização do MetaTrader 5
     if not mt5.initialize(path=config.MT5_TERMINAL_PATH):
         logger.critical(f"❌ Falha ao conectar no MT5: {config.MT5_TERMINAL_PATH}")
+        try:
+            mapping = utils.discover_all_futures()
+            if mapping:
+                logger.warning(f"Mapeamentos de futuros via fallback: {mapping}")
+        except Exception as e:
+            logger.warning(f"Falha no fallback de mapeamento de futuros: {e}")
         return
     else:
         logger.info(f"✅ Conectado ao MT5 correto: {config.MT5_TERMINAL_PATH}")
@@ -5847,6 +5880,12 @@ def main():
         utils.ensure_market_watch_symbols()
     except Exception as e:
         logger.error(f"Erro ao sincronizar Market Watch: {e}")
+    try:
+        fm = utils.discover_all_futures()
+        if fm:
+            logger.info(f"Futuros mapeados: {fm}")
+    except Exception as e:
+        logger.warning(f"Erro ao descobrir futuros: {e}")
 
     # ✅ BACKTEST INICIAL (Verifica se devemos pausar logo no início)
     try:

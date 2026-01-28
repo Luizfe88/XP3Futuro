@@ -7,7 +7,7 @@ import logging
 import config
 import utils
 from rejection_logger import log_trade_rejection
-from datetime import datetime
+from datetime import datetime, timedelta
 
 logger = logging.getLogger(__name__)
 _last_sl_time: dict[str, datetime] = {}
@@ -618,3 +618,42 @@ def validate_and_create_order(symbol: str, side: str, volume: float,
     except Exception as e:
         logger.error(f"❌ Erro inesperado na validação: {e}")
         return None, f"Erro: {str(e)}"
+
+def check_reentry_after_profit(symbol: str, side: str, planned_volume: float) -> tuple[bool, float, str]:
+    try:
+        start = datetime.now() - timedelta(days=90)
+        end = datetime.now()
+        deals = mt5.history_deals_get(start, end) or []
+        last = None
+        for d in deals:
+            try:
+                if d.symbol == symbol and d.entry == mt5.DEAL_ENTRY_OUT:
+                    t = datetime.fromtimestamp(d.time)
+                    if last is None or t > datetime.fromtimestamp(last.time):
+                        last = d
+            except Exception:
+                continue
+        if not last or float(getattr(last, "profit", 0.0)) <= 0.0:
+            return False, 0.0, "Sem lucro anterior"
+        ind = utils.get_cached_indicators(symbol, mt5.TIMEFRAME_M15, 180)
+        if not isinstance(ind, dict) or ind.get("error"):
+            return False, 0.0, "Sem indicadores"
+        from ml_signals import MLSignalPredictor
+        predictor = MLSignalPredictor()
+        res = predictor.predict(symbol=symbol, indicators=ind)
+        conf = float(res.get("confidence", 0.0))
+        direction = str(res.get("direction", "HOLD"))
+        if conf >= 0.80 and direction == side:
+            info = mt5.symbol_info(symbol)
+            adj = planned_volume * 0.70
+            if info:
+                if utils.is_future(symbol):
+                    adj = max(int(info.volume_min or 1), min(int(adj), int(info.volume_max or adj)))
+                else:
+                    adj = round(adj / 100) * 100
+                    adj = max(float(info.volume_min or 100.0), min(float(adj), float(info.volume_max or adj)))
+            return True, float(adj), "OK"
+        return False, 0.0, "Sinal ML insuficiente ou direção divergente"
+    except Exception as e:
+        logger.warning(f"Erro reentry {symbol}: {e}")
+        return False, 0.0, "Erro na checagem"

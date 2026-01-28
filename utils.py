@@ -1,3 +1,4 @@
+#utils.py
 import functools
 print = functools.partial(print, flush=True)
 print("[DEBUG] Importando time...", flush=True); import time; print("[DEBUG] time importado.", flush=True)
@@ -205,44 +206,26 @@ def get_polygon_rates_fallback(symbol: str, timeframe, count: int) -> Optional[p
 
 def resolve_current_symbol(root_symbol: str) -> Optional[str]:
     try:
-        if mt5 is None:
-            return None
         base = root_symbol.replace("$", "")
-        group = f"*{base}*"
-        syms = mt5.symbols_get(group) or []
-        def _is_generic(name: str) -> bool:
-            if "$" in name or "@" in name:
-                info = mt5.symbol_info(name)
-                if not info or not getattr(info, "selectable", False):
-                    return True
-            return False
-        def _exp(name: str):
-            info = mt5.symbol_info(name)
-            exp = getattr(info, "expiration_time", None)
-            return exp
-        def _valid_future(name: str) -> bool:
-            import re
-            if _is_generic(name):
-                return False
-            if not name.startswith(base):
-                return False
-            if not re.search(rf"^{base}[FGHJKMNQUVXZ]\d{{2}}$", name):
-                return False
-            info = mt5.symbol_info(name)
-            if not info or not getattr(info, "selectable", False):
-                return False
-            return True
-        candidates = [getattr(s, "name", "") for s in syms if getattr(s, "name", "")]
-        candidates = [n for n in candidates if _valid_future(n)]
-        today = datetime.now()
-        candidates = [(n, _exp(n)) for n in candidates]
-        candidates = [(n, e) for n, e in candidates if isinstance(e, datetime) and e > today]
+        candidates = get_futures_candidates(base)
         if not candidates:
-            return None
-        candidates.sort(key=lambda x: x[1])
-        return candidates[0][0]
+            fb = _fallback_future_symbol(base)
+            if fb:
+                logger.warning(f"Nenhum contrato ativo para {base}$, fallback → {fb}")
+            return fb
+        candidates_sorted = sorted(candidates, key=lambda c: (-calculate_contract_score(c), c.get("days_to_exp", 9999)))
+        chosen = candidates_sorted[0]["symbol"]
+        log_mapping_details(base, candidates_sorted, chosen)
+        return chosen
     except Exception:
-        return None
+        try:
+            base = root_symbol.replace("$", "")
+            fb = _fallback_future_symbol(base)
+            if fb:
+                logger.warning(f"Erro mapping {base}$, fallback → {fb}")
+            return fb
+        except Exception:
+            return None
 
 def _expiration_str(symbol: str) -> str:
     try:
@@ -392,12 +375,18 @@ def map_generic_to_specific(generic: str) -> Optional[str]:
         return None
 def discover_all_futures() -> dict:
     try:
-        generics = ["WIN$", "WDO$", "SMALL$", "WSP$"]
+        generics = ["WIN$", "WDO$", "SMALL$", "WSP$", "BGI$"]
         result = {}
         for g in generics:
             s = map_generic_to_specific(g)
             if s:
                 result[g] = s
+            else:
+                base = g.replace("$", "")
+                fb = _fallback_future_symbol(base)
+                if fb:
+                    logger.warning(f"Fallback aplicado para {g} → {fb}")
+                    result[g] = fb
         if result:
             setattr(config, "ACTIVE_FUTURES", result)
             sector = getattr(config, "SECTOR_MAP", {})
@@ -420,9 +409,6 @@ def discover_all_futures() -> dict:
         return result
     except Exception:
         return {}
-    except Exception as e:
-        logger.error(f"Erro Polygon Fallback ({symbol}): {e}")
-        return None
 
 def monitor_futures_rollover():
     try:
@@ -465,6 +451,7 @@ def initiate_rollover(generic_code: str, confirm_fn=None) -> bool:
             mapping[generic_code] = next_symbol
             setattr(config, "ACTIVE_FUTURES", mapping)
             return True
+ 
         pos = positions[0]
         side = "BUY" if pos.type == mt5.POSITION_TYPE_BUY else "SELL"
         volume = float(pos.volume)
@@ -549,6 +536,32 @@ def enforce_stopout_prevention():
                     mt5.order_send(req)
     except Exception:
         pass
+
+def _month_letter(m: int) -> str:
+    letters = {1: "F", 2: "G", 3: "H", 4: "J", 5: "K", 6: "M", 7: "N", 8: "Q", 9: "U", 10: "V", 11: "X", 12: "Z"}
+    return letters.get(int(m), "Z")
+
+def _next_even_month(now: datetime) -> tuple[int, int]:
+    m = now.month
+    y = now.year
+    if m % 2 == 0:
+        return (m, y)
+    nm = m + 1
+    if nm > 12:
+        return (2, y + 1)
+    return (nm, y)
+
+def _fallback_future_symbol(base_code: str) -> Optional[str]:
+    try:
+        now = datetime.now()
+        if base_code in ("WIN", "WDO", "WSP", "BGI", "IND", "DOL"):
+            m, y = _next_even_month(now)
+            letter = _month_letter(m)
+            yy = str(y)[-2:]
+            return f"{base_code}{letter}{yy}"
+        return None
+    except Exception:
+        return None
 
 def check_b3_circuit_breaker() -> str:
     try:
@@ -1433,6 +1446,44 @@ def get_atr(df: pd.DataFrame, period: int = 14) -> Optional[float]:
     atr = tr.ewm(alpha=1 / period, adjust=False).mean()
     return float(atr.iloc[-1])
 
+def get_psar(df: pd.DataFrame, af: float = 0.02, af_max: float = 0.2) -> Optional[float]:
+    try:
+        if df is None or len(df) < 5:
+            return None
+        high = df["high"].to_numpy()
+        low = df["low"].to_numpy()
+        n = len(high)
+        psar = [low[0]]
+        uptrend = True
+        ep = high[0]
+        sar = low[0]
+        step = af
+        for i in range(1, n):
+            prev_sar = sar + step * (ep - sar)
+            if uptrend:
+                sar = min(prev_sar, low[i - 1], low[i - 2] if i >= 2 else low[i - 1])
+                if high[i] > ep:
+                    ep = high[i]
+                    step = min(step + af, af_max)
+                if low[i] < sar:
+                    uptrend = False
+                    sar = ep
+                    ep = low[i]
+                    step = af
+            else:
+                sar = max(prev_sar, high[i - 1], high[i - 2] if i >= 2 else high[i - 1])
+                if low[i] < ep:
+                    ep = low[i]
+                    step = min(step + af, af_max)
+                if high[i] > sar:
+                    uptrend = True
+                    sar = ep
+                    ep = high[i]
+                    step = af
+            psar.append(sar)
+        return float(psar[-1])
+    except Exception:
+        return None
 def get_adx(df: pd.DataFrame, period: int = 14) -> Optional[float]:
     if len(df) < period * 2:
         return None
@@ -3137,104 +3188,68 @@ def detect_calendar_spread(base: str = "WIN") -> dict:
         return {"ok": False}
 
 def apply_trailing_stop(symbol: str, current_price: float, atr: float):
-    """
-    Trailing Stop baseado em estrutura (Price Action) + proteção ATR
-    """
-
     if atr is None or atr <= 0:
         return
-
     with mt5_lock:
         info = mt5.symbol_info(symbol)
         positions = mt5.positions_get(symbol=symbol)
-
     if not info or not positions:
         return
-
     tick_size = info.point
     min_stop_distance = info.trade_stops_level * tick_size
-
     df = get_fast_rates(symbol, TIMEFRAME_BASE)
-    if not is_valid_dataframe(df) or len(df) < 3:
+    if not is_valid_dataframe(df) or len(df) < 5:
         return
-
+    psar_val = get_psar(df)
     for pos in positions:
         try:
-            # Ativa trailing apenas após lucro >= +1.2R
-            # R inicial: distância até SL atual (fallback 2*ATR)
             initial_r = abs(pos.price_open - (pos.sl or pos.price_open)) or (atr * 2.0)
             if initial_r <= 0:
                 initial_r = atr * 2.0
             profit_move = (current_price - pos.price_open) if pos.type == mt5.POSITION_TYPE_BUY else (pos.price_open - current_price)
             r_ratio = profit_move / initial_r if initial_r > 0 else 0.0
-            if r_ratio < 1.2:
-                continue
         except Exception:
             continue
-
-        # =========================
-        # 🟢 BUY
-        # =========================
-        if pos.type == mt5.POSITION_TYPE_BUY:
-
-            candle_sl = min(df["low"].iloc[-2], df["low"].iloc[-3]) - tick_size
-
-            # 🛡️ Proteção ATR mínima diferenciada por ativo
-            trail_mult = 2.0 if is_future(symbol) else 1.5
-            atr_sl = current_price - (atr * trail_mult)
-            candidate_sl = max(candle_sl, atr_sl)
-
-            # Respeita distância mínima do preço atual
-            if current_price - candidate_sl < min_stop_distance:
-                continue
-
-            if pos.sl and candidate_sl <= pos.sl:
-                continue
-
-            new_sl = round(candidate_sl / tick_size) * tick_size
-
-        # =========================
-        # 🔴 SELL
-        # =========================
-        elif pos.type == mt5.POSITION_TYPE_SELL:
-
-            candle_sl = max(df["high"].iloc[-2], df["high"].iloc[-3]) + tick_size
-            trail_mult = 2.0 if is_future(symbol) else 1.5
-            atr_sl = current_price + (atr * trail_mult)
-            candidate_sl = min(candle_sl, atr_sl)
-
-            if candidate_sl - current_price < min_stop_distance:
-                continue
-
-            if pos.sl and candidate_sl >= pos.sl:
-                continue
-
-            new_sl = round(candidate_sl / tick_size) * tick_size
-
+        new_sl = None
+        if r_ratio >= 2.0:
+            half_profit_sl = (pos.price_open + profit_move * 0.5) if pos.type == mt5.POSITION_TYPE_BUY else (pos.price_open - profit_move * 0.5)
+            if psar_val is not None:
+                if pos.type == mt5.POSITION_TYPE_BUY:
+                    candidate_sl = max(half_profit_sl, psar_val)
+                    if (current_price - candidate_sl) >= min_stop_distance and (not pos.sl or candidate_sl > pos.sl):
+                        new_sl = candidate_sl
+                else:
+                    candidate_sl = min(half_profit_sl, psar_val)
+                    if (candidate_sl - current_price) >= min_stop_distance and (not pos.sl or candidate_sl < pos.sl):
+                        new_sl = candidate_sl
+            else:
+                if pos.type == mt5.POSITION_TYPE_BUY:
+                    if (current_price - half_profit_sl) >= min_stop_distance and (not pos.sl or half_profit_sl > pos.sl):
+                        new_sl = half_profit_sl
+                else:
+                    if (half_profit_sl - current_price) >= min_stop_distance and (not pos.sl or half_profit_sl < pos.sl):
+                        new_sl = half_profit_sl
+        elif r_ratio >= 1.0:
+            be_offset = 0.2 * atr
+            be_sl = (pos.price_open + be_offset) if pos.type == mt5.POSITION_TYPE_BUY else (pos.price_open - be_offset)
+            if pos.type == mt5.POSITION_TYPE_BUY:
+                if (current_price - be_sl) >= min_stop_distance and (not pos.sl or be_sl > pos.sl):
+                    new_sl = be_sl
+            else:
+                if (be_sl - current_price) >= min_stop_distance and (not pos.sl or be_sl < pos.sl):
+                    new_sl = be_sl
         else:
             continue
-
-        # Evita micro-ajustes
-        if pos.sl and abs(new_sl - pos.sl) < tick_size * 5:
+        if new_sl is None:
             continue
-
-        request = {
-            "action": mt5.TRADE_ACTION_SLTP,
-            "position": pos.ticket,
-            "symbol": symbol,
-            "sl": float(new_sl),
-            "tp": pos.tp,
-            "magic": 2026
-        }
-
+        rounded = float(round(new_sl / tick_size) * tick_size)
+        if pos.sl and abs(rounded - pos.sl) < tick_size * 5:
+            continue
+        req = {"action": mt5.TRADE_ACTION_SLTP, "position": pos.ticket, "symbol": symbol, "sl": rounded, "tp": pos.tp, "magic": 2026}
         with mt5_lock:
-            res = mt5.order_send(request)
-
+            res = mt5.order_send(req)
         if res and res.retcode == mt5.TRADE_RETCODE_DONE:
-            logger.info(
-                f"🔄 Trailing {symbol} "
-                f"{'BUY' if pos.type==0 else 'SELL'} -> {new_sl}"
-            )
+            logger.info(f"🔄 Trailing {symbol} {'BUY' if pos.type==0 else 'SELL'} -> {rounded}")
 
 def manage_dynamic_trailing(symbol: str, ticket: int) -> None:
     """
@@ -3297,6 +3312,112 @@ def manage_dynamic_trailing(symbol: str, ticket: int) -> None:
     except Exception:
         logger.exception(f"manage_dynamic_trailing error for {symbol}:{ticket}")
 
+def apply_partial_exit_after_pyr(symbol: str, pct: Optional[float] = None) -> None:
+    try:
+        close_pct = pct if pct is not None else float(getattr(config, "PYRAMID_PARTIAL_CLOSE", 0.3) or 0.3)
+        if close_pct <= 0:
+            return
+        with mt5_lock:
+            positions = mt5.positions_get(symbol=symbol) or []
+        if not positions or len(positions) < 2:
+            return
+        df = get_fast_rates(symbol, TIMEFRAME_BASE)
+        if not is_valid_dataframe(df) or len(df) < 20:
+            return
+        atr = get_atr(df, 14) or 0.0
+        if atr <= 0:
+            return
+        positions = sorted(positions, key=lambda p: p.time)
+        anchor = positions[0]
+        current = positions[-1]
+        initial_r = abs(anchor.price_open - (anchor.sl or anchor.price_open)) or (atr * 2.0)
+        if initial_r <= 0:
+            initial_r = atr * 2.0
+        profit_move = (current.price_current - anchor.price_open) if current.type == mt5.POSITION_TYPE_BUY else (anchor.price_open - current.price_current)
+        r_ratio = profit_move / initial_r if initial_r > 0 else 0.0
+        if r_ratio < 2.0:
+            return
+        total_volume = sum(p.volume for p in positions)
+        volume_to_close = max(0.0, round(total_volume * close_pct, 2))
+        if volume_to_close <= 0:
+            return
+        side = mt5.ORDER_TYPE_SELL if current.type == mt5.POSITION_TYPE_BUY else mt5.ORDER_TYPE_BUY
+        price = current.price_current
+        req = {
+            "action": mt5.TRADE_ACTION_DEAL,
+            "symbol": symbol,
+            "type": side,
+            "volume": float(volume_to_close),
+            "price": float(price),
+            "deviation": 200,
+            "type_filling": mt5.ORDER_FILLING_RETURN
+        }
+        with mt5_lock:
+            res = mt5.order_send(req)
+        if res and res.retcode == mt5.TRADE_RETCODE_DONE:
+            logger.info(f"🔻 Parcial após pirâmide {symbol} vol={volume_to_close}")
+    except Exception:
+        logger.exception(f"apply_partial_exit_after_pyr error for {symbol}")
+
+_last_trailing_check_ts = 0.0
+def check_and_apply_dynamic_trailing(interval_sec: int = 300) -> None:
+    try:
+        now = time.time()
+        global _last_trailing_check_ts
+        if now - _last_trailing_check_ts < max(5, int(interval_sec)):
+            return
+        _last_trailing_check_ts = now
+        with mt5_lock:
+            positions = mt5.positions_get() or []
+        symbols = sorted({p.symbol for p in positions})
+        for sym in symbols:
+            df = get_fast_rates(sym, TIMEFRAME_BASE)
+            if not is_valid_dataframe(df) or len(df) < 20:
+                continue
+            atr = get_atr(df, 14) or 0.0
+            if atr <= 0:
+                continue
+            price = float(mt5.symbol_info_tick(sym).last or 0.0) if mt5.symbol_info_tick(sym) else 0.0
+            if price <= 0:
+                info = mt5.symbol_info_tick(sym)
+                price = float((info.ask or info.bid) if info else 0.0)
+            if price <= 0:
+                continue
+            apply_trailing_stop(sym, price, atr)
+    except Exception:
+        logger.exception("check_and_apply_dynamic_trailing error")
+
+def is_time_allowed_for_symbol(symbol: str, mode: str) -> bool:
+    try:
+        now = datetime.now().time()
+        horarios = getattr(config, "HORARIOS_OPERACAO", {
+            "FUTUROS": [(datetime.time(9,0), datetime.time(18,0))],
+            "ACOES": [(datetime.time(10,0), datetime.time(17,0))],
+            "AMBOS": [(datetime.time(10,0), datetime.time(17,0))],
+            "SO_FUTUROS": [(datetime.time(9,0), datetime.time(10,0)), (datetime.time(17,0), datetime.time(18,0))]
+        })
+        is_fut = is_future(symbol)
+        key = str(mode or "").strip().upper()
+        if key == "AMBOS":
+            ranges = horarios.get("AMBOS", [])
+        elif key in ("FUTUROS", "SO_FUTUROS"):
+            ranges = horarios.get(key, [])
+        elif key == "ACOES":
+            ranges = horarios.get("ACOES", [])
+        else:
+            ranges = horarios.get("AMBOS", [])
+        if key == "SO_FUTUROS" and not is_fut:
+            return False
+        if key == "FUTUROS" and not is_fut:
+            return False
+        if key == "ACOES" and is_fut:
+            return False
+        for start, end in ranges:
+            if start <= now <= end:
+                return True
+        return False
+    except Exception:
+        return True
 def can_enter_symbol(symbol: str, equity: float) -> bool:
     """
     Verifica se pode abrir nova posição no símbolo considerando

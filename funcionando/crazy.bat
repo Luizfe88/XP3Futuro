@@ -1,3 +1,0 @@
-py crazy.py
-
-pause

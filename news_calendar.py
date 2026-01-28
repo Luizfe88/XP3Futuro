@@ -1,3 +1,4 @@
+#news_calendar.py
 import functools
 print = functools.partial(print, flush=True)
 try:
