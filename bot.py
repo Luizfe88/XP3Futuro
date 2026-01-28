@@ -1430,16 +1430,11 @@ class PositionManager:
     def should_apply_breakeven(
         self, pos: PositionStatus, atr: float
     ) -> Optional[float]:
-        """Retorna novo SL para breakeven se aplicável (Trigger: +1R)"""
         if not self.config.ENABLE_BREAKEVEN:
             return None
-
-        # Trigger dinâmico do config (+1R)
-        if pos.profit_atr < self.config.BREAKEVEN_ATR_MULT:
+        if pos.profit_atr < 0.8:
             return None
-
-        buffer = atr * 0.1 # Buffer menor para garantir lucro real
-
+        buffer = atr * 0.3
         if pos.side == "BUY":
             new_sl = pos.entry_price + buffer
             if pos.sl >= new_sl:
@@ -1473,38 +1468,27 @@ class PositionManager:
     def calculate_trailing_sl(
         self, pos: PositionStatus, atr: float, regime_config: dict
     ) -> Optional[float]:
-        """
-        ✅ V5.2: Trailing Stop Dinâmico baseado em 2x ATR.
-        Trigger: +1.5x ATR de lucro.
-        """
         if not self.config.ENABLE_TRAILING_STOP:
             return None
-
-        # Trigger dinâmico: começa após 1.5x ATR de lucro
-        if pos.profit_atr < 1.5:
-            return None
-
-        # Multiplicador Base: 2.0x ATR (conforme solicitado para v5.2)
-        trail_mult = 2.0
-        
-        # Ajuste dinâmico por regime
-        if pos.regime == "BREAKOUT":
-             trail_mult = 1.8 # Mais agressivo em breakout
-        elif pos.profit_atr > 4.0:
-             trail_mult = 1.5 # Trava lucro extra em movimentos esticados
+        is_fut = utils.is_future(pos.symbol)
+        if is_fut:
+            if pos.profit_atr < 1.5:
+                return None
+            trail_mult = 1.5
+        else:
+            if pos.profit_atr < 1.0:
+                return None
+            trail_mult = 1.2
 
         if pos.side == "BUY":
             new_sl = pos.current_price - (atr * trail_mult)
-            # Garante que o SL nunca desça (apenas sobe)
             if new_sl <= pos.sl:
                 return None
         else:
             new_sl = pos.current_price + (atr * trail_mult)
-            # Garante que o SL nunca suba (apenas desce)
             if new_sl >= pos.sl:
                 return None
 
-        # Melhora mínima de 0.2 ATR para evitar flood de ordens no MT5
         improvement = abs(new_sl - pos.sl) / atr
         if improvement >= 0.2:
             return new_sl
@@ -3570,6 +3554,25 @@ def try_enter_position(symbol, side, risk_factor=1.0):
     ind_data = bot_state.get_indicators(symbol)
     if not ind_data:
         return
+    of = utils.get_order_flow(symbol, 20)
+    imb = float(of.get("imbalance", 0.0) or 0.0)
+    cvd = float(of.get("cvd", 0.0) or 0.0)
+    if side == "BUY":
+        if cvd < 0 or imb < -0.12:
+            daily_logger.log_analysis(
+                symbol=symbol, signal=side, strategy="ORDER_FLOW_VETO", score=0,
+                rejected=True, reason="Fluxo contrário (CVD<0 ou Imbalance<-12%)",
+                indicators=ind_data
+            )
+            return
+    else:
+        if cvd > 0 or imb > 0.12:
+            daily_logger.log_analysis(
+                symbol=symbol, signal=side, strategy="ORDER_FLOW_VETO", score=0,
+                rejected=True, reason="Fluxo contrário (CVD>0 ou Imbalance>12%)",
+                indicators=ind_data
+            )
+            return
 
     if not additional_filters_ok(symbol):
         daily_logger.log_analysis(
@@ -3764,8 +3767,13 @@ def try_enter_position(symbol, side, risk_factor=1.0):
         # 4. Confiança ML
         ml_confidence = ml_prediction['confidence']
         
-        # ✅ AB Testing: Usa threshold do grupo
-        min_conf = ab_config["min_confidence"]
+        vix_val = utils.get_vix_br()
+        loss_streak = utils.get_loss_streak(symbol)
+        min_conf = 0.68
+        if vix_val > 28:
+            min_conf += 0.10
+        if loss_streak >= 2:
+            min_conf += 0.08
         ml_direction = ml_prediction['direction']
 
         ml_mode = str(getattr(config, "ML_MODE", "advisory")).strip().lower()

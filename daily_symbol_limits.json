@@ -1,37 +1,29 @@
 {
-  "date": "2026-01-26",
+  "date": "2026-01-27",
   "trades": {
-    "VIVT3": {
-      "total": 1,
-      "losses": 1
-    },
-    "BBDC4": {
-      "total": 1,
+    "BBAS3": {
+      "total": 0,
       "losses": 0
     },
     "BPAC11": {
-      "total": 1,
-      "losses": 0
-    },
-    "AURA33": {
       "total": 0,
       "losses": 0
     },
-    "ABEV3": {
+    "RAIZ4": {
+      "total": 0,
+      "losses": 0
+    },
+    "PRIO3": {
+      "total": 0,
+      "losses": 0
+    },
+    "B3SA3": {
+      "total": 1,
+      "losses": 0
+    },
+    "RAIL3": {
       "total": 1,
       "losses": 1
-    },
-    "RDOR3": {
-      "total": 0,
-      "losses": 0
-    },
-    "COGN3": {
-      "total": 1,
-      "losses": 0
-    },
-    "WEGE3": {
-      "total": 1,
-      "losses": 0
     }
   }
 }

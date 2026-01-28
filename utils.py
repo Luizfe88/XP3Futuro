@@ -1762,11 +1762,11 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
     # --- VOLUME ---
     avg_vol = get_avg_volume(df)
 
-    min_avg_vol = getattr(config, "MIN_AVG_VOLUME", 4000)
+    min_avg_vol = getattr(config, "MIN_AVG_VOLUME_FUTURES", 0) if is_future(symbol) else getattr(config, "MIN_AVG_VOLUME", 4000)
 
     if avg_vol < min_avg_vol:
         logger.info(f"{symbol}: Bloqueado por micro-liquidez ({avg_vol:,.0f})")
-        return None
+        return {"error": "low_liquidity"}
     
     # ✅ CORREÇÃO MIOPIA DE VOLUME: Ignorar candle em aberto (-1) e usar o último fechado (-2)
     cur_vol = 0
@@ -3609,8 +3609,10 @@ def get_cached_indicators(
         return {"error": "no_data"}
 
     ind = quick_indicators_custom(symbol, timeframe, df=df)
-    if not isinstance(ind, dict) or ind.get("error"):
-        return ind  # ❌ NÃO CACHEIA ERRO
+    if not isinstance(ind, dict):
+        return {"error": "no_data"}
+    if ind.get("error"):
+        return ind
 
     # Timestamp do candle fechado
     ind["candle_time"] = df.index[-1].timestamp() if hasattr(df.index[-1], "timestamp") else time.time()

@@ -1,0 +1,111 @@
+{
+  "date": "2026-01-23",
+  "timestamp": "2026-01-23T15:28:35.478604",
+  "equity_inicio_dia": 976491.26,
+  "daily_max_equity": 977982.26,
+  "daily_trades_per_symbol": {
+    "MDNE3": 0,
+    "ITUB4": 0,
+    "B3SA3": 1,
+    "BPAC11": 0,
+    "ABEV3": 1,
+    "RECV3": 1,
+    "VIVT3": 1,
+    "TOTS3": 0,
+    "WEGE3": 0,
+    "RAIL3": 1,
+    "VALE3": 0,
+    "SUZB3": 0,
+    "PRIO3": 1
+  },
+  "last_entry_time": {
+    "B3SA3": 1769185819.394214,
+    "ABEV3": 1769185841.84019,
+    "VIVT3": 1769185879.8545873,
+    "RECV3": 1769186308.5823274,
+    "RAIL3": 1769186744.8437355,
+    "PRIO3": 1769187819.1545382
+  },
+  "current_trading_day": "2026-01-23",
+  "daily_cycle_completed": false,
+  "daily_target_hit_day": null,
+  "daily_target_hit_pct": null,
+  "symbol_pyramid_leg": {
+    "B3SA3": 0,
+    "ABEV3": 0,
+    "VIVT3": 0,
+    "RECV3": 0,
+    "RAIL3": 0,
+    "PRIO3": 0
+  },
+  "last_entry_price": {
+    "B3SA3": 15.65,
+    "ABEV3": 14.68,
+    "VIVT3": 36.59,
+    "RECV3": 11.01,
+    "RAIL3": 14.58,
+    "PRIO3": 48.29
+  },
+  "open_positions": [
+    {
+      "ticket": 2329500834,
+      "symbol": "B3SA3",
+      "side": "BUY",
+      "volume": 15600.0,
+      "entry_price": 15.65,
+      "sl": 15.45,
+      "tp": 15.9,
+      "time": 1769175019
+    },
+    {
+      "ticket": 2329501265,
+      "symbol": "ABEV3",
+      "side": "BUY",
+      "volume": 39600.0,
+      "entry_price": 14.68,
+      "sl": 14.55,
+      "tp": 14.84,
+      "time": 1769175042
+    },
+    {
+      "ticket": 2329501714,
+      "symbol": "VIVT3",
+      "side": "BUY",
+      "volume": 8300.0,
+      "entry_price": 36.59,
+      "sl": 36.27,
+      "tp": 37.3,
+      "time": 1769175080
+    },
+    {
+      "ticket": 2329515994,
+      "symbol": "RECV3",
+      "side": "BUY",
+      "volume": 35600.0,
+      "entry_price": 11.01,
+      "sl": 10.9,
+      "tp": 11.15,
+      "time": 1769175508
+    },
+    {
+      "ticket": 2329522947,
+      "symbol": "RAIL3",
+      "side": "BUY",
+      "volume": 12100.0,
+      "entry_price": 14.58,
+      "sl": 14.4,
+      "tp": 14.8,
+      "time": 1769175945
+    },
+    {
+      "ticket": 2329554268,
+      "symbol": "PRIO3",
+      "side": "BUY",
+      "volume": 4400.0,
+      "entry_price": 48.29,
+      "sl": 47.83,
+      "tp": 49.5,
+      "time": 1769177019
+    }
+  ]
+}

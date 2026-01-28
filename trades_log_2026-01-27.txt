@@ -5,3 +5,7 @@ DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$
 2026-01-27 10:52:50 | ENTRADA  | B3SA3  | BUY  | Vol:   14300 | Price:  15.99 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
 2026-01-27 10:52:53 | ENTRADA  | RAIL3  | BUY  | Vol:   14900 | Price:  15.06 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
 2026-01-27 10:57:16 | SAÍDA    | PETR4  | BUY  | Vol:    9600 | Price:  35.88 | P&L: +3360.00 R$ (+0.99%) | Motivo: Take Profit | DealId: 1704748339 | Pos: 2332188576
+2026-01-27 16:24:54 | SAÍDA    | RDOR3  | BUY  | Vol:    3700 | Price:  43.79 | P&L: -2294.00 R$ (-1.40%) | Motivo: Stop Loss | DealId: 1705396322 | Pos: 2332228836
+2026-01-27 16:40:06 | SAÍDA    | B3SA3  | BUY  | Vol:   14300 | Price:  16.14 | P&L: +2288.00 R$ (+1.00%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2332293466
+2026-01-27 16:45:00 | SAÍDA    | B3SA3  | BUY  | Vol:   14300 | Price:  16.14 | P&L: +2145.00 R$ (+0.94%) | Motivo: Fechamento | DealId: 1705407599 | Pos: 2332293466
+2026-01-27 16:50:03 | SAÍDA    | RAIL3  | BUY  | Vol:   14900 | Price:  15.01 | P&L:  -745.00 R$ (-0.33%) | Motivo: Fechamento | DealId: 1705411448 | Pos: 2332302485
