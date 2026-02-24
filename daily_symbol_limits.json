@@ -1,29 +1,4 @@
 {
-  "date": "2026-01-27",
-  "trades": {
-    "BBAS3": {
-      "total": 0,
-      "losses": 0
-    },
-    "BPAC11": {
-      "total": 0,
-      "losses": 0
-    },
-    "RAIZ4": {
-      "total": 0,
-      "losses": 0
-    },
-    "PRIO3": {
-      "total": 0,
-      "losses": 0
-    },
-    "B3SA3": {
-      "total": 1,
-      "losses": 0
-    },
-    "RAIL3": {
-      "total": 1,
-      "losses": 1
-    }
-  }
+  "date": "2026-02-24",
+  "trades": {}
 }

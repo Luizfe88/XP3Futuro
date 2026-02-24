@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 import config
 import utils
-import bot
+import botfuturo
 import validation
 
 class TestBotLogic(unittest.TestCase):
@@ -30,7 +30,7 @@ class TestBotLogic(unittest.TestCase):
         """Testa se Kelly está usando multiplicador 0.3"""
         # Mocking validation logic to isolate Kelly calculation
         with patch('validation.monte_carlo_ruin_check', return_value=0.0):
-            with patch('mt5.account_info') as mock_acc:
+            with patch('validation.mt5.account_info') as mock_acc:
                 mock_acc.return_value.balance = 100000.0
                 
                 # Simula cálculo
@@ -47,7 +47,7 @@ class TestBotLogic(unittest.TestCase):
     def test_win_rate_pause(self):
         """Testa pausa por Win Rate baixo"""
         # Mocking deals to simulate low win rate
-        with patch('mt5.history_deals_get') as mock_deals:
+        with patch('validation.mt5.history_deals_get') as mock_deals:
             # Cria deals com profit negativo
             mock_deal_loss = MagicMock()
             mock_deal_loss.profit = -100.0

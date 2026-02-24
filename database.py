@@ -3,6 +3,7 @@ import os
 from datetime import datetime, timedelta
 import pandas as pd
 import logging
+import threading
 
 logger = logging.getLogger("database")
 
@@ -39,6 +40,104 @@ def init_db():
     ''')
     conn.commit()
     conn.close()
+
+class StateManager:
+    def __init__(self, db_path: str = "trading_state.db"):
+        self.db = sqlite3.connect(db_path, check_same_thread=False)
+        self.lock = os.name and threading.RLock() if hasattr(__import__('threading'), 'RLock') else None
+        self._init_schema()
+    def _init_schema(self):
+        self.db.execute("""
+            CREATE TABLE IF NOT EXISTS daily_state (
+                trading_date DATE PRIMARY KEY,
+                equity_start REAL NOT NULL,
+                equity_max REAL NOT NULL,
+                trades_count INTEGER DEFAULT 0,
+                wins_count INTEGER DEFAULT 0,
+                loss_streak INTEGER DEFAULT 0,
+                circuit_breaker_active BOOLEAN DEFAULT 0,
+                last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                CHECK (equity_start > 0),
+                CHECK (equity_max >= equity_start),
+                CHECK (trades_count >= 0),
+                CHECK (wins_count >= 0),
+                CHECK (loss_streak >= 0)
+            )
+        """)
+        self.db.execute("""
+            CREATE TABLE IF NOT EXISTS symbol_limits (
+                symbol TEXT NOT NULL,
+                trading_date DATE NOT NULL,
+                trades_count INTEGER DEFAULT 0,
+                losses_count INTEGER DEFAULT 0,
+                last_sl_time TIMESTAMP,
+                cooldown_until TIMESTAMP,
+                PRIMARY KEY (symbol, trading_date),
+                CHECK (trades_count >= losses_count)
+            )
+        """)
+        self.db.commit()
+    def save_state_atomic(self, state: dict):
+        cur = self.db.cursor()
+        try:
+            self.db.execute("BEGIN TRANSACTION")
+            cur.execute("""
+                INSERT OR REPLACE INTO daily_state 
+                (trading_date, equity_start, equity_max, trades_count, wins_count, loss_streak, circuit_breaker_active, last_updated)
+                VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+            """, (
+                state.get("trading_date"),
+                float(state.get("equity_start", 0) or 0),
+                float(state.get("equity_max", 0) or 0),
+                int(state.get("trades_count", 0) or 0),
+                int(state.get("wins_count", 0) or 0),
+                int(state.get("loss_streak", 0) or 0),
+                int(bool(state.get("circuit_breaker_active", False))),
+            ))
+            self.db.commit()
+        except Exception:
+            self.db.rollback()
+            raise
+    def get_today_state(self) -> dict:
+        today = datetime.now().date().isoformat()
+        df = pd.read_sql_query("SELECT * FROM daily_state WHERE trading_date = date(?)", self.db, params=(today,))
+        if len(df) == 0:
+            return {}
+        row = df.iloc[0].to_dict()
+        return row
+    def reset_daily_if_needed(self):
+        today = datetime.now().date().isoformat()
+        df = pd.read_sql_query("SELECT * FROM daily_state WHERE trading_date = date(?)", self.db, params=(today,))
+        if len(df) == 0:
+            self.save_state_atomic({
+                "trading_date": today,
+                "equity_start": 1.0,
+                "equity_max": 1.0,
+                "trades_count": 0,
+                "wins_count": 0,
+                "loss_streak": 0,
+                "circuit_breaker_active": False,
+            })
+    def update_symbol_limits(self, symbol: str, trades_delta: int = 0, losses_delta: int = 0):
+        today = datetime.now().date().isoformat()
+        cur = self.db.cursor()
+        cur.execute("""
+            INSERT INTO symbol_limits (symbol, trading_date, trades_count, losses_count)
+            VALUES (?, date(?), 0, 0)
+            ON CONFLICT(symbol, trading_date) DO NOTHING
+        """, (symbol, today))
+        cur.execute("""
+            UPDATE symbol_limits
+            SET trades_count = trades_count + ?, losses_count = losses_count + ?, last_sl_time = CASE WHEN ? > 0 THEN CURRENT_TIMESTAMP ELSE last_sl_time END
+            WHERE symbol = ? AND trading_date = date(?)
+        """, (int(trades_delta), int(losses_delta), int(losses_delta), symbol, today))
+        self.db.commit()
+    def get_symbol_limits(self, symbol: str) -> dict:
+        today = datetime.now().date().isoformat()
+        df = pd.read_sql_query("SELECT * FROM symbol_limits WHERE symbol = ? AND trading_date = date(?)", self.db, params=(symbol, today))
+        if len(df) == 0:
+            return {"trades_count": 0, "losses_count": 0}
+        return df.iloc[0].to_dict()
 
 def migrate_db():
     """Adiciona novas colunas se não existirem (migrate schema)."""

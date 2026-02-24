@@ -66,8 +66,8 @@ if not SECTOR_MAP:
     print("❌ ERRO: SECTOR_MAP vazio ou não encontrado no config.py")
     print("\n   Adicione no config.py:")
     print("   SECTOR_MAP = {")
-    print("       'PETR4': 'Petróleo',")
-    print("       'VALE3': 'Mineração',")
+    print("       'WIN$N': 'FUTUROS',")
+    print("       'WDO$N': 'FUTUROS',")
     print("   }")
     mt5.shutdown()
     exit(1)
@@ -108,7 +108,7 @@ if invalid_symbols:
 if not valid_symbols:
     print("\n❌ ERRO CRÍTICO: Nenhum símbolo válido!")
     print("   Verifique se o formato está correto:")
-    print("   • Clear/XP: PETR4 (sem $ ou .SA)")
+    print("   • Clear/XP: WIN$N ou WING26")
     print("   • Outras: Verifique no MT5 (Ctrl+U)")
     mt5.shutdown()
     exit(1)
@@ -263,8 +263,3 @@ print("\n✅ MT5 desconectado. Teste concluído!\n")
 
 
 
-# === TESTE RÁPIDO: LIMITAR A 10 SÍMBOLOS ===
-    test_symbols = ["PETR4", "VALE3", "ITUB4", "BBDC4", "PRIO3", 
-                    "VBBR3", "SUZB3", "WEGE3", "ABEV3", "EQTL3"]  # Escolha os que quiser
-    symbols_to_optimize = [s for s in symbols_to_optimize if s in test_symbols]
-    # Ou simplesmente: symbols_to_optimize = test_symbols[:10]

@@ -79,7 +79,7 @@ class ConfigManager:
             
             'ml': {
                 'enabled': True,
-                'min_confidence': 0.65,  # Reduced from 0.70 for realistic ensemble performance
+                'min_confidence': 0.52,  # Reduced from 0.70 for realistic ensemble performance
                 'model_type': 'ENSEMBLE',  # ENSEMBLE, LSTM, XGBOOST
                 'retrain_frequency_days': 7,
                 'min_samples_for_retrain': 500
@@ -193,7 +193,7 @@ MAX_PER_SECTOR = 2
 ELITE_SYMBOLS_JSON_PATH = config_manager.get('optimizer.elite_symbols_json_path', 'optimizer_output/elite_symbols_latest.json')
 # ✅ NOVOS PARÂMETROS ML
 ENABLE_ML_SIGNALS = config_manager.get('ml.enabled', True)
-ML_MIN_CONFIDENCE = config_manager.get('ml.min_confidence', 0.65)  # Reduced from 0.78 to 0.65 for realistic ensemble
+ML_MIN_CONFIDENCE = config_manager.get('ml.min_confidence', 0.52)  # Reduced from 0.78 to 0.65 for realistic ensemble
 ML_MODEL_TYPE = config_manager.get('ml.model_type', 'ENSEMBLE')
 ML_MIN_SAMPLES_FOR_RETRAIN = config_manager.get('ml.min_samples_for_retrain', 500)
 ML_RETRAIN_THRESHOLD = 100  # Retreino após 100 trades (mais estável)
@@ -201,16 +201,15 @@ ML_Q_STATES = 5000  # Aumentado para 5000 estados
 ML_TRAIN_PER_SYMBOL = config_manager.get('ml.train_per_symbol', True)
 ML_PER_SYMBOL_MIN_SAMPLES = config_manager.get('ml.per_symbol_min_samples', 50)
 WR_RESET_GRACE_TRADES = config_manager.get('risk.winrate_reset_grace_trades', 5)
-STOCKS_RISK_PER_TRADE_PCT = 0.003
-FUTURES_RISK_PER_TRADE_PCT = 0.006
-MIN_RR_STOCKS = 1.8
-MIN_RR_FUTURES = 2.5
-MAX_ATR_PCT_STOCKS = 4.5
-MAX_ATR_PCT_FUTURES = 6.0
-PYRAMID_MAX_LEGS_STOCKS = 2
-PYRAMID_MAX_LEGS_FUTURES = 3
-FUTURES_RISK_MULTIPLIER = 1.5
-STOCKS_MIN_LIQ_VOL = 500000
+
+# ===========================
+# 💰 PARÂID METROS DE RISCO (FUTUROS)
+# ===========================
+RISK_PER_TRADE_PCT = 0.006              # 0.6% por trade (futuros)
+MIN_RR = 2.5                             # R:R mínimo para futuros
+MAX_ATR_PCT = 6.0                        # ATR máximo permitido (%)
+PYRAMID_MAX_LEGS = 3                     # Máximo de pernas em pirâmide
+FUTURES_RISK_MULTIPLIER = 1.5            # Multiplicador de risco para futuros
 
 # ✅ KELLY CRITERION & POSITION SIZING
 KELLY_MULTIPLIER = 0.3  # Fractional Kelly (0.3x) for capital preservation
@@ -225,8 +224,6 @@ MAX_ATR_PCT_HIGH_ADX = 7.0  # Allow up to 7% ATR when ADX > 40 (strong trend)
 # 🛡️ CONTROLES COMERCIAIS
 # ===========================
 MAX_TOTAL_EXPOSURE = int(config_manager.get('risk.max_total_exposure', 1_000_000))
-TRADING_LUNCH_BREAK_START = "11:45"
-TRADING_LUNCH_BREAK_END = "13:30"
 MAX_SPREAD_TICKS = 4                   # Spread máximo permitido em ticks
 DAILY_PROFIT_TARGET_PCT = 0.02          # Meta diária de lucro (2%)
 BLOCK_AFTER_CONSECUTIVE_LOSSES = 2      # Parar após N perdas consecutivas
@@ -235,87 +232,37 @@ MARKET_HOURS_BUFFER_CLOSE = 0          # Minutos antes do fechamento para parar
 SLIPPAGE_ALERT_TICKS = 3                # Alertar se slippage > N ticks
 MAX_VOL_THRESHOLD = 2.0
 DAILY_VOLUME_LIMIT = 1000000000  # R$ 1 bilhão (limite financeiro diário)
-# 🆕 LIMITES POR SUBSETOR (dentro de FINANCEIRO)
-MAX_PER_SUBSETOR = {
-    "BANCOS": 2,  # Máx 2 bancos (ITUB4, BBDC4, BBAS3, etc)
-    "CORRETORAS": 1,  # Máx 1 corretora (B3SA3, BPAC11)
-    "SEGUROS": 1,  # Máx 1 seguro (IRBR3, PSSA3)
-}
 
-# ===========================
-# HORÁRIOS ESPECÍFICOS
+# HORÁRIOS ESPECÍFICOS (FUTUROS)
 # ===========================
 HORARIOS_OPERACAO = {
-    "FUTUROS": [(time(9, 0), time(18, 0))],
-    "ACOES": [(time(10, 0), time(17, 0))],
-    "AMBOS": [(time(10, 0), time(17, 0))],
-    "SO_FUTUROS": [(time(9, 0), time(10, 0)), (time(17, 0), time(18, 0))]
+    "FUTUROS": [(time(9, 0), time(18, 0))],           # Horário completo de futuros
+    "SO_FUTUROS": [(time(9, 0), time(10, 0)), (time(17, 0), time(18, 0))]  # Apenas janelas específicas
 }
 
-# ===========================
-# PIRÂMIDE: PARCIAL APÓS +2R
-# ===========================
-PYRAMID_PARTIAL_CLOSE = 0.3
 
-# 🆕 Mapa de subsetores
-SUBSETOR_MAP = {
-    # BANCOS (máx 2)
-    "ITUB4": "BANCOS", "BBDC4": "BANCOS", "BBDC3": "BANCOS", 
-    "BBAS3": "BANCOS", "SANB11": "BANCOS", "BPAN4": "BANCOS",
-    
-    # CORRETORAS (máx 1)
-    "B3SA3": "CORRETORAS", "BPAC11": "CORRETORAS",
-    
-    # SEGUROS (máx 1)
-    "IRBR3": "SEGUROS", "PSSA3": "SEGUROS",
-}
+# ===========================
+# CONFIGURAÇÕES DE FUTUROS
+# ===========================
+# Mapeamentos de subsetor removidos (específicos de ações)
 
-# Mapa de setores (todos os ativos monitorados)
+
+# ============================================
+# 🎯 APENAS FUTUROS - NÃO ADICIONAR AÇÕES AQUI
+# ============================================
+# Mapa de setores - APENAS ÍNDICES FUTUROS B3
 SECTOR_MAP = {
-    # FINANCEIRO (8/60): Bancos e serviços financeiros consolidados
-    "ITUB4": "FINANCEIRO", "BBDC4": "FINANCEIRO", "BBAS3": "FINANCEIRO", "B3SA3": "FINANCEIRO",
-    "BPAC11": "FINANCEIRO", "ITSA4": "FINANCEIRO", "ABCB4": "FINANCEIRO", "PINE4": "FINANCEIRO",
-
-    # ENERGIA / UTILIDADES (8/60): Petróleo, energia elétrica e distribuição
-    "PETR4": "ENERGIA", "PRIO3": "ENERGIA", "RECV3": "ENERGIA", "VBBR3": "ENERGIA",
-    "AXIA3": "ENERGIA", "EQTL3": "ENERGIA", "ENEV3": "ENERGIA", "NEOE3": "ENERGIA",
-
-    # MATERIAIS BÁSICOS (7/60): Mineração, siderurgia e papel/celulose
-    "VALE3": "MATERIAIS BÁSICOS", "GGBR4": "MATERIAIS BÁSICOS", "USIM5": "MATERIAIS BÁSICOS",
-    "CSNA3": "MATERIAIS BÁSICOS", "SUZB3": "MATERIAIS BÁSICOS", "KLBN11": "MATERIAIS BÁSICOS",
-    "AURA33": "MATERIAIS BÁSICOS",
-
-    # CONSUMO NÃO CÍCLICO (7/60): Alimentos, varejo essencial e agronegócio
-    "ABEV3": "CONSUMO NÃO CÍCLICO", "JBSS3": "CONSUMO NÃO CÍCLICO", "BRFS3": "CONSUMO NÃO CÍCLICO",
-    "BEEF3": "CONSUMO NÃO CÍCLICO", "CRFB3": "CONSUMO NÃO CÍCLICO", "SLCE3": "CONSUMO NÃO CÍCLICO",
-    "RAIZ4": "CONSUMO NÃO CÍCLICO",
-
-    # SAÚDE (6/60): Hospitais, planos e varejo farmacêutico
-    "RDOR3": "SAÚDE", "HAPV3": "SAÚDE", "RADL3": "SAÚDE", "ONCO3": "SAÚDE",
-    "QUAL3": "SAÚDE", "ANIM3": "SAÚDE",
-
-    # CONSUMO CÍCLICO (8/60): Varejo, educação e construção civil
-    "LREN3": "CONSUMO CÍCLICO", "MGLU3": "CONSUMO CÍCLICO", "YDUQ3": "CONSUMO CÍCLICO",
-    "COGN3": "CONSUMO CÍCLICO", "CYRE3": "CONSUMO CÍCLICO", "MRVE3": "CONSUMO CÍCLICO",
-    "TEND3": "CONSUMO CÍCLICO", "MDNE3": "CONSUMO CÍCLICO",
-
-    # INDUSTRIAL (6/60): Logística, concessões e bens de capital
-    "WEGE3": "INDUSTRIAL", "RENT3": "INDUSTRIAL", "MOVI3": "INDUSTRIAL",
-    "RAIL3": "INDUSTRIAL", "CCRO3": "INDUSTRIAL", "AZUL4": "INDUSTRIAL",
-
-    # TECNOLOGIA / COMUNICAÇÕES (5/60): Software e telecom
-    "TOTS3": "TECNOLOGIA", "LWSA3": "TECNOLOGIA", "DESK3": "TECNOLOGIA",
-    "VIVT3": "COMUNICAÇÕES", "TIMS3": "COMUNICAÇÕES",
-
-    # IMOBILIÁRIO / DIVERSOS (5/60): Shoppings, saneamento e seguros
-    "MULT3": "IMOBILIÁRIO", "IGTI11": "IMOBILIÁRIO",
-    "SBSP3": "UTILIDADES", "BBSE3": "SEGUROS", "ODPV3": "SAÚDE"
-    ,
-    "WING26": "FUTUROS",
-    "WDOG26": "FUTUROS",
-    "SMALL$": "FUTUROS",
-    "WSPH26": "FUTUROS",
-    "BGIG26": "FUTUROS"
+   "WIN$N": "FUTUROS",
+    "IND$N": "FUTUROS",
+    "WDO$N": "FUTUROS",
+    "DOL$N": "FUTUROS",
+    "WSP$N": "FUTUROS",
+    "CCM$N": "FUTUROS",
+    "BGI$N": "FUTUROS",
+    "ICF$N": "FUTUROS",
+    "DI1$N": "FUTUROS",
+    "BIT$N": "FUTUROS",
+    "T10$N": "FUTUROS",
 }
 
 
@@ -324,20 +271,7 @@ ACTIVE_FUTURES = {}
 
 # Lista de símbolos proxy (usada em alguns módulos antigos - pode manter)
 PROXY_SYMBOLS = [
-    "VALE3",
-    "PETR4",
-    "ITUB4",
-    "BBDC4",
-    "BBAS3",
-    "ABEV3",
-    "WEGE3",
-    "JBSS3",
-    "RENT3",
-    "PRIO3",
-    "SUZB3",
-    "AXIA3",
-    "VIVT3",
-    "HAPV3",
+    
 ]
 
 SCORE_WEIGHTS = {
@@ -354,9 +288,9 @@ MIN_SIGNAL_SCORE = 35
 # ===========================
 # HORÁRIOS DE OPERAÇÃO
 # ===========================
-TRADING_START = "10:25"  # Após estabilização da abertura
-NO_ENTRY_AFTER = "16:15"  # Fim das entradas (antes do fechamento nervoso)
-CLOSE_ALL_BY = "16:40"  # FECHAMENTO FORÇADO (nunca posar no after)
+TRADING_START = "09:25"  # Após estabilização da abertura
+NO_ENTRY_AFTER = "17:15"  # Fim das entradas (antes do fechamento nervoso)
+CLOSE_ALL_BY = "17:40"  # FECHAMENTO FORÇADO (nunca posar no after)
 NO_ENTRY_BEFORE_CLOSE_MINUTES = 15  # Bloqueia novas entradas quando faltar pouco p/ fechar
 DAILY_RESET_TIME = "00:00"  # Reset diário do circuit breaker
 DAY_ONLY_MODE = True
@@ -364,12 +298,12 @@ FRIDAY_NO_ENTRY_AFTER = "15:30"
 FRIDAY_CLOSE_ALL_BY = "15:30"
 FRIDAY_NO_ENTRY_BEFORE_CLOSE_MINUTES = 15
 FRIDAY_MARKET_HOURS_BUFFER_CLOSE = 0
-FRIDAY_RISK_REDUCE_AFTER = "14:30"
+FRIDAY_RISK_REDUCE_AFTER = "16:30"
 FRIDAY_RISK_FACTOR_MULT = 0.60
-FRIDAY_DISABLE_PYRAMID_AFTER = "14:30"
-# ✅ Pausa operacional entre 11:45 e 13:30
+FRIDAY_DISABLE_PYRAMID_AFTER = "16:30"
+# ✅ Pausa operacional entre 11:45 e 13:15
 TRADING_LUNCH_BREAK_START = "11:45"
-TRADING_LUNCH_BREAK_END = "13:30"
+TRADING_LUNCH_BREAK_END = "13:15"
 FUTURES_CLOSE_ALL_BY = "17:50"
 FUTURES_AFTERMARKET_START = "16:00"
 FUTURES_AFTERMARKET_END = "17:50"
@@ -383,9 +317,9 @@ NEWS_BLOCK_MEDIUM_TOO = False       # True = bloqueia também eventos Medium (ex
 NEWS_INCLUDE_MEDIUM = True
 ENABLE_NEWS_FALLBACK_WINDOWS = True
 NEWS_FALLBACK_BLACKOUT_WINDOWS = [
-    {"start": "09:55", "end": "10:20", "label": "Abertura (volatilidade e leilão)"},
+    {"start": "08:55", "end": "10:20", "label": "Abertura (volatilidade e leilão)"},
     {"start": "14:25", "end": "14:40", "label": "Macro EUA (horário 14:30)"},
-    {"start": "15:55", "end": "16:10", "label": "Macro BR (horário 16:00)"},
+    {"start": "15:55", "end": "18:10", "label": "Macro BR (horário 16:00)"},
 ]
 ENABLE_NEWS_SENTIMENT_BLOCK = False
 NEWS_SENTIMENT_NEG_THRESHOLD = -0.70
@@ -395,11 +329,13 @@ ML_MODE = config_manager.get('ml.mode', 'advisory')  # advisory|gate
 ML_ADVISORY_HARD_BLOCK = config_manager.get('ml.advisory_hard_block', 0.82)
 ML_ADVISORY_SOFT_RISK = config_manager.get('ml.advisory_soft_risk', 0.70)
 ML_ADVISORY_SOFT_RISK_FACTOR = config_manager.get('ml.advisory_soft_risk_factor', 0.60)
+DEFAULT_TIMEFRAME = "M5"
 
 ENTRY_SCORE_DELTA_MORNING = config_manager.get('entry.score_delta_morning', 5)
 ENTRY_SCORE_DELTA_LUNCH = config_manager.get('entry.score_delta_lunch', 10)
 ENTRY_SCORE_DELTA_AFTERNOON = config_manager.get('entry.score_delta_afternoon', 0)
 MAX_RISK_PER_SYMBOL_PCT = 0.02  # Máximo 2% da equity por papel
+MAX_CAPITAL_USAGE_PCT = 0.35    # Máximo 35% do equity total em margem usada
 MAX_SECTOR_EXPOSURE = 0.30  # Máx 30% do capital em 1 setor
 MAX_SECTOR_EXPOSURE_PCT = 0.25  # Máx 30% do capital em 1 setor
 SYMBOL_BLOCK_LOSS_PCT = 0.025  # Bloqueia ativo após perda de 2.5%
@@ -412,7 +348,6 @@ SYMBOL_COOLDOWN_HOURS = 24
 FUTURES_MAX_CONTRACTS = 10
 WIN_POINT_VALUE = 0.20
 WDO_POINT_VALUE = 10.0
-MIN_RR_FUTURES = 2.5
 FUTURE_FEE_PER_CONTRACT = 1.0
 # NOVOS: Hedging e Risco
 HEDGE_UNWIND_DD_THRESHOLD = 0.03    # Desfazer hedge se DD < 3%
@@ -424,7 +359,6 @@ MAX_PORTFOLIO_IBOV_CORR = 0.85      # Rejeita se correlação com IBOV > 0.85
 MAX_DAILY_DD_STOP = 0.05            # Auto-stop se DD diário > 5%
 MAX_PORTFOLIO_HEAT = 0.65           # Bloqueia novas entradas se 'heat' > 0.65
 MIN_FINANCIAL_VOLUME_R = 20_000_000 # R$ mínimo de volume financeiro médio (M15)
-MIN_RR = 2.5                         # R:R mínimo considerando custos
 DAILY_STOP_MONEY = 2000              # Stop diário absoluto em R$
 ML_MIN_TRADES_ENABLE = 200           # ML desativado até 200 trades
 
@@ -447,21 +381,15 @@ POLYGON_CACHE_TTL = 30  # Cache de 30 segundos para dados Polygon
 NEWS_API_KEY = "c39162901d1a45eeaad80d3c3f6f8c1e"  # NewsAPI.org
 
 
-# Slippage realista B3 (por liquidez/spread)
-SLIPPAGE_MAP = {
-    # Alta liquidez (top 10 volume B3)
-    "PETR4": 0.0010,
-    "VALE3": 0.0010,
-    "ITUB4": 0.0012,
-    "BBDC4": 0.0012,
-    "BBAS3": 0.0013,
-    "ABEV3": 0.0015,
-    # Média liquidez (80% do SECTOR_MAP)
-    "DEFAULT": 0.0030,  # 0.30% base
+# Slippage para futuros B3 (em ticks)
+SLIPPAGE_TICKS = {
+    "WIN$N": 3,      # Mini Índice: ~3 ticks
+    "WDO$N": 2,      # Mini Dólar: ~2 ticks
+
+    "DEFAULT": 3     # Padrão para outros futuros
 }
-MAX_SPREAD_ACTION_PCT = 0.30
-MAX_SPREAD_FUTURE_POINTS = 20
-ACTION_COST_PCT = 0.00055
+MAX_SPREAD_FUTURE_POINTS = 20           # Máx spread em pontos para futuros
+FUTURE_FEE_PER_CONTRACT = 1.0           # Taxa por contrato
 
 # =========================================================
 # 📊 PARÂMETROS DINÂMICOS POR WIN RATE
@@ -472,7 +400,7 @@ WIN_RATE_TIERS = {
     # Win Rate >= 70%: Modo agressivo
     "HIGH": {
         "min_win_rate": 0.70,
-        "kelly_multiplier": 0.15,      # Kelly 15%
+        "kelly_multiplier": 0.4,
         "max_symbols": 12,
         "min_rr": 1.2,
         "max_daily_dd": 0.04,         # DD maior permitido
@@ -499,7 +427,7 @@ WIN_RATE_TIERS = {
     # Win Rate < 50%: Modo proteção
     "CRITICAL": {
         "min_win_rate": 0.0,
-        "kelly_multiplier": 0.08,
+        "kelly_multiplier": 0.10,
         "max_symbols": 3,
         "min_rr": 2.5,
         "max_daily_dd": 0.01,
@@ -631,7 +559,7 @@ PYRAMID_REQUIREMENTS = {
 # ===========================
 # STOP LOSS / TAKE PROFIT
 # ===========================
-SL_ATR_MULTIPLIER = 2.0  # SL inicial = preço ± ATR × 2.0
+SL_ATR_MULTIPLIER = 0.8  # SL inicial = preço ± ATR × 2.0
 TP_ATR_MULT = 3.0  # TP opcional (não usado atualmente, mas disponível)
 TRAILING_STEP_ATR_MULTIPLIER = 1.0
 
@@ -648,6 +576,15 @@ RSI_OVERSOLD = 28
 RSI_OVERBOUGHT = 72
 RSI_EXTREME_OVERSOLD = 22
 RSI_EXTREME_OVERBOUGHT = 78
+RSI_EXHAUSTION_DEFAULT = 70
+RSI_EXHAUSTION_INDEX = 80
+RSI_EXHAUSTION_HIGH_SCORE_LIMIT = 75
+RSI_EXHAUSTION_HIGH_SCORE_MIN_SCORE = 80
+RSI_EXHAUSTION_DEFAULT_SELL = 30
+RSI_EXHAUSTION_INDEX_SELL = 20
+RSI_EXHAUSTION_HIGH_SCORE_LIMIT_SELL = 25
+MIN_BUY_AGGRESSION_BALANCE = 0.08
+MIN_SELL_AGGRESSION_BALANCE = -0.08
 
 # ===========================
 # FILTRO DE CORRELAÇÃO
@@ -661,6 +598,9 @@ CORRELATION_LOOKBACK_DAYS = 60
 # ===========================
 MACRO_TIMEFRAME = "H1"
 MACRO_EMA_LONG = 200
+EMA200_SLOPE_MIN = 0.05
+DIST_EMA200_ATR_THRESH = 2.0
+EXIT_AT_EMA200 = False
 
 # ===========================
 # MODOS E CONTROLES
@@ -694,12 +634,37 @@ VWAP_OVEREXT_STD_MULT = 2.0
 SPREAD_LOOKBACK_BARS = 10
 B3_FEES_PCT = 0.0003
 AVG_SPREAD_PCT_DEFAULT = 0.001
+MIN_ADX_SLOPE = 0.5
+MAX_SPREAD_TREND_PCT = 0.03
+MAX_SPREAD_PCT = 0.15
+PER_ASSET_THRESHOLDS = {
+    "WIN": {
+        "MIN_ADX_SLOPE": 0.6,
+        "MAX_SPREAD_TREND_PCT": 0.03,
+        "MAX_SPREAD_PCT": 0.15
+    },
+    "IND": {
+        "MIN_ADX_SLOPE": 0.5,
+        "MAX_SPREAD_TREND_PCT": 0.03,
+        "MAX_SPREAD_PCT": 0.12
+    },
+    "WDO": {
+        "MIN_ADX_SLOPE": 0.4,
+        "MAX_SPREAD_TREND_PCT": 0.02,
+        "MAX_SPREAD_PCT": 0.10
+    },
+    "DOL": {
+        "MIN_ADX_SLOPE": 0.4,
+        "MAX_SPREAD_TREND_PCT": 0.02,
+        "MAX_SPREAD_PCT": 0.10
+    }
+}
 # ===========================
 # NOTIFICAÇÕES TELEGRAM
 # ===========================
 ENABLE_TELEGRAM_NOTIF = True
 TELEGRAM_BOT_TOKEN = (
-    "8551934559:AAGZRMxH51N-IcsAuFJzelafOuVo1pMS9nI"  # Ex: 123456789:AAF...
+    "8474186435:AAGpRE6ou0a-aUqKATKRI4mVpzxYDotWeuQ"
 )
 TELEGRAM_CHAT_ID = 8400631213
 ENABLE_TELEGRAM_REJECTION_SUMMARY = False
@@ -853,180 +818,124 @@ PROFIT_LOCK = {
 # PARÂMETROS OTIMIZADOS MANUAIS (ELITE)
 # ===========================
 ELITE_SYMBOLS = {
- "B3SA3": {
-            "ema_short": 17,
-            "ema_long": 37,
-            "rsi_low": 28,
-            "rsi_high": 66,
-            "adx_threshold": 27,
-            "sl_atr_multiplier": 1.8,
-            "tp_ratio": 3.0,
-            "weight": 0.05
-        },
-        "ABEV3": {
-            "ema_short": 20,
-            "ema_long": 71,
+    # ===========================
+    # ÍNDICES FUTUROS B3
+    # ===========================
+    
+     "WIN$N": {
+        "parameters": {
+            "ema_short": 6,
+            "ema_long": 54,
             "rsi_low": 40,
-            "rsi_high": 60,
-            "adx_threshold": 29,
-            "sl_atr_multiplier": 1.5,
-            "tp_ratio": 2.6,
-            "weight": 0.09
-        },
-        "PETR4": {
-            "ema_short": 11,
-            "ema_long": 56,
-            "rsi_low": 40,
-            "rsi_high": 60,
-            "adx_threshold": 29,
-            "sl_atr_multiplier": 1.5,
-            "tp_ratio": 2.6,
-            "weight": 0.08
-        },
-        "VALE3": {
-            "ema_short": 12,
-            "ema_long": 97,
-            "rsi_low": 27,
-            "rsi_high": 64,
-            "adx_threshold": 18,
-            "sl_atr_multiplier": 2.4,
-            "tp_ratio": 2.0,
-            "weight": 0.08
-        },
-        "BBDC4": {
-            "ema_short": 14,
-            "ema_long": 58,
-            "rsi_low": 40,
-            "rsi_high": 60,
-            "adx_threshold": 29,
-            "sl_atr_multiplier": 1.5,
-            "tp_ratio": 2.6,
-            "weight": 0.07
-        },
-        "BEEF3": {
-            "ema_short": 15,
-            "ema_long": 60,
-            "rsi_low": 36,
             "rsi_high": 67,
+            "adx_threshold": 20,
+            "sl_atr_multiplier": 1.6,
+            "tp_ratio": 1.0
+        },
+        "performance_targets": {
+            "expectancy_points": 38.5,
+            "profit_factor": 192.87,
+            "sharpe_ratio": 3.42,
+            "win_rate_target": 21.4
+        },
+        "safety_thresholds": {
+            "max_drawdown_allowed": 2.9,
+            "stop_trading_at_loss": -4.0,
+            "min_trades_for_validation": 30
+        }
+    },
+    "WDO$N": {
+        "parameters": {
+            "ema_short": 9,
+            "ema_long": 21,
+            "rsi_low": 32,
+            "rsi_high": 55,
             "adx_threshold": 18,
-            "sl_atr_multiplier": 3.3,
-            "tp_ratio": 3.0,
-            "weight": 0.10
+            "sl_atr_multiplier": 2.2,
+            "tp_ratio": 2.5
         },
-        "SUZB3": {
-            "ema_short": 10,
-            "ema_long": 65,
-            "rsi_low": 28,
-            "rsi_high": 72,
-            "adx_threshold": 32,
-            "sl_atr_multiplier": 2.7,
-            "tp_ratio": 2.0,
-            "weight": 0.09
+        "performance_targets": {
+            "expectancy_points": 4.2,
+            "profit_factor": 1.72,
+            "sharpe_ratio": 1.56,
+            "win_rate_target": 15.0
         },
-        "ITUB4": {
-            "ema_short": 16,
-            "ema_long": 97,
-            "rsi_low": 36,
-            "rsi_high": 72,
-            "adx_threshold": 18,
-            "sl_atr_multiplier": 1.8,
-            "tp_ratio": 1.2,
-            "weight": 0.09
+        "safety_thresholds": {
+            "max_drawdown_allowed": 9.3,
+            "stop_trading_at_loss": -12.0,
+            "min_trades_for_validation": 25
+        }
+    },
+    "IND$N": {
+        "parameters": {
+            "ema_short": 6,
+            "ema_long": 54,
+            "rsi_low": 40,
+            "rsi_high": 67,
+            "adx_threshold": 20,
+            "sl_atr_multiplier": 2.8,
+            "tp_ratio": 1.5
         },
-        "SBSP3": {
-            "ema_short": 8,
-            "ema_long": 82,
-            "rsi_low": 38,
-            "rsi_high": 75,
-            "adx_threshold": 26,
-            "sl_atr_multiplier": 2.6,
-            "tp_ratio": 2.8,
-            "weight": 0.12
+        "performance_targets": {
+            "expectancy_points": 150.0,
+            "profit_factor": 17.92,
+            "sharpe_ratio": 3.00,
+            "win_rate_target": 11.1
         },
-        "VIVT3": {
-            "ema_short": 21,
-            "ema_long": 38,
-            "rsi_low": 34,
-            "rsi_high": 63,
-            "adx_threshold": 16,
-            "sl_atr_multiplier": 3.4,
-            "tp_ratio": 3.0,
-            "weight": 0.09
-        },
-        "WEGE3": {
-            "ema_short": 18,
-            "ema_long": 59,
-            "rsi_low": 38,
-            "rsi_high": 65,
-            "adx_threshold": 19,
+        "safety_thresholds": {
+            "max_drawdown_allowed": 15.0,
+            "stop_trading_at_loss": -20.0,
+            "min_trades_for_validation": 20
+        }
+    },
+    "DOL$N": {
+        "parameters": {
+            "ema_short": 11,
+            "ema_long": 30,
+            "rsi_low": 27,
+            "rsi_high": 69,
+            "adx_threshold": 15,
             "sl_atr_multiplier": 1.5,
-            "tp_ratio": 1.8,
-            "weight": 0.12
+            "tp_ratio": 2.2
         },
-        "TOTS3": {
-            "ema_short": 18,
-            "ema_long": 46,
-            "rsi_low": 39,
-            "rsi_high": 66,
-            "adx_threshold": 18,
-            "sl_atr_multiplier": 2.0,
-            "tp_ratio": 2.0,
-            "weight": 0.11
+        "performance_targets": {
+            "expectancy_points": 5.5,
+            "profit_factor": 3.06,
+            "sharpe_ratio": 1.87,
+            "win_rate_target": 12.0
         },
-           
-        "AURA33": {
-            "ema_short": 24,
-            "ema_long": 139,
-            "rsi_low": 29,
-            "rsi_high": 71,
-            "adx_threshold": 33,
-            "sl_atr_multiplier": 3.2,
-            "tp_ratio": 2.8,
-            "weight": 0.06
+        "safety_thresholds": {
+            "max_drawdown_allowed": 8.3,
+            "stop_trading_at_loss": -10.0,
+            "min_trades_for_validation": 30
+        }
+    },
+    "WSP$N": {
+        "parameters": {
+            "ema_short": 6,
+            "ema_long": 54,
+            "rsi_low": 40,
+            "rsi_high": 67,
+            "adx_threshold": 20,
+            "sl_atr_multiplier": 1.6,
+            "tp_ratio": 1.0
         },
-"WING26": {
-        "ema_short": 8,
-        "ema_long": 47,
-        "adx_threshold": 12,
-        "rsi_low": 40,
-        "rsi_high": 64,
-        "sl_atr_multiplier": 1.08,
-        "tp_ratio": 2.55,
-        "weight": 0.35
-    },
-    "WDOG26": {
-        "ema_short": 8,
-        "ema_long": 44,
-        "adx_threshold": 10,
-        "rsi_low": 38,
-        "rsi_high": 61,
-        "sl_atr_multiplier": 1.05,
-        "tp_ratio": 2.54,
-        "weight": 0.25
-    },
-    "WSPH26": {
-        "ema_short": 14,
-        "ema_long": 48,
-        "adx_threshold": 17,
-        "rsi_low": 40,
-        "rsi_high": 68,
-        "sl_atr_multiplier": 1.15,
-        "tp_ratio": 3.14,
-        "weight": 0.30
-    },
-    "BGIG26": {
-        "ema_short": 12,
-        "ema_long": 47,
-        "adx_threshold": 11,
-        "rsi_low": 39,
-        "rsi_high": 68,
-        "sl_atr_multiplier": 2.50,
-        "tp_ratio": 1.80,
-        "weight": 0.10
-    }
+        "performance_targets": {
+            "expectancy_points": 8.0,
+            "profit_factor": 52.61,
+            "sharpe_ratio": 2.77,
+            "win_rate_target": 14.3
+        },
+        "safety_thresholds": {
+            "max_drawdown_allowed": 1.0,
+            "stop_trading_at_loss": -2.5,
+            "min_trades_for_validation": 20
+        }
     }
 
-ELITE_BLUE_CHIPS = ["PETR4", "VALE3", "ITUB4", "BBDC4", "ABEV3", "BBAS3", "B3SA3", "VIVT3", "AXIA3", "SUZB3"]
+}
+
+# Listas de blue chips removidas (específicas de ações)
 
 ELITE_ASSETS = {}
 
@@ -1110,2679 +1019,3 @@ BREAKEVEN_ATR_MULT = 0.8  # Move para BE mais rápido (era 1.5)
 ENABLE_TRAILING_STOP = True
 ENABLE_PARTIAL_CLOSE = True
 PARTIAL_CLOSE_ATR_MULT = 1.5 # Realiza parcial mais cedo
-
-ATIVOS_VIAVEIS_REPORT_JSON = r"""{
-  "metadados": {
-    "timestamp": "2026-01-17T14:53:42.370123",
-    "versao_sistema": "XP3 PRO v7.0"
-  },
-  "sumario_executivo": {
-    "total_avaliados": 55,
-    "total_viaveis": 27,
-    "percentual_viabilidade": 0.4909090909090909,
-    "distribuicao_por_categorias": {
-      "OPORTUNIDADE": 18,
-      "BLUE CHIP": 9
-    },
-    "principais_oportunidades": [
-      {
-        "symbol": "MULT3",
-        "tier": "B",
-        "score_total": 0.5854545454545454,
-        "avg_fin_volume": 441644.89197500004,
-        "volatility_ann": 0.24363547531556587,
-        "abs_corr_ibov": 0.803115315476122,
-        "risk_notes": "Correlação alta com IBOV reduz diversificação; monitorar em dias de stress."
-      },
-      {
-        "symbol": "LREN3",
-        "tier": "B",
-        "score_total": 0.5472727272727272,
-        "avg_fin_volume": 318888.73997500003,
-        "volatility_ann": 0.36318340080298694,
-        "abs_corr_ibov": 0.6372665915113427,
-        "risk_notes": "Correlação alta com IBOV reduz diversificação; monitorar em dias de stress."
-      },
-      {
-        "symbol": "ENEV3",
-        "tier": "C",
-        "score_total": 0.5336363636363636,
-        "avg_fin_volume": 357555.44850000006,
-        "volatility_ann": 0.24590499672757524,
-        "abs_corr_ibov": 0.6411394246550437,
-        "risk_notes": "Correlação alta com IBOV reduz diversificação; monitorar em dias de stress."
-      },
-      {
-        "symbol": "CYRE3",
-        "tier": "C",
-        "score_total": 0.5272727272727272,
-        "avg_fin_volume": 444719.80100000004,
-        "volatility_ann": 0.33474525930223953,
-        "abs_corr_ibov": 0.7247709490549927,
-        "risk_notes": "Correlação alta com IBOV reduz diversificação; monitorar em dias de stress."
-      },
-      {
-        "symbol": "EQTL3",
-        "tier": "C",
-        "score_total": 0.51,
-        "avg_fin_volume": 794208.4575250001,
-        "volatility_ann": 0.22173657044312492,
-        "abs_corr_ibov": 0.817097851068095,
-        "risk_notes": "Correlação alta com IBOV reduz diversificação; monitorar em dias de stress."
-      },
-      {
-        "symbol": "VBBR3",
-        "tier": "C",
-        "score_total": 0.5072727272727273,
-        "avg_fin_volume": 451809.75815000007,
-        "volatility_ann": 0.25523327806973445,
-        "abs_corr_ibov": 0.6328859876490274,
-        "risk_notes": "Correlação alta com IBOV reduz diversificação; monitorar em dias de stress."
-      },
-      {
-        "symbol": "GGBR4",
-        "tier": "C",
-        "score_total": 0.5063636363636363,
-        "avg_fin_volume": 331275.375625,
-        "volatility_ann": 0.2195128702649207,
-        "abs_corr_ibov": 0.4386512813767289,
-        "risk_notes": "Correlação alta com IBOV reduz diversificação; monitorar em dias de stress."
-      },
-      {
-        "symbol": "BBSE3",
-        "tier": "C",
-        "score_total": 0.4845454545454545,
-        "avg_fin_volume": 417630.247975,
-        "volatility_ann": 0.1532896315643996,
-        "abs_corr_ibov": 0.4270386794176928,
-        "risk_notes": "Correlação alta com IBOV reduz diversificação; monitorar em dias de stress."
-      },
-      {
-        "symbol": "VIVT3",
-        "tier": "C",
-        "score_total": 0.4790909090909091,
-        "avg_fin_volume": 352506.52770000004,
-        "volatility_ann": 0.21559613920074364,
-        "abs_corr_ibov": 0.5285535671410724,
-        "risk_notes": "Correlação alta com IBOV reduz diversificação; monitorar em dias de stress."
-      },
-      {
-        "symbol": "TIMS3",
-        "tier": "C",
-        "score_total": 0.4727272727272727,
-        "avg_fin_volume": 349537.802,
-        "volatility_ann": 0.20838919569682463,
-        "abs_corr_ibov": 0.41481586592251674,
-        "risk_notes": "Correlação alta com IBOV reduz diversificação; monitorar em dias de stress."
-      }
-    ],
-    "principais_riscos": [
-      "Dependência de dados (MT5 ou Yahoo). Yahoo M15 é limitado (~60 dias).",
-      "Market cap pode estar ausente (0) para alguns ativos e reduzir confiança do filtro.",
-      "Correlação com IBOV pode concentrar risco sistêmico; considerar balanceamento por setor."
-    ]
-  },
-  "ativos_viaveis": [
-    {
-      "identificacao": {
-        "nome": "MULT3",
-        "codigo": "MULT3",
-        "codigo_unico": "MULT3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.05,
-        "ema_short": 9,
-        "ema_long": 21,
-        "rsi_low": 30.0,
-        "rsi_high": 70.0,
-        "adx_threshold": 25.0,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 2.5,
-        "tp_mult": 5.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 441644.89197500004,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.24363547531556587,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.803115315476122,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": false
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 14239464448.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 3,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 18,
-        "tier": "B",
-        "score_total": 0.5854545454545454,
-        "liquidez_avg_fin_volume": 441644.89197500004,
-        "volatilidade_anualizada": 0.24363547531556587,
-        "correlacao_ibov": 0.803115315476122,
-        "market_cap": 14239464448.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 441.645; lim=R$ 318.889); Vol OK (24,36%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,803; lim=0,635); MCap OK (R$ 14.239.464.448; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "LREN3",
-        "codigo": "LREN3",
-        "codigo_unico": "LREN3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.0407,
-        "ema_short": 25,
-        "ema_long": 84,
-        "rsi_low": 38,
-        "rsi_high": 85,
-        "adx_threshold": 24,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 3.5,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 318888.73997500003,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.36318340080298694,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.6372665915113427,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": false
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 13092715520.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 3,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 23,
-        "tier": "B",
-        "score_total": 0.5472727272727272,
-        "liquidez_avg_fin_volume": 318888.73997500003,
-        "volatilidade_anualizada": 0.36318340080298694,
-        "correlacao_ibov": 0.6372665915113427,
-        "market_cap": 13092715520.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 318.889; lim=R$ 318.889); Vol OK (36,32%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,637; lim=0,635); MCap OK (R$ 13.092.715.520; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "ENEV3",
-        "codigo": "ENEV3",
-        "codigo_unico": "ENEV3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.0936,
-        "ema_short": 23,
-        "ema_long": 72,
-        "rsi_low": 36,
-        "rsi_high": 55,
-        "adx_threshold": 30,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 4.1,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 357555.44850000006,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.24590499672757524,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.6411394246550437,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": false
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 39465570304.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 3,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 26,
-        "tier": "C",
-        "score_total": 0.5336363636363636,
-        "liquidez_avg_fin_volume": 357555.44850000006,
-        "volatilidade_anualizada": 0.24590499672757524,
-        "correlacao_ibov": 0.6411394246550437,
-        "market_cap": 39465570304.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 357.555; lim=R$ 318.889); Vol OK (24,59%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,641; lim=0,635); MCap OK (R$ 39.465.570.304; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "CYRE3",
-        "codigo": "CYRE3",
-        "codigo_unico": "CYRE3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.0575,
-        "ema_short": 22,
-        "ema_long": 44,
-        "rsi_low": 35,
-        "rsi_high": 75,
-        "adx_threshold": 16,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 4.1,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 444719.80100000004,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.33474525930223953,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.7247709490549927,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": false
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 9047880704.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 3,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 27,
-        "tier": "C",
-        "score_total": 0.5272727272727272,
-        "liquidez_avg_fin_volume": 444719.80100000004,
-        "volatilidade_anualizada": 0.33474525930223953,
-        "correlacao_ibov": 0.7247709490549927,
-        "market_cap": 9047880704.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 444.720; lim=R$ 318.889); Vol OK (33,47%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,725; lim=0,635); MCap OK (R$ 9.047.880.704; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "EQTL3",
-        "codigo": "EQTL3",
-        "codigo_unico": "EQTL3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.0754,
-        "ema_short": 19,
-        "ema_long": 60,
-        "rsi_low": 33,
-        "rsi_high": 64,
-        "adx_threshold": 22,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 4.1,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 794208.4575250001,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.22173657044312492,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.817097851068095,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": false
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 47108534272.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 3,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 28,
-        "tier": "C",
-        "score_total": 0.51,
-        "liquidez_avg_fin_volume": 794208.4575250001,
-        "volatilidade_anualizada": 0.22173657044312492,
-        "correlacao_ibov": 0.817097851068095,
-        "market_cap": 47108534272.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 794.208; lim=R$ 318.889); Vol OK (22,17%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,817; lim=0,635); MCap OK (R$ 47.108.534.272; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "VBBR3",
-        "codigo": "VBBR3",
-        "codigo_unico": "VBBR3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.0482,
-        "ema_short": 19,
-        "ema_long": 40,
-        "rsi_low": 39,
-        "rsi_high": 70,
-        "adx_threshold": 14,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 3.5,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 451809.75815000007,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.25523327806973445,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.6328859876490274,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 30564724736.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 30,
-        "tier": "C",
-        "score_total": 0.5072727272727273,
-        "liquidez_avg_fin_volume": 451809.75815000007,
-        "volatilidade_anualizada": 0.25523327806973445,
-        "correlacao_ibov": 0.6328859876490274,
-        "market_cap": 30564724736.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 451.810; lim=R$ 318.889); Vol OK (25,52%; faixa=21,54%–57,52%); Corr OK (|corr|=0,633; lim=0,635); MCap OK (R$ 30.564.724.736; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "GGBR4",
-        "codigo": "GGBR4",
-        "codigo_unico": "GGBR4",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.0157,
-        "ema_short": 20,
-        "ema_long": 86,
-        "rsi_low": 33,
-        "rsi_high": 56,
-        "adx_threshold": 28,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 4.1,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 331275.375625,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.2195128702649207,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.4386512813767289,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 43532173312.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 31,
-        "tier": "C",
-        "score_total": 0.5063636363636363,
-        "liquidez_avg_fin_volume": 331275.375625,
-        "volatilidade_anualizada": 0.2195128702649207,
-        "correlacao_ibov": 0.4386512813767289,
-        "market_cap": 43532173312.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 331.275; lim=R$ 318.889); Vol OK (21,95%; faixa=21,54%–57,52%); Corr OK (|corr|=0,439; lim=0,635); MCap OK (R$ 43.532.173.312; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "BBSE3",
-        "codigo": "BBSE3",
-        "codigo_unico": "BBSE3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.05,
-        "ema_short": 9,
-        "ema_long": 21,
-        "rsi_low": 30.0,
-        "rsi_high": 70.0,
-        "adx_threshold": 25.0,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 2.5,
-        "tp_mult": 5.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 417630.247975,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.1532896315643996,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": false
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.4270386794176928,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 68175462400.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 3,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 33,
-        "tier": "C",
-        "score_total": 0.4845454545454545,
-        "liquidez_avg_fin_volume": 417630.247975,
-        "volatilidade_anualizada": 0.1532896315643996,
-        "correlacao_ibov": 0.4270386794176928,
-        "market_cap": 68175462400.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 417.630; lim=R$ 318.889); Vol NOK (15,33%; faixa=21,54%–57,52%); Corr OK (|corr|=0,427; lim=0,635); MCap OK (R$ 68.175.462.400; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "VIVT3",
-        "codigo": "VIVT3",
-        "codigo_unico": "VIVT3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.121,
-        "ema_short": 13,
-        "ema_long": 70,
-        "rsi_low": 28,
-        "rsi_high": 72,
-        "adx_threshold": 29,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 3.7,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 352506.52770000004,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.21559613920074364,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.5285535671410724,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 103761338368.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 34,
-        "tier": "C",
-        "score_total": 0.4790909090909091,
-        "liquidez_avg_fin_volume": 352506.52770000004,
-        "volatilidade_anualizada": 0.21559613920074364,
-        "correlacao_ibov": 0.5285535671410724,
-        "market_cap": 103761338368.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 352.507; lim=R$ 318.889); Vol OK (21,56%; faixa=21,54%–57,52%); Corr OK (|corr|=0,529; lim=0,635); MCap OK (R$ 103.761.338.368; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "TIMS3",
-        "codigo": "TIMS3",
-        "codigo_unico": "TIMS3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.05,
-        "ema_short": 9,
-        "ema_long": 21,
-        "rsi_low": 30.0,
-        "rsi_high": 70.0,
-        "adx_threshold": 25.0,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 2.5,
-        "tp_mult": 5.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 349537.802,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.20838919569682463,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": false
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.41481586592251674,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 54652731392.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 3,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 35,
-        "tier": "C",
-        "score_total": 0.4727272727272727,
-        "liquidez_avg_fin_volume": 349537.802,
-        "volatilidade_anualizada": 0.20838919569682463,
-        "correlacao_ibov": 0.41481586592251674,
-        "market_cap": 54652731392.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 349.538; lim=R$ 318.889); Vol NOK (20,84%; faixa=21,54%–57,52%); Corr OK (|corr|=0,415; lim=0,635); MCap OK (R$ 54.652.731.392; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "B3SA3",
-        "codigo": "B3SA3",
-        "codigo_unico": "B3SA3",
-        "tipo": "AÇÃO",
-        "categoria": "BLUE CHIP"
-      },
-      "ativo": {
-        "category": "BLUE CHIP",
-        "weight": 0.1063,
-        "ema_short": 21,
-        "ema_long": 90,
-        "rsi_low": 34,
-        "rsi_high": 60,
-        "adx_threshold": 28,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 3.1,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 460474.49455,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.29726555168045443,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.7661307921254287,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 76726714368.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": true,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 37,
-        "tier": "C",
-        "score_total": 0.4509090909090909,
-        "liquidez_avg_fin_volume": 460474.49455,
-        "volatilidade_anualizada": 0.29726555168045443,
-        "correlacao_ibov": 0.7661307921254287,
-        "market_cap": 76726714368.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "BLUE CHIP",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Blue chip: marcada como viável por definição (robustez + liquidez estrutural)."
-    },
-    {
-      "identificacao": {
-        "nome": "TOTS3",
-        "codigo": "TOTS3",
-        "codigo_unico": "TOTS3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.05,
-        "ema_short": 9,
-        "ema_long": 21,
-        "rsi_low": 30.0,
-        "rsi_high": 70.0,
-        "adx_threshold": 25.0,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 2.5,
-        "tp_mult": 5.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 478308.99417500006,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.2720103097026729,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.5015803615682356,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 25321539584.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 38,
-        "tier": "C",
-        "score_total": 0.4427272727272727,
-        "liquidez_avg_fin_volume": 478308.99417500006,
-        "volatilidade_anualizada": 0.2720103097026729,
-        "correlacao_ibov": 0.5015803615682356,
-        "market_cap": 25321539584.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 478.309; lim=R$ 318.889); Vol OK (27,20%; faixa=21,54%–57,52%); Corr OK (|corr|=0,502; lim=0,635); MCap OK (R$ 25.321.539.584; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "ITUB4",
-        "codigo": "ITUB4",
-        "codigo_unico": "ITUB4",
-        "tipo": "AÇÃO",
-        "categoria": "BLUE CHIP"
-      },
-      "ativo": {
-        "category": "BLUE CHIP",
-        "weight": 0.0376,
-        "ema_short": 25,
-        "ema_long": 66,
-        "rsi_low": 42,
-        "rsi_high": 63,
-        "adx_threshold": 23,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 4.5,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 1046252.3441750001,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.18998941259086452,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.8562278410740507,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 436760641536.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": true,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 39,
-        "tier": "D",
-        "score_total": 0.4409090909090909,
-        "liquidez_avg_fin_volume": 1046252.3441750001,
-        "volatilidade_anualizada": 0.18998941259086452,
-        "correlacao_ibov": 0.8562278410740507,
-        "market_cap": 436760641536.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "BLUE CHIP",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Blue chip: marcada como viável por definição (robustez + liquidez estrutural)."
-    },
-    {
-      "identificacao": {
-        "nome": "BBDC4",
-        "codigo": "BBDC4",
-        "codigo_unico": "BBDC4",
-        "tipo": "AÇÃO",
-        "categoria": "BLUE CHIP"
-      },
-      "ativo": {
-        "category": "BLUE CHIP",
-        "weight": 0.1106,
-        "ema_short": 14,
-        "ema_long": 58,
-        "rsi_low": 38,
-        "rsi_high": 61,
-        "adx_threshold": 12,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 4.300000000000001,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 514458.65184999985,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.23302512616331544,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.7850135103673879,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 200011284480.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": true,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 40,
-        "tier": "D",
-        "score_total": 0.4354545454545454,
-        "liquidez_avg_fin_volume": 514458.65184999985,
-        "volatilidade_anualizada": 0.23302512616331544,
-        "correlacao_ibov": 0.7850135103673879,
-        "market_cap": 200011284480.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "BLUE CHIP",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Blue chip: marcada como viável por definição (robustez + liquidez estrutural)."
-    },
-    {
-      "identificacao": {
-        "nome": "ABEV3",
-        "codigo": "ABEV3",
-        "codigo_unico": "ABEV3",
-        "tipo": "AÇÃO",
-        "categoria": "BLUE CHIP"
-      },
-      "ativo": {
-        "category": "BLUE CHIP",
-        "weight": 0.0,
-        "ema_short": 12,
-        "ema_long": 97,
-        "rsi_low": 37,
-        "rsi_high": 73,
-        "adx_threshold": 13,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 1.9,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 338391.43375,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.20256692728683867,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.4256381642173374,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 220193013760.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": true,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 41,
-        "tier": "D",
-        "score_total": 0.42727272727272725,
-        "liquidez_avg_fin_volume": 338391.43375,
-        "volatilidade_anualizada": 0.20256692728683867,
-        "correlacao_ibov": 0.4256381642173374,
-        "market_cap": 220193013760.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "BLUE CHIP",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Blue chip: marcada como viável por definição (robustez + liquidez estrutural)."
-    },
-    {
-      "identificacao": {
-        "nome": "RENT3",
-        "codigo": "RENT3",
-        "codigo_unico": "RENT3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.05,
-        "ema_short": 9,
-        "ema_long": 21,
-        "rsi_low": 30.0,
-        "rsi_high": 70.0,
-        "adx_threshold": 25.0,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 2.5,
-        "tp_mult": 5.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 1064569.070275,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.3185563477870126,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.7917082872640059,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": false
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 42917515264.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 3,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 43,
-        "tier": "D",
-        "score_total": 0.4163636363636364,
-        "liquidez_avg_fin_volume": 1064569.070275,
-        "volatilidade_anualizada": 0.3185563477870126,
-        "correlacao_ibov": 0.7917082872640059,
-        "market_cap": 42917515264.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 1.064.569; lim=R$ 318.889); Vol OK (31,86%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,792; lim=0,635); MCap OK (R$ 42.917.515.264; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "BBAS3",
-        "codigo": "BBAS3",
-        "codigo_unico": "BBAS3",
-        "tipo": "AÇÃO",
-        "categoria": "BLUE CHIP"
-      },
-      "ativo": {
-        "category": "BLUE CHIP",
-        "weight": 0.0,
-        "ema_short": 12,
-        "ema_long": 97,
-        "rsi_low": 37,
-        "rsi_high": 73,
-        "adx_threshold": 13,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 1.9,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 489877.67972499994,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.2858455965155945,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.6455076144638412,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 121988308992.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": true,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 44,
-        "tier": "D",
-        "score_total": 0.40272727272727277,
-        "liquidez_avg_fin_volume": 489877.67972499994,
-        "volatilidade_anualizada": 0.2858455965155945,
-        "correlacao_ibov": 0.6455076144638412,
-        "market_cap": 121988308992.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "BLUE CHIP",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Blue chip: marcada como viável por definição (robustez + liquidez estrutural)."
-    },
-    {
-      "identificacao": {
-        "nome": "RDOR3",
-        "codigo": "RDOR3",
-        "codigo_unico": "RDOR3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.05,
-        "ema_short": 9,
-        "ema_long": 21,
-        "rsi_low": 30.0,
-        "rsi_high": 70.0,
-        "adx_threshold": 25.0,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 2.5,
-        "tp_mult": 5.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 843224.6680500002,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.27950854271455355,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.6300774811235531,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 88808005632.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 45,
-        "tier": "D",
-        "score_total": 0.3781818181818182,
-        "liquidez_avg_fin_volume": 843224.6680500002,
-        "volatilidade_anualizada": 0.27950854271455355,
-        "correlacao_ibov": 0.6300774811235531,
-        "market_cap": 88808005632.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 843.225; lim=R$ 318.889); Vol OK (27,95%; faixa=21,54%–57,52%); Corr OK (|corr|=0,630; lim=0,635); MCap OK (R$ 88.808.005.632; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "SBSP3",
-        "codigo": "SBSP3",
-        "codigo_unico": "SBSP3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "BLUE CHIP",
-        "weight": 0.0,
-        "ema_short": 12,
-        "ema_long": 97,
-        "rsi_low": 37,
-        "rsi_high": 73,
-        "adx_threshold": 13,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 1.9,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 2147835.186225,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.2713172944961507,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.6504687914560192,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": false
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 86589136896.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 3,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 46,
-        "tier": "D",
-        "score_total": 0.3618181818181818,
-        "liquidez_avg_fin_volume": 2147835.186225,
-        "volatilidade_anualizada": 0.2713172944961507,
-        "correlacao_ibov": 0.6504687914560192,
-        "market_cap": 86589136896.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 2.147.835; lim=R$ 318.889); Vol OK (27,13%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,650; lim=0,635); MCap OK (R$ 86.589.136.896; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "PRIO3",
-        "codigo": "PRIO3",
-        "codigo_unico": "PRIO3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "BLUE CHIP",
-        "weight": 0.0902,
-        "ema_short": 13,
-        "ema_long": 76,
-        "rsi_low": 28,
-        "rsi_high": 80,
-        "adx_threshold": 29,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 4.300000000000001,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 1045277.529075,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.23901108867789483,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.3028296082883377,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 35904335872.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 47,
-        "tier": "D",
-        "score_total": 0.34818181818181815,
-        "liquidez_avg_fin_volume": 1045277.529075,
-        "volatilidade_anualizada": 0.23901108867789483,
-        "correlacao_ibov": 0.3028296082883377,
-        "market_cap": 35904335872.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 1.045.278; lim=R$ 318.889); Vol OK (23,90%; faixa=21,54%–57,52%); Corr OK (|corr|=0,303; lim=0,635); MCap OK (R$ 35.904.335.872; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "BPAC11",
-        "codigo": "BPAC11",
-        "codigo_unico": "BPAC11",
-        "tipo": "UNIT/ETF",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "BLUE CHIP",
-        "weight": 0.0112,
-        "ema_short": 25,
-        "ema_long": 76,
-        "rsi_low": 45,
-        "rsi_high": 55,
-        "adx_threshold": 30,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 4.300000000000001,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 1071598.297,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.3302677339933438,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.7605930579742672,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": false
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 181809987584.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 3,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 48,
-        "tier": "D",
-        "score_total": 0.3318181818181818,
-        "liquidez_avg_fin_volume": 1071598.297,
-        "volatilidade_anualizada": 0.3302677339933438,
-        "correlacao_ibov": 0.7605930579742672,
-        "market_cap": 181809987584.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 1.071.598; lim=R$ 318.889); Vol OK (33,03%; faixa=21,54%–57,52%); Corr NOK (|corr|=0,761; lim=0,635); MCap OK (R$ 181.809.987.584; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "RADL3",
-        "codigo": "RADL3",
-        "codigo_unico": "RADL3",
-        "tipo": "AÇÃO",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.0316,
-        "ema_short": 24,
-        "ema_long": 37,
-        "rsi_low": 15,
-        "rsi_high": 75,
-        "adx_threshold": 19,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 3.1,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 476454.10327500006,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.4309464800610215,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.4349283059375325,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 44733452288.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 49,
-        "tier": "D",
-        "score_total": 0.32909090909090905,
-        "liquidez_avg_fin_volume": 476454.10327500006,
-        "volatilidade_anualizada": 0.4309464800610215,
-        "correlacao_ibov": 0.4349283059375325,
-        "market_cap": 44733452288.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 476.454; lim=R$ 318.889); Vol OK (43,09%; faixa=21,54%–57,52%); Corr OK (|corr|=0,435; lim=0,635); MCap OK (R$ 44.733.452.288; lim=R$ 6.132.724.480)"
-    },
-    {
-      "identificacao": {
-        "nome": "SUZB3",
-        "codigo": "SUZB3",
-        "codigo_unico": "SUZB3",
-        "tipo": "AÇÃO",
-        "categoria": "BLUE CHIP"
-      },
-      "ativo": {
-        "category": "BLUE CHIP",
-        "weight": 0.05,
-        "ema_short": 9,
-        "ema_long": 21,
-        "rsi_low": 30.0,
-        "rsi_high": 70.0,
-        "adx_threshold": 25.0,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 2.5,
-        "tp_mult": 5.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 967376.165925,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.214814224948936,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.0589587000333559,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 63772889088.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": true,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 50,
-        "tier": "D",
-        "score_total": 0.31090909090909097,
-        "liquidez_avg_fin_volume": 967376.165925,
-        "volatilidade_anualizada": 0.214814224948936,
-        "correlacao_ibov": 0.0589587000333559,
-        "market_cap": 63772889088.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "BLUE CHIP",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Blue chip: marcada como viável por definição (robustez + liquidez estrutural)."
-    },
-    {
-      "identificacao": {
-        "nome": "PETR4",
-        "codigo": "PETR4",
-        "codigo_unico": "PETR4",
-        "tipo": "AÇÃO",
-        "categoria": "BLUE CHIP"
-      },
-      "ativo": {
-        "category": "BLUE CHIP",
-        "weight": 0.1047,
-        "ema_short": 11,
-        "ema_long": 56,
-        "rsi_low": 20,
-        "rsi_high": 72,
-        "adx_threshold": 12,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 3.7,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 1210223.0015,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.2010123965519548,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.4538822359303427,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 430539309056.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": true,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 51,
-        "tier": "D",
-        "score_total": 0.3063636363636364,
-        "liquidez_avg_fin_volume": 1210223.0015,
-        "volatilidade_anualizada": 0.2010123965519548,
-        "correlacao_ibov": 0.4538822359303427,
-        "market_cap": 430539309056.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "BLUE CHIP",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Blue chip: marcada como viável por definição (robustez + liquidez estrutural)."
-    },
-    {
-      "identificacao": {
-        "nome": "VALE3",
-        "codigo": "VALE3",
-        "codigo_unico": "VALE3",
-        "tipo": "AÇÃO",
-        "categoria": "BLUE CHIP"
-      },
-      "ativo": {
-        "category": "BLUE CHIP",
-        "weight": 0.0,
-        "ema_short": 12,
-        "ema_long": 97,
-        "rsi_low": 37,
-        "rsi_high": 73,
-        "adx_threshold": 13,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 1.9,
-        "tp_mult": 3.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 3156442.0932,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.17789100660644067,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.3644645128181709,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 336721346560.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": true,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 52,
-        "tier": "D",
-        "score_total": 0.28090909090909094,
-        "liquidez_avg_fin_volume": 3156442.0932,
-        "volatilidade_anualizada": 0.17789100660644067,
-        "correlacao_ibov": 0.3644645128181709,
-        "market_cap": 336721346560.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "BLUE CHIP",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Blue chip: marcada como viável por definição (robustez + liquidez estrutural)."
-    },
-    {
-      "identificacao": {
-        "nome": "WEGE3",
-        "codigo": "WEGE3",
-        "codigo_unico": "WEGE3",
-        "tipo": "AÇÃO",
-        "categoria": "BLUE CHIP"
-      },
-      "ativo": {
-        "category": "BLUE CHIP",
-        "weight": 0.05,
-        "ema_short": 9,
-        "ema_long": 21,
-        "rsi_low": 30.0,
-        "rsi_high": 70.0,
-        "adx_threshold": 25.0,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 2.5,
-        "tp_mult": 5.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 846845.6958500001,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.2752506917249384,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.1817572874467302,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 194344632320.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": true,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 54,
-        "tier": "D",
-        "score_total": 0.23181818181818184,
-        "liquidez_avg_fin_volume": 846845.6958500001,
-        "volatilidade_anualizada": 0.2752506917249384,
-        "correlacao_ibov": 0.1817572874467302,
-        "market_cap": 194344632320.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "BLUE CHIP",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Blue chip: marcada como viável por definição (robustez + liquidez estrutural)."
-    },
-    {
-      "identificacao": {
-        "nome": "AURA33",
-        "codigo": "AURA33",
-        "codigo_unico": "AURA33",
-        "tipo": "BDR",
-        "categoria": "OPORTUNIDADE"
-      },
-      "ativo": {
-        "category": "OPORTUNIDADE",
-        "weight": 0.05,
-        "ema_short": 9,
-        "ema_long": 21,
-        "rsi_low": 30.0,
-        "rsi_high": 70.0,
-        "adx_threshold": 25.0,
-        "mom_min": 0.0,
-        "sl_atr_multiplier": 2.5,
-        "tp_mult": 5.0
-      },
-      "criterios_viabilidade": {
-        "liquidez": {
-          "metrica": "avg_fin_volume",
-          "valor": 1806209.4915000005,
-          "limiar": 318888.73997500003,
-          "condicao": ">= limiar",
-          "ok": true
-        },
-        "volatilidade": {
-          "metrica": "volatility_ann",
-          "valor": 0.4880879902923411,
-          "limiar_inferior": 0.21543975635038212,
-          "limiar_superior": 0.5751659600971757,
-          "condicao": "entre [limiar_inferior, limiar_superior]",
-          "ok": true
-        },
-        "correlacao_ibov": {
-          "metrica": "abs_corr_ibov",
-          "valor": 0.05689552751983074,
-          "limiar": 0.6353184419932515,
-          "condicao": "<= limiar",
-          "ok": true
-        },
-        "market_cap": {
-          "metrica": "market_cap",
-          "valor": 27092271104.0,
-          "limiar": 6132724479.999999,
-          "condicao": ">= limiar (quando limiar > 0)",
-          "ok": true
-        },
-        "regra_final": {
-          "blue_chip": false,
-          "criteria_passed": 4,
-          "liquidez_obrigatoria": true,
-          "min_criterios": 3
-        }
-      },
-      "resultados": {
-        "rank_total": 55,
-        "tier": "D",
-        "score_total": 0.18727272727272726,
-        "liquidez_avg_fin_volume": 1806209.4915000005,
-        "volatilidade_anualizada": 0.4880879902923411,
-        "correlacao_ibov": 0.05689552751983074,
-        "market_cap": 27092271104.0,
-        "fonte_dados": "mt5"
-      },
-      "recomendacoes": {
-        "acao_recomendada": "Adicionar ao universo de execução da próxima semana",
-        "modo": "OPORTUNIDADE",
-        "parametrizacao": "Usar ELITE_SYMBOLS (se existir) ou DEFAULT_PARAMS como base e refinar via otimização WFO.",
-        "monitoramento": "Monitorar volatilidade e correlação diária; ajustar exposição se |corr| subir."
-      },
-      "prazos_e_recursos": {
-        "prazo_estimado": "1 dia útil",
-        "recursos_necessarios": [
-          "MT5 conectado",
-          "dados D1/M15",
-          "cache Yahoo habilitado",
-          "tempo de backtest"
-        ]
-      },
-      "restricoes_dependencias": {
-        "dependencias": [
-          "MetaTrader5",
-          "yfinance"
-        ],
-        "observacoes": [
-          "Se o MT5 não tiver o símbolo, o script usa Yahoo como fallback.",
-          "Backtest M15 com Yahoo é limitado e deve ser validado com dados do broker quando possível."
-        ]
-      },
-      "justificativa_tecnica": "Liquidez OK (R$ 1.806.209; lim=R$ 318.889); Vol OK (48,81%; faixa=21,54%–57,52%); Corr OK (|corr|=0,057; lim=0,635); MCap OK (R$ 27.092.271.104; lim=R$ 6.132.724.480)"
-    }
-  ]
-}"""
-ATIVOS_VIAVEIS_REPORT = json.loads(ATIVOS_VIAVEIS_REPORT_JSON)
-
-ATIVOS_VIAVEIS_REPORT = json.loads(ATIVOS_VIAVEIS_REPORT_JSON)
-
-ATIVOS_VIAVEIS_REPORT = json.loads(ATIVOS_VIAVEIS_REPORT_JSON)
-
-ATIVOS_VIAVEIS_REPORT = json.loads(ATIVOS_VIAVEIS_REPORT_JSON)
-
-ATIVOS_VIAVEIS_REPORT = json.loads(ATIVOS_VIAVEIS_REPORT_JSON)
-
-ATIVOS_VIAVEIS_REPORT = json.loads(ATIVOS_VIAVEIS_REPORT_JSON)
-
-ATIVOS_VIAVEIS_REPORT = json.loads(ATIVOS_VIAVEIS_REPORT_JSON)
-
-ATIVOS_VIAVEIS_REPORT = json.loads(ATIVOS_VIAVEIS_REPORT_JSON)
-
-ATIVOS_VIAVEIS_REPORT = json.loads(ATIVOS_VIAVEIS_REPORT_JSON)
-
-ATIVOS_VIAVEIS_REPORT = json.loads(ATIVOS_VIAVEIS_REPORT_JSON)
-
-ATIVOS_VIAVEIS_REPORT = json.loads(ATIVOS_VIAVEIS_REPORT_JSON)
-
-ATIVOS_VIAVEIS_REPORT = json.loads(ATIVOS_VIAVEIS_REPORT_JSON)

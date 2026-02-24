@@ -2,3 +2,7 @@ DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$
 ---------------------------------------------------------------------------------------------------------
 2026-01-28 10:38:00 | ENTRADA  | RAIL3  | BUY  | Vol:   15200 | Price:  15.21 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
 2026-01-28 11:00:52 | SAÍDA    | RAIL3  | BUY  | Vol:   34900 | Price:  15.22 | P&L:  +349.00 R$ (+0.07%) | Motivo: Take Profit | DealId: 1705772349 | Pos: 2333754853
+2026-01-28 11:16:52 | ENTRADA  | RAIL3  | BUY  | Vol:   13800 | Price:  15.33 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-28 12:58:15 | SAÍDA    | RAIL3  | BUY  | Vol:   30600 | Price:  15.12 | P&L: -6426.00 R$ (-1.37%) | Motivo: Stop Loss | DealId: 1706061655 | Pos: 2333887871
+2026-01-28 13:18:43 | ENTRADA  | PRIO3  | BUY  | Vol:    4300 | Price:  50.12 | P&L:    +0.00 R$ (+0.00%) | Motivo: Abertura de Posição
+2026-01-28 16:15:39 | SAÍDA    | PRIO3  | BUY  | Vol:    9300 | Price:  50.19 | P&L:  +651.00 R$ (+0.14%) | Motivo: Stop Loss | DealId: 1706317993 | Pos: 2334373976

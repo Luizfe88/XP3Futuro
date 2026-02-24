@@ -12,7 +12,7 @@ Uso:
     from ml_signals import MLSignalPredictor
     
     predictor = MLSignalPredictor()
-    signal = predictor.predict(symbol="PETR4", indicators=ind_dict)
+    signal = predictor.predict(symbol="WIN$N", indicators=ind_dict)  # Exemplo com futuro
     
     if signal['confidence'] >= 0.70 and signal['direction'] == 'BUY':
         # Entrar na operação
@@ -31,6 +31,7 @@ import json
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
 import xgboost as xgb
+from datetime import datetime
 
 # Funções auxiliares para serialização do Keras (evita erro de pickle)
 def attention_sum(x):
@@ -64,7 +65,7 @@ def check_market_regime(monitored_symbols: Optional[list] = None) -> Dict[str, A
     try:
         if monitored_symbols is None:
             try:
-                import config
+                import xp3future as config
                 monitored_symbols = list(getattr(config, "ELITE_SYMBOLS", {}).keys())
             except Exception:
                 monitored_symbols = []
@@ -378,7 +379,7 @@ class MLSignalPredictor:
         """
         Calcula threshold dinâmico baseado em VIX e streak de perdas.
         Base: 0.65
-        + VIX > 28: +0.08
+        + VIX > 28: +0.12
         + Loss Streak ≥ 2: +0.05
         """
         import utils
@@ -387,7 +388,7 @@ class MLSignalPredictor:
         try:
             vix_br = utils.get_vix_br()
             if vix_br > 28:
-                base += 0.08
+                base += 0.12
 
             loss_streak = utils.get_loss_streak(symbol) if hasattr(utils, 'get_loss_streak') else 0
             if loss_streak >= 2:
@@ -395,8 +396,133 @@ class MLSignalPredictor:
         except Exception as e:
             logger.error(f"Erro ao calcular dynamic threshold: {e}")
             
-        self.current_threshold = min(0.82, base)
+        self.current_threshold = min(0.88, base)
         return self.current_threshold
+
+class FeatureEngineer:
+    def compute_all(self, df: pd.DataFrame) -> pd.DataFrame:
+        if df is None or len(df) < 20:
+            return pd.DataFrame()
+        close = df["close"]
+        ema_fast = close.ewm(span=9, adjust=False).mean()
+        ema_slow = close.ewm(span=21, adjust=False).mean()
+        delta = close.diff()
+        up = delta.clip(lower=0).rolling(14).mean()
+        down = -delta.clip(upper=0).rolling(14).mean()
+        rsi = 100 - (100 / (1 + up / down))
+        atr = (pd.concat([
+            df["high"] - df["low"],
+            (df["high"] - close.shift()).abs(),
+            (df["low"] - close.shift()).abs()
+        ], axis=1).max(axis=1).ewm(alpha=1/14, adjust=False).mean())
+        atr_pct = (atr / close).fillna(0) * 100
+        vol_ratio = df.get("tick_volume", df.get("real_volume", pd.Series(index=df.index, data=0))).rolling(20).apply(lambda x: x[-1] / max(x.mean(), 1.0))
+        ema_diff = (ema_fast - ema_slow) / close.replace(0, np.nan)
+        feats = pd.DataFrame({
+            "rsi": rsi.fillna(50),
+            "adx": pd.Series(index=df.index, data=20.0),
+            "atr_pct": atr_pct.fillna(0),
+            "volume_ratio": vol_ratio.fillna(1.0),
+            "momentum": close.pct_change(10).fillna(0),
+            "ema_diff": ema_diff.fillna(0),
+            "macd": ema_fast - ema_slow,
+            "price_vs_vwap": (close - close.rolling(20).mean()) / close.replace(0, np.nan),
+            "pe_ratio": 0.0,
+            "roe": 0.0,
+            "market_cap": 0.0,
+            "sentiment": 0.0,
+            "order_flow_imbalance": 0.0,
+            "order_flow_cvd": 0.0,
+            "vix_br": 0.0,
+            "book_imbalance": 0.0
+        })
+        return feats
+
+class OnlineLearner:
+    def __init__(self):
+        self.buffer = []
+    def add_sample(self, trade_result: dict):
+        self.buffer.append(trade_result)
+
+class MLTradingSystem:
+    def __init__(self):
+        self.predictor = MLSignalPredictor(confidence_threshold=0.55)
+        self.feature_engineer = FeatureEngineer()
+        self.online_learner = OnlineLearner()
+        self.universe = []
+    def needs_bootstrap(self) -> bool:
+        return True
+    def bootstrap_from_history(self):
+        import utils
+        from datetime import datetime, timedelta
+        import MetaTrader5 as mt5
+        simulated = []
+        for symbol in (self.universe or []):
+            df = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_M15, 500)
+            if df is None or len(df) < 50:
+                continue
+            feats = self.feature_engineer.compute_all(df)
+            if len(feats) == 0:
+                continue
+            for i in range(50, len(feats)):
+                x = feats.iloc[i].to_dict()
+                y = {"confidence": 0.5, "direction": "HOLD"}
+                simulated.append({"features": x, "label": y})
+        if simulated:
+            pass
+    def ensure_feature_consistency(self, raw_indicators: dict) -> np.ndarray:
+        features = np.zeros(16, dtype=np.float32)
+        features[0] = float(raw_indicators.get("rsi", 50.0) or 50.0)
+        features[1] = float(raw_indicators.get("adx", 20.0) or 20.0)
+        features[2] = float(raw_indicators.get("atr_pct", 2.0) or 2.0)
+        features[3] = float(raw_indicators.get("volume_ratio", 1.0) or 1.0)
+        features[4] = float(raw_indicators.get("momentum", 0.0) or 0.0)
+        features[5] = float(raw_indicators.get("ema_diff", 0.0) or 0.0)
+        features[6] = float(raw_indicators.get("macd", 0.0) or 0.0)
+        features[7] = float(raw_indicators.get("price_vs_vwap", 0.0) or 0.0)
+        features[8] = float(raw_indicators.get("pe_ratio", 0.0) or 0.0)
+        features[9] = float(raw_indicators.get("roe", 0.0) or 0.0)
+        features[10] = float(raw_indicators.get("market_cap", 0.0) or 0.0)
+        features[11] = float(raw_indicators.get("sentiment", 0.0) or 0.0)
+        features[12] = float(raw_indicators.get("order_flow_imbalance", raw_indicators.get("imbalance", 0.0)) or 0.0)
+        features[13] = float(raw_indicators.get("order_flow_cvd", raw_indicators.get("cvd", 0.0)) or 0.0)
+        features[14] = float(raw_indicators.get("vix_br", 0.0) or 0.0)
+        features[15] = float(raw_indicators.get("book_imbalance", raw_indicators.get("book_imbalance", 0.0)) or 0.0)
+        features = np.clip(features, -10, 10)
+        return features
+    def predict_with_confidence_adjustment(self, symbol: str, indicators: dict) -> dict:
+        import utils
+        features = self.ensure_feature_consistency(indicators)
+        prediction = self.predictor.predict(symbol, indicators)
+        base_threshold = 0.55
+        vix = utils.get_vix_br()
+        if vix > 30:
+            base_threshold += 0.10
+        elif vix < 20:
+            base_threshold -= 0.05
+        try:
+            from database import get_symbol_statistics
+            stats = get_symbol_statistics(symbol, lookback_days=7)
+            wr = float(stats.get("win_rate", 0.55) or 0.55)
+        except Exception:
+            wr = 0.55
+        if wr > 0.65:
+            base_threshold -= 0.08
+        elif wr < 0.40:
+            base_threshold += 0.15
+        hour = datetime.now().hour
+        if 10 <= hour <= 11:
+            base_threshold += 0.05
+        elif 15 <= hour <= 16:
+            base_threshold -= 0.05
+        final_threshold = float(np.clip(base_threshold, 0.45, 0.75))
+        prediction["threshold_used"] = final_threshold
+        prediction["approved"] = float(prediction.get("confidence", 0) or 0) >= final_threshold
+        return prediction
+    def train_online(self, trade_result: dict):
+        self.online_learner.add_sample(trade_result)
+        if len(self.online_learner.buffer) >= 20:
+            self.online_learner.buffer.clear()
 
     def predict(self, symbol: str, indicators: Dict[str, float], history_df: Optional[pd.DataFrame] = None) -> Dict[str, Any]:
         """

@@ -50,7 +50,7 @@ class PredictiveHedger:
             # Portfolio heat
             portfolio_heat = 0
             try:
-                from bot import get_portfolio_heat
+                from botfuturo import get_portfolio_heat
                 portfolio_heat = get_portfolio_heat()
             except:
                 pass

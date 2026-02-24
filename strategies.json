@@ -1,0 +1,40 @@
+{
+  "VOLATILITY_BREAKOUT": {
+    "strategy_name": "VOLATILITY_BREAKOUT",
+    "params": {
+      "rsi_low": {"type": "int", "min": 20, "max": 40},
+      "rsi_high": {"type": "int", "min": 60, "max": 80},
+      "adx_threshold": {"type": "int", "min": 15, "max": 35},
+      "sl_mult": {"type": "float", "min": 1.0, "max": 3.0},
+      "tp_mult": {"type": "float", "min": 1.0, "max": 4.0},
+      "base_slippage": {"type": "float", "min": 0.0001, "max": 0.001},
+      "volatility_multiplier": {"type": "float", "min": 0.5, "max": 1.5},
+      "vwap_dist_thresh": {"type": "float", "min": 0.5, "max": 4.0}
+    }
+  },
+  "MEAN_REVERSION": {
+    "strategy_name": "MEAN_REVERSION",
+    "params": {
+      "sl_atr_multiplier": {"type": "float", "min": 1.0, "max": 3.0},
+      "tp_ratio": {"type": "float", "min": 0.8, "max": 2.5},
+      "bb_period": {"type": "int", "min": 18, "max": 30},
+      "bb_std": {"type": "float", "min": 2.0, "max": 3.0},
+      "adx_thresh": {"type": "float", "min": 10.0, "max": 25.0},
+      "vol_mult": {"type": "float", "min": 0.5, "max": 1.5},
+      "base_slippage": {"type": "float", "min": 0.0001, "max": 0.001},
+      "min_atr_pct": {"type": "float", "min": 0.0, "max": 0.01}
+    }
+  },
+  "EMA_CROSS": {
+    "strategy_name": "EMA_CROSS",
+    "params": {
+      "rsi_low": {"type": "int", "min": 20, "max": 40},
+      "rsi_high": {"type": "int", "min": 60, "max": 80},
+      "adx_threshold": {"type": "int", "min": 15, "max": 35},
+      "sl_mult": {"type": "float", "min": 1.0, "max": 3.0},
+      "tp_mult": {"type": "float", "min": 1.0, "max": 4.0},
+      "base_slippage": {"type": "float", "min": 0.0001, "max": 0.001},
+      "vwap_dist_thresh": {"type": "float", "min": 0.5, "max": 4.0}
+    }
+  }
+}

@@ -10,7 +10,15 @@ import requests
 from datetime import datetime, timedelta
 from typing import List, Dict, Tuple, Optional
 import logging
-import config
+try:
+    import xp3future as config
+except ModuleNotFoundError:
+    import sys as _sys, os as _os
+    _sys.path.insert(0, _os.path.abspath(_os.path.join(_os.path.dirname(__file__), "..")))
+    try:
+        import xp3future as config
+    except ModuleNotFoundError:
+        import config
 import utils
 import numpy as np
 

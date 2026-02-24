@@ -1,0 +1,5 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-01-29 15:10:41 | SAÍDA    | TOTS3  | BUY  | Vol:    5300 | Price:  47.15 | P&L: -2862.00 R$ (-1.13%) | Motivo: Stop Loss | DealId: 1706763699 | Pos: 2335603100
+2026-01-29 15:10:41 | SAÍDA    | RAIL3  | BUY  | Vol:   17100 | Price:  15.02 | P&L: -2907.00 R$ (-1.12%) | Motivo: Stop Loss | DealId: 1706860370 | Pos: 2335664748
+2026-01-29 15:10:41 | SAÍDA    | TOTS3  | BUY  | Vol:    5100 | Price:  46.47 | P&L: -2907.00 R$ (-1.21%) | Motivo: Stop Loss | DealId: 1706872046 | Pos: 2335718524

@@ -1,0 +1,17 @@
+{
+  "PETR4.SA": [
+    {
+      "strategy": "EMA_CROSS",
+      "params": {
+        "rsi_low": 39,
+        "rsi_high": 66,
+        "adx_threshold": 29,
+        "sl_mult": 1.2110578506917244,
+        "tp_mult": 1.0946240864604637,
+        "base_slippage": 0.0005539052676688201,
+        "vwap_dist_thresh": 1.4619810516334226
+      },
+      "metrics": {}
+    }
+  ]
+}

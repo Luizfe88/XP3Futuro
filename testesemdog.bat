@@ -1,5 +1,7 @@
-cd C:\Users\luizf\Documents\xp3v5
+@echo off
+title XP3 FUTURE - Test
+cd C:\Users\luizf\Documents\xp3future
 
-py bot.py
+py botfuturo.py
 
 pause

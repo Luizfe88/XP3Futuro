@@ -1,0 +1,61 @@
+{
+  "WIN$N": [
+    {
+      "strategy": "MEAN_REVERSION",
+      "params": {
+        "sl_atr_multiplier": 2.698353814870055,
+        "tp_ratio": 2.295274214857143,
+        "bb_period": 19,
+        "bb_std": 2.658207464838115,
+        "adx_thresh": 19.70405418891363,
+        "vol_mult": 1.3729409657787381,
+        "base_slippage": 0.00021445601010879295,
+        "min_atr_pct": 0.0027750590595837644
+      },
+      "metrics": {}
+    },
+    {
+      "strategy": "EMA_CROSS",
+      "params": {
+        "rsi_low": 26,
+        "rsi_high": 76,
+        "adx_threshold": 32,
+        "sl_mult": 2.049489369755166,
+        "tp_mult": 3.017637087801813,
+        "base_slippage": 0.0002199427090328101,
+        "vwap_dist_thresh": 0.6156686486856779
+      },
+      "metrics": {
+        "calmar": 0.16483770019684682,
+        "max_drawdown": 1.109874941185408,
+        "profit_factor": 2.238724608190396,
+        "win_rate": 0.6896551724137931,
+        "trades": 29,
+        "total_pnl": 7975.6028118894,
+        "relax_level": 2
+      }
+    },
+    {
+      "strategy": "VOLATILITY_BREAKOUT",
+      "params": {
+        "rsi_low": 23,
+        "rsi_high": 67,
+        "adx_threshold": 16,
+        "sl_mult": 2.1171647022695756,
+        "tp_mult": 3.634657782185475,
+        "base_slippage": 0.00016462032983887475,
+        "volatility_multiplier": 0.5572282814104044,
+        "vwap_dist_thresh": 0.6463658303936031
+      },
+      "metrics": {
+        "calmar": 0.22014255425559184,
+        "max_drawdown": 1.1057956872204893,
+        "profit_factor": 2.602524981476455,
+        "win_rate": 0.7333333333333333,
+        "trades": 30,
+        "total_pnl": 9677.981816402975,
+        "relax_level": 2
+      }
+    }
+  ]
+}

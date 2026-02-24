@@ -6,7 +6,7 @@ import pandas as pd
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 logger = logging.getLogger("validate_fixes")
 
-sys.path.append(r"c:\Users\luizf\Documents\xp3v5")
+sys.path.append(r"c:\Users\luizf\Documents\xp3future")
 
 def _dummy_df(n=600):
     idx = pd.date_range(start="2025-01-01", periods=n, freq="15min")

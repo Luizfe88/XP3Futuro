@@ -1,0 +1,18 @@
+{
+  "WIN$N": [
+    {
+      "strategy": "VOLATILITY_BREAKOUT",
+      "params": {
+        "rsi_low": 24,
+        "rsi_high": 79,
+        "adx_threshold": 17,
+        "sl_mult": 2.906911644802002,
+        "tp_mult": 3.506274410124118,
+        "base_slippage": 0.0005853214091863268,
+        "volatility_multiplier": 0.5655058372449959,
+        "vwap_dist_thresh": 3.7274217686994224
+      },
+      "metrics": {}
+    }
+  ]
+}

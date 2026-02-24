@@ -1,0 +1,18 @@
+{
+  "asset": "WIN$N",
+  "final_score": -0.0,
+  "confidence": 0.0,
+  "stability": 0.31533586626947313,
+  "expected_dd": 0.217832832224133,
+  "capital_fraction": -0.0,
+  "regime": "TIME_EXIT",
+  "min_trades": 30,
+  "oos_pass_rate": "0%",
+  "top_trade_ratio": 0.36215071449239655,
+  "dies_without_top_trade": false,
+  "pnl_quantiles_proxy": {
+    "p25": 0.003045548944830677,
+    "p50": 0.004293705529684891,
+    "p75": 0.004916473340099949
+  }
+}

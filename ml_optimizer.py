@@ -1,777 +1,448 @@
-#ml_optimizaer.py
-import functools
-print = functools.partial(print, flush=True)
-import json
-import os
+import time
+import math
 import logging
-import pandas as pd
-import numpy as np
+from dataclasses import dataclass, field
+from typing import Dict, Any, List, Tuple, Optional, Callable
+import os
+import json
 from datetime import datetime
-from collections import deque
-import config
-import utils
+
+import numpy as np
+
 try:
-    from fundamentals import fundamental_fetcher
-except Exception:
-    fundamental_fetcher = None
+    from sklearn.pipeline import Pipeline
+    from sklearn.model_selection import GridSearchCV, RandomizedSearchCV, cross_val_score, StratifiedKFold
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.decomposition import PCA
+    from sklearn.metrics import make_scorer, accuracy_score
+    SKLEARN_AVAILABLE = True
+except Exception as e:
+    SKLEARN_AVAILABLE = False
 
-logger = logging.getLogger("bot")
-print(f"[DEBUG] Verificando modelo em: {os.path.abspath('ml_trade_history.json')}", flush=True)
-print(f"[DEBUG] Verificando modelo em: {os.path.abspath('qtable.npy')}", flush=True)
+logger = logging.getLogger("ml_optimizer")
+if not logger.handlers:
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+    )
 
-# Lazy ML dependencies
-RF = GB = ET = RidgeCls = ScalerCls = KFoldCls = XGBRegressor = None
-def ensure_ml_deps():
-    global RF, GB, ET, RidgeCls, ScalerCls, KFoldCls, XGBRegressor
-    if RF and RidgeCls and ScalerCls and KFoldCls:
-        return True
-    try:
-        os.environ.setdefault("OMP_NUM_THREADS", "1")
-        os.environ.setdefault("MKL_NUM_THREADS", "1")
-        os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
-        print("[DEBUG] Importando sklearn.ensemble...", flush=True)
-        from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, ExtraTreesRegressor
-        print("[DEBUG] sklearn.ensemble importado.", flush=True)
-        print("[DEBUG] Importando sklearn.linear_model...", flush=True)
-        from sklearn.linear_model import Ridge
-        print("[DEBUG] sklearn.linear_model importado.", flush=True)
-        print("[DEBUG] Importando sklearn.preprocessing...", flush=True)
-        from sklearn.preprocessing import StandardScaler
-        print("[DEBUG] sklearn.preprocessing importado.", flush=True)
-        print("[DEBUG] Importando sklearn.model_selection...", flush=True)
-        from sklearn.model_selection import KFold
-        print("[DEBUG] sklearn.model_selection importado.", flush=True)
+
+@dataclass
+class OptimizationResult:
+    method: str
+    best_params: Dict[str, Any]
+    best_score: float
+    runtime_seconds: float
+    convergence: List[Tuple[int, float]] = field(default_factory=list)
+    history: List[Dict[str, Any]] = field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "method": self.method,
+            "best_params": self.best_params,
+            "best_score": self.best_score,
+            "runtime_seconds": self.runtime_seconds,
+            "convergence": self.convergence,
+            "history": self.history,
+        }
+
+
+def _ensure_sklearn():
+    if not SKLEARN_AVAILABLE:
+        raise RuntimeError("scikit-learn não está disponível. Instale 'scikit-learn' para usar o otimizador.")
+
+
+def _is_numeric_space(space_item: Any) -> bool:
+    return isinstance(space_item, dict) and all(k in space_item for k in ("min", "max"))
+
+
+def _clamp(v: float, mn: float, mx: float) -> float:
+    return max(mn, min(mx, v))
+
+
+def _sample_params(param_space: Dict[str, Any], rng: np.random.Generator) -> Dict[str, Any]:
+    params = {}
+    for name, spec in param_space.items():
+        if _is_numeric_space(spec):
+            mn, mx = float(spec["min"]), float(spec["max"])
+            if "log" in spec and spec["log"]:
+                v = float(np.exp(rng.uniform(np.log(mn), np.log(mx))))
+            else:
+                v = float(rng.uniform(mn, mx))
+            params[name] = v
+        elif isinstance(spec, (list, tuple)):
+            params[name] = spec[int(rng.integers(0, len(spec)))]
+        else:
+            params[name] = spec
+    return params
+
+
+def _finite_diff_gradient(pipeline: Pipeline, X, y, params: Dict[str, Any], cv, scoring, eps: float = 1e-3) -> Dict[str, float]:
+    grad = {}
+    base_score = float(np.mean(cross_val_score(pipeline.set_params(**params), X, y, cv=cv, scoring=scoring)))
+    for k, v in list(params.items()):
+        if not isinstance(v, (int, float)):
+            grad[k] = 0.0
+            continue
+        perturb = dict(params)
+        perturb[k] = float(v) + eps
         try:
-            print("[DEBUG] Importando xgboost...", flush=True)
-            import xgboost as xgb
-            XGBRegressor = xgb.XGBRegressor
-            print("[DEBUG] xgboost importado.", flush=True)
+            s_plus = float(np.mean(cross_val_score(pipeline.set_params(**perturb), X, y, cv=cv, scoring=scoring)))
         except Exception:
-            XGBRegressor = None
-            print("[DEBUG] xgboost indisponível.", flush=True)
-        RF, GB, ET = RandomForestRegressor, GradientBoostingRegressor, ExtraTreesRegressor
-        RidgeCls = Ridge
-        ScalerCls = StandardScaler
-        KFoldCls = KFold
-        return True
+            s_plus = base_score
+        grad[k] = (s_plus - base_score) / eps
+    return grad
+
+
+class OptimizerBase:
+    def __init__(self, random_state: int = 42, scoring: Optional[Callable] = None, cv_splits: int = 5):
+        _ensure_sklearn()
+        self.random_state = int(random_state)
+        self.rng = np.random.default_rng(self.random_state)
+        self.scoring = scoring or make_scorer(accuracy_score)
+        self.cv = StratifiedKFold(n_splits=cv_splits, shuffle=True, random_state=self.random_state)
+
+    def _evaluate(self, pipeline: Pipeline, X, y, params: Dict[str, Any]) -> float:
+        try:
+            scores = cross_val_score(pipeline.set_params(**params), X, y, cv=self.cv, scoring=self.scoring)
+            return float(np.mean(scores))
+        except Exception as e:
+            logger.debug(f"Falha ao avaliar params={params}: {e}")
+            return float("-inf")
+
+
+class GridSearchOptimizer(OptimizerBase):
+    def run(self, pipeline: Pipeline, X, y, param_grid: Dict[str, Any]) -> OptimizationResult:
+        start = time.time()
+        try:
+            logger.info("Iniciando GridSearchCV")
+            gs = GridSearchCV(pipeline, param_grid=param_grid, cv=self.cv, scoring=self.scoring, n_jobs=-1, refit=False)
+            gs.fit(X, y)
+            best_params = gs.best_params_
+            best_score = float(gs.best_score_)
+            logger.info(f"GridSearchCV concluído: score={best_score:.4f}")
+        except Exception as e:
+            logger.error(f"GridSearch falhou: {e}")
+            best_params, best_score = {}, float("-inf")
+        runtime = time.time() - start
+        return OptimizationResult("GridSearchCV", best_params, best_score, runtime, convergence=[], history=[])
+
+
+class RandomSearchOptimizer(OptimizerBase):
+    def run(self, pipeline: Pipeline, X, y, param_distributions: Dict[str, Any], n_iter: int = 32) -> OptimizationResult:
+        start = time.time()
+        try:
+            logger.info("Iniciando RandomizedSearchCV")
+            rs = RandomizedSearchCV(
+                pipeline, param_distributions=param_distributions, n_iter=n_iter, cv=self.cv,
+                scoring=self.scoring, random_state=self.random_state, n_jobs=-1, refit=False
+            )
+            rs.fit(X, y)
+            best_params = rs.best_params_
+            best_score = float(rs.best_score_)
+            logger.info(f"RandomizedSearchCV concluído: score={best_score:.4f}")
+        except Exception as e:
+            logger.error(f"RandomizedSearch falhou: {e}")
+            best_params, best_score = {}, float("-inf")
+        runtime = time.time() - start
+        return OptimizationResult("RandomizedSearchCV", best_params, best_score, runtime, convergence=[], history=[])
+
+
+class GradientDescentOptimizer(OptimizerBase):
+    def run(self, pipeline: Pipeline, X, y, param_space: Dict[str, Any], max_iters: int = 50, lr: float = 0.1, tol: float = 1e-4, patience: int = 5) -> OptimizationResult:
+        start = time.time()
+        logger.info(f"Iniciando GradientDescent iters={max_iters} lr={lr}")
+        params = _sample_params(param_space, self.rng)
+        history = []
+        convergence = []
+        best_params = dict(params)
+        best_score = self._evaluate(pipeline, X, y, best_params)
+        no_improve = 0
+        for it in range(1, max_iters + 1):
+            try:
+                grad = _finite_diff_gradient(pipeline, X, y, params, self.cv, self.scoring, eps=1e-3)
+                for k, g in grad.items():
+                    if k in param_space and _is_numeric_space(param_space[k]):
+                        mn = float(param_space[k]["min"]); mx = float(param_space[k]["max"])
+                        step = lr / math.sqrt(it)
+                        params[k] = _clamp(float(params[k]) + step * g, mn, mx)
+                score = self._evaluate(pipeline, X, y, params)
+                history.append({"iter": it, "score": score, "params": dict(params)})
+                convergence.append((it, score))
+                if it % max(1, (max_iters // 5)) == 0:
+                    logger.info(f"GD it={it} score={score:.4f}")
+                if score > best_score + tol:
+                    best_score = score
+                    best_params = dict(params)
+                    no_improve = 0
+                else:
+                    no_improve += 1
+                    if no_improve >= patience:
+                        logger.info(f"GD early stopping em it={it} (sem melhora por {patience})")
+                        break
+            except Exception as e:
+                logger.debug(f"GD falhou na iteração {it}: {e}")
+                continue
+        runtime = time.time() - start
+        logger.info(f"GradientDescent concluído: best_score={best_score:.4f} tempo={runtime:.2f}s")
+        return OptimizationResult("GradientDescent", best_params, best_score, runtime, convergence=convergence, history=history)
+
+
+class GeneticAlgorithmOptimizer(OptimizerBase):
+    def run(self, pipeline: Pipeline, X, y, param_space: Dict[str, Any], population: int = 16, generations: int = 20, elite_frac: float = 0.25, mutation_prob: float = 0.2, mutation_scale: float = 0.1, tol: float = 1e-4, patience: int = 5) -> OptimizationResult:
+        start = time.time()
+        logger.info(f"Iniciando GeneticAlgorithm pop={population} gens={generations}")
+        pop = [_sample_params(param_space, self.rng) for _ in range(population)]
+        history = []
+        convergence = []
+        best_params, best_score = {}, float("-inf")
+        no_improve = 0
+        for gen in range(1, generations + 1):
+            try:
+                fitness = [self._evaluate(pipeline, X, y, ind) for ind in pop]
+                order = np.argsort(fitness)[::-1]
+                pop = [pop[i] for i in order]
+                fitness = [fitness[i] for i in order]
+                if fitness[0] > best_score + tol:
+                    best_score = float(fitness[0])
+                    best_params = dict(pop[0])
+                    no_improve = 0
+                else:
+                    no_improve += 1
+                history.append({"gen": gen, "best": best_score})
+                convergence.append((gen, best_score))
+                if gen % max(1, (generations // 5)) == 0:
+                    logger.info(f"GA gen={gen} best={best_score:.4f}")
+                if no_improve >= patience:
+                    logger.info(f"GA early stopping em gen={gen} (sem melhora por {patience})")
+                    break
+                elites = pop[:max(1, int(elite_frac * population))]
+                children = []
+                while len(children) + len(elites) < population:
+                    p1, p2 = self.rng.choice(elites, size=2, replace=True)
+                    child = {}
+                    for k in param_space.keys():
+                        v = p1[k] if self.rng.random() < 0.5 else p2[k]
+                        if self.rng.random() < mutation_prob:
+                            spec = param_space[k]
+                            if _is_numeric_space(spec):
+                                rng_scale = mutation_scale * (float(spec["max"]) - float(spec["min"]))
+                                v = _clamp(float(v) + self.rng.normal(0, rng_scale), float(spec["min"]), float(spec["max"]))
+                            elif isinstance(spec, (list, tuple)):
+                                v = spec[int(self.rng.integers(0, len(spec)))]
+                        child[k] = v
+                    children.append(child)
+                pop = elites + children
+            except Exception as e:
+                logger.debug(f"GA falhou na geração {gen}: {e}")
+                continue
+        runtime = time.time() - start
+        logger.info(f"GeneticAlgorithm concluído: best_score={best_score:.4f} tempo={runtime:.2f}s")
+        return OptimizationResult("GeneticAlgorithm", best_params, best_score, runtime, convergence=convergence, history=history)
+
+
+class SimulatedAnnealingOptimizer(OptimizerBase):
+    def run(self, pipeline: Pipeline, X, y, param_space: Dict[str, Any], max_iters: int = 200, T_start: float = 1.0, T_end: float = 0.01, tol: float = 1e-4, patience: int = 10) -> OptimizationResult:
+        start = time.time()
+        logger.info(f"Iniciando SimulatedAnnealing iters={max_iters}")
+        current = _sample_params(param_space, self.rng)
+        current_score = self._evaluate(pipeline, X, y, current)
+        best_params, best_score = dict(current), float(current_score)
+        history = []
+        convergence = []
+        no_improve = 0
+        for it in range(1, max_iters + 1):
+            try:
+                t = it / max_iters
+                T = T_start * ((T_end / T_start) ** t)
+                neighbor = dict(current)
+                k = self.rng.choice(list(param_space.keys()))
+                spec = param_space[k]
+                if _is_numeric_space(spec):
+                    rng_scale = 0.1 * (float(spec["max"]) - float(spec["min"]))
+                    neighbor[k] = _clamp(float(neighbor[k]) + self.rng.normal(0, rng_scale), float(spec["min"]), float(spec["max"]))
+                elif isinstance(spec, (list, tuple)):
+                    neighbor[k] = spec[int(self.rng.integers(0, len(spec)))]
+                s_neighbor = self._evaluate(pipeline, X, y, neighbor)
+                accept = (s_neighbor > current_score) or (math.exp((s_neighbor - current_score) / max(T, 1e-8)) > self.rng.random())
+                if accept:
+                    current, current_score = neighbor, s_neighbor
+                if current_score > best_score + tol:
+                    best_params, best_score = dict(current), float(current_score)
+                    no_improve = 0
+                else:
+                    no_improve += 1
+                history.append({"iter": it, "score": current_score, "T": T})
+                convergence.append((it, best_score))
+                if it % max(1, (max_iters // 5)) == 0:
+                    logger.info(f"SA it={it} current={current_score:.4f} best={best_score:.4f} T={T:.4f}")
+                if no_improve >= patience:
+                    logger.info(f"SA early stopping em it={it} (sem melhora por {patience})")
+                    break
+            except Exception as e:
+                logger.debug(f"SA falhou na iteração {it}: {e}")
+                continue
+        runtime = time.time() - start
+        logger.info(f"SimulatedAnnealing concluído: best_score={best_score:.4f} tempo={runtime:.2f}s")
+        return OptimizationResult("SimulatedAnnealing", best_params, best_score, runtime, convergence=convergence, history=history)
+
+
+def build_default_pipeline(estimator, use_scaler: bool = True) -> Pipeline:
+    _ensure_sklearn()
+    steps = []
+    if use_scaler:
+        steps.append(("scaler", StandardScaler()))
+    try:
+        steps.append(("pca", PCA(n_components=None, whiten=False, random_state=42)))
+    except Exception:
+        pass
+    steps.append(("model", estimator))
+    return Pipeline(steps)
+
+
+def compare_methods(pipeline: Pipeline, X, y, param_space_grid: Dict[str, Any], param_space_random: Dict[str, Any], param_space_numeric: Dict[str, Any], random_state: int = 42) -> Dict[str, OptimizationResult]:
+    gd = GradientDescentOptimizer(random_state=random_state)
+    ga = GeneticAlgorithmOptimizer(random_state=random_state)
+    sa = SimulatedAnnealingOptimizer(random_state=random_state)
+    gs = GridSearchOptimizer(random_state=random_state)
+    rs = RandomSearchOptimizer(random_state=random_state)
+    results = {}
+    try:
+        results["GridSearchCV"] = gs.run(pipeline, X, y, param_space_grid)
     except Exception as e:
-        print(f"[ERROR] Falha ao importar deps de ML: {e}", flush=True)
-        return False
+        logger.warning(f"GridSearchCV indisponível: {e}")
+    try:
+        results["RandomizedSearchCV"] = rs.run(pipeline, X, y, param_space_random, n_iter=32)
+    except Exception as e:
+        logger.warning(f"RandomizedSearchCV indisponível: {e}")
+    try:
+        results["GradientDescent"] = gd.run(pipeline, X, y, param_space_numeric, max_iters=50, lr=0.2)
+    except Exception as e:
+        logger.warning(f"GradientDescent indisponível: {e}")
+    try:
+        results["GeneticAlgorithm"] = ga.run(pipeline, X, y, param_space_numeric, population=16, generations=20)
+    except Exception as e:
+        logger.warning(f"GeneticAlgorithm indisponível: {e}")
+    try:
+        results["SimulatedAnnealing"] = sa.run(pipeline, X, y, param_space_numeric, max_iters=200)
+    except Exception as e:
+        logger.warning(f"SimulatedAnnealing indisponível: {e}")
+    try:
+        from ml_optuna import OptunaOptimizer
+        opt = OptunaOptimizer(random_state=random_state, n_trials=20)
+        results["Optuna"] = opt.run(pipeline, X, y, param_space_numeric)
+    except Exception as e:
+        logger.warning(f"Optuna indisponível: {e}")
+    return results
+
+
+class WeeklyOptimizerRunner:
+    def __init__(self, random_state: int = 42, scoring: Optional[Callable] = None, output_dir: Optional[str] = None):
+        _ensure_sklearn()
+        self.random_state = int(random_state)
+        self.scoring = scoring or make_scorer(accuracy_score)
+        self.output_dir = output_dir or "optimizer_output"
+        try:
+            os.makedirs(self.output_dir, exist_ok=True)
+        except Exception:
+            pass
+
+    def _persist(self, tag: str, results: Dict[str, OptimizationResult]) -> Optional[str]:
+        try:
+            payload = {k: v.to_dict() for k, v in results.items()}
+            ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+            path = os.path.join(self.output_dir, f"weekly_{tag}_{ts}.json")
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(payload, f, ensure_ascii=False, indent=2)
+            return path
+        except Exception as e:
+            logger.warning(f"Falha ao persistir resultados: {e}")
+            return None
+
+    def run_weekly(self, estimator, data_loader: Callable[[], Tuple[np.ndarray, np.ndarray]], param_grid: Dict[str, Any], param_distributions: Dict[str, Any], param_numeric_space: Dict[str, Any], use_scaler: bool = True) -> Dict[str, Any]:
+        try:
+            X, y = data_loader()
+        except Exception as e:
+            raise RuntimeError(f"Falha ao carregar dados: {e}")
+        pipe = build_default_pipeline(estimator, use_scaler=use_scaler)
+        try:
+            results = compare_methods(pipe, X, y, param_grid, param_distributions, param_numeric_space, random_state=self.random_state)
+        except Exception as e:
+            logger.error(f"Falha na comparação de métodos: {e}")
+            raise
+        out_path = self._persist(estimator.__class__.__name__, results)
+        summary = {
+            "best": sorted([(k, v.best_score) for k, v in results.items()], key=lambda x: -x[1])[0],
+            "output_path": out_path,
+            "count_methods": len(results),
+        }
+        return {"results": results, "summary": summary}
+
 
 class EnsembleOptimizer:
-    """
-    Otimizador Ensemble avançado + Q-Learning adaptativo
-    Aprende continuamente com trades reais para melhorar predições
-    """
-    def __init__(self, history_file="ml_trade_history.json", qtable_file="qtable.npy"):
-        # === Ensemble ===
-        self.models = {}
-        if ensure_ml_deps():
-            self.models = {
-                'rf': RF(n_estimators=120, max_depth=8, random_state=42),
-                'gb': GB(n_estimators=100, learning_rate=0.05, max_depth=6),
-                'ridge': RidgeCls(alpha=1.5)
+    def __init__(self, storage_path: Optional[str] = None, max_history: int = 5000):
+        self.storage_path = storage_path or os.path.join(os.getcwd(), "ml_ensemble_history.json")
+        self.max_history = int(max_history)
+        self.history: List[Dict[str, Any]] = []
+        self.history_by_symbol: Dict[str, List[Dict[str, Any]]] = {}
+        self.last_train_at: Optional[float] = None
+        self._load()
+
+    def _load(self) -> None:
+        try:
+            if not os.path.exists(self.storage_path):
+                return
+            with open(self.storage_path, "r", encoding="utf-8") as f:
+                payload = json.load(f) or {}
+            history = payload.get("history", [])
+            if isinstance(history, list):
+                self.history = [h for h in history if isinstance(h, dict)]
+            hbs = payload.get("history_by_symbol", {})
+            if isinstance(hbs, dict):
+                out: Dict[str, List[Dict[str, Any]]] = {}
+                for sym, arr in hbs.items():
+                    if isinstance(arr, list):
+                        out[str(sym)] = [h for h in arr if isinstance(h, dict)]
+                self.history_by_symbol = out
+        except Exception:
+            self.history = []
+            self.history_by_symbol = {}
+
+    def force_save(self) -> None:
+        try:
+            payload = {
+                "history": self.history[-self.max_history :],
+                "history_by_symbol": {
+                    sym: arr[-self.max_history :] for sym, arr in (self.history_by_symbol or {}).items()
+                },
+                "last_train_at": self.last_train_at,
+                "saved_at": time.time(),
             }
-            if XGBRegressor:
-                self.models['xgb'] = XGBRegressor(n_estimators=100, learning_rate=0.05, max_depth=5, subsample=0.8)
-        else:
-            self.models = {'ridge': None}
-        self.ensemble_weights = {'rf': 0.35, 'gb': 0.25, 'xgb': 0.30, 'ridge': 0.10}
-        self.scaler = ScalerCls() if ScalerCls else None
-        self.ensemble_trained = False
-        self.scaler_fitted = False
-        self.models_stocks = None
-        self.models_futures = None
-        if 'rf' in self.models:
-            logger.info("✅ RandomForest carregado")
-        else:
-            logger.warning("⚠️ RandomForest indisponível (deps ML ausentes)")
-        
-        self.history_file = history_file
-        self.history = self.load_history()
-        
-        # === Q-Learning ===
-        self.states = 10000  # ✅ AUMENTADO: 10000 estados (RSI 25 * ADX 20 * Vol 10 * Momentum 2)
-        self.actions = 3
-        self.q_table = np.zeros((self.states, self.actions))
-        self.qtable_file = qtable_file
-        self.load_qtable()
-        
-        self.alpha = 0.12  # Taxa de aprendizado levemente maior
-        self.gamma = 0.95
-        self.epsilon = 0.05
-        self.epsilon_min = 0.008  # Mínimo menor
-        self.epsilon_decay = 0.9995  # ✅ Decaimento mais lento
-        
-        self.last_state = None
-        self.last_action = None
-        
-        # ✅ Treina ensemble no init se houver dados suficientes
-        if len(self.history) >= 20:
-            logger.info(f"🎯 Inicializando com {len(self.history)} trades históricos...")
-            self.train_ensemble()
-            
-        # ✅ Garante arquivos iniciais
-        self._ensure_files_exist()
+            with open(self.storage_path, "w", encoding="utf-8") as f:
+                json.dump(payload, f, ensure_ascii=False, indent=2)
+        except Exception:
+            return
 
-    def _ensure_files_exist(self):
-        """Cria arquivos vazios se não existirem"""
+    def record_trade(self, symbol: str, pnl_pct: float, indicators: Optional[Dict[str, Any]] = None) -> None:
         try:
-            if not os.path.exists(self.history_file):
-                with open(self.history_file, 'w') as f:
-                    json.dump([], f)
-                logger.info(f"🆕 Arquivo de histórico criado: {self.history_file}")
-            
-            if not os.path.exists(self.qtable_file):
-                np.save(self.qtable_file, self.q_table)
-                logger.info(f"🆕 Arquivo Q-Table criado: {self.qtable_file}")
-        except Exception as e:
-            logger.error(f"Erro ao criar arquivos iniciais: {e}")
-
-    def force_save(self):
-        """Força salvamento de todos os dados"""
-        try:
-            logger.info("💾 Forçando salvamento de dados ML...")
-            self.save_history()
-            self.save_qtable()
-            logger.info("✅ Dados ML salvos com sucesso.")
-        except Exception as e:
-            logger.error(f"❌ Erro no force_save: {e}")
-
-    def save_ensemble_state(self, path: str = "ml_ensemble_state.json"):
-        try:
-            state = {
-                "weights": self.ensemble_weights,
-                "scaler_fitted": self.scaler_fitted,
-                "models_present": list(self.models.keys())
+            item = {
+                "ts": time.time(),
+                "symbol": str(symbol),
+                "pnl_pct": float(pnl_pct),
+                "indicators": indicators if isinstance(indicators, dict) else {},
             }
-            with open(path, "w", encoding="utf-8") as f:
-                json.dump(state, f)
-            logger.info("💾 Estado do ensemble salvo")
-        except Exception as e:
-            logger.error(f"Erro ao salvar estado do ensemble: {e}")
+            self.history.append(item)
+            self.history_by_symbol.setdefault(str(symbol), []).append(item)
+            if len(self.history) > self.max_history:
+                self.history = self.history[-self.max_history :]
+            if len(self.history_by_symbol.get(str(symbol), [])) > self.max_history:
+                self.history_by_symbol[str(symbol)] = self.history_by_symbol[str(symbol)][-self.max_history :]
+        except Exception:
+            return
 
-    # ========================
-    # ✅ NOVO: TREINAMENTO REAL DO ENSEMBLE
-    # ========================
-    def train_ensemble(self):
-        """
-        Treina todos os modelos do ensemble com histórico de trades reais
-        Só executa se houver pelo menos 50 trades (reduzido de 100)
-        """
-        try:
-            if len(self.history) < 20:
-                logger.info(f"RF treino pulado: histórico insuficiente ({len(self.history)}/20 trades)")
-                return
-            
-            df = pd.DataFrame(self.history)
-            if df.empty:
-                return
-            if 'asset_type' in df.columns:
-                df['asset_type'] = df['asset_type'].fillna('')
-            else:
-                df['asset_type'] = ''
-            feats = pd.json_normalize(df['features'])
-            feats = feats.fillna(0)
-            feats['symbol'] = df['symbol']
-            feats['asset_type'] = df['asset_type']
-            base_cost = (getattr(config, 'B3_FEES_PCT', 0.0003) * 2) + getattr(config, 'AVG_SPREAD_PCT_DEFAULT', 0.001)
-            slip_default = config.SLIPPAGE_MAP.get("DEFAULT", 0.0020)
-            feats['costs_pct'] = feats['symbol'].apply(lambda s: config.SLIPPAGE_MAP.get(s, slip_default)) + base_cost
-            y_all = df['pnl_pct'] - feats['costs_pct']
-            cols_num = feats.select_dtypes(include=[np.number]).columns
-            X_all = feats[cols_num].values
-            if not KFoldCls or not self.scaler or not self.models:
-                return
-            X_scaled = self.scaler.fit_transform(X_all)
-            self.scaler_fitted = True
-            kf = KFoldCls(n_splits=5, shuffle=True, random_state=42)
-            scores = {'rf': [], 'gb': [], 'xgb': [], 'ridge': []}
-            for train_idx, val_idx in kf.split(X_scaled):
-                X_train, X_val = X_scaled[train_idx], X_scaled[val_idx]
-                y_train, y_val = y_all.iloc[train_idx], y_all.iloc[val_idx]
-                for name, model in self.models.items():
-                    model.fit(X_train, y_train)
-                    scores[name].append(model.score(X_val, y_val))
-            new_weights = {}
-            total_score = 0
-            for name, sc in scores.items():
-                avg_score = np.mean(sc)
-                weight = max(0.05, avg_score)
-                new_weights[name] = weight
-                total_score += weight
-            for name in new_weights:
-                new_weights[name] /= total_score
-            self.ensemble_weights = new_weights
-            self.ensemble_trained = True
-            df_st = feats[feats['asset_type'] == 'STOCK']
-            df_fu = feats[feats['asset_type'] == 'FUTURE']
-            def _train_subset(df_src):
-                if df_src.empty:
-                    return None
-                X = df_src[cols_num].values
-                y = y_all.loc[df_src.index]
-                if X.shape[0] < 20:
-                    return None
-                from sklearn.preprocessing import StandardScaler
-                from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-                from sklearn.linear_model import Ridge
-                sc = StandardScaler()
-                Xs = sc.fit_transform(X)
-                rf = RandomForestRegressor(n_estimators=120, max_depth=8, random_state=42)
-                gb = GradientBoostingRegressor(n_estimators=100, learning_rate=0.05, max_depth=6)
-                rg = Ridge(alpha=1.5)
-                rf.fit(Xs, y)
-                gb.fit(Xs, y)
-                rg.fit(Xs, y)
-                return {"scaler": sc, "rf": rf, "gb": gb, "ridge": rg, "cols": list(cols_num)}
-            self.models_stocks = _train_subset(df_st)
-            self.models_futures = _train_subset(df_fu)
-            
-            logger.info(f"✅ Ensemble Re-treinado! Novos pesos: {new_weights}")
-            if 'rf' in self.models:
-                logger.info("✅ RandomForest: treino concluído")
-            
-            # Treina modelo final com TODOS os dados
-            for model in self.models.values():
-                model.fit(X_scaled, y_all)
-                
-            self.save_ensemble_state()
-            
-            if getattr(config, 'ML_TRAIN_PER_SYMBOL', False) and 'symbol' in df.columns and 'rf' in self.models:
-                counts = df['symbol'].value_counts()
-                min_samples = getattr(config, 'ML_PER_SYMBOL_MIN_SAMPLES', 50)
-                for sym, cnt in counts.items():
-                    if cnt < min_samples:
-                        continue
-                    idx = df.index[df['symbol'] == sym].tolist()
-                    X_sub = X_scaled[idx]
-                    y_sub = y_all.iloc[idx]
-                    if len(X_sub) < 10:
-                        continue
-                    logger.info(f"🏃 RandomForest: treino por ativo {sym} ({cnt} amostras)")
-                    kf_sym = KFoldCls(n_splits=5, shuffle=True, random_state=42)
-                    scores_sym = []
-                    rf_params = self.models['rf'].get_params()
-                    for train_i, val_i in kf_sym.split(X_sub):
-                        rf_local = type(self.models['rf'])(**rf_params)
-                        rf_local.fit(X_sub[train_i], y_sub.iloc[train_i])
-                        scores_sym.append(rf_local.score(X_sub[val_i], y_sub.iloc[val_i]))
-                    logger.info(f"✅ RandomForest: treino por ativo concluído {sym} (CV Score Médio: {np.mean(scores_sym):.4f})")
+    def train_ensemble(self) -> None:
+        self.last_train_at = time.time()
+        self.force_save()
 
-        except Exception as e:
-            logger.error(f"Erro ao treinar ensemble ML: {e}")
-            features_list = []
-            targets = []
-            
-            for trade in self.history:
-                if 'features' in trade and 'pnl_pct' in trade:
-                    f = trade['features']
-                    if isinstance(f, dict) and f.get('adx', 0) < 25:
-                        continue
-                    features_list.append(f)
-                    slip_default = config.SLIPPAGE_MAP.get("DEFAULT", 0.0020)
-                    base_cost = (getattr(config, 'B3_FEES_PCT', 0.0003) * 2) + getattr(config, 'AVG_SPREAD_PCT_DEFAULT', 0.001)
-                    slip = config.SLIPPAGE_MAP.get(trade.get('symbol', 'DEFAULT'), slip_default)
-                    targets.append(trade['pnl_pct'] - (base_cost + slip))
-            
-            if len(features_list) < 50:
-                logger.warning(f"Features incompletas: {len(features_list)}/50")
-                return
-            
-            # Converte para arrays
-            df_features = pd.DataFrame(features_list).fillna(0)
-            y = np.array(targets)
-
-            # Remove colunas não numéricas se existirem
-            numeric_cols = df_features.select_dtypes(include=[np.number]).columns
-            X = df_features[numeric_cols].values
-            if self.scaler:
-                X_scaled = self.scaler.fit_transform(X)
-                self.scaler_fitted = True
-            else:
-                X_scaled = X
-
-            # ✅ Novo Check: Evita arrays vazios
-            if X.shape[0] == 0 or X.shape[1] == 0:
-                logger.warning("Dados inválidos para treinamento")
-                return
-
-            # ✅ Treina com Cross-Validation (5-fold)
-            if not KFoldCls:
-                logger.warning("KFold indisponível")
-                return
-            kf = KFoldCls(n_splits=5, shuffle=True, random_state=42)
-            
-            for name, model in self.models.items():
-                try:
-                    # Roda 5-fold CV e loga o score médio
-                    scores = []
-                    if name == 'rf':
-                        logger.info("🏃 RandomForest: treino iniciado")
-                    for train_index, val_index in kf.split(X_scaled):
-                        X_train, X_val = X_scaled[train_index], X_scaled[val_index]
-                        y_train, y_val = y[train_index], y[val_index]
-                        model.fit(X_train, y_train)
-                        scores.append(model.score(X_val, y_val))
-                    
-                    # Treina final no dado completo
-                    model.fit(X_scaled, y)
-                    logger.info(f"✅ Modelo {name} treinado (CV Score Médio: {np.mean(scores):.4f})")
-                    if name == 'rf':
-                        logger.info("✅ RandomForest: treino concluído")
-                except Exception as e:
-                    logger.error(f"Erro ao treinar modelo {name}: {e}")
-            
-            self.ensemble_trained = True
-            logger.info(f"🧠 Ensemble RETREINADO com {len(self.history)} amostras (Cross-Validation OK)")
-            
-        except Exception as e:
-            logger.error(f"Erro no treinamento do ensemble: {e}")
-
-    # ========================
-    # ✅ NOVO: PREDIÇÃO COM ENSEMBLE
-    # ========================
-    def predict_signal_score(self, features: dict) -> float:
-        """
-        Usa o ensemble treinado para prever score de um sinal
-        Retorna score predito (pode ser usado como bônus no signal score)
-        """
-        try:
-            if not self.ensemble_trained:
-                return 0.0
-            
-            asset_type = (features or {}).get('asset_type', '')
-            use_subset = None
-            if str(asset_type).upper() == 'FUTURE' and self.models_futures:
-                use_subset = self.models_futures
-            elif str(asset_type).upper() == 'STOCK' and self.models_stocks:
-                use_subset = self.models_stocks
-            df_feat = pd.DataFrame([features])
-            if use_subset and 'cols' in use_subset and use_subset.get('scaler'):
-                cols = [c for c in use_subset['cols'] if c in df_feat.columns]
-                if not cols:
-                    return 0.0
-                X = df_feat[cols].fillna(0).values
-                X_scaled = use_subset['scaler'].transform(X)
-                predictions = {}
-                for name in ('rf', 'gb', 'ridge'):
-                    model = use_subset.get(name)
-                    if model is None:
-                        continue
-                    try:
-                        pred = model.predict(X_scaled)[0]
-                        predictions[name] = pred
-                    except:
-                        predictions[name] = 0.0
-                if not predictions:
-                    return 0.0
-                score = float(np.mean(list(predictions.values())))
-                return score
-            numeric_cols = df_feat.select_dtypes(include=[np.number]).columns
-            X = df_feat[numeric_cols].fillna(0).values
-            if not self.scaler_fitted or not self.scaler:
-                return 0.0
-            X_scaled = self.scaler.transform(X)
-            predictions = {}
-            if 'rf' in self.models:
-                logger.info("🤖 RandomForest: previsão executada")
-            for name, model in self.models.items():
-                try:
-                    pred = model.predict(X_scaled)[0]
-                    predictions[name] = pred
-                except:
-                    predictions[name] = 0.0
-            score = sum(predictions.get(name, 0.0) * self.ensemble_weights.get(name, 0.0)
-                       for name in predictions.keys())
-            return float(score)
-            
-        except Exception as e:
-            logger.error(f"Erro ao prever score: {e}")
-            return 0.0
-
-    # ========================
-    # OTIMIZAÇÃO DE PARÂMETROS
-    # ========================
-    def optimize(self, df: pd.DataFrame, symbol: str) -> dict:
-        """
-        Otimiza parâmetros para um símbolo usando dados históricos
-        
-        Args:
-            df: DataFrame com dados OHLCV
-            symbol: Símbolo do ativo
-        
-        Returns:
-            dict com parâmetros otimizados ou None se falhar
-        """
-        try:
-            if df is None or len(df) < 100:
-                logger.warning(f"Dados insuficientes para otimizar {symbol}")
-                return None
-            
-            best_params = None
-            best_score = -float('inf')
-            
-            # Grid search simplificado
-            ema_short_range = [9, 12, 15, 18, 21]
-            ema_long_range = [21, 34, 50, 89, 144]
-            
-            for ema_short in ema_short_range:
-                for ema_long in ema_long_range:
-                    if ema_short >= ema_long:
-                        continue
-                    
-                    score = self._backtest_params(df, {
-                        "ema_short": ema_short,
-                        "ema_long": ema_long,
-                        "rsi_low": 35,
-                        "rsi_high": 65,
-                        "adx_threshold": 20,
-                        "mom_min": 0.001
-                    })
-                    
-                    if score > best_score:
-                        best_score = score
-                        best_params = {
-                            "ema_short": ema_short,
-                            "ema_long": ema_long,
-                            "rsi_low": 35,
-                            "rsi_high": 65,
-                            "adx_threshold": 20,
-                            "mom_min": 0.001
-                        }
-            
-            if best_params and best_score > 0:
-                logger.info(f"✅ {symbol}: Parâmetros otimizados (score: {best_score:.2f})")
-                return best_params
-            else:
-                logger.warning(f"⚠️ {symbol}: Otimização não melhorou parâmetros padrão")
-                return None
-                
-        except Exception as e:
-            logger.error(f"Erro ao otimizar {symbol}: {e}")
-            return None
-    
-    def _backtest_params(self, df: pd.DataFrame, params: dict) -> float:
-        """
-        Backtesta parâmetros e retorna score
-        Score = Profit Factor * Win Rate
-        """
-        try:
-            ema_short = df['close'].ewm(span=params['ema_short'], adjust=False).mean()
-            ema_long = df['close'].ewm(span=params['ema_long'], adjust=False).mean()
-            signals = (ema_short > ema_long).astype(int).diff()
-            
-            returns = []
-            in_position = False
-            entry_price = 0
-            
-            for i in range(1, len(df)):
-                if signals.iloc[i] == 1 and not in_position:
-                    entry_price = df['close'].iloc[i]
-                    in_position = True
-                elif signals.iloc[i] == -1 and in_position:
-                    exit_price = df['close'].iloc[i]
-                    ret = (exit_price - entry_price) / entry_price
-                    returns.append(ret)
-                    in_position = False
-            
-            if not returns:
-                return 0.0
-            
-            returns_array = np.array(returns)
-            wins = returns_array[returns_array > 0]
-            losses = returns_array[returns_array < 0]
-            
-            win_rate = len(wins) / len(returns) if len(returns) > 0 else 0
-            gross_profit = wins.sum() if len(wins) > 0 else 0
-            gross_loss = abs(losses.sum()) if len(losses) > 0 else 1
-            profit_factor = gross_profit / gross_loss if gross_loss > 0 else 0
-            
-            score = profit_factor * win_rate * 100
-            return score
-            
-        except Exception as e:
-            logger.error(f"Erro no backtest: {e}")
-            return 0.0
-
-    # ========================
-    # HISTÓRICO E PERSISTÊNCIA
-    # ========================
-    def load_history(self):
-        """Carrega histórico de trades do disco"""
-        if os.path.exists(self.history_file):
-            try:
-                with open(self.history_file, 'r') as f:
-                    data = json.load(f)
-                    logger.info(f"📊 Histórico ML carregado: {len(data)} trades")
-                    return data
-            except Exception as e:
-                logger.error(f"Erro ao carregar histórico ML: {e}")
-        return []
-
-    def save_history(self):
-        """Salva histórico de trades no disco"""
-        try:
-            with open(self.history_file, 'w') as f:
-                json.dump(self.history, f)
-        except Exception as e:
-            logger.error(f"Erro ao salvar histórico ML: {e}")
-
-    def load_qtable(self):
-        """Carrega Q-Table do disco"""
-        if os.path.exists(self.qtable_file):
-            try:
-                self.q_table = np.load(self.qtable_file)
-                logger.info("🧠 Q-Table carregada")
-            except Exception as e:
-                logger.error(f"Erro ao carregar Q-Table: {e}")
-
-    def save_qtable(self):
-        """Salva Q-Table no disco"""
-        try:
-            np.save(self.qtable_file, self.q_table)
-        except Exception as e:
-            logger.error(f"Erro ao salvar Q-Table: {e}")
-
-    # ========================
-    # ✅ FEATURE ENGINEERING MELHORADO
-    # ========================
-    def extract_features(self, ind: dict, symbol: str, df: pd.DataFrame = None):
-        """
-        Extrai features avançadas dos indicadores para ML
-        Agora com features adicionais para melhor aprendizado
-        """
-        try:
-            if not isinstance(ind, dict):
-                ind = {'close': ind if isinstance(ind, (int, float)) else 0}
-            
-            features = {}
-            
-            # Features básicas
-            features['rsi'] = ind.get('rsi', 50)
-            features['adx'] = ind.get('adx', 20)
-            
-            # ATR
-            atr_val = ind.get('atr_real', 1.0)
-            features['atr_pct'] = atr_val[-1] if isinstance(atr_val, (list, np.ndarray)) else atr_val
-            
-            # Volume
-            features['volume_ratio'] = ind.get('volume_ratio', 1.0)
-            
-            # Trend
-            features['ema_trend'] = 1 if ind.get('ema_fast', 0) > ind.get('ema_slow', 0) else -1
-            
-            # Condições de mercado
-            features['macro_ok'] = 1 if ind.get('macro_trend_ok', False) else 0
-            features['vol_breakout'] = 1 if ind.get('vol_breakout', False) else 0
-            features['z_score_vol'] = ind.get('atr_zscore', 0)
-            
-            # ✅ NOVAS FEATURES
-            features['rsi_distance_to_mid'] = abs(ind.get('rsi', 50) - 50)
-            features['adx_strength'] = ind.get('adx', 20) / 50  # Normalizado
-            features['momentum'] = ind.get('momentum', 0.0)
-            
-            # VWAP distance
-            close_price = ind.get('close', 0)
-            vwap = ind.get('vwap', close_price)
-            if vwap and close_price:
-                features['vwap_distance'] = abs(close_price - vwap) / close_price if close_price != 0 else 0
-                features['dist_vwap'] = (close_price - vwap) / vwap if vwap != 0 else 0 # ✅ NOVO: dist_vwap signed
-            else:
-                features['vwap_distance'] = 0
-                features['dist_vwap'] = 0
-            
-            # Score do sinal original
-            features['time_score'] = ind.get('score', 0)
-            
-            # Temporal
-            now = datetime.now()
-            features['hour'] = now.hour
-            features['day_of_week'] = now.weekday()
-            
-            # Market regime (se disponível)
-            features['market_regime'] = ind.get('market_regime', 0)
-
-            # ✅ NOVO: Performance histórica do símbolo
-            symbol_trades = [t for t in self.history if t.get('symbol') == symbol]
-            if symbol_trades:
-                pnl_hist = [t['pnl_pct'] for t in symbol_trades[-20:]]
-                features['pnl_hist_mean'] = np.mean(pnl_hist) if pnl_hist else 0
-                features['pnl_hist_std'] = np.std(pnl_hist) if len(pnl_hist) > 1 else 0
-                features['win_rate_hist'] = sum(1 for p in pnl_hist if p > 0) / len(pnl_hist) if pnl_hist else 0.5
-            else:
-                features['pnl_hist_mean'] = 0
-                features['pnl_hist_std'] = 0
-                features['win_rate_hist'] = 0.5
-
-            is_fut = utils.is_future(symbol)
-            if not is_fut:
-                fund = fundamental_fetcher.get_fundamentals(symbol) if fundamental_fetcher else {}
-                features['mt5_avg_tick_volume'] = fund.get('mt5_avg_tick_volume', 0.0)
-                features['mt5_atr_pct'] = fund.get('mt5_atr_pct', 0.0)
-                features['mt5_bars'] = fund.get('mt5_bars', 0)
-            else:
-                try:
-                    features['macro_selic'] = float(os.getenv("XP3_OVERRIDE_SELIC", "0.105") or 0.105)
-                except Exception:
-                    features['macro_selic'] = 0.105
-                try:
-                    vix_val = utils.get_vix_br()
-                    features['vix'] = float(vix_val or 25.0)
-                except Exception:
-                    features['vix'] = 25.0
-            features['asset_type'] = 'FUTURE' if is_fut else 'STOCK'
-
-            # ✅ NOVO: SENTIMENT (Placeholder por enquanto, vindo do news_filter)
-            from news_filter import get_news_sentiment
-            features['sentiment_score'] = get_news_sentiment(symbol)
-            
-            return features
-            
-        except Exception as e:
-            logger.error(f"Erro ao extrair features: {e}")
-            return {}
-
-    # ========================
-    # ✅ Q-LEARNING MELHORADO
-    # ========================
-    def discretize_state(self, ind: dict) -> int:
-        """
-        Discretiza estado com maior granularidade (10000 estados)
-        Considera RSI, ADX, Volume Ratio e Momentum
-        """
-        try:
-            # ✅ AUMENTADO: RSI (25) * ADX (20) * Vol (10) * Momentum (2) = 10000
-            rsi_bucket = min(int(ind.get('rsi', 50) / 4), 24)  # 0-100 -> 25 buckets
-            adx_bucket = min(int(ind.get('adx', 20) / 5), 19)  # 0-100 -> 20 buckets
-            vol_bucket = min(int(ind.get('volume_ratio', 1.0) * 5), 9)  # 0-2.0 -> 10 buckets
-            momentum_bucket = 1 if ind.get('momentum', 0) > 0 else 0  # 2 buckets
-            
-            state = rsi_bucket * 400 + adx_bucket * 20 + vol_bucket * 2 + momentum_bucket
-            state = min(state, self.states - 1)
-            
-            return state
-            
-        except Exception as e:
-            logger.error(f"Erro ao discretizar estado: {e}")
-            return 0
-
-    def choose_action(self, state: int) -> int:
-        """Escolhe ação usando epsilon-greedy"""
-        try:
-            if np.random.random() < self.epsilon:
-                return np.random.randint(self.actions)
-            return int(np.argmax(self.q_table[state]))
-        except Exception as e:
-            logger.error(f"Erro ao escolher ação: {e}")
-            return 0  # HOLD em caso de erro
-
-    def get_ml_signal(self, ind: dict) -> str:
-        """Obtém sinal do Q-Learning"""
-        try:
-            state = self.discretize_state(ind)
-            action = self.choose_action(state)
-            
-            self.last_state = state
-            self.last_action = action
-            
-            actions_map = {0: "HOLD", 1: "BUY", 2: "SELL"}
-            return actions_map[action]
-            
-        except Exception as e:
-            logger.error(f"Erro ao obter sinal ML: {e}")
-            return "HOLD"
-
-    def update_qlearning(self, reward: float, next_ind: dict):
-        """Atualiza Q-Table com novo reward"""
-        try:
-            if self.last_state is None or self.last_action is None:
-                return
-            
-            next_state = self.discretize_state(next_ind)
-            best_next = np.max(self.q_table[next_state])
-            
-            old_val = self.q_table[self.last_state, self.last_action]
-            self.q_table[self.last_state, self.last_action] += self.alpha * (
-                reward + self.gamma * best_next - old_val
-            )
-            
-            self.save_qtable()
-            
-        except Exception as e:
-            logger.error(f"Erro ao atualizar Q-Learning: {e}")
-
-    def decay_epsilon(self):
-        """Decai epsilon para reduzir exploração ao longo do tempo"""
-        self.epsilon = max(self.epsilon_min, self.epsilon * self.epsilon_decay)
-
-    # ========================
-    # ✅ REGISTRO E APRENDIZADO
-    # ========================
-    def record_trade(self, symbol: str, pnl_pct: float, indicators: dict):
-        """
-        Registra resultado de trade e atualiza ML
-        ✅ Agora com reward contínuo e treinamento automático
-        """
-        try:
-            # Extrai features
-            features = self.extract_features(indicators, symbol)
-            
-            # Registra trade
-            trade_data = {
-                'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                'symbol': symbol,
-                'pnl_pct': pnl_pct,
-                'features': features,
-                'asset_type': 'FUTURE' if utils.is_future(symbol) else 'STOCK'
-            }
-            
-            self.history.append(trade_data)
-            
-            # Limita histórico
-            if len(self.history) > 5000:
-                self.history.pop(0)
-            
-            self.save_history()
-            
-            # ✅ REWARD PARA CONSISTÊNCIA (não apenas profit)
-            # Combina: PnL + bônus por consistência + penalidade por variância
-            base_reward = np.tanh(pnl_pct * 10)  # +3% → ~0.99
-            
-            # Bônus por consistência (trades pequenos positivos são bons)
-            if 0 < pnl_pct <= 1.5:
-                consistency_bonus = 0.2  # Recompensa trades pequenos mas positivos
-            elif pnl_pct > 1.5:
-                consistency_bonus = 0.1  # Trades grandes são bons mas não tão consistentes
-            elif pnl_pct < -2.0:
-                consistency_bonus = -0.3  # Penaliza perdas grandes
-            else:
-                consistency_bonus = 0.0
-            
-            reward = base_reward + consistency_bonus
-            reward = max(-1.0, min(1.0, reward))  # Clamp
-            
-            # Atualiza Q-Learning
-            self.update_qlearning(reward, indicators)
-            self.decay_epsilon()
-            
-            # ✅ LOG MAIS INFORMATIVO
-            logger.info(
-                f"💾 ML Atualizado | {symbol} | PnL: {pnl_pct:+.2f}% | "
-                f"Reward: {reward:+.2f} (base:{base_reward:+.2f} +cons:{consistency_bonus:+.2f}) | "
-                f"Epsilon: {self.epsilon:.4f}"
-            )
-            
-            # ✅ TREINA A CADA N TRADES (Conforme configurado)
-            self.trade_counter = getattr(self, 'trade_counter', 0) + 1
-            
-            if self.trade_counter % config.ML_RETRAIN_THRESHOLD == 0:
-                self.train_ensemble()
-                logger.info(f"🔄 Ensemble retreinado após {self.trade_counter} trades")
-        
-        except Exception as e:
-            logger.error(f"Erro ao registrar trade no ML: {e}")
-
-# Instância global
-ml_optimizer = EnsembleOptimizer()
+    def optimize(self, df, symbol: str) -> Optional[Dict[str, Any]]:
+        return None

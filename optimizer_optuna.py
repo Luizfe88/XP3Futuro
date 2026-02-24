@@ -148,9 +148,17 @@ def fast_backtest_core(
                     if high[i] >= mid_target:
                         qty_close = np.floor(position * 0.5)
                         if qty_close > 0:
-                            exit_val = qty_close * mid_target
-                            cost = exit_val * transaction_cost_pct
-                            cash += (exit_val - cost)
+                            if asset_type == 1:
+                                gross_profit = (mid_target - entry_price) * point_value * qty_close
+                                if fee_type == 1:
+                                    cost = fee_val * qty_close
+                                else:
+                                    cost = (qty_close * mid_target) * transaction_cost_pct
+                                cash += (gross_profit - cost)
+                            else:
+                                exit_val = qty_close * mid_target
+                                cost = exit_val * transaction_cost_pct
+                                cash += (exit_val - cost)
                             position -= qty_close
                             partial_closed = 1
                             
@@ -163,9 +171,17 @@ def fast_backtest_core(
                     if low[i] <= mid_target:
                         qty_close = np.floor(abs(position) * 0.5)
                         if qty_close > 0:
-                            exit_val = qty_close * mid_target
-                            cost = exit_val * transaction_cost_pct
-                            cash -= (exit_val + cost)
+                            if asset_type == 1:
+                                gross_profit = (entry_price - mid_target) * point_value * qty_close
+                                if fee_type == 1:
+                                    cost = fee_val * qty_close
+                                else:
+                                    cost = (qty_close * mid_target) * transaction_cost_pct
+                                cash += (gross_profit - cost)
+                            else:
+                                exit_val = qty_close * mid_target
+                                cost = exit_val * transaction_cost_pct
+                                cash -= (exit_val + cost)
                             position += qty_close  # Reduz short
                             partial_closed = 1
                             
@@ -209,7 +225,7 @@ def fast_backtest_core(
                 val_exit = qty_abs * exit_price
                 if asset_type == 1:
                     gross_profit = ((exit_price - entry_price) * point_value) * qty_abs if position > 0 else ((entry_price - exit_price) * point_value) * qty_abs
-                    c_exit = (fee_val * qty_abs * 2) if fee_type == 1 else (val_exit * transaction_cost_pct)
+                    c_exit = (fee_val * qty_abs) if fee_type == 1 else (val_exit * transaction_cost_pct)
                     net_profit = gross_profit - c_exit
                     cash += net_profit
                 else:
@@ -545,6 +561,179 @@ def extract_features_for_ml(df: pd.DataFrame, symbol: str = "") -> pd.DataFrame:
     
 
 # =========================================================
+# 2.1 MEAN REVERSION STRATEGY
+# =========================================================
+def calculate_adx(high, low, close, period=14):
+    """Calcula ADX Manualmente (Fallback se TA falhar)"""
+    tr1 = high - low
+    tr2 = np.abs(high - np.roll(close, 1))
+    tr3 = np.abs(low - np.roll(close, 1))
+    tr = np.maximum.reduce([tr1, tr2, tr3])
+    
+    up_move = high - np.roll(high, 1)
+    down_move = np.roll(low, 1) - low
+    
+    plus_dm = np.where((up_move > down_move) & (up_move > 0), up_move, 0.0)
+    minus_dm = np.where((down_move > up_move) & (down_move > 0), down_move, 0.0)
+    
+    # EWM mean
+    atr = pd.Series(tr).ewm(alpha=1/period, adjust=False).mean().values
+    plus_di = 100 * pd.Series(plus_dm).ewm(alpha=1/period, adjust=False).mean().values / (atr + 1e-10)
+    minus_di = 100 * pd.Series(minus_dm).ewm(alpha=1/period, adjust=False).mean().values / (atr + 1e-10)
+    
+    dx = 100 * np.abs(plus_di - minus_di) / (plus_di + minus_di + 1e-10)
+    adx = pd.Series(dx).ewm(alpha=1/period, adjust=False).mean().fillna(0).values
+    
+    return adx, atr
+
+def strategy_mean_reversion(symbol: str, df: pd.DataFrame, sl_atr_multiplier: float, tp_ratio: float, vol_mult: float = 1.2, bb_period: int = 20, bb_std: float = 2.2, adx_thresh: float = 20.0, base_slippage: float = 0.0, enable_shorts: int = 1, min_atr_pct: float = 0.0, **kwargs) -> dict:
+    if df is None or len(df) < 50:
+        return {"calmar": -10.0, "win_rate": 0.0, "total_return": 0.0, "total_trades": 0, "max_drawdown": 0.0, "equity_curve": []}
+    
+    df = df.sort_index()
+    close = df["close"].values.astype(np.float64)
+    open_ = df["open"].values.astype(np.float64)
+    high = df["high"].values.astype(np.float64)
+    low = df["low"].values.astype(np.float64)
+    volume = df["volume"].values.astype(np.float64)
+    
+    p = max(5, int(bb_period))
+    s = float(bb_std)
+    
+    mid = pd.Series(close).rolling(p).mean().bfill().values
+    std = pd.Series(close).rolling(p).std(ddof=0).bfill().values
+    upper = mid + s * std
+    lower = mid - s * std
+    
+    delta = pd.Series(close).diff()
+    gain = (delta.where(delta > 0, 0)).rolling(14).mean()
+    loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+    rs = gain / (loss + 1e-10)
+    rsi = (100 - (100 / (1 + rs))).fillna(50).values
+    
+    adx, atr = calculate_adx(high, low, close)
+    
+    try:
+        from utils import AssetInspector
+        ai = AssetInspector.detect(symbol)
+        pv = float(ai.get("point_value", 1.0))
+        ts = float(ai.get("tick_size", 0.01))
+    except Exception:
+        pv = 1.0 if "WIN" in symbol else 5.0 if "WDO" in symbol else 1.0
+        ts = 0.01
+        
+    cash = 100000.0
+    equity = cash
+    position = 0.0
+    entry_price = 0.0
+    stop_price = 0.0
+    target_price = 0.0
+    
+    trades = 0
+    wins = 0
+    losses = 0
+    equity_curve = [cash] * len(close)
+    
+    for i in range(p, len(close)):
+        price = close[i]
+        
+        # Position Management
+        if abs(position) > 0:
+            hit_tp = False
+            hit_sl = False
+            
+            if position > 0:
+                if high[i] >= target_price: hit_tp = True
+                if low[i] <= stop_price: hit_sl = True
+            else:
+                if low[i] <= target_price: hit_tp = True
+                if high[i] >= stop_price: hit_sl = True
+                
+            if hit_tp or hit_sl:
+                exit_price = target_price if hit_tp else stop_price
+                if hit_sl:
+                    exit_price = stop_price * (1 - base_slippage) if position > 0 else stop_price * (1 + base_slippage)
+                
+                gross = (exit_price - entry_price) * position * pv
+                cost = abs(position) * price * base_slippage # Simplified cost
+                net = gross - cost
+                
+                cash += net
+                if net > 0: wins += 1
+                else: losses += 1
+                
+                position = 0.0
+                trades += 1
+        
+        # Entry Logic
+        else:
+            if adx[i] < adx_thresh: # Lateral market
+                atr_val = atr[i]
+                if atr_val < (price * min_atr_pct): continue
+                
+                # Long: Close < Lower BB and RSI < 30
+                if close[i] < lower[i] and rsi[i] < 30:
+                    sl_dist = atr_val * sl_atr_multiplier
+                    tp_dist = sl_dist * tp_ratio
+                    
+                    entry_price = price * (1 + base_slippage)
+                    stop_price = entry_price - sl_dist
+                    target_price = entry_price + tp_dist
+                    
+                    # Size logic (simplified)
+                    risk_amt = equity * 0.01
+                    qty = risk_amt / (sl_dist * pv + 1e-9)
+                    qty = max(1.0, round(qty))
+                    
+                    position = qty
+                    cash -= (entry_price * qty * base_slippage) # Entry cost
+                
+                # Short: Close > Upper BB and RSI > 70
+                elif enable_shorts and close[i] > upper[i] and rsi[i] > 70:
+                    sl_dist = atr_val * sl_atr_multiplier
+                    tp_dist = sl_dist * tp_ratio
+                    
+                    entry_price = price * (1 - base_slippage)
+                    stop_price = entry_price + sl_dist
+                    target_price = entry_price - tp_dist
+                    
+                    # Size logic
+                    risk_amt = equity * 0.01
+                    qty = risk_amt / (sl_dist * pv + 1e-9)
+                    qty = max(1.0, round(qty))
+                    
+                    position = -qty
+                    cash -= (entry_price * qty * base_slippage)
+        
+        equity_curve[i] = cash + (position * (price - entry_price) * pv if position != 0 else 0)
+
+    # Metrics
+    eq_arr = np.array(equity_curve)
+    ret = np.diff(eq_arr) / eq_arr[:-1]
+    
+    total_ret = (eq_arr[-1] / eq_arr[0]) - 1
+    dd = 0.0
+    peak = eq_arr[0]
+    for x in eq_arr:
+        if x > peak: peak = x
+        d = (peak - x) / peak
+        if d > dd: dd = d
+        
+    calmar = total_ret / dd if dd > 0 else 0.0
+    wr = wins / trades if trades > 0 else 0.0
+    pf = (wins * tp_ratio) / (losses * 1.0) if losses > 0 else 2.0 # Approx
+    
+    return {
+        "calmar": calmar,
+        "win_rate": wr,
+        "profit_factor": pf,
+        "total_trades": trades,
+        "max_drawdown": dd,
+        "total_return": total_ret,
+        "equity_curve": equity_curve
+    }
+
+# =========================================================
 # 3. BACKTEST PARAMS ON DF
 # =========================================================
 def backtest_params_on_df(symbol: str, params: dict, df: pd.DataFrame, ml_model=None):
@@ -691,7 +880,130 @@ def backtest_params_on_df(symbol: str, params: dict, df: pd.DataFrame, ml_model=
 # =========================================================
 # 4. OBJECTIVE & OPTUNA
 # =========================================================
-def log_rejection(symbol, trial_number, reason, value):
+def run_optimization(strategy_name, params_config, metric_to_optimize, data, symbol, asset_type, n_trials, optimization_type, wfo_splits, wfo_train_size, wfo_test_size):
+    import optuna
+    
+    def objective_wrapper(trial):
+        params = {}
+        for p_name, p_cfg in params_config.items():
+            if p_cfg['type'] == 'int':
+                params[p_name] = trial.suggest_int(p_name, p_cfg['min'], p_cfg['max'])
+            elif p_cfg['type'] == 'float':
+                params[p_name] = trial.suggest_float(p_name, p_cfg['min'], p_cfg['max'])
+            elif p_cfg['type'] == 'categorical':
+                params[p_name] = trial.suggest_categorical(p_name, p_cfg['choices'])
+        
+        # Derived logic
+        if "sl_atr_multiplier" in params and "tp_ratio" in params:
+            params["tp_mult"] = params["sl_atr_multiplier"] * params["tp_ratio"]
+        
+        params["enable_shorts"] = 1
+        
+        try:
+            if strategy_name == "MEAN_REVERSION":
+                metrics = strategy_mean_reversion(symbol, data, **params)
+            else:
+                # Fallback / Volatility Breakout
+                if "base_slippage" not in params: params["base_slippage"] = 0.001
+                metrics = backtest_params_on_df(symbol, params, data, ml_model=None)
+            
+            # Score (Calmar by default)
+            val = metrics.get(metric_to_optimize, 0.0)
+            trades = metrics.get("total_trades", 0)
+            min_trades = 15 if "WIN" in (symbol or "").upper() else 10 if "WDO" in (symbol or "").upper() else 10
+            if trades < min_trades:
+                val = -10.0
+            
+            return val
+        except Exception:
+            return -10.0
+
+    study = optuna.create_study(direction="maximize", sampler=optuna.samplers.TPESampler(seed=42))
+    study.optimize(objective_wrapper, n_trials=n_trials)
+    
+    best_params = study.best_params
+    
+    # Final run
+    if "sl_atr_multiplier" in best_params and "tp_ratio" in best_params:
+        best_params["tp_mult"] = best_params["sl_atr_multiplier"] * best_params["tp_ratio"]
+    best_params["enable_shorts"] = 1
+    
+    if strategy_name == "MEAN_REVERSION":
+        best_metrics = strategy_mean_reversion(symbol, data, **best_params)
+    else:
+        if "base_slippage" not in best_params: best_params["base_slippage"] = 0.001
+        best_metrics = backtest_params_on_df(symbol, best_params, data, ml_model=None)
+        
+    return best_params, best_metrics
+
+def tournament_report(symbol: str, df: pd.DataFrame, n_trials: int = 50, timeout: int = 300) -> dict:
+    strategies_config = {
+        "VOLATILITY_BREAKOUT": {
+            "params": {
+                "sl_atr_multiplier": {"type": "float", "min": 1.0, "max": 3.0, "step": 0.1},
+                "tp_ratio": {"type": "float", "min": 1.5, "max": 5.0, "step": 0.2},
+                "bb_period": {"type": "int", "min": 15, "max": 30},
+                "bb_std": {"type": "float", "min": 2.0, "max": 3.5, "step": 0.1},
+                "adx_thresh": {"type": "int", "min": 10, "max": 25},
+                "vol_mult": {"type": "float", "min": 0.5, "max": 1.5, "step": 0.1},
+                "base_slippage": {"type": "float", "min": 0.0001, "max": 0.001, "step": 0.0001},
+                "min_atr_pct": {"type": "float", "min": 0.001, "max": 0.01, "step": 0.001}
+            }
+        },
+        "MEAN_REVERSION": {
+            "params": {
+                "rsi_low": {"type": "int", "min": 20, "max": 40},
+                "rsi_high": {"type": "int", "min": 60, "max": 80},
+                "adx_threshold": {"type": "int", "min": 15, "max": 40},
+                "sl_atr_multiplier": {"type": "float", "min": 1.5, "max": 3.0, "step": 0.1},
+                "tp_ratio": {"type": "float", "min": 1.5, "max": 4.0, "step": 0.2},
+                "base_slippage": {"type": "float", "min": 0.0001, "max": 0.001, "step": 0.0001},
+                "volatility_multiplier": {"type": "float", "min": 0.8, "max": 2.0, "step": 0.1},
+                "vwap_dist_thresh": {"type": "float", "min": 0.5, "max": 2.5, "step": 0.1}
+            }
+        }
+    } 
+    
+    results = []
+    best_score = -999.0
+    winner = "NONE"
+    
+    best_strategy = None
+    
+    for strat, conf in strategies_config.items():
+        if strat not in ["VOLATILITY_BREAKOUT", "MEAN_REVERSION"]: continue
+        
+        try:
+            opt_results = run_optimization(
+                strat, conf['params'], "calmar", df, symbol, 1, n_trials, "maximize", 0, 0, 0
+            )
+            
+            # A.1. Lógica de seleção do vencedor modificada
+            if opt_results and opt_results.get("best_score") is not None:
+                final_metrics = opt_results.get("metrics", {})
+                current_score = final_metrics.get("calmar", 0.0)
+                
+                # Adiciona o resultado detalhado à lista
+                results.append({
+                    "strategy": strat,
+                    "best_params": opt_results["best_params"],
+                    "best_score": opt_results["best_score"],
+                    "metrics": final_metrics,
+                    "tradeable": final_metrics.get("total_trades", 0) >= 10
+                })
+
+                # Atualiza o melhor score e a melhor estratégia
+                if current_score > best_score:
+                    best_score = current_score
+                    best_strategy = strat
+
+        except Exception as e:
+            logger.error(f"Tournament error {strat}: {e}")
+
+    # Define o vencedor com base na melhor estratégia encontrada
+    winner = best_strategy if best_strategy else "NONE"
+            
+    return {"symbol": symbol, "winner": winner, "results": results}
     try:
         os.makedirs("optimizer_output", exist_ok=True)
         with open(os.path.join("optimizer_output", "rejection_reasons.txt"), "a", encoding="utf-8") as f:
@@ -722,17 +1034,24 @@ def objective(trial, symbol, df, ml_model=None):
         pf = float(metrics.get('profit_factor', 0.0) or 0.0)
         dd = float(metrics.get('max_drawdown', 1.0) or 1.0)
         trades = int(metrics.get('total_trades', 0) or 0)
+        min_trades = 15 if "WIN" in (symbol or "").upper() else 10 if "WDO" in (symbol or "").upper() else 8
 
         # Comentário: C.2 Penalidades suaves (sem prune agressivo)
         penalty = 0.0
-        if trades < 5:
-            penalty += 1.2
+        if trades <= 0:
+            penalty += 4.0
+        elif trades < min_trades:
+            penalty += 2.0 * ((min_trades - trades) / max(min_trades, 1))
         if dd > 0.65:
             penalty += (dd - 0.65) * 2.5
         if wr < 0.20:
             penalty += (0.20 - wr) * 3.0
 
         score = (wr * 2.0) + (pf * 1.2) - penalty
+        
+        # Adiciona as métricas ao trial para análise posterior
+        trial.set_user_attr("metrics", metrics)
+        
         return -score
         
     except Exception as e:
@@ -811,13 +1130,17 @@ def optimize_with_optuna(symbol, df_train, n_trials=150, timeout=1500, base_slip
             pf = metrics.get('profit_factor', 0.0)
             dd = metrics.get('max_drawdown', 1.0)
             trades = metrics.get('total_trades', 0)
+            min_trades = 15 if "WIN" in (symbol or "").upper() else 10 if "WDO" in (symbol or "").upper() else 10
 
             # Comentário: C.2 Penalidades suaves (sem prune agressivo)
             penalty = 0.0
             reason = []
-            if trades < 5:
-                penalty += 1.2
+            if trades <= 0:
+                penalty += 4.0
                 reason.append(f"Trades={trades}")
+            elif trades < min_trades:
+                penalty += 2.0 * ((min_trades - trades) / max(min_trades, 1))
+                reason.append(f"Trades={trades}<{min_trades}")
             if dd > 0.65:
                 penalty += (dd - 0.65) * 2.5
                 reason.append(f"DD={dd:.1%}")
@@ -849,9 +1172,13 @@ def optimize_with_optuna(symbol, df_train, n_trials=150, timeout=1500, base_slip
             "reason": f"all_trials_pruned_or_failed | pruned={pruned} failed={failed} total={len(study.trials)}",
         }
 
+    best_trial = study.best_trial
+    metrics = best_trial.user_attrs.get("metrics", {})
+
     return {
-        "best_params": study.best_params,
-        "best_score": study.best_value,
+        "best_params": best_trial.params,
+        "best_score": best_trial.value,
+        "metrics": metrics,
         "ml_model": ml_model,
         "status": "SUCCESS"
     }

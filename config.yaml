@@ -1,6 +1,6 @@
 ml:
   enabled: true
-  min_confidence: 0.7
+  min_confidence: 0.52
   model_type: ENSEMBLE
   retrain_frequency_days: 7
 mt5:

@@ -1,0 +1,47 @@
+{
+  "WIN$N": [
+    {
+      "strategy": "EMA_CROSS",
+      "params": {
+        "rsi_low": 23,
+        "rsi_high": 70,
+        "adx_threshold": 16,
+        "sl_mult": 2.7816282351073855,
+        "tp_mult": 3.492521046803262,
+        "base_slippage": 0.0006705890285518957,
+        "vwap_dist_thresh": 0.6426834339793825
+      },
+      "metrics": {
+        "calmar": 0.07928716253346359,
+        "max_drawdown": 1.1528080349709524,
+        "profit_factor": 1.6934908229855306,
+        "win_rate": 0.6206896551724138,
+        "trades": 29,
+        "total_pnl": 5335.080722426851,
+        "relax_level": 2
+      }
+    },
+    {
+      "strategy": "VOLATILITY_BREAKOUT",
+      "params": {
+        "rsi_low": 39,
+        "rsi_high": 76,
+        "adx_threshold": 25,
+        "sl_mult": 2.3882447008889205,
+        "tp_mult": 3.7030834574143108,
+        "base_slippage": 0.0001320811134277272,
+        "volatility_multiplier": 0.7145957047357573,
+        "vwap_dist_thresh": 0.6112384969863252
+      },
+      "metrics": {
+        "calmar": 0.25935526368976564,
+        "max_drawdown": 1.14485216093877,
+        "profit_factor": 3.3254312822014103,
+        "win_rate": 0.7857142857142857,
+        "trades": 28,
+        "total_pnl": 10800.66410035862,
+        "relax_level": 2
+      }
+    }
+  ]
+}

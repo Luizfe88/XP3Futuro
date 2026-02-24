@@ -1,0 +1,352 @@
+C:\Users\luizf\Documents\xp3future\bot.py:27: DeprecationWarning: There is no current event loop
+  loop = asyncio.get_event_loop()
+[OK] Configura��es carregadas de config.yaml
+[DEBUG] Importando time...
+[DEBUG] time importado.
+[DEBUG] Importando logging...
+[DEBUG] logging importado.
+[DEBUG] Importando datetime...
+[DEBUG] datetime importado.
+[DEBUG] Importando typing...
+[DEBUG] typing importado.
+[DEBUG] Importando collections...
+[DEBUG] collections importado.
+[DEBUG] Importando json...
+[DEBUG] json importado.
+[DEBUG] Importando MetaTrader5...
+[DEBUG] MetaTrader5 importado.
+[DEBUG] Importando pandas...
+[DEBUG] pandas importado.
+[DEBUG] Importando numpy...
+[DEBUG] numpy importado.
+[DEBUG] Importando config...
+[OK] Configura��es carregadas de config.yaml
+[DEBUG] config importado.
+[DEBUG] Importando config_futures...
+[DEBUG] config_futures importado.
+[DEBUG] Importando futures_core...
+[DEBUG] futures_core importado.
+[DEBUG] Importando threading...
+[DEBUG] threading importado.
+[DEBUG] Importando threading (m�dulo)...
+[DEBUG] threading(m�dulo) importado.
+[DEBUG] Importando queue...
+[DEBUG] queue importado.
+[DEBUG] Importando os...
+[DEBUG] os importado.
+[DEBUG] Importando pathlib.Path...
+[DEBUG] pathlib.Path importado.
+[DEBUG] Importando redis...
+[DEBUG] redis importado.
+[DEBUG] Importando pickle...
+[DEBUG] pickle importado.
+[DEBUG] Importando hashlib...
+[DEBUG] hashlib importado.
+[DEBUG] Importando signal...
+[DEBUG] signal importado.
+[DEBUG] Importando sys...
+[DEBUG] sys importado.
+[DEBUG] Importando requests...
+[DEBUG] requests importado.
+[DEBUG] Importando news_calendar.apply_blackout...
+[DEBUG] Importando MetaTrader5...
+[DEBUG] MetaTrader5 importado.
+[DEBUG] Importando pandas...
+[DEBUG] pandas importado.
+[DEBUG] Importando logging...
+[DEBUG] logging importado.
+[DEBUG] Importando datetime...
+[DEBUG] datetime importado.
+[DEBUG] Importando threading.RLock...
+[DEBUG] threading.RLock importado.
+[DEBUG] Importando config...
+[DEBUG] config importado.
+[DEBUG] Importando pytz...
+[DEBUG] pytz importado.
+2026-02-02 16:09:15,500 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+[DEBUG] news_calendar.apply_blackout importado.
+[DEBUG] Importando re...
+[DEBUG] re importado.
+[DEBUG] Importando joblib...
+[DEBUG] joblib importado.
+2026-02-02 16:09:22,444 - utils - INFO - \u2705 Redis conectado - cache ativado
+2026-02-02 16:09:22,480 - utils - INFO - \u2705 Dados anti-chop carregados
+2026-02-02 16:09:22,481 - utils - INFO - \U0001f504 Novo dia detectado - resetando limites
+[DEBUG] Verificando modelo em: C:\Users\luizf\Documents\xp3future\ml_trade_history.json
+[DEBUG] Verificando modelo em: C:\Users\luizf\Documents\xp3future\qtable.npy
+[DEBUG] Importando sklearn.ensemble...
+[WARN] Timeout ao importar deps ML (4s) - seguindo sem ML
+2026-02-02 16:09:26,687 - bot - WARNING - \u26a0\ufe0f RandomForest indispon�vel (deps ML ausentes)
+2026-02-02 16:09:26,701 - bot - INFO - \U0001f4ca Hist�rico ML carregado: 0 trades
+2026-02-02 16:09:26,904 - bot - INFO - \U0001f9e0 Q-Table carregada
+[DEBUG] Importando sklearn.ensemble...
+[WARN] Timeout ao importar deps ML (4s) - seguindo sem ML
+2026-02-02 16:09:31,268 - bot - WARNING - ⚠️ RandomForest indisponível (deps ML ausentes)
+2026-02-02 16:09:31,269 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-02 16:09:31,270 - bot - INFO - 🧠 Q-Table carregada
+2026-02-02 16:09:36,729 | INFO | Bot do Telegram inicializado com sucesso
+2026-02-02 16:09:36,739 | INFO | 🔥 Modo de operação: FUTUROS (Exclusivo)
+2026-02-02 16:09:36,979 | INFO | 🧹 Limpeza inicial de logs concluída
+2026-02-02 16:09:37,178 | INFO | ✅ Conectado ao MT5 correto: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-02-02 16:09:37,179 | INFO | ✅ Validação: Sistema configurado apenas para FUTUROS
+2026-02-02 16:09:37,337 | WARNING | ⚠️ Ativos indisponíveis no MT5 (pular): SFI$N: info ausente
+2026-02-02 16:09:37,337 | INFO | ➡️ Continuando inicialização com ativos disponíveis (sem abortar)
+2026-02-02 16:09:37,338 | INFO | 📋 Sincronizando Market Watch (Strict Mode)...
+2026-02-02 16:09:37,955 | WARNING | ⚠️ Corretora : Falha ao adicionar SFI$N - Símbolo não existe na corretora
+2026-02-02 16:09:37,999 | WARNING | ⚠️ 1 ativos falharam ao adicionar: ['SFI$N']
+2026-02-02 16:09:38,000 | INFO | 🧹 Limpando ativos desnecessários do Market Watch...
+2026-02-02 16:10:26,427 | INFO | ✅ Market Watch Sincronizado: 12 ativos mantidos/adicionados, 1 removidos.
+2026-02-02 16:10:26,777 | INFO | 🔍 Iniciando Auto-Discovery de Contratos Futuros...
+2026-02-02 16:10:26,779 | INFO | 📡 Corretora detectada: 
+2026-02-02 16:10:26,779 | INFO | 🎯 Mapeando WIN$ ...
+2026-02-02 16:10:26,779 | WARNING |    Nenhum candidato encontrado
+2026-02-02 16:10:26,780 | WARNING | ❌ Falha ao mapear WIN$
+2026-02-02 16:10:26,780 | WARNING | Fallback aplicado para WIN$ → WING26
+2026-02-02 16:10:26,940 | INFO | 🔍 Iniciando Auto-Discovery de Contratos Futuros...
+2026-02-02 16:10:26,942 | INFO | 📡 Corretora detectada: 
+2026-02-02 16:10:26,942 | INFO | 🎯 Mapeando WDO$ ...
+2026-02-02 16:10:26,942 | WARNING |    Nenhum candidato encontrado
+2026-02-02 16:10:26,942 | WARNING | ❌ Falha ao mapear WDO$
+2026-02-02 16:10:26,943 | WARNING | Fallback aplicado para WDO$ → WDOG26
+2026-02-02 16:10:27,026 | INFO | 🔍 Iniciando Auto-Discovery de Contratos Futuros...
+2026-02-02 16:10:27,027 | INFO | 📡 Corretora detectada: 
+2026-02-02 16:10:27,028 | INFO | 🎯 Mapeando SMALL$ ...
+2026-02-02 16:10:27,028 | WARNING |    Nenhum candidato encontrado
+2026-02-02 16:10:27,028 | WARNING | ❌ Falha ao mapear SMALL$
+2026-02-02 16:10:27,202 | INFO | 🔍 Iniciando Auto-Discovery de Contratos Futuros...
+2026-02-02 16:10:27,203 | INFO | 📡 Corretora detectada: 
+2026-02-02 16:10:27,204 | INFO | 🎯 Mapeando WSP$ ...
+2026-02-02 16:10:27,204 | WARNING |    Nenhum candidato encontrado
+2026-02-02 16:10:27,204 | WARNING | ❌ Falha ao mapear WSP$
+2026-02-02 16:10:27,204 | WARNING | Fallback aplicado para WSP$ → WSPG26
+2026-02-02 16:10:27,209 | INFO | 🔍 Iniciando Auto-Discovery de Contratos Futuros...
+2026-02-02 16:10:27,210 | INFO | 📡 Corretora detectada: 
+2026-02-02 16:10:27,210 | INFO | 🎯 Mapeando BGI$ ...
+2026-02-02 16:10:27,210 | WARNING |    Nenhum candidato encontrado
+2026-02-02 16:10:27,210 | WARNING | ❌ Falha ao mapear BGI$
+2026-02-02 16:10:27,210 | WARNING | Fallback aplicado para BGI$ → BGIG26
+2026-02-02 16:10:27,326 | INFO | 💾 Mapeamentos salvos em: futures_optimizer_output\futures_mappings_20260202_161027.json
+2026-02-02 16:10:27,326 | INFO | Futuros mapeados: {'WIN$': 'WING26', 'WDO$': 'WDOG26', 'WSP$': 'WSPG26', 'BGI$': 'BGIG26'}
+2026-02-02 16:10:27,327 | WARNING | Nenhum candidato para WIN$N
+2026-02-02 16:10:27,345 | WARNING | Nenhum candidato para IND$N
+2026-02-02 16:10:27,409 | WARNING | Nenhum candidato para WDO$N
+2026-02-02 16:10:27,411 | WARNING | Nenhum candidato para DOL$N
+2026-02-02 16:10:27,412 | WARNING | Nenhum candidato para WSP$N
+2026-02-02 16:10:27,414 | WARNING | Nenhum candidato para CCM$N
+2026-02-02 16:10:27,416 | WARNING | Nenhum candidato para BGI$N
+2026-02-02 16:10:27,417 | WARNING | Nenhum candidato para ICF$N
+2026-02-02 16:10:27,418 | WARNING | Nenhum candidato para SFI$N
+2026-02-02 16:10:27,419 | WARNING | Nenhum candidato para DI1$N
+2026-02-02 16:10:27,420 | WARNING | Nenhum candidato para BIT$N
+2026-02-02 16:10:27,422 | WARNING | Nenhum candidato para T10$N
+2026-02-02 16:10:27,422 | INFO | 📊 Executando análise retrospectiva inicial (backtest)...
+2026-02-02 16:10:27,646 | INFO | 📦 Verificando estado diário anterior...
+2026-02-02 16:10:27,661 | INFO | ============================================================
+2026-02-02 16:10:27,661 | INFO | ✅ ESTADO DIÁRIO RESTAURADO COM SUCESSO
+2026-02-02 16:10:27,661 | INFO | ============================================================
+2026-02-02 16:10:27,676 | INFO | 📅 Data: 2026-02-02
+2026-02-02 16:10:27,677 | INFO | 💰 Equity Inicial: R$965,288.26
+2026-02-02 16:10:27,677 | INFO | 📈 Max Equity: R$965,288.26
+2026-02-02 16:10:27,677 | INFO | 📊 Símbolos com trades: 0
+2026-02-02 16:10:27,677 | INFO | ⏱️ Cooldowns ativos: 0
+2026-02-02 16:10:27,677 | INFO | 📍 Posições salvas: 0
+2026-02-02 16:10:27,677 | INFO | 🔄 Ciclo completo: Não
+2026-02-02 16:10:27,677 | INFO | ============================================================
+2026-02-02 16:10:27,678 | INFO | 📦 Carregando dados persistentes e otimizações...
+2026-02-02 16:10:27,678 | INFO | 📉 Loss streak carregado | 13 símbolos | 0 bloqueados
+2026-02-02 16:10:27,694 | INFO | Parâmetros carregados do ELITE_SYMBOLS (5 ativos elite)
+2026-02-02 16:10:27,694 | INFO | ✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)
+2026-02-02 16:10:27,715 | INFO | 🧠 Pesos adaptativos carregados: 216 símbolos | 13 setores
+2026-02-02 16:10:27,715 | INFO | ✅ Dados anti-chop carregados
+2026-02-02 16:10:27,716 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-02-02 16:10:27,732 | INFO | ✅ Dados anti-chop e limites carregados
+2026-02-02 16:10:27,733 | INFO | ✅ Dados anti-chop carregados
+2026-02-02 16:10:27,733 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-02-02 16:10:27,733 | INFO | ✅ Dados anti-chop e limites carregados
+2026-02-02 16:10:27,733 | INFO | 🔍 Analisando mercado para gerar TOP 15 inicial...
+2026-02-02 16:10:27,733 | INFO | Parâmetros carregados do ELITE_SYMBOLS (5 ativos elite)
+[96m====================================================[0m
+[96m🚀 INICIANDO XP3 PRO BOT B3 - MODO CONTÍNUO 24/7[0m
+[96m====================================================[0m
+[DEBUG] ml_optimizer carregado (lazy).
+2026-02-02 16:10:30,341 | INFO | ❌ WIN$N rejeitado: ⏳ Aguardando Gatilho (Score: 45 | Forçado: True) | score=45
+2026-02-02 16:10:30,437 | INFO | ❌ WDO$N rejeitado: ⏳ Aguardando Gatilho (Score: 80 | Forçado: False) | score=80
+2026-02-02 16:10:30,743 | INFO | ❌ IND$N rejeitado: ⏳ Aguardando Gatilho (Score: 20 | Forçado: True) | score=20
+2026-02-02 16:10:30,901 | INFO | ❌ DOL$N rejeitado: ⏳ Aguardando Gatilho (Score: 80 | Forçado: False) | score=80
+2026-02-02 16:10:31,153 | INFO | ❌ WSP$N rejeitado: ⏳ Aguardando Gatilho (Score: 55 | Forçado: True) | score=55
+2026-02-02 16:10:31,211 | INFO | 🔄 Forçando atualização inicial de correlação e pesos...
+2026-02-02 16:10:31,211 | INFO | 📊 Atualizando correlação para 5 ativos...
+2026-02-02 16:10:31,244 | INFO | ✅ Matriz de correlação atualizada
+2026-02-02 16:10:31,244 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-02-02 16:10:31,245 | INFO | 📑 Subscrevendo ao Book de Ofertas para 5 ativos...
+2026-02-02 16:10:31,272 | INFO | 
+============================================================
+2026-02-02 16:10:31,273 | INFO | 🔬 VALIDANDO CONFIGURAÇÃO DE RISCO
+2026-02-02 16:10:31,273 | INFO | ============================================================
+2026-02-02 16:10:31,279 | INFO | ✅ Cooldown após SL: 180 min
+2026-02-02 16:10:31,279 | INFO | ✅ Cooldown progressivo: True
+2026-02-02 16:10:31,279 | INFO | ✅ Máx posições: 8
+2026-02-02 16:10:31,280 | INFO | ✅ Máx por setor: 2
+2026-02-02 16:10:31,280 | INFO | ✅ ADX mínimo (abertura): 25
+2026-02-02 16:10:31,280 | INFO | ✅ ADX mínimo (intraday): 25
+2026-02-02 16:10:31,280 | INFO | ============================================================
+
+2026-02-02 16:10:31,280 | INFO | 📅 Ciclo de trading iniciado: 02/02/2026
+2026-02-02 16:10:31,280 | INFO | 🧵 Iniciando threads de execução...
+2026-02-02 16:10:31,280 | INFO |    -> Thread 'TelegramPolling' adicionada com comandos
+2026-02-02 16:10:31,291 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-02-02 16:10:31,291 | INFO |    -> Thread 'FastLoop' iniciada com sucesso.
+2026-02-02 16:10:31,324 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-02-02 16:10:31,325 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-02-02 16:10:31,337 | INFO |    -> Thread 'HealthWatcher' iniciada com sucesso.
+2026-02-02 16:10:31,339 | INFO | 🧠 Treino diário ML iniciado (histórico: 0 trades | por ativo: True)
+2026-02-02 16:10:31,340 | INFO |    -> Thread 'DailyReport' iniciada com sucesso.
+2026-02-02 16:10:31,340 | INFO | RF treino pulado: histórico insuficiente (0/20 trades)
+2026-02-02 16:10:31,341 | INFO | ✅ Treino diário ML finalizado
+2026-02-02 16:10:31,362 | INFO | 🧵 Thread de Correlação iniciada (Primeira execução imediata)
+2026-02-02 16:10:31,386 | INFO |    -> Thread 'CorrUpdater' iniciada com sucesso.
+2026-02-02 16:10:31,420 | WARNING | ⚠️ Contrato WDOH26 selecionado com liquidez baixa/nula (OI=0.0) para WDO (Melhor candidato).
+2026-02-02 16:10:31,467 | INFO |    -> Thread 'LogMaintenance' iniciada com sucesso.
+2026-02-02 16:10:31,472 | INFO |    -> Thread 'AutoSave' iniciada com sucesso.
+2026-02-02 16:10:31,488 | INFO | 🚀 Iniciando polling do Telegram com comandos integrados...
+2026-02-02 16:10:31,489 | INFO |    -> Thread 'TelegramPolling' iniciada com sucesso.
+2026-02-02 16:10:31,492 | INFO | 🚀 Total de 7 threads ativas
+2026-02-02 16:10:31,552 | INFO | Agendamento do relatório CVM diário iniciado
+2026-02-02 16:10:31,979 | INFO | ✅ Matriz de correlação atualizada com sucesso (6 ativos)
+2026-02-02 16:10:35,285 | INFO | 🚀 Iniciando Dashboard via Streamlit...
+2026-02-02 16:10:36,443 | INFO | ✅ Estado de pausa por win rate resetado (meia-noite)
+2026-02-02 16:10:36,445 | INFO | ✅ Estado de pausa por win rate resetado (diário)
+2026-02-02 16:10:36,445 | WARNING | 🔄 Reset diário do Circuit Breaker
+2026-02-02 16:10:36,547 | INFO | ❌ WIN$N rejeitado: ⏳ Aguardando Gatilho (Score: 45 | Forçado: True) | score=45
+2026-02-02 16:10:36,623 | INFO | ❌ WDO$N rejeitado: ⏳ Aguardando Gatilho (Score: 80 | Forçado: False) | score=80
+2026-02-02 16:10:36,698 | INFO | ❌ IND$N rejeitado: ⏳ Aguardando Gatilho (Score: 20 | Forçado: True) | score=20
+2026-02-02 16:10:36,959 | INFO | ❌ DOL$N rejeitado: ⏳ Aguardando Gatilho (Score: 80 | Forçado: False) | score=80
+2026-02-02 16:10:37,622 | INFO | ❌ WSP$N rejeitado: ⏳ Aguardando Gatilho (Score: 55 | Forçado: True) | score=55
+2026-02-02 16:10:38,338 | INFO | ✅ Dashboard iniciado com sucesso na porta 8503!
+2026-02-02 16:10:38,339 | INFO | 🔎 Dashboard iniciado em modo GUI visível (headless=false)
+[DEBUG] sklearn.ensemble importado.
+[DEBUG] Importando sklearn.linear_model...
+[DEBUG] sklearn.linear_model importado.
+[DEBUG] sklearn.ensemble importado.
+[DEBUG] Importando sklearn.linear_model...
+[DEBUG] sklearn.linear_model importado.
+[DEBUG] Importando sklearn.preprocessing...
+[DEBUG] sklearn.preprocessing importado.
+[DEBUG] Importando sklearn.model_selection...
+[DEBUG] sklearn.model_selection importado.
+[DEBUG] Importando xgboost...
+[DEBUG] Importando sklearn.preprocessing...
+[DEBUG] sklearn.preprocessing importado.
+[DEBUG] Importando sklearn.model_selection...
+[DEBUG] sklearn.model_selection importado.
+[DEBUG] Importando xgboost...
+[DEBUG] xgboost importado.
+[DEBUG] xgboost importado.
+
+  You can now view your Streamlit app in your browser.
+
+  URL: http://localhost:8503
+
+[OK] Configurações carregadas de config.yaml
+[DEBUG] Importando time...
+[DEBUG] time importado.
+[DEBUG] Importando logging...
+[DEBUG] logging importado.
+[DEBUG] Importando datetime...
+[DEBUG] datetime importado.
+[DEBUG] Importando typing...
+[DEBUG] typing importado.
+[DEBUG] Importando collections...
+[DEBUG] collections importado.
+[DEBUG] Importando json...
+[DEBUG] json importado.
+[DEBUG] Importando MetaTrader5...
+[DEBUG] MetaTrader5 importado.
+[DEBUG] Importando pandas...
+[DEBUG] pandas importado.
+[DEBUG] Importando numpy...
+[DEBUG] numpy importado.
+[DEBUG] Importando config...
+[DEBUG] config importado.
+[DEBUG] Importando config_futures...
+[DEBUG] config_futures importado.
+[DEBUG] Importando futures_core...
+[DEBUG] futures_core importado.
+[DEBUG] Importando threading...
+[DEBUG] threading importado.
+[DEBUG] Importando threading (módulo)...
+[DEBUG] threading(módulo) importado.
+[DEBUG] Importando queue...
+[DEBUG] queue importado.
+[DEBUG] Importando os...
+[DEBUG] os importado.
+[DEBUG] Importando pathlib.Path...
+[DEBUG] pathlib.Path importado.
+[DEBUG] Importando redis...
+[DEBUG] redis importado.
+[DEBUG] Importando pickle...
+[DEBUG] pickle importado.
+[DEBUG] Importando hashlib...
+[DEBUG] hashlib importado.
+[DEBUG] Importando signal...
+[DEBUG] signal importado.
+[DEBUG] Importando sys...
+[DEBUG] sys importado.
+[DEBUG] Importando requests...
+[DEBUG] requests importado.
+[DEBUG] Importando news_calendar.apply_blackout...
+[DEBUG] Importando MetaTrader5...
+[DEBUG] MetaTrader5 importado.
+[DEBUG] Importando pandas...
+[DEBUG] pandas importado.
+[DEBUG] Importando logging...
+[DEBUG] logging importado.
+[DEBUG] Importando datetime...
+[DEBUG] datetime importado.
+[DEBUG] Importando threading.RLock...
+[DEBUG] threading.RLock importado.
+[DEBUG] Importando config...
+[DEBUG] config importado.
+[DEBUG] Importando pytz...
+[DEBUG] pytz importado.
+[DEBUG] news_calendar.apply_blackout importado.
+[DEBUG] Importando re...
+[DEBUG] re importado.
+[DEBUG] Importando joblib...
+[DEBUG] joblib importado.
+[OK] Configurações carregadas de config.yaml
+[DEBUG] Verificando modelo em: C:\Users\luizf\Documents\xp3future\ml_trade_history.json
+[DEBUG] Verificando modelo em: C:\Users\luizf\Documents\xp3future\qtable.npy
+[DEBUG] Importando sklearn.ensemble...
+[DEBUG] sklearn.ensemble importado.
+[DEBUG] Importando sklearn.linear_model...
+[DEBUG] sklearn.linear_model importado.
+[DEBUG] Importando sklearn.preprocessing...
+[DEBUG] sklearn.preprocessing importado.
+[DEBUG] Importando sklearn.model_selection...
+[DEBUG] sklearn.model_selection importado.
+[DEBUG] Importando xgboost...
+[DEBUG] xgboost importado.
+2026-02-02 16:13:04,070 | INFO | Bot do Telegram inicializado com sucesso
+────────────────────────── Traceback (most recent call last) ───────────────────────────
+  C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\streamlit\r  
+  untime\scriptrunner\exec_code.py:128 in exec_func_with_error_handling                 
+                                                                                        
+  C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\streamlit\r  
+  untime\scriptrunner\script_runner.py:669 in code_to_exec                              
+                                                                                        
+  C:\Users\luizf\Documents\xp3future\dashboard.py:816 in <module>                       
+                                                                                        
+     813 │   # Mock/Real indicators para o LLM                                          
+     814 │   dummy_ind = {"rsi": 45, "adx": 25, "volume_ratio": 1.6}                    
+     815 │                                                                              
+  >  816 │   sentiment = news_filter.get_news_sentiment(active_sym)                     
+     817 │   narrative = llm_narrative.generate_market_narrative(active_sym, dummy_ind  
+     818 │                                                                              
+     819 │   st.info(narrative)                                                         
+────────────────────────────────────────────────────────────────────────────────────────
+AttributeError: module 'news_filter' has no attribute 'get_news_sentiment'
+2026-02-02 16:13:16,203 | INFO | ✅ RandomForest carregado
+2026-02-02 16:13:16,408 | INFO | ✅ XGBoost carregado
+2026-02-02 16:13:17,611 | WARNING | Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2026-02-02 16:13:17,621 | INFO | ✅ LSTM carregado

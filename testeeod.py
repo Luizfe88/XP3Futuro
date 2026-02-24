@@ -100,7 +100,7 @@ def test_eod_closing():
     print("\n5️⃣ VALIDANDO FUNÇÕES:")
     
     try:
-        from bot import close_all_positions, handle_daily_cycle
+        from botfuturo import close_all_positions, handle_daily_cycle
         print("   ✅ close_all_positions() importada")
         print("   ✅ handle_daily_cycle() importada")
     except ImportError as e:

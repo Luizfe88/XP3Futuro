@@ -1,16 +1,11 @@
 {
-  "date": "2026-01-28",
-  "timestamp": "2026-01-28T11:10:44.979282",
-  "equity_inicio_dia": 980437.26,
-  "daily_max_equity": 980437.26,
-  "daily_trades_per_symbol": {
-    "B3SA3": 0,
-    "AXIA3": 0
-  },
-  "last_entry_time": {
-    "RAIL3": 1769607475.0663035
-  },
-  "current_trading_day": "2026-01-28",
+  "date": "2026-02-24",
+  "timestamp": "2026-02-24T03:10:47.954482",
+  "equity_inicio_dia": 965288.26,
+  "daily_max_equity": 965288.26,
+  "daily_trades_per_symbol": {},
+  "last_entry_time": {},
+  "current_trading_day": "2026-02-24",
   "daily_cycle_completed": false,
   "daily_target_hit_day": null,
   "daily_target_hit_pct": null,

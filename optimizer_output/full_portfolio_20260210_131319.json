@@ -1,0 +1,17 @@
+{
+  "WIN$N": [
+    {
+      "strategy": "VOLATILITY_BREAKOUT",
+      "params": {
+        "bb_period": 27,
+        "bb_std": 1.6797605112752239,
+        "adx_threshold": 20,
+        "sl_atr_multiplier": 2.8965779528632987,
+        "tp_ratio": 1.0955091334534721,
+        "volatility_multiplier": 0.7131377847851137,
+        "vwap_dist_thresh": 2.2347297425938004
+      },
+      "metrics": {}
+    }
+  ]
+}

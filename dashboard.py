@@ -70,7 +70,7 @@ try:
     import llm_narrative
     
     try:
-        from bot import (
+        from botfuturo import (
             bot_state, position_open_times, last_close_time, trading_paused,
             equity_inicio_dia, daily_max_equity, get_market_status, daily_trades_per_symbol
         )
@@ -978,13 +978,121 @@ else:
 st.markdown("---")
 st.markdown('<div class="section-header">🔍 Análise de Oportunidades Rejeitadas</div>', unsafe_allow_html=True)
 
+@st.cache_data(ttl=2)
+def load_bot_bridge_top15():
+    try:
+        with open("bot_bridge.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+        items = data.get("top15", [])
+        df = pd.DataFrame(items)
+        if df.empty:
+            return df
+        required = {
+            "rejection_reason": "-",
+            "whats_missing": "-"
+        }
+        for col, default in required.items():
+            if col not in df.columns:
+                df[col] = default
+        try:
+            df["symbol"] = df["symbol"].apply(_resolve_symbol)
+        except Exception:
+            pass
+        return df
+    except Exception:
+        return pd.DataFrame()
+
+def _resolve_symbol(sym: str) -> str:
+    try:
+        if not sym:
+            return sym
+        s = str(sym).upper().strip()
+        if s.startswith(("WIN", "WDO", "IND", "WSP")) and (s.endswith("$N") or s.endswith("$")):
+            active = getattr(config, "ACTIVE_FUTURES", {}) or {}
+            base = s[:3]
+            key = f"{base}$"
+            mapped = active.get(key)
+            if mapped:
+                return mapped
+            try:
+                resolved = utils.resolve_current_symbol(base)
+                if resolved:
+                    return resolved
+            except Exception:
+                pass
+        return sym
+    except Exception:
+        return sym
+
+top15_df = load_bot_bridge_top15()
+st.markdown("### 📡 Radar de Oportunidades (TOP 15)")
+if not top15_df.empty:
+    try:
+        add_cols = {"adx_slope": 0.0, "spread_pct": 0.0, "spread_trend": 0.0, "filter_block": "-"}
+        for c, d in add_cols.items():
+            if c not in top15_df.columns:
+                top15_df[c] = d
+        for i in range(len(top15_df)):
+            try:
+                s = str(top15_df.at[i, "symbol"])
+                resolved = _resolve_symbol(s)
+                df = utils.safe_copy_rates(resolved, mt5.TIMEFRAME_M15, 200)
+                ind = utils.quick_indicators_custom(resolved, mt5.TIMEFRAME_M15, df=df, params={})
+                top15_df.at[i, "adx_slope"] = float(ind.get("adx_slope", 0) or 0)
+                top15_df.at[i, "spread_pct"] = float(ind.get("spread_pct", 0) or 0)
+                tr = utils.get_spread_trend(resolved, mt5.TIMEFRAME_M15, getattr(config, "SPREAD_LOOKBACK_BARS", 10))
+                top15_df.at[i, "spread_trend"] = float(tr or 0)
+                rr = str(top15_df.at[i, "rejection_reason"] or "")
+                blk = rr.split(":")[0].strip() if ":" in rr else rr.strip()
+                top15_df.at[i, "filter_block"] = blk if blk else "-"
+            except Exception:
+                continue
+    except Exception:
+        pass
+    cols = ["rank","symbol","status","score","direction","rsi","atr_pct","price","sector","adx_slope","spread_pct","spread_trend","filter_block","rejection_reason","whats_missing"]
+    missing = [c for c in cols if c not in top15_df.columns]
+    if missing:
+        for c in missing:
+            top15_df[c] = "-" if c in ("rejection_reason","whats_missing","sector","direction","status","symbol") else 0
+    disp = top15_df[cols]
+    st.dataframe(
+        disp,
+        width="stretch",
+        hide_index=True,
+        column_config={
+            "rank":"Rank",
+            "symbol":"Ativo",
+            "status":"Status",
+            "score":st.column_config.ProgressColumn("Score", format="%d", min_value=0, max_value=120),
+            "direction":"Direção",
+            "rsi":"RSI",
+            "atr_pct":"ATR %",
+            "price":"Preço",
+            "sector":"Setor",
+            "adx_slope":"ADX Slope",
+            "spread_pct":"Spread %",
+            "spread_trend":"Spread Trend",
+            "filter_block":"Filtro",
+            "rejection_reason":"Motivo da Rejeição",
+            "whats_missing":"O Que Falta?"
+        }
+    )
+else:
+    st.info("Aguardando dados do TOP 15.")
+
 @st.cache_data(ttl=60)
 def load_rejections_data():
     """Lê o log de análises do dia e estrutura os dados"""
-    today = datetime.now().strftime("%Y-%m-%d")
-    log_file = Path(f"analysis_logs/analysis_log_{today}.txt")
-    
-    if not log_file.exists():
+    # Seleciona o arquivo mais recente em logs/analysis
+    logs_dir = Path("logs/analysis")
+    candidates = sorted(list(logs_dir.glob("analysis_*.txt")), key=lambda p: p.stat().st_mtime, reverse=True)
+    log_file = candidates[0] if candidates else None
+    if log_file is None or not log_file.exists():
+        # Fallback legado
+        today = datetime.now().strftime("%Y-%m-%d")
+        legacy = Path(f"analysis_logs/analysis_log_{today}.txt")
+        log_file = legacy if legacy.exists() else None
+    if log_file is None:
         return pd.DataFrame(), {}
     
     data = []
@@ -994,8 +1102,19 @@ def load_rejections_data():
         with open(log_file, 'r', encoding='utf-8') as f:
             content = f.read()
             
-        # Divide por blocos de entrada (separados por linhas de =)
-        blocks = content.split('='*80)
+        # Divide por blocos de entrada (linhas de separação)
+        blocks = []
+        tmp = []
+        for ln in content.splitlines():
+            line = ln.strip()
+            if line == "="*80 or line == "-"*80:
+                if tmp:
+                    blocks.append("\n".join(tmp))
+                    tmp = []
+            else:
+                tmp.append(line)
+        if tmp:
+            blocks.append("\n".join(tmp))
         
         for block in blocks:
             if "|" not in block or "Motivo:" not in block:
@@ -1005,7 +1124,7 @@ def load_rejections_data():
             
             entry = {}
             for line in lines:
-                if "|" in line and ("🕐" in line or "1" in line): # Timestamp line
+                if "|" in line and ("🕐" in line):  # Timestamp line
                     parts = line.split("|")
                     if len(parts) >= 3:
                         entry['Time'] = parts[0].replace('🕐', '').strip()
@@ -1033,6 +1152,20 @@ def load_rejections_data():
                 
                 if "Volume:" in line:
                     entry['Volume'] = line.split("Volume:")[1].strip()
+                
+                if "📋 Explicação Técnica:" in line:
+                    entry['Explanation'] = ""
+                    continue
+                
+                # Coleta linhas de explicação técnica após o marcador
+                if entry.get('Explanation', None) is not None and line.startswith("•"):
+                    entry['Explanation'] += (line + "  ")
+                
+                if "🧠 Resumo:" in line:
+                    try:
+                        entry['Summary'] = line.split("🧠 Resumo:")[1].strip()
+                    except Exception:
+                        entry['Summary'] = line.strip()
             
             if entry and 'Status' in entry and ('REJEITADA' in entry['Status'] or 'AGUARDANDO' in entry['Status']):
                 data.append(entry)
@@ -1040,7 +1173,8 @@ def load_rejections_data():
     except Exception as e:
         logger.error(f"Erro ao ler logs: {e}")
         
-    return pd.DataFrame(data), reasons_count
+    df = pd.DataFrame(data)
+    return df, reasons_count
 
 rejections_df, reasons_stats = load_rejections_data()
 
@@ -1050,7 +1184,7 @@ if not rejections_df.empty:
     with r_col1:
         st.markdown("### 📋 Últimas Rejeições")
         st.dataframe(
-            rejections_df[['Time', 'Symbol', 'Signal', 'Score', 'Reason', 'RSI', 'Volume']],
+            rejections_df[['Time', 'Symbol', 'Signal', 'Score', 'Reason', 'RSI', 'Volume', 'Summary']],
             width='stretch',
             height=300
         )
@@ -1081,8 +1215,62 @@ if not rejections_df.empty:
             st.markdown("#### Top Bloqueios:")
             for i, row in reasons_df.head(3).iterrows():
                 st.markdown(f"- **{row['Contagem']}x**: {row['Motivo']}")
+    
+    # Destaque: Detalhe da última rejeição (explicação técnica)
+    try:
+        last_row = rejections_df.iloc[-1]
+        if 'Explanation' in last_row and isinstance(last_row['Explanation'], str) and last_row['Explanation'].strip():
+            st.markdown("### 🔎 Explicação Técnica da Última Rejeição")
+            st.info(f"{last_row['Symbol']} | {last_row['Time']} | {last_row.get('Reason','')}")
+            st.markdown(last_row['Explanation'])
+            if last_row.get('Summary'):
+                st.markdown(f"**Resumo:** {last_row['Summary']}")
+    except Exception:
+        pass
 else:
     st.info("✅ Nenhuma rejeição registrada hoje (ou arquivo de log ainda vazio).")
+
+# ===========================
+# SEÇÃO 4.1: ATIVOS SEM M15 (MT5)
+# ===========================
+st.markdown("---")
+st.markdown("### 🧭 Ativos com dados M15 ausentes no MT5")
+
+@st.cache_data(ttl=30)
+def load_mt5_unavailable_symbols():
+    paths = [
+        Path("logs/errors/errors.log"),
+        Path("xp3v5/logs/errors/errors.log")
+    ]
+    symbols = set()
+    for p in paths:
+        try:
+            if not p.exists():
+                continue
+            with open(p, "r", encoding="utf-8") as f:
+                lines = f.readlines()[-500:]
+            for ln in lines:
+                if "Inicialização abortada" in ln or "Ativos indisponíveis no MT5" in ln:
+                    try:
+                        msg = ln.split("MT5:")[1]
+                    except Exception:
+                        msg = ln
+                    for part in msg.split("|"):
+                        part = part.strip()
+                        if ":" in part:
+                            sym = part.split(":")[0].strip()
+                            if sym:
+                                symbols.add(sym)
+        except Exception as e:
+            logger.debug(f"Erro ao ler {p}: {e}")
+    return sorted(symbols)
+
+mt5_unavailable = load_mt5_unavailable_symbols()
+if mt5_unavailable:
+    st.info("Os ativos abaixo foram reportados sem M15 recentemente. O bot agora continua a inicialização, aplicando fallback para M5 quando possível.")
+    st.write(", ".join(mt5_unavailable))
+else:
+    st.success("Nenhum ativo sem M15 reportado recentemente.")
 
 # ===========================
 # SEÇÃO 5: ANÁLISE POR ATIVO
@@ -1734,9 +1922,12 @@ def diagnosticar_ativo(symbol):
         rsi_val = 100 - (100 / (1 + rs)).iloc[-1]
         if pd.isna(rsi_val): rsi_val = 50.0
         
-        # Volume (CORRIGIDO: Volume Financeiro, não tick_volume)
-        # MIN_AVG_VOLUME_20 = 300k significa R$ 300k, não 300k contratos
-        vol_financial = (df['tick_volume'] * df['close']).rolling(20).mean().iloc[-1]
+        # Volume (CORRIGIDO: Volume Financeiro com Point Value)
+        # MIN_AVG_VOLUME_20 = 20M significa R$ 20M
+        insp = utils.AssetInspector.detect(symbol)
+        pv = float(insp.get("point_value", 1.0) or 1.0)
+        
+        vol_financial = (df['tick_volume'] * df['close'] * pv).rolling(20).mean().iloc[-1]
         if pd.isna(vol_financial): vol_financial = 0
         
         # 3. Tendência (EMA)
@@ -1857,17 +2048,19 @@ def _get_indicators(symbol):
     try:
         if BOT_CONNECTED and "bot_state" in globals():
             try:
-                ind = bot_state.get_indicators(symbol)
+                resolved = _resolve_symbol(symbol)
+                ind = bot_state.get_indicators(resolved)
             except Exception:
                 pass
         if not ind or ind.get("error"):
             try:
-                df = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_M15, 300)
+                resolved = _resolve_symbol(symbol)
+                df = utils.safe_copy_rates(resolved, mt5.TIMEFRAME_M15, 300)
                 if df is None or len(df) <= 50:
                     try:
                         if not mt5.terminal_info():
                             mt5.initialize(path=getattr(config, "MT5_TERMINAL_PATH", None))
-                        rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M15, 0, 300) or []
+                        rates = mt5.copy_rates_from_pos(resolved, mt5.TIMEFRAME_M15, 0, 300) or []
                         df = pd.DataFrame(rates)
                     except Exception:
                         df = None
@@ -2082,7 +2275,8 @@ st.markdown("---")
 st.subheader("🛠️ Simulador de Diagnóstico (Tempo Real)")
 with st.expander("Clique aqui para forçar um check técnico agora"):
     # Lista de ativos para monitorar
-    lista_ativos = getattr(config, 'ELITE_SYMBOLS', ['WIN$N', 'WDO$N', 'PETR4', 'VALE3'])
+    # Lista de ativos para monitorar
+    lista_ativos = getattr(config, 'ELITE_SYMBOLS', ['WIN$N', 'WDO$N'])
     if isinstance(lista_ativos, dict): lista_ativos = list(lista_ativos.keys())
     
     cols_diag = st.columns(3)
@@ -2147,7 +2341,61 @@ with st.expander("Clique aqui para forçar um check técnico agora"):
             """
             st.html(html_card)
         col_counter += 1
-
+st.markdown("---")
+st.markdown('<div class="section-header">🧪 Comparador de Otimizadores (Sklearn)</div>', unsafe_allow_html=True)
+try:
+    import sklearn
+    from sklearn.datasets import make_classification
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.svm import SVC
+    from sklearn.ensemble import RandomForestClassifier
+    from ml_optimizer import build_default_pipeline, compare_methods
+    seed = st.slider("Seed", min_value=1, max_value=999, value=42, step=1, key="opt_seed")
+    model_name = st.selectbox("Modelo", ["LogisticRegression", "SVC", "RandomForest"], index=0, key="opt_model")
+    scoring_choice = st.selectbox("Métrica", ["accuracy"], index=0, key="opt_metric")
+    X, y = make_classification(n_samples=800, n_features=15, n_informative=6, n_redundant=4, random_state=seed)
+    if model_name == "LogisticRegression":
+        estimator = LogisticRegression(max_iter=800, random_state=seed)
+        grid = {"model__C": [0.1, 1.0, 10.0]}
+        dist = {"model__C": [0.01, 0.05, 0.1, 0.5, 1.0, 5.0, 10.0, 50.0]}
+        space = {"model__C": {"min": 0.01, "max": 50.0, "log": True}}
+    elif model_name == "SVC":
+        estimator = SVC(kernel="rbf", probability=True, random_state=seed)
+        grid = {"model__C": [0.1, 1.0, 10.0], "model__gamma": ["scale", "auto"]}
+        dist = {"model__C": [0.01, 0.1, 1.0, 10.0], "model__gamma": ["scale", "auto"]}
+        space = {"model__C": {"min": 0.01, "max": 50.0, "log": True}}
+    else:
+        estimator = RandomForestClassifier(n_estimators=200, random_state=seed)
+        grid = {"model__n_estimators": [100, 200], "model__max_depth": [None, 10, 20]}
+        dist = {"model__n_estimators": [50, 100, 200], "model__max_depth": [None, 10, 20]}
+        space = {"model__max_depth": {"min": 5, "max": 30}}
+    pipe = build_default_pipeline(estimator)
+    res = compare_methods(pipe, X, y, grid, dist, space, random_state=seed)
+    df_res = pd.DataFrame([{
+        "Método": k,
+        "Score": v.best_score,
+        "Tempo (s)": v.runtime_seconds
+    } for k, v in res.items()]).sort_values("Score", ascending=False)
+    st.dataframe(df_res, width="stretch", hide_index=True)
+    fig = px.bar(df_res, x="Método", y="Score", color="Tempo (s)", color_continuous_scale=px.colors.sequential.Viridis)
+    fig.update_layout(margin=dict(t=10, b=10, l=10, r=10), height=300)
+    st.plotly_chart(fig, use_container_width=True)
+    with st.expander("Melhores parâmetros"):
+        st.json({k: v.best_params for k, v in res.items()})
+    try:
+        import optuna
+        trials = st.slider("Optuna Trials", min_value=5, max_value=50, value=10, step=5, key="opt_trials")
+        from ml_optuna import OptunaOptimizer
+        opt = OptunaOptimizer(random_state=seed, n_trials=trials)
+        res_opt = opt.run(pipe, X, y, space)
+        st.metric("Optuna Score", f"{res_opt.best_score:.4f}")
+        st.caption(f"Tempo: {res_opt.runtime_seconds:.2f}s")
+        if res_opt.best_params:
+            st.json({"Optuna": res_opt.best_params})
+    except Exception as e:
+        st.info(f"Optuna indisponível ou erro: {e}")
+except Exception as e:
+    st.info(f"Sklearn indisponível ou erro: {e}")
 # ===========================
 # SEÇÃO: QUADRO DE TAREFAS (Cards)
 # ===========================

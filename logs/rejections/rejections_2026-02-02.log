@@ -1,0 +1,4 @@
+16:43:09 | ❌ [WDOH26] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.33x < 1.4x) | Details: {'vol_ratio': np.float64(0.33), 'min_vol': 1.4, 'deficit': np.float64(1.07), 'period': 'Tarde'}
+16:43:32 | ❌ [WDOH26] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.33x < 1.4x) | Details: {'vol_ratio': np.float64(0.33), 'min_vol': 1.4, 'deficit': np.float64(1.07), 'period': 'Tarde'}
+16:43:54 | ❌ [WDOH26] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.33x < 1.4x) | Details: {'vol_ratio': np.float64(0.33), 'min_vol': 1.4, 'deficit': np.float64(1.07), 'period': 'Tarde'}
+16:44:14 | ❌ [WDOH26] [VolumeTimeFilter] 🛑 Volume fraco para Tarde (0.33x < 1.4x) | Details: {'vol_ratio': np.float64(0.33), 'min_vol': 1.4, 'deficit': np.float64(1.07), 'period': 'Tarde'}

@@ -1,6 +1,7 @@
 #utils.py
 import functools
 print = functools.partial(print, flush=True)
+print("[DEBUG] Importando market_screener...", flush=True); import market_screener; print("[DEBUG] market_screener importado.", flush=True)
 print("[DEBUG] Importando time...", flush=True); import time; print("[DEBUG] time importado.", flush=True)
 print("[DEBUG] Importando logging...", flush=True); import logging; print("[DEBUG] logging importado.", flush=True)
 print("[DEBUG] Importando datetime...", flush=True); from datetime import datetime, timedelta, time as datetime_time; print("[DEBUG] datetime importado.", flush=True)
@@ -13,7 +14,12 @@ except Exception:
     mt5 = None; print("[DEBUG] MetaTrader5 indisponível.", flush=True)
 print("[DEBUG] Importando pandas...", flush=True); import pandas as pd; print("[DEBUG] pandas importado.", flush=True)
 print("[DEBUG] Importando numpy...", flush=True); import numpy as np; print("[DEBUG] numpy importado.", flush=True)
-print("[DEBUG] Importando config...", flush=True); import config; print("[DEBUG] config importado.", flush=True)
+print("[DEBUG] Importando config...", flush=True); import config as config; print("[DEBUG] config importado.", flush=True)
+print("[DEBUG] Importando config_futures...", flush=True); import config_futures; print("[DEBUG] config_futures importado.", flush=True)
+try:
+    print("[DEBUG] Importando futures_core...", flush=True); import futures_core; print("[DEBUG] futures_core importado.", flush=True)
+except ImportError:
+    futures_core = None; print("[DEBUG] futures_core indisponível.", flush=True)
 print("[DEBUG] Importando threading...", flush=True); from threading import RLock, Lock; print("[DEBUG] threading importado.", flush=True)
 print("[DEBUG] Importando threading (módulo)...", flush=True); import threading; print("[DEBUG] threading(módulo) importado.", flush=True)
 print("[DEBUG] Importando queue...", flush=True); import queue; print("[DEBUG] queue importado.", flush=True)
@@ -205,27 +211,36 @@ def get_polygon_rates_fallback(symbol: str, timeframe, count: int) -> Optional[p
     return None
 
 def resolve_current_symbol(root_symbol: str) -> Optional[str]:
+    """
+    Resolves the current front-month futures contract using futures_core.
+    SOLUÇÃO 1 & 2: Regex + OI Check.
+    """
     try:
-        base = root_symbol.replace("$", "")
-        candidates = get_futures_candidates(base)
-        if not candidates:
-            fb = _fallback_future_symbol(base)
-            if fb:
-                logger.warning(f"Nenhum contrato ativo para {base}$, fallback → {fb}")
-            return fb
-        candidates_sorted = sorted(candidates, key=lambda c: (-calculate_contract_score(c), c.get("days_to_exp", 9999)))
-        chosen = candidates_sorted[0]["symbol"]
-        log_mapping_details(base, candidates_sorted, chosen)
-        return chosen
-    except Exception:
-        try:
-            base = root_symbol.replace("$", "")
-            fb = _fallback_future_symbol(base)
-            if fb:
-                logger.warning(f"Erro mapping {base}$, fallback → {fb}")
-            return fb
-        except Exception:
-            return None
+        if not futures_core:
+            return get_current_contract(root_symbol)
+
+        base = _futures_base_from_symbol(root_symbol)
+
+        active_map = getattr(config, "ACTIVE_FUTURES", {}) or {}
+        for k in (root_symbol, f"{base}$N", f"{base}$"):
+            if k in active_map:
+                return active_map[k]
+
+        selected = get_current_contract(base)
+        if selected:
+            try:
+                active_map[f"{base}$N"] = selected
+                setattr(config, "ACTIVE_FUTURES", active_map)
+            except Exception:
+                pass
+            return selected
+
+        manager = futures_core.get_manager()
+        front_month = manager.find_front_month(base)
+        return front_month or None
+    except Exception as e:
+        logger.error(f"Error resolving symbol {root_symbol}: {e}")
+        return None
 
 def _expiration_str(symbol: str) -> str:
     try:
@@ -241,8 +256,7 @@ def update_futures_mappings():
     try:
         mapping = {}
         for k in ["WIN$", "WDO$", "WSP$"]:
-            base = k.replace("$", "")
-            sym = resolve_current_symbol(base)
+            sym = resolve_current_symbol(k)
             if sym:
                 mapping[k] = sym
                 exp_str = _expiration_str(sym)
@@ -258,6 +272,68 @@ def update_futures_mappings():
         return getattr(config, "ACTIVE_FUTURES", {})
     except Exception:
         return {}
+
+def get_current_contract(symbol_or_base: str) -> Optional[str]:
+    base = _futures_base_from_symbol(symbol_or_base)
+    candidates = get_futures_candidates(base) or []
+    if not candidates:
+        return None
+    sorted_cands = sorted(
+        candidates,
+        key=lambda c: (-float(c.get("volume", 0.0) or 0.0), int(c.get("days_to_exp", 9999) or 9999))
+    )
+    return sorted_cands[0].get("symbol") if sorted_cands else None
+
+def resolve_trade_symbol(symbol: str) -> str:
+    s = (symbol or "").upper().strip()
+    if not s:
+        return s
+    if "$N" in s or "$" in s:
+        sel = _try_mt5_symbol_select(s)
+        if sel:
+            tick = mt5.symbol_info_tick(sel)
+            if tick and tick.ask > 0 and tick.bid > 0:
+                return sel
+        base = _futures_base_from_symbol(s)
+        active = get_current_contract(base)
+        if active:
+            sel2 = _try_mt5_symbol_select(active) or active
+            tick2 = mt5.symbol_info_tick(sel2)
+            if tick2 and tick2.ask > 0 and tick2.bid > 0:
+                return sel2
+        return sel or s
+    if _is_futures_contract_symbol(s):
+        tick = mt5.symbol_info_tick(s)
+        if tick and tick.ask > 0 and tick.bid > 0:
+            return s
+        base = _futures_base_from_symbol(s)
+        active = get_current_contract(base)
+        if active:
+            sel = _try_mt5_symbol_select(active) or active
+            tick2 = mt5.symbol_info_tick(sel)
+            if tick2 and tick2.ask > 0 and tick2.bid > 0:
+                return sel
+        return s
+    sel = _try_mt5_symbol_select(s)
+    return sel or s
+
+def resolve_indicator_symbol(symbol: str) -> str:
+    s = (symbol or "").upper().strip()
+    if not s:
+        return s
+    if _is_futures_contract_symbol(s):
+        base = _futures_base_from_symbol(s)
+        for cand in (f"{base}$N", f"{base}$"):
+            sel = _try_mt5_symbol_select(cand)
+            if sel:
+                return sel
+        active = get_current_contract(base)
+        if active:
+            return _try_mt5_symbol_select(active) or active
+        return s
+    if "$N" in s or "$" in s:
+        return _try_mt5_symbol_select(s) or s
+    return _try_mt5_symbol_select(s) or s
 def detect_broker() -> str:
     try:
         if mt5 is None:
@@ -295,16 +371,34 @@ def get_futures_candidates(base_code: str) -> list:
             info = mt5.symbol_info(n)
             selectable = bool(info and getattr(info, "selectable", False))
             visible = bool(info and getattr(info, "visible", False))
-            exp = getattr(info, "expiration_time", None)
-            is_contract = bool(re.search(rf"^{base_code}[FGHJKMNQUVXZ]\d{{2}}$", n))
+            exp_raw = getattr(info, "expiration_time", None)
+            exp = None
+            try:
+                if isinstance(exp_raw, datetime):
+                    exp = exp_raw
+                elif isinstance(exp_raw, (int, float)) and float(exp_raw) > 0:
+                    exp = datetime.fromtimestamp(float(exp_raw))
+            except Exception:
+                exp = None
+            # Para XP: aceita tanto formato tradicional (WINH25) quanto novo (WINN, WINZ)
+            broker = detect_broker().lower()
+            if "xp" in broker:
+                is_contract = bool(re.search(rf"^{base_code}([FGHJKMNQUVXZ]\d{{2}}|[NZ])$", n))
+            else:
+                is_contract = bool(re.search(rf"^{base_code}[FGHJKMNQUVXZ]\d{{2}}$", n))
             if not is_contract:
                 continue
             if not selectable:
                 continue
-            if not isinstance(exp, datetime) or exp <= today:
+            if isinstance(exp, datetime) and exp <= today:
                 continue
             try:
                 mt5.symbol_select(n, True)
+                try:
+                    _mt5_force_history(n, mt5.TIMEFRAME_M15, 300)
+                    time.sleep(0.05)
+                except Exception:
+                    pass
                 rates = mt5.copy_rates_from_pos(n, mt5.TIMEFRAME_M15, 0, 120)
                 vol = 0.0
                 if rates is not None and len(rates) > 0:
@@ -312,7 +406,7 @@ def get_futures_candidates(base_code: str) -> list:
                     vol = float(df.get("tick_volume", pd.Series(dtype=float)).tail(80).sum() or 0.0)
             except Exception:
                 vol = 0.0
-            days_to_exp = (exp - today).days
+            days_to_exp = (exp - today).days if isinstance(exp, datetime) else 9999
             out.append({"symbol": n, "exp": exp, "days_to_exp": days_to_exp, "visible": visible, "selectable": selectable, "volume": vol})
         return out
     except Exception:
@@ -362,15 +456,21 @@ def map_generic_to_specific(generic: str) -> Optional[str]:
             "WSP": ["WSP", "SP"]
         }
         bases = alt.get(base, [base])
-        cands = []
         for b in bases:
-            cands = get_futures_candidates(b)
-            if cands:
-                break
-        cands_sorted = sorted(cands, key=lambda c: (-calculate_contract_score(c), c.get("days_to_exp", 9999)))
-        selected = cands_sorted[0]["symbol"] if cands_sorted else None
-        log_mapping_details(base, cands_sorted, selected)
-        return selected
+            selected = get_current_contract(b)
+            if selected:
+                try:
+                    cands = get_futures_candidates(b) or []
+                    cands_sorted = sorted(
+                        cands,
+                        key=lambda c: (-float(c.get("volume", 0.0) or 0.0), int(c.get("days_to_exp", 9999) or 9999))
+                    )
+                    log_mapping_details(base, cands_sorted, selected)
+                except Exception:
+                    pass
+                return selected
+        log_mapping_details(base, [], None)
+        return None
     except Exception:
         return None
 def discover_all_futures() -> dict:
@@ -409,6 +509,207 @@ def discover_all_futures() -> dict:
         return result
     except Exception:
         return {}
+
+def find_and_enable_active_futures(asset_patterns: List[str]) -> Dict[str, str]:
+    try:
+        if mt5 is None:
+            logger.error("MT5 indisponível")
+            return {}
+        connected = False
+        try:
+            term = mt5.terminal_info()
+            connected = bool(term and getattr(term, "connected", False))
+        except Exception:
+            connected = False
+        if not connected:
+            try:
+                init_ok = mt5.initialize(path=getattr(config, "MT5_TERMINAL_PATH", None))
+                if init_ok:
+                    term = mt5.terminal_info()
+                    connected = bool(term and getattr(term, "connected", False))
+            except Exception:
+                connected = False
+        if not connected:
+            logger.error("Falha ao conectar MT5")
+            return {}
+        result: Dict[str, str] = {}
+        for pattern in asset_patterns:
+            try:
+                base = "".join([c for c in (pattern or "") if c.isalpha()])
+                candidates = get_futures_candidates(base) or []
+                if not candidates:
+                    logger.warning(f"Nenhum candidato para {pattern}")
+                    continue
+                sorted_cands = sorted(
+                    candidates,
+                    key=lambda c: (-float(c.get("volume", 0.0) or 0.0), int(c.get("days_to_exp", 9999) or 9999))
+                )
+                active = sorted_cands[0].get("symbol") if sorted_cands else None
+                if not active:
+                    logger.warning(f"Falha ao selecionar contrato ativo para {pattern}")
+                    continue
+
+                # --- INÍCIO DO NOVO BLOCO DE FILTROS ---
+                conf = config_futures.FUTURES_CONFIGS.get(pattern, {})
+                specs = conf.get("specs", {})
+                
+                min_volume = specs.get("min_tick_volume", 0)
+                min_atr_pct = specs.get("min_atr_pct", 0.0)
+                max_spread = specs.get("max_spread_points", float('inf'))
+
+                # 1. Filtro de Liquidez
+                hist_data = market_screener.get_historical_data(active, days=2)
+                if hist_data is None or len(hist_data) < 2:
+                    logger.warning(f"[{active}] Sem dados históricos suficientes para análise. Ativo ignorado.")
+                    continue
+                
+                last_day_volume = hist_data.iloc[-2]['tick_volume']
+                if last_day_volume < min_volume:
+                    logger.info(f"[{active}] Reprovado no filtro de liquidez. Volume D-1: {last_day_volume} < Mínimo: {min_volume}.")
+                    continue
+
+                # 2. Filtro de Volatilidade (ATR)
+                hist_data_atr = market_screener.get_historical_data(active, days=20)
+                atr_value = market_screener.calculate_atr(hist_data_atr)
+                last_close = hist_data.iloc[-2]['close']
+                
+                if last_close > 0:
+                    atr_pct = (atr_value / last_close) * 100
+                    if atr_pct < min_atr_pct:
+                        logger.info(f"[{active}] Reprovado no filtro de volatilidade. ATR %: {atr_pct:.2f}% < Mínimo: {min_atr_pct}%.")
+                        continue
+                
+                # 3. Filtro de Spread (executado mais perto da abertura)
+                # Nota: Idealmente, isso rodaria um pouco antes do pregão.
+                live_spread = market_screener.get_live_spread(active)
+                if live_spread is not None and live_spread > max_spread:
+                    logger.info(f"[{active}] Reprovado no filtro de spread. Spread atual: {live_spread} > Máximo: {max_spread}.")
+                    continue
+                
+                logger.info(f"✅ [{active}] Aprovado em todos os filtros. Ativando para o dia.")
+                # --- FIM DO NOVO BLOCO DE FILTROS ---
+
+                try:
+                    if not mt5.symbol_select(active, True):
+                        logger.warning(f"Falha ao adicionar {active} ao Market Watch")
+                    else:
+                        logger.info(f"Ativo habilitado: {pattern} → {active}")
+                except Exception as e:
+                    logger.warning(f"Erro ao selecionar {active}: {e}")
+                result[pattern] = active
+            except Exception as e:
+                logger.error(f"Erro no processamento de {pattern}: {e}")
+        if result:
+            try:
+                current = getattr(config, "ACTIVE_FUTURES", {})
+                current.update(result)
+                setattr(config, "ACTIVE_FUTURES", current)
+                sector = getattr(config, "SECTOR_MAP", {})
+                for g, real in result.items():
+                    if g in sector:
+                        sector.pop(g, None)
+                    sector[real] = "FUTUROS"
+                setattr(config, "SECTOR_MAP", sector)
+            except Exception:
+                pass
+        return result
+    except Exception:
+        return {}
+
+def diagnose_futures_status() -> dict:
+    """
+    Diagnóstico completo do status dos futuros.
+    Útil para debug quando futuros não operam.
+    
+    Verifica:
+    - Cache ACTIVE_FUTURES em config
+    - Símbolos de futuros em SECTOR_MAP
+    - Status no Market Watch (exists, visible, select)
+    - Disponibilidade de dados (barras M5)
+    
+    Returns:
+        dict com resultado do diagnóstico
+    """
+    result = {
+        "active_futures_cache": getattr(config, "ACTIVE_FUTURES", {}),
+        "futures_in_sector_map": [],
+        "market_watch_status": {},
+        "data_availability": {}
+    }
+    
+    try:
+        # 1. Futuros no SECTOR_MAP
+        sector_map = getattr(config, "SECTOR_MAP", {})
+        result["futures_in_sector_map"] = [
+            sym for sym, sector in sector_map.items() 
+            if sector == "FUTUROS"
+        ]
+        
+        # 2. Status no Market Watch
+        all_futures = list(result["active_futures_cache"].values()) + result["futures_in_sector_map"]
+        unique_futures = list(set(all_futures))
+        
+        for symbol in unique_futures:
+            if not symbol:
+                continue
+            info = mt5.symbol_info(symbol)
+            result["market_watch_status"][symbol] = {
+                "exists": info is not None,
+                "visible": getattr(info, "visible", False) if info else False,
+                "select": getattr(info, "select", False) if info else False,
+                "expiration": getattr(info, "expiration_time", None) if info else None
+            }
+        
+        # 3. Disponibilidade de dados
+        for symbol in unique_futures:
+            if not symbol:
+                continue
+            try:
+                rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, 10)
+                result["data_availability"][symbol] = {
+                    "has_data": rates is not None and len(rates) > 0,
+                    "bars_available": len(rates) if rates is not None else 0
+                }
+            except Exception as e:
+                result["data_availability"][symbol] = {
+                    "has_data": False,
+                    "error": str(e)
+                }
+        
+        # 4. Log formatado
+        logger.info("=" * 60)
+        logger.info("🔍 DIAGNÓSTICO DE FUTUROS")
+        logger.info("=" * 60)
+        
+        logger.info(f"\n1️⃣ Cache ACTIVE_FUTURES ({len(result['active_futures_cache'])} items):")
+        for k, v in result["active_futures_cache"].items():
+            logger.info(f"   {k} → {v}")
+        
+        logger.info(f"\n2️⃣ SECTOR_MAP ({len(result['futures_in_sector_map'])} futuros):")
+        for sym in result["futures_in_sector_map"]:
+            status = result["market_watch_status"].get(sym, {})
+            logger.info(
+                f"   {sym}: "
+                f"Existe={status.get('exists')} | "
+                f"Visível={status.get('visible')} | "
+                f"Selecionado={status.get('select')}"
+            )
+        
+        logger.info(f"\n3️⃣ Disponibilidade de Dados:")
+        for sym, data in result["data_availability"].items():
+            logger.info(
+                f"   {sym}: "
+                f"Dados={'OK' if data.get('has_data') else 'FALHA'} | "
+                f"Barras={data.get('bars_available', 0)}"
+            )
+        
+        logger.info("=" * 60)
+        
+    except Exception as e:
+        logger.error(f"Erro no diagnóstico: {e}", exc_info=True)
+    
+    return result
+
 
 def monitor_futures_rollover():
     try:
@@ -555,6 +856,16 @@ def _fallback_future_symbol(base_code: str) -> Optional[str]:
     try:
         now = datetime.now()
         if base_code in ("WIN", "WDO", "WSP", "BGI", "IND", "DOL"):
+            # Detectar broker para escolher o formato correto
+            broker = detect_broker().lower()
+            
+            # Para XP: usar formato novo com N (ex: WINN, WDOZ)
+            if "xp" in broker:
+                # Alternar entre N e Z baseado no mês
+                suffix = "N" if now.month % 2 == 1 else "Z"
+                return f"{base_code}{suffix}"
+            
+            # Para outros brokers: usar formato tradicional (ex: WING26)
             m, y = _next_even_month(now)
             letter = _month_letter(m)
             yy = str(y)[-2:]
@@ -697,11 +1008,11 @@ def get_vix_br() -> float:
     return 22.5 # Valor médio seguro para não travar
 
 def is_future(symbol: str) -> bool:
-    try:
-        s = (symbol or "").upper()
-        return s.startswith(("WIN", "WDO", "IND", "DOL", "WSP", "BGI"))
-    except Exception:
-        return False
+    """
+    Retorna sempre True, pois o bot opera exclusivamente com futuros.
+    Mantida para compatibilidade com código legado.
+    """
+    return True
 def get_asset_type(symbol: str) -> str:
     try:
         return "FUTURE" if is_future(symbol) else "STOCK"
@@ -720,6 +1031,153 @@ class AssetInspector:
             return {"type": "FUTURE", "point_value": 10.0, "tick_size": 0.5, "fee_type": "FIXED", "fee_val": 1.10}
         # AÇÃO B3: padrão 4 letras + dígito (ex: PETR4)
         return {"type": "STOCK", "point_value": 1.0, "tick_size": 0.01, "fee_type": "PERCENT", "fee_val": 0.00055}
+
+class AssetClassManager:
+    @staticmethod
+    def get_class(symbol: str) -> str:
+        """Sempre retorna FUTURE (bot exclusivo para futuros)"""
+        return "FUTURE"
+    @staticmethod
+    def get_risk_pct(symbol: str) -> float:
+        """Retorna % de risco para futuros"""
+        try:
+            base = float(getattr(config, "RISK_PER_TRADE_PCT", 0.006))
+            minp = float(getattr(config, "MIN_RISK_PER_TRADE_PCT", 0.0025))
+            maxp = float(getattr(config, "MAX_RISK_PER_TRADE_PCT", 0.010))
+            return max(minp, min(base, maxp))
+        except Exception:
+            return 0.006  # Padrão para futuros
+    @staticmethod
+    def get_min_lot(symbol: str) -> int:
+        """Sempre retorna 1 (futuros usam lote=1)"""
+        return 1
+    @staticmethod
+    def get_time_window(symbol: str) -> tuple[str, str]:
+        """Retorna janela de horário para futuros"""
+        start = "09:05"
+        end = getattr(config, "FUTURES_CLOSE_ALL_BY", "17:50")
+        return start, end
+    @staticmethod
+    def _count_positions() -> tuple[int, int]:
+        try:
+            with mt5_lock:
+                positions = mt5.positions_get() or []
+        except Exception:
+            positions = []
+        fut = 0
+        stk = 0
+        for p in positions:
+            if is_future(getattr(p, "symbol", "")):
+                fut += 1
+            else:
+                stk += 1
+        return fut, stk
+    @staticmethod
+    def get_dynamic_buckets() -> tuple[float, float]:
+        """
+        Retorna % de alocação para futuros.
+        Simplificado: sempre retorna (1.0, 0.0) pois só opera futuros.
+        Mantido para compatibilidade com código legado.
+        """
+        return (1.0, 0.0)  # 100% futuros, 0% ações
+    @staticmethod
+    def get_bucket_for(symbol: str) -> float:
+        """Retorna 1.0 (100% para futuros)"""
+        return 1.0
+
+# ============================================
+# 🔧 SOLUÇÕES B3 IMPLEMENTADAS
+# ============================================
+
+def filter_trading_hours(df: pd.DataFrame, asset_class: str) -> pd.DataFrame:
+    """
+    SOLUÇÃO 5: Filtro de Horário de Pregão
+    Remove after-market e pré-market indesejados.
+    """
+    if df is None or df.empty: return df
+    
+    cfg = config_futures.FUTURES_CONFIGS.get(asset_class)
+    if not cfg: return df
+    
+    start_h, end_h = cfg['hours']
+    
+    # Filtra horas
+    # Assumindo end_h=18 (fecha as 18:00, então < 18 ou <= 17:59)
+    # df.index deve ser datetime
+    
+    # Horario regular: >= 9 e < 18
+    # Se after market existe, ele é tratado a parte? O usuario quer REMOVER barras 18h15-08h45
+    # Ou seja, MANTER 09:00 - 18:00 (e talvez after se config permitir)
+    
+    mask = (df.index.hour >= start_h) & (df.index.hour < end_h)
+    
+    # Se incluir after:
+    # after = cfg.get('after_market')
+    # if after:
+        # mask = mask | ((df.index.hour >= 18) & (df.index.time <= ...))
+        # Mas usuário pediu para FILTRAR (Remover) barras fora do padrão.
+    
+    return df[mask]
+
+def is_liquid_futures(symbol: str, mt5_conn) -> bool:
+    """
+    SOLUÇÃO 10: Liquidez por Contratos/Dia
+    """
+    try:
+        base = symbol[:3]
+        cfg = config_futures.FUTURES_CONFIGS.get(base)
+        if not cfg: return True # Default allow if unknown
+        
+        info = mt5_conn.symbol_info(symbol)
+        if not info: return False
+        
+        # Check OI
+        oi = getattr(info, "session_open_interest", None)
+        if oi in (None, 0):
+            oi = getattr(info, "open_interest", None)
+        if oi in (None, 0):
+            oi = max(
+                float(getattr(info, "volume", 0) or 0),
+                float(getattr(info, "volumehigh", 0) or 0)
+            )
+        if float(oi or 0) < float(cfg.get('min_oi', 0) or 0):
+            return False
+            
+        # Check Volume (Last 20 days avg)
+        # rates = mt5_conn.copy_rates... seria pesado fazer aqui a cada check. 
+        # Idealmente cacheado. assumimos que caller cuida disso ou check simples.
+        
+        return True
+    except:
+        return True
+
+def get_future_beta(symbol: str) -> float:
+    """
+    SOLUÇÃO 11: Beta = 1.0 para Futuros de Índice
+    """
+    s = symbol.upper()
+    if s.startswith(('WIN', 'IND')):
+        return 1.00
+    if s.startswith(('WDO', 'DOL', 'DI1')):
+        return 0.00
+    return 1.00
+
+def calculate_atr_points(df: pd.DataFrame, period=14):
+    """
+    SOLUÇÃO 7: ATR em Pontos Absolutos (Não dividir por preço!)
+    """
+    high = df['high']
+    low = df['low']
+    close = df['close']
+    prev_close = close.shift(1)
+    
+    tr1 = high - low
+    tr2 = (high - prev_close).abs()
+    tr3 = (low - prev_close).abs()
+    
+    tr = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
+    atr = tr.ewm(span=period).mean() # Usando EMA como sugerido ou rolling? Usuário disse ema.
+    return atr
 
 def round_to_tick(price: float, tick_size: float) -> float:
     try:
@@ -746,27 +1204,39 @@ except Exception as e:
 # MT5 SAFE COPY (ANTI-DEADLOCK)
 # =========================================================
 
-def safe_copy_rates(symbol: str, timeframe, count: int = 500, timeout: int = 12) -> Optional[pd.DataFrame]:
+def _is_futures_contract_symbol(symbol: str) -> bool:
     try:
-        terminal = mt5.terminal_info()
+        s = (symbol or "").upper().strip()
+        return bool(re.match(r"^[A-Z]{2,10}[FGHJKMNQUVXZ]\d{2}$", s))
     except Exception:
-        terminal = None
-    if (terminal is None) or (not getattr(terminal, "connected", False)):
-        df_fb = get_polygon_rates_fallback(symbol, timeframe, count)
-        return df_fb
-    if not mt5.symbol_select(symbol, True):
-        pass 
+        return False
 
+def _futures_base_from_symbol(symbol: str) -> str:
+    s = (symbol or "").upper().strip()
+    if "$" in s:
+        s = s.split("$", 1)[0]
+    m = re.match(r"^([A-Z]{2,10})[FGHJKMNQUVXZ]\d{2}$", s)
+    if m:
+        return m.group(1)
+    m2 = re.match(r"^([A-Z]{2,10})", s)
+    return m2.group(1) if m2 else s
+
+def _mt5_pick_best_symbol_by_group(group: str) -> Optional[str]:
     try:
-        bars = mt5.copy_rates_from_pos(symbol, timeframe, 0, count)
-        bars_available = 0 if bars is None else len(bars)
+        syms = mt5.symbols_get(group=group) or []
+        best = None
+        best_v = -1.0
+        for s in syms:
+            name = getattr(s, "name", "") or ""
+            v = float(getattr(s, "volume", 0.0) or 0.0)
+            if name and v > best_v:
+                best_v = v
+                best = name
+        return best
     except Exception:
-        bars_available = 0
+        return None
 
-    if bars_available < count:
-        mt5.copy_rates_from_pos(symbol, timeframe, 0, 1)
-        time.sleep(0.2)
-
+def _mt5_copy_rates_threaded(symbol: str, timeframe, count: int, timeout: int) -> Optional[pd.DataFrame]:
     q = queue.Queue()
 
     def worker():
@@ -785,21 +1255,174 @@ def safe_copy_rates(symbol: str, timeframe, count: int = 500, timeout: int = 12)
 
     try:
         rates = q.get_nowait()
-        if isinstance(rates, Exception) or rates is None or len(rates) == 0:
-            # ✅ FALLBACK: Polygon.io
-            logger.warning(f"⚠️ MT5 Falhou em {symbol}. Acionando Polygon.io fallback...")
-            df_fb = get_polygon_rates_fallback(symbol, timeframe, count)
-            return df_fb
+    except queue.Empty:
+        return None
 
-        df = pd.DataFrame(rates)
+    if isinstance(rates, Exception) or rates is None or len(rates) == 0:
+        return None
+
+    df = pd.DataFrame(rates)
+    if "time" in df.columns:
         df["time"] = pd.to_datetime(df["time"], unit="s")
         df.set_index("time", inplace=True)
-        return df.sort_index()
-    except queue.Empty:
-        # ✅ FALLBACK: Polygon.io
-        logger.warning(f"⚠️ Timeout MT5 em {symbol}. Acionando Polygon.io fallback...")
+    return df.sort_index()
+
+def _mt5_force_history(symbol: str, timeframe, count: int) -> None:
+    try:
+        start = datetime.now() - timedelta(days=30)
+        mt5.copy_rates_from(symbol, timeframe, start, max(1, min(count, 5000)))
+    except Exception:
+        return
+
+def _try_mt5_symbol_select(symbol: str) -> Optional[str]:
+    s = (symbol or "").upper().strip()
+    if not s:
+        return None
+    try:
+        if mt5.symbol_select(s, True):
+            return s
+    except Exception:
+        pass
+    if "$N" in s:
+        base = s.replace("$N", "")
+        for name in [s, base, f"{base}#", f"{base}!", f"{base}_C"]:
+            try:
+                if mt5.symbol_select(name, True):
+                    return name
+            except Exception:
+                pass
+        best = _mt5_pick_best_symbol_by_group(group=f"*{base}*")
+        if best:
+            try:
+                if mt5.symbol_select(best, True):
+                    return best
+            except Exception:
+                pass
+    if _is_futures_contract_symbol(s):
+        base = _futures_base_from_symbol(s)
+        best = _mt5_pick_best_symbol_by_group(group=f"*{base}*")
+        if best:
+            try:
+                if mt5.symbol_select(best, True):
+                    return best
+            except Exception:
+                pass
+    return None
+
+def _fallback_data_symbols_for_contract(symbol: str) -> List[str]:
+    base = _futures_base_from_symbol(symbol)
+    alts = {"WDO": "DOL", "DOL": "WDO"}
+    bases = [base]
+    if base in alts:
+        bases.append(alts[base])
+    out = []
+    for b in bases:
+        out.extend([f"{b}$N", f"{b}$"])
+    return out
+
+def _df_has_valid_ohlc(df: Optional[pd.DataFrame], min_rows: int = 50) -> bool:
+    try:
+        if df is None or not isinstance(df, pd.DataFrame) or len(df) < min_rows:
+            return False
+        for c in ("open", "high", "low", "close"):
+            if c not in df.columns:
+                return False
+        tail = df[["open", "high", "low", "close"]].tail(min(200, len(df))).copy()
+        tail = tail.replace([np.inf, -np.inf], np.nan)
+        if tail.isna().any().any():
+            return False
+        if float(tail["close"].max()) <= 0.0:
+            return False
+        if (tail[["open", "high", "low", "close"]] <= 0).all().all():
+            return False
+        if (tail["high"] < tail["low"]).any():
+            return False
+        if float((tail["high"] - tail["low"]).abs().sum()) <= 0.0:
+            return False
+        return True
+    except Exception:
+        return False
+
+def safe_copy_rates(symbol: str, timeframe, count: int = 500, timeout: int = 12) -> Optional[pd.DataFrame]:
+    try:
+        terminal = mt5.terminal_info()
+    except Exception:
+        terminal = None
+    if (terminal is None) or (not getattr(terminal, "connected", False)):
         df_fb = get_polygon_rates_fallback(symbol, timeframe, count)
         return df_fb
+    requested_symbol = (symbol or "").upper().strip()
+    selected = _try_mt5_symbol_select(requested_symbol)
+    symbol = selected or requested_symbol
+
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+    if df is not None and not _df_has_valid_ohlc(df):
+        logger.warning(f"⚠️ MT5 retornou OHLC inválido para {symbol} (zeros/NaN). Tentando fallback...")
+        df = None
+
+    if df is None or len(df) == 0:
+        _mt5_force_history(symbol, timeframe, count)
+        time.sleep(0.2)
+        df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+        if df is not None and not _df_has_valid_ohlc(df):
+            logger.warning(f"⚠️ MT5 ainda com OHLC inválido para {symbol} após force_history. Tentando fallback...")
+            df = None
+
+    if (df is None or len(df) == 0) and futures_core and (_is_futures_contract_symbol(symbol) or "$N" in symbol or "$" in symbol):
+        try:
+            base = _futures_base_from_symbol(symbol)
+            mgr = futures_core.get_manager()
+            dfc = mgr.concatenate_history(base, bars=max(count, 800), timeframe=timeframe)
+            if isinstance(dfc, pd.DataFrame) and not dfc.empty:
+                if "volume" in dfc.columns and "tick_volume" not in dfc.columns:
+                    dfc = dfc.rename(columns={"volume": "tick_volume"})
+                if "real_volume" not in dfc.columns and "tick_volume" in dfc.columns and "close" in dfc.columns:
+                    dfc["real_volume"] = dfc["tick_volume"] * dfc["close"]
+                dfc = dfc.sort_index().tail(count)
+                if _df_has_valid_ohlc(dfc):
+                    return dfc
+        except Exception:
+            pass
+
+    if (df is None or len(df) == 0) and _is_futures_contract_symbol(symbol):
+        for alt in _fallback_data_symbols_for_contract(symbol):
+            alt_sel = _try_mt5_symbol_select(alt)
+            if not alt_sel:
+                continue
+            df_alt = _mt5_copy_rates_threaded(alt_sel, timeframe, count, timeout)
+            if df_alt is not None and len(df_alt) > 0 and _df_has_valid_ohlc(df_alt):
+                return df_alt
+        try:
+            base = _futures_base_from_symbol(symbol)
+            alts = {"WDO": "DOL", "DOL": "WDO"}
+            bases = [base, alts.get(base)] if base in alts else [base]
+            for b in bases:
+                if not b:
+                    continue
+                active = get_current_contract(b)
+                if not active or active == symbol:
+                    continue
+                act_sel = _try_mt5_symbol_select(active) or active
+                df_act = _mt5_copy_rates_threaded(act_sel, timeframe, count, timeout)
+                if df_act is not None and len(df_act) > 0 and _df_has_valid_ohlc(df_act):
+                    logger.info(f"🔁 Fallback de contrato: {symbol} → {act_sel}")
+                    return df_act
+        except Exception:
+            pass
+
+    if df is None or len(df) == 0:
+        try:
+            if mt5 and timeframe == getattr(mt5, "TIMEFRAME_M15", None):
+                df_m5 = _mt5_copy_rates_threaded(symbol, mt5.TIMEFRAME_M5, count, timeout)
+                if df_m5 is not None and len(df_m5) > 0 and _df_has_valid_ohlc(df_m5):
+                    logger.info(f"↩️ Fallback M5 aplicado para {symbol} (M15 vazio)")
+                    return df_m5
+        except Exception:
+            pass
+        logger.warning(f"⚠️ MT5 Falhou em {requested_symbol}. Acionando Polygon.io fallback...")
+        return get_polygon_rates_fallback(requested_symbol, timeframe, count)
+
+    return df
 
 def get_training_rates(symbol: str, timeframe, bars: int = 2000) -> Optional[pd.DataFrame]:
     try:
@@ -1098,7 +1721,7 @@ def get_dynamic_rr_min() -> float:
     
     # ✅ NOVO: Fator 3 - Drawdown atual
     try:
-        from bot import daily_max_equity
+        from botfuturo import daily_max_equity
         acc = mt5.account_info()
         
         if acc and daily_max_equity > 0:
@@ -1196,7 +1819,19 @@ def get_order_flow(symbol: str, bars: int = 20) -> Dict[str, float]:
         "sell_volume": float(sell_v)
     }
 
+def get_order_flow_polygon(symbol: str) -> Dict[str, float]:
+    return get_order_flow(symbol, bars=20)
 
+
+class AggressionTracker:
+    def get_aggression_balance(self, symbol: str, bars: int = 20) -> float:
+        of = get_order_flow(symbol, bars=bars)
+        try:
+            return float(of.get("imbalance", 0.0) or 0.0)
+        except Exception:
+            return 0.0
+
+aggression_tracker = AggressionTracker()
 
 # =========================================================
 # SLIPPAGE
@@ -1485,58 +2120,52 @@ def get_psar(df: pd.DataFrame, af: float = 0.02, af_max: float = 0.2) -> Optiona
     except Exception:
         return None
 def get_adx(df: pd.DataFrame, period: int = 14) -> Optional[float]:
-    if len(df) < period * 2:
+    if df is None or len(df) < period * 2:
         return None
-
-    high, low, close = df["high"], df["low"], df["close"]
-
-    plus_dm = high.diff().clip(lower=0)
-    minus_dm = (-low.diff()).clip(lower=0)
-
+    high = df["high"]
+    low = df["low"]
+    close = df["close"]
+    up_move = high.diff()
+    down_move = -low.diff()
+    plus_dm = up_move.where((up_move > down_move) & (up_move > 0), 0.0)
+    minus_dm = down_move.where((down_move > up_move) & (down_move > 0), 0.0)
     tr = pd.concat([
         high - low,
         (high - close.shift()).abs(),
         (low - close.shift()).abs()
     ], axis=1).max(axis=1)
-
     atr = tr.ewm(alpha=1 / period, adjust=False).mean()
-    plus_di = 100 * plus_dm.ewm(alpha=1 / period, adjust=False).mean() / atr
-    minus_di = 100 * minus_dm.ewm(alpha=1 / period, adjust=False).mean() / atr
-
-    dx = (abs(plus_di - minus_di) / (plus_di + minus_di)) * 100
+    eps = 1e-10
+    plus_di = 100 * plus_dm.ewm(alpha=1 / period, adjust=False).mean() / (atr + eps)
+    minus_di = 100 * minus_dm.ewm(alpha=1 / period, adjust=False).mean() / (atr + eps)
+    dx = 100 * (abs(plus_di - minus_di) / (plus_di + minus_di + eps))
     adx = dx.ewm(alpha=1 / period, adjust=False).mean()
-
-    return float(adx.iloc[-1])
+    v = adx.iloc[-1]
+    if pd.isna(v):
+        return None
+    return float(v)
 
 def get_adx_series(df: pd.DataFrame, period: int = 14) -> pd.Series:
-    """Retorna a série completa do ADX para análise de tendência."""
     if df is None or len(df) < period * 2:
-        return pd.Series()
-    
-    high = df['high']
-    low = df['low']
-    close = df['close']
-
-    plus_dm = high.diff()
-    minus_dm = low.diff()
-
-    plus_dm[plus_dm < 0] = 0
-    minus_dm[minus_dm > 0] = 0
-    minus_dm = abs(minus_dm)
-
+        return pd.Series(dtype=float)
+    high = df["high"]
+    low = df["low"]
+    close = df["close"]
+    up_move = high.diff()
+    down_move = -low.diff()
+    plus_dm = up_move.where((up_move > down_move) & (up_move > 0), 0.0)
+    minus_dm = down_move.where((down_move > up_move) & (down_move > 0), 0.0)
     tr = pd.concat([
         high - low,
         (high - close.shift()).abs(),
         (low - close.shift()).abs()
     ], axis=1).max(axis=1)
-
     atr = tr.ewm(alpha=1 / period, adjust=False).mean()
-    plus_di = 100 * plus_dm.ewm(alpha=1 / period, adjust=False).mean() / atr
-    minus_di = 100 * minus_dm.ewm(alpha=1 / period, adjust=False).mean() / atr
-
-    dx = (abs(plus_di - minus_di) / (plus_di + minus_di)) * 100
+    eps = 1e-10
+    plus_di = 100 * plus_dm.ewm(alpha=1 / period, adjust=False).mean() / (atr + eps)
+    minus_di = 100 * minus_dm.ewm(alpha=1 / period, adjust=False).mean() / (atr + eps)
+    dx = 100 * (abs(plus_di - minus_di) / (plus_di + minus_di + eps))
     adx = dx.ewm(alpha=1 / period, adjust=False).mean()
-
     return adx
 
 
@@ -1621,6 +2250,44 @@ def check_spread(symbol: str, timeframe, bars: int = None) -> tuple[bool, float,
     if current_pct > avg_pct and avg_pct > 0:
         return False, float(current_pct), float(avg_pct)
     return True, float(current_pct), float(avg_pct)
+def get_spread_trend(symbol: str, timeframe, bars: int = None) -> Optional[float]:
+    try:
+        minutes = timeframe_to_minutes(timeframe) * max(int(bars or getattr(config, "SPREAD_LOOKBACK_BARS", 10)), 1)
+        start = datetime.now() - timedelta(minutes=minutes)
+        with mt5_lock:
+            ticks = mt5.copy_ticks_from(symbol, start, 100000, mt5.COPY_TICKS_ALL)
+        if ticks is None or len(ticks) == 0:
+            return None
+        df_ticks = pd.DataFrame(ticks)
+        df_ticks = df_ticks[(df_ticks["ask"] > 0) & (df_ticks["bid"] > 0)]
+        if df_ticks.empty:
+            return None
+        spread = (df_ticks["ask"] - df_ticks["bid"]) / df_ticks["bid"] * 100.0
+        n = len(spread)
+        if n < 20:
+            return None
+        q = max(n // 4, 5)
+        early_mean = float(spread.iloc[:q].mean())
+        late_mean = float(spread.iloc[-q:].mean())
+        return float(late_mean - early_mean)
+    except Exception:
+        return None
+def get_threshold_for_symbol(symbol: str, key: str, default: float) -> float:
+    try:
+        s = str(symbol).upper()
+        base = ""
+        for ch in s:
+            if ch.isalpha():
+                base += ch
+            else:
+                break
+        per = getattr(config, "PER_ASSET_THRESHOLDS", {}) or {}
+        v = (per.get(base) or {}).get(key)
+        if v is None:
+            v = getattr(config, key, default)
+        return float(v if v is not None else default)
+    except Exception:
+        return float(default)
 def get_obv(df: pd.DataFrame) -> Optional[float]:
     """
     Calcula OBV ignorando candle em aberto.
@@ -1718,6 +2385,255 @@ def macro_trend_ok(symbol: str, side: str) -> bool:
 
     return price > ema if side == "BUY" else price < ema
 
+class MultiTimeframeEngine:
+    def _get_hierarchy(self, symbol: str) -> list:
+        s = (symbol or "").upper()
+        if is_future(s):
+            return [mt5.TIMEFRAME_M5, mt5.TIMEFRAME_M15, mt5.TIMEFRAME_H1]
+        return [mt5.TIMEFRAME_M15, mt5.TIMEFRAME_H1, mt5.TIMEFRAME_D1]
+    def _calculate_signal(self, symbol: str, timeframe) -> dict:
+        data_symbol = resolve_indicator_symbol(symbol)
+        df = safe_copy_rates(data_symbol, timeframe, 200)
+        if df is None or len(df) < 50:
+            return {"side": "NEUTRAL", "score": 0.0, "adx": 0.0, "ema_diff": 0.0, "volume_ratio": 0.0, "error": "no_data"}
+        ind = quick_indicators_custom(symbol, timeframe, df=df, params={})
+        ema_fast = float(ind.get("ema_fast", 0) or 0)
+        ema_slow = float(ind.get("ema_slow", 0) or 0)
+        adx = float(ind.get("adx", 0) or 0)
+        close = float(ind.get("close", 0) or 0)
+        vr = float(ind.get("volume_ratio", 0) or 0)
+        side = "BUY" if ema_fast > ema_slow else "SELL"
+        diff = abs(ema_fast - ema_slow) / max(close, 1e-9)
+        score = max(0.0, min(1.0, (diff * 100.0) / 2.0))
+        return {"side": side, "score": score, "adx": adx, "ema_diff": diff, "volume_ratio": vr, "data_symbol": data_symbol}
+    def _check_conflicts(self, signals: dict, intended_side: str) -> list:
+        conflicts = []
+        keys = list(signals.keys())
+        for tf in keys:
+            s = signals.get(tf, {})
+            side = s.get("side", "NEUTRAL")
+            if side != "NEUTRAL" and side != intended_side:
+                conflicts.append(str(tf))
+        return conflicts
+    def _calculate_alignment(self, signals: dict, intended_side: str) -> float:
+        total = 0
+        aligned = 0
+        for _, s in signals.items():
+            side = s.get("side", "NEUTRAL")
+            if side != "NEUTRAL":
+                total += 1
+                if side == intended_side:
+                    aligned += 1
+        if total == 0:
+            return 0.0
+        return float(aligned) / float(total)
+    def validate_entry(self, symbol: str, side: str, base_timeframe) -> tuple[bool, str, dict]:
+        hierarchy = self._get_hierarchy(symbol)
+        signals = {}
+        for tf in hierarchy:
+            signals[tf] = self._calculate_signal(symbol, tf)
+        conflicts = self._check_conflicts(signals, side)
+        if conflicts:
+            return False, f"Conflito MTF em {', '.join(conflicts)}", {"signals": signals, "conflicts": conflicts, "alignment": 0.0}
+        alignment = self._calculate_alignment(signals, side)
+        if alignment < 0.70:
+            return False, f"Alinhamento {alignment:.0%}", {"signals": signals, "conflicts": conflicts, "alignment": alignment}
+        return True, f"MTF OK ({alignment:.0%})", {"signals": signals, "conflicts": conflicts, "alignment": alignment}
+
+class FilterChain:
+    def __init__(self):
+        self.filters = {
+            "capital_available": {"priority": 1, "mandatory": True, "bypass_conditions": None},
+            "mtf_alignment": {"priority": 2, "mandatory": True, "bypass_conditions": None},
+            "spread_gate": {"priority": 2, "mandatory": True, "bypass_conditions": None},
+            "risk_limits": {"priority": 3, "mandatory": True, "bypass_conditions": None},
+            "ml_confidence": {
+                "priority": 4,
+                "mandatory": False,
+                "bypass_conditions": {
+                    "high_adx": lambda ind: float(ind.get("adx", 0) or 0) > 40,
+                    "strong_trend": lambda ind: float(ind.get("ema_diff", 0) or 0) > 0.02,
+                    "high_volume": lambda ind: float(ind.get("volume_ratio", 0) or 0) > 2.0,
+                },
+                "bypass_threshold": 2,
+            },
+            "adx_slope_gate": {
+                "priority": 4,
+                "mandatory": False,
+                "bypass_conditions": {
+                    "high_adx": lambda ind: float(ind.get("adx", 0) or 0) >= 25,
+                    "breakout": lambda ind: bool(ind.get("vol_breakout", False)),
+                },
+                "bypass_threshold": 1,
+            },
+            "anti_chop": {
+                "priority": 5,
+                "mandatory": False,
+                "bypass_conditions": {
+                    "breakout": lambda ind: bool(ind.get("vol_breakout", False)),
+                    "news_catalyst": lambda ind: bool(ind.get("has_news", False)),
+                },
+                "bypass_threshold": 1,
+            },
+        }
+    def _execute_filter(self, name: str, symbol: str, side: str, indicators: dict) -> tuple[bool, str]:
+        if name == "capital_available":
+            tick = cached_symbol_info_tick(symbol)
+            if not tick:
+                return False, "Sem cotação"
+            entry = tick.ask if side == "BUY" else tick.bid
+            vol = 1.0 if is_future(symbol) else 100.0
+            ok, reason = check_capital_allocation(symbol, vol, entry)
+            return ok, reason
+        if name == "mtf_alignment":
+            base_tf = mt5.TIMEFRAME_M5 if is_future(symbol) else mt5.TIMEFRAME_M15
+            engine = MultiTimeframeEngine()
+            ok, reason, _ = engine.validate_entry(symbol, side, base_tf)
+            return ok, reason
+        if name == "spread_gate":
+            lb = int(getattr(config, "SPREAD_LOOKBACK_BARS", 10))
+            ok, cur_spread, avg_spread = check_spread(symbol, TIMEFRAME_BASE, lb)
+            if not ok:
+                return False, f"Spread {cur_spread:.2f}% > média {avg_spread:.2f}%"
+            trend = get_spread_trend(symbol, TIMEFRAME_BASE, lb)
+            max_trend = get_threshold_for_symbol(symbol, "MAX_SPREAD_TREND_PCT", 0.03)
+            if trend is not None and trend > max_trend:
+                return False, f"Spread em expansão (+{trend:.2f}%)"
+            max_pct = get_threshold_for_symbol(symbol, "MAX_SPREAD_PCT", 0.15)
+            if cur_spread > max_pct:
+                return False, f"Spread alto ({cur_spread:.2f}%)"
+            return True, "OK"
+        if name == "risk_limits":
+            limit = get_effective_exposure_limit()
+            current = calculate_total_exposure()
+            return current <= limit, "Limite"
+        if name == "ml_confidence":
+            try:
+                from ml_signals import MLSignalPredictor
+                pred = MLSignalPredictor()
+                p = pred.predict(symbol, indicators)
+                conf = float(p.get("confidence", 0) or 0)
+                dirn = str(p.get("direction", "HOLD"))
+                if dirn in ("HOLD", "ERROR"):
+                    return False, "ML HOLD"
+                if dirn != side and conf >= 0.70:
+                    return False, f"ML Contra {conf:.0%}"
+                return True, "OK"
+            except Exception:
+                return True, "ML Indisponível"
+        if name == "adx_slope_gate":
+            slope = float(indicators.get("adx_slope", 0) or 0)
+            lb = int(getattr(config, "ADX_SLOPE_LOOKBACK", 5) or 5)
+            min_slope = get_threshold_for_symbol(symbol, "MIN_ADX_SLOPE", 0.5)
+            if slope == 0:
+                df = safe_copy_rates(symbol, TIMEFRAME_BASE, 100)
+                s = get_adx_series(df) if df is not None else pd.Series(dtype=float)
+                if len(s) > lb:
+                    try:
+                        slope = float(s.iloc[-1] - s.iloc[-(lb + 1)])
+                    except Exception:
+                        slope = 0.0
+            if side == "BUY" and slope < min_slope:
+                return False, f"ADX slope {slope:.2f} < {min_slope:.2f}"
+            if side == "SELL" and slope > -min_slope:
+                return False, f"ADX slope {slope:.2f} > {-min_slope:.2f}"
+            return True, "OK"
+        if name == "anti_chop":
+            tick = cached_symbol_info_tick(symbol)
+            if not tick:
+                return True, ""
+            price = tick.bid if side == "SELL" else tick.ask
+            atr = float(indicators.get("atr", 0) or 0)
+            ok, reason = check_anti_chop_filter(symbol, price, atr)
+            return ok, reason or ""
+        return True, ""
+    def _check_bypass(self, filter_name: str, indicators: dict, config: dict) -> bool:
+        conditions_met = 0
+        for _, fn in (config.get("bypass_conditions") or {}).items():
+            try:
+                if fn(indicators):
+                    conditions_met += 1
+            except Exception:
+                continue
+        return conditions_met >= int(config.get("bypass_threshold", 99) or 99)
+    def validate(self, symbol: str, side: str, indicators: dict) -> tuple[bool, str]:
+        for fname, cfg in sorted(self.filters.items(), key=lambda x: x[1]["priority"]):
+            passed, reason = self._execute_filter(fname, symbol, side, indicators)
+            if not passed and cfg["mandatory"]:
+                return False, f"{fname}: {reason}"
+            if not passed and not cfg["mandatory"]:
+                if self._check_bypass(fname, indicators, cfg):
+                    continue
+                return False, f"{fname}: {reason}"
+        return True, "OK"
+
+class _TTLCache:
+    def __init__(self):
+        self._data = {}
+    def get(self, key: str, max_age: int):
+        v = self._data.get(key)
+        if not v:
+            return None
+        ts, val = v
+        if (time.time() - ts) > max_age:
+            return None
+        return val
+    def set(self, key: str, value, ttl: int):
+        self._data[key] = (time.time(), value)
+
+class ConcurrentMarketScanner:
+    def __init__(self, max_workers: int = 4):
+        from concurrent.futures import ThreadPoolExecutor
+        self.executor = ThreadPoolExecutor(max_workers=max_workers)
+        self.cache = _TTLCache()
+    def _scan_futures_fast(self, symbols: list) -> dict:
+        results = {}
+        for symbol in symbols:
+            cached = self.cache.get(symbol, 5)
+            if cached:
+                results[symbol] = cached
+                continue
+            df = safe_copy_rates(symbol, mt5.TIMEFRAME_M5, 50)
+            if df is None or len(df) < 20:
+                results[symbol] = {}
+                continue
+            ind = {
+                "rsi": get_rsi(df, period=14),
+                "ema_fast": float(df["close"].ewm(span=9).mean().iloc[-1]),
+                "ema_slow": float(df["close"].ewm(span=21).mean().iloc[-1]),
+                "volume_ratio": float(df["volume"].iloc[-1]) / max(float(df["volume"].rolling(20).mean().iloc[-1]), 1.0),
+                "price": float(df["close"].iloc[-1]),
+            }
+            self.cache.set(symbol, ind, 5)
+            results[symbol] = ind
+        return results
+    def _analyze_symbol(self, s: str) -> tuple[str, dict]:
+        df = safe_copy_rates(s, mt5.TIMEFRAME_M15, 100)
+        if df is None or len(df) < 20:
+            return s, {}
+        ind = quick_indicators_custom(s, mt5.TIMEFRAME_M15, df=df, params={})
+        return s, ind
+    def scan_market(self, symbols: list) -> dict:
+        futures = [s for s in symbols if is_future(s)]
+        stocks = [s for s in symbols if not is_future(s)]
+        results = {}
+        if futures:
+            f = self.executor.submit(self._scan_futures_fast, futures)
+            try:
+                results.update(f.result(timeout=3))
+            except Exception:
+                pass
+        if stocks:
+            from concurrent.futures import as_completed
+            futures_list = [self.executor.submit(self._analyze_symbol, s) for s in stocks]
+            try:
+                for fut in as_completed(futures_list, timeout=10):
+                    k, v = fut.result()
+                    results[k] = v
+            except Exception:
+                pass
+        return results
+
 # =========================================================
 # INDICADORES CONSOLIDADOS (SEM SCORE)
 # =========================================================
@@ -1751,7 +2667,14 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
     ✅ VERSÃO COMPLETA: Inclui Momentum
     """
     params = params or {}
-    df = df if df is not None else safe_copy_rates(symbol, timeframe, 300)
+    requested_symbol = (symbol or "").upper().strip()
+    data_symbol = resolve_indicator_symbol(requested_symbol)
+    trade_symbol = resolve_trade_symbol(requested_symbol)
+
+    if df is None or not _df_has_valid_ohlc(df):
+        df = safe_copy_rates(data_symbol, timeframe, 300)
+    elif requested_symbol != data_symbol:
+        df = safe_copy_rates(data_symbol, timeframe, 300)
 
     if df is None or len(df) < 50:
         return {"error": "no_data"}
@@ -1768,11 +2691,42 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
     up = delta.clip(lower=0).rolling(14).mean()
     down = -delta.clip(upper=0).rolling(14).mean()
     rsi = (100 - (100 / (1 + up / down))).iloc[-1]
+    try:
+        if pd.isna(rsi) or not np.isfinite(float(rsi)):
+            rsi = 0.0
+    except Exception:
+        rsi = 0.0
 
     # --- ATR E ADX ---
     atr = get_atr(df)
-    adx = get_adx(df) or 0.0
+    _adx_val = get_adx(df)
+    if _adx_val is None:
+        try:
+            _adx_val = get_adx(df.tail(60))
+        except Exception:
+            _adx_val = None
+    if _adx_val is None:
+        try:
+            _adx_val = get_adx(df, period=8)
+        except Exception:
+            _adx_val = None
+    adx = _adx_val if _adx_val is not None else 0.0
     price = float(close.iloc[-1])
+    try:
+        if (not np.isfinite(price)) or price <= 0.0:
+            df2 = safe_copy_rates(data_symbol, timeframe, 300)
+            if df2 is not None and _df_has_valid_ohlc(df2):
+                df = df2
+                close = df["close"]; high = df["high"]; low = df["low"]
+                price = float(close.iloc[-1])
+                delta = close.diff()
+                up = delta.clip(lower=0).rolling(14).mean()
+                down = -delta.clip(upper=0).rolling(14).mean()
+                rsi = (100 - (100 / (1 + up / down))).iloc[-1]
+                atr = get_atr(df)
+                adx = (get_adx(df) or 0.0)
+    except Exception:
+        pass
 
     # --- ✅ MOMENTUM (NOVO!) ---
     momentum = get_momentum(df, period=10)  # ROC de 10 períodos
@@ -1786,21 +2740,29 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
 
     # --- CÁLCULO ATR% REAL ---
     if atr > price * 2:
-        atr_price = atr * mt5.symbol_info(symbol).point
+        info_meta = mt5.symbol_info(trade_symbol) or mt5.symbol_info(data_symbol)
+        point = float(getattr(info_meta, "point", 0.0) or 0.0)
+        if point <= 0:
+            point = 1.0
+        atr_price = atr * point
     else:
         atr_price = atr
     
     atr_pct_real = (atr_price / price) * 100 if price > 0 else 0
 
     # --- ✅ SPREAD REAL-TIME (LAND TRADING STYLE) ---
-    tick = mt5.symbol_info_tick(symbol)
+    tick = mt5.symbol_info_tick(trade_symbol)
     spread_nominal = 0
     spread_pct = 0
     spread_points = 0
     
     if tick and tick.ask > 0 and tick.bid > 0:
         spread_nominal = tick.ask - tick.bid
-        spread_points = round(spread_nominal / mt5.symbol_info(symbol).point, 0)
+        info_tick = mt5.symbol_info(trade_symbol) or mt5.symbol_info(data_symbol)
+        point = float(getattr(info_tick, "point", 0.0) or 0.0)
+        if point <= 0:
+            point = 1.0
+        spread_points = round(spread_nominal / point, 0)
         spread_pct = (spread_nominal / tick.bid) * 100 if tick.bid > 0 else 0
 
     # --- Z-SCORE DE VOLATILIDADE ---
@@ -1813,10 +2775,10 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
     # --- VOLUME ---
     avg_vol = get_avg_volume(df)
 
-    min_avg_vol = getattr(config, "MIN_AVG_VOLUME_FUTURES", 0) if is_future(symbol) else getattr(config, "MIN_AVG_VOLUME", 4000)
+    min_avg_vol = getattr(config, "MIN_AVG_VOLUME_FUTURES", 0) if is_future(trade_symbol) else getattr(config, "MIN_AVG_VOLUME", 4000)
 
     if avg_vol < min_avg_vol:
-        logger.info(f"{symbol}: Bloqueado por micro-liquidez ({avg_vol:,.0f})")
+        logger.info(f"{requested_symbol}: Bloqueado por micro-liquidez ({avg_vol:,.0f})")
         return {"error": "low_liquidity"}
     
     # ✅ CORREÇÃO MIOPIA DE VOLUME: Ignorar candle em aberto (-1) e usar o último fechado (-2)
@@ -1848,12 +2810,21 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
     vwap_std = vwap_stats["std"] if isinstance(vwap_stats, dict) else None
     vwap_upper = vwap_stats["upper_2sd"] if isinstance(vwap_stats, dict) else None
     vwap_lower = vwap_stats["lower_2sd"] if isinstance(vwap_stats, dict) else None
+    adx_series = get_adx_series(df)
+    _lb = int(params.get("adx_slope_lookback", 5) or 5)
+    adx_slope = 0.0
+    if isinstance(adx_series, pd.Series) and len(adx_series) > _lb:
+        try:
+            adx_slope = float(adx_series.iloc[-1] - adx_series.iloc[-(_lb + 1)])
+        except Exception:
+            adx_slope = 0.0
     return {
         "symbol": symbol,
         "ema_fast": float(ema_fast),
         "ema_slow": float(ema_slow),
         "rsi": float(rsi),
         "adx": float(adx),
+        "adx_slope": round(adx_slope, 4),
         "atr": float(atr),
         "atr_pct": atr_pct_capped,
         "atr_real": round(atr_pct_real, 3),
@@ -2446,11 +3417,10 @@ def calculate_position_size_atr(symbol: str, atr_dist: float, risk_money: float 
             return 0.0
 
         if risk_money is None:
-            rp = getattr(config, "RISK_PER_TRADE_PCT", 0.01)
-            rp = max(getattr(config, "MIN_RISK_PER_TRADE_PCT", 0.0025), min(rp, getattr(config, "MAX_RISK_PER_TRADE_PCT", 0.005)))
+            rp = AssetClassManager.get_risk_pct(symbol)
             risk_money = equity * float(rp)
 
-        min_lot = 1 if is_future(symbol) else 100
+        min_lot = AssetClassManager.get_min_lot(symbol)
         risk_min_lot = min_lot * atr_dist
 
         equity_tolerance_cap = equity * 0.013
@@ -2514,6 +3484,45 @@ def get_effective_exposure_limit() -> float:
     except Exception as e:
         logger.error(f"Erro get_effective_exposure_limit: {e}")
         return float(getattr(config, "MAX_TOTAL_EXPOSURE", 1_000_000))
+
+def check_capital_allocation(symbol: str, planned_volume: float, entry_price: float) -> tuple[bool, str]:
+    try:
+        with mt5_lock:
+            acc = mt5.account_info()
+            positions = mt5.positions_get() or []
+        if not acc:
+            return False, "Sem conta MT5"
+        equity = float(acc.equity or acc.balance or 0.0)
+        if equity <= 0:
+            return False, "Equity inválido"
+        fut_exposure = 0.0
+        stk_exposure = 0.0
+        for p in positions:
+            si = mt5.symbol_info(p.symbol)
+            contract = float(si.trade_contract_size) if si else 1.0
+            price = float(getattr(p, "price_current", getattr(p, "price_open", 0.0)) or 0.0)
+            exp = float(p.volume) * (contract if is_future(p.symbol) else 1.0) * price
+            if is_future(p.symbol):
+                fut_exposure += exp
+            else:
+                stk_exposure += exp
+        is_fut = is_future(symbol)
+        si_new = mt5.symbol_info(symbol)
+        contract_new = float(si_new.trade_contract_size) if si_new else 1.0
+        add_exp = float(planned_volume) * (contract_new if is_fut else 1.0) * float(entry_price)
+        fut_pct, stk_pct = AssetClassManager.get_dynamic_buckets()
+        cap_fut = equity * float(fut_pct)
+        cap_stk = equity * float(stk_pct)
+        if is_fut:
+            if fut_exposure + add_exp > cap_fut:
+                return False, f"Exposição Futuros {fut_exposure + add_exp:,.2f} > {cap_fut:,.2f}"
+            return True, "OK"
+        else:
+            if stk_exposure + add_exp > cap_stk:
+                return False, f"Exposição Ações {stk_exposure + add_exp:,.2f} > {cap_stk:,.2f}"
+            return True, "OK"
+    except Exception as e:
+        return False, f"Erro alocação: {e}"
 
 def signal_handler(sig, frame):
     with mt5_lock:
@@ -2593,6 +3602,8 @@ def validate_mt5_connection():
 def send_order_with_sl_tp(symbol, side, volume, sl, tp, comment="XP3_BOT"):
     if not validate_mt5_connection():
         return False
+    requested_symbol = (symbol or "").upper().strip()
+    symbol = resolve_trade_symbol(requested_symbol) or requested_symbol
 
     info = mt5.symbol_info(symbol)
     if info is None:
@@ -3681,7 +4692,7 @@ def get_cached_indicators(
     symbol: str,
     timeframe,
     count: int = 300,
-    ttl: int = 45
+    ttl: int = 15
 ):
     """
     Cache seguro de indicadores (Redis)
@@ -4046,6 +5057,45 @@ def calculate_dynamic_sl_tp(symbol, side, entry_price, ind):
     tp = round(tp / info.trade_tick_size) * info.trade_tick_size
     
     return sl, tp
+
+def calculate_strict_sl_tp(symbol, side, entry_price, ind, params: dict):
+    atr = float(ind.get("atr", 0.10) or 0.10)
+    sl_mult = float(params.get("sl_atr_multiplier", 2.0) or 2.0)
+    tp_mult = params.get("tp_mult", None)
+    tp_ratio = params.get("tp_ratio", None)
+    if tp_mult is None:
+        try:
+            tp_mult = float(tp_ratio) * float(sl_mult) if tp_ratio is not None else 3.0
+        except Exception:
+            tp_mult = 3.0
+    tp_mult = float(tp_mult or 3.0)
+    use_ema_exit = bool(getattr(config, "EXIT_AT_EMA200", False))
+    ema_tf = getattr(mt5, f"TIMEFRAME_{getattr(config, 'MACRO_TIMEFRAME', 'H1')}", mt5.TIMEFRAME_H1)
+    ema_val = None
+    if use_ema_exit:
+        df_macro = safe_copy_rates(symbol, ema_tf, 250)
+        if df_macro is not None and len(df_macro) > int(getattr(config, "MACRO_EMA_LONG", 200) or 200):
+            ser = df_macro["close"].ewm(span=int(getattr(config, "MACRO_EMA_LONG", 200) or 200), adjust=False).mean()
+            try:
+                ema_val = float(ser.iloc[-1])
+            except Exception:
+                ema_val = None
+    if side == "BUY":
+        sl = entry_price - (atr * sl_mult)
+        tp = entry_price + (atr * tp_mult)
+        if use_ema_exit and ema_val and ema_val > entry_price:
+            tp = ema_val
+    else:
+        sl = entry_price + (atr * sl_mult)
+        tp = entry_price - (atr * tp_mult)
+        if use_ema_exit and ema_val and ema_val < entry_price:
+            tp = ema_val
+    info = mt5.symbol_info(symbol)
+    tick = getattr(info, "trade_tick_size", getattr(info, "point", 0.0)) if info else 0.0
+    if tick and tick > 0:
+        sl = round(sl / tick) * tick
+        tp = round(tp / tick) * tick
+    return float(sl), float(tp)
 
 def normalize_price(symbol, price):
     info = mt5.symbol_info(symbol)

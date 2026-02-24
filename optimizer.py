@@ -420,8 +420,14 @@ def optimize_symbol_robust(symbol: str, base_dir: str = OPT_OUTPUT_DIR, max_eval
     for score, p, m in top:
         out["top_k"].append({"score": float(score), "params": p, "wfo_metrics": m})
 
-    flat_path = os.path.join(base_dir, f"{symbol}.json")
-    hist_path = os.path.join(base_dir, f"{symbol}_history.json")
+    def _sanitize(sym: str) -> str:
+        try:
+            return str(sym).replace("$", "_").replace(" ", "_")
+        except Exception:
+            return str(sym)
+    sym_safe = _sanitize(symbol)
+    flat_path = os.path.join(base_dir, f"{sym_safe}.json")
+    hist_path = os.path.join(base_dir, f"{sym_safe}_history.json")
     try:
         with open(hist_path, "w", encoding="utf-8") as f:
             json.dump(out, f, indent=2, ensure_ascii=False, default=str)

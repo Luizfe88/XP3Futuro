@@ -1,0 +1,74 @@
+# ====================================================
+# 🤖 AUTOMATOR LAND TRADING - SÉRIE CONTÍNUA ($N)
+# ====================================================
+
+$raizProjeto = "C:\Users\luizf\Documents\xp3future"
+$pastaSaida = "$raizProjeto\optimizer_output"
+$pastaDestino = "$pastaSaida\Consolidado_Semanal"
+
+# ✅ AJUSTE DE MÉTRICAS PARA FUTUROS
+$env:OPT_MAX_DD = "0.35"
+$env:OPT_MIN_PF = "1.0"
+$env:OPT_MIN_WR = "0.10"
+$env:OPT_MIN_TRADES = "5"
+$env:OPT_MIN_SHARPE = "1.0"
+
+$ativos = @('WIN$N', 'IND$N', 'WDO$N', 'DOL$N', 'WSP$N', 'CCM$N', 'BGI$N', 'ICF$N', 'SFI$N', 'DI1$N', 'BIT$N', 'T10$N')
+
+Set-Location -Path $raizProjeto
+if (-not (Test-Path $pastaDestino)) { 
+    New-Item -ItemType Directory -Path $pastaDestino | Out-Null 
+}
+
+Write-Host "====================================================" -ForegroundColor Magenta
+Write-Host "📊 LAND TRADING - OTIMIZADOR DE SÉRIE CONTÍNUA" -ForegroundColor Magenta
+Write-Host "====================================================" -ForegroundColor Magenta
+
+foreach ($ativo in $ativos) {
+    $ativoLimpo = $ativo.Trim()
+    Write-Host "`n>>> Otimizando Ativo: $ativoLimpo" -ForegroundColor Cyan
+    
+    python otimizador_semanal.py --mode run "$ativoLimpo" --maxevals 250 --bars 20000 --relax-volatility --vwap-trend    
+    Start-Sleep -Seconds 3
+    
+    $arquivos = Get-ChildItem -Path $pastaSaida -Filter "*$ativoLimpo*.json" | 
+                Where-Object { $_.FullName -notlike "*Consolidado_Semanal*" }
+    
+    if ($arquivos) {
+        foreach ($f in $arquivos) {
+            $caminhoFinal = "$pastaDestino\$($f.Name)"
+            Move-Item -Path $f.FullName -Destination $caminhoFinal -Force
+            
+            try {
+                $dados = Get-Content $caminhoFinal | ConvertFrom-Json
+                
+                if ($dados.metrics_oos) {
+                    $nTrades = $dados.metrics_oos.trades
+                    $pf = $dados.metrics_oos.profit_factor
+                } elseif ($dados.test_metrics) {
+                    $nTrades = $dados.test_metrics.total_trades
+                    $pf = $dados.test_metrics.profit_factor
+                } else {
+                    $nTrades = 0
+                    $pf = 0
+                }
+                
+                # ✅ AJUSTADO: Aceitar 10+ trades
+                if ($nTrades -ge 10) {
+                    Write-Host "✅ SUCESSO: $ativoLimpo | Trades: $nTrades | PF: $pf" -ForegroundColor Green
+                    "$(Get-Date -Format 'yyyy-MM-dd HH:mm') | ATV: $ativoLimpo | TRD: $nTrades | PF: $pf | STATUS: ROBUSTO" >> "relatorio_semanal_land.log"
+                } else {
+                    Write-Host "⚠️ ALERTA: $ativoLimpo com baixa amostragem ($nTrades trades)." -ForegroundColor Yellow
+                    "$(Get-Date -Format 'yyyy-MM-dd HH:mm') | ATV: $ativoLimpo | TRD: $nTrades | STATUS: BAIXA_AMOSTRAGEM" >> "relatorio_semanal_land.log"
+                }
+            } catch {
+                Write-Host "ℹ️ Arquivo movido, mas erro ao ler JSON de $ativoLimpo" -ForegroundColor Gray
+            }
+        }
+    } else {
+        Write-Host "❌ ERRO: Otimizador não gerou arquivos para $ativoLimpo" -ForegroundColor Red
+        "$(Get-Date -Format 'yyyy-MM-dd HH:mm') | ATV: $ativoLimpo | STATUS: FALHA_NO_BACKTEST" >> "relatorio_semanal_land.log"
+    }
+}
+
+Write-Host "`n🎯 Ciclo de Otimização Concluído! Verifique: relatorio_semanal_land.log" -ForegroundColor Magent

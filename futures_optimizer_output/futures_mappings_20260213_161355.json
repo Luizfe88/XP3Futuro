@@ -1,0 +1,9 @@
+{
+  "broker": "",
+  "mappings": {
+    "WIN$": "WING26",
+    "WDO$": "WDOG26",
+    "WSP$": "WSPG26",
+    "BGI$": "BGIG26"
+  }
+}

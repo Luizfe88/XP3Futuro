@@ -766,3 +766,311 @@
 2026-01-27 15:35:16,334 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
 2026-01-27 15:35:16,335 - bot - INFO - ✅ RandomForest: treino concluído
 2026-01-27 15:35:17,011 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-28 12:37:47,560 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-28 12:37:49,894 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-28 12:37:49,895 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-28 12:37:49,896 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-28 12:37:49,898 - __main__ - ERROR - ❌ Erro crítico: No module named 'llm_narrative'
+2026-01-28 12:43:16,608 - bot - INFO - ✅ RandomForest carregado
+2026-01-28 12:43:16,627 - bot - INFO - 📊 Histórico ML carregado: 35 trades
+2026-01-28 12:43:16,672 - bot - INFO - 🧠 Q-Table carregada
+2026-01-28 12:43:16,673 - bot - INFO - 🎯 Inicializando com 35 trades históricos...
+2026-01-28 12:43:27,908 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-28 12:43:27,908 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-28 12:43:29,257 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-28 12:43:29,489 - bot - INFO - ✅ RandomForest carregado
+2026-01-28 12:43:29,491 - bot - INFO - 📊 Histórico ML carregado: 35 trades
+2026-01-28 12:43:29,496 - bot - INFO - 🧠 Q-Table carregada
+2026-01-28 12:43:29,497 - bot - INFO - 🎯 Inicializando com 35 trades históricos...
+2026-01-28 12:48:58,622 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-28 12:49:01,351 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-28 12:49:01,352 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-28 12:49:01,353 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-28 12:49:02,520 - bot - INFO - ✅ RandomForest carregado
+2026-01-28 12:49:02,522 - bot - INFO - 📊 Histórico ML carregado: 35 trades
+2026-01-28 12:49:02,524 - bot - INFO - 🧠 Q-Table carregada
+2026-01-28 12:49:02,524 - bot - INFO - 🎯 Inicializando com 35 trades históricos...
+2026-01-28 12:49:04,821 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-28 12:49:04,824 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-28 12:49:05,452 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-28 12:49:05,466 - bot - INFO - ✅ RandomForest carregado
+2026-01-28 12:49:05,467 - bot - INFO - 📊 Histórico ML carregado: 35 trades
+2026-01-28 12:49:05,469 - bot - INFO - 🧠 Q-Table carregada
+2026-01-28 12:49:05,469 - bot - INFO - 🎯 Inicializando com 35 trades históricos...
+2026-01-28 12:49:09,012 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-28 12:49:09,012 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-28 12:49:09,759 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-28 14:27:10,577 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-28 14:27:12,912 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-28 14:27:12,913 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-28 14:27:12,914 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-28 14:27:15,216 - bot - INFO - ✅ RandomForest carregado
+2026-01-28 14:27:15,220 - bot - INFO - 📊 Histórico ML carregado: 35 trades
+2026-01-28 14:27:15,221 - bot - INFO - 🧠 Q-Table carregada
+2026-01-28 14:27:15,225 - bot - INFO - 🎯 Inicializando com 35 trades históricos...
+2026-01-28 14:27:22,970 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-28 14:27:22,970 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-28 14:27:23,913 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-28 14:27:23,927 - bot - INFO - ✅ RandomForest carregado
+2026-01-28 14:27:23,928 - bot - INFO - 📊 Histórico ML carregado: 35 trades
+2026-01-28 14:27:23,929 - bot - INFO - 🧠 Q-Table carregada
+2026-01-28 14:27:23,930 - bot - INFO - 🎯 Inicializando com 35 trades históricos...
+2026-01-28 14:27:27,778 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-28 14:27:27,778 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-28 14:27:28,375 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-29 06:41:48,444 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-01-29 06:41:50,624 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-01-29 06:41:50,639 - utils - INFO - ✅ Dados anti-chop carregados
+2026-01-29 06:41:50,640 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-01-29 06:41:51,542 - bot - INFO - ✅ RandomForest carregado
+2026-01-29 06:41:51,571 - bot - INFO - 📊 Histórico ML carregado: 35 trades
+2026-01-29 06:41:51,587 - bot - INFO - 🧠 Q-Table carregada
+2026-01-29 06:41:51,588 - bot - INFO - 🎯 Inicializando com 35 trades históricos...
+2026-01-29 06:41:53,447 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-29 06:41:53,447 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-29 06:41:53,892 - bot - INFO - 💾 Estado do ensemble salvo
+2026-01-29 06:41:53,903 - bot - INFO - ✅ RandomForest carregado
+2026-01-29 06:41:53,904 - bot - INFO - 📊 Histórico ML carregado: 35 trades
+2026-01-29 06:41:53,904 - bot - INFO - 🧠 Q-Table carregada
+2026-01-29 06:41:53,904 - bot - INFO - 🎯 Inicializando com 35 trades históricos...
+2026-01-29 06:41:55,487 - bot - INFO - ✅ Ensemble Re-treinado! Novos pesos: {'rf': 0.25, 'gb': 0.25, 'xgb': 0.25, 'ridge': 0.25}
+2026-01-29 06:41:55,487 - bot - INFO - ✅ RandomForest: treino concluído
+2026-01-29 06:41:55,847 - bot - INFO - 💾 Estado do ensemble salvo
+2026-02-01 11:50:42,885 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-01 11:50:42,885 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 09:32:37,643 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 10:00:32,222 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 10:10:14,990 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 10:10:17,541 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 10:10:17,544 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 10:10:17,545 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 10:10:17,548 - dashboard - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 10:10:46,424 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 10:10:48,956 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 10:10:48,957 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 10:10:48,958 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 10:10:48,965 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 10:22:32,800 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 10:22:36,985 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 10:22:36,987 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 10:22:36,988 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 10:22:36,995 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 10:33:58,644 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 10:34:00,998 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 10:34:00,999 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 10:34:01,004 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 10:34:01,014 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 10:34:03,551 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 10:34:06,799 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 10:34:06,800 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 10:34:06,801 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 10:34:06,890 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 11:06:27,063 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 11:06:29,768 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 11:06:29,770 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 11:06:29,770 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 11:06:29,773 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 11:10:11,424 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 11:10:19,649 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 11:10:19,661 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 11:10:19,676 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 11:10:19,704 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 11:10:24,620 - bot - WARNING - ⚠️ RandomForest indisponível (deps ML ausentes)
+2026-02-02 11:10:24,676 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-02 11:10:24,706 - bot - INFO - 🧠 Q-Table carregada
+2026-02-02 11:10:31,919 - bot - WARNING - ⚠️ RandomForest indisponível (deps ML ausentes)
+2026-02-02 11:10:31,920 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-02 11:10:31,922 - bot - INFO - 🧠 Q-Table carregada
+2026-02-02 11:22:51,497 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 11:22:56,075 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 11:22:56,144 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 11:22:56,243 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 11:22:56,326 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 11:30:07,874 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 11:30:12,212 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 11:30:12,214 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 11:30:12,216 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 11:30:12,325 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 11:39:20,772 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 11:39:23,336 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 11:39:23,349 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 11:39:23,350 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 11:39:23,372 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 11:39:59,087 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 11:42:48,023 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 11:42:51,188 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 11:42:51,189 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 11:42:51,190 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 11:42:51,193 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 11:59:58,015 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 12:00:03,453 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 12:00:03,456 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 12:00:03,457 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 12:00:03,509 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 13:09:42,673 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 13:09:46,701 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 13:09:46,707 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 13:09:46,720 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 13:09:46,758 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 14:31:39,190 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 14:31:41,399 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 14:31:41,416 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 14:31:41,435 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 14:31:41,442 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 14:54:06,391 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 14:54:08,676 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 14:54:08,677 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 14:54:08,678 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 14:54:08,683 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 15:49:19,420 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 15:49:21,603 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 15:49:21,604 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 15:49:21,604 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 15:49:21,606 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 15:50:02,702 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 15:50:04,890 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 15:50:04,890 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 15:50:04,891 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 15:50:04,893 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 15:50:32,756 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 15:52:01,716 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 15:52:30,000 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 15:53:27,929 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 15:54:04,422 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 15:55:09,751 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 15:55:12,020 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 15:55:12,022 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 15:55:12,023 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 15:55:12,031 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 15:55:22,745 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 15:56:27,174 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 16:00:23,862 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 16:12:46,556 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 16:12:48,975 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 16:12:48,976 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 16:12:48,977 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 16:12:48,981 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 16:12:51,026 - bot - INFO - ✅ RandomForest carregado
+2026-02-02 16:12:51,032 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-02 16:12:51,049 - bot - INFO - 🧠 Q-Table carregada
+2026-02-02 16:12:51,129 - bot - INFO - ✅ RandomForest carregado
+2026-02-02 16:12:51,131 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-02 16:12:51,133 - bot - INFO - 🧠 Q-Table carregada
+2026-02-02 16:29:20,192 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 16:29:26,857 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 16:29:26,859 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 16:29:26,868 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 16:29:26,881 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 16:42:50,806 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 16:42:53,147 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 16:42:53,147 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 16:42:53,148 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 16:42:53,155 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 16:42:55,124 - bot - INFO - ✅ RandomForest carregado
+2026-02-02 16:42:55,125 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-02 16:42:55,127 - bot - INFO - 🧠 Q-Table carregada
+2026-02-02 16:42:55,165 - bot - INFO - ✅ RandomForest carregado
+2026-02-02 16:42:55,165 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-02 16:42:55,166 - bot - INFO - 🧠 Q-Table carregada
+2026-02-02 17:04:32,108 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 17:04:34,997 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 17:04:34,998 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 17:04:34,999 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-02 17:04:35,080 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 17:04:39,769 - bot - WARNING - ⚠️ RandomForest indisponível (deps ML ausentes)
+2026-02-02 17:04:39,815 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-02 17:04:39,902 - bot - INFO - 🧠 Q-Table carregada
+2026-02-02 17:04:44,551 - bot - WARNING - ⚠️ RandomForest indisponível (deps ML ausentes)
+2026-02-02 17:04:44,554 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-02 17:04:44,559 - bot - INFO - 🧠 Q-Table carregada
+2026-02-02 17:45:34,745 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 17:45:39,624 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 17:45:39,628 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 17:45:39,635 - utils - INFO - ✅ Limites diários carregados
+2026-02-02 17:45:39,646 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-02 17:52:06,758 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-02 17:52:09,497 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-02 17:52:09,504 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-02 17:52:09,508 - utils - INFO - ✅ Limites diários carregados
+2026-02-02 17:52:09,531 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-03 08:53:37,712 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-03 08:53:40,014 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-03 08:53:40,015 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-03 08:53:40,016 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-03 08:53:40,021 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-03 08:53:41,376 - bot - INFO - ✅ RandomForest carregado
+2026-02-03 08:53:41,377 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-03 08:53:41,404 - bot - INFO - 🧠 Q-Table carregada
+2026-02-03 08:53:41,419 - bot - INFO - ✅ RandomForest carregado
+2026-02-03 08:53:41,420 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-03 08:53:41,421 - bot - INFO - 🧠 Q-Table carregada
+2026-02-03 12:12:42,091 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-03 12:12:44,349 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-03 12:12:44,355 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-03 12:12:44,359 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-03 12:12:44,363 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-03 12:12:44,371 - __main__ - ERROR - ❌ Erro crítico: No module named 'xp3future'
+2026-02-03 12:17:57,717 - bot - INFO - ✅ RandomForest carregado
+2026-02-03 12:17:57,718 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-03 12:17:57,743 - bot - INFO - 🧠 Q-Table carregada
+2026-02-03 12:17:57,788 - bot - INFO - ✅ RandomForest carregado
+2026-02-03 12:17:57,790 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-03 12:17:57,792 - bot - INFO - 🧠 Q-Table carregada
+2026-02-03 13:34:34,323 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-03 13:34:36,677 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-03 13:34:36,679 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-03 13:34:36,679 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-03 13:34:40,810 - bot - WARNING - ⚠️ RandomForest indisponível (deps ML ausentes)
+2026-02-03 13:34:41,109 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-03 13:34:41,114 - bot - INFO - 🧠 Q-Table carregada
+2026-02-03 13:34:50,728 - bot - WARNING - ⚠️ RandomForest indisponível (deps ML ausentes)
+2026-02-03 13:34:50,728 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-03 13:34:50,729 - bot - INFO - 🧠 Q-Table carregada
+2026-02-03 14:20:19,166 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-03 14:20:21,544 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-03 14:20:21,546 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-03 14:20:21,546 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-03 14:20:22,542 - bot - INFO - ✅ RandomForest carregado
+2026-02-03 14:20:22,543 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-03 14:20:22,544 - bot - INFO - 🧠 Q-Table carregada
+2026-02-03 14:20:22,576 - bot - INFO - ✅ RandomForest carregado
+2026-02-03 14:20:22,578 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-03 14:20:22,580 - bot - INFO - 🧠 Q-Table carregada
+2026-02-03 16:26:07,979 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-03 16:26:10,533 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-03 16:26:10,536 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-03 16:26:10,539 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-03 16:26:15,073 - bot - WARNING - ⚠️ RandomForest indisponível (deps ML ausentes)
+2026-02-03 16:26:15,077 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-03 16:26:15,090 - bot - INFO - 🧠 Q-Table carregada
+2026-02-03 16:26:19,589 - bot - WARNING - ⚠️ RandomForest indisponível (deps ML ausentes)
+2026-02-03 16:26:19,651 - bot - INFO - 📊 Histórico ML carregado: 0 trades
+2026-02-03 16:26:19,653 - bot - INFO - 🧠 Q-Table carregada
+2026-02-13 14:57:57,546 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-13 14:57:59,901 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-13 14:57:59,904 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-13 14:57:59,909 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-13 15:48:57,098 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-13 15:48:59,930 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-13 15:48:59,932 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-13 15:48:59,967 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-13 16:00:56,814 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-13 16:00:59,406 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-13 16:00:59,407 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-13 16:00:59,408 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-13 16:02:14,449 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-13 16:02:16,739 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-13 16:02:16,740 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-13 16:02:16,740 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-13 16:30:56,163 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-13 16:30:58,467 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-13 16:30:58,469 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-13 16:30:58,469 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-13 16:47:42,331 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-13 16:47:44,678 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-13 16:47:44,679 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-13 16:47:44,680 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-23 09:01:18,139 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-23 09:01:20,569 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-23 09:01:20,570 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-23 09:01:20,571 - utils - INFO - 🔄 Novo dia detectado - resetando limites

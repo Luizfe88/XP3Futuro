@@ -1,0 +1,1 @@
+2026-01-31 14:49:26,041 - otimizador_auto_sync - INFO - ­ƒôä Salvando relat├│rio geral em: optimizer_output\todos_parametros.csv

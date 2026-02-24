@@ -1,4 +1,4 @@
-#bot.py
+#bot.py - parte 1
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
@@ -30,11 +30,144 @@ except Exception:
     asyncio.set_event_loop(loop)
 loop.set_exception_handler(_silence_event_loop_exceptions)
 
+# Import necessário para o handler de log
+from logging.handlers import TimedRotatingFileHandler
+
+class SafeTimedRotatingFileHandler(TimedRotatingFileHandler):
+    def doRollover(self):
+        try:
+            super().doRollover()
+        except PermissionError:
+            pass
+
+# =====================
+# 🔧 CONFIGURAÇÃO DO LOGGER
+# =====================
+def setup_logging():
+    log_dir = "logs"
+    bot_dir = os.path.join(log_dir, "bot")
+    err_dir = os.path.join(log_dir, "errors")
+    ana_dir = os.path.join(log_dir, "analysis")
+    os.makedirs(bot_dir, exist_ok=True)
+    os.makedirs(err_dir, exist_ok=True)
+    os.makedirs(ana_dir, exist_ok=True)
+
+    class _SuppressNoisyWebSocketErrors(logging.Filter):
+        def filter(self, record: logging.LogRecord) -> bool:
+            try:
+                msg = record.getMessage()
+            except Exception:
+                msg = ""
+
+            if not msg:
+                return True
+
+            if "tornado.websocket.WebSocketClosedError" in msg:
+                return False
+            if "tornado.websocket.WebSocketClosedError" in (record.exc_text or ""):
+                return False
+
+            if "WebSocketClosedError" in msg and "tornado" in record.name:
+                return False
+            if "StreamClosedError" in msg and "tornado" in record.name:
+                return False
+            if "Task exception was never retrieved" in msg and "WebSocketClosedError" in msg:
+                return False
+            if "Stream is closed" in msg and "tornado" in record.name:
+                return False
+
+            return True
+    
+    class _ThreeHourHandler(SafeTimedRotatingFileHandler):
+        def __init__(self, filename, level):
+            super().__init__(filename=filename, when="h", interval=3, backupCount=56, encoding="utf-8", utc=False)
+            self.suffix = "%Y-%m-%d_%H"
+            self.extMatch = self.extMatch
+            self.setLevel(level)
+
+    main_handler = _ThreeHourHandler(
+        filename=os.path.join(bot_dir, "xp3_bot.log"),
+        level=logging.INFO
+    )
+    main_handler.setLevel(logging.INFO)
+    main_handler.setFormatter(
+        logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
+    )
+    main_handler.addFilter(_SuppressNoisyWebSocketErrors())
+    
+    error_handler = _ThreeHourHandler(
+        filename=os.path.join(err_dir, "errors.log"),
+        level=logging.ERROR
+    )
+    error_handler.setLevel(logging.ERROR)
+    error_handler.setFormatter(
+        logging.Formatter('%(asctime)s | %(levelname)s | %(name)s | %(message)s')
+    )
+    error_handler.addFilter(_SuppressNoisyWebSocketErrors())
+    
+    # Console
+    console_handler = logging.StreamHandler(stream=None)
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(
+        logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
+    )
+    console_handler.addFilter(_SuppressNoisyWebSocketErrors())
+    # Fix Unicode encoding for Windows console
+    if hasattr(console_handler.stream, 'reconfigure'):
+        console_handler.stream.reconfigure(encoding='utf-8')
+    
+    # Configura logger raiz
+    root_logger = logging.getLogger()
+    root_logger.setLevel(logging.DEBUG)
+    root_logger.handlers.clear()
+    root_logger.addHandler(main_handler)
+    root_logger.addHandler(error_handler)
+    root_logger.addHandler(console_handler)
+    
+    def _retention_worker(paths, days):
+        import time as _t
+        import os as _os
+        import threading as _th
+        from datetime import datetime as _dt, timedelta as _td
+        def _run():
+            while True:
+                cutoff = _dt.now() - _td(days=days)
+                for p in paths:
+                    try:
+                        for name in os.listdir(p):
+                            fp = os.path.join(p, name)
+                            try:
+                                if os.path.isfile(fp):
+                                    ts = _dt.fromtimestamp(os.path.getmtime(fp))
+                                    if ts < cutoff:
+                                        try:
+                                            os.remove(fp)
+                                        except Exception:
+                                            pass
+                            except Exception:
+                                pass
+                    except Exception:
+                        pass
+                _t.sleep(3600)
+        t = _th.Thread(target=_run, daemon=True)
+        t.start()
+    
+    _retention_worker([bot_dir, err_dir, ana_dir], 7)
+    return logging.getLogger("bot")
+
+# Inicializa o logger
+logger = setup_logging()
+
 from datetime import datetime, date, timedelta
 from threading import Lock, RLock
 from collections import deque, defaultdict, OrderedDict
 import MetaTrader5 as mt5
-import config
+try:
+    import xp3future as config
+except ModuleNotFoundError:
+    import sys as _sys, os as _os
+    _sys.path.insert(0, _os.path.abspath(_os.path.join(_os.path.dirname(__file__), "..")))
+    import xp3future as config
 import utils
 from hedging import apply_hedge
 from telegram_handler import bot
@@ -42,6 +175,8 @@ import numpy as np
 import hashlib
 from news_filter import check_news_blackout
 from typing import Optional, Dict, Any, List, Tuple
+import adaptive_system
+from adaptive_system import apply_vaccine, is_vaccinated
 
 # --- UI (Rich removido -> Streamlit) ---
 import subprocess
@@ -76,6 +211,7 @@ import sys
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 from daily_analysis_logger import daily_logger
+import daily_logger as cvm_daily_logger
 ml_optimizer = EnsembleOptimizer()
 import os
 from utils import mt5_lock
@@ -84,7 +220,69 @@ import sys
 from collections import defaultdict
 from dataclasses import dataclass, field
 from validation import validate_and_create_order, OrderParams, OrderSide
+import validation
+from utils import MultiTimeframeEngine, FilterChain
+from utils import ConcurrentMarketScanner
+from database import StateManager
+from utils import find_and_enable_active_futures
 
+def initialize_active_symbols():
+    """
+    Executa o screener diário para selecionar e ativar os melhores contratos futuros.
+    Utiliza um fallback em caso de falha.
+    """
+    logger.info("🚀 Iniciando Screener Diário de Ativos...")
+    import config_futures
+    import re  # Import necessário para identificar ações
+    
+    # Carrega a watchlist base do arquivo de configuração
+    base_watchlist = list(config_futures.FUTURES_CONFIGS.keys())
+    
+    # Tenta rodar o screener
+    active_symbols = utils.find_and_enable_active_futures(base_watchlist)
+    
+    # Lógica de Fallback
+    if not active_symbols:
+        logger.warning("⚠️ Screener Diário falhou ou não retornou ativos. Acionando fallback.")
+        # Usa a lista de fallback para tentar resolver os símbolos (versão simplificada)
+        active_symbols = utils.find_and_enable_active_futures(config_futures.FALLBACK_SYMBOLS)
+        
+        if not active_symbols:
+            logger.error("🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.")
+            # Como última instância, desativa apenas futuros (mantém ações)
+            stock_pattern = re.compile(r'^[A-Z]{4}\d$')  # Padrão de ações B3
+            for symbol in base_watchlist:
+                if not stock_pattern.match(symbol):  # Apenas desativa futuros
+                    config_futures.FUTURES_CONFIGS[symbol]['active'] = False
+                else:
+                    logger.info(f"📊 Ação preservada em fallback: {symbol}")
+            return
+
+    # Ativa os símbolos que passaram no screener e desativa os outros (exceto ações)
+    import re
+    stock_pattern = re.compile(r'^[A-Z]{4}\d$')  # Padrão de ações B3 (4 letras + dígito)
+    
+    for symbol_pattern, config_dict in config_futures.FUTURES_CONFIGS.items():
+        if symbol_pattern in active_symbols:
+            config_dict['active'] = True
+            logger.info(f"✅ Ativo para o dia: {symbol_pattern} -> {active_symbols[symbol_pattern]}")
+        else:
+            # Não desativa ações (mantém estado anterior)
+            if stock_pattern.match(symbol_pattern):
+                logger.info(f"📊 Ação preservada: {symbol_pattern} (não afetada pelo screener)")
+                continue  # Mantém o estado atual da ação
+            else:
+                config_dict['active'] = False
+
+    logger.info("✅ Screener Diário concluído.")
+
+# Executa o screener na inicialização do bot (agora com logger disponível)
+initialize_active_symbols()
+
+_mtf_engine = MultiTimeframeEngine()
+_filter_chain = FilterChain()
+_market_scanner = ConcurrentMarketScanner(max_workers=4)
+_state_manager = StateManager()
 current_trading_day: Optional[date] = None
 daily_cycle_completed = False
 daily_report_sent = False
@@ -97,6 +295,51 @@ except ImportError:
 
     def send_async(*args, **kwargs):
         pass  # fallback silencioso, NUNCA quebra o bot
+
+
+# ============================================
+# 🔒 VALIDAÇÃO: APENAS MERCADO FUTURO
+# ============================================
+def validate_futures_only_mode():
+    """
+    Garante que o sistema está configurado apenas para futuros.
+    Aborta se encontrar ações configuradas.
+    """
+    symbols_to_check = []
+    
+    # Coleta todos os símbolos configurados
+    for attr in ("ELITE_SYMBOLS", "SECTOR_MAP"):
+        try:
+            data = getattr(config, attr, {})
+            if isinstance(data, dict):
+                symbols_to_check.extend(data.keys())
+        except Exception:
+            pass
+    
+    # Padrão de ações B3: 4 letras + dígito (PETR4, VALE3, etc.)
+    import re
+    stock_pattern = re.compile(r'^[A-Z]{4}\d$')
+    
+    detected_stocks = [s for s in symbols_to_check if stock_pattern.match(s)]
+    
+    if detected_stocks:
+        logger.critical("=" * 70)
+        logger.critical("🚨 ERRO CRÍTICO: AÇÕES DETECTADAS NO SISTEMA DE FUTUROS")
+        logger.critical("=" * 70)
+        logger.critical(f"Ações encontradas: {', '.join(detected_stocks)}")
+        logger.critical("")
+        logger.critical("⚠️ Este sistema está configurado APENAS para mercado FUTURO.")
+        logger.critical("   Remova todas as ações de:")
+        logger.critical("   - config.py → ELITE_SYMBOLS")
+        logger.critical("   - config.py → SECTOR_MAP")
+        logger.critical("=" * 70)
+        return False
+    
+    logger.info("✅ Validação: Sistema configurado apenas para FUTUROS")
+    return True
+
+# Executa o screener na inicialização do bot
+# (será chamado após configuração do logger)
 
 class NpEncoder(json.JSONEncoder):
     """
@@ -295,62 +538,50 @@ def validate_mt5_connection():
     
     return False
 def get_asset_class_config(symbol: str) -> dict:
+    """
+    Retorna configuração específica para índices futuros.
+    Simplificado para operar apenas com futuros (WIN, WDO, SMALL, etc.)
+    Usa config_futures para parâmetros centralizados.
+    """
     s = (symbol or "").upper()
-    is_fut = utils.is_future(s)
-    if is_fut:
-        start = "09:05"
-        end = getattr(config, "FUTURES_CLOSE_ALL_BY", "17:50")
-        bucket_pct = 0.35
-        min_lot = 1
+    
+    # Obtém parâmetros do AssetClassManager
+    start, end = utils.AssetClassManager.get_time_window(s)
+    bucket_pct = utils.AssetClassManager.get_bucket_for(s)
+    min_lot = utils.AssetClassManager.get_min_lot(s)
+    risk_pct = utils.AssetClassManager.get_risk_pct(s)
+    
+    # Define deviation_points baseado no config_futures (SOLUÇÃO 3)
+    base_s = s[:3] # WIN, WDO
+    
+    # Tenta obter do config_futures
+    import config_futures
+    cfg = config_futures.FUTURES_CONFIGS.get(base_s, {})
+    
+    if cfg:
+        # Usa liquidez avg por padrão
+        dev_pts = cfg.get('slippage_base', {}).get('avg', 50)
+    else:
+        # Fallback
         if s.startswith(("WIN", "IND")):
             dev_pts = 80
         elif s.startswith(("WDO", "DOL")):
             dev_pts = 20
+        elif s.startswith("SMALL"):
+            dev_pts = 50
         else:
             dev_pts = 50
-        return {"start": start, "end": end, "bucket_pct": bucket_pct, "min_lot": min_lot, "deviation_points": dev_pts, "lunch_min_vol_ratio": 0.0, "min_tp_cost_multiplier": 3.0}
-    start = "10:10"
-    end = "16:50"
-    bucket_pct = 0.65
-    min_lot = 100
-    return {"start": start, "end": end, "bucket_pct": bucket_pct, "min_lot": min_lot, "deviation_points": 2, "lunch_min_vol_ratio": 1.0, "min_tp_cost_multiplier": 1.2}
-def check_capital_allocation(symbol: str, planned_volume: float, entry_price: float) -> tuple[bool, str]:
-    try:
-        with utils.mt5_lock:
-            acc = mt5.account_info()
-            positions = mt5.positions_get() or []
-        if not acc:
-            return False, "Sem conta MT5"
-        equity = float(acc.equity or acc.balance or 0.0)
-        if equity <= 0:
-            return False, "Equity inválido"
-        fut_exposure = 0.0
-        stk_exposure = 0.0
-        for p in positions:
-            si = mt5.symbol_info(p.symbol)
-            contract = float(si.trade_contract_size) if si else 1.0
-            price = float(getattr(p, "price_current", getattr(p, "price_open", 0.0)) or 0.0)
-            exp = float(p.volume) * (contract if utils.is_future(p.symbol) else 1.0) * price
-            if utils.is_future(p.symbol):
-                fut_exposure += exp
-            else:
-                stk_exposure += exp
-        is_fut = utils.is_future(symbol)
-        si_new = mt5.symbol_info(symbol)
-        contract_new = float(si_new.trade_contract_size) if si_new else 1.0
-        add_exp = float(planned_volume) * (contract_new if is_fut else 1.0) * float(entry_price)
-        cap_fut = equity * 0.35
-        cap_stk = equity * 0.65
-        if is_fut:
-            if fut_exposure + add_exp > cap_fut:
-                return False, f"Exposição Futuros {fut_exposure + add_exp:,.2f} > {cap_fut:,.2f}"
-            return True, "OK"
-        else:
-            if stk_exposure + add_exp > cap_stk:
-                return False, f"Exposição Ações {stk_exposure + add_exp:,.2f} > {cap_stk:,.2f}"
-            return True, "OK"
-    except Exception as e:
-        return False, f"Erro alocação: {e}"
+    
+    return {
+        "start": start,
+        "end": end,
+        "bucket_pct": bucket_pct,
+        "risk_pct": risk_pct,
+        "min_lot": min_lot,
+        "deviation_points": dev_pts,
+        "lunch_min_vol_ratio": 0.0,      # Futuros não param no almoço
+        "min_tp_cost_multiplier": 3.0    # Multiplicador TP para futuros
+    }
 def get_ibov_adx() -> float:
     try:
         df = utils.safe_copy_rates("IBOV", mt5.TIMEFRAME_M15, 120)
@@ -361,17 +592,21 @@ def get_ibov_adx() -> float:
         return 0.0
 def get_market_status() -> dict:
     """
-    Retorna status detalhado do mercado (VERSÃO CONTÍNUA)
+    Retorna status detalhado do mercado para FUTUROS B3.
+    
+    Horários de futuros:
+    - Abertura: 09:00
+    - Fechamento: 18:00
+    - Sem pausa de almoço
     """
     now = datetime.now()
     current_time = now.time()
     today = now.date()
 
-    start = datetime.strptime(config.TRADING_START, "%H:%M").time()
-    no_entry_str = getattr(config, "FRIDAY_NO_ENTRY_AFTER", config.NO_ENTRY_AFTER) if now.weekday() == 4 else config.NO_ENTRY_AFTER
-    force_close_str = getattr(config, "FRIDAY_CLOSE_ALL_BY", config.CLOSE_ALL_BY) if now.weekday() == 4 else config.CLOSE_ALL_BY
-    no_entry = datetime.strptime(no_entry_str, "%H:%M").time()
-    force_close = datetime.strptime(force_close_str, "%H:%M").time()
+    # Horários fixos de futuros B3
+    futures_start = datetime.strptime("09:00", "%H:%M").time()
+    futures_no_entry = datetime.strptime("17:45", "%H:%M").time()  # Últimos 15 min sem novas entradas
+    futures_close = datetime.strptime("18:00", "%H:%M").time()
 
     # Verifica se é fim de semana
     is_weekend = now.weekday() >= 5  # 5=Sábado, 6=Domingo
@@ -380,10 +615,9 @@ def get_market_status() -> dict:
     # 🔴 FIM DE SEMANA
     # ============================================
     if is_weekend:
-        # Calcula próxima segunda-feira
         days_until_monday = (7 - now.weekday()) if now.weekday() == 6 else 1
         next_trading_day = now + timedelta(days=days_until_monday)
-        next_trading_datetime = datetime.combine(next_trading_day.date(), start)
+        next_trading_datetime = datetime.combine(next_trading_day.date(), futures_start)
 
         time_until_next = next_trading_datetime - now
         hours = int(time_until_next.total_seconds() // 3600)
@@ -395,7 +629,7 @@ def get_market_status() -> dict:
             "message": "FIM DE SEMANA",
             "color": C_CYAN,
             "countdown": f"{hours}h {minutes}m até segunda-feira",
-            "detail": f"Próximo pregão: {next_trading_day.strftime('%d/%m')} às {config.TRADING_START}",
+            "detail": f"Próximo pregão: {next_trading_day.strftime('%d/%m')} às 09:00",
             "trading_allowed": False,
             "new_entries_allowed": False,
             "should_close_positions": False,
@@ -404,8 +638,8 @@ def get_market_status() -> dict:
     # ============================================
     # 1️⃣ PRÉ-MERCADO (Antes da abertura)
     # ============================================
-    if current_time < start:
-        start_datetime = datetime.combine(now.date(), start)
+    if current_time < futures_start:
+        start_datetime = datetime.combine(now.date(), futures_start)
         time_until_start = start_datetime - now
 
         hours = int(time_until_start.total_seconds() // 3600)
@@ -418,7 +652,7 @@ def get_market_status() -> dict:
             "message": "AGUARDANDO ABERTURA",
             "color": C_YELLOW,
             "countdown": f"{hours:02d}:{minutes:02d}:{seconds:02d}",
-            "detail": f"Início programado: {config.TRADING_START}",
+            "detail": "Futuros abrem às 09:00",
             "trading_allowed": False,
             "new_entries_allowed": False,
             "should_close_positions": False,
@@ -427,14 +661,14 @@ def get_market_status() -> dict:
     # ============================================
     # 2️⃣ MERCADO ABERTO (Operando normalmente)
     # ============================================
-    elif start <= current_time < no_entry:
+    elif futures_start <= current_time < futures_no_entry:
         return {
             "status": "OPEN",
             "emoji": "🟢",
-            "message": "MERCADO ABERTO",
+            "message": "MERCADO ABERTO - FUTUROS",
             "color": C_GREEN,
             "countdown": None,
-            "detail": f"Operando até {no_entry_str}",
+            "detail": "Operando até 17:45",
             "trading_allowed": True,
             "new_entries_allowed": True,
             "should_close_positions": False,
@@ -443,8 +677,8 @@ def get_market_status() -> dict:
     # ============================================
     # 3️⃣ SEM NOVAS ENTRADAS (Só gestão)
     # ============================================
-    elif no_entry <= current_time < force_close:
-        close_datetime = datetime.combine(now.date(), force_close)
+    elif futures_no_entry <= current_time < futures_close:
+        close_datetime = datetime.combine(now.date(), futures_close)
         time_until_close = close_datetime - now
 
         minutes = int(time_until_close.total_seconds() // 60)
@@ -456,7 +690,7 @@ def get_market_status() -> dict:
             "message": "SEM NOVAS ENTRADAS",
             "color": C_YELLOW,
             "countdown": f"{minutes:02d}:{seconds:02d}",
-            "detail": f"Fechamento às {force_close_str}",
+            "detail": "Fechamento às 18:00",
             "trading_allowed": True,
             "new_entries_allowed": False,
             "should_close_positions": False,
@@ -474,7 +708,7 @@ def get_market_status() -> dict:
             days_to_add = 8 - next_day.weekday()  # Até segunda
             next_day = now + timedelta(days=days_to_add)
 
-        next_trading_datetime = datetime.combine(next_day.date(), start)
+        next_trading_datetime = datetime.combine(next_day.date(), futures_start)
         time_until_next = next_trading_datetime - now
 
         hours = int(time_until_next.total_seconds() // 3600)
@@ -486,7 +720,7 @@ def get_market_status() -> dict:
             "message": "MERCADO FECHADO",
             "color": C_RED,
             "countdown": f"{hours}h {minutes}m até próximo pregão",
-            "detail": f"Reabertura: {next_day.strftime('%d/%m')} às {config.TRADING_START}",
+            "detail": f"Reabertura: {next_day.strftime('%d/%m')} às 09:00",
             "trading_allowed": False,
             "new_entries_allowed": False,
             "should_close_positions": True,
@@ -498,11 +732,11 @@ def get_market_status() -> dict:
 # ============================================
 def check_market_hours() -> tuple:
     """
-    Verifica se está dentro do horário seguro para novas entradas.
+    Verifica se está dentro do horário permitido para futuros.
     
-    Regras:
-    - Bloqueia 30 min após abertura (volatilidade inicial)
-    - Bloqueia 20 min antes do fechamento (volatilidade final)
+    Horários de futuros B3:
+    - Horário regular: 09:00 - 18:00
+    - Sem pausa de almoço (futuros operam continuamente)
     
     Returns:
         tuple: (pode_operar: bool, motivo: str)
@@ -510,37 +744,21 @@ def check_market_hours() -> tuple:
     now = datetime.now()
     current_time = now.time()
     
-    # Horários base da config
-    open_time = datetime.strptime(config.TRADING_START, "%H:%M").time()
-    close_str = getattr(config, "FRIDAY_CLOSE_ALL_BY", config.CLOSE_ALL_BY) if now.weekday() == 4 else config.CLOSE_ALL_BY
-    close_time = datetime.strptime(close_str, "%H:%M").time()
+    # Horários de futuros (definidos no config ou padrão)
+    futures_start = datetime.strptime("09:00", "%H:%M").time()
+    futures_end = datetime.strptime("18:00", "%H:%M").time()
     
-    # Calcula buffers
-    buffer_after_open = getattr(config, 'MARKET_HOURS_BUFFER_OPEN', 30)  # 30 min
-    buffer_before_close = getattr(config, 'MARKET_HOURS_BUFFER_CLOSE', 20)  # 20 min
-    if now.weekday() == 4:
-        buffer_before_close = int(getattr(config, "FRIDAY_MARKET_HOURS_BUFFER_CLOSE", buffer_before_close))
+    # Usa horários do config se definidos
+    if hasattr(config, 'FUTURES_AFTERMARKET_START'):
+        futures_end = datetime.strptime(config.FUTURES_AFTERMARKET_END, "%H:%M").time()
     
-    safe_start = (datetime.combine(now.date(), open_time) + 
-                  timedelta(minutes=buffer_after_open)).time()
-    safe_end = (datetime.combine(now.date(), close_time) - 
-                timedelta(minutes=buffer_before_close)).time()
+    # Verificação simplificada para futuros
+    if current_time < futures_start:
+        mins_left = int((datetime.combine(now.date(), futures_start) - now).total_seconds() // 60)
+        return False, f"⏰ Futuros abrem às 09:00 ({mins_left} min restantes)"
     
-    lunch_start_str = getattr(config, "TRADING_LUNCH_BREAK_START", None)
-    lunch_end_str = getattr(config, "TRADING_LUNCH_BREAK_END", None)
-    if lunch_start_str and lunch_end_str:
-        lunch_start = datetime.strptime(lunch_start_str, "%H:%M").time()
-        lunch_end = datetime.strptime(lunch_end_str, "%H:%M").time()
-        if lunch_start <= current_time <= lunch_end:
-            return False, "⏸️ Pausa de almoço institucional"
-    
-    # Verificações
-    if current_time < safe_start:
-        mins_left = int((datetime.combine(now.date(), safe_start) - now).total_seconds() // 60)
-        return False, f"⏰ Aguardando estabilização ({mins_left} min para início seguro)"
-    
-    if current_time > safe_end:
-        return False, f"⏰ Fim do horário seguro (fechamento em breve)"
+    if current_time > futures_end:
+        return False, f"⏰ Futuros fecharam às 18:00"
     
     return True, "OK"
 
@@ -809,9 +1027,10 @@ def execute_partial_entry(symbol: str, total_volume: float, side: str,
     if num_entries < 2:
         num_entries = 2
     
-    partial_volume = round((total_volume / num_entries) / 100) * 100
-    if partial_volume < 100:
-        partial_volume = 100
+    # Futuros: Divisão simples de contratos (mínimo 1)
+    partial_volume = int(total_volume / num_entries)
+    if partial_volume < 1:
+        partial_volume = 1
     
     executed = 0
     for i in range(num_entries):
@@ -952,12 +1171,12 @@ def check_win_rate_pause() -> tuple:
         now = datetime.now()
         start_of_day = datetime.combine(now.date(), datetime.strptime("00:00", "%H:%M").time())
         with utils.mt5_lock:
-            deals = mt5.history_deals_get(now - timedelta(days=3), now)
+            deals = validation.mt5.history_deals_get(now - timedelta(days=3), now)
         
         if not deals:
             return False, "Sem histórico"
         
-        out_deals = [d for d in deals if d.entry == mt5.DEAL_ENTRY_OUT][-20:]  # Últimos 20
+        out_deals = [d for d in deals if getattr(d, "entry", None) in (validation.mt5.DEAL_ENTRY_OUT, 2)][-20:]
         # Grace period pós-reset: não pausar até N trades de saída no dia
         try:
             todays_out = [d for d in deals if d.entry == mt5.DEAL_ENTRY_OUT and datetime.fromtimestamp(d.time) >= start_of_day]
@@ -966,18 +1185,30 @@ def check_win_rate_pause() -> tuple:
         except Exception:
             pass
         
-        if len(out_deals) < 20:
-            return False, "Histórico insuficiente (mín. 20 trades)"
+        if len(out_deals) < 10:
+            return False, "Histórico insuficiente (mín. 10 trades)"
         
         wins = sum(1 for d in out_deals if d.profit > 0)
         win_rate = wins / len(out_deals)
         
         # Atualiza parâmetros dinâmicos
         params = config.get_params_for_win_rate(win_rate)
+        try:
+            config.MIN_SIGNAL_SCORE = float(params.get("signal_threshold", getattr(config, "MIN_SIGNAL_SCORE", 35)))
+        except Exception:
+            pass
+        try:
+            config.MAX_DAILY_DRAWDOWN_PCT = float(params.get("max_daily_dd", getattr(config, "MAX_DAILY_DRAWDOWN_PCT", 0.03)))
+        except Exception:
+            pass
+        try:
+            config.MIN_RR = float(params.get("min_rr", getattr(config, "MIN_RR", 1.5)))
+        except Exception:
+            pass
         
         if win_rate < 0.45:
             TRADING_PAUSED = True
-            PAUSE_REASON = f"WR Crítico: {win_rate:.1%} (últimos 20 trades)"
+            PAUSE_REASON = f"WR Crítico: {win_rate:.1%} (últimos {len(out_deals)} trades)"
             logger.warning(f"🚨 PAUSA ATIVADA: {PAUSE_REASON}")
             return True, PAUSE_REASON
         
@@ -2021,132 +2252,78 @@ DAILY_STATE_FILE = "daily_bot_state.json"
 bot_state = BotState()  # Priority 1: Unified state
 position_open_times = TimedCache(max_age_seconds=86400)  # Priority 2: 24h for positions
 last_close_time = TimedCache(max_age_seconds=7200)  # Priority 2: 2h for close times
+razoes_rejeicao_ui = {}
+lock_razoes = Lock()
 
-# =========================
-# LOG SETUP PROFISSIONAL
-# =========================
-from logging.handlers import TimedRotatingFileHandler
-import os
-import glob
-from datetime import datetime, timedelta
+def registrar_rejeicao_para_ui(simbolo: str, motivo: str):
+    with lock_razoes:
+        razoes_rejeicao_ui[simbolo] = f"{motivo} | {datetime.now().strftime('%H:%M:%S')}"
 
+_orig_log_analysis = daily_logger.log_analysis
+def _ui_log_analysis(symbol: str, signal: str, strategy: str, score: float, rejected: bool, reason: str, indicators: dict):
+    # 1. Chama o logger original e captura o motivo detalhado (com métricas faltantes)
+    detailed_reason = _orig_log_analysis(symbol, signal, strategy, score, rejected, reason, indicators)
+    final_reason = detailed_reason if detailed_reason else reason
 
-class SafeTimedRotatingFileHandler(TimedRotatingFileHandler):
-    def doRollover(self):
+    # 2. Resolve Símbolo Futuro (Visual)
+    display_symbol = symbol
+    try:
+        if "IND" in symbol or "DOL" in symbol or "WDO" in symbol or "WIN" in symbol:
+            import futures_core
+            resolved = futures_core.find_front_month(symbol.split('$')[0].split('@')[0])
+            if resolved:
+                display_symbol = resolved
+    except Exception:
+        pass
+
+    if rejected:
         try:
-            super().doRollover()
-        except PermissionError:
+            registrar_rejeicao_para_ui(symbol, final_reason)
+        except Exception:
             pass
+        try:
+            logger.info(f"❌ {display_symbol} rejeitado: {final_reason} | score={score:.0f}")
+        except Exception:
+            pass
+        try:
+            checks = (indicators or {}).get("checks") or []
+            if isinstance(checks, list) and checks:
+                for c in checks:
+                    if not isinstance(c, dict):
+                        continue
+                    name = str(c.get("name", "") or "").strip()
+                    if not name:
+                        continue
+                    passed = bool(c.get("passed", False))
+                    details = c.get("details", None)
+                    cur = c.get("current", None)
+                    req = c.get("required", None)
+                    op = str(c.get("op", "") or "").strip()
+                    tag = "🟩" if passed else "🟥"
+                    if details:
+                        logger.info(f"   {tag} {name}: {details}")
+                    elif (cur is not None) and (req is not None) and op:
+                        try:
+                            logger.info(f"   {tag} {name}: atual={float(cur):.2f} {op} necessário={float(req):.2f}")
+                        except Exception:
+                            logger.info(f"   {tag} {name}: atual={cur} {op} necessário={req}")
+                    else:
+                        logger.info(f"   {tag} {name}")
+        except Exception:
+            pass
+    else:
+        try:
+            with lock_razoes:
+                razoes_rejeicao_ui.pop(symbol, None)
+        except Exception:
+            pass
+    return detailed_reason
+daily_logger.log_analysis = _ui_log_analysis
 
 
-def setup_logging():
-    log_dir = "logs"
-    bot_dir = os.path.join(log_dir, "bot")
-    err_dir = os.path.join(log_dir, "errors")
-    ana_dir = os.path.join(log_dir, "analysis")
-    os.makedirs(bot_dir, exist_ok=True)
-    os.makedirs(err_dir, exist_ok=True)
-    os.makedirs(ana_dir, exist_ok=True)
 
-    class _SuppressNoisyWebSocketErrors(logging.Filter):
-        def filter(self, record: logging.LogRecord) -> bool:
-            try:
-                msg = record.getMessage()
-            except Exception:
-                msg = ""
 
-            if not msg:
-                return True
 
-            if "tornado.websocket.WebSocketClosedError" in msg:
-                return False
-            if "tornado.websocket.WebSocketClosedError" in (record.exc_text or ""):
-                return False
-
-            if "WebSocketClosedError" in msg and "tornado" in record.name:
-                return False
-            if "StreamClosedError" in msg and "tornado" in record.name:
-                return False
-            if "Task exception was never retrieved" in msg and "WebSocketClosedError" in msg:
-                return False
-            if "Stream is closed" in msg and "tornado" in record.name:
-                return False
-
-            return True
-    
-    class _ThreeHourHandler(SafeTimedRotatingFileHandler):
-        def __init__(self, filename, level):
-            super().__init__(filename=filename, when="h", interval=3, backupCount=56, encoding="utf-8", utc=False)
-            self.suffix = "%Y-%m-%d_%H"
-            self.extMatch = self.extMatch
-            self.setLevel(level)
-
-    main_handler = _ThreeHourHandler(
-        filename=os.path.join(bot_dir, "xp3_bot.log"),
-        level=logging.INFO
-    )
-    main_handler.setLevel(logging.INFO)
-    main_handler.setFormatter(
-        logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
-    )
-    main_handler.addFilter(_SuppressNoisyWebSocketErrors())
-    
-    error_handler = _ThreeHourHandler(
-        filename=os.path.join(err_dir, "errors.log"),
-        level=logging.ERROR
-    )
-    error_handler.setLevel(logging.ERROR)
-    error_handler.setFormatter(
-        logging.Formatter('%(asctime)s | %(levelname)s | %(name)s | %(message)s')
-    )
-    error_handler.addFilter(_SuppressNoisyWebSocketErrors())
-    
-    # Console
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO)
-    console_handler.setFormatter(
-        logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
-    )
-    console_handler.addFilter(_SuppressNoisyWebSocketErrors())
-    
-    # Configura logger raiz
-    root_logger = logging.getLogger()
-    root_logger.setLevel(logging.DEBUG)
-    root_logger.handlers.clear()
-    root_logger.addHandler(main_handler)
-    root_logger.addHandler(error_handler)
-    root_logger.addHandler(console_handler)
-    def _retention_worker(paths, days):
-        import time as _t
-        import os as _os
-        import threading as _th
-        def _run():
-            while True:
-                cutoff = datetime.now() - timedelta(days=days)
-                for p in paths:
-                    try:
-                        for name in os.listdir(p):
-                            fp = os.path.join(p, name)
-                            try:
-                                if os.path.isfile(fp):
-                                    ts = datetime.fromtimestamp(os.path.getmtime(fp))
-                                    if ts < cutoff:
-                                        try:
-                                            os.remove(fp)
-                                        except Exception:
-                                            pass
-                            except Exception:
-                                pass
-                    except Exception:
-                        pass
-                _t.sleep(3600)
-        t = _th.Thread(target=_run, daemon=True)
-        t.start()
-    _retention_worker([bot_dir, err_dir, ana_dir], 7)
-    return logging.getLogger("bot")
-
-# Chama setup
-logger = setup_logging()
 
 # =========================
 # TIMEFRAMES
@@ -2156,29 +2333,43 @@ TIMEFRAME_MACRO = getattr(mt5, f"TIMEFRAME_{config.MACRO_TIMEFRAME}", mt5.TIMEFR
 
 CURRENT_MODE = "AMBOS"
 def _get_config_symbols_for_validation():
-    syms = []
+    """
+    Retorna símbolos configurados APENAS PARA FUTUROS.
+    União de:
+    - ELITE_SYMBOLS (config.py)
+    - SECTOR_MAP (apenas futuros)
+    Fallback para lista padrão se ambos vazios.
+    """
+    syms = set()
     try:
         elite = getattr(config, "ELITE_SYMBOLS", {})
         if isinstance(elite, dict) and elite:
-            syms = list(elite.keys())
+            syms.update(list(elite.keys()))
     except Exception:
-        syms = []
+        pass
+    try:
+        sector_map = getattr(config, "SECTOR_MAP", {})
+        if isinstance(sector_map, dict) and sector_map:
+            syms.update([s for s, cat in sector_map.items() if str(cat).upper() == "FUTUROS"])
+    except Exception:
+        pass
     if not syms:
-        for attr in ("SECTOR_MAP", "UNIVERSE_B3", "SYMBOL_MAP"):
-            try:
-                mp = getattr(config, attr, {})
-                if isinstance(mp, dict) and mp:
-                    syms = list(mp.keys())
-                    break
-            except Exception:
-                pass
-    if not syms:
-        try:
-            syml = getattr(config, "SYMBOLS", [])
-            if isinstance(syml, (list, tuple)) and syml:
-                syms = list(syml)
-        except Exception:
-            pass
+        syms = ["WIN$N",   # Mini Índice
+        "WDO$N",   # Mini Dólar
+        "IND$N",   # Índice Bovespa Cheio
+        "WSP$N",   # Micro S&P
+        "IND$N",
+        "WDO$N",
+        "DOL$N",
+        "WSP$N",
+        "CCM$N",
+        "BGI$N",
+        "ICF$N",
+        "SFI$N",
+        "DI1$N",
+        "BIT$N",
+        "T10$N"]
+        logger.warning("⚠️ Usando lista padrão de futuros (ELITE_SYMBOLS/SECTOR_MAP vazios)")
     return sorted(set(syms))
 
 def validate_mt5_symbols_or_abort():
@@ -2187,6 +2378,7 @@ def validate_mt5_symbols_or_abort():
         logger.critical("❌ Nenhum ativo configurado encontrado para validação (ELITE/SECTOR/UNIVERSE/SYMBOLS vazio)")
         return False
     missing = []
+    recovered_m5 = []
     for sym in symbols:
         try:
             try:
@@ -2199,14 +2391,24 @@ def validate_mt5_symbols_or_abort():
                 continue
             rates = mt5.copy_rates_from_pos(sym, TIMEFRAME_BASE, 0, 3)
             if rates is None or len(rates) == 0:
-                missing.append(f"{sym}: sem barras {TIMEFRAME_BASE}")
+                try:
+                    m5 = mt5.copy_rates_from_pos(sym, mt5.TIMEFRAME_M5, 0, 3)
+                except Exception:
+                    m5 = None
+                if m5 is not None and len(m5) > 0:
+                    recovered_m5.append(sym)
+                else:
+                    missing.append(f"{sym}: sem barras {TIMEFRAME_BASE}")
         except Exception as e:
             missing.append(f"{sym}: erro {e}")
     if missing:
         msg = " | ".join(missing)
-        logger.critical(f"❌ Inicialização abortada. Ativos indisponíveis no MT5: {msg}")
-        return False
-    logger.info(f"✅ Validação MT5 concluída para {len(symbols)} ativos")
+        if recovered_m5:
+            logger.warning(f"⚠️ Ativos sem M15, mas com M5 disponível: {', '.join(recovered_m5)} (fallback M5 será usado onde aplicável)")
+        logger.warning(f"⚠️ Ativos indisponíveis no MT5 (pular): {msg}")
+        logger.info("➡️ Continuando inicialização com ativos disponíveis (sem abortar)")
+    else:
+        logger.info(f"✅ Validação MT5 concluída para {len(symbols)} ativos")
     return True
 
 # ============================================
@@ -2519,10 +2721,19 @@ def correlation_updater_thread():
 def update_correlation_matrix():
     # Indica ao Python que queremos alterar a variável global usada pelo painel
     global last_correlation_update
-
     symbols = bot_state.get_top15()
-
-    if not is_valid_dataframe(symbols, min_rows=2):
+    try:
+        curr_win = utils.resolve_current_symbol("WIN")
+    except Exception:
+        curr_win = None
+    try:
+        curr_wdo = utils.resolve_current_symbol("WDO")
+    except Exception:
+        curr_wdo = None
+    for s in (curr_win, curr_wdo):
+        if s and s not in symbols:
+            symbols.append(s)
+    if not isinstance(symbols, (list, tuple)) or len(symbols) < 2:
         logger.warning("⚠️ Símbolos insuficientes para calcular correlação (< 2 ativos)")
         return
 
@@ -2621,6 +2832,79 @@ def load_optimized_params():
     else:
         logger.info("✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)")
 
+# =========================
+# PARÂMETROS ESTRITOS
+# =========================
+STRICT_KEYS = {
+    "adx_threshold", "sl_atr_multiplier", "tp_ratio", "base_slippage",
+    "enable_shorts", "tp_mult", "vol_mult", "bb_period", "bb_std"
+}
+
+def _get_strict_params(symbol: str) -> dict:
+    p = optimized_params.get(symbol, {}) or {}
+    if isinstance(p, dict) and "oos" in p:
+        p = p.get("oos", {})
+        if isinstance(p, dict):
+            p = p.get("parameters", p)
+    elif isinstance(p, dict) and "parameters" in p:
+        p = p.get("parameters", {})
+    # Normaliza nomes
+    adx_t = p.get("adx_threshold", p.get("adx_thresh", 25))
+    slm = p.get("sl_atr_multiplier", p.get("sl_mult", 2.0))
+    tpr = p.get("tp_ratio", None)
+    tpm = p.get("tp_mult", None)
+    if tpm is None and tpr is not None:
+        try:
+            tpm = float(tpr) * float(slm or 1.0)
+        except Exception:
+            tpm = None
+    out = {
+        "adx_threshold": float(adx_t or 25.0),
+        "sl_atr_multiplier": float(slm or 2.0),
+        "tp_ratio": float(tpr) if tpr is not None else None,
+        "base_slippage": float(p.get("base_slippage", 0.0) or 0.0),
+        "enable_shorts": int(p.get("enable_shorts", 1) or 1),
+        "tp_mult": float(tpm) if tpm is not None else float(p.get("tp_mult", 3.0) or 3.0),
+        "vol_mult": float(p.get("vol_mult", 1.5) or 1.5),
+        "bb_period": int(p.get("bb_period", 20) or 20),
+        "bb_std": float(p.get("bb_std", 2.0) or 2.0),
+    }
+    
+    # 🧬 SISTEMA DE VACINA: Aumenta slippage se símbolo estiver vacinado
+    if is_vaccinated(symbol):
+        out["base_slippage"] *= 2.0  # Penalidade: dobra o slippage base
+        logger.warning(f"🧬 VACINA ATIVA: {symbol} com penalidade de slippage ({out['base_slippage']:.1f})")
+    
+    return out
+
+def _strict_should_enter(symbol: str, side: str) -> bool:
+    sp = _get_strict_params(symbol)
+    try:
+        n = max(100, int(sp["bb_period"]) * 3)
+    except Exception:
+        n = 100
+    df = safe_copy_rates(symbol, mt5.TIMEFRAME_M5, n)
+    if df is None or len(df) < max(40, int(sp["bb_period"]) * 2):
+        return False
+    import pandas as pd, numpy as np
+    close = pd.Series([r.close for r in df])
+    vol = pd.Series([r.tick_volume if hasattr(r, "tick_volume") else r.volume for r in df]).fillna(0.0)
+    mid = close.rolling(int(sp["bb_period"])).mean().bfill()
+    std = close.rolling(int(sp["bb_period"])).std(ddof=0).bfill()
+    upper = (mid + float(sp["bb_std"]) * std).iloc[-1]
+    lower = (mid - float(sp["bb_std"]) * std).iloc[-1]
+    vol_ma = vol.rolling(20).mean().fillna(0.0).iloc[-1]
+    try:
+        from utils import get_adx
+        adx = float(get_adx(pd.DataFrame({"high":[r.high for r in df],"low":[r.low for r in df],"close":[r.close for r in df]})) or 0.0)
+    except Exception:
+        adx = 0.0
+    price = float(close.iloc[-1])
+    vol_ok = float(vol.iloc[-1]) > float(sp["vol_mult"]) * float(vol_ma)
+    adx_ok = adx >= float(sp["adx_threshold"])
+    long_sig = (price > upper) and vol_ok and adx_ok
+    short_sig = (price < lower) and vol_ok and adx_ok and (int(sp["enable_shorts"]) == 1)
+    return (side == "BUY" and long_sig) or (side == "SELL" and short_sig)
 
 def optimize_params_daily():
     """
@@ -2631,11 +2915,23 @@ def optimize_params_daily():
     start_time = time.time()
     optimized_count = 0
     
-    # Lista de símbolos para otimizar (top 20 mais líquidos)
+    # Otimização apenas para futuros B3
     symbols_to_optimize = [
-        "PETR4", "VALE3", "ITUB4", "BBDC4", "BBAS3",
-        "ABEV3", "WEGE3", "RENT3", "SUZB3", "ELET3",
-        "PRIO3", "CSAN3", "CSNA3", "UGPA3", "USIM3"
+        "WIN$N",   # Mini Índice
+        "WDO$N",   # Mini Dólar
+        "IND$N",   # Índice Bovespa Cheio
+        "WSP$N",   # Micro S&P
+        "IND$N",
+        "WDO$N",
+        "DOL$N",
+        "WSP$N",
+        "CCM$N",
+        "BGI$N",
+        "ICF$N",
+        "SFI$N",
+        "DI1$N",
+        "BIT$N",
+        "T10$N"
     ]
     
     for sym in symbols_to_optimize:
@@ -2797,9 +3093,65 @@ def build_portfolio_and_top15():
             reason_log = f"📊 Score {score:.0f} < {config.MIN_SIGNAL_SCORE} e sem gatilho forçado"
             rejected = True
         else:
-            # Land Trading: Não marca como executada aqui, apenas sinaliza monitoramento
-            reason_log = f"⏳ Aguardando Gatilho (Score: {score:.0f} | Forçado: {forced_buy or forced_sell})"
-            rejected = True # Marca como True para cair no status "AGUARDANDO" do logger
+            trigger_ok = False
+            trigger_txt = "N/A"
+            reqs = {}
+            try:
+                data_sym = utils.resolve_indicator_symbol(sym)
+                df_tr = utils.safe_copy_rates(data_sym, TIMEFRAME_BASE, 220)
+                if df_tr is not None and len(df_tr) >= 50:
+                    close_now = float(df_tr["close"].iloc[-1])
+                    lb = 20
+                    if len(df_tr) >= lb + 2:
+                        window = df_tr.iloc[-(lb + 1):-1]
+                        hi = float(window["high"].max())
+                        lo = float(window["low"].min())
+                        if signal == "BUY":
+                            trigger_ok = close_now > hi
+                            if trigger_ok:
+                                trigger_txt = f"breakout OK: close {close_now:.1f} > resistência {hi:.1f}"
+                            else:
+                                missing = max(0.0, hi - close_now)
+                                trigger_txt = f"breakout pendente: close {close_now:.1f} <= resistência {hi:.1f} (faltam {missing:.1f})"
+                            reqs["Gatilho Breakout (close>resistência)"] = {"current": close_now, "required": hi, "op": ">", "missing": max(0.0, hi - close_now)}
+                        elif signal == "SELL":
+                            trigger_ok = close_now < lo
+                            if trigger_ok:
+                                trigger_txt = f"breakdown OK: close {close_now:.1f} < suporte {lo:.1f}"
+                            else:
+                                missing = max(0.0, close_now - lo)
+                                trigger_txt = f"breakdown pendente: close {close_now:.1f} >= suporte {lo:.1f} (faltam {missing:.1f})"
+                            reqs["Gatilho Breakout (close<suporte)"] = {"current": close_now, "required": lo, "op": "<", "missing": max(0.0, close_now - lo)}
+            except Exception:
+                pass
+
+            adx_threshold = None
+            try:
+                params_src = optimized_params.get(sym, {}) or {}
+                if isinstance(params_src, dict) and "parameters" in params_src:
+                    params_src = params_src.get("parameters") or {}
+                if isinstance(params_src, dict):
+                    adx_threshold = float(params_src.get("adx_threshold", 0) or 0)
+            except Exception:
+                adx_threshold = None
+
+            checks = []
+            try:
+                checks.append({"name": "Score mínimo", "passed": bool(score >= float(config.MIN_SIGNAL_SCORE)), "current": float(score), "required": float(config.MIN_SIGNAL_SCORE), "op": ">="})
+                if adx_threshold:
+                    checks.append({"name": "ADX mínimo", "passed": bool(adx >= adx_threshold), "current": float(adx), "required": float(adx_threshold), "op": ">="})
+                checks.append({"name": "RSI exaustão", "passed": bool(not ((signal == "BUY" and rsi > 70) or (signal == "SELL" and rsi < 30))), "current": float(rsi), "required": 70.0 if signal == "BUY" else 30.0, "op": "<=" if signal == "BUY" else ">="})
+                checks.append({"name": "Gatilho", "passed": bool(trigger_ok), "details": trigger_txt})
+                checks.append({"name": "Forçado", "passed": bool(forced_buy or forced_sell), "current": bool(forced_buy or forced_sell), "required": True, "op": "=="})
+            except Exception:
+                pass
+
+            forced_flag = bool(forced_buy or forced_sell)
+            if trigger_ok:
+                reason_log = f"✅ Gatilho OK ({trigger_txt}) | Score {score:.0f} | Forçado: {forced_flag}"
+            else:
+                reason_log = f"⏳ Aguardando Gatilho ({trigger_txt}) | Score {score:.0f} | Forçado: {forced_flag}"
+            rejected = True
 
         daily_logger.log_analysis(
             symbol=sym,
@@ -2812,9 +3164,13 @@ def build_portfolio_and_top15():
                 "rsi": ind.get("rsi", 50),
                 "adx": ind.get("adx", 0),
                 "spread_points": ind.get("spread_points", 0),
+                "spread_nominal": ind.get("spread_nominal", 0),
                 "spread_pct": ind.get("spread_pct", 0),
                 "volume_ratio": ind.get("volume_ratio", 0),
-                "ema_trend": ema_trend
+                "ema_trend": ema_trend,
+                "score_log": ind.get("score_log", {}),
+                "checks": checks,
+                "requirements": reqs,
             }
         )
 
@@ -2868,6 +3224,14 @@ def additional_filters_ok(symbol: str) -> bool:
     if not ok_spread:
         push_panel_alert(
             f"⚠️ {symbol} rejeitado: Spread atual {cur_spread:.2f}% > média {avg_spread:.2f}%",
+            "INFO",
+        )
+        return False
+    spread_trend = utils.get_spread_trend(symbol, TIMEFRAME_BASE, getattr(config, "SPREAD_LOOKBACK_BARS", 10))
+    max_trend = utils.get_threshold_for_symbol(symbol, "MAX_SPREAD_TREND_PCT", 0.03)
+    if spread_trend is not None and spread_trend > max_trend:
+        push_panel_alert(
+            f"⚠️ {symbol} rejeitado: Spread em expansão (+{spread_trend:.2f}%)",
             "INFO",
         )
         return False
@@ -2980,7 +3344,7 @@ def validate_mt5_health() -> tuple[bool, str]:
     
 def close_position(
     symbol: str, ticket: int, volume: float, price: float, reason: str = ""
-):
+    ):
     """
     ✅ VERSÃO THREAD-SAFE FINAL: Evita race conditions
     - Verifica se ticket já está sendo fechado
@@ -3158,7 +3522,10 @@ def close_position(
                 
                 if any(kw in reason.lower() for kw in ["stop", "sl", "loss"]):
                     register_sl_hit(symbol, final_exit_price)
-                    
+                    # 🧬 SISTEMA DE VACINA: Aplica vacina se o stop foi por slippage ou spread
+                    if "slippage" in reason.lower() or "spread" in reason.lower():
+                        apply_vaccine(symbol, reason)
+                        
             except Exception as e:
                 logger.error(f"Erro ML/anti-chop: {e}")
 
@@ -3192,7 +3559,7 @@ def close_position(
         # === 🔓 SEMPRE LIBERA O LOCK ===
         mark_close_complete(ticket)
 
-
+#bot.py - parte 2
 def emergency_close_position(symbol: str, ticket: int, volume: float, side: str) -> bool:
     """
     Último recurso: fecha a qualquer custo
@@ -3470,6 +3837,52 @@ def try_enter_position(symbol, side, risk_factor=1.0):
             indicators={}
         )
         return
+    # Futuros: Base Timeframe M5
+    base_tf = mt5.TIMEFRAME_M5
+    mtf_ok, mtf_reason, mtf_debug = _mtf_engine.validate_entry(symbol, side, base_tf)
+    if not mtf_ok:
+        ind_dbg = {}
+        try:
+            ind_dbg = utils.quick_indicators_custom(symbol, base_tf, df=None, params={}) or {}
+        except Exception:
+            ind_dbg = {}
+        checks = []
+        try:
+            checks.append({"name": "MTF", "passed": False, "details": str(mtf_reason)})
+            alignment = float((mtf_debug or {}).get("alignment", 0) or 0)
+            checks.append({"name": "Alinhamento", "passed": alignment >= 0.70, "current": alignment * 100.0, "required": 70.0, "op": ">="})
+            conflicts = (mtf_debug or {}).get("conflicts", []) or []
+            if conflicts:
+                checks.append({"name": "Conflitos", "passed": False, "details": ", ".join([str(x) for x in conflicts])})
+            signals = (mtf_debug or {}).get("signals", {}) or {}
+            for tf, s in signals.items():
+                if not isinstance(s, dict):
+                    continue
+                tf_side = s.get("side", "NEUTRAL")
+                tf_adx = float(s.get("adx", 0) or 0)
+                tf_vr = float(s.get("volume_ratio", 0) or 0)
+                tf_err = s.get("error", None)
+                tag_details = f"side={tf_side} | adx={tf_adx:.1f} | vol={tf_vr:.2f}x"
+                if tf_err:
+                    tag_details = f"{tag_details} | err={tf_err}"
+                checks.append({"name": f"TF {tf}", "passed": bool(tf_err is None), "details": tag_details})
+        except Exception:
+            pass
+        daily_logger.log_analysis(
+            symbol=symbol, signal=side, strategy="MTF_GATE",
+            score=0, rejected=True, reason=str(mtf_reason),
+            indicators={
+                "rsi": ind_dbg.get("rsi", 0),
+                "adx": ind_dbg.get("adx", 0),
+                "spread_points": ind_dbg.get("spread_points", 0),
+                "spread_nominal": ind_dbg.get("spread_nominal", 0),
+                "spread_pct": ind_dbg.get("spread_pct", 0),
+                "volume_ratio": ind_dbg.get("volume_ratio", 0),
+                "ema_trend": "UP" if float(ind_dbg.get("ema_fast", 0) or 0) > float(ind_dbg.get("ema_slow", 0) or 0) else "DOWN",
+                "checks": checks,
+            }
+        )
+        return
 
     mode_params = {}
     try:
@@ -3550,11 +3963,16 @@ def try_enter_position(symbol, side, risk_factor=1.0):
         )
         return
 
-    # ========================================
-    # 0.1. ✅ FILTROS TÉCNICOS CRÍTICOS (LAND TRADING)
-    # ========================================
     ind_data = bot_state.get_indicators(symbol)
     if not ind_data:
+        return
+    if not _strict_should_enter(symbol, side):
+        daily_logger.log_analysis(
+            symbol=symbol, signal=side, strategy="STRICT_GATE",
+            score=ind_data.get("score", 0),
+            rejected=True, reason="Parâmetros estritos não validaram entrada",
+            indicators={"adx_threshold": _get_strict_params(symbol).get("adx_threshold")}
+        )
         return
     of = utils.get_order_flow(symbol, 20)
     imb = float(of.get("imbalance", 0.0) or 0.0)
@@ -3585,13 +4003,50 @@ def try_enter_position(symbol, side, risk_factor=1.0):
         return
         
     rsi = ind_data.get("rsi", 50)
+    score_now = float(ind_data.get("score", 0) or 0)
     
     # 1. RSI (Exaustão)
-    if side == "BUY" and rsi > 70:
-        logger.info(f"🛑 {symbol}: RSI esticado ({rsi:.1f} > 70) - Compra evitada.")
+    symu = (symbol or "").upper()
+    is_index = symu.startswith("WIN") or symu.startswith("IND")
+    rsi_exhaust = float(getattr(config, "RSI_EXHAUSTION_DEFAULT", 70) or 70)
+    if is_index:
+        rsi_exhaust = float(getattr(config, "RSI_EXHAUSTION_INDEX", 80) or 80)
+    else:
+        hs_min = float(getattr(config, "RSI_EXHAUSTION_HIGH_SCORE_MIN_SCORE", 80) or 80)
+        hs_lim = float(getattr(config, "RSI_EXHAUSTION_HIGH_SCORE_LIMIT", 75) or 75)
+        if score_now >= hs_min:
+            rsi_exhaust = hs_lim
+
+    if side == "BUY" and rsi > rsi_exhaust:
+        logger.info(f"🛑 {symbol}: RSI esticado ({rsi:.1f} > {rsi_exhaust:.0f}) - Compra evitada.")
+        try:
+            daily_logger.log_analysis(
+                symbol=symbol, signal=side, strategy="RSI_EXHAUSTION", score=ind_data.get("score", 0),
+                rejected=True, reason=f"RSI esticado (RSI {rsi:.1f} > {rsi_exhaust:.0f})",
+                indicators={**ind_data, "requirements": {"RSI": {"current": rsi, "required": rsi_exhaust, "op": "<="}}}
+            )
+        except Exception:
+            pass
         return
-    if side == "SELL" and rsi < 30:
-        logger.info(f"🛑 {symbol}: RSI esticado ({rsi:.1f} < 30) - Venda evitada.")
+    rsi_exhaust_sell = float(getattr(config, "RSI_EXHAUSTION_DEFAULT_SELL", 30) or 30)
+    if is_index:
+        rsi_exhaust_sell = float(getattr(config, "RSI_EXHAUSTION_INDEX_SELL", 20) or 20)
+    else:
+        hs_min = float(getattr(config, "RSI_EXHAUSTION_HIGH_SCORE_MIN_SCORE", 80) or 80)
+        hs_lim = float(getattr(config, "RSI_EXHAUSTION_HIGH_SCORE_LIMIT_SELL", 25) or 25)
+        if score_now >= hs_min:
+            rsi_exhaust_sell = hs_lim
+
+    if side == "SELL" and rsi < rsi_exhaust_sell:
+        logger.info(f"🛑 {symbol}: RSI esticado ({rsi:.1f} < {rsi_exhaust_sell:.0f}) - Venda evitada.")
+        try:
+            daily_logger.log_analysis(
+                symbol=symbol, signal=side, strategy="RSI_EXHAUSTION", score=ind_data.get("score", 0),
+                rejected=True, reason=f"RSI esticado (RSI {rsi:.1f} < {rsi_exhaust_sell:.0f})",
+                indicators={**ind_data, "requirements": {"RSI": {"current": rsi, "required": rsi_exhaust_sell, "op": ">="}}}
+            )
+        except Exception:
+            pass
         return
 
     # 2. Volume Ratio Dinâmico (Smart Liquidity - Land Trading)
@@ -3601,10 +4056,8 @@ def try_enter_position(symbol, side, risk_factor=1.0):
         min_vol = 1.1
         period_name = "Manhã"
     elif datetime.strptime("12:00","%H:%M").time() <= current_time <= datetime.strptime("13:30","%H:%M").time():
-        if utils.is_future(symbol):
-            min_vol = float(getattr(config, "LUNCH_MIN_VOLUME_RATIO", 0.5) or 0.5)
-        else:
-            min_vol = 0.7
+        # Futuros: Volume almoço configurável
+        min_vol = float(getattr(config, "LUNCH_MIN_VOLUME_RATIO", 0.5) or 0.5)
         period_name = "Almoço"
     else:
         min_vol = 1.4
@@ -3617,7 +4070,7 @@ def try_enter_position(symbol, side, risk_factor=1.0):
             symbol=symbol, signal=side, strategy="VOLUME_TIMEFILTER",
             score=ind_data.get("score", 0),
             rejected=True, reason=reason,
-            indicators=ind_data
+            indicators={**ind_data, "requirements": {"Volume": {"current": vol_ratio, "required": min_vol, "unit": "x"}}}
         )
         from rejection_logger import log_trade_rejection
         log_trade_rejection(symbol, "VolumeTimeFilter", reason, {"vol_ratio": vol_ratio, "min_vol": min_vol, "deficit": round(min_vol - vol_ratio, 4), "period": period_name})
@@ -3649,7 +4102,7 @@ def try_enter_position(symbol, side, risk_factor=1.0):
         daily_logger.log_analysis(
             symbol=symbol, signal=side, strategy="SCORE_GATE",
             score=score, rejected=True, reason=reason,
-            indicators=ind_data
+            indicators={**ind_data, "requirements": {"Score": {"current": score, "required": min_score}}}
         )
         from rejection_logger import log_trade_rejection
         log_trade_rejection(symbol, "ScoreGate", reason, {"score": score, "min_score": min_score, "deficit": round(min_score - score, 4), "period": period_name})
@@ -3660,32 +4113,15 @@ def try_enter_position(symbol, side, risk_factor=1.0):
         daily_logger.log_analysis(
             symbol=symbol, signal=side, strategy="SCORE_GATE",
             score=score, rejected=True, reason=reason,
-            indicators=ind_data
+            indicators={**ind_data, "requirements": {"Score": {"current": score, "required": base_min_score}}}
         )
         from rejection_logger import log_trade_rejection
         log_trade_rejection(symbol, "ScoreGate", reason, {"score": score, "min_score": base_min_score, "deficit": round(base_min_score - score, 4), "forced_signal": bool(forced_signal), "adx_exception": bool(adx_exception)})
         return
 
-    # IBOV gating para ações
-    if not utils.is_future(symbol):
-        ibov_strength = get_ibov_adx()
-        if ibov_strength < 25:
-            if side == "BUY" and rsi > 30:
-                daily_logger.log_analysis(
-                    symbol=symbol, signal=side, strategy="IBOV_REGIME",
-                    score=ind_data.get("score", 0),
-                    rejected=True, reason="IBOV lateral: exige RSI ≤ 30 para compra",
-                    indicators=ind_data
-                )
-                return
-            if side == "SELL" and rsi < 70:
-                daily_logger.log_analysis(
-                    symbol=symbol, signal=side, strategy="IBOV_REGIME",
-                    score=ind_data.get("score", 0),
-                    rejected=True, reason="IBOV lateral: exige RSI ≥ 70 para venda",
-                    indicators=ind_data
-                )
-                return
+    # IBOV gating para ações REMOVIDO
+    pass
+
     # ========== VALIDAÇÕES COM LOG ==========
 
     # 2. Cooldown de saída
@@ -3862,23 +4298,53 @@ def try_enter_position(symbol, side, risk_factor=1.0):
             }
         )
         return
+    tick = utils.cached_symbol_info_tick(symbol)
+    ema_tf = getattr(mt5, f"TIMEFRAME_{getattr(config, 'MACRO_TIMEFRAME', 'H1')}", mt5.TIMEFRAME_H1)
+    df_macro = utils.safe_copy_rates(symbol, ema_tf, 250)
+    if df_macro is not None and len(df_macro) > int(getattr(config, "MACRO_EMA_LONG", 200) or 200):
+        cser = df_macro["close"]
+        ema_ser = cser.ewm(span=int(getattr(config, "MACRO_EMA_LONG", 200) or 200), adjust=False).mean()
+        ema_now = float(ema_ser.iloc[-1])
+        slope_val = 0.0
+        try:
+            slope_val = float((ema_now - float(ema_ser.iloc[-6])) / max(float(cser.iloc[-1]), 1e-9))
+        except Exception:
+            slope_val = 0.0
+        dist_atr = abs((tick.bid if side == "SELL" else tick.ask) - ema_now) / max(atr, 1e-9)
+        min_dist = float(getattr(config, "DIST_EMA200_ATR_THRESH", 2.0) or 2.0)
+        slope_min = float(getattr(config, "EMA200_SLOPE_MIN", 0.05) or 0.05)
+        if side == "SELL":
+            if macro_ok and slope_val > slope_min and (tick.bid > ema_now):
+                daily_logger.log_analysis(symbol=symbol, signal=side, strategy="TREND_OVERRIDE", score=ind_data.get("score", 0), rejected=True, reason="Slope EMA200 alto; seguir tendência", indicators=ind_data)
+                return
+            if dist_atr < min_dist:
+                daily_logger.log_analysis(symbol=symbol, signal=side, strategy="MEAN_REVERSION_GATE", score=ind_data.get("score", 0), rejected=True, reason="Distância < limite ATR", indicators=ind_data)
+                return
+        else:
+            if macro_ok and slope_val < -slope_min and (tick.ask < ema_now):
+                daily_logger.log_analysis(symbol=symbol, signal=side, strategy="TREND_OVERRIDE", score=ind_data.get("score", 0), rejected=True, reason="Slope EMA200 baixo; seguir tendência", indicators=ind_data)
+                return
+            if dist_atr < min_dist:
+                daily_logger.log_analysis(symbol=symbol, signal=side, strategy="MEAN_REVERSION_GATE", score=ind_data.get("score", 0), rejected=True, reason="Distância < limite ATR", indicators=ind_data)
+                return
 
     # ✅ NOVO: Validação VWAP (Confirmação de Tendência)
     vwap = ind_data.get("vwap")
-    if utils.is_future(symbol) and vwap:
+    # Futuros: Sempre aplica filtro VWAP se disponível
+    if vwap:
         current_price = tick.bid if side == "BUY" else tick.ask
         if side == "BUY" and current_price < vwap:
             daily_logger.log_analysis(
                 symbol=symbol, signal=side, strategy="VWAP_FILTER",
                 score=0, rejected=True, reason=f"Abaixo da VWAP ({current_price} < {vwap})",
-                indicators=ind_data
+                indicators={**ind_data, "requirements": {"VWAP": {"current": current_price, "required": vwap}}}
             )
             return
         if side == "SELL" and current_price > vwap:
             daily_logger.log_analysis(
                 symbol=symbol, signal=side, strategy="VWAP_FILTER",
                 score=0, rejected=True, reason=f"Acima da VWAP ({current_price} > {vwap})",
-                indicators=ind_data
+                indicators={**ind_data, "requirements": {"VWAP": {"current": current_price, "required": vwap}}}
             )
             return
         vwap_std = ind_data.get("vwap_std")
@@ -3889,18 +4355,48 @@ def try_enter_position(symbol, side, risk_factor=1.0):
                 daily_logger.log_analysis(
                     symbol=symbol, signal=side, strategy="VWAP_FILTER",
                     score=0, rejected=True, reason=f"Esticado vs VWAP ({z:.2f}σ > {over_mult:.1f}σ)",
-                    indicators=ind_data
+                    indicators={**ind_data, "requirements": {"Z-Score": {"current": z, "required": over_mult}}}
                 )
                 return
 
-    # 8. Anti-chop
+    # 8. Anti-estrutura (proximidade de suporte/resistência)
     current_price = tick.bid if side == "BUY" else tick.ask
+    try:
+        df_struct = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_M15, 60)
+        if df_struct is not None and len(df_struct) >= 30 and atr and atr > 0:
+            lookback = 30
+            support = float(df_struct["low"].tail(lookback).min())
+            resistance = float(df_struct["high"].tail(lookback).max())
+            min_dist_atr = float(getattr(config, "MIN_DISTANCE_TO_STRUCTURE_ATR", 0.3) or 0.3)
+            if side == "BUY":
+                distance_atr = (resistance - current_price) / atr
+                if distance_atr <= min_dist_atr:
+                    daily_logger.log_analysis(
+                        symbol=symbol, signal=side, strategy="STRUCTURE_PROXIMITY",
+                        score=ind_data.get("score", 0), rejected=True,
+                        reason=f"Preço muito próximo da resistência ({distance_atr:.2f} ATR ≤ {min_dist_atr:.2f} ATR)",
+                        indicators={**ind_data, "structure": {"support": support, "resistance": resistance, "price": current_price, "distance_atr": distance_atr, "min_distance_atr": min_dist_atr}}
+                    )
+                    return
+            else:
+                distance_atr = (current_price - support) / atr
+                if distance_atr <= min_dist_atr:
+                    daily_logger.log_analysis(
+                        symbol=symbol, signal=side, strategy="STRUCTURE_PROXIMITY",
+                        score=ind_data.get("score", 0), rejected=True,
+                        reason=f"Preço muito próximo do suporte ({distance_atr:.2f} ATR ≤ {min_dist_atr:.2f} ATR)",
+                        indicators={**ind_data, "structure": {"support": support, "resistance": resistance, "price": current_price, "distance_atr": distance_atr, "min_distance_atr": min_dist_atr}}
+                    )
+                    return
+    except Exception:
+        pass
+    
+    # 9. Anti-chop
     
     can_enter, chop_reason = check_anti_chop_filter(symbol, current_price, atr)
     if not can_enter:
         logger.debug(f"🚫 {symbol}: {chop_reason}")
         daily_logger.log_analysis(
-            symbol=symbol, signal=side, strategy="ELITE",
             score=ind_data.get("score", 0),
             rejected=True, reason=f"🌊 Anti-chop: {chop_reason}",
             indicators={
@@ -4119,6 +4615,32 @@ def try_enter_position(symbol, side, risk_factor=1.0):
     entry_price = tick.ask if side == "BUY" else tick.bid
     atr_val = ind_data.get("atr", 0.10)
 
+    try:
+        from utils import aggression_tracker
+        aggression_balance = aggression_tracker.get_aggression_balance(symbol, bars=20)
+        if side == "BUY" and aggression_balance < float(getattr(config, "MIN_BUY_AGGRESSION_BALANCE", 0.08) or 0.08):
+            daily_logger.log_analysis(
+                symbol=symbol, signal=side, strategy="AGGRESSION_FILTER",
+                score=ind_data.get("score", 0),
+                rejected=True, reason=f"Sem agressão de compra ({aggression_balance:.2f})",
+                indicators=ind_data
+            )
+            from rejection_logger import log_trade_rejection
+            log_trade_rejection(symbol, "AggressionFilter", f"Sem agressão de compra ({aggression_balance:.2f})", {"balance": round(aggression_balance, 4), "threshold": float(getattr(config, "MIN_BUY_AGGRESSION_BALANCE", 0.08) or 0.08)})
+            return
+        if side == "SELL" and aggression_balance > float(getattr(config, "MIN_SELL_AGGRESSION_BALANCE", -0.08) or -0.08):
+            daily_logger.log_analysis(
+                symbol=symbol, signal=side, strategy="AGGRESSION_FILTER",
+                score=ind_data.get("score", 0),
+                rejected=True, reason=f"Sem agressão de venda ({aggression_balance:.2f})",
+                indicators=ind_data
+            )
+            from rejection_logger import log_trade_rejection
+            log_trade_rejection(symbol, "AggressionFilter", f"Sem agressão de venda ({aggression_balance:.2f})", {"balance": round(aggression_balance, 4), "threshold": float(getattr(config, "MIN_SELL_AGGRESSION_BALANCE", -0.08) or -0.08)})
+            return
+    except Exception:
+        pass
+
     if atr_val < (entry_price * 0.003):
         atr_val = entry_price * 0.005
 
@@ -4130,20 +4652,10 @@ def try_enter_position(symbol, side, risk_factor=1.0):
     base_vol = utils.calculate_position_size_atr(symbol, stop_dist)
     base_vol = base_vol * risk_factor  # ✅ Fator de risco Land Trading
     
-    # ✅ Correção de lote: ações (100), futuros (1)
-    if utils.is_future(symbol):
-        volume = max(1, int(base_vol))
-        if is_pyramiding:
-            volume = max(1, int(volume * 0.5))
-    else:
-        volume = (int(base_vol) // 100) * 100 
-        if is_pyramiding:
-            volume = (int(volume * 0.5) // 100) * 100
-
-    if not utils.is_future(symbol):
-        if volume < 100:
-            logger.warning(f"⚠️ {symbol}: Volume {base_vol:.0f} insuficiente para lote de 100.")
-            return
+    # ✅ Correção de lote: Apenas lógica de futuros (contratos unitários)
+    volume = max(1, int(base_vol))
+    if is_pyramiding:
+        volume = max(1, int(volume * 0.5))
 
     if volume <= 0:
         daily_logger.log_analysis(
@@ -4161,7 +4673,7 @@ def try_enter_position(symbol, side, risk_factor=1.0):
         return
 
     # Bucket de capital 65/35
-    alloc_ok, alloc_reason = check_capital_allocation(symbol, volume, entry_price)
+    alloc_ok, alloc_reason = utils.check_capital_allocation(symbol, volume, entry_price)
     if not alloc_ok:
         daily_logger.log_analysis(
             symbol=symbol, signal=side, strategy="CAPITAL_BUCKET",
@@ -4170,28 +4682,37 @@ def try_enter_position(symbol, side, risk_factor=1.0):
             indicators={}
         )
         return
-    sl, tp = utils.calculate_dynamic_sl_tp(symbol, side, entry_price, ind_data)
+    sp = _get_strict_params(symbol)
+    # Ajusta preço de entrada com base_slippage estrito
+    try:
+        if side == "BUY":
+            entry_price = float(entry_price) * (1.0 + float(sp.get("base_slippage", 0.0) or 0.0))
+        else:
+            entry_price = float(entry_price) * (1.0 - float(sp.get("base_slippage", 0.0) or 0.0))
+    except Exception:
+        pass
+    sl, tp = utils.calculate_strict_sl_tp(symbol, side, entry_price, ind_data, sp)
 
-    if utils.is_future(symbol):
-        info = mt5.symbol_info(symbol)
-        insp = utils.AssetInspector.detect(symbol)
-        point = info.point if info else 1.0
-        pv = float(insp.get("point_value", 1.0) or 1.0)
-        fee_type = insp.get("fee_type", "FIXED")
-        fee_val = float(insp.get("fee_val", 0.0) or 0.0)
-        spread_money = abs(tick.ask - tick.bid) / max(point, 1e-9) * pv
-        fees_money = fee_val * 2.0 if fee_type == "FIXED" else 0.0
-        min_mult = float(get_asset_class_config(symbol)["min_tp_cost_multiplier"])
-        min_cost_money = (spread_money + fees_money) * min_mult
-        reward_money = abs(tp - entry_price) / max(point, 1e-9) * pv
-        if reward_money < min_cost_money:
-            daily_logger.log_analysis(
-                symbol=symbol, signal=side, strategy="COST_FILTER",
-                score=ind_data.get("score", 0),
-                rejected=True, reason=f"TP insuficiente vs custo ({reward_money:.2f} < {min_cost_money:.2f})",
-                indicators=ind_data
-            )
-            return
+    # Verifica custos e spread para futuros
+    info = mt5.symbol_info(symbol)
+    insp = utils.AssetInspector.detect(symbol)
+    point = info.point if info else 1.0
+    pv = float(insp.get("point_value", 1.0) or 1.0)
+    fee_type = insp.get("fee_type", "FIXED")
+    fee_val = float(insp.get("fee_val", 0.0) or 0.0)
+    spread_money = abs(tick.ask - tick.bid) / max(point, 1e-9) * pv
+    fees_money = fee_val * 2.0 if fee_type == "FIXED" else 0.0
+    min_mult = float(get_asset_class_config(symbol)["min_tp_cost_multiplier"])
+    min_cost_money = (spread_money + fees_money) * min_mult
+    reward_money = abs(tp - entry_price) / max(point, 1e-9) * pv
+    if reward_money < min_cost_money:
+        daily_logger.log_analysis(
+            symbol=symbol, signal=side, strategy="COST_FILTER",
+            score=ind_data.get("score", 0),
+            rejected=True, reason=f"TP insuficiente vs custo ({reward_money:.2f} < {min_cost_money:.2f})",
+            indicators=ind_data
+        )
+        return
     if not utils.validate_order_params(symbol, side, volume, entry_price, sl, tp):
         daily_logger.log_analysis(
             symbol=symbol, signal=side, strategy="ELITE",
@@ -4768,24 +5289,25 @@ except ImportError:
 # PAINEL (VERSÃO RICH )
 # ============================================
 def launch_dashboard():
-    """Inicia o dashboard Streamlit em processo separado (Porta 8501)"""
+    """Inicia o dashboard Streamlit em processo separado (Porta 8503)"""
     try:
         # --server.headless=true esconde o menu de dev do streamlit no console
         cmd = [
             sys.executable, "-m", "streamlit", "run", "dashboard.py",
-            "--server.port=8501",
+            "--server.port=8503",
             "--server.address=localhost",
-            "--server.headless=true",
+            "--server.headless=false",
             "--theme.base=light"
         ]
         # Inicia sem bloquear
         subprocess.Popen(cmd)
         time.sleep(3) # Espera iniciar
-        logger.info("✅ Dashboard iniciado com sucesso na porta 8501!")
+        logger.info("✅ Dashboard iniciado com sucesso na porta 8503!")
+        logger.info("🔎 Dashboard iniciado em modo GUI visível (headless=false)")
         
         # Tenta abrir navegador
         try:
-            webbrowser.open("http://localhost:8501")
+            webbrowser.open("http://localhost:8503")
         except: pass
         
     except Exception as e:
@@ -4896,12 +5418,16 @@ def close_all_positions(reason: str = "Fechamento diário"):
 # CORREÇÃO COMPLETA DA FUNÇÃO fast_loop()
 # Substitua a função inteira no bot.py (linha ~1741)
 
+# Variáveis globais para o sistema adaptativo
+_last_brain_analysis_time = 0 # Controle do ciclo de 1 hora
+_last_panic_check_time = 0 # Controle do ciclo de pânico (mais frequente)
+
 def fast_loop():
     """
     Loop principal com operação contínua
     ✅ VERSÃO CORRIGIDA: Inclui failsafe de fechamento EOD
     """
-    global trading_paused, daily_cycle_completed, _last_summary_time
+    global trading_paused, daily_cycle_completed, _last_summary_time, _last_brain_analysis_time, _last_panic_check_time
 
     logger.info("⚙️ Fast Loop iniciado (modo contínuo)")
     logger.info("🔄 Inicializando pesos adaptativos e correlações...")
@@ -4910,12 +5436,36 @@ def fast_loop():
     while True:  # ✅ Loop infinito (não depende de bot_should_run)
         try:
             health_monitor.heartbeat()
+            _state_manager.reset_daily_if_needed()
 
             # ============================================
             # 🔴 PRIORIDADE MÁXIMA: GERENCIADOR DE CICLO
             # ============================================
             # Chama ANTES do failsafe para evitar duplicação
             handle_daily_cycle()
+
+            # ============================================
+            # 🤖 CAMADA SENSOR: Coleta de Métricas (a cada 15 min)
+            # ============================================
+            adaptive_system.collect_sensor_data()
+
+            # ============================================
+            # 🚨 GATILHO DE PÂNICO (Verificação mais frequente)
+            # ============================================
+            now_ts = time.time()
+            if now_ts - _last_panic_check_time > 60: # Verifica a cada 1 minuto
+                if adaptive_system.check_panic_mode():
+                    logger.critical("🚨 PANIC MODE ativado! Parâmetros ajustados para RISK_OFF.")
+                _last_panic_check_time = now_ts
+
+            # ============================================
+            # 🧠 CAMADA CÉREBRO: Análise de Regime (a cada 1 hora)
+            # ============================================
+            if now_ts - _last_brain_analysis_time > 3600: # Verifica a cada 1 hora
+                current_regime = adaptive_system.analyze_market_regime()
+                logger.info(f"🧠 CÉREBRO: Regime de mercado detectado: {current_regime}")
+                adaptive_system.adjust_parameters(current_regime)
+                _last_brain_analysis_time = now_ts
 
             # ============================================
             # 🚨 FAILSAFE CRÍTICO: FECHAMENTO FORÇADO
@@ -5088,9 +5638,14 @@ def fast_loop():
                     symbols_to_scan = [s for s in symbols_to_scan if utils.is_time_allowed_for_symbol(s, CURRENT_MODE)]
                 except Exception:
                     pass
+                scanned_indicators = {}
+                try:
+                    scanned_indicators = _market_scanner.scan_market(symbols_to_scan)
+                except Exception:
+                    scanned_indicators = {}
 
                 for sym in symbols_to_scan:
-                    ind_data = bot_state.get_indicators(sym)
+                    ind_data = scanned_indicators.get(sym) or bot_state.get_indicators(sym)
 
                     if not ind_data or ind_data.get("error"):
                         continue
@@ -5131,6 +5686,20 @@ def fast_loop():
             # ============================================
             save_top15_cache()
             save_system_status()
+            try:
+                acc = mt5.account_info()
+                trades_total = sum(daily_trades_per_symbol.values()) if isinstance(daily_trades_per_symbol, dict) else 0
+                _state_manager.save_state_atomic({
+                    "trading_date": datetime.now().date().isoformat(),
+                    "equity_start": float(acc.balance or 0.0),
+                    "equity_max": float(max(acc.equity or 0.0, acc.balance or 0.0)),
+                    "trades_count": int(trades_total),
+                    "wins_count": 0,
+                    "loss_streak": 0,
+                    "circuit_breaker_active": bool(trading_paused),
+                })
+            except Exception:
+                pass
             
             # ============================================
             # ⏱️ AGUARDA 5 SEGUNDOS
@@ -5359,26 +5928,63 @@ def update_bot_bridge():
             atr_pct = min(round(float(atr_real) * 5.3, 2), 9.99) if atr_real > 0 else 0.0
             
             price = round(float(ind.get("close", 0)), 2)
-            sector = str(config.SECTOR_MAP.get(sym, "UNKNOWN"))
-            
-            # STATUS CORRETO
-            if sym in positions_symbols:
-                status = "✔️ ABERTO"
+            try:
+                symu = str(sym).upper().strip()
+                base = symu[:3]
+                resolved = sym
+                if symu.endswith("$N") or symu.endswith("$"):
+                    active = getattr(config, "ACTIVE_FUTURES", {}) or {}
+                    key = f"{base}$"
+                    resolved = active.get(key, sym)
+                    if resolved == sym and hasattr(utils, "resolve_current_symbol"):
+                        r = utils.resolve_current_symbol(base)
+                        if r:
+                            resolved = r
+                sector = str(config.SECTOR_MAP.get(resolved, config.SECTOR_MAP.get(sym, "UNKNOWN")))
+            except Exception:
+                sector = str(config.SECTOR_MAP.get(sym, "UNKNOWN"))
+            with lock_razoes:
+                motivo_rejeicao = razoes_rejeicao_ui.get(sym, "-")
+            m = str(motivo_rejeicao).upper()
+            if "RSI" in m:
+                whats_missing = "Aguardar RSI esfriar"
+            elif "SCORE" in m:
+                whats_missing = "Sinal técnico melhorar"
+            elif "VWAP" in m:
+                whats_missing = "Preço cruzar VWAP"
+            elif "VOLUME" in m:
+                whats_missing = "Aumento de volume"
+            elif "LIQUIDEZ" in m or "BOOK" in m or "SPREAD" in m:
+                whats_missing = "Melhorar liquidez"
+            elif "COOLDOWN" in m:
+                whats_missing = "Aguardar cooldown"
+            elif "NOTÍCIA" in m or "NEWS" in m:
+                whats_missing = "Fim do blackout de notícias"
+            elif "EXPOSIÇÃO" in m or "LIMITE" in m:
+                whats_missing = "Liberar limite de risco"
+            else:
+                whats_missing = "-" if motivo_rejeicao == "-" else "Rever filtros técnicos"
+            check_sym = resolved if resolved else sym
+            if check_sym in positions_symbols:
+                status = "✔️ EXECUTADO"
+            elif motivo_rejeicao != "-":
+                status = "❌ REJEITADO"
             elif score >= config.MIN_SIGNAL_SCORE:
                 status = "🟢 PRONTO"
             else:
                 status = "⏸️ AGUARDANDO"
-            
             data["top15"].append({
                 "rank": rank,
-                "symbol": sym,
+                "symbol": resolved,
                 "score": round(score, 1),
                 "direction": direction,
                 "rsi": rsi,
                 "atr_pct": atr_pct,
                 "price": price,
                 "sector": sector,
-                "status": status
+                "status": status,
+                "rejection_reason": motivo_rejeicao,
+                "whats_missing": whats_missing
             })
         
         # Escrita ATÔMICA e segura
@@ -5398,6 +6004,7 @@ def update_bot_bridge():
         
     except Exception as e:
         logger.error(f"❌ Erro crítico ao atualizar bot_bridge: {e}")
+_telegram_lock_socket = None
 def telegram_polling_thread():
     """
     Thread para polling contínuo do Telegram.
@@ -5409,6 +6016,18 @@ def telegram_polling_thread():
     
     if bot is None:
         logger.error("Bot Telegram não foi inicializado (verifique token no config)")
+        return
+    
+    global _telegram_lock_socket
+    try:
+        import socket
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        s.bind(("127.0.0.1", 56234))
+        s.listen(1)
+        _telegram_lock_socket = s
+    except Exception as e:
+        logger.warning(f"Lock Telegram indisponível: {e}")
         return
     
     logger.info("🚀 Iniciando polling do Telegram com comandos integrados...")
@@ -5435,6 +6054,21 @@ def telegram_polling_thread():
             failures = 0
             backoff_s = 5
         except Exception as e:
+            try:
+                import telebot
+                ApiTelegramException = getattr(telebot.apihelper, "ApiTelegramException", Exception)
+            except Exception:
+                ApiTelegramException = Exception
+            if isinstance(e, ApiTelegramException):
+                msg_txt = str(e)
+                if ("only one bot instance is running" in msg_txt) or ("Error code: 409" in msg_txt):
+                    logger.error("Conflito 409 detectado: outra instância está fazendo getUpdates. Encerrando polling desta instância.")
+                    try:
+                        if _telegram_lock_socket:
+                            _telegram_lock_socket.close()
+                    except Exception:
+                        pass
+                    return
             is_timeout = False
             try:
                 import requests
@@ -5824,6 +6458,41 @@ def get_anti_chop_status() -> dict:
     }
 
 # =========================
+# 🔍 FUTURES CONTRACT RESOLUTION
+# =========================
+
+def find_and_enable_active_futures(pattern_symbols: List[str]) -> Dict[str, str]:
+    """
+    Resolve pattern symbols (WIN$N, WDO$N) to active contracts (WING26, WDOH26)
+    Returns mapping of pattern -> active contract
+    """
+    from futures_core import FuturesDataManager
+    
+    futures_mgr = FuturesDataManager(mt5)
+    active_map = {}
+    
+    for pattern in pattern_symbols:
+        # Extract base symbol: WIN$N -> WIN
+        base = pattern.replace("$N", "")
+        
+        # Find active contract
+        try:
+            active_contract = futures_mgr.find_front_month(base)
+            if active_contract:
+                active_map[pattern] = active_contract
+                logger.info(f"✅ {pattern} -> {active_contract}")
+                
+                # Enable in MT5 Market Watch
+                if not mt5.symbol_select(active_contract, True):
+                    logger.warning(f"⚠️ Failed to add {active_contract} to Market Watch")
+            else:
+                logger.warning(f"⚠️ No active contract found for {base}")
+        except Exception as e:
+            logger.error(f"❌ Error resolving {pattern}: {e}")
+    
+    return active_map
+
+# =========================
 # MAIN
 # =========================
 def main():
@@ -5835,14 +6504,14 @@ def main():
     try:
         import argparse
         parser = argparse.ArgumentParser()
-        parser.add_argument("--mode", type=str, default="ambos")
+        parser.add_argument("--mode", type=str, default="futuros")
         args, _ = parser.parse_known_args()
-        CURRENT_MODE = str(args.mode or "ambos").upper()
-        if CURRENT_MODE not in ("AMBOS","FUTUROS","ACOES","SO_FUTUROS"):
-            CURRENT_MODE = "AMBOS"
-        logger.info(f"Modo de operação: {CURRENT_MODE}")
+        
+        # Sempre opera em modo FUTUROS (refatoração completa)
+        CURRENT_MODE = "FUTUROS"
+        logger.info(f"🔥 Modo de operação: {CURRENT_MODE} (Exclusivo)")
     except Exception:
-        CURRENT_MODE = "AMBOS"
+        CURRENT_MODE = "FUTUROS"
 
     clear_screen()
     print(f"{C_CYAN}===================================================={C_RESET}")
@@ -5868,6 +6537,15 @@ def main():
     else:
         logger.info(f"✅ Conectado ao MT5 correto: {config.MT5_TERMINAL_PATH}")
 
+    # ✅ VALIDAÇÃO CRÍTICA: Apenas futuros permitidos
+    if not validate_futures_only_mode():
+        logger.critical("❌ Abortando inicialização devido a configurações inválidas")
+        try:
+            mt5.shutdown()
+        except Exception:
+            pass
+        return
+
     if not validate_mt5_symbols_or_abort():
         try:
             mt5.shutdown()
@@ -5886,6 +6564,30 @@ def main():
             logger.info(f"Futuros mapeados: {fm}")
     except Exception as e:
         logger.warning(f"Erro ao descobrir futuros: {e}")
+    try:
+        asset_patterns_to_monitor = [
+            "WIN$N", "IND$N", "WDO$N", "DOL$N", "WSP$N", "CCM$N", "BGI$N",
+            "ICF$N", "SFI$N", "DI1$N", "BIT$N", "T10$N"
+        ]
+        active_futures_map = find_and_enable_active_futures(asset_patterns_to_monitor)
+        if active_futures_map:
+            logger.info(f"Contratos ativos habilitados: {active_futures_map}")
+            
+            # UPDATE config to use active contracts
+            for pattern, active in active_futures_map.items():
+                # Replace pattern with active contract in SECTOR_MAP
+                if pattern in config.SECTOR_MAP:
+                    sector = config.SECTOR_MAP.pop(pattern)
+                    config.SECTOR_MAP[active] = sector
+                    logger.debug(f"📋 SECTOR_MAP: {pattern} -> {active}")
+                
+                # Replace pattern with active contract in ELITE_SYMBOLS
+                if pattern in config.ELITE_SYMBOLS:
+                    params = config.ELITE_SYMBOLS.pop(pattern)
+                    config.ELITE_SYMBOLS[active] = params
+                    logger.debug(f"⚙️ ELITE_SYMBOLS: {pattern} -> {active}")
+    except Exception as e:
+        logger.warning(f"Erro ao habilitar futuros ativos: {e}")
 
     # ✅ BACKTEST INICIAL (Verifica se devemos pausar logo no início)
     try:
@@ -5976,7 +6678,6 @@ def main():
     logger.info(f"✅ Cooldown progressivo: {config.ANTI_CHOP.get('progressive_cooldown', False)}")
     logger.info(f"✅ Máx posições: {config.MAX_SYMBOLS}")
     logger.info(f"✅ Máx por setor: {config.MAX_PER_SECTOR}")
-    logger.info(f"✅ Máx bancos: {config.MAX_PER_SUBSETOR.get('BANCOS', 2)}")
     logger.info(f"✅ ADX mínimo (abertura): {config.TIME_SCORE_RULES['OPEN']['adx_min']}")
     logger.info(f"✅ ADX mínimo (intraday): {config.TIME_SCORE_RULES['MID']['adx_min']}")
     logger.info("="*60 + "\n")
@@ -6016,6 +6717,11 @@ def main():
         logger.info(f"   -> Thread '{t.name}' iniciada com sucesso.")
 
     logger.info(f"🚀 Total de {len(threads)} threads ativas")
+    try:
+        cvm_daily_logger.start_cvm_daily_scheduler()
+        logger.info("Agendamento do relatório CVM diário iniciado")
+    except Exception as e:
+        logger.warning(f"Erro ao iniciar agendamento CVM: {e}")
 
     # 6. Notificação de Inicialização
     status = get_market_status()
@@ -6041,7 +6747,7 @@ def main():
     launch_dashboard()
     
     print(f"\n{C_GREEN}✅ Bot rodando em background!{C_RESET}")
-    print(f"{C_YELLOW}ℹ️ Dashboard deve abrir no navegador. Se não, acesse: http://localhost:8501{C_RESET}")
+    print(f"{C_YELLOW}ℹ️ Dashboard deve abrir no navegador. Se não, acesse: http://localhost:8503{C_RESET}")
     print(f"{C_RED}🛑 Pressione Ctrl+C para encerrar o bot.{C_RESET}\n")
 
     # Loop principal (Keep Alive)

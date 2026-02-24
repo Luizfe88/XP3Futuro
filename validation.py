@@ -4,7 +4,12 @@ from typing import Optional
 from enum import Enum
 import MetaTrader5 as mt5
 import logging
-import config
+try:
+    import xp3future as config
+except ModuleNotFoundError:
+    import sys as _sys, os as _os
+    _sys.path.insert(0, _os.path.abspath(_os.path.join(_os.path.dirname(__file__), "..")))
+    import xp3future as config
 import utils
 from rejection_logger import log_trade_rejection
 from datetime import datetime, timedelta
@@ -110,15 +115,8 @@ class OrderParams:
         if self.volume <= 0:
             errors.append(f"Volume inválido: {self.volume}")
         
-        is_fut = utils.is_future(self.symbol)
-        if is_fut:
-            self.volume = float(int(max(1, int(self.volume))))
-        else:
-            if self.volume % 100 != 0:
-                self.volume = (int(self.volume) // 100) * 100
-                logger.info(f"⚖️ Volume ajustado para lote padrão: {self.volume}")
-            if self.volume < 100:
-                errors.append(f"Volume insuficiente para lote mínimo de 100: {self.volume}")
+        # Futuros: Volume em contratos (mínimo 1)
+        self.volume = float(int(max(1, int(self.volume))))
         
         # 2. Preço
         if self.entry_price <= 0:
@@ -151,7 +149,9 @@ class OrderParams:
             errors.append(f"TP muito próximo da entrada: {tp_distance:.4f}")
         
         rr = self.risk_reward_ratio
-        min_rr = getattr(config, "MIN_RR_FUTURES", 2.5) if utils.is_future(self.symbol) else getattr(config, "MIN_RR", 2.0)
+        # Futuros: Sempre usa MIN_RR_FUTURES
+        min_rr = getattr(config, "MIN_RR_FUTURES", 2.5)
+        
         # 🆕 Novo: Aumentar min_rr em Alta Volatilidade
         atr_val = utils.get_atr(utils.safe_copy_rates(self.symbol, mt5.TIMEFRAME_M15, 50)) or 0
         if atr_val > 0:
@@ -162,13 +162,14 @@ class OrderParams:
         sl_dist = abs(self.entry_price - self.sl)
         if sl_dist < 1.5 * atr_val:
             errors.append(f"SL muito apertado (<1.5 ATR: {sl_dist:.2f} < {1.5 * atr_val:.2f})")
-        if utils.is_future(self.symbol):
-            info = mt5.symbol_info(self.symbol)
-            if info and info.point > 0:
-                sl_points = sl_dist / info.point
-                min_points = max(10, int((atr_val / info.point) * 1.2))
-                if sl_points < min_points:
-                    errors.append(f"SL em pontos insuficiente: {sl_points:.0f} < {min_points}")
+        
+        # Validação de SL em pontos para futuros
+        info = mt5.symbol_info(self.symbol)
+        if info and info.point > 0:
+            sl_points = sl_dist / info.point
+            min_points = max(10, int((atr_val / info.point) * 1.2))
+            if sl_points < min_points:
+                errors.append(f"SL em pontos insuficiente: {sl_points:.0f} < {min_points}")
     
         if errors:
             full_reason = " | ".join(errors)
@@ -186,8 +187,9 @@ class OrderParams:
     def to_mt5_request(self, magic: int = 123456, comment: str = "XP3") -> dict:
         """Converte para formato MT5"""
         order_type = mt5.ORDER_TYPE_BUY if self.side == OrderSide.BUY else mt5.ORDER_TYPE_SELL
+        # Futuros: Sempre usa magic 2000
         if magic == 123456:
-            magic = 2000 if utils.is_future(self.symbol) else 1000
+            magic = 2000
         return {
             "action": mt5.TRADE_ACTION_DEAL,
             "symbol": self.symbol,
@@ -221,47 +223,38 @@ def validate_spread_protection(symbol: str) -> tuple:
             return False, "Sem dados de cotação"
 
         spread = tick.ask - tick.bid
-        if utils.is_future(symbol):
-            info = mt5.symbol_info(symbol)
-            if not info or info.point <= 0:
-                return False, "Sem info de ponto para futuros"
-            spread_points = spread / info.point
-            max_points_cfg = getattr(config, "MAX_SPREAD_FUTURE_POINTS", None)
-            if max_points_cfg is None:
-                from datetime import datetime
-                server_time = datetime.fromtimestamp(tick.time).time()
-                t_open = datetime.strptime("10:00", "%H:%M").time()
-                t_1530 = datetime.strptime("15:30", "%H:%M").time()
-                t_1700 = datetime.strptime("17:00", "%H:%M").time()
-                t_1800 = datetime.strptime("18:00", "%H:%M").time()
-                if server_time < t_1530:
-                    max_points = 20
-                elif server_time < t_1700:
-                    max_points = 35
-                elif server_time <= t_1800:
-                    max_points = 50
-                else:
-                    max_points = 50
-            else:
-                max_points = int(max_points_cfg)
-            if spread_points > max_points:
-                return False, f"Spread em pontos alto: {spread_points:.0f} > {max_points}"
-            return True, f"OK ({spread_points:.0f} pts)"
-        mid_price = (tick.ask + tick.bid) / 2
-        spread_pct = (spread / mid_price) * 100
-        max_spread_pct = getattr(config, "MAX_SPREAD_ACTION_PCT", None)
-        if max_spread_pct is None:
+        
+        # Futuros: Validação sempre em pontos
+        info = mt5.symbol_info(symbol)
+        if not info or info.point <= 0:
+            return False, "Sem info de ponto para futuros"
+        
+        spread_points = spread / info.point
+        max_points_cfg = getattr(config, "MAX_SPREAD_FUTURE_POINTS", None)
+        
+        if max_points_cfg is None:
+            # Spread dinâmico por horário
             from datetime import datetime
             server_time = datetime.fromtimestamp(tick.time).time()
-            if server_time < datetime.strptime("15:30", "%H:%M").time():
-                max_spread_pct = 0.15
-            elif server_time < datetime.strptime("17:00", "%H:%M").time():
-                max_spread_pct = 0.30
+            t_1530 = datetime.strptime("15:30", "%H:%M").time()
+            t_1700 = datetime.strptime("17:00", "%H:%M").time()
+            t_1800 = datetime.strptime("18:00", "%H:%M").time()
+            
+            if server_time < t_1530:
+                max_points = 20
+            elif server_time < t_1700:
+                max_points = 35
+            elif server_time <= t_1800:
+                max_points = 50
             else:
-                max_spread_pct = 0.45
-        if not utils.is_spread_acceptable(symbol, max_spread_pct=max_spread_pct):
-            return False, f"Spread alto: {spread_pct:.3f}% > {max_spread_pct:.2f}%"
-        return True, f"OK ({spread_pct:.3f}%)"
+                max_points = 50
+        else:
+            max_points = int(max_points_cfg)
+        
+        if spread_points > max_points:
+            return False, f"Spread em pontos alto: {spread_points:.0f} > {max_points}"
+        
+        return True, f"OK ({spread_points:.0f} pts)"
         
     except Exception as e:
         logger.warning(f"Erro na validação de spread: {e}")
@@ -295,6 +288,108 @@ def check_daily_loss_money_limit(symbol: str, planned_volume: float, entry_price
         return True, "OK"
     except Exception as e:
         logger.warning(f"Erro ao verificar perda diária {symbol}: {e}")
+        return True, "Ignorado (erro na checagem)"
+
+# ============================================
+# 🏦 LIMITE DE USO DE CAPITAL (35% Equity) & FUNDOS
+# ============================================
+def check_capital_usage_limit(symbol: str, planned_volume: float, entry_price: float) -> tuple[bool, str]:
+    """
+    Verifica se a nova ordem respeita o limite máximo de uso de capital (Margem).
+    Também verifica se há saldo disponível (Free Margin) para cobrir Margem + Taxas.
+    """
+    try:
+        acc = mt5.account_info()
+        if not acc:
+            return False, "Sem dados de conta"
+
+        # -----------------------------------------------------------
+        # 1. VALIDAÇÃO DE SALDO REAL (Hard Limit)
+        # Verifica se tem dinheiro para abrir a posição (Margem + Taxas)
+        # -----------------------------------------------------------
+        free_margin = acc.margin_free
+        
+        # a) Calcula Margem Requerida
+        order_type = mt5.ORDER_TYPE_BUY  # Assume compra para cálculo conservador
+        try:
+            new_margin = mt5.order_calc_margin(order_type, symbol, planned_volume, entry_price)
+        except Exception:
+            # Fallback aproximado se falhar
+            info = mt5.symbol_info(symbol)
+            if info and info.margin_initial > 0:
+                new_margin = info.margin_initial * planned_volume
+            else:
+                 new_margin = 0.0
+
+        # b) Calcula Taxas Estimadas (Fees)
+        estimated_fees = 0.0
+        try:
+            import config_futures
+            # Normaliza símbolo (WING24 -> WIN, WDOZ25 -> WDO)
+            base_symbol = symbol[:3]
+            futures_cfg = None
+            
+            if hasattr(config_futures, 'FUTURES_CONFIGS'):
+                for key, cfg in config_futures.FUTURES_CONFIGS.items():
+                    if key.replace("$N", "") == base_symbol:
+                        futures_cfg = cfg
+                        break
+            
+            if futures_cfg:
+                # fees_roundtrip é por contrato
+                estimated_fees = futures_cfg.get('fees_roundtrip', 0.0) * planned_volume
+        except Exception:
+            pass
+
+        total_required = new_margin + estimated_fees
+        missing_funds = total_required - free_margin
+        
+        if missing_funds > 0:
+            msg_console = (
+                f"\n{'='*40}\n"
+                f"❌ [FALTA DE FUNDOS] {symbol}\n"
+                f"💰 Saldo Disponível (Free): R$ {free_margin:.2f}\n"
+                f"📉 Custo Total (Margem+Taxas): R$ {total_required:.2f}\n"
+                f"   - Margem: R$ {new_margin:.2f}\n"
+                f"   - Taxas Est.: R$ {estimated_fees:.2f}\n"
+                f"⚠️ FALTA: R$ {missing_funds:.2f}\n"
+                f"👉 Deposite R$ {missing_funds:.2f} para operar.\n"
+                f"{'='*40}"
+            )
+            # Loga com nível INFO para aparecer no console (StreamHandler)
+            logger.info(msg_console)
+            # Força print caso logger esteja silenciado
+            print(msg_console)
+            return False, f"Falta de fundos: -R${missing_funds:.2f}"
+
+        # -----------------------------------------------------------
+        # 2. VALIDAÇÃO DE RISCO (Soft Limit - 35% Equity)
+        # -----------------------------------------------------------
+        limit_pct = getattr(config, "MAX_CAPITAL_USAGE_PCT", 0.35)
+        max_allowed_margin = acc.equity * limit_pct
+        
+        current_margin = acc.margin
+        total_projected_margin = current_margin + new_margin
+        
+        missing_risk_budget = total_projected_margin - max_allowed_margin
+        
+        if total_projected_margin > max_allowed_margin:
+            msg_risk = (
+                f"\n{'='*40}\n"
+                f"🚫 [LIMITE DE RISCO EXCEDIDO] {symbol}\n"
+                f"🛡️ Limite (35% Equity): R$ {max_allowed_margin:.2f}\n"
+                f"📊 Margem Projetada: R$ {total_projected_margin:.2f}\n"
+                f"⚠️ Excesso: R$ {missing_risk_budget:.2f}\n"
+                f"{'='*40}"
+            )
+            logger.info(msg_risk)
+            print(msg_risk)
+            return False, f"🚫 Limite de Capital: Margem Projetada {total_projected_margin:.2f} > {max_allowed_margin:.2f} ({limit_pct:.0%})"
+            
+        return True, "OK"
+        
+    except Exception as e:
+        logger.warning(f"Erro ao verificar limite de capital {symbol}: {e}")
         return True, "Ignorado (erro na checagem)"
 
 # ============================================
@@ -441,7 +536,7 @@ def calculate_kelly_position_size(symbol: str, entry_price: float, sl: float,
         
         # 7. ✅ NOVO: Ajuste por Drawdown Atual
         try:
-            from bot import daily_max_equity, mt5
+            from botfuturo import daily_max_equity
             acc = mt5.account_info()
             
             if acc and daily_max_equity > 0:
@@ -465,9 +560,9 @@ def calculate_kelly_position_size(symbol: str, entry_price: float, sl: float,
         # 9. Limites & Monte Carlo Check
         adjusted_kelly = min(adjusted_kelly, 0.20)
         
-        # ✅ NOVO: Monte Carlo Ruin Check (5000 runs)
-        ruin_prob = monte_carlo_ruin_check(win_rate, current_rr, adjusted_kelly, runs=5000)
-        if ruin_prob > 0.01: 
+        # ✅ NOVO: Monte Carlo Ruin Check (10000 runs)
+        ruin_prob = monte_carlo_ruin_check(win_rate, current_rr, adjusted_kelly, runs=10000)
+        if ruin_prob > 0.005: 
             logger.warning(f"⚠️ {symbol}: Probabilidade de ruína alta ({ruin_prob:.1%}). Reduzindo Kelly.")
             adjusted_kelly *= 0.5
         
@@ -479,51 +574,60 @@ def calculate_kelly_position_size(symbol: str, entry_price: float, sl: float,
         if not acc:
             return 0.0
         
-        is_fut = utils.is_future(symbol)
+        # Futuros: Cálculo de volume baseado em margem e risco
         capital = acc.balance
-        if is_fut:
-            info = mt5.symbol_info(symbol)
-            if not info:
-                return 0.0
-            point = info.point or 0.0
-            pv = config.WIN_POINT_VALUE if symbol.upper().startswith(("WIN", "IND")) else (config.WDO_POINT_VALUE if symbol.upper().startswith(("WDO", "DOL")) else 1.0)
-            risk_points = abs(entry_price - sl) / point if point > 0 else 0.0
-            order_type = mt5.ORDER_TYPE_BUY if side == "BUY" else mt5.ORDER_TYPE_SELL
-            try:
-                margin_one = mt5.order_calc_margin(order_type, symbol, 1.0, entry_price)
-            except Exception:
-                margin_one = 0.0
-            free_margin = getattr(acc, "margin_free", 0.0)
-            budget = max(0.0, free_margin * 0.35)
-            if margin_one <= 0:
-                return 0.0
-            max_by_margin = int(budget // margin_one)
-            max_by_margin = max(0, min(max_by_margin, getattr(config, "FUTURES_MAX_CONTRACTS", 10)))
-            if max_by_margin <= 0:
-                return 0.0
-            vol = max_by_margin
-            if risk_points > 0 and pv > 0:
-                risk_money = risk_points * pv * vol
-                max_risk_money = capital * getattr(config, "RISK_PER_TRADE_PCT", 0.0025)
-                if risk_money > max_risk_money:
-                    vol = max(1, int(max_risk_money // (risk_points * pv)))
-            vol = max(int(info.volume_min or 1), min(int(vol), int(info.volume_max or vol)))
-            return float(vol)
-        position_value = capital * final_kelly
-        volume = round((position_value / entry_price) / 100) * 100
-        
-        # 11. Validações finais
         info = mt5.symbol_info(symbol)
-        if info:
-            volume = max(info.volume_min, min(volume, info.volume_max))
-            
-            # Limites por preço
-            if entry_price <= 5.0:
-                volume = min(volume, 50000.0)
-            elif entry_price <= 20.0:
-                volume = min(volume, 20000.0)
-            else:
-                volume = min(volume, 10000.0)
+        if not info:
+            return 0.0
+        
+        point = info.point or 0.0
+        # Define point value por tipo de futuro
+        pv = config.WIN_POINT_VALUE if symbol.upper().startswith(("WIN", "IND")) else (config.WDO_POINT_VALUE if symbol.upper().startswith(("WDO", "DOL")) else 1.0)
+        
+        risk_points = abs(entry_price - sl) / point if point > 0 else 0.0
+        order_type = mt5.ORDER_TYPE_BUY if side == "BUY" else mt5.ORDER_TYPE_SELL
+        
+        try:
+            margin_one = mt5.order_calc_margin(order_type, symbol, 1.0, entry_price)
+        except Exception:
+            margin_one = 0.0
+        
+        free_margin = getattr(acc, "margin_free", 0.0)
+        
+        # ✅ NOVO: Orçamento baseado em limite de 35% do Equity
+        limit_pct = getattr(config, "MAX_CAPITAL_USAGE_PCT", 0.35)
+        max_allowed_margin = acc.equity * limit_pct
+        current_margin = acc.margin
+        available_margin_for_limit = max(0.0, max_allowed_margin - current_margin)
+        
+        # O orçamento é o menor entre:
+        # 1. Margem livre real da conta (para não tomar call)
+        # 2. Margem disponível dentro do limite de 35%
+        budget = min(free_margin, available_margin_for_limit) * 0.95  # 95% buffer
+        
+        if margin_one <= 0:
+            return 0.0
+        
+        max_by_margin = int(budget // margin_one)
+        max_by_margin = max(0, min(max_by_margin, getattr(config, "FUTURES_MAX_CONTRACTS", 10)))
+        
+        if max_by_margin <= 0:
+            logger.info(f"⚠️ {symbol}: Sem budget de margem (Limit {limit_pct:.0%}: {current_margin:.2f}/{max_allowed_margin:.2f})")
+            return 0.0
+        
+        vol = max_by_margin
+        
+        # Ajusta por risco máximo permitido
+        if risk_points > 0 and pv > 0:
+            risk_money = risk_points * pv * vol
+            max_risk_money = capital * getattr(config, "RISK_PER_TRADE_PCT", 0.0025)
+            if risk_money > max_risk_money:
+                vol = max(1, int(max_risk_money // (risk_points * pv)))
+        
+        vol = max(int(info.volume_min or 1), min(int(vol), int(info.volume_max or vol)))
+        return float(vol)
+        # Este código removido era específico para ações
+        # Futuros já retornaram volume acima
         
         logger.info(
             f"💰 Kelly {symbol} | "
@@ -545,6 +649,66 @@ def validate_and_create_order(symbol: str, side: str, volume: float,
                                entry_price: float, sl: float, tp: float,
                                use_kelly: bool = True) -> tuple[Optional[OrderParams], Optional[str]]:
     """
+    Requisitos por símbolo base são lidos de config_futures.FUTURES_CONFIGS[min_oi].
+    Usa fallback robusto para obter OI: session_open_interest → open_interest → proxy de volume.
+    """
+    try:
+        info = mt5.symbol_info(symbol)
+        if not info:
+            return False, "Sem informações do símbolo no MT5"
+        
+        # Descobre símbolo base (WIN, WDO, IND, DOL, etc.)
+        base_symbol = symbol[:3]
+        min_oi = None
+        try:
+            import config_futures
+            for key, cfg in getattr(config_futures, "FUTURES_CONFIGS", {}).items():
+                if key.replace("$N", "") == base_symbol:
+                    min_oi = cfg.get("min_oi", None)
+                    break
+        except Exception:
+            min_oi = None
+        
+        if not min_oi:
+            return True, "Sem requisito institucional configurado"
+        
+        # Obtém OI com fallbacks seguros
+        oi = 0.0
+        oi = float(getattr(info, "session_open_interest", 0) or 0)
+        if oi <= 0:
+            oi = float(getattr(info, "open_interest", 0) or 0)
+        if oi <= 0:
+            # Fallback aproximado: usa volume de barras recentes como proxy
+            try:
+                rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M15, 0, 20) or []
+                oi = float(sum(r.get("tick_volume", 0) for r in rates))
+            except Exception:
+                oi = 0.0
+        
+        if oi >= float(min_oi):
+            return True, "OK"
+        
+        missing = max(0.0, float(min_oi) - oi)
+        msg_console = (
+            f"\n{'='*40}\n"
+            f"💬 Motivo: Volume institucional insuficiente\n"
+            f"🔎 Ativo: {symbol}\n"
+            f"📊 OI Atual: {oi:.0f}\n"
+            f"📈 OI Mínimo: {float(min_oi):.0f}\n"
+            f"⚠️ Falta: {missing:.0f} contratos\n"
+            f"{'='*40}"
+        )
+        logger.info(msg_console)
+        print(msg_console)
+        return False, f"Volume institucional insuficiente: falta {missing:.0f} para OI mínimo"
+    
+    except Exception as e:
+        logger.warning(f"Erro na checagem de volume institucional {symbol}: {e}")
+        return True, "Ignorado (erro na checagem)"
+def validate_and_create_order(symbol: str, side: str, volume: float, 
+                               entry_price: float, sl: float, tp: float,
+                               use_kelly: bool = True) -> tuple[Optional[OrderParams], Optional[str]]:
+    """
     Factory function com validação e Kelly Criterion
     
     Returns:
@@ -555,6 +719,12 @@ def validate_and_create_order(symbol: str, side: str, volume: float,
         if not allowed_cooldown:
             log_trade_rejection(symbol, "CooldownFilter", cooldown_reason)
             return None, "🚫 Cooldown Ativo (Stop recente)"
+
+        # ✅ NOVO: Verificação de Volume Institucional (Open Interest) com mensagens detalhadas no console
+        ok_inst, inst_reason = check_institutional_volume(symbol, volume)
+        if not ok_inst:
+            log_trade_rejection(symbol, "InstitutionalVolume", inst_reason)
+            return None, inst_reason
 
         # 🔒 Limites diários por contagem (já existentes em utils)
         allowed_daily, daily_reason = utils.check_daily_symbol_limit(symbol)
@@ -567,6 +737,12 @@ def validate_and_create_order(symbol: str, side: str, volume: float,
         if not ok_money:
             log_trade_rejection(symbol, "DailyLossMoney", money_reason)
             return None, money_reason
+
+        # 🔒 Limite de Uso de Capital (35% Equity)
+        ok_capital, capital_reason = check_capital_usage_limit(symbol, volume, entry_price)
+        if not ok_capital:
+            log_trade_rejection(symbol, "CapitalUsageLimit", capital_reason)
+            return None, capital_reason
         # ✅ NOVO: Validação de spread antes de processar
         spread_ok, spread_reason = validate_spread_protection(symbol)
         if not spread_ok:
@@ -647,11 +823,8 @@ def check_reentry_after_profit(symbol: str, side: str, planned_volume: float) ->
             info = mt5.symbol_info(symbol)
             adj = planned_volume * 0.70
             if info:
-                if utils.is_future(symbol):
-                    adj = max(int(info.volume_min or 1), min(int(adj), int(info.volume_max or adj)))
-                else:
-                    adj = round(adj / 100) * 100
-                    adj = max(float(info.volume_min or 100.0), min(float(adj), float(info.volume_max or adj)))
+                # Futuros: Volume em contratos (inteiros)
+                adj = max(int(info.volume_min or 1), min(int(adj), int(info.volume_max or adj)))
             return True, float(adj), "OK"
         return False, 0.0, "Sinal ML insuficiente ou direção divergente"
     except Exception as e:

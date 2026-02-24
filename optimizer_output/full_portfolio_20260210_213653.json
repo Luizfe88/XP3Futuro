@@ -1,0 +1,26 @@
+{
+  "WIN$N": [
+    {
+      "strategy": "VOLATILITY_BREAKOUT",
+      "params": {
+        "rsi_low": 22,
+        "rsi_high": 74,
+        "adx_threshold": 22,
+        "sl_mult": 2.225609393547267,
+        "tp_mult": 1.6668362297015393,
+        "base_slippage": 0.00038578184624186296,
+        "volatility_multiplier": 0.6292142026516021,
+        "vwap_dist_thresh": 2.876447088874114
+      },
+      "metrics": {
+        "calmar": -0.5724832153075532,
+        "max_drawdown": 1.6781192407847216,
+        "profit_factor": 0.40700489513863164,
+        "win_rate": 0.3269230769230769,
+        "trades": 52,
+        "total_pnl": -20462.71754854285,
+        "relax_level": 2
+      }
+    }
+  ]
+}

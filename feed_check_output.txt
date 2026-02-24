@@ -1,0 +1,9 @@
+MT5.initialize: True
+terminal.connected: True
+terminal.trade_allowed: True
+WDOH26 | base=WDO | current=None | data=WDO$N | trade=WDOH26 | tick=5237.0000/5237.5000 | rows=300 | last_close=5237.0000 | rsi=36.4865 | adx=34.6541 | volx=0.5000 | err=None
+DOLH26 | base=DOL | current=None | data=DOL$N | trade=DOLH26 | tick=5237.0000/5237.5000 | rows=300 | last_close=5237.0000 | rsi=35.8209 | adx=36.1628 | volx=0.3400 | err=None
+WSPH26 | base=WSP | current=None | data=WSP$N | trade=WSPH26 | tick=6881.2500/6882.0000 | rows=300 | last_close=6882.0000 | rsi=70.1031 | adx=19.6570 | volx=0.2400 | err=None
+BGIH26 | base=BGI | current=None | data=BGI$N | trade=BGIH26 | tick=345.9500/346.0000 | rows=300 | last_close=346.0000 | rsi=27.9070 | adx=24.0364 | volx=0.4300 | err=None
+WING26 | base=WIN | current=None | data=WIN$N | trade=WING26 | tick=186330.0000/186335.0000 | rows=300 | last_close=186335.0000 | rsi=79.6804 | adx=17.7147 | volx=0.7000 | err=None
+INDG26 | base=IND | current=None | data=IND$N | trade=INDG26 | tick=186315.0000/186350.0000 | rows=300 | last_close=186285.0000 | rsi=82.2943 | adx=18.5266 | volx=0.5900 | err=None

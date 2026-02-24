@@ -1,7 +1,7 @@
 import ast
 from pathlib import Path
 
-BOT_FILE = Path("bot.py")
+BOT_FILE = Path("botfuturo.py")
 UTILS_FILE = Path("utils.py")
 
 def get_defined_functions(tree):
@@ -32,7 +32,7 @@ def main():
     imported_funcs = get_imported_utils_functions(bot_tree)
     called_funcs = get_utils_calls(bot_tree)
 
-    print("\n🧪 VALIDANDO CHAMADAS utils.py ↔ bot.py\n")
+    print("\n🧪 VALIDANDO CHAMADAS utils.py ↔ botfuturo.py\n")
 
     missing_imports = imported_funcs - utils_funcs
     missing_calls = called_funcs - utils_funcs

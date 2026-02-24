@@ -1,0 +1,5 @@
+Symbol: WIN
+Days: 90
+Total Trades: 57
+Win Rate: 49.12%
+Final Equity: R$ 124865.56

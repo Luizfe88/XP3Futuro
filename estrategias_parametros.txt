@@ -1,0 +1,21 @@
+Parâmetros das Estratégias:
+
+Estratégia: VOLATILITY_BREAKOUT
+- adx_threshold: (min: 15, max: 35)
+- sl_atr_multiplier: (sl_mult) (min: 1.0, max: 3.0)
+- tp_ratio: (tp_mult) (min: 1.0, max: 4.0)
+- base_slippage: (min: 0.0001, max: 0.001)
+- enable_shorts: Não definido no JSON (assumido como habilitado por padrão no código).
+- bb_period: Não aplicável a esta estratégia.
+- bb_std: Não aplicável a esta estratégia.
+
+---
+
+Estratégia: MEAN_REVERSION
+- bb_period: (min: 18, max: 30)
+- bb_std: (min: 2.0, max: 3.0)
+- adx_threshold: Não definido no JSON para esta estratégia. A lógica usa um valor fixo ou é implícita.
+- sl_atr_multiplier: (min: 1.0, max: 3.0)
+- tp_ratio: (min: 0.8, max: 2.5)
+- base_slippage: (min: 0.0001, max: 0.001)
+- enable_shorts: (min: 0, max: 1)

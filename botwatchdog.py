@@ -2,6 +2,7 @@
 
 import psutil
 import subprocess
+import sys
 import time
 import os
 import datetime
@@ -9,22 +10,38 @@ import platform
 import MetaTrader5 as mt5
 from pathlib import Path
 import psutil
+import logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(message)s",
+    handlers=[
+        logging.FileHandler("watchdog_debug.log", encoding="utf-8"),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
 
 # ==================== CONFIGURAÇÕES ====================
-BOT_SCRIPT = "bot.py"                  # Nome do seu script principal
+BOT_SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "botfuturo.py")
 LOG_FILE = "xp3_bot.log"               # Arquivo de log do bot
 MAX_INACTIVITY_SECONDS = 180           # 3 minutos sem log = suspeito
 CHECK_INTERVAL = 30                    # Verifica a cada 30s
 MT5_TIMEOUT_SECONDS = 10               # Timeout para testar MT5
 # ======================================================
 
+
+
 def is_bot_running():
     """Verifica se o processo do bot.py está ativo (exclui o watchdog)"""
+    current_dir = os.path.dirname(os.path.abspath(__file__))  # Pasta do watchdog (xp3future)
     for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
         try:
             if proc.info['cmdline']:
                 cmd = ' '.join(proc.info['cmdline'])
-                if 'python' in proc.info['name'].lower() and BOT_SCRIPT in cmd and 'watchdog.py' not in cmd:
+                # Verifica se é Python, tem bot.py, não é watchdog E está no diretório correto
+                if ('python' in proc.info['name'].lower() and 
+                    BOT_SCRIPT in cmd and 
+                    'watchdog.py' not in cmd and
+                    'xp3future' in cmd.lower()):  # CRÍTICO: apenas processos do xp3future
                     return proc.pid
         except (psutil.NoSuchProcess, psutil.AccessDenied):
             pass
@@ -58,12 +75,13 @@ def start_bot_in_new_window():
     system = platform.system()
     
     print(f"[{datetime.datetime.now()}] 🚀 Reiniciando bot em NOVA JANELA ({system})...")
+    logging.info("Start bot GUI: system=%s", system)
     
     if system == "Windows":
-        # Abre nova janela CMD e executa o bot
         subprocess.Popen([
-            "cmd.exe", "/c", "start", "cmd.exe", "/k", "python", BOT_SCRIPT
+            "cmd.exe", "/c", "start", "XP3 FUTURE BOT", "cmd.exe", "/k", sys.executable, BOT_SCRIPT
         ])
+        logging.info("Bot process started via cmd.exe start with visible window")
         
     elif system == "Linux":
         # Tenta vários terminais comuns (gnome, xfce, kde, etc.)
@@ -77,6 +95,7 @@ def start_bot_in_new_window():
         for term_cmd in terminals:
             try:
                 subprocess.Popen(term_cmd)
+                logging.info("Bot process started via terminal: %s", term_cmd[0])
                 return  # Sucesso → sai
             except FileNotFoundError:
                 continue
@@ -87,8 +106,10 @@ def start_bot_in_new_window():
             "osascript", "-e",
             f'tell app "Terminal" to do script "python3 {BOT_SCRIPT}"'
         ])
+        logging.info("Bot process started via osascript Terminal")
     else:
         print("⚠️ Sistema operacional não suportado para nova janela.")
+        logging.warning("Unsupported OS for visible GUI start")
 
 def main():
     print(f"[{datetime.datetime.now()}] 🐶 Watchdog iniciado - Monitorando {BOT_SCRIPT}")
