@@ -5834,6 +5834,11 @@ def fast_loop():
                             adx_min = p["parameters"].get("adx_threshold", 15.0)
                         else:
                             adx_min = p.get("adx_threshold", 15.0)
+                    
+                    # ⚠️ AJUSTE DE SENSIBILIDADE (Se otimização pediu > 20, respeita, senão 15)
+                    # Para regimes NEUTRAL, força um pouco menos de rigor se o score for alto
+                    if current_regime == "NEUTRAL" and adx_min > 18:
+                        adx_min = 18.0
 
                     # ✅ CALCULA SCORE COM REGIME E VOLATILIDADE
                     score = utils.calculate_signal_score(ind_data, regime=current_regime, adx_min=adx_min)
@@ -5854,10 +5859,14 @@ def fast_loop():
                         if ema_trend == "DOWN" and rsi > 65: forced_signal = True # Venda topo
                     
                     # Exceção ADX (Início de movimento) - Apenas se não for Reversão
+                    # Aceita ADX entre 15 e 20 se as médias cruzaram recentemente
                     ema_diff_pct = abs(ind_data["ema_fast"] - ind_data["ema_slow"]) / max(ind_data["close"], 1)
-                    adx_exception = (15 <= adx <= 20) and (ema_diff_pct > 0.0005) and (current_regime != "REVERSION")
+                    adx_exception = (15 <= adx <= adx_min) and (ema_diff_pct > 0.0005) and (current_regime != "REVERSION")
 
-                    if score >= config.MIN_SIGNAL_SCORE or forced_signal or adx_exception:
+                    # Se o score for muito alto (>65), aceitamos ADX um pouco menor (15)
+                    high_score_exception = (score >= 65 and adx >= 15)
+
+                    if score >= config.MIN_SIGNAL_SCORE or forced_signal or adx_exception or high_score_exception:
                         side = "BUY" if ema_trend == "UP" else "SELL"
                         
                         # 🛡️ FILTRO DE EXAUSTÃO (MEAN REVERSION) - LAND TRADING

@@ -253,3 +253,5 @@ Traceback (most recent call last):
              ^^^^^^^^^^^
 TypeError: 'NoneType' object is not subscriptable
 2026-02-25 09:30:00,652 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-25 09:47:00,989 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-25 09:59:53,619 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
