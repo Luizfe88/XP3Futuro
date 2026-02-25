@@ -219,6 +219,8 @@ KELLY_MIN_TRADES_FOR_CALC = 30  # Minimum trades to calculate dynamic Kelly
 MAX_ATR_PCT = 5.0  # Base ATR limit (5.0% for blue chips)
 ADAPTIVE_ATR_FILTER = True  # Enable adaptive ATR based on ADX
 MAX_ATR_PCT_HIGH_ADX = 7.0  # Allow up to 7% ATR when ADX > 40 (strong trend)
+MIN_VOLATILITY_TICKS = 12  # Mínimo de ticks de ATR para operar (evita custos > lucro)
+
 
 # ===========================
 # 🛡️ CONTROLES COMERCIAIS

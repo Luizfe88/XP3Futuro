@@ -2940,15 +2940,15 @@ def calculate_daily_dd() -> float:
 # =========================================================
 # SCORE FINAL
 # =========================================================
-def calculate_signal_score(ind: dict) -> float:
+def calculate_signal_score(ind: dict, regime: str = "NEUTRAL", adx_min: float = 15.0) -> float:
     """
-    ✅ VERSÃO v5.5 (AGRESSIVA)
-    Score rebalanceado para validação:
-    - Tendência EMA: +35 pts
-    - RSI Saudável (30-70): +20 pts
-    - ADX > 15: +20 pts
-    - Volume Ratio > 0.4: +25 pts
-    - MACD Bullish/Bearish: +10 pts (Bônus)
+    ✅ VERSÃO v5.6 (ADAPTATIVA)
+    Score dinâmico baseado no regime de mercado e custo operacional.
+    
+    Args:
+        ind: Dicionário de indicadores
+        regime: "TREND", "REVERSION", "NEUTRAL"
+        adx_min: Threshold mínimo de ADX (vem do sistema adaptativo)
     """
     if not isinstance(ind, dict) or ind.get("error"):
         return 0.0
@@ -2956,6 +2956,7 @@ def calculate_signal_score(ind: dict) -> float:
     score = 0.0
     score_log = {}
 
+    symbol = ind.get("symbol", "")
     rsi = ind.get("rsi", 50)
     adx = ind.get("adx", 0)
     volume_ratio = ind.get("volume_ratio", 0.0)
@@ -2963,27 +2964,86 @@ def calculate_signal_score(ind: dict) -> float:
     ema_slow = ind.get("ema_slow", 0)
     macd = ind.get("macd", 0)
     macd_signal = ind.get("macd_signal", 0)
+    atr_real = ind.get("atr_real", 0.0)
 
-    # 1. TENDÊNCIA EMA (Prioridade Máxima: 35 pts)
-    if ema_fast > 0 and ema_slow > 0:
+    # 0. ⛔ FILTRO DE CUSTO OPERACIONAL (Dead Market)
+    # Se a volatilidade (ATR) for menor que X ticks, o lucro não paga o spread/taxas.
+    try:
+        min_ticks = getattr(config, "MIN_VOLATILITY_TICKS", 12)
+        if symbol:
+            tick_size = mt5.symbol_info(symbol).point if mt5.symbol_info(symbol) else 0.0
+            if tick_size > 0:
+                min_atr_val = min_ticks * tick_size
+                if atr_real < min_atr_val:
+                    # Penalidade severa ou retorno zero
+                    return 0.0
+    except Exception:
+        pass
+
+    # Lógica baseada no REGIME
+    if regime == "TREND":
+        # 🚀 REGIME DE TENDÊNCIA
+        # Foca em cruzamento de médias e ADX forte
+        
+        # 1. TENDÊNCIA EMA (Peso Aumentado: 40 pts)
+        if ema_fast > 0 and ema_slow > 0:
+            if ema_fast > ema_slow:
+                score += 40
+                score_log["EMA_TREND_STRONG"] = 40
+            else:
+                score -= 30 # Penaliza mais forte contra a tendência
+                score_log["EMA_COUNTER_TREND"] = -30
+
+        # 2. RSI (Mais permissivo: aceita até 80 em tendência forte)
+        if 40 <= rsi <= 80:
+            score += 15
+            score_log["RSI_TREND_OK"] = 15
+            
+        # 3. ADX (Peso Aumentado: 25 pts)
+        if adx >= adx_min:
+            score += 25
+            score_log["ADX_STRONG"] = 25
+            
+    elif regime == "REVERSION":
+        # 🔄 REGIME DE REVERSÃO (Lateral)
+        # Foca em RSI esticado e ignora médias longas
+        
+        # 1. TENDÊNCIA EMA (Peso Reduzido: 15 pts)
+        # Em lateralidade, médias cruzam toda hora (ruído)
+        if ema_fast > ema_slow:
+            score += 15
+            score_log["EMA_WEAK"] = 15
+            
+        # 2. RSI (Foca em reversão à média: 30-70 é "meio de campo")
+        # Se RSI cruzou 30 pra cima ou 70 pra baixo recentemente (difícil ver aqui sem histórico)
+        # Por enquanto, mantemos lógica segura: operar "meio" é seguro, extremos perigosos.
+        if 35 <= rsi <= 65:
+            score += 30
+            score_log["RSI_MEAN_REVERSION"] = 30
+            
+        # 3. ADX (Deve ser BAIXO em reversão)
+        if adx < 25:
+            score += 20
+            score_log["ADX_LOW_REVERSION"] = 20
+            
+    else:
+        # 😐 NEUTRAL (Lógica Padrão v5.5)
         if ema_fast > ema_slow:
             score += 35
             score_log["EMA_TREND_OK"] = 35
         else:
-            score -= 20 # Penaliza contra-tendência
+            score -= 20
             score_log["EMA_COUNTER_TREND"] = -20
+            
+        if 30 <= rsi <= 70:
+            score += 20
+            score_log["RSI_HEALTHY"] = 20
+            
+        if adx >= adx_min:
+            score += 20
+            score_log["ADX_OK"] = 20
 
-    # 2. RSI SAUDÁVEL (30-70: 20 pts)
-    if 30 <= rsi <= 70:
-        score += 20
-        score_log["RSI_HEALTHY"] = 20
-
-    # 3. ADX > 15 (20 pts)
-    if adx >= 15:
-        score += 20
-        score_log["ADX_OK"] = 20
-
-    # 4. VOLUME RATIO > 0.4 (25 pts)
+    # 4. VOLUME RATIO > 0.4 (25 pts) - Sempre importante
     if volume_ratio >= 0.4:
         score += 25
         score_log["VOLUME_OK"] = 25
@@ -3001,6 +3061,25 @@ def calculate_signal_score(ind: dict) -> float:
             if ml_pred >= 0.65:
                 score += 10
                 score_log["ML_BOOST"] = 10
+    except Exception:
+        pass
+
+    # 7. FLUXO DE ORDENS (Tape Reading)
+    try:
+        if ind.get("symbol"):
+            flow = analyze_flow_sentiment(ind["symbol"], 30)
+            sentiment = flow.get("sentiment", "NEUTRAL")
+            
+            # Bonifica se fluxo concorda com a tendência
+            if sentiment == "BULLISH" and ema_fast > ema_slow:
+                score += 15
+                score_log["FLOW_BULLISH"] = 15
+            elif sentiment == "BEARISH" and ema_fast < ema_slow:
+                score += 15
+                score_log["FLOW_BEARISH"] = 15
+            elif sentiment != "NEUTRAL":
+                score -= 25
+                score_log["FLOW_DIVERGENCE"] = -25
     except Exception:
         pass
 
@@ -3096,6 +3175,74 @@ def update_symbol_weights(symbol, sector, score_log, trade_result):
 
 
 _bot_instance = None
+
+# =========================================================
+# 📊 ANÁLISE DE FLUXO (TAPE READING)
+# =========================================================
+def analyze_flow_sentiment(symbol: str, duration_seconds: int = 60) -> dict:
+    """
+    Analisa o fluxo de agressão (Tape Reading) nos últimos N segundos.
+    Retorna um dicionário com métricas de fluxo.
+    """
+    try:
+        # Pega ticks reais (com flags de agressão)
+        now = datetime.now()
+        ticks = mt5.copy_ticks_range(
+            symbol, 
+            now - timedelta(seconds=duration_seconds), 
+            now, 
+            mt5.COPY_TICKS_ALL
+        )
+        
+        if ticks is None or len(ticks) < 10:
+            return {"sentiment": "NEUTRAL", "aggression_delta": 0, "flow_ratio": 0.5}
+            
+        # Converte para DataFrame
+        df = pd.DataFrame(ticks)
+        
+        # Filtra agressões (TICK_FLAG_BUY = 32, TICK_FLAG_SELL = 64)
+        # Nota: As flags podem variar, mas geralmente:
+        # Buy: (flags & mt5.TICK_FLAG_BUY) == mt5.TICK_FLAG_BUY
+        # Sell: (flags & mt5.TICK_FLAG_SELL) == mt5.TICK_FLAG_SELL
+        
+        buy_aggression_vol = 0.0
+        sell_aggression_vol = 0.0
+        
+        # Iteração otimizada
+        buy_mask = (df['flags'] & mt5.TICK_FLAG_BUY) == mt5.TICK_FLAG_BUY
+        sell_mask = (df['flags'] & mt5.TICK_FLAG_SELL) == mt5.TICK_FLAG_SELL
+        
+        if 'volume' in df.columns:
+            buy_aggression_vol = df.loc[buy_mask, 'volume'].sum()
+            sell_aggression_vol = df.loc[sell_mask, 'volume'].sum()
+            
+        total_aggression = buy_aggression_vol + sell_aggression_vol
+        
+        if total_aggression == 0:
+            return {"sentiment": "NEUTRAL", "aggression_delta": 0, "flow_ratio": 0.5}
+            
+        aggression_delta = buy_aggression_vol - sell_aggression_vol
+        flow_ratio = buy_aggression_vol / total_aggression # > 0.5 = Comprador
+        
+        sentiment = "NEUTRAL"
+        if flow_ratio > 0.60:
+            sentiment = "BULLISH"
+        elif flow_ratio < 0.40:
+            sentiment = "BEARISH"
+            
+        # Calcula aceleração do fluxo (últimos 10s vs média)
+        # TODO: Implementar se necessário
+        
+        return {
+            "sentiment": sentiment,
+            "aggression_delta": aggression_delta,
+            "flow_ratio": flow_ratio,
+            "total_volume": total_aggression
+        }
+        
+    except Exception as e:
+        logger.error(f"Erro na análise de fluxo {symbol}: {e}")
+        return {"sentiment": "NEUTRAL", "aggression_delta": 0, "flow_ratio": 0.5}
 
 def get_telegram_bot():
     global _bot_instance

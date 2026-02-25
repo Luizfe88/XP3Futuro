@@ -130,21 +130,27 @@ def _calculate_current_atr_m15(symbol="IBOV", period=14):
 # 2. CAMADA CÉREBRO: Análise de Regime
 # =============================================================================
 
+current_regime = "NEUTRAL"  # Variável global para acesso externo
+
 def analyze_market_regime():
     """
     Analisa os dados da camada Sensor para detectar o regime de mercado.
     Retorna: "TREND", "REVERSION" ou "NEUTRAL"
     """
+    global current_regime
+    
     metrics = _sensor_data_cache["metrics"]
-    volatility_ratio = metrics["volatility"]["ratio"]
+    volatility_ratio = metrics["volatility"].get("ratio", 1.0)
 
     # Lógica de decisão (exemplo inicial)
-    if volatility_ratio > 1.5:
-        return "TREND"
+    if volatility_ratio > 1.2:  # Ajustado de 1.5 para 1.2 (mais sensível)
+        current_regime = "TREND"
     elif volatility_ratio < 0.8:
-        return "REVERSION"
+        current_regime = "REVERSION"
     else:
-        return "NEUTRAL"
+        current_regime = "NEUTRAL"
+        
+    return current_regime
 
 # =============================================================================
 # 3. CAMADA MECÂNICO: Ajuste de Parâmetros

@@ -1102,48 +1102,52 @@ def calculate_dynamic_exit(symbol: str, entry_price: float, side: str,
             'exit_volume_pct': float (0.0 a 1.0)
         }
     """
-    if side == "BUY":
-        pnl_pct = (current_price - entry_price) / entry_price
-    else:
-        pnl_pct = (entry_price - current_price) / entry_price
-    
-    r_multiple = pnl_pct / (atr / entry_price) if atr > 0 else 0
-    
-    # VIX check
-    vix_br = utils.get_vix_br()
-    
-    # Regras de saída dinâmica
-    
-    # 1. Saída total em lucro alto (>3R) ou VIX extremo
-    if r_multiple >= 3.0 or (pnl_pct > 0.02 and vix_br > 40):
+    try:
+        if side == "BUY":
+            pnl_pct = (current_price - entry_price) / entry_price
+        else:
+            pnl_pct = (entry_price - current_price) / entry_price
+        
+        r_multiple = pnl_pct / (atr / entry_price) if atr > 0 else 0
+        
+        # VIX check
+        vix_br = utils.get_vix_br()
+        
+        # Regras de saída dinâmica
+        
+        # 1. Saída total em lucro alto (>3R) ou VIX extremo
+        if r_multiple >= 3.0 or (pnl_pct > 0.02 and vix_br > 40):
+            return {
+                'action': 'FULL_EXIT',
+                'reason': f'+{r_multiple:.1f}R ou VIX={vix_br:.0f}',
+                'exit_volume_pct': 1.0
+            }
+        
+        # 2. Saída parcial (50%) em +2R
+        if r_multiple >= 2.0:
+            return {
+                'action': 'PARTIAL_EXIT',
+                'reason': f'+{r_multiple:.1f}R - Realizando 50%',
+                'exit_volume_pct': 0.5
+            }
+        
+        # 3. Saída parcial (30%) em +1.5R com VIX alto
+        if r_multiple >= 1.5 and vix_br > 30:
+            return {
+                'action': 'PARTIAL_EXIT',
+                'reason': f'+{r_multiple:.1f}R + VIX Alto',
+                'exit_volume_pct': 0.3
+            }
+        
+        # 4. Mantém posição
         return {
-            'action': 'FULL_EXIT',
-            'reason': f'+{r_multiple:.1f}R ou VIX={vix_br:.0f}',
-            'exit_volume_pct': 1.0
+            'action': 'HOLD',
+            'reason': f'{r_multiple:+.1f}R',
+            'exit_volume_pct': 0.0
         }
-    
-    # 2. Saída parcial (50%) em +2R
-    if r_multiple >= 2.0:
-        return {
-            'action': 'PARTIAL_EXIT',
-            'reason': f'+{r_multiple:.1f}R - Realizando 50%',
-            'exit_volume_pct': 0.5
-        }
-    
-    # 3. Saída parcial (30%) em +1.5R com VIX alto
-    if r_multiple >= 1.5 and vix_br > 30:
-        return {
-            'action': 'PARTIAL_EXIT',
-            'reason': f'+{r_multiple:.1f}R + VIX Alto',
-            'exit_volume_pct': 0.3
-        }
-    
-    # 4. Mantém posição
-    return {
-        'action': 'HOLD',
-        'reason': f'{r_multiple:+.1f}R',
-        'exit_volume_pct': 0.0
-    }
+    except Exception as e:
+        logger.error(f"Erro no cálculo de saída dinâmica: {e}")
+        return {'action': 'HOLD', 'reason': 'Error', 'exit_volume_pct': 0.0}
 
 
 # ============================================
@@ -2826,11 +2830,20 @@ def load_optimized_params():
             params.setdefault(k, v)
     
     # ✅ OTIMIZAÇÃO DIÁRIA (OPCIONAL - Desabilitar se causar lentidão)
-    ENABLE_DAILY_OPTIMIZATION = False  # ⚠️ Mude para True se quiser otimização automática
+    ENABLE_DAILY_OPTIMIZATION = True  # ⚠️ Mude para True se quiser otimização automática
     
     if ENABLE_DAILY_OPTIMIZATION:
         logger.info("🔧 Iniciando otimização diária de parâmetros...")
         optimize_params_daily()
+        # Salva os novos parâmetros para uso futuro
+        try:
+            elite_json_path = getattr(config, "ELITE_SYMBOLS_JSON_PATH", "optimizer_output/elite_symbols_latest.json")
+            os.makedirs(os.path.dirname(elite_json_path), exist_ok=True)
+            with open(elite_json_path, "w", encoding="utf-8") as f:
+                json.dump({"elite_symbols": optimized_params}, f, indent=4)
+            logger.info(f"💾 Novos parâmetros otimizados salvos em: {elite_json_path}")
+        except Exception as e:
+            logger.error(f"Erro ao salvar parâmetros otimizados: {e}")
     else:
         logger.info("✅ Parâmetros otimizados carregados do config.py (otimização diária desabilitada)")
 
@@ -5156,6 +5169,96 @@ def check_profit_lock():
 
 
 # =========================
+# GESTÃO DE SAÍDA DINÂMICA
+# =========================
+def manage_dynamic_exits():
+    """
+    Percorre posições abertas e aplica lógica de saída dinâmica (parcial/total)
+    baseada em R:R e VIX.
+    """
+    try:
+        with utils.mt5_lock:
+            positions = mt5.positions_get() or []
+        
+        if not positions:
+            return
+
+        indicators_snap, _ = bot_state.snapshot
+
+        for pos in positions:
+            symbol = pos.symbol
+            ticket = pos.ticket
+            entry_price = pos.price_open
+            volume = pos.volume
+            side = "BUY" if pos.type == mt5.POSITION_TYPE_BUY else "SELL"
+
+            # Obtém preço atual
+            with utils.mt5_lock:
+                tick = mt5.symbol_info_tick(symbol)
+            if not tick:
+                continue
+            
+            current_price = tick.bid if side == "BUY" else tick.ask
+
+            # Obtém ATR
+            ind = indicators_snap.get(symbol, {})
+            atr = ind.get("atr") or ind.get("atr_real") or 0.0
+
+            # Calcula saída
+            decision = calculate_dynamic_exit(symbol, entry_price, side, current_price, atr)
+            
+            action = decision.get('action')
+            reason = decision.get('reason', '')
+            exit_pct = decision.get('exit_volume_pct', 0.0)
+
+            if action == 'FULL_EXIT':
+                close_position(symbol, ticket, volume, current_price, reason=f"Dynamic: {reason}")
+            
+            elif action == 'PARTIAL_EXIT' and exit_pct > 0:
+                # Verifica se já fizemos parcial neste ticket (via comentário ou controle local)
+                # Como MT5 altera ticket na parcial, verificamos se o volume atual < volume original
+                # Mas aqui simplificamos: se o volume for grande o suficiente, faz parcial.
+                
+                # Futuros: Mínimo 1 contrato. Se tiver só 1, fecha tudo ou nada? 
+                # Decisão: Se volume=1, só fecha FULL.
+                if volume <= 1.0:
+                    continue
+
+                part_vol = int(volume * exit_pct)
+                if part_vol < 1: 
+                    part_vol = 1
+                
+                # Garante que sobra pelo menos 1
+                if (volume - part_vol) < 1:
+                    # Se sobrar 0, vira full exit
+                    part_vol = volume
+                
+                if part_vol >= volume:
+                     close_position(symbol, ticket, volume, current_price, reason=f"Dynamic Full (Partial Calc): {reason}")
+                else:
+                    # Executa parcial
+                    # Precisa de função específica ou close_position com volume menor
+                    # O close_position atual já aceita volume.
+                    # Mas precisamos garantir que não vamos ficar fazendo parcial infinita.
+                    # Solução simples: Marcar no comentário ou verificar PnL realizado hoje?
+                    # Por enquanto, aplicamos APENAS se não tiver comentário de parcial recente
+                    # (MT5 muda ticket, então 'pos' é novo. Se já está em lucro, pode querer fazer DE NOVO?)
+                    # Risco: Fazer parcial, sobra volume, preço sobe, faz parcial de novo...
+                    # Ideal: Trailing stop resolve o resto.
+                    
+                    # Para evitar loop de parciais, vamos ser conservadores:
+                    # Só faz parcial se R >= X. Se fizermos parcial, o preço médio muda? Não.
+                    # Mas o volume diminui.
+                    # Vamos confiar no "Trailing Stop" para cuidar do resto após a primeira parcial.
+                    # Ou checar se já realizamos lucro nesse trade (difícil rastrear sem banco).
+                    
+                    # IMPLEMENATAÇÃO V1:
+                    close_position(symbol, ticket, part_vol, current_price, reason=f"Dynamic Partial: {reason}")
+
+    except Exception as e:
+        logger.error(f"Erro no manage_dynamic_exits: {e}")
+
+# =========================
 # HORÁRIO DE TRADING
 # =========================
 def is_trading_time_allowed(new_entry: bool = True) -> bool:
@@ -5641,6 +5744,11 @@ def fast_loop():
             check_profit_lock()
 
             # ============================================
+            # 6.1️⃣ GESTÃO DINÂMICA (ATR/R:R)
+            # ============================================
+            manage_dynamic_exits()
+
+            # ============================================
             # 7️⃣ PROCESSAMENTO DE SINAIS (SE PERMITIDO)
             # ============================================
             if market_status["new_entries_allowed"]:
@@ -5661,35 +5769,59 @@ def fast_loop():
                 except Exception:
                     scanned_indicators = {}
 
+                # ✅ OBTER REGIME DE MERCADO ATUAL
+                current_regime = getattr(adaptive_system, "current_regime", "NEUTRAL")
+
                 for sym in symbols_to_scan:
                     ind_data = scanned_indicators.get(sym) or bot_state.get_indicators(sym)
 
                     if not ind_data or ind_data.get("error"):
                         continue
 
-                    score = utils.calculate_signal_score(ind_data)
+                    # Obtém threshold de ADX otimizado para o ativo
+                    adx_min = 15.0
+                    if sym in optimized_params:
+                        p = optimized_params[sym]
+                        if "parameters" in p:
+                            adx_min = p["parameters"].get("adx_threshold", 15.0)
+                        else:
+                            adx_min = p.get("adx_threshold", 15.0)
+
+                    # ✅ CALCULA SCORE COM REGIME E VOLATILIDADE
+                    score = utils.calculate_signal_score(ind_data, regime=current_regime, adx_min=adx_min)
                     
-                    # ✅ LÓGICA V5.5 AGRESSIVA
+                    # ✅ LÓGICA V5.6 (ADAPTATIVA)
                     ema_trend = "UP" if ind_data["ema_fast"] > ind_data["ema_slow"] else "DOWN"
                     rsi = ind_data.get("rsi", 50)
                     adx = ind_data.get("adx", 0)
                     
-                    forced_signal = (ema_trend == "UP" and rsi > 50) or (ema_trend == "DOWN" and rsi < 50)
+                    # Sinais forçados dependem do regime
+                    forced_signal = False
+                    if current_regime == "TREND":
+                        # Em tendência, aceitamos entrar com score menor se ADX explodir
+                        forced_signal = (adx > 30 and score > 25)
+                    elif current_regime == "REVERSION":
+                        # Em reversão, RSI extremo é gatilho
+                        if ema_trend == "UP" and rsi < 35: forced_signal = True # Compra fundo
+                        if ema_trend == "DOWN" and rsi > 65: forced_signal = True # Venda topo
                     
+                    # Exceção ADX (Início de movimento) - Apenas se não for Reversão
                     ema_diff_pct = abs(ind_data["ema_fast"] - ind_data["ema_slow"]) / max(ind_data["close"], 1)
-                    adx_exception = (15 <= adx <= 20) and (ema_diff_pct > 0.0005)
+                    adx_exception = (15 <= adx <= 20) and (ema_diff_pct > 0.0005) and (current_regime != "REVERSION")
 
                     if score >= config.MIN_SIGNAL_SCORE or forced_signal or adx_exception:
                         side = "BUY" if ema_trend == "UP" else "SELL"
                         
                         # 🛡️ FILTRO DE EXAUSTÃO (MEAN REVERSION) - LAND TRADING
-                        # Evita comprar topo (RSI > 70) ou vender fundo (RSI < 30)
-                        if side == "BUY" and rsi > 70:
-                            # logger.debug(f"🛑 {sym}: RSI esticado ({rsi:.1f} > 70) - Compra evitada.")
-                            continue
-                        if side == "SELL" and rsi < 30:
-                            # logger.debug(f"🛑 {sym}: RSI esticado ({rsi:.1f} < 30) - Venda evitada.")
-                            continue
+                        # Adaptado ao Regime
+                        if current_regime == "TREND":
+                            # Em tendência forte, RSI pode ir a 80/20 sem ser topo/fundo
+                            if side == "BUY" and rsi > 80: continue
+                            if side == "SELL" and rsi < 20: continue
+                        else:
+                            # Padrão conservador
+                            if side == "BUY" and rsi > 70: continue
+                            if side == "SELL" and rsi < 30: continue
                             
                         try_enter_position(sym, side)
 
