@@ -2970,39 +2970,59 @@ def optimize_params_daily():
     start_time = time.time()
     optimized_count = 0
     
-    # Otimização apenas para futuros B3
-    symbols_to_optimize = [
-        "WIN$N",   # Mini Índice
-        "WDO$N",   # Mini Dólar
-        "IND$N",   # Índice Bovespa Cheio
-        "WSP$N",   # Micro S&P
-        "IND$N",
-        "WDO$N",
-        "DOL$N",
-        "WSP$N",
-        "CCM$N",
-        "BGI$N",
-        "ICF$N",
-        "SFI$N",
-        "DI1$N",
-        "BIT$N",
-        "T10$N"
+    # 1. Obter lista de ativos REAIS (resolvidos)
+    # A lista symbols_to_optimize contém sufixos genéricos ($N)
+    # Precisamos convertê-los para os contratos atuais (ex: WINJ26)
+    
+    raw_symbols = [
+        "WIN", "WDO", "IND", "DOL", "WSP", 
+        "CCM", "BGI", "ICF", "SFI", "DI1", "BIT"
     ]
     
-    for sym in symbols_to_optimize:
+    # Remove duplicatas e resolve
+    resolved_symbols = []
+    for base in raw_symbols:
+        resolved = utils.resolve_current_symbol(base)
+        if resolved and resolved not in resolved_symbols:
+            resolved_symbols.append(resolved)
+            
+    if not resolved_symbols:
+        logger.warning("⚠️ Nenhum ativo resolvido para otimização! Verifique conexão/market watch.")
+        return
+    
+    logger.info(f"🔧 Otimizando {len(resolved_symbols)} ativos: {resolved_symbols}")
+    
+    for sym in resolved_symbols:
         try:
+            # Garante que está no Market Watch
+            if not mt5.symbol_select(sym, True):
+                logger.warning(f"⚠️ {sym}: Não foi possível selecionar no Market Watch")
+                continue
+                
             # Land Trading: Aumentado para 2500 candles para melhor treino ML
-            df = safe_copy_rates(sym, TIMEFRAME_BASE, 2500)
-            if df is None or len(df) < 100:
-                logger.debug(f"⏭️ {sym}: Dados insuficientes")
+            df = utils.safe_copy_rates(sym, TIMEFRAME_BASE, 2500)
+            
+            if df is None or len(df) < 200: # Mínimo 200 candles para treinar algo útil
+                logger.debug(f"⏭️ {sym}: Dados insuficientes ({len(df) if df is not None else 0} candles)")
                 continue
             
+            # Chama o otimizador
+            logger.info(f"⏳ Otimizando {sym}...")
             optimized = ml_optimizer.optimize(df, sym)
             
             if optimized:
+                # Salva usando a chave genérica (para persistência) E a específica
+                # O bot usa optimized_params.keys() para escanear, então precisamos do símbolo REAL
                 optimized_params[sym] = optimized
+                
+                # Opcional: Salvar também com chave genérica se necessário
+                # base = utils.get_base_symbol(sym)
+                # optimized_params[f"{base}$N"] = optimized
+                
                 optimized_count += 1
                 logger.info(f"✅ {sym}: Parâmetros otimizados aplicados")
+            else:
+                logger.warning(f"⚠️ {sym}: Otimizador retornou vazio")
             
         except Exception as e:
             logger.error(f"Erro ao otimizar {sym}: {e}")
@@ -3010,7 +3030,7 @@ def optimize_params_daily():
     
     elapsed = time.time() - start_time
     logger.info(
-        f"✅ Otimização concluída: {optimized_count}/{len(symbols_to_optimize)} ativos "
+        f"✅ Otimização concluída: {optimized_count}/{len(resolved_symbols)} ativos "
         f"em {elapsed:.1f}s"
     )
 
@@ -5387,29 +5407,8 @@ def log_trade_to_txt(
 # =========================
 # DASHBOARD
 # =========================
-# ============================================
-# IMPORTS NECESSÁRIOS (Adicione no topo do bot.py)
-# ============================================
-try:
-    from rich.console import Console
-    from rich.live import Live
-    from rich.table import Table
-    from rich.layout import Layout
-    from rich.panel import Panel
-    from rich.text import Text
-    from rich.style import Style
-    from rich import box
-    console = Console()
-except ImportError:
-    console = None
-    Live = None
-    # Fallback se não tiver rich instalado
-    print("⚠️ Biblioteca 'rich' não instalada. Instale com: pip install rich")
 
 # ============================================
-# PAINEL (VERSÃO RICH - ESTILO FOREX)
-# ============================================
-# ============================================
 # IMPORTS NECESSÁRIOS (Adicione no topo do bot.py)
 # ============================================
 try:
@@ -5426,7 +5425,7 @@ except ImportError:
     console = None
     Live = None
     # Fallback se não tiver rich instalado
-    print("⚠️ Biblioteca 'rich' não instalada. Instale com: pip install rich")
+    # print("⚠️ Biblioteca 'rich' não instalada. Instale com: pip install rich") # Silenciado para evitar spam
 
 # ============================================
 # PAINEL (VERSÃO RICH )

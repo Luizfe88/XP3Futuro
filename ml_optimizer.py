@@ -445,4 +445,125 @@ class EnsembleOptimizer:
         self.force_save()
 
     def optimize(self, df, symbol: str) -> Optional[Dict[str, Any]]:
-        return None
+        """
+        Otimiza limiares de trading (ADX, RSI, EMAs) usando Random Search simples.
+        Maximiza: Total Profit * Win Rate
+        """
+        try:
+            if df is None or len(df) < 100:
+                return None
+                
+            # Prepara dados (indicadores)
+            # Assume que df já tem OHLCV
+            # Recalcula indicadores básicos se não existirem
+            # Para otimização rápida, calculamos indicadores 'on-the-fly' ou pré-calculamos faixas?
+            # Melhor pré-calcular colunas fixas
+            
+            import pandas as pd
+            import pandas_ta as ta
+            
+            data = df.copy()
+            
+            # Garante colunas de indicadores base
+            # EMAs variadas para seleção
+            for p in [9, 21, 50, 200]:
+                data[f"EMA_{p}"] = ta.ema(data['close'], length=p)
+                
+            data["RSI"] = ta.rsi(data['close'], length=14)
+            adx_df = ta.adx(data['high'], data['low'], data['close'], length=14)
+            if adx_df is not None and not adx_df.empty:
+                data["ADX"] = adx_df[adx_df.columns[0]] # ADX_14
+            else:
+                data["ADX"] = 0
+                
+            data.dropna(inplace=True)
+            if len(data) < 50:
+                return None
+                
+            # Define espaço de busca
+            param_grid = {
+                "adx_threshold": [15, 20, 25, 30, 35],
+                "rsi_low": [25, 30, 35, 40],
+                "rsi_high": [60, 65, 70, 75],
+                "ema_short": [9, 21], # Simplificado
+                "ema_long": [50, 200], # Simplificado
+                "tp_ratio": [1.5, 2.0, 3.0],
+                "sl_atr_mult": [1.5, 2.0, 2.5]
+            }
+            
+            best_score = -float('inf')
+            best_params = {}
+            
+            # Random Search (30 iterações)
+            import random
+            for _ in range(30):
+                # Amostra parâmetros
+                curr_params = {k: random.choice(v) for k, v in param_grid.items()}
+                
+                # Simula estratégia (Vetorizada seria ideal, mas iterativa é mais fácil de implementar rápido)
+                # Vamos fazer uma simulação simplificada vetorizada
+                
+                # Sinais
+                ema_s = data[f"EMA_{curr_params['ema_short']}"]
+                ema_l = data[f"EMA_{curr_params['ema_long']}"]
+                
+                trend_up = ema_s > ema_l
+                trend_down = ema_s < ema_l
+                
+                adx_ok = data["ADX"] > curr_params['adx_threshold']
+                rsi_buy = data["RSI"] < curr_params['rsi_high'] # Não comprado
+                rsi_sell = data["RSI"] > curr_params['rsi_low'] # Não vendido
+                
+                # Entradas (Close > Open para simplificar 'candle verde')
+                # Na verdade, o bot entra no tick. Aqui simulamos no fechamento do candle.
+                
+                # Shift(1) para não olhar o futuro (entra na abertura do candle seguinte ao sinal)
+                entries_long = (trend_up & adx_ok & rsi_buy).shift(1).fillna(False)
+                entries_short = (trend_down & adx_ok & rsi_sell).shift(1).fillna(False)
+                
+                # Retornos (simplificado: Close - Open do candle seguinte)
+                # Real: (Close_t+1 - Open_t+1)
+                # Aqui usamos log returns do candle onde estaríamos posicionados
+                
+                returns = np.log(data['close'] / data['close'].shift(1))
+                
+                # PnL da estratégia
+                # Se entry_long no candle T, pegamos retorno do candle T
+                # entries_long já tem shift, então alinha com returns
+                
+                strategy_returns = pd.Series(0.0, index=data.index)
+                strategy_returns[entries_long] = returns[entries_long]
+                strategy_returns[entries_short] = -returns[entries_short]
+                
+                # Métricas
+                total_return = strategy_returns.sum()
+                wins = (strategy_returns > 0).sum()
+                trades = (strategy_returns != 0).sum()
+                
+                if trades < 5:
+                    continue
+                    
+                win_rate = wins / trades
+                score = total_return * win_rate # Score simples
+                
+                if score > best_score:
+                    best_score = score
+                    best_params = curr_params
+            
+            if not best_params:
+                # Retorna padrões se falhar
+                return {
+                    "adx_threshold": 20,
+                    "rsi_low": 30,
+                    "rsi_high": 70,
+                    "ema_short": 9,
+                    "ema_long": 21,
+                    "tp_ratio": 2.0,
+                    "sl_atr_mult": 2.0
+                }
+                
+            return best_params
+            
+        except Exception as e:
+            logger.error(f"Erro na otimização de {symbol}: {e}")
+            return None

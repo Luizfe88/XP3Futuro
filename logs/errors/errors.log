@@ -243,3 +243,13 @@ Traceback (most recent call last):
   File "C:\Users\luizf\Documents\xp3future\bot.py", line 2905, in _strict_should_enter
 AttributeError: 'str' object has no attribute 'close'
 2026-02-25 09:10:22,410 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-25 09:17:41,645 | ERROR | bot | Erro crítico no fast_loop: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5745, in fast_loop
+    check_for_circuit_breaker()
+    
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3102, in build_portfolio_and_top15
+    if not _first_build_done:
+             ^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2026-02-25 09:30:00,652 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
