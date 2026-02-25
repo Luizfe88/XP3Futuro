@@ -1074,3 +1074,11 @@
 2026-02-23 09:01:20,569 - utils - INFO - ✅ Redis conectado - cache ativado
 2026-02-23 09:01:20,570 - utils - INFO - ✅ Dados anti-chop carregados
 2026-02-23 09:01:20,571 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-25 08:38:13,859 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-25 08:38:18,221 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-25 08:38:18,222 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-25 08:38:18,223 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-02-25 08:50:49,375 - news_calendar - INFO - [OK] news_calendar.py carregado com sucesso
+2026-02-25 08:50:53,576 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-02-25 08:50:53,578 - utils - INFO - ✅ Dados anti-chop carregados
+2026-02-25 08:50:53,579 - utils - INFO - 🔄 Novo dia detectado - resetando limites

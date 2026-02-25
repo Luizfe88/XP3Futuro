@@ -2893,33 +2893,73 @@ def _get_strict_params(symbol: str) -> dict:
     return out
 
 def _strict_should_enter(symbol: str, side: str) -> bool:
-    sp = _get_strict_params(symbol)
     try:
-        n = max(100, int(sp["bb_period"]) * 3)
-    except Exception:
-        n = 100
-    df = safe_copy_rates(symbol, mt5.TIMEFRAME_M5, n)
-    if df is None or len(df) < max(40, int(sp["bb_period"]) * 2):
+        sp = _get_strict_params(symbol)
+        try:
+            n = max(100, int(sp.get("bb_period", 20)) * 3)
+        except Exception:
+            n = 100
+            
+        # Obtém DataFrame do utils
+        df = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_M5, n)
+        
+        # Verifica se DataFrame é válido e não está vazio
+        if df is None or df.empty or len(df) < max(40, int(sp.get("bb_period", 20)) * 2):
+            return False
+            
+        import pandas as pd
+        
+        # Se df já é DataFrame (o que safe_copy_rates deve retornar), usamos colunas diretas
+        if isinstance(df, pd.DataFrame):
+            close = df['close']
+            vol = df['tick_volume'].fillna(0.0) if 'tick_volume' in df.columns else df['volume'].fillna(0.0)
+            high = df['high']
+            low = df['low']
+        else:
+            # Fallback para lista de objetos (legado)
+            close = pd.Series([r.close for r in df])
+            vol = pd.Series([r.tick_volume if hasattr(r, "tick_volume") else r.volume for r in df]).fillna(0.0)
+            high = pd.Series([r.high for r in df])
+            low = pd.Series([r.low for r in df])
+            
+        bb_period = int(sp.get("bb_period", 20))
+        bb_std_dev = float(sp.get("bb_std", 2.0))
+        
+        mid = close.rolling(bb_period).mean()
+        std = close.rolling(bb_period).std(ddof=0)
+        
+        # Ajusta para pegar último valor válido
+        if mid.iloc[-1] is None or pd.isna(mid.iloc[-1]):
+            return False
+            
+        upper = (mid + bb_std_dev * std).iloc[-1]
+        lower = (mid - bb_std_dev * std).iloc[-1]
+        
+        vol_ma = vol.rolling(20).mean().fillna(0.0).iloc[-1]
+        
+        try:
+            # Calcula ADX usando DataFrame construído ou original
+            adx_df = pd.DataFrame({"high": high, "low": low, "close": close})
+            adx = float(utils.get_adx(adx_df) or 0.0)
+        except Exception:
+            adx = 0.0
+            
+        price = float(close.iloc[-1])
+        current_vol = float(vol.iloc[-1])
+        vol_mult = float(sp.get("vol_mult", 1.5))
+        adx_thresh = float(sp.get("adx_threshold", 25.0))
+        
+        vol_ok = current_vol > vol_mult * vol_ma
+        adx_ok = adx >= adx_thresh
+        
+        long_sig = (price > upper) and vol_ok and adx_ok
+        short_sig = (price < lower) and vol_ok and adx_ok and (int(sp.get("enable_shorts", 1)) == 1)
+        
+        return (side == "BUY" and long_sig) or (side == "SELL" and short_sig)
+        
+    except Exception as e:
+        logger.error(f"Erro em _strict_should_enter({symbol}): {e}")
         return False
-    import pandas as pd, numpy as np
-    close = pd.Series([r.close for r in df])
-    vol = pd.Series([r.tick_volume if hasattr(r, "tick_volume") else r.volume for r in df]).fillna(0.0)
-    mid = close.rolling(int(sp["bb_period"])).mean().bfill()
-    std = close.rolling(int(sp["bb_period"])).std(ddof=0).bfill()
-    upper = (mid + float(sp["bb_std"]) * std).iloc[-1]
-    lower = (mid - float(sp["bb_std"]) * std).iloc[-1]
-    vol_ma = vol.rolling(20).mean().fillna(0.0).iloc[-1]
-    try:
-        from utils import get_adx
-        adx = float(get_adx(pd.DataFrame({"high":[r.high for r in df],"low":[r.low for r in df],"close":[r.close for r in df]})) or 0.0)
-    except Exception:
-        adx = 0.0
-    price = float(close.iloc[-1])
-    vol_ok = float(vol.iloc[-1]) > float(sp["vol_mult"]) * float(vol_ma)
-    adx_ok = adx >= float(sp["adx_threshold"])
-    long_sig = (price > upper) and vol_ok and adx_ok
-    short_sig = (price < lower) and vol_ok and adx_ok and (int(sp["enable_shorts"]) == 1)
-    return (side == "BUY" and long_sig) or (side == "SELL" and short_sig)
 
 def optimize_params_daily():
     """
