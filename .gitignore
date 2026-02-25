@@ -1,2 +1,37 @@
-/.tmp.driveupload
-/.tmp.driveupload
+# Diretórios e arquivos temporários / logs
+logs/
+*.log
+*.tmp
+*.bak
+*.old
+temp_*
+__pycache__/
+.pytest_cache/
+.DS_Store
+
+# Credenciais e ambientes
+.env
+
+# Artefatos e caches
+cache/
+metrics/*.json
+models/*.h5
+models/*.pkl
+models/*.joblib
+optimizer_output/
+futures_optimizer_output/
+lsdata/*.json
+
+# Banco de dados e arquivos gerados
+*.db
+*.sqlite
+*.sqlite3
+*.csv
+*.png
+*.jpg
+ReportHistory-*.html
+ReportHistory-*.png
+
+# Test artifacts
+tests/**/tmp/**
+tests/**/.pytest_cache/**

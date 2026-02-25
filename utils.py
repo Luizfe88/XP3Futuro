@@ -5739,3 +5739,42 @@ def ensure_market_watch_symbols():
                 if mt5.symbol_select(s.name, False):
                     removed_count += 1
     logger.info(f"✅ Market Watch Sincronizado: {count_added} ativos mantidos/adicionados, {removed_count} removidos.")
+
+def calculate_portfolio_heat(positions: list, equity: float, indicators_snapshot: dict) -> float:
+    """Calcula quão 'quente' está a carteira (0.0 = fria, 1.0 = superaquecida)"""
+    if not positions or len(positions) < 2:
+        return 0.0
+
+    symbols = [p.symbol for p in positions]
+
+    # 1. Correlação média
+    total_corr = 0.0
+    count = 0
+    for sym1 in symbols:
+        for sym2 in symbols:
+            if sym1 >= sym2:
+                continue
+            corr = (
+                calculate_correlation_matrix([sym1, sym2])
+                .get(sym1, {})
+                .get(sym2, 0)
+            )
+            total_corr += abs(corr)
+            count += 1
+    avg_corr = total_corr / count if count > 0 else 0.0
+
+    # 2. Concentração setorial (HHI)
+    sector_exp = calculate_sector_exposure_pct(equity)
+    hhi = sum(exp**2 for exp in sector_exp.values())
+
+    # 3. Volatilidade agregada
+    total_atr_pct = (
+        sum(indicators_snapshot.get(p.symbol, {}).get("atr_real", 0) for p in positions)
+        / len(positions)
+        if positions
+        else 0
+    )
+
+    heat = (avg_corr * 0.4) + (hhi * 0.3) + (min(total_atr_pct / 10.0, 1.0) * 0.3)
+    return round(min(heat, 1.0), 3)
+

@@ -1033,6 +1033,7 @@ def execute_partial_entry(symbol: str, total_volume: float, side: str,
         partial_volume = 1
     
     executed = 0
+    current_heat = get_portfolio_heat()
     for i in range(num_entries):
         # Ajusta preço de entrada para cada parcial
         tick = mt5.symbol_info_tick(symbol)
@@ -1058,7 +1059,8 @@ def execute_partial_entry(symbol: str, total_volume: float, side: str,
                 entry_price=current_price,
                 sl=sl,
                 tp=tp,
-                use_kelly=False  # Volume já calculado
+                use_kelly=False,  # Volume já calculado
+                portfolio_heat=current_heat
             )
             
             if order:
@@ -4774,9 +4776,11 @@ def try_enter_position(symbol, side, risk_factor=1.0):
         
     # ========== VALIDAÇÃO DE ORDEM ==========
     
+    current_heat = get_portfolio_heat()
     from validation import validate_and_create_order 
     order, val_error = validate_and_create_order(
-        symbol=symbol, side=side, volume=volume, entry_price=entry_price, sl=sl, tp=tp
+        symbol=symbol, side=side, volume=volume, entry_price=entry_price, sl=sl, tp=tp,
+        portfolio_heat=current_heat
     )
 
     if not order:
@@ -4969,50 +4973,46 @@ def check_for_circuit_breaker():
     if drawdown_pct >= config.MAX_DAILY_DRAWDOWN_PCT and not trading_paused:
         trading_paused = True
         push_alert("🚨 CIRCUIT BREAKER ATIVADO - Trading pausado!", "CRITICAL", True)
+        try:
+            with utils.mt5_lock:
+                positions = mt5.positions_get() or []
+            for p in positions:
+                try:
+                    with utils.mt5_lock:
+                        tick = mt5.symbol_info_tick(p.symbol)
+                    if not tick:
+                        continue
+                    price = tick.bid if p.type == mt5.POSITION_TYPE_BUY else tick.ask
+                    close_position(
+                        p.symbol,
+                        p.ticket,
+                        p.volume,
+                        price,
+                        reason=f"KillSwitch DD {drawdown_pct:.2%}"
+                    )
+                except Exception as e:
+                    logger.error(f"Erro ao fechar posição {p.symbol} (ticket {p.ticket}): {e}")
+            try:
+                utils.send_telegram_message(
+                    f"🚨 <b>KILL-SWITCH ATIVADO</b>\n\n"
+                    f"🔻 Drawdown: {drawdown_pct:.2%} ≥ {getattr(config, 'MAX_DAILY_DRAWDOWN_PCT', 0.0):.2%}\n"
+                    f"🛑 Todas as posições foram fechadas e novas entradas bloqueadas."
+                )
+            except Exception:
+                pass
+        except Exception as e:
+            logger.error(f"Erro no kill-switch: {e}")
 
 
 def get_portfolio_heat() -> float:
     """Calcula quão 'quente' está a carteira (0.0 = fria, 1.0 = superaquecida)"""
     with utils.mt5_lock:
         positions = mt5.positions_get() or []
-    if not is_valid_dataframe(positions, min_rows=2):
-        return 0.0
-
-    symbols = [p.symbol for p in positions]
-
-    # 1. Correlação média
-    total_corr = 0.0
-    count = 0
-    for sym1 in symbols:
-        for sym2 in symbols:
-            if sym1 >= sym2:
-                continue
-            corr = (
-                utils.calculate_correlation_matrix([sym1, sym2])
-                .get(sym1, {})
-                .get(sym2, 0)
-            )
-            total_corr += abs(corr)
-            count += 1
-    avg_corr = total_corr / count if count > 0 else 0.0
-
-    # 2. Concentração setorial (HHI)
-    equity = mt5.account_info().equity
-    sector_exp = utils.calculate_sector_exposure_pct(equity)
-    hhi = sum(exp**2 for exp in sector_exp.values())
-
-    # 3. Volatilidade agregada
-    # Usa snapshot do bot_state
+        acc = mt5.account_info()
+        equity = acc.equity if acc else 0.0
+    
     indicators, _ = bot_state.snapshot
-    total_atr_pct = (
-        sum(indicators.get(p.symbol, {}).get("atr_real", 0) for p in positions)
-        / len(positions)
-        if positions
-        else 0
-    )
-
-    heat = (avg_corr * 0.4) + (hhi * 0.3) + (min(total_atr_pct / 10.0, 1.0) * 0.3)
-    return round(min(heat, 1.0), 3)
+    return utils.calculate_portfolio_heat(list(positions), equity, indicators)
 
 
 # =========================
@@ -5422,6 +5422,22 @@ def close_all_positions(reason: str = "Fechamento diário"):
 _last_brain_analysis_time = 0 # Controle do ciclo de 1 hora
 _last_panic_check_time = 0 # Controle do ciclo de pânico (mais frequente)
 
+_last_connection_check = 0
+def ensure_mt5_connection():
+    global _last_connection_check
+    if time.time() - _last_connection_check < 10:
+        return
+    _last_connection_check = time.time()
+    
+    if not mt5.terminal_info():
+        logger.warning("⚠️ MT5 desconectado! Tentando reconectar...")
+        mt5.shutdown()
+        time.sleep(1)
+        if mt5.initialize():
+            logger.info("✅ MT5 Reconectado com sucesso.")
+        else:
+            logger.error("❌ Falha ao reconectar MT5.")
+
 def fast_loop():
     """
     Loop principal com operação contínua
@@ -5435,6 +5451,7 @@ def fast_loop():
 
     while True:  # ✅ Loop infinito (não depende de bot_should_run)
         try:
+            ensure_mt5_connection()
             health_monitor.heartbeat()
             _state_manager.reset_daily_if_needed()
 

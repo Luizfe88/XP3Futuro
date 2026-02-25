@@ -707,7 +707,8 @@ def validate_and_create_order(symbol: str, side: str, volume: float,
         return True, "Ignorado (erro na checagem)"
 def validate_and_create_order(symbol: str, side: str, volume: float, 
                                entry_price: float, sl: float, tp: float,
-                               use_kelly: bool = True) -> tuple[Optional[OrderParams], Optional[str]]:
+                               use_kelly: bool = True,
+                               portfolio_heat: float = 0.0) -> tuple[Optional[OrderParams], Optional[str]]:
     """
     Factory function com validação e Kelly Criterion
     
@@ -719,6 +720,12 @@ def validate_and_create_order(symbol: str, side: str, volume: float,
         if not allowed_cooldown:
             log_trade_rejection(symbol, "CooldownFilter", cooldown_reason)
             return None, "🚫 Cooldown Ativo (Stop recente)"
+
+        # ✅ NOVO: Verificação de Portfolio Heat
+        limit_heat = getattr(config, "MAX_PORTFOLIO_HEAT", 0.85)
+        if portfolio_heat >= limit_heat:
+             log_trade_rejection(symbol, "PortfolioHeat", f"Heat {portfolio_heat:.2f} >= {limit_heat}")
+             return None, f"Portfolio superaquecido ({portfolio_heat:.2f})"
 
         # ✅ NOVO: Verificação de Volume Institucional (Open Interest) com mensagens detalhadas no console
         ok_inst, inst_reason = check_institutional_volume(symbol, volume)
