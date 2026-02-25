@@ -78,6 +78,15 @@ def run_backtest(days: int = 30) -> Optional[float]:
     return win_rate
 
 
+def simple_backtest(symbol: str, days: int = 15, ema_short: int = 21, ema_long: int = 50, rsi_low: int = 30, rsi_high: int = 70, df: pd.DataFrame = None) -> dict:
+    """
+    Simulação rápida de estratégia básica (EMA + RSI)
+    
+    Args:
+        symbol: Ativo
+        days: Dias para analisar
+        ema_short: Período EMA Curta
+        ema_long: Período EMA Longa
         rsi_low: RSI de compra
         rsi_high: RSI de venda
         df: DataFrame opcional (se None, baixa dados novos)

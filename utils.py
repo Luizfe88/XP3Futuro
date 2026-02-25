@@ -1096,6 +1096,22 @@ def filter_trading_hours(df: pd.DataFrame, asset_class: str) -> pd.DataFrame:
     """
     if df is None or df.empty: return df
     
+    # ⚠️ FALLBACK ROBUSTO PARA ÍNDICE (IBOV)
+    # Se receber dados inválidos/zerados para IBOV, tenta usar futuros (IND/WIN)
+    if "IBOV" in str(df.columns) or (hasattr(df, "name") and "IBOV" in str(df.name)):
+         if df['close'].iloc[-1] == 0 or pd.isna(df['close'].iloc[-1]):
+             logger.warning("⚠️ IBOV Spot com dados inválidos. Tentando fallback via Futuros (IND)...")
+             # Tenta pegar IND$ ou WIN$
+             fut_df = safe_copy_rates("IND$", mt5.TIMEFRAME_M5, len(df))
+             if fut_df is not None and not fut_df.empty and fut_df['close'].iloc[-1] > 0:
+                 logger.info("✅ Fallback IBOV -> IND Futuro realizado com sucesso.")
+                 return fut_df
+             
+             fut_df = safe_copy_rates("WIN$", mt5.TIMEFRAME_M5, len(df))
+             if fut_df is not None and not fut_df.empty and fut_df['close'].iloc[-1] > 0:
+                 logger.info("✅ Fallback IBOV -> WIN Futuro realizado com sucesso.")
+                 return fut_df
+    
     cfg = config_futures.FUTURES_CONFIGS.get(asset_class)
     if not cfg: return df
     
@@ -1344,6 +1360,11 @@ def _df_has_valid_ohlc(df: Optional[pd.DataFrame], min_rows: int = 50) -> bool:
         return False
 
 def safe_copy_rates(symbol: str, timeframe, count: int = 500, timeout: int = 12) -> Optional[pd.DataFrame]:
+    # 🚫 BLACKLIST DE SÍMBOLOS PROBLEMÁTICOS
+    # Evita tentativas de download em ativos suspensos ou sem dados no MT5
+    if symbol in ["OSXB3", "OIBR3", "VVAR3"]: 
+        return None
+
     try:
         terminal = mt5.terminal_info()
     except Exception:

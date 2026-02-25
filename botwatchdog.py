@@ -78,10 +78,11 @@ def start_bot_in_new_window():
     logging.info("Start bot GUI: system=%s", system)
     
     if system == "Windows":
-        subprocess.Popen([
-            "cmd.exe", "/c", "start", "XP3 FUTURE BOT", "cmd.exe", "/k", sys.executable, BOT_SCRIPT
-        ])
-        logging.info("Bot process started via cmd.exe start with visible window")
+        # Correção para PowerShell e CMD - usa 'start' do shell
+        # O título da janela deve ser o primeiro argumento do start
+        cmd = f'start "XP3 FUTURE BOT" cmd /k "{sys.executable} {BOT_SCRIPT}"'
+        subprocess.Popen(cmd, shell=True)
+        logging.info(f"Bot process started via shell command: {cmd}")
         
     elif system == "Linux":
         # Tenta vários terminais comuns (gnome, xfce, kde, etc.)

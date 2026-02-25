@@ -255,3 +255,1555 @@ TypeError: 'NoneType' object is not subscriptable
 2026-02-25 09:30:00,652 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
 2026-02-25 09:47:00,989 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
 2026-02-25 09:59:53,619 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-25 10:11:49,551 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-25 10:12:16,605 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-25 10:47:05,745 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-25 10:47:59,394 | ERROR | bot | Erro ao rodar análise diária: unexpected indent (backtest.py, line 81)
+2026-02-25 10:48:22,375 | ERROR | bot | ❌ Erro crítico ao atualizar bot_bridge: [WinError 5] Acesso negado: 'bot_bridge.json.tmp' -> 'bot_bridge.json'
+2026-02-25 10:50:16,570 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:50:24,177 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:50:29,346 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:50:34,710 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:50:09,807 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:50:45,840 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:50:53,038 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:51:01,319 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:51:07,778 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:51:23,947 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:51:31,645 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:51:38,092 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:51:39,186 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:51:44,760 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:51:45,698 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:51:52,228 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:01,552 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:05,390 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:14,222 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:20,429 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:21,988 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:28,587 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:29,131 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:35,436 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:37,168 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:40,805 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:43,848 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:46,307 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:49,031 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:52:54,414 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:01,167 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:03,859 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:09,460 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:11,442 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:15,778 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:17,335 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:21,499 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:22,891 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:27,452 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:28,885 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:33,079 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:34,649 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:39,295 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:40,718 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:45,232 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:46,230 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:51,402 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:52,527 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:53:58,239 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:03,996 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:04,664 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:10,610 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:14,839 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:16,609 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:20,492 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:21,895 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:25,728 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:27,336 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:31,143 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:32,985 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:36,338 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:38,188 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:41,664 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:43,381 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:47,552 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:48,519 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:53,788 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:54,138 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:54:59,377 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:02,472 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:05,555 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:09,192 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:14,415 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:14,790 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:19,662 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:20,088 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:24,910 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:25,306 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:30,142 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:30,493 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:35,420 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:35,670 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:40,616 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:40,821 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:46,391 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:46,670 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:51,826 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:51,910 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:57,024 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:55:57,158 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:02,353 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:04,755 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:07,582 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:09,916 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:20,824 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:21,171 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:25,947 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:26,317 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:31,056 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:31,461 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:36,251 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:37,201 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:41,653 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:42,398 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:46,782 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:47,547 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:51,951 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:52,732 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:57,253 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:56:57,915 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:02,484 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:05,452 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:07,792 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:10,727 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:15,468 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:15,888 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:20,790 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:21,130 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:26,002 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:26,439 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:31,185 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:31,604 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:36,321 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:36,770 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:41,455 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:46,585 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:47,398 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:52,487 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:52,582 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:57,600 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:57:57,764 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:02,698 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:02,911 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:07,865 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:09,782 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:14,912 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:14,950 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:20,080 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:20,104 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:25,226 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:25,300 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:30,370 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:30,461 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:35,493 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:35,767 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:40,626 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:40,899 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:45,756 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:46,021 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:50,874 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:51,227 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:56,016 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:58:56,444 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:59:01,159 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 10:59:01,560 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5753, in fast_loop
+    # 2️⃣ ATUALIZA DADOS (SEMPRE)
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3256, in build_portfolio_and_top15
+    "ema_trend": ema_trend,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:04:20,976 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-25 11:04:37,258 | ERROR | bot | Erro ao rodar análise diária: unexpected indent (backtest.py, line 81)
+2026-02-25 11:13:51,921 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-25 11:13:58,937 | ERROR | bot | Erro ao rodar análise diária: unexpected indent (backtest.py, line 81)
+2026-02-25 11:42:08,041 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:42:14,269 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:42:19,415 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:42:42,865 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:42:48,281 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:42:53,508 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:42:59,506 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:43:08,811 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:43:15,527 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:43:23,520 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:43:33,891 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:43:39,348 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:43:44,518 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:43:50,381 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:43:55,477 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:44:00,612 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:44:07,410 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:44:17,906 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:44:24,036 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:44:30,320 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:44:35,905 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:44:42,087 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:44:48,841 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 11:44:54,441 | ERROR | bot | Erro crítico no fast_loop: cannot access local variable 'checks' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 5755, in fast_loop
+    new_indicators, new_top15 = build_portfolio_and_top15()
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 3258, in build_portfolio_and_top15
+    "checks": checks,
+              ^^^^^^
+UnboundLocalError: cannot access local variable 'checks' where it is not associated with a value
+2026-02-25 12:02:50,095 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-25 12:03:02,592 | ERROR | bot | Erro ao rodar análise diária: unexpected indent (backtest.py, line 81)
+2026-02-25 12:07:43,631 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-25 12:08:17,927 | ERROR | bot | Erro ao rodar análise diária: unexpected indent (backtest.py, line 81)
+2026-02-25 12:10:10,772 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-25 12:10:36,445 | ERROR | bot | Erro ao rodar análise diária: unexpected indent (backtest.py, line 81)
+2026-02-25 13:32:41,298 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.

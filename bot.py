@@ -1,25 +1,30 @@
 #bot.py - parte 1
 import sys
-print("DEBUG: Iniciando imports básicos...", flush=True)
 import os
+
+# 🔧 FIX PARA TRAVAMENTO DO PANDAS/NUMPY NO WINDOWS
+# Força execução single-thread para bibliotecas numéricas para evitar deadlocks na inicialização
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["NUMEXPR_NUM_THREADS"] = "1"
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+
 import json
-print("DEBUG: json imported", flush=True)
+print("⏳ Carregando bibliotecas (Pandas)...", flush=True)
 import pandas as pd
-print("DEBUG: pandas imported", flush=True)
+print("✅ Pandas carregado.", flush=True)
 import time
 import threading
 import logging
-print("DEBUG: logging imported", flush=True)
+import asyncio
+
 # Silencia erros de WebSocket fechado (Tornado/Streamlit)
 logging.getLogger("tornado.access").setLevel(logging.ERROR)
 logging.getLogger("tornado.application").setLevel(logging.ERROR)
 logging.getLogger("tornado.general").setLevel(logging.ERROR)
 logging.getLogger("asyncio").setLevel(logging.ERROR)
 
-import asyncio
-print("DEBUG: asyncio imported", flush=True)
 # Handler global para silenciar erros de WebSocket fechado
 def _silence_event_loop_exceptions(loop, context):
     msg = context.get("exception", context.get("message"))
@@ -50,7 +55,6 @@ class SafeTimedRotatingFileHandler(TimedRotatingFileHandler):
 # 🔧 CONFIGURAÇÃO DO LOGGER
 # =====================
 def setup_logging():
-    print("DEBUG: Entrou em setup_logging()", flush=True)
     log_dir = "logs"
     bot_dir = os.path.join(log_dir, "bot")
     err_dir = os.path.join(log_dir, "errors")
@@ -284,9 +288,7 @@ def initialize_active_symbols():
     logger.info("✅ Screener Diário concluído.")
 
 # Executa o screener na inicialização do bot (agora com logger disponível)
-print("DEBUG: Executando initialize_active_symbols...", flush=True)
 initialize_active_symbols()
-print("DEBUG: initialize_active_symbols CONCLUÍDO", flush=True)
 
 _mtf_engine = MultiTimeframeEngine()
 _filter_chain = FilterChain()
@@ -2901,7 +2903,7 @@ def _get_strict_params(symbol: str) -> dict:
     
     return out
 
-def _strict_should_enter(symbol: str, side: str) -> bool:
+def _strict_should_enter(symbol: str, side: str, rsi_limit_high=70, rsi_limit_low=30) -> bool:
     try:
         sp = _get_strict_params(symbol)
         try:
@@ -2916,8 +2918,7 @@ def _strict_should_enter(symbol: str, side: str) -> bool:
         if df is None or df.empty or len(df) < max(40, int(sp.get("bb_period", 20)) * 2):
             return False
             
-        import pandas as pd
-        
+        # ... (código existente de cálculo de indicadores) ...
         # Se df já é DataFrame (o que safe_copy_rates deve retornar), usamos colunas diretas
         if isinstance(df, pd.DataFrame):
             close = df['close']
@@ -2950,6 +2951,8 @@ def _strict_should_enter(symbol: str, side: str) -> bool:
             # Calcula ADX usando DataFrame construído ou original
             adx_df = pd.DataFrame({"high": high, "low": low, "close": close})
             adx = float(utils.get_adx(adx_df) or 0.0)
+            # Calcula RSI também para validação extra se necessário
+            # rsi_val = utils.get_rsi(close) 
         except Exception:
             adx = 0.0
             
@@ -2960,6 +2963,9 @@ def _strict_should_enter(symbol: str, side: str) -> bool:
         
         vol_ok = current_vol > vol_mult * vol_ma
         adx_ok = adx >= adx_thresh
+        
+        # Passa os limites dinâmicos para a validação estrita se necessário
+        # Por enquanto mantemos a lógica original de BB + Vol + ADX
         
         long_sig = (price > upper) and vol_ok and adx_ok
         short_sig = (price < lower) and vol_ok and adx_ok and (int(sp.get("enable_shorts", 1)) == 1)
@@ -3869,7 +3875,7 @@ def get_ml_signal(symbol: str, side: str, indicators: dict) -> dict:
     except Exception as e:
         logger.error(f"Erro ao obter sinal ML para {symbol}: {e}")
         return {'direction': 'HOLD', 'confidence': 0.0, 'model': 'ERROR'}
-def try_enter_position(symbol, side, risk_factor=1.0):
+def try_enter_position(symbol, side, risk_factor=1.0, rsi_limit_high=70, rsi_limit_low=30):
     """
     ✅ VERSÃO COM AUDITORIA: Registra motivo de cada rejeição
     """
@@ -5870,17 +5876,53 @@ def fast_loop():
                         side = "BUY" if ema_trend == "UP" else "SELL"
                         
                         # 🛡️ FILTRO DE EXAUSTÃO (MEAN REVERSION) - LAND TRADING
-                        # Adaptado ao Regime
-                        if current_regime == "TREND":
-                            # Em tendência forte, RSI pode ir a 80/20 sem ser topo/fundo
-                            if side == "BUY" and rsi > 80: continue
-                            if side == "SELL" and rsi < 20: continue
-                        else:
-                            # Padrão conservador
-                            if side == "BUY" and rsi > 70: continue
-                            if side == "SELL" and rsi < 30: continue
+                        # Adaptado ao Regime E Score
+                        rsi_limit_high = 70
+                        rsi_limit_low = 30
+                        
+                        # Se Score for muito alto (Ex: 80 do BGI), aceita RSI mais esticado
+                        if score >= 75:
+                            rsi_limit_high = 80
+                            rsi_limit_low = 20
+                        elif current_regime == "TREND":
+                            rsi_limit_high = 75
+                            rsi_limit_low = 25
+
+                        # 🔥 HOTFIX CRIPTO/BREAKOUT (BIT/BTC)
+                        is_crypto = 'BIT' in sym or 'BTC' in sym
+                        
+                        # Tenta confirmar breakout pelo preço (simples)
+                        is_breakout_confirmed = False
+                        current_price = ind_data.get("close", 0)
+                        
+                        # Obtém resistência dinâmica do utils (se disponível no ind_data)
+                        res_price = ind_data.get("resistance_price", 0)
+                        sup_price = ind_data.get("support_price", 0)
+                        
+                        if side == "BUY" and res_price > 0 and current_price > res_price:
+                            is_breakout_confirmed = True
+                        elif side == "SELL" and sup_price > 0 and current_price < sup_price:
+                            is_breakout_confirmed = True
                             
-                        try_enter_position(sym, side)
+                        # Se for Cripto, Score Alto e Breakout Confirmado -> Libera RSI
+                        if is_crypto and score >= 80:
+                             # Se confirmou breakout ou se o score é altíssimo
+                             if is_breakout_confirmed or score >= 85:
+                                 rsi_limit_high = 95
+                                 rsi_limit_low = 5
+                                 logger.info(f"🚀 CRIPTO MODE: RSI Limit expandido para {rsi_limit_high} (Breakout/Score Alto)")
+
+                        # Log detalhado do limite de RSI usado
+                        # logger.debug(f"🔍 {sym}: RSI={rsi:.1f} Limits=[{rsi_limit_low}-{rsi_limit_high}] Score={score}")
+                            
+                        if side == "BUY" and rsi > rsi_limit_high:
+                            logger.info(f"🛑 {sym}: RSI {rsi:.1f} > {rsi_limit_high} (Exaustão Compra - Limite Dinâmico)")
+                            continue
+                        if side == "SELL" and rsi < rsi_limit_low:
+                            logger.info(f"🛑 {sym}: RSI {rsi:.1f} < {rsi_limit_low} (Exaustão Venda - Limite Dinâmico)")
+                            continue
+                            
+                        try_enter_position(sym, side, rsi_limit_high=rsi_limit_high, rsi_limit_low=rsi_limit_low)
 
             # ============================================
             # 8️⃣ CIRCUIT BREAKER
@@ -6719,10 +6761,11 @@ def main():
     except Exception:
         CURRENT_MODE = "FUTUROS"
 
-    clear_screen()
-    print(f"{C_CYAN}===================================================={C_RESET}")
-    print(f"{C_CYAN}🚀 INICIANDO XP3 PRO BOT B3 - MODO CONTÍNUO 24/7{C_RESET}")
-    print(f"{C_CYAN}===================================================={C_RESET}")
+    # Não usamos clear_screen() para não apagar logs de erro
+    # clear_screen()
+    print(f"====================================================")
+    print(f"🚀 INICIANDO XP3 PRO BOT B3 - MODO CONTÍNUO 24/7")
+    print(f"====================================================")
 
     try:
         cleanup_old_logs(days_to_keep=30)
@@ -6845,14 +6888,6 @@ def main():
     except Exception as e:
         logger.warning(f"⚠️ Erro ao carregar dados anti-chop: {e}")
 
-    # ✅ NOVOS CARREGAMENTOS
-    try:
-        load_anti_chop_data()
-        load_daily_limits()
-        logger.info("✅ Dados anti-chop e limites carregados")
-    except Exception as e:
-        logger.warning(f"⚠️ Erro ao carregar dados anti-chop: {e}")
-
     # 3. Carga Inicial de Dados
     logger.info("🔍 Analisando mercado para gerar TOP 15 inicial...")
     try:
@@ -6952,16 +6987,16 @@ def main():
     logger.info("🚀 Iniciando Dashboard via Streamlit...")
     launch_dashboard()
     
-    print(f"\n{C_GREEN}✅ Bot rodando em background!{C_RESET}")
-    print(f"{C_YELLOW}ℹ️ Dashboard deve abrir no navegador. Se não, acesse: http://localhost:8503{C_RESET}")
-    print(f"{C_RED}🛑 Pressione Ctrl+C para encerrar o bot.{C_RESET}\n")
+    print(f"\n✅ Bot rodando em background!")
+    print(f"ℹ️ Dashboard deve abrir no navegador. Se não, acesse: http://localhost:8503")
+    print(f"🛑 Pressione Ctrl+C para encerrar o bot.\n")
 
     # Loop principal (Keep Alive)
     try:
         while True:
             time.sleep(1)
     except KeyboardInterrupt:
-        print(f"\n{C_YELLOW}⏸️ Encerrando aplicação...{C_RESET}")
+        print(f"\n⏸️ Encerrando aplicação...")
     
     # ✅ SALVA ESTADO ANTES DE SAIR (Só chega aqui se der Ctrl+C real)
     logger.info("💾 Salvando estado diário e ML...")
@@ -6969,7 +7004,7 @@ def main():
     save_daily_state()
     
     logger.info("✅ Estado salvo com sucesso")
-    print(f"{C_YELLOW}ℹ️ O bot continua operando em background (Threads ativas){C_RESET}")
+    print(f"ℹ️ O bot continua operando em background (Threads ativas)")
     
     # Mantém a thread principal viva para as outras threads (FastLoop, etc) continuarem
     while True:

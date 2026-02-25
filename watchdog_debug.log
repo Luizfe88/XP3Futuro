@@ -609,3 +609,19 @@
 2026-02-25 09:45:59,713 INFO Bot process started via cmd.exe start with visible window
 2026-02-25 09:46:45,491 INFO Start bot GUI: system=Windows
 2026-02-25 09:46:45,503 INFO Bot process started via cmd.exe start with visible window
+2026-02-25 10:25:21,158 INFO Start bot GUI: system=Windows
+2026-02-25 10:25:21,184 INFO Bot process started via shell command: start "XP3 FUTURE BOT" cmd /k "C:\Users\luizf\AppData\Local\Programs\Python\Python313\python.exe C:\Users\luizf\Documents\xp3future\botfuturo.py"
+2026-02-25 10:30:10,842 INFO Start bot GUI: system=Windows
+2026-02-25 10:30:10,854 INFO Bot process started via shell command: start "XP3 FUTURE BOT" cmd /k "C:\Users\luizf\AppData\Local\Programs\Python\Python313\python.exe C:\Users\luizf\Documents\xp3future\botfuturo.py"
+2026-02-25 11:03:07,912 INFO Start bot GUI: system=Windows
+2026-02-25 11:03:07,932 INFO Bot process started via shell command: start "XP3 FUTURE BOT" cmd /k "C:\Users\luizf\AppData\Local\Programs\Python\Python313\python.exe C:\Users\luizf\Documents\xp3future\botfuturo.py"
+2026-02-25 11:13:11,222 INFO Start bot GUI: system=Windows
+2026-02-25 11:13:11,343 INFO Bot process started via shell command: start "XP3 FUTURE BOT" cmd /k "C:\Users\luizf\AppData\Local\Programs\Python\Python313\python.exe C:\Users\luizf\Documents\xp3future\botfuturo.py"
+2026-02-25 12:01:18,662 INFO Start bot GUI: system=Windows
+2026-02-25 12:01:18,808 INFO Bot process started via shell command: start "XP3 FUTURE BOT" cmd /k "C:\Users\luizf\AppData\Local\Programs\Python\Python313\python.exe C:\Users\luizf\Documents\xp3future\botfuturo.py"
+2026-02-25 12:06:40,019 INFO Start bot GUI: system=Windows
+2026-02-25 12:06:40,082 INFO Bot process started via shell command: start "XP3 FUTURE BOT" cmd /k "C:\Users\luizf\AppData\Local\Programs\Python\Python313\python.exe C:\Users\luizf\Documents\xp3future\botfuturo.py"
+2026-02-25 12:08:58,325 INFO Start bot GUI: system=Windows
+2026-02-25 12:08:58,366 INFO Bot process started via shell command: start "XP3 FUTURE BOT" cmd /k "C:\Users\luizf\AppData\Local\Programs\Python\Python313\python.exe C:\Users\luizf\Documents\xp3future\botfuturo.py"
+2026-02-25 13:31:31,414 INFO Start bot GUI: system=Windows
+2026-02-25 13:31:31,498 INFO Bot process started via shell command: start "XP3 FUTURE BOT" cmd /k "C:\Users\luizf\AppData\Local\Programs\Python\Python313\python.exe C:\Users\luizf\Documents\xp3future\botfuturo.py"
