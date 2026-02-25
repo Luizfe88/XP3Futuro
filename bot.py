@@ -1,12 +1,17 @@
 #bot.py - parte 1
+import sys
+print("DEBUG: Iniciando imports básicos...", flush=True)
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 import json
+print("DEBUG: json imported", flush=True)
 import pandas as pd
+print("DEBUG: pandas imported", flush=True)
 import time
 import threading
 import logging
+print("DEBUG: logging imported", flush=True)
 # Silencia erros de WebSocket fechado (Tornado/Streamlit)
 logging.getLogger("tornado.access").setLevel(logging.ERROR)
 logging.getLogger("tornado.application").setLevel(logging.ERROR)
@@ -14,6 +19,7 @@ logging.getLogger("tornado.general").setLevel(logging.ERROR)
 logging.getLogger("asyncio").setLevel(logging.ERROR)
 
 import asyncio
+print("DEBUG: asyncio imported", flush=True)
 # Handler global para silenciar erros de WebSocket fechado
 def _silence_event_loop_exceptions(loop, context):
     msg = context.get("exception", context.get("message"))
@@ -44,6 +50,7 @@ class SafeTimedRotatingFileHandler(TimedRotatingFileHandler):
 # 🔧 CONFIGURAÇÃO DO LOGGER
 # =====================
 def setup_logging():
+    print("DEBUG: Entrou em setup_logging()", flush=True)
     log_dir = "logs"
     bot_dir = os.path.join(log_dir, "bot")
     err_dir = os.path.join(log_dir, "errors")
@@ -277,7 +284,9 @@ def initialize_active_symbols():
     logger.info("✅ Screener Diário concluído.")
 
 # Executa o screener na inicialização do bot (agora com logger disponível)
+print("DEBUG: Executando initialize_active_symbols...", flush=True)
 initialize_active_symbols()
+print("DEBUG: initialize_active_symbols CONCLUÍDO", flush=True)
 
 _mtf_engine = MultiTimeframeEngine()
 _filter_chain = FilterChain()
