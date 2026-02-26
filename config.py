@@ -689,7 +689,7 @@ TIME_SCORE_RULES = {
     "OPEN": {
         "start": "10:30",
         "end": "11:30",
-        "adx_min": 25,
+        "adx_min": 18,
         "min_score": 40,
         "atr_max": 8.0,
         "min_volume_ratio": 1.1,     # Volume atual > 130% da média de 20 períodos
@@ -699,7 +699,7 @@ TIME_SCORE_RULES = {
     "MID": {
         "start": "11:30",
         "end": "14:30",
-        "adx_min": 25,
+        "adx_min": 18,
         "min_score": 35,
         "atr_max": 10.0,
         "min_volume_ratio": 1.05
@@ -707,7 +707,7 @@ TIME_SCORE_RULES = {
     "LATE": {
         "start": "14:30",
         "end": "16:55",
-        "adx_min": 25,
+        "adx_min": 18,
         "min_score": 35,
         "atr_max": 12.0,
     },
