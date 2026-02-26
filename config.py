@@ -21,6 +21,13 @@ logging.basicConfig(
     ]
 )
 
+# ============================================
+# ⚙️ CONFIGURAÇÕES GERAIS MT5
+# ============================================
+MAGIC_NUMBER = 987654
+DEVIATION = 20
+TIMEFRAME_BASE = "M5"
+MT5_TERMINAL_PATH = r"C:\MetaTrader 5 Terminal\terminal64.exe"
 
 # ===========================
 # ✅ SISTEMA DE CONFIGURAÇÃO DINÂMICA VIA YAML

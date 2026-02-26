@@ -869,15 +869,19 @@ def run_performance_analysis():
     if not deals:
         return None
 
-    # Filtra apenas fechamentos
-    out_deals = [d for d in deals if d.entry == mt5.DEAL_ENTRY_OUT]
+    # Filtra apenas fechamentos E MAGIC NUMBER CORRETO
+    magic_filter = getattr(config, "MAGIC_NUMBER", 0)
+    out_deals = [d for d in deals if d.entry == mt5.DEAL_ENTRY_OUT and d.magic == magic_filter]
+    
     if not out_deals:
+        # Se não houver trades com magic number, retorna None (sem dados)
+        # logger.info("Nenhum trade com Magic Number correto nas últimas 24h")
         return None
 
     wins = sum(1 for d in out_deals if d.profit > 0)
     win_rate = (wins / len(out_deals)) * 100
     
-    logger.info(f"📊 Análise Diária: {len(out_deals)} trades | Win Rate: {win_rate:.1f}%")
+    logger.info(f"📊 Análise Diária (Magic {magic_filter}): {len(out_deals)} trades | Win Rate: {win_rate:.1f}%")
     return win_rate
 
 
@@ -2180,12 +2184,13 @@ def health_watcher_thread():
             if deals:
                 relevant_deals = [d for d in deals if d.entry == mt5.DEAL_ENTRY_OUT]
                 
-                # 🔥 FILTRO DE FUTUROS (WIN/WDO/IND/DOL/CCM/BGI/ICF/SFI/BIT/T10)
-                # Ignora ações para não distorcer o Win Rate do bot de futuros
+                # 🔥 FILTRO DE FUTUROS E MAGIC NUMBER
                 futures_prefixes = ('WIN', 'WDO', 'IND', 'DOL', 'CCM', 'BGI', 'ICF', 'SFI', 'BIT', 'T10')
+                magic_filter = getattr(config, "MAGIC_NUMBER", 0)
+                
                 filtered_deals = [
                     d for d in relevant_deals 
-                    if d.symbol.upper().startswith(futures_prefixes)
+                    if d.symbol.upper().startswith(futures_prefixes) and d.magic == magic_filter
                 ]
                 
                 last_20 = sorted(filtered_deals, key=lambda x: x.time, reverse=True)[:20]
