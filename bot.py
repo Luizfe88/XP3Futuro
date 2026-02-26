@@ -1331,22 +1331,26 @@ def handle_daily_cycle():
             # Unifica as métricas (prioriza real se houver trades)
             final_wr = wr_real if wr_real is not None else wr_backtest
             
-            # ✅ AJUSTE DINÂMICO DE CONFIGURAÇÃO (Min RR)
-            try:
-                config.config_manager.update_dynamic_settings(final_wr / 100)
-            except Exception as e:
-                logger.error(f"Erro ao atualizar config dinâmica: {e}")
-            
-            if final_wr < 55.0:
-                # Ajuste automático de parâmetros se performance estiver baixa
-                old_conf = config.ML_MIN_CONFIDENCE
-                config.ML_MIN_CONFIDENCE = min(0.85, config.ML_MIN_CONFIDENCE + 0.05)
-                config.MIN_SIGNAL_SCORE = max(61, config.MIN_SIGNAL_SCORE + 2)
-                
-                logger.warning(f"⚠️ Performance Baixa (WR: {final_wr:.1f}%). Ajustando ML Confidence: {old_conf:.2f} -> {config.ML_MIN_CONFIDENCE:.2f}")
-                utils.send_telegram_message(f"⚠️ <b>Performance Alert</b>\nWin Rate: {final_wr:.1f}%\nML Confidence: {config.ML_MIN_CONFIDENCE:.2f}\nStatus: Parâmetros Ajustados")
+            # Se ainda for None (sem trades em lugar nenhum), define como 0 ou ignora
+            if final_wr is None:
+                logger.info("ℹ️ Sem dados suficientes para análise de performance (Win Rate ignorado).")
             else:
-                logger.info(f"✅ Performance Saudável (WR: {final_wr:.1f}%)")
+                # ✅ AJUSTE DINÂMICO DE CONFIGURAÇÃO (Min RR)
+                try:
+                    config.config_manager.update_dynamic_settings(final_wr / 100)
+                except Exception as e:
+                    logger.error(f"Erro ao atualizar config dinâmica: {e}")
+                
+                if final_wr < 55.0:
+                    # Ajuste automático de parâmetros se performance estiver baixa
+                    old_conf = config.ML_MIN_CONFIDENCE
+                    config.ML_MIN_CONFIDENCE = min(0.85, config.ML_MIN_CONFIDENCE + 0.05)
+                    config.MIN_SIGNAL_SCORE = max(61, config.MIN_SIGNAL_SCORE + 2)
+                    
+                    logger.warning(f"⚠️ Performance Baixa (WR: {final_wr:.1f}%). Ajustando ML Confidence: {old_conf:.2f} -> {config.ML_MIN_CONFIDENCE:.2f}")
+                    utils.send_telegram_message(f"⚠️ <b>Performance Alert</b>\nWin Rate: {final_wr:.1f}%\nML Confidence: {config.ML_MIN_CONFIDENCE:.2f}\nStatus: Parâmetros Ajustados")
+                else:
+                    logger.info(f"✅ Performance Saudável (WR: {final_wr:.1f}%)")
         except Exception as e:
             logger.error(f"Erro ao rodar análise diária: {e}")
 

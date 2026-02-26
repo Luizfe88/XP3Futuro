@@ -10110,3 +10110,697 @@ UnboundLocalError: cannot access local variable 'reqs' where it is not associate
 2026-02-26 10:41:21,072 | INFO | 🔧 MECÂNICO: Ajustando parâmetros para o regime 'REVERSION'...
 2026-02-26 10:41:21,075 | INFO | 🔧 MECÂNICO: Parâmetros ajustados para regime 'REVERSION' em 9 símbolos
 2026-02-26 10:41:21,076 | INFO | 🔧 MECÂNICO: Exemplo de parâmetros ajustados (simulação): {'adx_threshold': 15, 'rsi_low': 25, 'rsi_high': 70, 'ema_short': 9, 'ema_long': 200, 'tp_ratio': 3.0, 'sl_atr_mult': 2.5}
+2026-02-26 10:41:26,077 | INFO | ✅ Estado de pausa por win rate resetado (meia-noite)
+2026-02-26 10:41:26,082 | INFO | Parâmetros carregados do ELITE_SYMBOLS (9 ativos elite)
+2026-02-26 10:41:26,191 | INFO | ❌ WINJ26 rejeitado: Sem força (ADX 18.5 < 20) | score=0
+2026-02-26 10:41:26,339 | INFO | ❌ INDJ26 rejeitado: Sem força (ADX 18.3 < 20) | score=0
+2026-02-26 10:41:26,501 | INFO | ❌ WDOH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:41:27,357 | INFO | ❌ DOLH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:41:27,647 | INFO | ❌ WSPH26 rejeitado: Aguardando correção (RSI Esticado) | score=0
+2026-02-26 10:41:27,647 | INFO |    🟥 Score mínimo: atual=0.00 >= necessário=58.00
+2026-02-26 10:41:27,648 | INFO |    🟩 ADX mínimo: atual=51.65 >= necessário=15.00
+2026-02-26 10:41:27,649 | INFO |    🟥 RSI exaustão: atual=72.22 <= necessário=70.00
+2026-02-26 10:41:27,649 | INFO |    🟩 Gatilho: breakout OK: close 6968.8 > resistência 6968.2
+2026-02-26 10:41:27,650 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:41:27,877 | INFO | ❌ CCMH26 rejeitado: Sem força (ADX 18.5 < 20) | score=20
+2026-02-26 10:41:27,877 | INFO |    🟥 Score mínimo: atual=0.00 >= necessário=58.00
+2026-02-26 10:41:27,877 | INFO |    🟩 ADX mínimo: atual=51.65 >= necessário=15.00
+2026-02-26 10:41:27,878 | INFO |    🟥 RSI exaustão: atual=72.22 <= necessário=70.00
+2026-02-26 10:41:27,878 | INFO |    🟩 Gatilho: breakout OK: close 6968.8 > resistência 6968.2
+2026-02-26 10:41:27,878 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:41:28,068 | INFO | ❌ BGIG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:41:28,068 | INFO |    🟥 Score mínimo: atual=0.00 >= necessário=58.00
+2026-02-26 10:41:28,069 | INFO |    🟩 ADX mínimo: atual=51.65 >= necessário=15.00
+2026-02-26 10:41:28,069 | INFO |    🟥 RSI exaustão: atual=72.22 <= necessário=70.00
+2026-02-26 10:41:28,069 | INFO |    🟩 Gatilho: breakout OK: close 6968.8 > resistência 6968.2
+2026-02-26 10:41:28,079 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:41:28,291 | INFO | ❌ ICFH26 rejeitado: Sem força (ADX 19.8 < 20) | score=100
+2026-02-26 10:41:28,292 | INFO |    🟩 Score mínimo: atual=100.00 >= necessário=58.00
+2026-02-26 10:41:28,292 | INFO |    🟩 ADX mínimo: atual=19.82 >= necessário=15.00
+2026-02-26 10:41:28,293 | INFO |    🟩 RSI exaustão: atual=43.58 <= necessário=70.00
+2026-02-26 10:41:28,293 | INFO |    🟥 Gatilho: breakout pendente: close 340.1 <= resistência 343.0 (faltam 2.9)
+2026-02-26 10:41:28,293 | INFO |    🟥 Forçado: atual=0.00 == necessário=1.00
+2026-02-26 10:41:28,451 | INFO | ❌ BITG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:41:28,452 | INFO |    🟥 Score mínimo: atual=45.00 >= necessário=58.00
+2026-02-26 10:41:28,453 | INFO |    🟩 ADX mínimo: atual=29.63 >= necessário=15.00
+2026-02-26 10:41:28,465 | INFO |    🟩 RSI exaustão: atual=34.27 >= necessário=30.00
+2026-02-26 10:41:28,469 | INFO |    🟥 Gatilho: breakdown pendente: close 349660.0 >= suporte 348880.0 (faltam 780.0)
+2026-02-26 10:41:28,481 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:41:28,552 | WARNING | ⚠️ MT5 retornou OHLC inválido para ALUP11 (zeros/NaN). Tentando fallback...
+2026-02-26 10:41:28,767 | WARNING | ⚠️ MT5 ainda com OHLC inválido para ALUP11 após force_history. Tentando fallback...
+2026-02-26 10:41:28,801 | WARNING | ⚠️ MT5 Falhou em ALUP11. Acionando Polygon.io fallback...
+2026-02-26 10:41:31,013 | WARNING | ⚠️ MT5 retornou OHLC inválido para BEEF3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:41:31,219 | WARNING | ⚠️ MT5 ainda com OHLC inválido para BEEF3 após force_history. Tentando fallback...
+2026-02-26 10:41:31,231 | WARNING | ⚠️ MT5 Falhou em BEEF3. Acionando Polygon.io fallback...
+2026-02-26 10:41:32,938 | WARNING | ⚠️ MT5 retornou OHLC inválido para CMIG4 (zeros/NaN). Tentando fallback...
+2026-02-26 10:41:33,149 | WARNING | ⚠️ MT5 ainda com OHLC inválido para CMIG4 após force_history. Tentando fallback...
+2026-02-26 10:41:33,167 | WARNING | ⚠️ MT5 Falhou em CMIG4. Acionando Polygon.io fallback...
+2026-02-26 10:41:34,581 | WARNING | ⚠️ MT5 retornou OHLC inválido para GGBR4 (zeros/NaN). Tentando fallback...
+2026-02-26 10:41:34,794 | WARNING | ⚠️ MT5 ainda com OHLC inválido para GGBR4 após force_history. Tentando fallback...
+2026-02-26 10:41:34,816 | WARNING | ⚠️ MT5 Falhou em GGBR4. Acionando Polygon.io fallback...
+2026-02-26 10:41:36,229 | WARNING | ⚠️ MT5 retornou OHLC inválido para LAVV3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:41:36,434 | WARNING | ⚠️ MT5 ainda com OHLC inválido para LAVV3 após force_history. Tentando fallback...
+2026-02-26 10:41:36,494 | WARNING | ⚠️ MT5 Falhou em LAVV3. Acionando Polygon.io fallback...
+2026-02-26 10:41:37,898 | WARNING | ⚠️ MT5 retornou OHLC inválido para MDIA3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:41:38,109 | WARNING | ⚠️ MT5 ainda com OHLC inválido para MDIA3 após force_history. Tentando fallback...
+2026-02-26 10:41:38,114 | WARNING | ⚠️ MT5 Falhou em MDIA3. Acionando Polygon.io fallback...
+2026-02-26 10:41:39,493 | WARNING | ⚠️ MT5 retornou OHLC inválido para ONCO3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:41:39,705 | WARNING | ⚠️ MT5 ainda com OHLC inválido para ONCO3 após force_history. Tentando fallback...
+2026-02-26 10:41:39,714 | WARNING | ⚠️ MT5 Falhou em ONCO3. Acionando Polygon.io fallback...
+2026-02-26 10:41:41,129 | WARNING | ⚠️ MT5 retornou OHLC inválido para PETR3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:41:41,357 | WARNING | ⚠️ MT5 ainda com OHLC inválido para PETR3 após force_history. Tentando fallback...
+2026-02-26 10:41:41,367 | WARNING | ⚠️ MT5 Falhou em PETR3. Acionando Polygon.io fallback...
+2026-02-26 10:41:42,575 | WARNING | ⚠️ MT5 retornou OHLC inválido para PLPL3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:41:42,781 | WARNING | ⚠️ MT5 ainda com OHLC inválido para PLPL3 após force_history. Tentando fallback...
+2026-02-26 10:41:42,806 | WARNING | ⚠️ MT5 Falhou em PLPL3. Acionando Polygon.io fallback...
+2026-02-26 10:41:43,945 | WARNING | ⚠️ MT5 retornou OHLC inválido para PRIO3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:41:44,159 | WARNING | ⚠️ MT5 ainda com OHLC inválido para PRIO3 após force_history. Tentando fallback...
+2026-02-26 10:41:44,175 | WARNING | ⚠️ MT5 Falhou em PRIO3. Acionando Polygon.io fallback...
+2026-02-26 10:41:45,595 | WARNING | ⚠️ MT5 retornou OHLC inválido para RECV3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:41:45,809 | WARNING | ⚠️ MT5 ainda com OHLC inválido para RECV3 após force_history. Tentando fallback...
+2026-02-26 10:41:45,824 | WARNING | ⚠️ MT5 Falhou em RECV3. Acionando Polygon.io fallback...
+2026-02-26 10:41:46,958 | WARNING | ⚠️ MT5 retornou OHLC inválido para TEND3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:41:47,163 | WARNING | ⚠️ MT5 ainda com OHLC inválido para TEND3 após force_history. Tentando fallback...
+2026-02-26 10:41:47,177 | WARNING | ⚠️ MT5 Falhou em TEND3. Acionando Polygon.io fallback...
+2026-02-26 10:41:48,487 | WARNING | ⚠️ MT5 retornou OHLC inválido para UGPA3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:41:48,697 | WARNING | ⚠️ MT5 ainda com OHLC inválido para UGPA3 após force_history. Tentando fallback...
+2026-02-26 10:41:48,725 | WARNING | ⚠️ MT5 Falhou em UGPA3. Acionando Polygon.io fallback...
+2026-02-26 10:41:50,342 | INFO | ❌ WDOH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:41:50,343 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:41:50,343 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:41:50,344 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:41:50,344 | INFO |    🟩 TF 5: side=BUY | adx=19.1 | vol=0.65x
+2026-02-26 10:41:50,344 | INFO |    🟩 TF 15: side=SELL | adx=21.5 | vol=1.56x
+2026-02-26 10:41:50,344 | INFO |    🟩 TF 16385: side=SELL | adx=24.6 | vol=1.25x
+2026-02-26 10:41:50,675 | INFO | ❌ DOLH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:41:50,675 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:41:50,676 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:41:50,676 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:41:50,676 | INFO |    🟩 TF 5: side=BUY | adx=19.0 | vol=2.67x
+2026-02-26 10:41:50,677 | INFO |    🟩 TF 15: side=SELL | adx=21.7 | vol=2.94x
+2026-02-26 10:41:50,677 | INFO |    🟩 TF 16385: side=SELL | adx=25.0 | vol=0.86x
+2026-02-26 10:41:51,212 | INFO | ❌ ICFH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:41:51,212 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:41:51,213 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:41:51,213 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:41:51,213 | INFO |    🟩 TF 5: side=BUY | adx=10.9 | vol=1.77x
+2026-02-26 10:41:51,214 | INFO |    🟩 TF 15: side=BUY | adx=19.8 | vol=0.57x
+2026-02-26 10:41:51,214 | INFO |    🟩 TF 16385: side=SELL | adx=27.4 | vol=0.34x
+2026-02-26 10:42:03,511 | INFO | ❌ WINJ26 rejeitado: Sem força (ADX 18.5 < 20) | score=0
+2026-02-26 10:42:03,625 | INFO | ❌ INDJ26 rejeitado: Sem força (ADX 18.3 < 20) | score=0
+2026-02-26 10:42:03,757 | INFO | ❌ WDOH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:42:03,883 | INFO | ❌ DOLH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:42:03,993 | INFO | ❌ WSPH26 rejeitado: Aguardando correção (RSI Esticado) | score=0
+2026-02-26 10:42:03,993 | INFO |    🟥 Score mínimo: atual=0.00 >= necessário=58.00
+2026-02-26 10:42:03,994 | INFO |    🟩 ADX mínimo: atual=51.65 >= necessário=15.00
+2026-02-26 10:42:03,994 | INFO |    🟥 RSI exaustão: atual=71.26 <= necessário=70.00
+2026-02-26 10:42:03,994 | INFO |    🟥 Gatilho: breakout pendente: close 6968.0 <= resistência 6968.2 (faltam 0.2)
+2026-02-26 10:42:03,995 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:42:04,105 | INFO | ❌ CCMH26 rejeitado: Sem força (ADX 18.7 < 20) | score=75
+2026-02-26 10:42:04,106 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:42:04,106 | INFO |    🟩 ADX mínimo: atual=18.69 >= necessário=15.00
+2026-02-26 10:42:04,106 | INFO |    🟩 RSI exaustão: atual=54.11 <= necessário=70.00
+2026-02-26 10:42:04,107 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:42:04,107 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:42:04,193 | INFO | ❌ BGIG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:42:04,193 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:42:04,193 | INFO |    🟩 ADX mínimo: atual=18.69 >= necessário=15.00
+2026-02-26 10:42:04,194 | INFO |    🟩 RSI exaustão: atual=54.11 <= necessário=70.00
+2026-02-26 10:42:04,194 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:42:04,194 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:42:04,309 | INFO | ❌ ICFH26 rejeitado: Sem força (ADX 19.8 < 20) | score=100
+2026-02-26 10:42:04,310 | INFO |    🟩 Score mínimo: atual=100.00 >= necessário=58.00
+2026-02-26 10:42:04,310 | INFO |    🟩 ADX mínimo: atual=19.82 >= necessário=15.00
+2026-02-26 10:42:04,310 | INFO |    🟩 RSI exaustão: atual=45.67 <= necessário=70.00
+2026-02-26 10:42:04,310 | INFO |    🟥 Gatilho: breakout pendente: close 340.6 <= resistência 343.0 (faltam 2.4)
+2026-02-26 10:42:04,311 | INFO |    🟥 Forçado: atual=0.00 == necessário=1.00
+2026-02-26 10:42:04,409 | INFO | ❌ BITG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:42:04,409 | INFO |    🟥 Score mínimo: atual=45.00 >= necessário=58.00
+2026-02-26 10:42:04,410 | INFO |    🟩 ADX mínimo: atual=29.63 >= necessário=15.00
+2026-02-26 10:42:04,410 | INFO |    🟩 RSI exaustão: atual=34.00 >= necessário=30.00
+2026-02-26 10:42:04,411 | INFO |    🟥 Gatilho: breakdown pendente: close 349560.0 >= suporte 348880.0 (faltam 680.0)
+2026-02-26 10:42:04,411 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:42:05,156 | INFO | ❌ WDOH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:42:05,156 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:42:05,157 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:42:05,157 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:42:05,157 | INFO |    🟩 TF 5: side=BUY | adx=19.1 | vol=0.65x
+2026-02-26 10:42:05,158 | INFO |    🟩 TF 15: side=SELL | adx=21.5 | vol=1.56x
+2026-02-26 10:42:05,158 | INFO |    🟩 TF 16385: side=SELL | adx=24.6 | vol=1.25x
+2026-02-26 10:42:05,643 | INFO | ❌ DOLH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:42:05,643 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:42:05,644 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:42:05,644 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:42:05,645 | INFO |    🟩 TF 5: side=BUY | adx=19.0 | vol=2.67x
+2026-02-26 10:42:05,645 | INFO |    🟩 TF 15: side=SELL | adx=21.7 | vol=2.94x
+2026-02-26 10:42:05,645 | INFO |    🟩 TF 16385: side=SELL | adx=25.0 | vol=0.86x
+2026-02-26 10:42:06,125 | INFO | ❌ CCMH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:42:06,125 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:42:06,125 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:42:06,126 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:42:06,126 | INFO |    🟩 TF 5: side=BUY | adx=19.6 | vol=0.20x
+2026-02-26 10:42:06,127 | INFO |    🟩 TF 15: side=BUY | adx=18.7 | vol=0.13x
+2026-02-26 10:42:06,127 | INFO |    🟩 TF 16385: side=SELL | adx=22.4 | vol=1.59x
+2026-02-26 10:42:06,609 | INFO | ❌ ICFH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:42:06,609 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:42:06,610 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:42:06,611 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:42:06,611 | INFO |    🟩 TF 5: side=BUY | adx=10.9 | vol=1.77x
+2026-02-26 10:42:06,612 | INFO |    🟩 TF 15: side=BUY | adx=19.8 | vol=0.57x
+2026-02-26 10:42:06,615 | INFO |    🟩 TF 16385: side=SELL | adx=27.4 | vol=0.34x
+2026-02-26 10:42:19,901 | INFO | ❌ WINJ26 rejeitado: Sem força (ADX 18.5 < 20) | score=0
+2026-02-26 10:42:20,022 | INFO | ❌ INDJ26 rejeitado: Sem força (ADX 18.3 < 20) | score=0
+2026-02-26 10:42:20,124 | INFO | ❌ WDOH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:42:20,234 | INFO | ❌ DOLH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:42:20,340 | INFO | ❌ WSPH26 rejeitado: Aguardando correção (RSI Esticado) | score=0
+2026-02-26 10:42:20,340 | INFO |    🟥 Score mínimo: atual=0.00 >= necessário=58.00
+2026-02-26 10:42:20,341 | INFO |    🟩 ADX mínimo: atual=51.65 >= necessário=15.00
+2026-02-26 10:42:20,341 | INFO |    🟥 RSI exaustão: atual=70.93 <= necessário=70.00
+2026-02-26 10:42:20,341 | INFO |    🟥 Gatilho: breakout pendente: close 6967.8 <= resistência 6968.2 (faltam 0.5)
+2026-02-26 10:42:20,341 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:42:20,440 | INFO | ❌ CCMH26 rejeitado: Sem força (ADX 18.7 < 20) | score=75
+2026-02-26 10:42:20,440 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:42:20,441 | INFO |    🟩 ADX mínimo: atual=18.69 >= necessário=15.00
+2026-02-26 10:42:20,441 | INFO |    🟩 RSI exaustão: atual=54.11 <= necessário=70.00
+2026-02-26 10:42:20,441 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:42:20,442 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:42:20,535 | INFO | ❌ BGIG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:42:20,536 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:42:20,536 | INFO |    🟩 ADX mínimo: atual=18.69 >= necessário=15.00
+2026-02-26 10:42:20,536 | INFO |    🟩 RSI exaustão: atual=54.11 <= necessário=70.00
+2026-02-26 10:42:20,537 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:42:20,537 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:42:20,675 | INFO | ❌ ICFH26 rejeitado: Sem força (ADX 19.8 < 20) | score=100
+2026-02-26 10:42:20,676 | INFO |    🟩 Score mínimo: atual=100.00 >= necessário=58.00
+2026-02-26 10:42:20,680 | INFO |    🟩 ADX mínimo: atual=19.82 >= necessário=15.00
+2026-02-26 10:42:20,680 | INFO |    🟩 RSI exaustão: atual=45.67 <= necessário=70.00
+2026-02-26 10:42:20,681 | INFO |    🟥 Gatilho: breakout pendente: close 340.6 <= resistência 343.0 (faltam 2.4)
+2026-02-26 10:42:20,682 | INFO |    🟥 Forçado: atual=0.00 == necessário=1.00
+2026-02-26 10:42:20,814 | INFO | ❌ BITG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:42:20,816 | INFO |    🟥 Score mínimo: atual=45.00 >= necessário=58.00
+2026-02-26 10:42:20,816 | INFO |    🟩 ADX mínimo: atual=29.63 >= necessário=15.00
+2026-02-26 10:42:20,817 | INFO |    🟩 RSI exaustão: atual=34.16 >= necessário=30.00
+2026-02-26 10:42:20,817 | INFO |    🟥 Gatilho: breakdown pendente: close 349620.0 >= suporte 348880.0 (faltam 740.0)
+2026-02-26 10:42:20,817 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:42:21,255 | INFO | ❌ WDOH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:42:21,255 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:42:21,256 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:42:21,256 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:42:21,256 | INFO |    🟩 TF 5: side=BUY | adx=19.1 | vol=0.65x
+2026-02-26 10:42:21,257 | INFO |    🟩 TF 15: side=SELL | adx=21.5 | vol=1.56x
+2026-02-26 10:42:21,257 | INFO |    🟩 TF 16385: side=SELL | adx=24.6 | vol=1.25x
+2026-02-26 10:42:21,551 | INFO | ❌ DOLH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:42:21,552 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:42:21,552 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:42:21,552 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:42:21,553 | INFO |    🟩 TF 5: side=BUY | adx=19.0 | vol=2.67x
+2026-02-26 10:42:21,553 | INFO |    🟩 TF 15: side=SELL | adx=21.7 | vol=2.94x
+2026-02-26 10:42:21,553 | INFO |    🟩 TF 16385: side=SELL | adx=25.0 | vol=0.86x
+2026-02-26 10:42:22,189 | INFO | ❌ CCMH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:42:22,189 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:42:22,190 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:42:22,190 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:42:22,190 | INFO |    🟩 TF 5: side=BUY | adx=19.6 | vol=0.20x
+2026-02-26 10:42:22,190 | INFO |    🟩 TF 15: side=BUY | adx=18.7 | vol=0.13x
+2026-02-26 10:42:22,191 | INFO |    🟩 TF 16385: side=SELL | adx=22.4 | vol=1.59x
+2026-02-26 10:42:22,532 | INFO | ❌ ICFH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:42:22,533 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:42:22,533 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:42:22,533 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:42:22,534 | INFO |    🟩 TF 5: side=BUY | adx=10.9 | vol=1.77x
+2026-02-26 10:42:22,534 | INFO |    🟩 TF 15: side=BUY | adx=19.8 | vol=0.57x
+2026-02-26 10:42:22,534 | INFO |    🟩 TF 16385: side=SELL | adx=27.4 | vol=0.34x
+2026-02-26 10:42:29,663 | WARNING | ⚠️ MT5 retornou OHLC inválido para IBOV (zeros/NaN). Tentando fallback...
+2026-02-26 10:42:29,869 | WARNING | ⚠️ MT5 ainda com OHLC inválido para IBOV após force_history. Tentando fallback...
+2026-02-26 10:42:29,870 | WARNING | ⚠️ MT5 Falhou em IBOV. Acionando Polygon.io fallback...
+2026-02-26 10:42:36,685 | INFO | ❌ WINJ26 rejeitado: Sem força (ADX 18.5 < 20) | score=0
+2026-02-26 10:42:36,796 | INFO | ❌ INDJ26 rejeitado: Sem força (ADX 18.3 < 20) | score=0
+2026-02-26 10:42:36,990 | INFO | ❌ WDOH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:42:37,647 | INFO | ❌ DOLH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:42:38,817 | INFO | ❌ WSPH26 rejeitado: Aguardando correção (RSI Esticado) | score=0
+2026-02-26 10:42:38,821 | INFO |    🟥 Score mínimo: atual=0.00 >= necessário=58.00
+2026-02-26 10:42:38,835 | INFO |    🟩 ADX mínimo: atual=51.65 >= necessário=15.00
+2026-02-26 10:42:38,848 | INFO |    🟥 RSI exaustão: atual=71.59 <= necessário=70.00
+2026-02-26 10:42:38,855 | INFO |    🟥 Gatilho: breakout pendente: close 6968.2 <= resistência 6968.2 (faltam 0.0)
+2026-02-26 10:42:38,920 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:42:40,433 | INFO | ❌ CCMH26 rejeitado: Sem força (ADX 18.8 < 20) | score=75
+2026-02-26 10:42:40,504 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:42:40,581 | INFO |    🟩 ADX mínimo: atual=18.76 >= necessário=15.00
+2026-02-26 10:42:40,618 | INFO |    🟩 RSI exaustão: atual=54.42 <= necessário=70.00
+2026-02-26 10:42:40,664 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:42:40,698 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:42:41,116 | INFO | ❌ BGIG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:42:41,122 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:42:41,138 | INFO |    🟩 ADX mínimo: atual=18.76 >= necessário=15.00
+2026-02-26 10:42:41,168 | INFO |    🟩 RSI exaustão: atual=54.42 <= necessário=70.00
+2026-02-26 10:42:41,249 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:42:41,321 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:42:41,913 | INFO | ❌ ICFH26 rejeitado: Sem força (ADX 19.8 < 20) | score=100
+2026-02-26 10:42:41,919 | INFO |    🟩 Score mínimo: atual=100.00 >= necessário=58.00
+2026-02-26 10:42:41,935 | INFO |    🟩 ADX mínimo: atual=19.82 >= necessário=15.00
+2026-02-26 10:42:41,937 | INFO |    🟩 RSI exaustão: atual=47.50 <= necessário=70.00
+2026-02-26 10:42:41,950 | INFO |    🟥 Gatilho: breakout pendente: close 341.0 <= resistência 343.0 (faltam 2.0)
+2026-02-26 10:42:41,955 | INFO |    🟥 Forçado: atual=0.00 == necessário=1.00
+2026-02-26 10:42:42,419 | INFO | ❌ BITG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:42:42,430 | INFO |    🟥 Score mínimo: atual=45.00 >= necessário=58.00
+2026-02-26 10:42:42,435 | INFO |    🟩 ADX mínimo: atual=29.63 >= necessário=15.00
+2026-02-26 10:42:42,438 | INFO |    🟩 RSI exaustão: atual=34.27 >= necessário=30.00
+2026-02-26 10:42:42,451 | INFO |    🟥 Gatilho: breakdown pendente: close 349660.0 >= suporte 348880.0 (faltam 780.0)
+2026-02-26 10:42:42,465 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:42:45,859 | INFO | ❌ WDOH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:42:45,897 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:42:45,967 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:42:46,018 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:42:46,101 | INFO |    🟩 TF 5: side=BUY | adx=19.1 | vol=0.65x
+2026-02-26 10:42:46,137 | INFO |    🟩 TF 15: side=SELL | adx=21.5 | vol=1.56x
+2026-02-26 10:42:46,186 | INFO |    🟩 TF 16385: side=SELL | adx=24.6 | vol=1.25x
+2026-02-26 10:42:47,630 | INFO | ❌ DOLH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:42:47,637 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:42:47,645 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:42:47,646 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:42:47,653 | INFO |    🟩 TF 5: side=BUY | adx=19.0 | vol=2.67x
+2026-02-26 10:42:47,661 | INFO |    🟩 TF 15: side=SELL | adx=21.7 | vol=2.94x
+2026-02-26 10:42:47,667 | INFO |    🟩 TF 16385: side=SELL | adx=25.0 | vol=0.86x
+2026-02-26 10:42:48,801 | INFO | ❌ CCMH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:42:48,807 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:42:48,811 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:42:48,832 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:42:48,835 | INFO |    🟩 TF 5: side=BUY | adx=19.7 | vol=0.20x
+2026-02-26 10:42:48,837 | INFO |    🟩 TF 15: side=BUY | adx=18.8 | vol=0.13x
+2026-02-26 10:42:48,844 | INFO |    🟩 TF 16385: side=SELL | adx=22.4 | vol=1.59x
+2026-02-26 10:42:49,509 | INFO | ❌ ICFH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:42:49,510 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:42:49,511 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:42:49,512 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:42:49,512 | INFO |    🟩 TF 5: side=BUY | adx=10.7 | vol=1.77x
+2026-02-26 10:42:49,513 | INFO |    🟩 TF 15: side=BUY | adx=19.8 | vol=0.57x
+2026-02-26 10:42:49,514 | INFO |    🟩 TF 16385: side=SELL | adx=27.4 | vol=0.34x
+2026-02-26 10:43:02,338 | INFO | ❌ WINJ26 rejeitado: Sem força (ADX 18.5 < 20) | score=0
+2026-02-26 10:43:02,579 | INFO | ❌ INDJ26 rejeitado: Sem força (ADX 18.3 < 20) | score=0
+2026-02-26 10:43:02,984 | INFO | ❌ WDOH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:43:03,305 | INFO | ❌ DOLH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:43:03,531 | INFO | ❌ WSPH26 rejeitado: Aguardando correção (RSI Esticado) | score=0
+2026-02-26 10:43:03,531 | INFO |    🟥 Score mínimo: atual=0.00 >= necessário=58.00
+2026-02-26 10:43:03,532 | INFO |    🟩 ADX mínimo: atual=51.65 >= necessário=15.00
+2026-02-26 10:43:03,532 | INFO |    🟥 RSI exaustão: atual=71.59 <= necessário=70.00
+2026-02-26 10:43:03,532 | INFO |    🟥 Gatilho: breakout pendente: close 6968.2 <= resistência 6968.2 (faltam 0.0)
+2026-02-26 10:43:03,533 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:43:03,780 | INFO | ❌ CCMH26 rejeitado: Sem força (ADX 18.8 < 20) | score=75
+2026-02-26 10:43:03,784 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:43:03,792 | INFO |    🟩 ADX mínimo: atual=18.76 >= necessário=15.00
+2026-02-26 10:43:03,792 | INFO |    🟩 RSI exaustão: atual=54.11 <= necessário=70.00
+2026-02-26 10:43:03,793 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:43:03,794 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:43:04,126 | INFO | ❌ BGIG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:43:04,147 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:43:04,154 | INFO |    🟩 ADX mínimo: atual=18.76 >= necessário=15.00
+2026-02-26 10:43:04,159 | INFO |    🟩 RSI exaustão: atual=54.11 <= necessário=70.00
+2026-02-26 10:43:04,162 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:43:04,170 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:43:04,441 | INFO | ❌ ICFH26 rejeitado: Sem força (ADX 19.8 < 20) | score=100
+2026-02-26 10:43:04,442 | INFO |    🟩 Score mínimo: atual=100.00 >= necessário=58.00
+2026-02-26 10:43:04,442 | INFO |    🟩 ADX mínimo: atual=19.82 >= necessário=15.00
+2026-02-26 10:43:04,442 | INFO |    🟩 RSI exaustão: atual=47.50 <= necessário=70.00
+2026-02-26 10:43:04,443 | INFO |    🟥 Gatilho: breakout pendente: close 341.0 <= resistência 343.0 (faltam 2.0)
+2026-02-26 10:43:04,443 | INFO |    🟥 Forçado: atual=0.00 == necessário=1.00
+2026-02-26 10:43:04,643 | INFO | ❌ BITG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:43:04,643 | INFO |    🟥 Score mínimo: atual=45.00 >= necessário=58.00
+2026-02-26 10:43:04,644 | INFO |    🟩 ADX mínimo: atual=29.63 >= necessário=15.00
+2026-02-26 10:43:04,644 | INFO |    🟩 RSI exaustão: atual=34.54 >= necessário=30.00
+2026-02-26 10:43:04,645 | INFO |    🟥 Gatilho: breakdown pendente: close 349760.0 >= suporte 348880.0 (faltam 880.0)
+2026-02-26 10:43:04,645 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:43:07,396 | INFO | ❌ WDOH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:43:07,397 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:43:07,399 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:43:07,399 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:43:07,399 | INFO |    🟩 TF 5: side=BUY | adx=19.1 | vol=0.65x
+2026-02-26 10:43:07,400 | INFO |    🟩 TF 15: side=SELL | adx=21.5 | vol=1.56x
+2026-02-26 10:43:07,404 | INFO |    🟩 TF 16385: side=SELL | adx=24.6 | vol=1.25x
+2026-02-26 10:43:07,938 | INFO | ❌ DOLH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:43:07,941 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:43:07,942 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:43:07,942 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:43:07,943 | INFO |    🟩 TF 5: side=BUY | adx=19.0 | vol=2.67x
+2026-02-26 10:43:07,944 | INFO |    🟩 TF 15: side=SELL | adx=21.7 | vol=2.94x
+2026-02-26 10:43:07,945 | INFO |    🟩 TF 16385: side=SELL | adx=25.0 | vol=0.86x
+2026-02-26 10:43:08,407 | INFO | ❌ CCMH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:43:08,408 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:43:08,409 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:43:08,409 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:43:08,410 | INFO |    🟩 TF 5: side=BUY | adx=19.7 | vol=0.20x
+2026-02-26 10:43:08,410 | INFO |    🟩 TF 15: side=BUY | adx=18.8 | vol=0.13x
+2026-02-26 10:43:08,410 | INFO |    🟩 TF 16385: side=SELL | adx=22.4 | vol=1.59x
+2026-02-26 10:43:08,904 | INFO | ❌ ICFH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:43:08,906 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:43:08,907 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:43:08,908 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:43:08,909 | INFO |    🟩 TF 5: side=BUY | adx=10.7 | vol=1.77x
+2026-02-26 10:43:08,910 | INFO |    🟩 TF 15: side=BUY | adx=19.8 | vol=0.57x
+2026-02-26 10:43:08,910 | INFO |    🟩 TF 16385: side=SELL | adx=27.4 | vol=0.34x
+2026-02-26 10:43:24,210 | INFO | ❌ WINJ26 rejeitado: Sem força (ADX 18.5 < 20) | score=0
+2026-02-26 10:43:24,330 | INFO | ❌ INDJ26 rejeitado: Sem força (ADX 18.3 < 20) | score=0
+2026-02-26 10:43:24,444 | INFO | ❌ WDOH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:43:24,835 | INFO | ❌ DOLH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:43:25,353 | INFO | ❌ WSPH26 rejeitado: Aguardando correção (RSI Esticado) | score=0
+2026-02-26 10:43:25,354 | INFO |    🟥 Score mínimo: atual=0.00 >= necessário=58.00
+2026-02-26 10:43:25,354 | INFO |    🟩 ADX mínimo: atual=51.65 >= necessário=15.00
+2026-02-26 10:43:25,356 | INFO |    🟥 RSI exaustão: atual=70.24 <= necessário=70.00
+2026-02-26 10:43:25,357 | INFO |    🟥 Gatilho: breakout pendente: close 6967.2 <= resistência 6968.2 (faltam 1.0)
+2026-02-26 10:43:25,357 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:43:25,512 | INFO | ❌ CCMH26 rejeitado: Sem força (ADX 18.8 < 20) | score=75
+2026-02-26 10:43:25,513 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:43:25,513 | INFO |    🟩 ADX mínimo: atual=18.76 >= necessário=15.00
+2026-02-26 10:43:25,516 | INFO |    🟩 RSI exaustão: atual=54.11 <= necessário=70.00
+2026-02-26 10:43:25,518 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:43:25,519 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:43:25,677 | INFO | ❌ BGIG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:43:25,678 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:43:25,678 | INFO |    🟩 ADX mínimo: atual=18.76 >= necessário=15.00
+2026-02-26 10:43:25,679 | INFO |    🟩 RSI exaustão: atual=54.11 <= necessário=70.00
+2026-02-26 10:43:25,679 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:43:25,679 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:43:25,906 | INFO | ❌ ICFH26 rejeitado: Sem força (ADX 19.8 < 20) | score=100
+2026-02-26 10:43:25,907 | INFO |    🟩 Score mínimo: atual=100.00 >= necessário=58.00
+2026-02-26 10:43:25,907 | INFO |    🟩 ADX mínimo: atual=19.82 >= necessário=15.00
+2026-02-26 10:43:25,908 | INFO |    🟩 RSI exaustão: atual=47.50 <= necessário=70.00
+2026-02-26 10:43:25,909 | INFO |    🟥 Gatilho: breakout pendente: close 341.0 <= resistência 343.0 (faltam 2.0)
+2026-02-26 10:43:25,910 | INFO |    🟥 Forçado: atual=0.00 == necessário=1.00
+2026-02-26 10:43:26,095 | INFO | ❌ BITG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:43:26,096 | INFO |    🟥 Score mínimo: atual=45.00 >= necessário=58.00
+2026-02-26 10:43:26,099 | INFO |    🟩 ADX mínimo: atual=29.63 >= necessário=15.00
+2026-02-26 10:43:26,101 | INFO |    🟩 RSI exaustão: atual=34.06 >= necessário=30.00
+2026-02-26 10:43:26,101 | INFO |    🟥 Gatilho: breakdown pendente: close 349580.0 >= suporte 348880.0 (faltam 700.0)
+2026-02-26 10:43:26,102 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:43:26,769 | INFO | ❌ WDOH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:43:26,770 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:43:26,770 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:43:26,771 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:43:26,772 | INFO |    🟩 TF 5: side=BUY | adx=19.1 | vol=0.65x
+2026-02-26 10:43:26,772 | INFO |    🟩 TF 15: side=SELL | adx=21.5 | vol=1.56x
+2026-02-26 10:43:26,773 | INFO |    🟩 TF 16385: side=SELL | adx=24.6 | vol=1.25x
+2026-02-26 10:43:27,159 | INFO | ❌ DOLH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:43:27,160 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:43:27,160 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:43:27,160 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:43:27,160 | INFO |    🟩 TF 5: side=BUY | adx=19.0 | vol=2.67x
+2026-02-26 10:43:27,161 | INFO |    🟩 TF 15: side=SELL | adx=21.7 | vol=2.94x
+2026-02-26 10:43:27,161 | INFO |    🟩 TF 16385: side=SELL | adx=25.0 | vol=0.86x
+2026-02-26 10:43:27,485 | INFO | ❌ CCMH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:43:27,486 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:43:27,486 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:43:27,486 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:43:27,486 | INFO |    🟩 TF 5: side=BUY | adx=19.7 | vol=0.20x
+2026-02-26 10:43:27,487 | INFO |    🟩 TF 15: side=BUY | adx=18.8 | vol=0.13x
+2026-02-26 10:43:27,487 | INFO |    🟩 TF 16385: side=SELL | adx=22.4 | vol=1.59x
+2026-02-26 10:43:28,006 | INFO | ❌ ICFH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:43:28,006 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:43:28,006 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:43:28,007 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:43:28,007 | INFO |    🟩 TF 5: side=BUY | adx=10.7 | vol=1.77x
+2026-02-26 10:43:28,007 | INFO |    🟩 TF 15: side=BUY | adx=19.8 | vol=0.57x
+2026-02-26 10:43:28,008 | INFO |    🟩 TF 16385: side=SELL | adx=27.4 | vol=0.34x
+2026-02-26 10:43:36,757 | WARNING | ⚠️ MT5 retornou OHLC inválido para IBOV (zeros/NaN). Tentando fallback...
+2026-02-26 10:43:37,165 | WARNING | ⚠️ MT5 ainda com OHLC inválido para IBOV após force_history. Tentando fallback...
+2026-02-26 10:43:37,194 | WARNING | ⚠️ MT5 Falhou em IBOV. Acionando Polygon.io fallback...
+2026-02-26 10:43:45,524 | INFO | ❌ WINJ26 rejeitado: Sem força (ADX 18.5 < 20) | score=0
+2026-02-26 10:43:45,719 | INFO | ❌ INDJ26 rejeitado: Sem força (ADX 18.3 < 20) | score=0
+2026-02-26 10:43:46,142 | INFO | ❌ WDOH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:43:46,295 | INFO | ❌ DOLH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:43:46,469 | INFO | ❌ WSPH26 rejeitado: Aguardando correção (RSI Esticado) | score=0
+2026-02-26 10:43:46,470 | INFO |    🟥 Score mínimo: atual=0.00 >= necessário=58.00
+2026-02-26 10:43:46,472 | INFO |    🟩 ADX mínimo: atual=51.65 >= necessário=15.00
+2026-02-26 10:43:46,473 | INFO |    🟥 RSI exaustão: atual=70.24 <= necessário=70.00
+2026-02-26 10:43:46,474 | INFO |    🟥 Gatilho: breakout pendente: close 6967.2 <= resistência 6968.2 (faltam 1.0)
+2026-02-26 10:43:46,481 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:43:46,696 | INFO | ❌ CCMH26 rejeitado: Sem força (ADX 18.8 < 20) | score=75
+2026-02-26 10:43:46,717 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:43:46,723 | INFO |    🟩 ADX mínimo: atual=18.76 >= necessário=15.00
+2026-02-26 10:43:46,724 | INFO |    🟩 RSI exaustão: atual=54.11 <= necessário=70.00
+2026-02-26 10:43:46,725 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:43:46,725 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:43:47,590 | INFO | ❌ BGIG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:43:47,591 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:43:47,591 | INFO |    🟩 ADX mínimo: atual=18.76 >= necessário=15.00
+2026-02-26 10:43:47,592 | INFO |    🟩 RSI exaustão: atual=54.11 <= necessário=70.00
+2026-02-26 10:43:47,595 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:43:47,598 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:43:47,755 | INFO | ❌ ICFH26 rejeitado: Sem força (ADX 19.8 < 20) | score=100
+2026-02-26 10:43:47,756 | INFO |    🟩 Score mínimo: atual=100.00 >= necessário=58.00
+2026-02-26 10:43:47,757 | INFO |    🟩 ADX mínimo: atual=19.82 >= necessário=15.00
+2026-02-26 10:43:47,757 | INFO |    🟩 RSI exaustão: atual=47.50 <= necessário=70.00
+2026-02-26 10:43:47,758 | INFO |    🟥 Gatilho: breakout pendente: close 341.0 <= resistência 343.0 (faltam 2.0)
+2026-02-26 10:43:47,758 | INFO |    🟥 Forçado: atual=0.00 == necessário=1.00
+2026-02-26 10:43:48,024 | INFO | ❌ BITG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:43:48,024 | INFO |    🟥 Score mínimo: atual=45.00 >= necessário=58.00
+2026-02-26 10:43:48,025 | INFO |    🟩 ADX mínimo: atual=29.63 >= necessário=15.00
+2026-02-26 10:43:48,025 | INFO |    🟩 RSI exaustão: atual=33.85 >= necessário=30.00
+2026-02-26 10:43:48,031 | INFO |    🟥 Gatilho: breakdown pendente: close 349500.0 >= suporte 348880.0 (faltam 620.0)
+2026-02-26 10:43:48,031 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:43:48,716 | INFO | ❌ WDOH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:43:48,718 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:43:48,718 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:43:48,718 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:43:48,719 | INFO |    🟩 TF 5: side=BUY | adx=19.1 | vol=0.65x
+2026-02-26 10:43:48,719 | INFO |    🟩 TF 15: side=SELL | adx=21.5 | vol=1.56x
+2026-02-26 10:43:48,720 | INFO |    🟩 TF 16385: side=SELL | adx=24.6 | vol=1.25x
+2026-02-26 10:43:49,436 | INFO | ❌ DOLH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:43:49,437 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:43:49,437 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:43:49,438 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:43:49,438 | INFO |    🟩 TF 5: side=BUY | adx=19.0 | vol=2.67x
+2026-02-26 10:43:49,438 | INFO |    🟩 TF 15: side=SELL | adx=21.7 | vol=2.94x
+2026-02-26 10:43:49,439 | INFO |    🟩 TF 16385: side=SELL | adx=25.0 | vol=0.86x
+2026-02-26 10:43:50,148 | INFO | ❌ CCMH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:43:50,151 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:43:50,151 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:43:50,152 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:43:50,152 | INFO |    🟩 TF 5: side=BUY | adx=19.7 | vol=0.20x
+2026-02-26 10:43:50,153 | INFO |    🟩 TF 15: side=BUY | adx=18.8 | vol=0.13x
+2026-02-26 10:43:50,153 | INFO |    🟩 TF 16385: side=SELL | adx=22.4 | vol=1.59x
+2026-02-26 10:43:50,656 | INFO | ❌ ICFH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:43:50,657 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:43:50,657 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:43:50,658 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:43:50,658 | INFO |    🟩 TF 5: side=BUY | adx=10.7 | vol=1.77x
+2026-02-26 10:43:50,663 | INFO |    🟩 TF 15: side=BUY | adx=19.8 | vol=0.57x
+2026-02-26 10:43:50,664 | INFO |    🟩 TF 16385: side=SELL | adx=27.4 | vol=0.34x
+2026-02-26 10:44:13,719 | INFO | [OK] news_calendar.py carregado com sucesso
+2026-02-26 10:44:16,065 | INFO | ✅ Redis conectado - cache ativado
+2026-02-26 10:44:16,069 | INFO | ✅ Dados anti-chop carregados
+2026-02-26 10:44:16,074 | INFO | ✅ Limites diários carregados
+2026-02-26 10:44:21,475 | INFO | 🚀 Iniciando Screener Diário de Ativos...
+2026-02-26 10:44:21,493 | WARNING | Nenhum candidato para WDO$N
+2026-02-26 10:44:21,501 | WARNING | Nenhum candidato para DOL$N
+2026-02-26 10:44:21,503 | WARNING | Nenhum candidato para WIN$N
+2026-02-26 10:44:21,506 | WARNING | Nenhum candidato para BIT$N
+2026-02-26 10:44:21,512 | WARNING | Nenhum candidato para ICF$N
+2026-02-26 10:44:21,514 | WARNING | Nenhum candidato para IND$N
+2026-02-26 10:44:21,515 | WARNING | ⚠️ Screener Diário falhou ou não retornou ativos. Acionando fallback.
+2026-02-26 10:44:21,516 | WARNING | Nenhum candidato para WIN$N
+2026-02-26 10:44:21,526 | WARNING | Nenhum candidato para WDO$N
+2026-02-26 10:44:21,527 | ERROR | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-26 10:44:22,613 | INFO | Bot do Telegram inicializado com sucesso
+2026-02-26 10:44:22,621 | INFO | ✅ Validação: Sistema configurado apenas para FUTUROS
+2026-02-26 10:44:22,661 | INFO | Parâmetros carregados do JSON (9 ativos elite): optimizer_output/elite_symbols_latest.json
+2026-02-26 10:44:22,663 | INFO | 🔧 Iniciando otimização diária de parâmetros...
+2026-02-26 10:44:22,833 | WARNING | ⚠️ Contrato INDJ26 selecionado com liquidez baixa (OI/Vol=230.0) para IND.
+2026-02-26 10:44:22,947 | WARNING | ⚠️ Contrato WSPH26 selecionado com liquidez baixa (OI/Vol=116.0) para WSP.
+2026-02-26 10:44:23,011 | WARNING | ⚠️ Contrato CCMH26 selecionado com liquidez baixa (OI/Vol=200.0) para CCM.
+2026-02-26 10:44:23,068 | WARNING | ⚠️ Contrato BGIG26 selecionado com liquidez baixa (OI/Vol=12.0) para BGI.
+2026-02-26 10:44:23,267 | WARNING | ⚠️ Contrato BITG26 selecionado com liquidez baixa (OI/Vol=223.0) para BIT.
+2026-02-26 10:44:23,268 | INFO | 🔧 Otimizando 10 ativos: ['WINJ26', 'WDOH26', 'INDJ26', 'DOLH26', 'WSPH26', 'CCMH26', 'BGIG26', 'ICFH26', 'DDIH26', 'BITG26']
+2026-02-26 10:44:23,310 | INFO | ⏳ Otimizando WINJ26...
+2026-02-26 10:44:26,258 | INFO | ✅ WINJ26: Parâmetros otimizados aplicados
+2026-02-26 10:44:26,298 | INFO | ⏳ Otimizando WDOH26...
+2026-02-26 10:44:26,898 | INFO | ✅ WDOH26: Parâmetros otimizados aplicados
+2026-02-26 10:44:26,932 | INFO | ⏳ Otimizando INDJ26...
+2026-02-26 10:44:27,338 | INFO | ✅ INDJ26: Parâmetros otimizados aplicados
+2026-02-26 10:44:27,362 | INFO | ⏳ Otimizando DOLH26...
+2026-02-26 10:44:27,741 | INFO | ✅ DOLH26: Parâmetros otimizados aplicados
+2026-02-26 10:44:27,810 | INFO | ⏳ Otimizando WSPH26...
+2026-02-26 10:44:28,203 | INFO | ✅ WSPH26: Parâmetros otimizados aplicados
+2026-02-26 10:44:28,220 | INFO | ⏳ Otimizando CCMH26...
+2026-02-26 10:44:28,488 | INFO | ✅ CCMH26: Parâmetros otimizados aplicados
+2026-02-26 10:44:28,504 | INFO | ⏳ Otimizando BGIG26...
+2026-02-26 10:44:28,749 | INFO | ✅ BGIG26: Parâmetros otimizados aplicados
+2026-02-26 10:44:28,766 | INFO | ⏳ Otimizando ICFH26...
+2026-02-26 10:44:29,083 | INFO | ✅ ICFH26: Parâmetros otimizados aplicados
+2026-02-26 10:44:29,113 | INFO | ⏳ Otimizando BITG26...
+2026-02-26 10:44:29,327 | INFO | ✅ BITG26: Parâmetros otimizados aplicados
+2026-02-26 10:44:29,330 | INFO | ✅ Otimização concluída: 9/10 ativos em 6.7s
+2026-02-26 10:44:29,340 | INFO | 💾 Novos parâmetros otimizados salvos em: optimizer_output/elite_symbols_latest.json
+2026-02-26 10:44:29,349 | INFO | ⚙️ Fast Loop iniciado (modo contínuo)
+2026-02-26 10:44:29,350 | INFO | 🔄 Inicializando pesos adaptativos e correlações...
+2026-02-26 10:44:29,354 | INFO | ✅ Pesos adaptativos inicializados / normalizados com sucesso
+2026-02-26 10:44:29,365 | INFO | 📅 Novo dia detectado: 26/02/2026
+2026-02-26 10:44:29,368 | INFO | 💰 Equity inicial do dia: R$947,995.66
+2026-02-26 10:44:29,379 | INFO | 📊 Iniciando Backtest (30 dias)...
+2026-02-26 10:44:29,411 | WARNING | ⚠️ Nenhum deal de saída encontrado (FUTUROS)
+2026-02-26 10:44:29,412 | INFO | ℹ️ Sem dados suficientes para análise de performance (Win Rate ignorado).
+2026-02-26 10:44:29,422 | INFO | ✅ Limites diários resetados
+2026-02-26 10:44:29,428 | INFO | 🌅 Novo ciclo de trading iniciado: 26/02/2026
+2026-02-26 10:44:29,429 | INFO | 🤖 SENSOR: Coletando métricas de mercado...
+2026-02-26 10:44:29,444 | WARNING | ⚠️ MT5 retornou OHLC inválido para IBOV (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:29,707 | WARNING | ⚠️ MT5 ainda com OHLC inválido para IBOV após force_history. Tentando fallback...
+2026-02-26 10:44:29,714 | WARNING | ⚠️ MT5 Falhou em IBOV. Acionando Polygon.io fallback...
+2026-02-26 10:44:31,460 | WARNING | ⚠️ MT5 retornou OHLC inválido para IBOV (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:31,675 | WARNING | ⚠️ MT5 ainda com OHLC inválido para IBOV após force_history. Tentando fallback...
+2026-02-26 10:44:31,695 | WARNING | ⚠️ MT5 Falhou em IBOV. Acionando Polygon.io fallback...
+2026-02-26 10:44:33,767 | WARNING | ⚠️ MT5 retornou OHLC inválido para IBOV (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:33,983 | WARNING | ⚠️ MT5 ainda com OHLC inválido para IBOV após force_history. Tentando fallback...
+2026-02-26 10:44:34,013 | WARNING | ⚠️ MT5 Falhou em IBOV. Acionando Polygon.io fallback...
+2026-02-26 10:44:35,368 | INFO | 🤖 SENSOR: Métricas atualizadas. Volatility Ratio: 0.00
+2026-02-26 10:44:35,379 | WARNING | ⚠️ MT5 retornou OHLC inválido para IBOV (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:35,586 | WARNING | ⚠️ MT5 ainda com OHLC inválido para IBOV após force_history. Tentando fallback...
+2026-02-26 10:44:35,590 | WARNING | ⚠️ MT5 Falhou em IBOV. Acionando Polygon.io fallback...
+2026-02-26 10:44:36,799 | INFO | 🧠 CÉREBRO: Regime de mercado detectado: REVERSION
+2026-02-26 10:44:36,805 | INFO | 🔧 MECÂNICO: Ajustando parâmetros para o regime 'REVERSION'...
+2026-02-26 10:44:36,807 | INFO | 🔧 MECÂNICO: Parâmetros ajustados para regime 'REVERSION' em 9 símbolos
+2026-02-26 10:44:36,809 | INFO | 🔧 MECÂNICO: Exemplo de parâmetros ajustados (simulação): {'adx_threshold': 15, 'rsi_low': 40, 'rsi_high': 75, 'ema_short': 9, 'ema_long': 50, 'tp_ratio': 3.0, 'sl_atr_mult': 2.0}
+2026-02-26 10:44:41,811 | INFO | ✅ Estado de pausa por win rate resetado (meia-noite)
+2026-02-26 10:44:41,828 | INFO | Parâmetros carregados do ELITE_SYMBOLS (9 ativos elite)
+2026-02-26 10:44:41,946 | INFO | ❌ WINJ26 rejeitado: Sem força (ADX 18.5 < 20) | score=0
+2026-02-26 10:44:42,052 | INFO | ❌ INDJ26 rejeitado: Sem força (ADX 18.3 < 20) | score=0
+2026-02-26 10:44:42,430 | INFO | ❌ WDOH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:44:42,517 | INFO | ❌ DOLH26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:44:42,607 | INFO | ❌ WSPH26 rejeitado: Falta: ADX 51.6 < 20 | score=0
+2026-02-26 10:44:42,607 | INFO |    🟥 Score mínimo: atual=0.00 >= necessário=58.00
+2026-02-26 10:44:42,608 | INFO |    🟩 ADX mínimo: atual=51.65 >= necessário=15.00
+2026-02-26 10:44:42,608 | INFO |    🟩 RSI exaustão: atual=68.24 <= necessário=70.00
+2026-02-26 10:44:42,609 | INFO |    🟥 Gatilho: breakout pendente: close 6966.5 <= resistência 6968.2 (faltam 1.8)
+2026-02-26 10:44:42,609 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:44:42,711 | INFO | ❌ CCMH26 rejeitado: Sem força (ADX 18.8 < 20) | score=75
+2026-02-26 10:44:42,711 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:44:42,712 | INFO |    🟩 ADX mínimo: atual=18.76 >= necessário=15.00
+2026-02-26 10:44:42,714 | INFO |    🟩 RSI exaustão: atual=54.11 <= necessário=70.00
+2026-02-26 10:44:42,714 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:44:42,714 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:44:42,839 | INFO | ❌ BGIG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:44:42,839 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:44:42,840 | INFO |    🟩 ADX mínimo: atual=18.76 >= necessário=15.00
+2026-02-26 10:44:42,840 | INFO |    🟩 RSI exaustão: atual=54.11 <= necessário=70.00
+2026-02-26 10:44:42,841 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:44:42,841 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:44:42,944 | INFO | ❌ ICFH26 rejeitado: Sem força (ADX 19.8 < 20) | score=100
+2026-02-26 10:44:42,944 | INFO |    🟩 Score mínimo: atual=100.00 >= necessário=58.00
+2026-02-26 10:44:42,945 | INFO |    🟩 ADX mínimo: atual=19.82 >= necessário=15.00
+2026-02-26 10:44:42,945 | INFO |    🟩 RSI exaustão: atual=47.26 <= necessário=70.00
+2026-02-26 10:44:42,945 | INFO |    🟥 Gatilho: breakout pendente: close 340.9 <= resistência 343.0 (faltam 2.1)
+2026-02-26 10:44:42,947 | INFO |    🟥 Forçado: atual=0.00 == necessário=1.00
+2026-02-26 10:44:43,140 | INFO | ❌ BITG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:44:43,140 | INFO |    🟥 Score mínimo: atual=45.00 >= necessário=58.00
+2026-02-26 10:44:43,141 | INFO |    🟩 ADX mínimo: atual=29.63 >= necessário=15.00
+2026-02-26 10:44:43,141 | INFO |    🟩 RSI exaustão: atual=34.92 >= necessário=30.00
+2026-02-26 10:44:43,142 | INFO |    🟥 Gatilho: breakdown pendente: close 349900.0 >= suporte 348880.0 (faltam 1020.0)
+2026-02-26 10:44:43,142 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:44:43,162 | WARNING | ⚠️ MT5 retornou OHLC inválido para ALUP11 (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:43,373 | WARNING | ⚠️ MT5 ainda com OHLC inválido para ALUP11 após force_history. Tentando fallback...
+2026-02-26 10:44:43,381 | WARNING | ⚠️ MT5 Falhou em ALUP11. Acionando Polygon.io fallback...
+2026-02-26 10:44:44,667 | WARNING | ⚠️ MT5 retornou OHLC inválido para BEEF3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:44,907 | WARNING | ⚠️ MT5 ainda com OHLC inválido para BEEF3 após force_history. Tentando fallback...
+2026-02-26 10:44:44,938 | WARNING | ⚠️ MT5 Falhou em BEEF3. Acionando Polygon.io fallback...
+2026-02-26 10:44:46,053 | WARNING | ⚠️ MT5 retornou OHLC inválido para CMIG4 (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:46,275 | WARNING | ⚠️ MT5 ainda com OHLC inválido para CMIG4 após force_history. Tentando fallback...
+2026-02-26 10:44:46,290 | WARNING | ⚠️ MT5 Falhou em CMIG4. Acionando Polygon.io fallback...
+2026-02-26 10:44:47,500 | WARNING | ⚠️ MT5 retornou OHLC inválido para GGBR4 (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:47,707 | WARNING | ⚠️ MT5 ainda com OHLC inválido para GGBR4 após force_history. Tentando fallback...
+2026-02-26 10:44:47,713 | WARNING | ⚠️ MT5 Falhou em GGBR4. Acionando Polygon.io fallback...
+2026-02-26 10:44:49,777 | WARNING | ⚠️ MT5 retornou OHLC inválido para LAVV3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:49,991 | WARNING | ⚠️ MT5 ainda com OHLC inválido para LAVV3 após force_history. Tentando fallback...
+2026-02-26 10:44:50,007 | WARNING | ⚠️ MT5 Falhou em LAVV3. Acionando Polygon.io fallback...
+2026-02-26 10:44:51,685 | WARNING | ⚠️ MT5 retornou OHLC inválido para MDIA3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:51,923 | WARNING | ⚠️ MT5 ainda com OHLC inválido para MDIA3 após force_history. Tentando fallback...
+2026-02-26 10:44:51,961 | WARNING | ⚠️ MT5 Falhou em MDIA3. Acionando Polygon.io fallback...
+2026-02-26 10:44:53,112 | WARNING | ⚠️ MT5 retornou OHLC inválido para ONCO3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:53,324 | WARNING | ⚠️ MT5 ainda com OHLC inválido para ONCO3 após force_history. Tentando fallback...
+2026-02-26 10:44:53,336 | WARNING | ⚠️ MT5 Falhou em ONCO3. Acionando Polygon.io fallback...
+2026-02-26 10:44:54,614 | WARNING | ⚠️ MT5 retornou OHLC inválido para PETR3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:54,824 | WARNING | ⚠️ MT5 ainda com OHLC inválido para PETR3 após force_history. Tentando fallback...
+2026-02-26 10:44:54,835 | WARNING | ⚠️ MT5 Falhou em PETR3. Acionando Polygon.io fallback...
+2026-02-26 10:44:56,270 | WARNING | ⚠️ MT5 retornou OHLC inválido para PLPL3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:56,500 | WARNING | ⚠️ MT5 ainda com OHLC inválido para PLPL3 após force_history. Tentando fallback...
+2026-02-26 10:44:56,520 | WARNING | ⚠️ MT5 Falhou em PLPL3. Acionando Polygon.io fallback...
+2026-02-26 10:44:57,902 | WARNING | ⚠️ MT5 retornou OHLC inválido para PRIO3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:58,110 | WARNING | ⚠️ MT5 ainda com OHLC inválido para PRIO3 após force_history. Tentando fallback...
+2026-02-26 10:44:58,121 | WARNING | ⚠️ MT5 Falhou em PRIO3. Acionando Polygon.io fallback...
+2026-02-26 10:44:59,316 | WARNING | ⚠️ MT5 retornou OHLC inválido para RECV3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:44:59,521 | WARNING | ⚠️ MT5 ainda com OHLC inválido para RECV3 após force_history. Tentando fallback...
+2026-02-26 10:44:59,527 | WARNING | ⚠️ MT5 Falhou em RECV3. Acionando Polygon.io fallback...
+2026-02-26 10:45:06,241 | WARNING | ⚠️ MT5 retornou OHLC inválido para TEND3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:45:06,456 | WARNING | ⚠️ MT5 ainda com OHLC inválido para TEND3 após force_history. Tentando fallback...
+2026-02-26 10:45:06,466 | WARNING | ⚠️ MT5 Falhou em TEND3. Acionando Polygon.io fallback...
+2026-02-26 10:45:07,823 | WARNING | ⚠️ MT5 retornou OHLC inválido para UGPA3 (zeros/NaN). Tentando fallback...
+2026-02-26 10:45:08,032 | WARNING | ⚠️ MT5 ainda com OHLC inválido para UGPA3 após force_history. Tentando fallback...
+2026-02-26 10:45:08,039 | WARNING | ⚠️ MT5 Falhou em UGPA3. Acionando Polygon.io fallback...
+2026-02-26 10:45:09,642 | INFO | ❌ WDOH26 rejeitado: Conflito MTF em 5, 15 | score=0
+2026-02-26 10:45:09,646 | INFO |    🟥 MTF: Conflito MTF em 5, 15
+2026-02-26 10:45:09,648 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:45:09,650 | INFO |    🟥 Conflitos: 5, 15
+2026-02-26 10:45:09,651 | INFO |    🟩 TF 5: side=BUY | adx=18.4 | vol=0.75x
+2026-02-26 10:45:09,652 | INFO |    🟩 TF 15: side=BUY | adx=20.0 | vol=1.24x
+2026-02-26 10:45:09,652 | INFO |    🟩 TF 16385: side=SELL | adx=24.6 | vol=1.25x
+2026-02-26 10:45:09,954 | INFO | ❌ DOLH26 rejeitado: Conflito MTF em 5 | score=0
+2026-02-26 10:45:09,955 | INFO |    🟥 MTF: Conflito MTF em 5
+2026-02-26 10:45:09,955 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:45:09,955 | INFO |    🟥 Conflitos: 5
+2026-02-26 10:45:09,956 | INFO |    🟩 TF 5: side=BUY | adx=19.0 | vol=2.67x
+2026-02-26 10:45:09,957 | INFO |    🟩 TF 15: side=SELL | adx=21.7 | vol=2.94x
+2026-02-26 10:45:09,959 | INFO |    🟩 TF 16385: side=SELL | adx=25.0 | vol=0.86x
+2026-02-26 10:45:10,349 | INFO | ❌ CCMH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:45:10,350 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:45:10,350 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:45:10,350 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:45:10,351 | INFO |    🟩 TF 5: side=BUY | adx=19.7 | vol=0.20x
+2026-02-26 10:45:10,351 | INFO |    🟩 TF 15: side=BUY | adx=18.8 | vol=0.13x
+2026-02-26 10:45:10,351 | INFO |    🟩 TF 16385: side=SELL | adx=22.4 | vol=1.59x
+2026-02-26 10:45:10,631 | INFO | ❌ ICFH26 rejeitado: Conflito MTF em 16385 | score=0
+2026-02-26 10:45:10,632 | INFO |    🟥 MTF: Conflito MTF em 16385
+2026-02-26 10:45:10,632 | INFO |    🟥 Alinhamento: atual=0.00 >= necessário=70.00
+2026-02-26 10:45:10,633 | INFO |    🟥 Conflitos: 16385
+2026-02-26 10:45:10,633 | INFO |    🟩 TF 5: side=BUY | adx=10.7 | vol=1.77x
+2026-02-26 10:45:10,634 | INFO |    🟩 TF 15: side=BUY | adx=19.8 | vol=0.57x
+2026-02-26 10:45:10,634 | INFO |    🟩 TF 16385: side=SELL | adx=27.4 | vol=0.34x
+2026-02-26 10:45:24,770 | INFO | ❌ WINJ26 rejeitado: Sem força (ADX 18.7 < 20) | score=0
+2026-02-26 10:45:25,320 | INFO | ❌ INDJ26 rejeitado: Sem força (ADX 18.4 < 20) | score=0
+2026-02-26 10:45:25,683 | INFO | ❌ WDOH26 rejeitado: ⏳ Aguardando Gatilho (breakout pendente: close 5137.0 <= resistência 5144.5 (faltam 7.5)) | Score 100 | Forçado: True | score=100
+2026-02-26 10:45:25,687 | INFO |    🟩 Score mínimo: atual=100.00 >= necessário=58.00
+2026-02-26 10:45:25,689 | INFO |    🟩 ADX mínimo: atual=20.02 >= necessário=15.00
+2026-02-26 10:45:25,695 | INFO |    🟩 RSI exaustão: atual=60.44 <= necessário=70.00
+2026-02-26 10:45:25,697 | INFO |    🟥 Gatilho: breakout pendente: close 5137.0 <= resistência 5144.5 (faltam 7.5)
+2026-02-26 10:45:25,699 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:45:25,999 | INFO | ❌ DOLH26 rejeitado: ⏳ Aguardando Gatilho (breakout pendente: close 5137.0 <= resistência 5144.5 (faltam 7.5)) | Score 100 | Forçado: True | score=100
+2026-02-26 10:45:26,000 | INFO |    🟩 Score mínimo: atual=100.00 >= necessário=58.00
+2026-02-26 10:45:26,000 | INFO |    🟩 ADX mínimo: atual=20.27 >= necessário=15.00
+2026-02-26 10:45:26,001 | INFO |    🟩 RSI exaustão: atual=59.78 <= necessário=70.00
+2026-02-26 10:45:26,001 | INFO |    🟥 Gatilho: breakout pendente: close 5137.0 <= resistência 5144.5 (faltam 7.5)
+2026-02-26 10:45:26,002 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:45:26,339 | INFO | ❌ WSPH26 rejeitado: Falta: ADX 52.4 < 20 | score=0
+2026-02-26 10:45:26,344 | INFO |    🟥 Score mínimo: atual=0.00 >= necessário=58.00
+2026-02-26 10:45:26,349 | INFO |    🟩 ADX mínimo: atual=52.37 >= necessário=15.00
+2026-02-26 10:45:26,349 | INFO |    🟩 RSI exaustão: atual=68.60 <= necessário=70.00
+2026-02-26 10:45:26,350 | INFO |    🟥 Gatilho: breakout pendente: close 6967.0 <= resistência 6969.8 (faltam 2.8)
+2026-02-26 10:45:26,350 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:45:26,514 | INFO | ❌ CCMH26 rejeitado: Sem força (ADX 18.8 < 20) | score=75
+2026-02-26 10:45:26,514 | INFO |    🟩 Score mínimo: atual=75.00 >= necessário=58.00
+2026-02-26 10:45:26,515 | INFO |    🟩 ADX mínimo: atual=18.76 >= necessário=15.00
+2026-02-26 10:45:26,515 | INFO |    🟩 RSI exaustão: atual=54.11 <= necessário=70.00
+2026-02-26 10:45:26,516 | INFO |    🟥 Gatilho: breakout pendente: close 70.9 <= resistência 71.1 (faltam 0.2)
+2026-02-26 10:45:26,516 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:45:26,816 | INFO | ❌ BGIG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:45:26,822 | INFO |    🟥 Score mínimo: atual=45.00 >= necessário=58.00
+2026-02-26 10:45:26,836 | INFO |    🟩 ADX mínimo: atual=27.42 >= necessário=15.00
+2026-02-26 10:45:26,837 | INFO |    🟩 RSI exaustão: atual=49.53 >= necessário=30.00
+2026-02-26 10:45:26,848 | INFO |    🟥 Gatilho: breakdown pendente: close 356.0 >= suporte 352.8 (faltam 3.2)
+2026-02-26 10:45:26,854 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
+2026-02-26 10:45:28,904 | INFO | ❌ ICFH26 rejeitado: Sem força (ADX 19.8 < 20) | score=100
+2026-02-26 10:45:28,917 | INFO |    🟩 Score mínimo: atual=100.00 >= necessário=58.00
+2026-02-26 10:45:28,920 | INFO |    🟩 ADX mínimo: atual=19.82 >= necessário=15.00
+2026-02-26 10:45:28,922 | INFO |    🟩 RSI exaustão: atual=47.26 <= necessário=70.00
+2026-02-26 10:45:28,931 | INFO |    🟥 Gatilho: breakout pendente: close 340.9 <= resistência 343.0 (faltam 2.1)
+2026-02-26 10:45:28,932 | INFO |    🟥 Forçado: atual=0.00 == necessário=1.00
+2026-02-26 10:45:29,478 | INFO | ❌ BITG26 rejeitado: Falta: Contra a tendência EMA | score=45
+2026-02-26 10:45:29,481 | INFO |    🟥 Score mínimo: atual=45.00 >= necessário=58.00
+2026-02-26 10:45:29,484 | INFO |    🟩 ADX mínimo: atual=28.28 >= necessário=15.00
+2026-02-26 10:45:29,486 | INFO |    🟩 RSI exaustão: atual=30.40 >= necessário=30.00
+2026-02-26 10:45:29,513 | INFO |    🟥 Gatilho: breakdown pendente: close 349720.0 >= suporte 348880.0 (faltam 840.0)
+2026-02-26 10:45:29,520 | INFO |    🟩 Forçado: atual=1.00 == necessário=1.00
