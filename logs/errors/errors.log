@@ -1934,3 +1934,5 @@ UnboundLocalError: cannot access local variable 'reqs' where it is not associate
 2026-02-26 10:41:14,418 | ERROR | bot | Erro ao atualizar config dinâmica: unsupported operand type(s) for /: 'NoneType' and 'int'
 2026-02-26 10:41:14,421 | ERROR | bot | Erro ao rodar análise diária: '<' not supported between instances of 'NoneType' and 'float'
 2026-02-26 10:44:21,527 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-26 13:43:43,763 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-02-26 16:29:07,672 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.

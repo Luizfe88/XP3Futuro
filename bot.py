@@ -3245,10 +3245,24 @@ def build_portfolio_and_top15():
 
             checks = []
             try:
+                # Definição dinâmica dos limites de RSI
+                # Se Score >= 75, expande para 80/20. Caso contrário, mantém 70/30.
+                # (Sincronizado com a lógica de execução do fast_loop)
+                rsi_limit_buy = 80.0 if score >= 75 else 70.0
+                rsi_limit_sell = 20.0 if score >= 75 else 30.0
+                
                 checks.append({"name": "Score mínimo", "passed": bool(score >= float(config.MIN_SIGNAL_SCORE)), "current": float(score), "required": float(config.MIN_SIGNAL_SCORE), "op": ">="})
                 if adx_threshold:
                     checks.append({"name": "ADX mínimo", "passed": bool(adx >= adx_threshold), "current": float(adx), "required": float(adx_threshold), "op": ">="})
-                checks.append({"name": "RSI exaustão", "passed": bool(not ((signal == "BUY" and rsi > 70) or (signal == "SELL" and rsi < 30))), "current": float(rsi), "required": 70.0 if signal == "BUY" else 30.0, "op": "<=" if signal == "BUY" else ">="})
+                
+                # Checagem de RSI usando os limites dinâmicos
+                checks.append({
+                    "name": "RSI exaustão", 
+                    "passed": bool(not ((signal == "BUY" and rsi > rsi_limit_buy) or (signal == "SELL" and rsi < rsi_limit_sell))), 
+                    "current": float(rsi), 
+                    "required": rsi_limit_buy if signal == "BUY" else rsi_limit_sell, 
+                    "op": "<=" if signal == "BUY" else ">="
+                })
                 checks.append({"name": "Gatilho", "passed": bool(trigger_ok), "details": trigger_txt})
                 checks.append({"name": "Forçado", "passed": bool(forced_buy or forced_sell), "current": bool(forced_buy or forced_sell), "required": True, "op": "=="})
             except Exception:
@@ -4119,17 +4133,34 @@ def try_enter_position(symbol, side, risk_factor=1.0, rsi_limit_high=70, rsi_lim
     rsi = ind_data.get("rsi", 50)
     score_now = float(ind_data.get("score", 0) or 0)
     
-    # 1. RSI (Exaustão)
+    # 1. RSI (Exaustão) - UNIFICADO E DINÂMICO
     symu = (symbol or "").upper()
     is_index = symu.startswith("WIN") or symu.startswith("IND")
+    
+    # Base: 70/30
     rsi_exhaust = float(getattr(config, "RSI_EXHAUSTION_DEFAULT", 70) or 70)
-    if is_index:
+    rsi_exhaust_sell = float(getattr(config, "RSI_EXHAUSTION_DEFAULT_SELL", 30) or 30)
+    
+    # 🚀 Se Score >= 75 (Sinal Forte), expande limites para TODOS os ativos
+    # (Milho, Boi, Dólar, Ações, Cripto - todos herdam essa regra)
+    if score_now >= 75:
+        rsi_exhaust = 80
+        rsi_exhaust_sell = 20
+        logger.debug(f"🔥 {symbol}: Score Alto ({score_now}) -> RSI Limit expandido para {rsi_exhaust}/{rsi_exhaust_sell}")
+    elif is_index:
+        # Índices já são mais voláteis
         rsi_exhaust = float(getattr(config, "RSI_EXHAUSTION_INDEX", 80) or 80)
-    else:
-        hs_min = float(getattr(config, "RSI_EXHAUSTION_HIGH_SCORE_MIN_SCORE", 80) or 80)
-        hs_lim = float(getattr(config, "RSI_EXHAUSTION_HIGH_SCORE_LIMIT", 75) or 75)
-        if score_now >= hs_min:
-            rsi_exhaust = hs_lim
+        rsi_exhaust_sell = float(getattr(config, "RSI_EXHAUSTION_INDEX_SELL", 20) or 20)
+
+    # 🔥 HOTFIX CRIPTO/BREAKOUT (BIT/BTC)
+    # Se for Cripto, Score Alto e Breakout Confirmado -> Libera RSI para 95
+    if 'BIT' in symu or 'BTC' in symu:
+        if score_now >= 80:
+             # Tenta confirmar breakout (simplificado, pois aqui não temos todos os dados)
+             # Mas se o score é 80+, assume que o setup é bom
+             rsi_exhaust = 95
+             rsi_exhaust_sell = 5
+             logger.info(f"🚀 CRIPTO MODE: RSI Limit expandido para {rsi_exhaust} (Score Alto)")
 
     if side == "BUY" and rsi > rsi_exhaust:
         logger.info(f"🛑 {symbol}: RSI esticado ({rsi:.1f} > {rsi_exhaust:.0f}) - Compra evitada.")
@@ -4142,14 +4173,6 @@ def try_enter_position(symbol, side, risk_factor=1.0, rsi_limit_high=70, rsi_lim
         except Exception:
             pass
         return
-    rsi_exhaust_sell = float(getattr(config, "RSI_EXHAUSTION_DEFAULT_SELL", 30) or 30)
-    if is_index:
-        rsi_exhaust_sell = float(getattr(config, "RSI_EXHAUSTION_INDEX_SELL", 20) or 20)
-    else:
-        hs_min = float(getattr(config, "RSI_EXHAUSTION_HIGH_SCORE_MIN_SCORE", 80) or 80)
-        hs_lim = float(getattr(config, "RSI_EXHAUSTION_HIGH_SCORE_LIMIT_SELL", 25) or 25)
-        if score_now >= hs_min:
-            rsi_exhaust_sell = hs_lim
 
     if side == "SELL" and rsi < rsi_exhaust_sell:
         logger.info(f"🛑 {symbol}: RSI esticado ({rsi:.1f} < {rsi_exhaust_sell:.0f}) - Venda evitada.")
