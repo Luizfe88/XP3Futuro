@@ -44,55 +44,61 @@ import config
 
 _sensor_data_cache = {
     "last_collection_time": 0,
-    "metrics": {
-        "volatility": {"atr_d1": 0.0, "atr_m15": 0.0, "ratio": 0.0},
-        "relative_volume": {"rvol": 0.0, "avg_rvol": 0.0},
-        "recent_performance": {"pnl": 0.0, "win_rate": 0.0, "drawdown": 0.0},
-    }
+    "metrics": {}, # Dicionário de métricas por ativo: {"WIN": {...}, "WDO": {...}}
+    "global_regime": "NEUTRAL"
 }
 
-def collect_sensor_data(force_run=False):
+def collect_sensor_data(symbols_to_scan=None, force_run=False):
     """
     Coleta e armazena na memória os dados do mercado a cada 15 minutos.
-    - Volatilidade (ATR)
-    - Volume Relativo (RVOL)
-    - Performance Recente (P&L de Curto Prazo)
+    Agora suporta análise individual por ativo.
     """
     now = time.time()
     if not force_run and (now - _sensor_data_cache["last_collection_time"] < 900): # 15 minutos
         return _sensor_data_cache["metrics"]
 
-    adaptive_logger.info("🤖 SENSOR: Coletando métricas de mercado...")
+    adaptive_logger.info("🤖 SENSOR: Coletando métricas de mercado por ativo...")
+    
+    # Lista padrão se não fornecida
+    if not symbols_to_scan:
+        symbols_to_scan = ["WIN$N", "WDO$N", "IND$N", "DOL$N"]
+
+    metrics_map = {}
 
     try:
-        # 1. Volatilidade (ATR)
-        atr_d1 = _calculate_average_atr_d1()
-        atr_m15 = _calculate_current_atr_m15()
-        volatility_ratio = (atr_m15 / atr_d1) if atr_d1 > 0 else 1.0
+        for sym in symbols_to_scan:
+            # Resolve símbolo real
+            real_sym = utils.resolve_current_symbol(sym)
+            if not real_sym:
+                continue
+                
+            # 1. Volatilidade (ATR)
+            atr_d1 = _calculate_average_atr_d1(real_sym)
+            atr_m15 = _calculate_current_atr_m15(real_sym)
+            
+            # Normalização do Ratio: ATR_D1 / 6.0 (aprox. desvio padrão diário para intraday)
+            volatility_ratio = (atr_m15 / (atr_d1 / 6.0)) if atr_d1 > 0 else 1.0
 
-        _sensor_data_cache["metrics"]["volatility"] = {
-            "atr_d1": atr_d1,
-            "atr_m15": atr_m15,
-            "ratio": volatility_ratio
-        }
+            # 2. Volume Relativo (RVOL)
+            rvol, avg_rvol = _calculate_rvol(real_sym)
+            
+            metrics_map[sym] = {
+                "volatility": {
+                    "atr_d1": atr_d1,
+                    "atr_m15": atr_m15,
+                    "ratio": volatility_ratio
+                },
+                "relative_volume": {
+                    "rvol": rvol,
+                    "avg_rvol": avg_rvol
+                }
+            }
+            # adaptive_logger.debug(f"   📊 {sym}: VolRatio={volatility_ratio:.2f} RVOL={rvol:.2f}")
 
-        # 2. Volume Relativo (RVOL)
-        rvol, avg_rvol = _calculate_rvol("IBOV")
-        _sensor_data_cache["metrics"]["relative_volume"] = {
-            "rvol": rvol,
-            "avg_rvol": avg_rvol
-        }
-
-        # 3. Performance Recente (P&L de Curto Prazo)
-        pnl_2h, win_rate_2h, max_dd_2h = _calculate_recent_performance()
-        _sensor_data_cache["metrics"]["recent_performance"] = {
-            "pnl": pnl_2h,
-            "win_rate": win_rate_2h,
-            "drawdown": max_dd_2h
-        }
-
+        # Atualiza cache
+        _sensor_data_cache["metrics"] = metrics_map
         _sensor_data_cache["last_collection_time"] = now
-        adaptive_logger.info(f"🤖 SENSOR: Métricas atualizadas. Volatility Ratio: {volatility_ratio:.2f}")
+        adaptive_logger.info(f"🤖 SENSOR: Métricas atualizadas para {len(metrics_map)} ativos.")
 
     except Exception as e:
         adaptive_logger.error(f"Erro na coleta de dados do SENSOR: {e}", exc_info=True)
@@ -127,83 +133,81 @@ def _calculate_current_atr_m15(symbol="IBOV", period=14):
 
 
 # =============================================================================
-# 2. CAMADA CÉREBRO: Análise de Regime
+# 2. CAMADA CÉREBRO: Análise de Regime (INDIVIDUALIZADA)
 # =============================================================================
 
-current_regime = "NEUTRAL"  # Variável global para acesso externo
-
-def analyze_market_regime():
+def analyze_market_regime(symbol="WIN$N"):
     """
-    Analisa os dados da camada Sensor para detectar o regime de mercado.
+    Analisa os dados da camada Sensor para detectar o regime de mercado de um ATIVO ESPECÍFICO.
     Retorna: "TREND", "REVERSION" ou "NEUTRAL"
     """
-    global current_regime
+    metrics_map = _sensor_data_cache.get("metrics", {})
     
-    metrics = _sensor_data_cache["metrics"]
+    # Se não tiver dados específicos, tenta usar dados globais ou retorna NEUTRAL
+    if not metrics_map or symbol not in metrics_map:
+        # Fallback: Tenta achar WIN ou WDO se o símbolo for genérico
+        fallback = metrics_map.get("WIN$N") or metrics_map.get("WDO$N")
+        if not fallback:
+            return "NEUTRAL"
+        metrics = fallback
+    else:
+        metrics = metrics_map[symbol]
+
     volatility_ratio = metrics["volatility"].get("ratio", 1.0)
 
-    # Lógica de decisão (exemplo inicial)
-    if volatility_ratio > 1.2:  # Ajustado de 1.5 para 1.2 (mais sensível)
-        current_regime = "TREND"
+    # Lógica de decisão
+    if volatility_ratio > 1.2:
+        return "TREND"
     elif volatility_ratio < 0.8:
-        current_regime = "REVERSION"
+        return "REVERSION"
     else:
-        current_regime = "NEUTRAL"
-        
-    return current_regime
+        return "NEUTRAL"
 
 # =============================================================================
 # 3. CAMADA MECÂNICO: Ajuste de Parâmetros
 # =============================================================================
 
-def adjust_parameters(regime):
+def adjust_parameters(force_regime=None):
     """
-    Ajusta os parâmetros de trading com base no regime de mercado detectado.
+    Ajusta os parâmetros de trading para CADA ATIVO com base no seu regime.
     Modifica os parâmetros otimizados globalmente em tempo real.
     """
-    adaptive_logger.info(f"🔧 MECÂNICO: Ajustando parâmetros para o regime '{regime}'...")
-    
     # Importar o dicionário de parâmetros otimizados do bot.py
     import bot
     
     if not hasattr(bot, 'optimized_params') or not bot.optimized_params:
-        adaptive_logger.warning("🔧 MECÂNICO: Parâmetros otimizados não encontrados, usando configurações padrão")
         return
     
-    # Aplicar ajustes baseado no regime
+    adjusted_count = 0
+    
     for symbol in bot.optimized_params:
+        # Detecta regime individual (ou usa o forçado se teste/pânico)
+        regime = force_regime if force_regime else analyze_market_regime(symbol)
+        
         params = bot.optimized_params[symbol]
         
+        # Define perfil de risco baseado no regime
         if regime == "TREND":
-            # Mercado em tendência: usar configurações mais agressivas
-            if isinstance(params, dict):
-                if "parameters" in params:
-                    params["parameters"]["adx_threshold"] = config.ADAPTIVE_THRESHOLDS["RISK_ON"]["min_adx"]
-                else:
-                    params["adx_threshold"] = config.ADAPTIVE_THRESHOLDS["RISK_ON"]["min_adx"]
-                    
+            # Mercado em tendência: Risk ON
+            target_adx = config.ADAPTIVE_THRESHOLDS["RISK_ON"]["min_adx"]
         elif regime == "REVERSION":
-            # Mercado lateral/reversão: usar configurações mais conservadoras
-            if isinstance(params, dict):
-                if "parameters" in params:
-                    params["parameters"]["adx_threshold"] = config.ADAPTIVE_THRESHOLDS["RISK_OFF"]["min_adx"]
-                else:
-                    params["adx_threshold"] = config.ADAPTIVE_THRESHOLDS["RISK_OFF"]["min_adx"]
-                    
-        else: # NEUTRAL
-            # Voltar aos padrões (não altera os parâmetros otimizados)
-            pass
-    
-    adaptive_logger.info(f"🔧 MECÂNICO: Parâmetros ajustados para regime '{regime}' em {len(bot.optimized_params)} símbolos")
-
-    # Log dos parâmetros modificados para debug
-    sample_params = {}
-    if bot.optimized_params:
-        # Pega os parâmetros do primeiro símbolo como exemplo
-        first_symbol = list(bot.optimized_params.keys())[0]
-        sample_params = bot.optimized_params[first_symbol]
+            # Mercado lateral: Risk OFF
+            target_adx = config.ADAPTIVE_THRESHOLDS["RISK_OFF"]["min_adx"]
+        else:
+            # NEUTRAL: Mantém original otimizado (não altera)
+            continue
+            
+        # Aplica o ajuste
+        if isinstance(params, dict):
+            if "parameters" in params:
+                params["parameters"]["adx_threshold"] = target_adx
+            else:
+                params["adx_threshold"] = target_adx
         
-    adaptive_logger.info(f"🔧 MECÂNICO: Exemplo de parâmetros ajustados (simulação): {sample_params}")
+        adjusted_count += 1
+    
+    if adjusted_count > 0:
+        adaptive_logger.info(f"🔧 MECÂNICO: Parâmetros ajustados individualmente para {adjusted_count} ativos.")
 
 
 # =============================================================================

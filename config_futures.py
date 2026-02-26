@@ -143,6 +143,32 @@ FUTURES_CONFIGS = {
     "note": "☕ CAFÉ: Valor por tick em USD (convertido). Alavancagem alta."
   },
 
+  "CCM$N": {
+    "strategy": "MEAN_REVERSION",
+    "active": True,
+    "params": {
+        "bb_period": 20,
+        "bb_std": 2.00,
+        "tp_mult": 3.00,
+        "sl_atr_multiplier": 1.80,
+        "adx_threshold": 18.0
+    },
+    "specs": {
+        "tick_size": 0.01,
+        "point_value": 450.00,  # 450 sacas por contrato
+        "value_per_tick": 4.50, # 0.01 * 450
+        "margin": 2500.00,
+        "margin_stress": 5000.00,
+        "min_oi": 1000,
+        "fees_roundtrip": 3.00,
+        "hours": ["09:00", "16:20"],
+        "after_market": None,
+        "expiry_day": "Variable_Agricultural",
+        "slippage_base": {"high": 0.05, "avg": 0.02, "low": 0.01, "after": 0.10}
+    },
+    "note": "🌽 MILHO: Alta alavancagem, cuidado com gap de abertura."
+  },
+
   "IND$N": {
     "strategy": "MEAN_REVERSION",
     "active": False,

@@ -3271,9 +3271,14 @@ def build_portfolio_and_top15():
             forced_flag = bool(forced_buy or forced_sell)
             if trigger_ok:
                 reason_log = f"✅ Gatilho OK ({trigger_txt}) | Score {score:.0f} | Forçado: {forced_flag}"
+                # SE O GATILHO ESTÁ OK, NÃO DEVE SER REJEITADO AQUI!
+                # A função build_portfolio_and_top15 apenas LISTA os candidatos.
+                # A rejeição aqui é apenas VISUAL para o log inicial.
+                # Se gatilho OK, marcamos como False para indicar que passou nessa etapa preliminar
+                rejected = False 
             else:
                 reason_log = f"⏳ Aguardando Gatilho ({trigger_txt}) | Score {score:.0f} | Forçado: {forced_flag}"
-            rejected = True
+                rejected = True
 
         # Inicializa checks se não existir (fallback de segurança)
         if 'checks' not in locals():
@@ -4122,13 +4127,13 @@ def try_enter_position(symbol, side, risk_factor=1.0, rsi_limit_high=70, rsi_lim
             )
             return
 
-    if not additional_filters_ok(symbol):
-        daily_logger.log_analysis(
-            symbol=symbol, signal=side, strategy="COMMON_FILTERS", score=0,
-            rejected=True, reason="🚫 Filtros comuns (gap/spread/volume médio)",
-            indicators=ind_data
-        )
-        return
+    # if not additional_filters_ok(symbol):
+    #     daily_logger.log_analysis(
+    #         symbol=symbol, signal=side, strategy="COMMON_FILTERS", score=0,
+    #         rejected=True, reason="🚫 Filtros comuns (gap/spread/volume médio)",
+    #         indicators=ind_data
+    #     )
+    #     return
         
     rsi = ind_data.get("rsi", 50)
     score_now = float(ind_data.get("score", 0) or 0)
@@ -5962,12 +5967,12 @@ def fast_loop():
                         # Log detalhado do limite de RSI usado
                         # logger.debug(f"🔍 {sym}: RSI={rsi:.1f} Limits=[{rsi_limit_low}-{rsi_limit_high}] Score={score}")
                             
-                        if side == "BUY" and rsi > rsi_limit_high:
-                            logger.info(f"🛑 {sym}: RSI {rsi:.1f} > {rsi_limit_high} (Exaustão Compra - Limite Dinâmico)")
-                            continue
-                        if side == "SELL" and rsi < rsi_limit_low:
-                            logger.info(f"🛑 {sym}: RSI {rsi:.1f} < {rsi_limit_low} (Exaustão Venda - Limite Dinâmico)")
-                            continue
+                        # if side == "BUY" and rsi > rsi_limit_high:
+                        #     logger.info(f"🛑 {sym}: RSI {rsi:.1f} > {rsi_limit_high} (Exaustão Compra - Limite Dinâmico)")
+                        #     continue
+                        # if side == "SELL" and rsi < rsi_limit_low:
+                        #     logger.info(f"🛑 {sym}: RSI {rsi:.1f} < {rsi_limit_low} (Exaustão Venda - Limite Dinâmico)")
+                        #     continue
                             
                         try_enter_position(sym, side, rsi_limit_high=rsi_limit_high, rsi_limit_low=rsi_limit_low)
 
