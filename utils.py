@@ -334,6 +334,22 @@ def resolve_indicator_symbol(symbol: str) -> str:
     if "$N" in s or "$" in s:
         return _try_mt5_symbol_select(s) or s
     return _try_mt5_symbol_select(s) or s
+def resolve_current_symbol(generic_symbol: str) -> Optional[str]:
+    """
+    Resolve símbolos genéricos para o contrato vigente atual.
+    Wrapper para resolve_trade_symbol que retorna None se falhar.
+    """
+    s = (generic_symbol or "").upper().strip()
+    if not s:
+        return None
+        
+    resolved = resolve_trade_symbol(s)
+    if resolved == s and not mt5.symbol_info(s):
+        # Se retornou ele mesmo mas não existe, falhou
+        return None
+        
+    return resolved
+
 def detect_broker() -> str:
     try:
         if mt5 is None:

@@ -2188,18 +2188,23 @@ def health_watcher_thread():
             if deals:
                 relevant_deals = [d for d in deals if d.entry == mt5.DEAL_ENTRY_OUT]
                 
-                # 🔥 FILTRO DE FUTUROS E MAGIC NUMBER
+                # 🔥 FILTRO DE FUTUROS E MAGIC NUMBER (RIGOROSO)
+                # Garante que APENAS trades com o Magic Number ATUAL sejam considerados
+                # Ignora trades manuais (magic=0) ou de outros robôs
                 futures_prefixes = ('WIN', 'WDO', 'IND', 'DOL', 'CCM', 'BGI', 'ICF', 'SFI', 'BIT', 'T10')
-                magic_filter = getattr(config, "MAGIC_NUMBER", 0)
+                magic_filter = int(getattr(config, "MAGIC_NUMBER", 0) or 0)
                 
                 filtered_deals = [
                     d for d in relevant_deals 
                     if d.symbol.upper().startswith(futures_prefixes) and d.magic == magic_filter
                 ]
                 
-                last_20 = sorted(filtered_deals, key=lambda x: x.time, reverse=True)[:20]
-                
-                if len(last_20) >= 20:
+                # Se não houver trades suficientes com ESTE magic number, NÃO pausa
+                # Evita falso positivo ao iniciar novo magic number
+                if len(filtered_deals) < 20:
+                    pass # logger.debug(f"Trades insuficientes para análise de WR ({len(filtered_deals)}/20)")
+                else:
+                    last_20 = sorted(filtered_deals, key=lambda x: x.time, reverse=True)[:20]
                     wins = sum(1 for d in last_20 if d.profit > 0)
                     win_rate = (wins / len(last_20)) * 100
                     
@@ -5858,13 +5863,24 @@ def fast_loop():
             # 7️⃣ PROCESSAMENTO DE SINAIS (SE PERMITIDO)
             # ============================================
             if market_status["new_entries_allowed"]:
-                symbols_to_scan = list(optimized_params.keys())
-                current_win = utils.resolve_current_symbol("WIN")
-                current_wdo = utils.resolve_current_symbol("WDO")
-                if current_win and current_win not in symbols_to_scan:
-                    symbols_to_scan.append(current_win)
-                if current_wdo and current_wdo not in symbols_to_scan:
-                    symbols_to_scan.append(current_wdo)
+                # Garante que a lista de scan inclua TODOS os ativos relevantes, 
+                # mesmo que não estejam no optimized_params inicial
+                # Usa a lista expandida do adaptive_system como base
+                symbols_to_scan = []
+                
+                # 1. Ativos do Otimizador (Prioridade)
+                symbols_to_scan.extend(list(optimized_params.keys()))
+                
+                # 2. Ativos Base (WIN/WDO/IND/DOL)
+                bases = ["WIN", "WDO", "IND", "DOL", "CCM", "BGI", "ICF", "WSP", "BIT"]
+                for b in bases:
+                    real = utils.resolve_current_symbol(b)
+                    if real and real not in symbols_to_scan:
+                        symbols_to_scan.append(real)
+                
+                # Remove duplicatas
+                symbols_to_scan = list(set(symbols_to_scan))
+                
                 try:
                     symbols_to_scan = [s for s in symbols_to_scan if utils.is_time_allowed_for_symbol(s, CURRENT_MODE)]
                 except Exception:

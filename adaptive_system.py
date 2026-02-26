@@ -61,16 +61,21 @@ def collect_sensor_data(symbols_to_scan=None, force_run=False):
     
     # Lista padrão se não fornecida
     if not symbols_to_scan:
-        symbols_to_scan = ["WIN$N", "WDO$N", "IND$N", "DOL$N"]
+        # Usa contratos perpétuos com sufixo N (WIN$N) para dados contínuos corretos no MT5
+        symbols_to_scan = [
+            "WIN$N", "WDO$N", "IND$N", "DOL$N", 
+            "WSP$N", "BGI$N", "ICF$N", "CCM$N", "BIT$N"
+        ]
 
     metrics_map = {}
 
     try:
         for sym in symbols_to_scan:
-            # Resolve símbolo real
+            # Resolve símbolo real (Ex: WIN$ -> WINJ26, WDO$ -> WDOK26)
             real_sym = utils.resolve_current_symbol(sym)
             if not real_sym:
-                continue
+                # Se falhar resolver, tenta usar o próprio símbolo (fallback)
+                real_sym = sym
                 
             # 1. Volatilidade (ATR)
             atr_d1 = _calculate_average_atr_d1(real_sym)
