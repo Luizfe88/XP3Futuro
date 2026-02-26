@@ -61,22 +61,35 @@ def collect_sensor_data(symbols_to_scan=None, force_run=False):
     
     # Lista padrão se não fornecida
     if not symbols_to_scan:
-        # Usa contratos perpétuos com sufixo N (WIN$N) para dados contínuos corretos no MT5
-        symbols_to_scan = [
-            "WIN$N", "WDO$N", "IND$N", "DOL$N", 
-            "WSP$N", "BGI$N", "ICF$N", "CCM$N", "BIT$N"
-        ]
+        # Usa utils.get_contrato_atual() para garantir símbolos negociáveis
+        # em vez de genéricos que podem falhar no MT5
+        base_assets = ["WIN", "WDO", "IND", "DOL", "WSP", "BGI", "ICF", "CCM", "BIT"]
+        symbols_to_scan = []
+        for base in base_assets:
+            real = utils.get_contrato_atual(base)
+            if real:
+                symbols_to_scan.append(real)
+            else:
+                # Fallback se não achar contrato vigente (usa $N)
+                symbols_to_scan.append(f"{base}$N")
+    
+    # Remove duplicatas e garante lista limpa
+    symbols_to_scan = list(set(symbols_to_scan))
 
     metrics_map = {}
 
     try:
-        for sym in symbols_to_scan:
-            # Resolve símbolo real (Ex: WIN$ -> WINJ26, WDO$ -> WDOK26)
-            real_sym = utils.resolve_current_symbol(sym)
+        for base in symbols_to_scan:
+            # ✅ CORREÇÃO CRÍTICA: Converter para contrato real ANTES do MT5
+            # Isso evita erros de OHLC inválido com símbolos genéricos
+            real_sym = utils.get_contrato_atual(base)
+            
             if not real_sym:
-                # Se falhar resolver, tenta usar o próprio símbolo (fallback)
-                real_sym = sym
+                # Tenta usar o próprio base se a resolução falhar
+                real_sym = base
                 
+            adaptive_logger.info(f"🔄 Coletando métricas para {base} → {real_sym}")
+            
             # 1. Volatilidade (ATR)
             atr_d1 = _calculate_average_atr_d1(real_sym)
             atr_m15 = _calculate_current_atr_m15(real_sym)
@@ -87,7 +100,9 @@ def collect_sensor_data(symbols_to_scan=None, force_run=False):
             # 2. Volume Relativo (RVOL)
             rvol, avg_rvol = _calculate_rvol(real_sym)
             
-            metrics_map[sym] = {
+            # Armazena usando a chave original (para compatibilidade) OU o símbolo real?
+            # Melhor usar o símbolo real para garantir consistência no adjust_parameters
+            metrics_data = {
                 "volatility": {
                     "atr_d1": atr_d1,
                     "atr_m15": atr_m15,
@@ -98,7 +113,16 @@ def collect_sensor_data(symbols_to_scan=None, force_run=False):
                     "avg_rvol": avg_rvol
                 }
             }
-            # adaptive_logger.debug(f"   📊 {sym}: VolRatio={volatility_ratio:.2f} RVOL={rvol:.2f}")
+            metrics_map[real_sym] = metrics_data
+            
+            # ✅ COMPATIBILIDADE: Salva também como WIN$N/WDO$N para analyze_market_regime()
+            # pois a função de regime busca o padrão genérico se não especificado
+            if "WIN" in base or "WIN" in real_sym:
+                 metrics_map["WIN$N"] = metrics_data
+            elif "WDO" in base or "WDO" in real_sym:
+                 metrics_map["WDO$N"] = metrics_data
+            
+            # adaptive_logger.debug(f"   📊 {real_sym}: VolRatio={volatility_ratio:.2f} RVOL={rvol:.2f}")
 
         # Atualiza cache
         _sensor_data_cache["metrics"] = metrics_map

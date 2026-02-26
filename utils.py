@@ -334,21 +334,41 @@ def resolve_indicator_symbol(symbol: str) -> str:
     if "$N" in s or "$" in s:
         return _try_mt5_symbol_select(s) or s
     return _try_mt5_symbol_select(s) or s
+def get_contrato_atual(simbolo: str) -> Optional[str]:
+    """
+    Retorna o contrato futuro vigente (ex: WINJ26) com base no símbolo genérico (WIN, WDO, IND, etc).
+    Prioriza contratos com maior liquidez e vencimento futuro.
+    """
+    s = (simbolo or "").upper().strip().replace("$", "").replace("N", "")
+    base = "".join([c for c in s if c.isalpha()])
+    
+    # Se já for um símbolo completo válido, retorna
+    if len(base) < len(s) and mt5.symbol_info(s):
+        return s
+
+    candidates = get_futures_candidates(base)
+    if not candidates:
+        return None
+        
+    # Ordena: Volume Decrescente -> Expiração Crescente
+    sorted_cands = sorted(
+        candidates,
+        key=lambda c: (-float(c.get("volume", 0.0) or 0.0), int(c.get("days_to_exp", 9999) or 9999))
+    )
+    
+    # Filtra contratos com volume zerado se houver opção com volume
+    has_volume = [c for c in sorted_cands if float(c.get("volume", 0.0) or 0.0) > 0]
+    if has_volume:
+        return has_volume[0].get("symbol")
+        
+    return sorted_cands[0].get("symbol") if sorted_cands else None
+
 def resolve_current_symbol(generic_symbol: str) -> Optional[str]:
     """
     Resolve símbolos genéricos para o contrato vigente atual.
-    Wrapper para resolve_trade_symbol que retorna None se falhar.
+    Wrapper para get_contrato_atual que retorna None se falhar.
     """
-    s = (generic_symbol or "").upper().strip()
-    if not s:
-        return None
-        
-    resolved = resolve_trade_symbol(s)
-    if resolved == s and not mt5.symbol_info(s):
-        # Se retornou ele mesmo mas não existe, falhou
-        return None
-        
-    return resolved
+    return get_contrato_atual(generic_symbol)
 
 def detect_broker() -> str:
     try:

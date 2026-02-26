@@ -3219,21 +3219,51 @@ def build_portfolio_and_top15():
                         window = df_tr.iloc[-(lb + 1):-1]
                         hi = float(window["high"].max())
                         lo = float(window["low"].min())
+                        # Obtém regime atual
+                        current_regime = getattr(adaptive_system, "current_regime", "NEUTRAL")
+
                         if signal == "BUY":
                             trigger_ok = close_now > hi
+                            used_tolerance = False
+                            
+                            # Tolerância para Reversão (permite tocar ou levemente abaixo da resistência)
+                            if not trigger_ok and current_regime == "REVERSION":
+                                tolerance = 0.0005 * hi
+                                if close_now >= (hi - tolerance):
+                                    trigger_ok = True
+                                    used_tolerance = True
+                            
                             if trigger_ok:
-                                trigger_txt = f"breakout OK: close {close_now:.1f} > resistência {hi:.1f}"
+                                if used_tolerance:
+                                    trigger_txt = f"breakout OK (Reversion Tolerance): close {close_now:.1f} >= {hi-(0.0005*hi):.1f}"
+                                else:
+                                    trigger_txt = f"breakout OK: close {close_now:.1f} > resistência {hi:.1f}"
                             else:
                                 missing = max(0.0, hi - close_now)
                                 trigger_txt = f"breakout pendente: close {close_now:.1f} <= resistência {hi:.1f} (faltam {missing:.1f})"
+                            
                             reqs["Gatilho Breakout (close>resistência)"] = {"current": close_now, "required": hi, "op": ">", "missing": max(0.0, hi - close_now)}
+                        
                         elif signal == "SELL":
                             trigger_ok = close_now < lo
+                            used_tolerance = False
+                            
+                            # Tolerância para Reversão (permite tocar ou levemente acima do suporte)
+                            if not trigger_ok and current_regime == "REVERSION":
+                                tolerance = 0.0005 * lo
+                                if close_now <= (lo + tolerance):
+                                    trigger_ok = True
+                                    used_tolerance = True
+
                             if trigger_ok:
-                                trigger_txt = f"breakdown OK: close {close_now:.1f} < suporte {lo:.1f}"
+                                if used_tolerance:
+                                    trigger_txt = f"breakdown OK (Reversion Tolerance): close {close_now:.1f} <= {lo+(0.0005*lo):.1f}"
+                                else:
+                                    trigger_txt = f"breakdown OK: close {close_now:.1f} < suporte {lo:.1f}"
                             else:
                                 missing = max(0.0, close_now - lo)
                                 trigger_txt = f"breakdown pendente: close {close_now:.1f} >= suporte {lo:.1f} (faltam {missing:.1f})"
+                            
                             reqs["Gatilho Breakout (close<suporte)"] = {"current": close_now, "required": lo, "op": "<", "missing": max(0.0, close_now - lo)}
             except Exception:
                 pass
@@ -5863,134 +5893,116 @@ def fast_loop():
             # 7️⃣ PROCESSAMENTO DE SINAIS (SE PERMITIDO)
             # ============================================
             if market_status["new_entries_allowed"]:
-                # Garante que a lista de scan inclua TODOS os ativos relevantes, 
-                # mesmo que não estejam no optimized_params inicial
-                # Usa a lista expandida do adaptive_system como base
+                logger.info("🔄 INICIANDO CICLO DE VERIFICAÇÃO DE SINAIS...")
+                
+                # 1. Constrói lista de ativos
                 symbols_to_scan = []
                 
-                # 1. Ativos do Otimizador (Prioridade)
+                # Ativos do otimizador
                 symbols_to_scan.extend(list(optimized_params.keys()))
                 
-                # 2. Ativos Base (WIN/WDO/IND/DOL)
+                # Ativos base (garante que contratos atuais sejam pegos)
                 bases = ["WIN", "WDO", "IND", "DOL", "CCM", "BGI", "ICF", "WSP", "BIT"]
                 for b in bases:
-                    real = utils.resolve_current_symbol(b)
+                    real = utils.get_contrato_atual(b) # Usa função específica de resolução
                     if real and real not in symbols_to_scan:
                         symbols_to_scan.append(real)
                 
                 # Remove duplicatas
                 symbols_to_scan = list(set(symbols_to_scan))
                 
+                # Filtra por horário
                 try:
                     symbols_to_scan = [s for s in symbols_to_scan if utils.is_time_allowed_for_symbol(s, CURRENT_MODE)]
                 except Exception:
                     pass
+
+                # Scan de mercado
                 scanned_indicators = {}
                 try:
                     scanned_indicators = _market_scanner.scan_market(symbols_to_scan)
                 except Exception:
                     scanned_indicators = {}
 
-                # ✅ OBTER REGIME DE MERCADO ATUAL
                 current_regime = getattr(adaptive_system, "current_regime", "NEUTRAL")
-
+                
+                # 2. Itera sobre CADA ativo
                 for sym in symbols_to_scan:
-                    ind_data = scanned_indicators.get(sym) or bot_state.get_indicators(sym)
+                    try:
+                        # Resolve símbolo para garantir (ex: WIN$ -> WINJ26)
+                        # Mas symbols_to_scan já deve ter resolvidos.
+                        
+                        ind_data = scanned_indicators.get(sym) or bot_state.get_indicators(sym)
+                        if not ind_data or ind_data.get("error"):
+                            # logger.info(f"ℹ️ {sym}: Sem dados de indicadores. Pulando.")
+                            continue
 
-                    if not ind_data or ind_data.get("error"):
-                        continue
+                        # Lógica de Score
+                        adx_min = 15.0
+                        if sym in optimized_params:
+                            p = optimized_params[sym]
+                            adx_min = p.get("parameters", {}).get("adx_threshold", 15.0) if "parameters" in p else p.get("adx_threshold", 15.0)
+                        
+                        if current_regime == "NEUTRAL" and adx_min > 18:
+                            adx_min = 18.0
 
-                    # Obtém threshold de ADX otimizado para o ativo
-                    adx_min = 15.0
-                    if sym in optimized_params:
-                        p = optimized_params[sym]
-                        if "parameters" in p:
-                            adx_min = p["parameters"].get("adx_threshold", 15.0)
+                        score = utils.calculate_signal_score(ind_data, regime=current_regime, adx_min=adx_min)
+                        
+                        # Tendência e Filtros
+                        ema_trend = "UP" if ind_data["ema_fast"] > ind_data["ema_slow"] else "DOWN"
+                        rsi = ind_data.get("rsi", 50)
+                        adx = ind_data.get("adx", 0)
+                        
+                        forced_signal = False
+                        if current_regime == "TREND":
+                            forced_signal = (adx > 30 and score > 25)
+                        elif current_regime == "REVERSION":
+                            if ema_trend == "UP" and rsi < 35: forced_signal = True
+                            if ema_trend == "DOWN" and rsi > 65: forced_signal = True
+                        
+                        close_price = ind_data.get("close", 1.0)
+                        ema_diff_pct = abs(ind_data["ema_fast"] - ind_data["ema_slow"]) / max(close_price, 1)
+                        adx_exception = (15 <= adx <= adx_min) and (ema_diff_pct > 0.0005) and (current_regime != "REVERSION")
+                        high_score_exception = (score >= 65 and adx >= 15)
+
+                        # Critério de Aprovação
+                        is_approved = (score >= config.MIN_SIGNAL_SCORE or forced_signal or adx_exception or high_score_exception)
+                        
+                        if is_approved:
+                            side = "BUY" if ema_trend == "UP" else "SELL"
+                            
+                            # Definição de RSI Limits
+                            rsi_limit_high = 70
+                            rsi_limit_low = 30
+                            
+                            if score >= 75:
+                                rsi_limit_high = 80
+                                rsi_limit_low = 20
+                            elif current_regime == "TREND":
+                                rsi_limit_high = 75
+                                rsi_limit_low = 25
+                                
+                            # Cripto Hotfix
+                            is_crypto = 'BIT' in sym or 'BTC' in sym
+                            if is_crypto and score >= 80:
+                                rsi_limit_high = 95
+                                rsi_limit_low = 5
+
+                            logger.info(f"✅ {sym} APROVADO: Score={score:.0f} | Regime={current_regime} | RSI Lim={rsi_limit_low}/{rsi_limit_high}")
+                            
+                            # Tenta entrar (sem break/return)
+                            try_enter_position(sym, side, rsi_limit_high=rsi_limit_high, rsi_limit_low=rsi_limit_low)
+                            
                         else:
-                            adx_min = p.get("adx_threshold", 15.0)
-                    
-                    # ⚠️ AJUSTE DE SENSIBILIDADE (Se otimização pediu > 20, respeita, senão 15)
-                    # Para regimes NEUTRAL, força um pouco menos de rigor se o score for alto
-                    if current_regime == "NEUTRAL" and adx_min > 18:
-                        adx_min = 18.0
-
-                    # ✅ CALCULA SCORE COM REGIME E VOLATILIDADE
-                    score = utils.calculate_signal_score(ind_data, regime=current_regime, adx_min=adx_min)
-                    
-                    # ✅ LÓGICA V5.6 (ADAPTATIVA)
-                    ema_trend = "UP" if ind_data["ema_fast"] > ind_data["ema_slow"] else "DOWN"
-                    rsi = ind_data.get("rsi", 50)
-                    adx = ind_data.get("adx", 0)
-                    
-                    # Sinais forçados dependem do regime
-                    forced_signal = False
-                    if current_regime == "TREND":
-                        # Em tendência, aceitamos entrar com score menor se ADX explodir
-                        forced_signal = (adx > 30 and score > 25)
-                    elif current_regime == "REVERSION":
-                        # Em reversão, RSI extremo é gatilho
-                        if ema_trend == "UP" and rsi < 35: forced_signal = True # Compra fundo
-                        if ema_trend == "DOWN" and rsi > 65: forced_signal = True # Venda topo
-                    
-                    # Exceção ADX (Início de movimento) - Apenas se não for Reversão
-                    # Aceita ADX entre 15 e 20 se as médias cruzaram recentemente
-                    ema_diff_pct = abs(ind_data["ema_fast"] - ind_data["ema_slow"]) / max(ind_data["close"], 1)
-                    adx_exception = (15 <= adx <= adx_min) and (ema_diff_pct > 0.0005) and (current_regime != "REVERSION")
-
-                    # Se o score for muito alto (>65), aceitamos ADX um pouco menor (15)
-                    high_score_exception = (score >= 65 and adx >= 15)
-
-                    if score >= config.MIN_SIGNAL_SCORE or forced_signal or adx_exception or high_score_exception:
-                        side = "BUY" if ema_trend == "UP" else "SELL"
-                        
-                        # 🛡️ FILTRO DE EXAUSTÃO (MEAN REVERSION) - LAND TRADING
-                        # Adaptado ao Regime E Score
-                        rsi_limit_high = 70
-                        rsi_limit_low = 30
-                        
-                        # Se Score for muito alto (Ex: 80 do BGI), aceita RSI mais esticado
-                        if score >= 75:
-                            rsi_limit_high = 80
-                            rsi_limit_low = 20
-                        elif current_regime == "TREND":
-                            rsi_limit_high = 75
-                            rsi_limit_low = 25
-
-                        # 🔥 HOTFIX CRIPTO/BREAKOUT (BIT/BTC)
-                        is_crypto = 'BIT' in sym or 'BTC' in sym
-                        
-                        # Tenta confirmar breakout pelo preço (simples)
-                        is_breakout_confirmed = False
-                        current_price = ind_data.get("close", 0)
-                        
-                        # Obtém resistência dinâmica do utils (se disponível no ind_data)
-                        res_price = ind_data.get("resistance_price", 0)
-                        sup_price = ind_data.get("support_price", 0)
-                        
-                        if side == "BUY" and res_price > 0 and current_price > res_price:
-                            is_breakout_confirmed = True
-                        elif side == "SELL" and sup_price > 0 and current_price < sup_price:
-                            is_breakout_confirmed = True
+                            # Log de rejeição simples para auditoria
+                            # logger.info(f"❌ {sym} REJEITADO: Score={score:.0f} < {config.MIN_SIGNAL_SCORE} (Regime={current_regime})")
+                            pass
                             
-                        # Se for Cripto, Score Alto e Breakout Confirmado -> Libera RSI
-                        if is_crypto and score >= 80:
-                             # Se confirmou breakout ou se o score é altíssimo
-                             if is_breakout_confirmed or score >= 85:
-                                 rsi_limit_high = 95
-                                 rsi_limit_low = 5
-                                 logger.info(f"🚀 CRIPTO MODE: RSI Limit expandido para {rsi_limit_high} (Breakout/Score Alto)")
-
-                        # Log detalhado do limite de RSI usado
-                        # logger.debug(f"🔍 {sym}: RSI={rsi:.1f} Limits=[{rsi_limit_low}-{rsi_limit_high}] Score={score}")
-                            
-                        # if side == "BUY" and rsi > rsi_limit_high:
-                        #     logger.info(f"🛑 {sym}: RSI {rsi:.1f} > {rsi_limit_high} (Exaustão Compra - Limite Dinâmico)")
-                        #     continue
-                        # if side == "SELL" and rsi < rsi_limit_low:
-                        #     logger.info(f"🛑 {sym}: RSI {rsi:.1f} < {rsi_limit_low} (Exaustão Venda - Limite Dinâmico)")
-                        #     continue
-                            
-                        try_enter_position(sym, side, rsi_limit_high=rsi_limit_high, rsi_limit_low=rsi_limit_low)
+                    except Exception as e:
+                        logger.error(f"Erro ao processar sinal para {sym}: {e}")
+                        continue
+                
+                logger.info("🏁 CICLO DE VERIFICAÇÃO CONCLUÍDO.")
 
             # ============================================
             # 8️⃣ CIRCUIT BREAKER
