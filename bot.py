@@ -873,6 +873,10 @@ def run_performance_analysis():
     magic_filter = getattr(config, "MAGIC_NUMBER", 0)
     out_deals = [d for d in deals if d.entry == mt5.DEAL_ENTRY_OUT and d.magic == magic_filter]
     
+    # 🔥 Filtro Adicional: Ignora ativos que não são futuros (se houver lixo no histórico)
+    futures_prefixes = ('WIN', 'WDO', 'IND', 'DOL', 'CCM', 'BGI', 'ICF', 'SFI', 'BIT', 'T10')
+    out_deals = [d for d in out_deals if d.symbol.upper().startswith(futures_prefixes)]
+
     if not out_deals:
         # Se não houver trades com magic number, retorna None (sem dados)
         # logger.info("Nenhum trade com Magic Number correto nas últimas 24h")
@@ -1192,22 +1196,25 @@ def check_win_rate_pause() -> tuple:
         now = datetime.now()
         start_of_day = datetime.combine(now.date(), datetime.strptime("00:00", "%H:%M").time())
         with utils.mt5_lock:
-            deals = validation.mt5.history_deals_get(now - timedelta(days=3), now)
+            # 🔥 CORREÇÃO: Analisa apenas trades do dia atual para evitar travar por histórico antigo
+            deals = validation.mt5.history_deals_get(start_of_day, now)
         
         if not deals:
-            return False, "Sem histórico"
+            return False, "Sem histórico hoje"
         
-        out_deals = [d for d in deals if getattr(d, "entry", None) in (validation.mt5.DEAL_ENTRY_OUT, 2)][-20:]
-        # Grace period pós-reset: não pausar até N trades de saída no dia
-        try:
-            todays_out = [d for d in deals if d.entry == mt5.DEAL_ENTRY_OUT and datetime.fromtimestamp(d.time) >= start_of_day]
-            if pause_reset_day == now.date() and len(todays_out) < getattr(config, "WR_RESET_GRACE_TRADES", 5):
-                return False, f"Grace WR pós-reset ({len(todays_out)}/{getattr(config,'WR_RESET_GRACE_TRADES',5)} trades hoje)"
-        except Exception:
-            pass
+        # 🔥 FILTRO RIGOROSO (Igual ao Health Watcher)
+        futures_prefixes = ('WIN', 'WDO', 'IND', 'DOL', 'CCM', 'BGI', 'ICF', 'SFI', 'BIT', 'T10')
+        magic_filter = int(getattr(config, "MAGIC_NUMBER", 0) or 0)
         
-        if len(out_deals) < 10:
-            return False, "Histórico insuficiente (mín. 10 trades)"
+        out_deals = [
+            d for d in deals 
+            if getattr(d, "entry", None) in (validation.mt5.DEAL_ENTRY_OUT, 2)
+            and d.symbol.upper().startswith(futures_prefixes)
+            and d.magic == magic_filter
+        ]
+        
+        if len(out_deals) < 5:  # Mínimo 5 trades no dia para analisar
+            return False, f"Trades insuficientes hoje ({len(out_deals)}/5)"
         
         wins = sum(1 for d in out_deals if d.profit > 0)
         win_rate = wins / len(out_deals)
@@ -2181,16 +2188,16 @@ def health_watcher_thread():
             trading_paused = True
             logger.warning(f"Limite volume diário atingido: R${daily_volume:,.2f} > R${volume_limit:,.2f}")
 
-        # 4. Win Rate (últimos 20 trades < 50%)
+        # 4. Win Rate (apenas trades do dia atual < 50%)
         try:
             with utils.mt5_lock:
-                deals = mt5.history_deals_get(datetime.now() - timedelta(days=7), datetime.now())
+                # 🔥 CORREÇÃO: Analisa apenas trades do dia atual
+                start_of_day = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+                deals = mt5.history_deals_get(start_of_day, datetime.now())
             if deals:
                 relevant_deals = [d for d in deals if d.entry == mt5.DEAL_ENTRY_OUT]
                 
                 # 🔥 FILTRO DE FUTUROS E MAGIC NUMBER (RIGOROSO)
-                # Garante que APENAS trades com o Magic Number ATUAL sejam considerados
-                # Ignora trades manuais (magic=0) ou de outros robôs
                 futures_prefixes = ('WIN', 'WDO', 'IND', 'DOL', 'CCM', 'BGI', 'ICF', 'SFI', 'BIT', 'T10')
                 magic_filter = int(getattr(config, "MAGIC_NUMBER", 0) or 0)
                 
@@ -2199,12 +2206,11 @@ def health_watcher_thread():
                     if d.symbol.upper().startswith(futures_prefixes) and d.magic == magic_filter
                 ]
                 
-                # Se não houver trades suficientes com ESTE magic number, NÃO pausa
-                # Evita falso positivo ao iniciar novo magic number
-                if len(filtered_deals) < 20:
-                    pass # logger.debug(f"Trades insuficientes para análise de WR ({len(filtered_deals)}/20)")
+                # Se não houver trades suficientes HOJE, NÃO pausa
+                if len(filtered_deals) < 5:
+                    pass 
                 else:
-                    last_20 = sorted(filtered_deals, key=lambda x: x.time, reverse=True)[:20]
+                    last_20 = sorted(filtered_deals, key=lambda x: x.time, reverse=True) # Todos do dia (limitado a 20 se quiser, mas "hoje" é melhor)
                     wins = sum(1 for d in last_20 if d.profit > 0)
                     win_rate = (wins / len(last_20)) * 100
                     
@@ -3265,6 +3271,20 @@ def build_portfolio_and_top15():
                                 trigger_txt = f"breakdown pendente: close {close_now:.1f} >= suporte {lo:.1f} (faltam {missing:.1f})"
                             
                             reqs["Gatilho Breakout (close<suporte)"] = {"current": close_now, "required": lo, "op": "<", "missing": max(0.0, close_now - lo)}
+
+                        # 🔥 CORREÇÃO: SE FOR FORÇADO (REVERSION OU SCORE ALTO),
+                        # O GATILHO DEVE SER MAIS TOLERANTE OU IGNORADO
+                        # SE O PREÇO JÁ ESTIVER NA ZONA DE SUPORTE/RESISTÊNCIA
+                        if bool(forced_buy or forced_sell):
+                             if not trigger_ok:
+                                 # Se forçado, aceita se o preço estiver "perto o suficiente" (0.1%)
+                                 # ou se já tiver tocado
+                                 if signal == "BUY" and close_now >= (hi * 0.999):
+                                     trigger_ok = True
+                                     trigger_txt = f"Forçado OK (Close {close_now:.1f} ~= Res {hi:.1f})"
+                                 elif signal == "SELL" and close_now <= (lo * 1.001):
+                                     trigger_ok = True
+                                     trigger_txt = f"Forçado OK (Close {close_now:.1f} ~= Sup {lo:.1f})"
             except Exception:
                 pass
 

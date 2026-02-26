@@ -4612,6 +4612,25 @@ def is_time_allowed_for_symbol(symbol: str, mode: str) -> bool:
             "SO_FUTUROS": [(datetime.time(9,0), datetime.time(10,0)), (datetime.time(17,0), datetime.time(18,0))]
         })
         is_fut = is_future(symbol)
+        
+        # 🔥 CORREÇÃO: Commodities Agrícolas (CCM, BGI, ICF) fecham mais cedo (16:20)
+        if is_fut and any(sub in symbol.upper() for sub in ["CCM", "BGI", "ICF"]):
+             # Horário aproximado B3 (09:00 - 16:20)
+             ranges = [(datetime.time(9,0), datetime.time(16,20))]
+             for start, end in ranges:
+                if start <= now <= end:
+                    return True
+             return False
+
+        # 🔥 CORREÇÃO: Se for Futuro (WIN/WDO), usa horário de FUTUROS (09:00-18:00)
+        # mesmo se o modo for "NORMAL" (que cai em "AMBOS" 10:00-17:00 incorretamente)
+        if is_fut:
+             ranges = horarios.get("FUTUROS", [])
+             for start, end in ranges:
+                if start <= now <= end:
+                    return True
+             return False
+
         key = str(mode or "").strip().upper()
         if key == "AMBOS":
             ranges = horarios.get("AMBOS", [])
@@ -4621,12 +4640,14 @@ def is_time_allowed_for_symbol(symbol: str, mode: str) -> bool:
             ranges = horarios.get("ACOES", [])
         else:
             ranges = horarios.get("AMBOS", [])
+            
         if key == "SO_FUTUROS" and not is_fut:
             return False
         if key == "FUTUROS" and not is_fut:
             return False
         if key == "ACOES" and is_fut:
             return False
+            
         for start, end in ranges:
             if start <= now <= end:
                 return True
