@@ -44,9 +44,17 @@ def run_backtest(days: int = 30) -> Optional[float]:
     
     # Filtra apenas fechamentos (DEAL_ENTRY_OUT)
     df_out = df[df['entry'] == mt5.DEAL_ENTRY_OUT].copy()
+
+    # 🔥 FILTRO DE FUTUROS (WIN/WDO/IND/DOL/CCM/BGI/ICF/SFI/BIT/T10)
+    # Ignora ações para não distorcer o Backtest do bot de futuros
+    try:
+        futures_prefixes = ('WIN', 'WDO', 'IND', 'DOL', 'CCM', 'BGI', 'ICF', 'SFI', 'BIT', 'T10')
+        df_out = df_out[df_out['symbol'].astype(str).str.upper().str.startswith(futures_prefixes)]
+    except Exception as e:
+        logger.warning(f"Erro ao filtrar futuros no backtest: {e}")
     
     if len(df_out) == 0:
-        logger.warning("⚠️ Nenhum deal de saída encontrado")
+        logger.warning("⚠️ Nenhum deal de saída encontrado (FUTUROS)")
         return None
     
     # Calcula métricas

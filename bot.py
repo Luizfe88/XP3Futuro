@@ -2179,7 +2179,16 @@ def health_watcher_thread():
                 deals = mt5.history_deals_get(datetime.now() - timedelta(days=7), datetime.now())
             if deals:
                 relevant_deals = [d for d in deals if d.entry == mt5.DEAL_ENTRY_OUT]
-                last_20 = sorted(relevant_deals, key=lambda x: x.time, reverse=True)[:20]
+                
+                # 🔥 FILTRO DE FUTUROS (WIN/WDO/IND/DOL/CCM/BGI/ICF/SFI/BIT/T10)
+                # Ignora ações para não distorcer o Win Rate do bot de futuros
+                futures_prefixes = ('WIN', 'WDO', 'IND', 'DOL', 'CCM', 'BGI', 'ICF', 'SFI', 'BIT', 'T10')
+                filtered_deals = [
+                    d for d in relevant_deals 
+                    if d.symbol.upper().startswith(futures_prefixes)
+                ]
+                
+                last_20 = sorted(filtered_deals, key=lambda x: x.time, reverse=True)[:20]
                 
                 if len(last_20) >= 20:
                     wins = sum(1 for d in last_20 if d.profit > 0)
@@ -3242,6 +3251,12 @@ def build_portfolio_and_top15():
             else:
                 reason_log = f"⏳ Aguardando Gatilho ({trigger_txt}) | Score {score:.0f} | Forçado: {forced_flag}"
             rejected = True
+
+        # Inicializa checks se não existir (fallback de segurança)
+        if 'checks' not in locals():
+            checks = []
+        if 'reqs' not in locals():
+            reqs = {}
 
         daily_logger.log_analysis(
             symbol=sym,
