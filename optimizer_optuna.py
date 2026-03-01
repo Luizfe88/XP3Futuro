@@ -285,6 +285,8 @@ def fast_backtest_core(
                         net_profit = gross_profit - c_exit
                         cash -= val_exit + c_exit
 
+                trade_pnls.append(float(net_profit))
+
                 if net_profit > 0:
                     wins += 1
                 else:
@@ -1171,10 +1173,10 @@ def run_optimization(
             pf = metrics.get("profit_factor", 0.0)
 
             # hard constraints to guide the search toward statistically
-            # stronger systems.  configurations producing fewer than 50 trades
-            # or a profit factor under 1.5 are unlikely to pass the
+            # stronger systems.  configurations producing fewer than 15 trades
+            # or a profit factor under 1.1 are unlikely to pass the
             # permutation/bootstrapping test later.
-            if trades < 50 or pf < 1.5:
+            if trades < 15 or pf < 1.1:
                 return -10.0
 
             min_trades = (

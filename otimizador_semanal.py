@@ -1244,6 +1244,9 @@ if __name__ == "__main__":
     strategies_list = [s.strip() for s in args.strategies.split(",")] if args.strategies else None
 
     try:
+        with open("ultima_execucao_otimizador.txt", "w", encoding="utf-8") as f:
+            f.write(f"Otimizador iniciado em: {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}\n")
+
         run_optimizer(
             symbols=symbols_list,
             strategies=strategies_list,
