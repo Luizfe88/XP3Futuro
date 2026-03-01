@@ -78,6 +78,25 @@ def run_test(symbol: str, days: int):
                 f.write(f"Final Equity: R$ {float(results.get('final_equity', 0.0)):.2f}\n")
         except Exception:
             pass
+
+    # ✅ Permutation test post-backtest (uses config for parameters)
+    try:
+        import config
+        if getattr(config, "PERMUTATION_TEST", {}).get("enabled", False):
+            from validation.permutation_test import run_permutation_test
+            cfg = config.PERMUTATION_TEST
+            print("📊 Running permutation test (end of validation)")
+            perm_res = run_permutation_test(
+                trade_history_path=cfg.get("trade_history_path", "ml_trade_history.json"),
+                n_permutations=cfg.get("n_permutations", 5000),
+                metric=cfg.get("metrics", ["profit_factor"])[0],
+                use_block_permutation=cfg.get("block_size", 3) > 1,
+                block_size=cfg.get("block_size", 3),
+                bootstrap=cfg.get("bootstrap", True),
+            )
+            print(f"Permutation p-value ({perm_res['metric']}): {perm_res['p_value']:.4f}")
+    except Exception as e:
+        print(f"Erro na permutation test: {e}")
     except Exception as e:
         print(f"❌ Backtest Failed: {e}")
         import traceback

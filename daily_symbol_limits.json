@@ -1,4 +1,45 @@
 {
-  "date": "2026-02-26",
-  "trades": {}
+  "date": "2026-02-27",
+  "trades": {
+    "TOTS3": {
+      "total": 1,
+      "losses": 0
+    },
+    "POSI3": {
+      "total": 1,
+      "losses": 0
+    },
+    "YDUQ3": {
+      "total": 1,
+      "losses": 1
+    },
+    "ANIM3": {
+      "total": 1,
+      "losses": 1
+    },
+    "BBDC3": {
+      "total": 1,
+      "losses": 0
+    },
+    "ITSA4": {
+      "total": 1,
+      "losses": 0
+    },
+    "GMAT3": {
+      "total": 1,
+      "losses": 1
+    },
+    "RADL3": {
+      "total": 1,
+      "losses": 0
+    },
+    "HBSA3": {
+      "total": 1,
+      "losses": 1
+    },
+    "BBDC4": {
+      "total": 1,
+      "losses": 0
+    }
+  }
 }

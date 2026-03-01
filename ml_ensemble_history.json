@@ -1,6 +1,26 @@
 {
-  "history": [],
-  "history_by_symbol": {},
-  "last_train_at": null,
-  "saved_at": 1772139642.210834
-}
+  "history": [
+    {
+      "ts": 1772217002.8980873,
+      "symbol": "TOTS3",
+      "pnl_pct": 0.005530682117461154,
+      "indicators": {
+        "symbol": "TOTS3",
+        "ema_fast": 37.81248991053408,
+        "ema_slow": 37.883964632996744,
+        "rsi": 13.207547169810368,
+        "adx": 11.886048994990343,
+        "adx_slope": -3.5144,
+        "atr": 0.15017198910797408,
+        "atr_pct": 0.398,
+        "atr_real": 0.398,
+        "atr_zscore": -0.23,
+        "momentum": -0.006577,
+        "volume_ratio": 0.83,
+        "vol_breakout": false,
+        "vwap": 37.9441106080207,
+        "vwap_std": 0.12685336786076296,
+        "vwap_upper_2sd": 38.19781734374223,
+        "vwap_lower_2sd": 37.69040387229917,
+        "obv": 8817.0,
+        "obv_trend_up": 

@@ -1036,3 +1036,441 @@
 2026-02-26 17:59:39,353 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
 2026-02-26 17:59:44,197 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
 2026-02-26 17:59:45,939 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 13 ativos.
+2026-02-27 11:19:00,741 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 11:19:01,147 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 11:19:14,050 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 11:19:23,608 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 11:19:29,894 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 11:19:36,237 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 11:19:51,608 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 11:20:13,640 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 11:20:21,743 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 11:20:29,197 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 11:20:38,404 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 11:20:40,806 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 13 ativos.
+2026-02-27 11:34:19,744 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 11:34:19,960 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 11:34:28,578 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 11:34:36,652 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 11:34:44,077 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 11:34:51,169 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 11:35:08,698 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 11:35:27,961 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 11:35:33,648 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 11:35:39,694 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 11:35:45,013 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 11:49:36,868 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 11:49:37,055 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 11:49:43,586 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 11:49:48,785 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 11:49:53,670 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 11:49:58,574 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 11:50:06,120 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 11:50:11,710 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 11:50:16,828 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 11:50:21,970 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 11:50:27,290 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 12:05:08,476 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 12:05:08,701 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 12:05:17,872 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 12:05:26,188 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 12:05:33,521 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 12:05:40,978 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 12:05:48,644 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 12:05:56,273 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 12:06:11,747 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 12:06:29,328 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 12:06:37,680 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 12:20:12,184 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 12:20:12,574 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 12:20:38,010 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 12:20:54,391 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 12:21:05,612 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 12:21:25,959 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 12:21:48,053 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 12:22:22,299 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 12:22:39,873 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 12:22:52,745 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 12:23:47,483 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 12:23:52,730 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 13 ativos.
+2026-02-27 12:35:58,457 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 12:35:58,734 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 12:36:10,554 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 12:36:22,629 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 12:36:33,141 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 12:36:52,557 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 12:37:02,292 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 12:37:30,732 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 12:37:47,995 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 12:37:56,480 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 12:38:09,840 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 12:51:00,619 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 12:51:01,058 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 12:51:18,450 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 12:51:28,685 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 12:51:37,784 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 12:51:48,334 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 12:51:57,933 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 12:52:07,197 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 12:52:16,993 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 12:52:23,457 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 12:52:30,387 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 13:06:16,677 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 13:06:16,927 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 13:06:24,925 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 13:06:32,411 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 13:06:41,103 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 13:06:48,403 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 13:06:56,590 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 13:07:05,966 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 13:07:12,752 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 13:07:24,302 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 13:07:36,128 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 13:21:22,011 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 13:21:22,215 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 13:21:30,117 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 13:21:36,299 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 13:21:46,917 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 13:22:01,067 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 13:22:23,068 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 13:22:34,075 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 13:22:45,433 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 13:23:00,493 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 13:23:07,061 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 13:24:04,829 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 13 ativos.
+2026-02-27 13:37:23,256 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 13:37:23,449 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 13:38:38,724 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 13:39:04,220 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 13:39:14,060 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 13:39:25,974 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 13:39:41,637 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 13:39:50,001 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 13:40:35,174 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 13:40:52,304 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 13:41:00,706 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 13:52:25,024 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 13:52:25,326 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 13:52:31,745 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 13:52:46,874 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 13:53:02,011 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 13:53:34,610 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 13:53:51,538 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 13:54:03,778 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 13:54:16,546 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 13:54:39,814 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 13:54:51,348 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 14:07:34,567 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 14:07:34,771 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 14:07:40,961 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 14:07:47,495 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 14:07:52,361 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 14:07:57,030 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 14:08:04,836 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 14:08:12,743 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 14:08:19,737 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 14:08:25,673 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 14:08:32,176 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 14:23:29,831 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 14:23:30,129 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 14:23:55,627 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 14:24:08,050 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 14:24:14,523 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 14:24:21,454 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 14:24:28,457 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 14:24:33,321 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 14:24:39,639 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 14:24:43,972 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 14:24:48,276 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 14:24:49,631 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 13 ativos.
+2026-02-27 14:38:46,684 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 14:38:46,880 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 14:38:53,596 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 14:38:58,351 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 14:39:03,831 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 14:39:08,832 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 14:39:14,247 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 14:39:19,172 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 14:39:23,203 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 14:39:27,029 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 14:39:30,915 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 14:53:58,602 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 14:53:58,742 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 14:54:03,832 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 14:54:08,112 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 14:54:12,135 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 14:54:16,039 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 14:54:20,242 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 14:54:24,734 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 14:54:29,054 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 14:54:32,896 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 14:54:36,820 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 15:08:59,444 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 15:08:59,610 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 15:09:04,181 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 15:09:08,639 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 15:09:12,495 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 15:09:16,538 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 15:09:21,055 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 15:09:25,273 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 15:09:29,626 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 15:09:33,908 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 15:09:38,496 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 15:24:24,347 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 15:24:24,499 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 15:24:29,527 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 15:24:34,343 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 15:24:38,501 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 15:24:42,735 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 15:24:47,084 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 15:24:51,206 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 15:24:55,369 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 15:24:59,472 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 15:25:04,246 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 15:25:06,060 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 13 ativos.
+2026-02-27 15:39:31,676 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 15:39:31,837 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 15:39:37,281 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 15:39:44,024 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 15:39:57,255 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 15:40:09,519 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 15:40:22,244 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 15:40:36,050 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 15:40:47,744 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 15:40:56,714 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 15:41:08,501 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 15:54:45,313 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 15:54:45,460 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 15:54:50,009 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 15:54:54,436 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 15:54:58,619 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 15:55:03,849 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 15:55:08,723 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 15:55:13,383 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 15:55:17,882 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 15:55:22,053 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 15:55:27,226 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 16:09:47,209 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 16:09:47,357 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 16:09:52,208 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 16:09:56,885 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 16:10:01,525 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 16:10:09,600 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 16:10:14,193 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 16:10:18,714 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 16:10:23,268 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 16:10:27,531 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 16:10:31,992 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 16:24:57,333 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 16:24:57,476 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 16:25:02,867 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 16:25:08,039 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 16:25:12,413 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 16:25:16,622 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 16:25:21,196 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 16:25:25,574 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 16:25:29,781 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 16:25:33,818 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 16:25:38,171 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 16:25:39,551 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 13 ativos.
+2026-02-27 16:40:01,516 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 16:40:01,682 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 16:40:06,630 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 16:40:12,578 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 16:40:16,677 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 16:40:21,205 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 16:40:26,051 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 16:40:30,446 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 16:40:34,612 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 16:40:38,596 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 16:40:42,646 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 16:55:02,901 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 16:55:03,059 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 16:55:07,627 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 16:55:12,101 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 16:55:16,259 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 16:55:20,439 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 16:55:25,218 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 16:55:30,680 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 16:55:34,886 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 16:55:39,047 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 16:55:43,303 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 17:10:07,777 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 17:10:07,925 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 17:10:12,845 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 17:10:17,318 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 17:10:21,385 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 17:10:25,470 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 17:10:30,675 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 17:10:34,908 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 17:10:39,048 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 17:10:43,055 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 17:10:47,115 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 17:25:22,033 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 17:25:22,201 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 17:25:26,776 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 17:25:31,357 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 17:25:35,789 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 17:25:40,030 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 17:25:44,827 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 17:25:49,276 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 17:25:53,604 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 17:25:57,980 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 17:26:02,699 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 17:26:02,701 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 13 ativos.
+2026-02-27 17:40:24,213 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 17:40:24,355 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 17:40:29,229 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 17:40:33,573 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 17:40:37,673 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 17:40:41,654 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 17:40:46,266 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 17:40:50,558 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 17:40:54,717 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 17:40:58,923 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 17:41:03,182 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 17:55:30,090 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 17:55:30,240 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 17:55:35,793 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 17:55:40,483 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 17:55:44,974 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 17:55:49,266 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 17:55:54,235 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 17:55:58,293 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 17:56:03,355 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 17:56:09,484 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 17:56:15,078 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 18:10:35,505 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 18:10:35,659 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 18:10:40,488 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 18:10:45,175 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 18:10:49,493 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 18:10:53,503 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 18:10:58,288 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 18:11:02,529 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 18:11:06,898 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 18:11:11,240 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 18:11:15,647 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 18:25:47,585 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 18:25:47,732 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 18:25:52,336 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 18:25:56,493 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 18:26:00,466 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 18:26:04,687 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 18:26:08,883 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 18:26:13,012 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 18:26:17,097 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 18:26:21,057 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 18:26:25,012 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 18:26:26,299 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 13 ativos.
+2026-02-27 18:40:50,842 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 18:40:50,985 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 18:40:55,612 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 18:40:59,971 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 18:41:04,527 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 18:41:08,578 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 18:41:13,101 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 18:41:17,372 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 18:41:21,587 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 18:41:25,433 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 18:41:29,449 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 18:55:50,974 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 18:55:51,115 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 18:55:55,444 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 18:55:59,423 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 18:56:04,489 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 18:56:09,941 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 18:56:14,953 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 18:56:19,285 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 18:56:23,506 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 18:56:27,498 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 18:56:31,478 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 19:10:53,280 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 19:10:53,418 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 19:10:57,724 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 19:11:01,843 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 19:11:05,754 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 19:11:09,659 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 19:11:13,923 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 19:11:18,024 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 19:11:22,655 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 19:11:27,082 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 19:11:31,139 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 19:25:53,363 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 19:25:53,502 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 19:25:58,752 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 19:26:03,577 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 19:26:07,976 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 19:26:12,468 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 19:26:17,660 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 19:26:22,207 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 19:26:26,691 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 19:26:31,568 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 19:26:36,331 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 19:26:38,113 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 13 ativos.
+2026-02-27 19:41:02,947 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 19:41:03,085 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 19:41:07,707 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 19:41:12,076 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 19:41:16,206 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 19:41:20,112 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 19:41:24,926 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 19:41:29,179 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 19:41:33,442 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 19:41:37,241 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 19:41:41,079 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-27 19:56:07,252 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-27 19:56:07,444 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-27 19:56:12,399 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-27 19:56:17,068 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-27 19:56:21,856 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-27 19:56:25,964 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-27 19:56:30,312 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-27 19:56:34,786 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-27 19:56:39,413 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-27 19:56:43,443 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-27 19:56:47,641 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-28 17:16:26,353 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-28 17:16:26,367 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-28 17:16:30,238 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-28 17:16:34,058 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-28 17:16:37,617 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-28 17:16:41,160 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-28 17:16:44,945 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-28 17:16:48,562 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-28 17:16:52,152 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-28 17:16:56,043 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-28 17:16:59,648 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-28 17:17:00,834 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-28 17:17:00,835 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-28 17:17:04,534 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-28 17:17:08,099 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-28 17:17:11,648 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-28 17:17:15,324 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-28 17:17:18,976 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-28 17:17:22,505 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-28 17:17:26,737 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-28 17:17:31,344 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-28 17:17:35,109 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-28 17:30:10,737 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-28 17:30:10,739 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-28 17:30:14,485 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-28 17:30:18,127 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-28 17:30:21,772 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-28 17:30:25,501 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-28 17:30:29,110 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-28 17:30:32,676 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-28 17:30:36,484 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-28 17:30:39,943 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-28 17:30:43,759 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.
+2026-02-28 17:30:45,421 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-02-28 17:30:45,422 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-02-28 17:30:49,466 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-02-28 17:30:53,018 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-02-28 17:30:56,796 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-02-28 17:31:00,328 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-02-28 17:31:03,850 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-02-28 17:31:07,466 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-02-28 17:31:11,102 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-02-28 17:31:15,163 - INFO - 🔄 Coletando métricas para IND$N → IND$N
+2026-02-28 17:31:19,428 - INFO - 🤖 SENSOR: Métricas atualizadas para 9 ativos.

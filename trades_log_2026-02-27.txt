@@ -1,0 +1,12 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-02-27 15:30:02 | SAÍDA    | TOTS3  | SELL | Vol:     400 | Price:  37.76 | P&L:   +84.00 R$ (+0.55%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2358332390
+2026-02-27 15:30:05 | SAÍDA    | POSI3  | SELL | Vol:    4600 | Price:   4.08 | P&L:   +92.00 R$ (+0.49%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2358332457
+2026-02-27 15:30:05 | SAÍDA    | YDUQ3  | SELL | Vol:    1400 | Price:  13.38 | P&L:   -28.00 R$ (-0.15%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2358332559
+2026-02-27 15:30:06 | SAÍDA    | ANIM3  | SELL | Vol:    3700 | Price:   5.11 | P&L:  -222.00 R$ (-1.19%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2358332585
+2026-02-27 15:30:06 | SAÍDA    | BBDC3  | SELL | Vol:    1000 | Price:  18.60 | P&L:  +210.00 R$ (+1.12%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2358334237
+2026-02-27 15:30:07 | SAÍDA    | ITSA4  | SELL | Vol:    1300 | Price:  14.35 | P&L:  +117.00 R$ (+0.62%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2358334462
+2026-02-27 15:30:08 | SAÍDA    | GMAT3  | SELL | Vol:    3200 | Price:   5.75 | P&L:   -32.00 R$ (-0.17%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2358339498
+2026-02-27 15:30:08 | SAÍDA    | RADL3  | SELL | Vol:     700 | Price:  25.30 | P&L:  +210.00 R$ (+1.17%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2358339724
+2026-02-27 15:30:09 | SAÍDA    | HBSA3  | SELL | Vol:    4600 | Price:   4.13 | P&L:   -92.00 R$ (-0.49%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2358628808
+2026-02-27 15:30:09 | SAÍDA    | BBDC4  | SELL | Vol:     800 | Price:  21.49 | P&L:    +0.00 R$ (+0.00%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2358686173

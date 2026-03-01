@@ -1,0 +1,1 @@
+Permutation failed: [{'metric': 'net_profit', 'original': 0, 'p_value': 1.0, 'plot': None}]
