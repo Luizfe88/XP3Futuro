@@ -27,7 +27,7 @@ def main():
         for s in targets:
             try:
                 base = utils._futures_base_from_symbol(s)
-                current = utils.get_current_contract(base)
+                current = utils.get_contrato_atual(base)
                 data_sym = utils.resolve_indicator_symbol(s)
                 trade_sym = utils.resolve_trade_symbol(s)
 

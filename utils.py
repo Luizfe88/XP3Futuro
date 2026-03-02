@@ -331,7 +331,7 @@ def resolve_current_symbol(root_symbol: str) -> Optional[str]:
     """
     try:
         if not futures_core:
-            return get_current_contract(root_symbol)
+            return get_contrato_atual(root_symbol)
 
         base = _futures_base_from_symbol(root_symbol)
 
@@ -340,7 +340,7 @@ def resolve_current_symbol(root_symbol: str) -> Optional[str]:
             if k in active_map:
                 return active_map[k]
 
-        selected = get_current_contract(base)
+        selected = get_contrato_atual(base)
         if selected:
             try:
                 active_map[f"{base}$N"] = selected
@@ -392,72 +392,66 @@ def update_futures_mappings():
         return {}
 
 
-def get_current_contract(symbol_or_base: str) -> Optional[str]:
-    base = _futures_base_from_symbol(symbol_or_base)
-    candidates = get_futures_candidates(base) or []
-    if not candidates:
-        return None
-    sorted_cands = sorted(
-        candidates,
-        key=lambda c: (
-            -float(c.get("volume", 0.0) or 0.0),
-            int(c.get("days_to_exp", 9999) or 9999),
-        ),
-    )
-    return sorted_cands[0].get("symbol") if sorted_cands else None
+def resolve_symbol(symbol: str) -> str:
+    """
+    Robust symbol resolution for B3 Futures.
+    Maps generic symbols like WIN$N to current contracts like WINJ26.
+    Uses elite_symbols_latest.json as ultimate fallback.
+    """
+    s = (symbol or "").upper().strip()
+    if not s: return s
+    
+    # Se for IBOV ou similar, não resolve
+    if s in ["IBOV", "IFNC", "WDOLCUR", "DOLAR"]:
+        return s
+
+    # 1. Se já for um contrato específico válido (ex: WINJ26) ou formato XP (WINN)
+    if re.match(r"^[A-Z]{3}[FGHJKMNQUVXZ]\d{2}$", s) or re.match(r"^[A-Z]{3}[NZ]$", s):
+        return s
+
+    # 2. Tenta resolver via ACTIVE_FUTURES no config
+    active_map = getattr(config, "ACTIVE_FUTURES", {})
+    if s in active_map:
+        return active_map[s]
+    
+    # 3. Extrai o base (ex: WIN de WIN$N)
+    base = "".join([c for c in s.replace("$", "").replace("N", "") if c.isalpha()])
+    if not base: return s
+
+    # 4. Tenta resolver via MT5 (procurando contratos reais)
+    resolved = get_contrato_atual(base)
+    if resolved:
+        return resolved
+
+    # 5. Fallback: elite_symbols_latest.json
+    try:
+        json_path = "optimizer_output/elite_symbols_latest.json"
+        if os.path.exists(json_path):
+            with open(json_path, 'r') as f:
+                data = json.load(f)
+                elite = data.get("elite_symbols", {})
+                # Procura a primeira chave que comece com o base
+                for k in elite.keys():
+                    if k.startswith(base):
+                        return k
+    except Exception as e:
+        logger.error(f"Erro no fallback JSON para {s}: {e}")
+
+    # 6. Last resort: Fallback hardcoded do próprio bot
+    fb = _fallback_future_symbol(base)
+    if fb: return fb
+
+    return s
 
 
 def resolve_trade_symbol(symbol: str) -> str:
-    s = (symbol or "").upper().strip()
-    if not s:
-        return s
-    if "$N" in s or "$" in s:
-        sel = _try_mt5_symbol_select(s)
-        if sel:
-            tick = mt5.symbol_info_tick(sel)
-            if tick and tick.ask > 0 and tick.bid > 0:
-                return sel
-        base = _futures_base_from_symbol(s)
-        active = get_current_contract(base)
-        if active:
-            sel2 = _try_mt5_symbol_select(active) or active
-            tick2 = mt5.symbol_info_tick(sel2)
-            if tick2 and tick2.ask > 0 and tick2.bid > 0:
-                return sel2
-        return sel or s
-    if _is_futures_contract_symbol(s):
-        tick = mt5.symbol_info_tick(s)
-        if tick and tick.ask > 0 and tick.bid > 0:
-            return s
-        base = _futures_base_from_symbol(s)
-        active = get_current_contract(base)
-        if active:
-            sel = _try_mt5_symbol_select(active) or active
-            tick2 = mt5.symbol_info_tick(sel)
-            if tick2 and tick2.ask > 0 and tick2.bid > 0:
-                return sel
-        return s
-    sel = _try_mt5_symbol_select(s)
-    return sel or s
+    """Resolve o símbolo para execução de ordens."""
+    return resolve_symbol(symbol)
 
 
 def resolve_indicator_symbol(symbol: str) -> str:
-    s = (symbol or "").upper().strip()
-    if not s:
-        return s
-    if _is_futures_contract_symbol(s):
-        base = _futures_base_from_symbol(s)
-        for cand in (f"{base}$N", f"{base}$"):
-            sel = _try_mt5_symbol_select(cand)
-            if sel:
-                return sel
-        active = get_current_contract(base)
-        if active:
-            return _try_mt5_symbol_select(active) or active
-        return s
-    if "$N" in s or "$" in s:
-        return _try_mt5_symbol_select(s) or s
-    return _try_mt5_symbol_select(s) or s
+    """Resolve o símbolo para cálculo de indicadores."""
+    return resolve_symbol(symbol)
 
 
 def get_contrato_atual(simbolo: str) -> Optional[str]:
@@ -493,12 +487,6 @@ def get_contrato_atual(simbolo: str) -> Optional[str]:
     return sorted_cands[0].get("symbol") if sorted_cands else None
 
 
-def resolve_current_symbol(generic_symbol: str) -> Optional[str]:
-    """
-    Resolve símbolos genéricos para o contrato vigente atual.
-    Wrapper para get_contrato_atual que retorna None se falhar.
-    """
-    return get_contrato_atual(generic_symbol)
 
 
 def detect_broker() -> str:
@@ -649,7 +637,7 @@ def map_generic_to_specific(generic: str) -> Optional[str]:
         }
         bases = alt.get(base, [base])
         for b in bases:
-            selected = get_current_contract(b)
+            selected = get_contrato_atual(b)
             if selected:
                 try:
                     cands = get_futures_candidates(b) or []
@@ -1711,8 +1699,10 @@ def _df_has_valid_ohlc(df: Optional[pd.DataFrame], min_rows: int = 50) -> bool:
 def safe_copy_rates(
     symbol: str, timeframe, count: int = 500, timeout: int = 12
 ) -> Optional[pd.DataFrame]:
+    # 1. Resolve o símbolo para o contrato real se necessário
+    symbol = resolve_symbol(symbol)
+    
     # 🚫 BLACKLIST DE SÍMBOLOS PROBLEMÁTICOS
-    # Evita tentativas de download em ativos suspensos ou sem dados no MT5
     if symbol in ["OSXB3", "OIBR3", "VVAR3"]:
         return None
 
@@ -1723,6 +1713,7 @@ def safe_copy_rates(
     if (terminal is None) or (not getattr(terminal, "connected", False)):
         df_fb = get_polygon_rates_fallback(symbol, timeframe, count)
         return df_fb
+
     requested_symbol = (symbol or "").upper().strip()
     selected = _try_mt5_symbol_select(requested_symbol)
     symbol = selected or requested_symbol
@@ -1785,7 +1776,7 @@ def safe_copy_rates(
             for b in bases:
                 if not b:
                     continue
-                active = get_current_contract(b)
+                active = get_contrato_atual(b)
                 if not active or active == symbol:
                     continue
                 act_sel = _try_mt5_symbol_select(active) or active
@@ -1891,8 +1882,9 @@ def cached_symbol_info(symbol: str) -> Optional[mt5.SymbolInfo]:
 
 def cached_symbol_info_tick(symbol: str):
     """
-    Versão com cache do symbol_info_tick (TTL 1s)
+    Versão com cache do symbol_info_tick (TTL 1s) com resolução de contrato.
     """
+    symbol = resolve_symbol(symbol)
     if not REDIS_AVAILABLE:
         return mt5.symbol_info_tick(symbol)
 
@@ -3115,17 +3107,42 @@ class ConcurrentMarketScanner:
             if cached:
                 results[symbol] = cached
                 continue
-            df = safe_copy_rates(symbol, mt5.TIMEFRAME_M5, 50)
-            if df is None or len(df) < 20:
+            df = safe_copy_rates(symbol, mt5.TIMEFRAME_M5, 100)
+            if df is None or len(df) < 30:
                 results[symbol] = {}
                 continue
+                
+            # Calcula indicadores necessários para o Ranking e Score
+            close = df["close"]
+            ema_fast = float(close.ewm(span=9).mean().iloc[-1])
+            ema_slow = float(close.ewm(span=21).mean().iloc[-1])
+            
+            # ADX para Força da Tendência
+            adx_val = get_adx(df) or 0.0
+            
+            # ATR para Volatilidade (Custo Operacional)
+            atr_val = get_atr(df) or 0.0
+            
+            # VWAP Simplificado (Média ponderada por volume das últimas 50 barras)
+            try:
+                # Se não tiver a função get_vwap, calcula manual básico
+                vol = df["tick_volume"]
+                vwap_val = (close * vol).rolling(50).sum().iloc[-1] / max(vol.rolling(50).sum().iloc[-1], 1.0)
+            except Exception:
+                vwap_val = ema_fast
+            
             ind = {
                 "rsi": get_rsi(df, period=14),
-                "ema_fast": float(df["close"].ewm(span=9).mean().iloc[-1]),
-                "ema_slow": float(df["close"].ewm(span=21).mean().iloc[-1]),
-                "volume_ratio": float(df["volume"].iloc[-1])
-                / max(float(df["volume"].rolling(20).mean().iloc[-1]), 1.0),
-                "price": float(df["close"].iloc[-1]),
+                "ema_fast": ema_fast,
+                "ema_slow": ema_slow,
+                "adx": adx_val,
+                "atr_real": atr_val,
+                "vwap": vwap_val,
+                "close": float(close.iloc[-1]),
+                "price": float(close.iloc[-1]),
+                "volume_ratio": float(df["tick_volume"].iloc[-1])
+                / max(float(df["tick_volume"].rolling(20).mean().iloc[-1]), 1.0),
+                "symbol": symbol
             }
             self.cache.set(symbol, ind, 5)
             results[symbol] = ind
@@ -3534,7 +3551,7 @@ def calculate_signal_score(
     # 0. ⛔ FILTRO DE CUSTO OPERACIONAL (Dead Market)
     # Se a volatilidade (ATR) for menor que X ticks, o lucro não paga o spread/taxas.
     try:
-        min_ticks = getattr(config, "MIN_VOLATILITY_TICKS", 12)
+        min_ticks = getattr(config, "MIN_VOLATILITY_TICKS", 5)
         if symbol:
             tick_size = (
                 mt5.symbol_info(symbol).point if mt5.symbol_info(symbol) else 0.0
@@ -3542,8 +3559,8 @@ def calculate_signal_score(
             if tick_size > 0:
                 min_atr_val = min_ticks * tick_size
                 if atr_real < min_atr_val:
-                    # Penalidade severa ou retorno zero
-                    return 0.0
+                    # Penalidade leve ao invés de retorno zero imediato
+                    score -= 20
     except Exception:
         pass
 

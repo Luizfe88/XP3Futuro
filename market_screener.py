@@ -1,13 +1,14 @@
-
 import MetaTrader5 as mt5
 import pandas as pd
 from datetime import datetime, timedelta
 from typing import Optional, Dict
+import utils
 
 def get_historical_data(symbol: str, days: int = 20) -> Optional[pd.DataFrame]:
     """
     Busca um histórico de dados diários para um ativo.
     """
+    symbol = utils.resolve_symbol(symbol)
     try:
         rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_D1, 0, days)
         if rates is None or len(rates) == 0:
@@ -25,6 +26,7 @@ def get_live_spread(symbol: str) -> Optional[float]:
     """
     Calcula o spread atual (bid/ask) de um ativo.
     """
+    symbol = utils.resolve_symbol(symbol)
     try:
         tick = mt5.symbol_info_tick(symbol)
         if tick is None:

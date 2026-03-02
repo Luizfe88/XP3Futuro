@@ -61,12 +61,12 @@ def collect_sensor_data(symbols_to_scan=None, force_run=False):
     
     # Lista padrão se não fornecida
     if not symbols_to_scan:
-        # Usa utils.get_contrato_atual() para garantir símbolos negociáveis
+        # Usa utils.resolve_symbol() para garantir símbolos negociáveis
         # em vez de genéricos que podem falhar no MT5
         base_assets = ["WIN", "WDO", "IND", "DOL", "WSP", "BGI", "ICF", "CCM", "BIT"]
         symbols_to_scan = []
         for base in base_assets:
-            real = utils.get_contrato_atual(base)
+            real = utils.resolve_symbol(base)
             if real:
                 symbols_to_scan.append(real)
             else:
@@ -82,7 +82,7 @@ def collect_sensor_data(symbols_to_scan=None, force_run=False):
         for base in symbols_to_scan:
             # ✅ CORREÇÃO CRÍTICA: Converter para contrato real ANTES do MT5
             # Isso evita erros de OHLC inválido com símbolos genéricos
-            real_sym = utils.get_contrato_atual(base)
+            real_sym = utils.resolve_symbol(base)
             
             if not real_sym:
                 # Tenta usar o próprio base se a resolução falhar

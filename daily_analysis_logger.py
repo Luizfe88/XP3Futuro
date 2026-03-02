@@ -120,7 +120,7 @@ class DailyAnalysisLogger:
                                 adx_threshold = int(params.get("adx_threshold", adx_threshold))
                     except Exception:
                         pass
-                    if str(strategy or "").upper() != "MTF_GATE":
+                    if str(strategy or "").upper() not in ("MTF_GATE", "RANKING") and not str(reason or "").startswith("RANK #"):
                         is_index = symu.startswith("WIN") or symu.startswith("IND")
                         rsi_exhaust = float(getattr(config, "RSI_EXHAUSTION_DEFAULT", 70) or 70)
                         if is_index:

@@ -1197,7 +1197,7 @@ def check_win_rate_pause() -> tuple:
         start_of_day = datetime.combine(now.date(), datetime.strptime("00:00", "%H:%M").time())
         with utils.mt5_lock:
             # 🔥 CORREÇÃO: Analisa apenas trades do dia atual para evitar travar por histórico antigo
-            deals = validation.mt5.history_deals_get(start_of_day, now)
+            deals = mt5.history_deals_get(start_of_day, now)
         
         if not deals:
             return False, "Sem histórico hoje"
@@ -1208,7 +1208,7 @@ def check_win_rate_pause() -> tuple:
         
         out_deals = [
             d for d in deals 
-            if getattr(d, "entry", None) in (validation.mt5.DEAL_ENTRY_OUT, 2)
+            if getattr(d, "entry", None) in (mt5.DEAL_ENTRY_OUT, 2)
             and d.symbol.upper().startswith(futures_prefixes)
             and d.magic == magic_filter
         ]
@@ -3103,7 +3103,24 @@ def build_portfolio_and_top15():
             )
             _first_build_done = True
 
-    for sym in elite_symbols:
+    # Resolve todos os símbolos em elite_symbols para contratos reais e remove duplicatas
+    elite_symbols_resolved = list(set([utils.resolve_symbol(s) for s in optimized_params.keys() if s]))
+    
+    for sym in elite_symbols_resolved:
+        # ✅ RESET DE VARIÁVEIS POR ATIVO (Evita vazamento de dados de um loop para o outro)
+        ind = {"error": "INITIALIZING"}
+        score = 0
+        direction = "–"
+        signal = "NONE"
+        rejected = True
+        reason_log = "Análise não concluída"
+        trigger_ok = False
+        trigger_txt = "N/A"
+        checks = []
+        reqs = {}
+        ema_trend = "N/A"
+        rsi = 50
+        adx = 0
         df = utils.safe_copy_rates(sym, TIMEFRAME_BASE, 300)
 
         if df is None:
@@ -3197,6 +3214,8 @@ def build_portfolio_and_top15():
         else:
             direction = "–"
             signal = "NONE"
+            rejected = True
+            reason_log = f"📊 Score {score:.0f} < {config.MIN_SIGNAL_SCORE} e sem gatilho forçado"
 
         # Salva score e direção
         ind["score"] = score
@@ -3207,10 +3226,13 @@ def build_portfolio_and_top15():
         indicators[sym] = ind
 
         # ✅ LOG: Análise completa
-        reason_log = ""
         if signal == "NONE":
             reason_log = f"📊 Score {score:.0f} < {config.MIN_SIGNAL_SCORE} e sem gatilho forçado"
             rejected = True
+            checks = [{"name": "Score insuficiente", "passed": False, "current": float(score), "required": float(config.MIN_SIGNAL_SCORE), "op": ">="}]
+            trigger_ok = False
+            trigger_txt = "N/A"
+            reqs = {}
         else:
             trigger_ok = False
             trigger_txt = "N/A"
@@ -3272,13 +3294,8 @@ def build_portfolio_and_top15():
                             
                             reqs["Gatilho Breakout (close<suporte)"] = {"current": close_now, "required": lo, "op": "<", "missing": max(0.0, close_now - lo)}
 
-                        # 🔥 CORREÇÃO: SE FOR FORÇADO (REVERSION OU SCORE ALTO),
-                        # O GATILHO DEVE SER MAIS TOLERANTE OU IGNORADO
-                        # SE O PREÇO JÁ ESTIVER NA ZONA DE SUPORTE/RESISTÊNCIA
                         if bool(forced_buy or forced_sell):
                              if not trigger_ok:
-                                 # Se forçado, aceita se o preço estiver "perto o suficiente" (0.1%)
-                                 # ou se já tiver tocado
                                  if signal == "BUY" and close_now >= (hi * 0.999):
                                      trigger_ok = True
                                      trigger_txt = f"Forçado OK (Close {close_now:.1f} ~= Res {hi:.1f})"
@@ -3300,9 +3317,6 @@ def build_portfolio_and_top15():
 
             checks = []
             try:
-                # Definição dinâmica dos limites de RSI
-                # Se Score >= 75, expande para 80/20. Caso contrário, mantém 70/30.
-                # (Sincronizado com a lógica de execução do fast_loop)
                 rsi_limit_buy = 80.0 if score >= 75 else 70.0
                 rsi_limit_sell = 20.0 if score >= 75 else 30.0
                 
@@ -3310,7 +3324,6 @@ def build_portfolio_and_top15():
                 if adx_threshold:
                     checks.append({"name": "ADX mínimo", "passed": bool(adx >= adx_threshold), "current": float(adx), "required": float(adx_threshold), "op": ">="})
                 
-                # Checagem de RSI usando os limites dinâmicos
                 checks.append({
                     "name": "RSI exaustão", 
                     "passed": bool(not ((signal == "BUY" and rsi > rsi_limit_buy) or (signal == "SELL" and rsi < rsi_limit_sell))), 
@@ -3326,20 +3339,10 @@ def build_portfolio_and_top15():
             forced_flag = bool(forced_buy or forced_sell)
             if trigger_ok:
                 reason_log = f"✅ Gatilho OK ({trigger_txt}) | Score {score:.0f} | Forçado: {forced_flag}"
-                # SE O GATILHO ESTÁ OK, NÃO DEVE SER REJEITADO AQUI!
-                # A função build_portfolio_and_top15 apenas LISTA os candidatos.
-                # A rejeição aqui é apenas VISUAL para o log inicial.
-                # Se gatilho OK, marcamos como False para indicar que passou nessa etapa preliminar
                 rejected = False 
             else:
                 reason_log = f"⏳ Aguardando Gatilho ({trigger_txt}) | Score {score:.0f} | Forçado: {forced_flag}"
                 rejected = True
-
-        # Inicializa checks se não existir (fallback de segurança)
-        if 'checks' not in locals():
-            checks = []
-        if 'reqs' not in locals():
-            reqs = {}
 
         daily_logger.log_analysis(
             symbol=sym,
@@ -3977,6 +3980,7 @@ def try_enter_position(symbol, side, risk_factor=1.0, rsi_limit_high=70, rsi_lim
     """
     ✅ VERSÃO COM AUDITORIA: Registra motivo de cada rejeição
     """
+    symbol = utils.resolve_symbol(symbol)
     global last_entry_time
     
     # ========================================
@@ -5702,6 +5706,71 @@ def ensure_mt5_connection():
         else:
             logger.error("❌ Falha ao reconectar MT5.")
 
+import ranking_system
+
+def execute_ranked_trade(symbol, side, ind_data):
+    """Nova função unificada e simplificada para enviar a ordem do ranking
+    pulando os filtros antigos, direto para cálculo de SL/TP e gestão de risco básica.
+    """
+    global _last_entry_price, last_entry_time, daily_trades_per_symbol
+
+    logger.info(f"🚀 [RANKING] Tentando enviar ordem para {symbol} ({side})")
+    
+    # 1. Garante que é Conta Demo 
+    acc = mt5.account_info()
+    if acc:
+        if "Demo" not in acc.server and "demo" not in acc.server.lower():
+            logger.warning(f"⚠️ Conta não detectada como Demo: {acc.server}. O Ranking manda ordens independente disso.")
+    
+    tick = utils.cached_symbol_info_tick(symbol)
+    if not tick: return False
+    
+    entry_price = float(tick.ask) if side == "BUY" else float(tick.bid)
+    atr_val = float(ind_data.get("atr", 0.10))
+    if atr_val < (entry_price * 0.003):
+        atr_val = entry_price * 0.005
+    
+    params = optimized_params.get(symbol, {})
+    sl_mult = params.get("sl_atr_multiplier", 2.5)
+    
+    stop_dist = atr_val * sl_mult
+    volume = max(1, int(utils.calculate_position_size_atr(symbol, stop_dist)))
+    
+    sp = _get_strict_params(symbol)
+    sl, tp = utils.calculate_strict_sl_tp(symbol, side, entry_price, ind_data, sp)
+    
+    if not utils.validate_order_params(symbol, side, volume, entry_price, sl, tp):
+        return False
+        
+    current_heat = get_portfolio_heat()
+    from validation import validate_and_create_order 
+    order, val_error = validate_and_create_order(
+        symbol=symbol, side=side, volume=volume, entry_price=entry_price, sl=sl, tp=tp,
+        portfolio_heat=current_heat
+    )
+    if not order:
+        return False
+        
+    request = order.to_mt5_request(comment="XP3_RANK")
+    request["deviation"] = utils.get_dynamic_slippage(symbol, datetime.now().hour)
+    result = mt5_order_send_safe(request)
+    
+    if result and result.retcode == mt5.TRADE_RETCODE_DONE:
+        logger.info(f"🚀 ORDEM ENVIADA PARA MT5 (DEMO) - Ticket: {result.order} - {symbol}")
+        _last_entry_price[symbol] = float(getattr(result, "price", entry_price) or entry_price)
+        last_entry_time[symbol] = time.time()
+        daily_trades_per_symbol[symbol] += 1
+        daily_logger.log_analysis(
+            symbol=symbol, signal=side, strategy="RANKING",
+            score=ind_data.get("score", 0), rejected=False,
+            reason="✅ EXECUTADA PELO RANKING GLOBAL!",
+            indicators=ind_data
+        )
+        return True
+    else:
+        logger.error(f"🚨 Falha envio {symbol}: {result.comment if result else 'Erro'}")
+        return False
+
 def fast_loop():
     """
     Loop principal com operação contínua
@@ -5924,12 +5993,13 @@ def fast_loop():
                 # Ativos base (garante que contratos atuais sejam pegos)
                 bases = ["WIN", "WDO", "IND", "DOL", "CCM", "BGI", "ICF", "WSP", "BIT"]
                 for b in bases:
-                    real = utils.get_contrato_atual(b) # Usa função específica de resolução
+                    real = utils.resolve_symbol(b) # Usa resolução robusta
                     if real and real not in symbols_to_scan:
                         symbols_to_scan.append(real)
                 
-                # Remove duplicatas
-                symbols_to_scan = list(set(symbols_to_scan))
+                # Resolve todos os símbolos para contratos reais e remove duplicatas
+                symbols_to_scan = list(set([utils.resolve_symbol(s) for s in symbols_to_scan if s]))
+                symbols_to_scan = [s for s in symbols_to_scan if s]
                 
                 # Filtra por horário
                 try:
@@ -5941,86 +6011,58 @@ def fast_loop():
                 scanned_indicators = {}
                 try:
                     scanned_indicators = _market_scanner.scan_market(symbols_to_scan)
-                except Exception:
+                except Exception as e:
+                    logger.error(f"Erro no scanner: {e}")
                     scanned_indicators = {}
 
                 current_regime = getattr(adaptive_system, "current_regime", "NEUTRAL")
                 
-                # 2. Itera sobre CADA ativo
-                for sym in symbols_to_scan:
-                    try:
-                        # Resolve símbolo para garantir (ex: WIN$ -> WINJ26)
-                        # Mas symbols_to_scan já deve ter resolvidos.
-                        
-                        ind_data = scanned_indicators.get(sym) or bot_state.get_indicators(sym)
-                        if not ind_data or ind_data.get("error"):
-                            # logger.info(f"ℹ️ {sym}: Sem dados de indicadores. Pulando.")
-                            continue
+                # ===== NOVO SISTEMA DE RANKING GLOBAL =====
+                # 1. Obter o ranking completo de todos os símbolos
+                # Passamos o scanned_indicators e forçamos o cálculo completo.
+                from utils import calculate_signal_score
+                
+                # Pre-processar scores no scanned_indicators para o ranking
+                for s, ind in scanned_indicators.items():
+                    if ind and not ind.get("error"):
+                        ind["score"] = calculate_signal_score(ind, regime=current_regime)
 
-                        # Lógica de Score
-                        adx_min = 15.0
-                        if sym in optimized_params:
-                            p = optimized_params[sym]
-                            adx_min = p.get("parameters", {}).get("adx_threshold", 15.0) if "parameters" in p else p.get("adx_threshold", 15.0)
-                        
-                        if current_regime == "NEUTRAL" and adx_min > 18:
-                            adx_min = 18.0
+                ranked_assets = ranking_system.rank_opportunities(scanned_indicators)
+                
+                # Montar string de log (Sempre mostra o Ranking)
+                if not ranked_assets:
+                    logger.info("📊 RANKING ATUAL: [Nenhum ativo qualificado - Verifique conexão MT5]")
+                else:
+                    top_log = " | ".join([f"{i+1}º {r['symbol']} (score {r['final_score']:.1f})" for i, r in enumerate(ranked_assets[:5])])
+                    logger.info(f"📊 RANKING ATUAL: {top_log}")
 
-                        score = utils.calculate_signal_score(ind_data, regime=current_regime, adx_min=adx_min)
+                if ranked_assets:
+                    # 2. Avaliar e Executar os TOP 5
+                    top_5 = ranked_assets[:5]
+                    for i, r in enumerate(top_5):
+                        sym = r['symbol']
+                        side = r['side']
+                        ind_data = r['ind_data']
                         
-                        # Tendência e Filtros
-                        ema_trend = "UP" if ind_data["ema_fast"] > ind_data["ema_slow"] else "DOWN"
-                        rsi = ind_data.get("rsi", 50)
-                        adx = ind_data.get("adx", 0)
-                        
-                        forced_signal = False
-                        if current_regime == "TREND":
-                            forced_signal = (adx > 30 and score > 25)
-                        elif current_regime == "REVERSION":
-                            if ema_trend == "UP" and rsi < 35: forced_signal = True
-                            if ema_trend == "DOWN" and rsi > 65: forced_signal = True
-                        
-                        close_price = ind_data.get("close", 1.0)
-                        ema_diff_pct = abs(ind_data["ema_fast"] - ind_data["ema_slow"]) / max(close_price, 1)
-                        adx_exception = (15 <= adx <= adx_min) and (ema_diff_pct > 0.0005) and (current_regime != "REVERSION")
-                        high_score_exception = (score >= 65 and adx >= 15)
-
-                        # Critério de Aprovação
-                        is_approved = (score >= config.MIN_SIGNAL_SCORE or forced_signal or adx_exception or high_score_exception)
-                        
-                        if is_approved:
-                            side = "BUY" if ema_trend == "UP" else "SELL"
-                            
-                            # Definição de RSI Limits
-                            rsi_limit_high = 70
-                            rsi_limit_low = 30
-                            
-                            if score >= 75:
-                                rsi_limit_high = 80
-                                rsi_limit_low = 20
-                            elif current_regime == "TREND":
-                                rsi_limit_high = 75
-                                rsi_limit_low = 25
-                                
-                            # Cripto Hotfix
-                            is_crypto = 'BIT' in sym or 'BTC' in sym
-                            if is_crypto and score >= 80:
-                                rsi_limit_high = 95
-                                rsi_limit_low = 5
-
-                            logger.info(f"✅ {sym} APROVADO: Score={score:.0f} | Regime={current_regime} | RSI Lim={rsi_limit_low}/{rsi_limit_high}")
-                            
-                            # Tenta entrar (sem break/return)
-                            try_enter_position(sym, side, rsi_limit_high=rsi_limit_high, rsi_limit_low=rsi_limit_low)
-                            
+                        # FILTRAGEM DE EXECUÇÃO: Pelo menos um Final Score mínimo ou Score Original
+                        # Vamos relaxar para 20 ou Final Score > 15
+                        if r['final_score'] >= 15 or r['base_score'] >= 20:
+                            logger.info(f"🔥 EXECUTANDO TOP {i+1}: {sym} ({side}) | FinalScore {r['final_score']:.1f} | BaseScore {r['base_score']:.1f}")
+                            success = execute_ranked_trade(sym, side, ind_data)
+                            if success:
+                                logger.info(f"🚀 RANK #{i+1} ENVIADO COM SUCESSO - {sym}")
                         else:
-                            # Log de rejeição simples para auditoria
-                            # logger.info(f"❌ {sym} REJEITADO: Score={score:.0f} < {config.MIN_SIGNAL_SCORE} (Regime={current_regime})")
+                            # logger.debug(f"ℹ️ TOP {i+1} {sym} abaixo do threshold de execução ({r['final_score']:.1f})")
                             pass
-                            
-                    except Exception as e:
-                        logger.error(f"Erro ao processar sinal para {sym}: {e}")
-                        continue
+
+                    # 3. Log dos demais no dashboard
+                    for i, r in enumerate(ranked_assets[5:], start=6):
+                        daily_logger.log_analysis(
+                            symbol=r['symbol'], signal=r['side'], strategy="RANKING",
+                            score=r['base_score'], rejected=True,
+                            reason=f"RANK #{i} - Fora do Top 5",
+                            indicators=r['ind_data']
+                        )
                 
                 logger.info("🏁 CICLO DE VERIFICAÇÃO CONCLUÍDO.")
 
