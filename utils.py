@@ -1,55 +1,145 @@
-#utils.py
+# utils.py
 import functools
+
 print = functools.partial(print, flush=True)
-print("[DEBUG] Importando market_screener...", flush=True); import market_screener; print("[DEBUG] market_screener importado.", flush=True)
-print("[DEBUG] Importando time...", flush=True); import time; print("[DEBUG] time importado.", flush=True)
-print("[DEBUG] Importando logging...", flush=True); import logging; print("[DEBUG] logging importado.", flush=True)
-print("[DEBUG] Importando datetime...", flush=True); from datetime import datetime, timedelta, time as datetime_time; print("[DEBUG] datetime importado.", flush=True)
-print("[DEBUG] Importando typing...", flush=True); from typing import Optional, Dict, Any, List, Tuple; print("[DEBUG] typing importado.", flush=True)
-print("[DEBUG] Importando collections...", flush=True); from collections import defaultdict, deque; print("[DEBUG] collections importado.", flush=True)
-print("[DEBUG] Importando json...", flush=True); import json; print("[DEBUG] json importado.", flush=True)
+print("[DEBUG] Importando market_screener...", flush=True)
+import market_screener
+
+print("[DEBUG] market_screener importado.", flush=True)
+print("[DEBUG] Importando time...", flush=True)
+import time
+
+print("[DEBUG] time importado.", flush=True)
+print("[DEBUG] Importando logging...", flush=True)
+import logging
+
+print("[DEBUG] logging importado.", flush=True)
+print("[DEBUG] Importando datetime...", flush=True)
+from datetime import datetime, timedelta, time as datetime_time
+
+print("[DEBUG] datetime importado.", flush=True)
+print("[DEBUG] Importando typing...", flush=True)
+from typing import Optional, Dict, Any, List, Tuple
+
+print("[DEBUG] typing importado.", flush=True)
+print("[DEBUG] Importando collections...", flush=True)
+from collections import defaultdict, deque
+
+print("[DEBUG] collections importado.", flush=True)
+print("[DEBUG] Importando json...", flush=True)
+import json
+
+print("[DEBUG] json importado.", flush=True)
 try:
-    print("[DEBUG] Importando MetaTrader5...", flush=True); import MetaTrader5 as mt5; print("[DEBUG] MetaTrader5 importado.", flush=True)
+    print("[DEBUG] Importando MetaTrader5...", flush=True)
+    import MetaTrader5 as mt5
+
+    print("[DEBUG] MetaTrader5 importado.", flush=True)
 except Exception:
-    mt5 = None; print("[DEBUG] MetaTrader5 indisponível.", flush=True)
-print("[DEBUG] Importando pandas...", flush=True); import pandas as pd; print("[DEBUG] pandas importado.", flush=True)
-print("[DEBUG] Importando numpy...", flush=True); import numpy as np; print("[DEBUG] numpy importado.", flush=True)
-print("[DEBUG] Importando config...", flush=True); import config as config; print("[DEBUG] config importado.", flush=True)
-print("[DEBUG] Importando config_futures...", flush=True); import config_futures; print("[DEBUG] config_futures importado.", flush=True)
+    mt5 = None
+    print("[DEBUG] MetaTrader5 indisponível.", flush=True)
+print("[DEBUG] Importando pandas...", flush=True)
+import pandas as pd
+
+print("[DEBUG] pandas importado.", flush=True)
+print("[DEBUG] Importando numpy...", flush=True)
+import numpy as np
+
+print("[DEBUG] numpy importado.", flush=True)
+print("[DEBUG] Importando config...", flush=True)
+import config as config
+
+print("[DEBUG] config importado.", flush=True)
+print("[DEBUG] Importando config_futures...", flush=True)
+import config_futures
+
+print("[DEBUG] config_futures importado.", flush=True)
 try:
-    print("[DEBUG] Importando futures_core...", flush=True); import futures_core; print("[DEBUG] futures_core importado.", flush=True)
+    print("[DEBUG] Importando futures_core...", flush=True)
+    import futures_core
+
+    print("[DEBUG] futures_core importado.", flush=True)
 except ImportError:
-    futures_core = None; print("[DEBUG] futures_core indisponível.", flush=True)
-print("[DEBUG] Importando threading...", flush=True); from threading import RLock, Lock; print("[DEBUG] threading importado.", flush=True)
-print("[DEBUG] Importando threading (módulo)...", flush=True); import threading; print("[DEBUG] threading(módulo) importado.", flush=True)
-print("[DEBUG] Importando queue...", flush=True); import queue; print("[DEBUG] queue importado.", flush=True)
-print("[DEBUG] Importando os...", flush=True); import os; print("[DEBUG] os importado.", flush=True)
-print("[DEBUG] Importando pathlib.Path...", flush=True); from pathlib import Path; print("[DEBUG] pathlib.Path importado.", flush=True)
+    futures_core = None
+    print("[DEBUG] futures_core indisponível.", flush=True)
+print("[DEBUG] Importando threading...", flush=True)
+from threading import RLock, Lock
+
+print("[DEBUG] threading importado.", flush=True)
+print("[DEBUG] Importando threading (módulo)...", flush=True)
+import threading
+
+print("[DEBUG] threading(módulo) importado.", flush=True)
+print("[DEBUG] Importando queue...", flush=True)
+import queue
+
+print("[DEBUG] queue importado.", flush=True)
+print("[DEBUG] Importando os...", flush=True)
+import os
+
+print("[DEBUG] os importado.", flush=True)
+print("[DEBUG] Importando pathlib.Path...", flush=True)
+from pathlib import Path
+
+print("[DEBUG] pathlib.Path importado.", flush=True)
 try:
-    print("[DEBUG] Importando redis...", flush=True); import redis; print("[DEBUG] redis importado.", flush=True)
+    print("[DEBUG] Importando redis...", flush=True)
+    import redis
+
+    print("[DEBUG] redis importado.", flush=True)
 except Exception:
-    redis = None; print("[DEBUG] redis indisponível.", flush=True)
-print("[DEBUG] Importando pickle...", flush=True); import pickle; print("[DEBUG] pickle importado.", flush=True)
-print("[DEBUG] Importando hashlib...", flush=True); import hashlib; print("[DEBUG] hashlib importado.", flush=True)
-print("[DEBUG] Importando signal...", flush=True); import signal; print("[DEBUG] signal importado.", flush=True)
-print("[DEBUG] Importando sys...", flush=True); import sys; print("[DEBUG] sys importado.", flush=True)
-print("[DEBUG] Importando requests...", flush=True); import requests; print("[DEBUG] requests importado.", flush=True)
+    redis = None
+    print("[DEBUG] redis indisponível.", flush=True)
+print("[DEBUG] Importando pickle...", flush=True)
+import pickle
+
+print("[DEBUG] pickle importado.", flush=True)
+print("[DEBUG] Importando hashlib...", flush=True)
+import hashlib
+
+print("[DEBUG] hashlib importado.", flush=True)
+print("[DEBUG] Importando signal...", flush=True)
+import signal
+
+print("[DEBUG] signal importado.", flush=True)
+print("[DEBUG] Importando sys...", flush=True)
+import sys
+
+print("[DEBUG] sys importado.", flush=True)
+print("[DEBUG] Importando requests...", flush=True)
+import requests
+
+print("[DEBUG] requests importado.", flush=True)
 try:
-    print("[DEBUG] Importando news_calendar.apply_blackout...", flush=True); from news_calendar import apply_blackout; print("[DEBUG] news_calendar.apply_blackout importado.", flush=True)
+    print("[DEBUG] Importando news_calendar.apply_blackout...", flush=True)
+    from news_calendar import apply_blackout
+
+    print("[DEBUG] news_calendar.apply_blackout importado.", flush=True)
 except Exception:
-    def apply_blackout(*args, **kwargs): return (False, "")
+
+    def apply_blackout(*args, **kwargs):
+        return (False, "")
+
     print("[DEBUG] news_calendar indisponível.", flush=True)
 ml_optimizer = None
-print("[DEBUG] Importando re...", flush=True); import re; print("[DEBUG] re importado.", flush=True)
+print("[DEBUG] Importando re...", flush=True)
+import re
+
+print("[DEBUG] re importado.", flush=True)
 RandomForestClassifier = None
 StandardScaler = None
 try:
-    print("[DEBUG] Importando joblib...", flush=True); import joblib; print("[DEBUG] joblib importado.", flush=True)
+    print("[DEBUG] Importando joblib...", flush=True)
+    import joblib
+
+    print("[DEBUG] joblib importado.", flush=True)
 except Exception:
-    joblib = None; print("[DEBUG] joblib indisponível.", flush=True)
+    joblib = None
+    print("[DEBUG] joblib indisponível.", flush=True)
 anti_chop_rf = None
 anti_chop_scaler = None
 ANTI_CHOP_MODEL_PATH = "anti_chop_rf.pkl"
+
 
 def ensure_ml_loaded(timeout_seconds: float = 5.0) -> bool:
     global ml_optimizer
@@ -57,13 +147,17 @@ def ensure_ml_loaded(timeout_seconds: float = 5.0) -> bool:
         return True
     try:
         from concurrent.futures import ThreadPoolExecutor, TimeoutError as TErr
+
         def _do_import():
             import os
+
             os.environ.setdefault("OMP_NUM_THREADS", "1")
             os.environ.setdefault("MKL_NUM_THREADS", "1")
             os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
             import ml_optimizer as ml
+
             return ml
+
         with ThreadPoolExecutor(max_workers=1) as ex:
             fut = ex.submit(_do_import)
             try:
@@ -80,6 +174,8 @@ def ensure_ml_loaded(timeout_seconds: float = 5.0) -> bool:
     except Exception as e:
         print(f"[ERROR] Lazy import infra falhou: {e}", flush=True)
     return False
+
+
 def load_anti_chop_model():
     global anti_chop_rf
     if anti_chop_rf is not None:
@@ -87,15 +183,19 @@ def load_anti_chop_model():
     # Lazy import sklearn/joblib com timeout curto
     try:
         from concurrent.futures import ThreadPoolExecutor, TimeoutError as _TErr
+
         def _do_imports():
             import os
+
             os.environ.setdefault("OMP_NUM_THREADS", "1")
             os.environ.setdefault("MKL_NUM_THREADS", "1")
             os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
             from sklearn.ensemble import RandomForestClassifier as RFC
             from sklearn.preprocessing import StandardScaler as SS
             import joblib as JB
+
             return RFC, SS, JB
+
         with ThreadPoolExecutor(max_workers=1) as ex:
             fut = ex.submit(_do_imports)
             try:
@@ -119,13 +219,16 @@ def load_anti_chop_model():
         except Exception:
             pass
 
+
 # Inicialização adiada: carregamento de ML/anti-chop só quando necessário
 def is_valid_dataframe(df, min_rows: int = 1) -> bool:
     """Valida se o DataFrame é válido para cálculos."""
-    if df is None: return False
+    if df is None:
+        return False
     if isinstance(df, pd.DataFrame):
         return not df.empty and len(df) >= min_rows
     return False
+
 
 logger = logging.getLogger("bot")
 mt5_lock = RLock()
@@ -146,22 +249,26 @@ logger = logging.getLogger("utils")
 # 🌐 POLYGON.IO FALLBACK
 # =========================================================
 
+
 def get_polygon_data(endpoint: str, params: dict = {}) -> Optional[Dict]:
     """
     Centralized helper for Polygon.io API calls with mock key protection.
     """
-    if not hasattr(config, "POLYGON_API_KEY") or config.POLYGON_API_KEY == "MOCK_KEY_FOR_NOW":
+    if (
+        not hasattr(config, "POLYGON_API_KEY")
+        or config.POLYGON_API_KEY == "MOCK_KEY_FOR_NOW"
+    ):
         return None
-        
+
     try:
         if not endpoint.startswith("http"):
             url = f"{config.POLYGON_BASE_URL}/{endpoint}"
         else:
             url = endpoint
-            
+
         full_params = params.copy()
         full_params["apiKey"] = config.POLYGON_API_KEY
-        
+
         resp = requests.get(url, params=full_params, timeout=8)
         if resp.status_code == 200:
             return resp.json()
@@ -172,7 +279,10 @@ def get_polygon_data(endpoint: str, params: dict = {}) -> Optional[Dict]:
         logger.debug(f"Erro silenciado ao buscar Polygon ({endpoint}): {e}")
         return None
 
-def get_polygon_rates_fallback(symbol: str, timeframe, count: int) -> Optional[pd.DataFrame]:
+
+def get_polygon_rates_fallback(
+    symbol: str, timeframe, count: int
+) -> Optional[pd.DataFrame]:
     """
     ✅ Fallback: Obtém dados da Polygon.io se o MT5 falhar.
     """
@@ -188,20 +298,23 @@ def get_polygon_rates_fallback(symbol: str, timeframe, count: int) -> Optional[p
     end = datetime.now().strftime("%Y-%m-%d")
     start = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
     endpoint = f"v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{start}/{end}"
-    params = {
-        "adjusted": "true",
-        "sort": "desc",
-        "limit": count
-    }
+    params = {"adjusted": "true", "sort": "desc", "limit": count}
     data = get_polygon_data(endpoint, params)
     if data:
         results = data.get("results", [])
         if results:
             df = pd.DataFrame(results)
-            df = df.rename(columns={
-                "t": "time", "o": "open", "h": "high", 
-                "l": "low", "c": "close", "v": "tick_volume", "vw": "vwap"
-            })
+            df = df.rename(
+                columns={
+                    "t": "time",
+                    "o": "open",
+                    "h": "high",
+                    "l": "low",
+                    "c": "close",
+                    "v": "tick_volume",
+                    "vw": "vwap",
+                }
+            )
             df["time"] = pd.to_datetime(df["time"], unit="ms")
             if "real_volume" not in df.columns:
                 df["real_volume"] = df["tick_volume"] * df["close"]
@@ -209,6 +322,7 @@ def get_polygon_rates_fallback(symbol: str, timeframe, count: int) -> Optional[p
             logger.info(f"✅ Fallback Polygon SUCESSO: {symbol}")
             return df.sort_index()
     return None
+
 
 def resolve_current_symbol(root_symbol: str) -> Optional[str]:
     """
@@ -242,6 +356,7 @@ def resolve_current_symbol(root_symbol: str) -> Optional[str]:
         logger.error(f"Error resolving symbol {root_symbol}: {e}")
         return None
 
+
 def _expiration_str(symbol: str) -> str:
     try:
         info = mt5.symbol_info(symbol)
@@ -252,6 +367,7 @@ def _expiration_str(symbol: str) -> str:
     except Exception:
         return ""
 
+
 def update_futures_mappings():
     try:
         mapping = {}
@@ -260,7 +376,9 @@ def update_futures_mappings():
             if sym:
                 mapping[k] = sym
                 exp_str = _expiration_str(sym)
-                logger.info(f"[AUTO-DISCOVERY] Contrato {k} mapeado para {sym} (Vence em: {exp_str}).")
+                logger.info(
+                    f"[AUTO-DISCOVERY] Contrato {k} mapeado para {sym} (Vence em: {exp_str})."
+                )
         if mapping:
             setattr(config, "ACTIVE_FUTURES", mapping)
             sector = getattr(config, "SECTOR_MAP", {})
@@ -273,6 +391,7 @@ def update_futures_mappings():
     except Exception:
         return {}
 
+
 def get_current_contract(symbol_or_base: str) -> Optional[str]:
     base = _futures_base_from_symbol(symbol_or_base)
     candidates = get_futures_candidates(base) or []
@@ -280,9 +399,13 @@ def get_current_contract(symbol_or_base: str) -> Optional[str]:
         return None
     sorted_cands = sorted(
         candidates,
-        key=lambda c: (-float(c.get("volume", 0.0) or 0.0), int(c.get("days_to_exp", 9999) or 9999))
+        key=lambda c: (
+            -float(c.get("volume", 0.0) or 0.0),
+            int(c.get("days_to_exp", 9999) or 9999),
+        ),
     )
     return sorted_cands[0].get("symbol") if sorted_cands else None
+
 
 def resolve_trade_symbol(symbol: str) -> str:
     s = (symbol or "").upper().strip()
@@ -317,6 +440,7 @@ def resolve_trade_symbol(symbol: str) -> str:
     sel = _try_mt5_symbol_select(s)
     return sel or s
 
+
 def resolve_indicator_symbol(symbol: str) -> str:
     s = (symbol or "").upper().strip()
     if not s:
@@ -334,6 +458,8 @@ def resolve_indicator_symbol(symbol: str) -> str:
     if "$N" in s or "$" in s:
         return _try_mt5_symbol_select(s) or s
     return _try_mt5_symbol_select(s) or s
+
+
 def get_contrato_atual(simbolo: str) -> Optional[str]:
     """
     Retorna o contrato futuro vigente (ex: WINJ26) com base no símbolo genérico (WIN, WDO, IND, etc).
@@ -341,7 +467,7 @@ def get_contrato_atual(simbolo: str) -> Optional[str]:
     """
     s = (simbolo or "").upper().strip().replace("$", "").replace("N", "")
     base = "".join([c for c in s if c.isalpha()])
-    
+
     # Se já for um símbolo completo válido, retorna
     if len(base) < len(s) and mt5.symbol_info(s):
         return s
@@ -349,19 +475,23 @@ def get_contrato_atual(simbolo: str) -> Optional[str]:
     candidates = get_futures_candidates(base)
     if not candidates:
         return None
-        
+
     # Ordena: Volume Decrescente -> Expiração Crescente
     sorted_cands = sorted(
         candidates,
-        key=lambda c: (-float(c.get("volume", 0.0) or 0.0), int(c.get("days_to_exp", 9999) or 9999))
+        key=lambda c: (
+            -float(c.get("volume", 0.0) or 0.0),
+            int(c.get("days_to_exp", 9999) or 9999),
+        ),
     )
-    
+
     # Filtra contratos com volume zerado se houver opção com volume
     has_volume = [c for c in sorted_cands if float(c.get("volume", 0.0) or 0.0) > 0]
     if has_volume:
         return has_volume[0].get("symbol")
-        
+
     return sorted_cands[0].get("symbol") if sorted_cands else None
+
 
 def resolve_current_symbol(generic_symbol: str) -> Optional[str]:
     """
@@ -369,6 +499,7 @@ def resolve_current_symbol(generic_symbol: str) -> Optional[str]:
     Wrapper para get_contrato_atual que retorna None se falhar.
     """
     return get_contrato_atual(generic_symbol)
+
 
 def detect_broker() -> str:
     try:
@@ -378,6 +509,8 @@ def detect_broker() -> str:
         return str(getattr(info, "server", "") or "")
     except Exception:
         return ""
+
+
 def get_futures_candidates(base_code: str) -> list:
     try:
         if mt5 is None:
@@ -401,6 +534,7 @@ def get_futures_candidates(base_code: str) -> list:
             except Exception:
                 pass
         import re
+
         today = datetime.now()
         out = []
         for n in names:
@@ -419,7 +553,9 @@ def get_futures_candidates(base_code: str) -> list:
             # Para XP: aceita tanto formato tradicional (WINH25) quanto novo (WINN, WINZ)
             broker = detect_broker().lower()
             if "xp" in broker:
-                is_contract = bool(re.search(rf"^{base_code}([FGHJKMNQUVXZ]\d{{2}}|[NZ])$", n))
+                is_contract = bool(
+                    re.search(rf"^{base_code}([FGHJKMNQUVXZ]\d{{2}}|[NZ])$", n)
+                )
             else:
                 is_contract = bool(re.search(rf"^{base_code}[FGHJKMNQUVXZ]\d{{2}}$", n))
             if not is_contract:
@@ -439,14 +575,28 @@ def get_futures_candidates(base_code: str) -> list:
                 vol = 0.0
                 if rates is not None and len(rates) > 0:
                     df = pd.DataFrame(rates)
-                    vol = float(df.get("tick_volume", pd.Series(dtype=float)).tail(80).sum() or 0.0)
+                    vol = float(
+                        df.get("tick_volume", pd.Series(dtype=float)).tail(80).sum()
+                        or 0.0
+                    )
             except Exception:
                 vol = 0.0
             days_to_exp = (exp - today).days if isinstance(exp, datetime) else 9999
-            out.append({"symbol": n, "exp": exp, "days_to_exp": days_to_exp, "visible": visible, "selectable": selectable, "volume": vol})
+            out.append(
+                {
+                    "symbol": n,
+                    "exp": exp,
+                    "days_to_exp": days_to_exp,
+                    "visible": visible,
+                    "selectable": selectable,
+                    "volume": vol,
+                }
+            )
         return out
     except Exception:
         return []
+
+
 def calculate_contract_score(symbol_meta: dict) -> float:
     try:
         d = symbol_meta.get("days_to_exp", 9999)
@@ -459,6 +609,8 @@ def calculate_contract_score(symbol_meta: dict) -> float:
         return base * 100.0
     except Exception:
         return 0.0
+
+
 def log_mapping_details(base: str, candidates: list, selected: Optional[str]):
     try:
         logger.info("🔍 Iniciando Auto-Discovery de Contratos Futuros...")
@@ -473,7 +625,9 @@ def log_mapping_details(base: str, candidates: list, selected: Optional[str]):
                 v = float(c.get("volume", 0.0) or 0.0)
                 sc = calculate_contract_score(c)
                 exp_str = exp.strftime("%b/%Y") if isinstance(exp, datetime) else "N/A"
-                logger.info(f"   {c['symbol']}: Venc={exp_str} ({d} dias) | Vol={int(v)} | Score={int(sc)}")
+                logger.info(
+                    f"   {c['symbol']}: Venc={exp_str} ({d} dias) | Vol={int(v)} | Score={int(sc)}"
+                )
         else:
             logger.warning("   Nenhum candidato encontrado")
         if selected:
@@ -482,6 +636,8 @@ def log_mapping_details(base: str, candidates: list, selected: Optional[str]):
             logger.warning(f"❌ Falha ao mapear {base}$")
     except Exception:
         pass
+
+
 def map_generic_to_specific(generic: str) -> Optional[str]:
     try:
         base = generic.replace("$", "")
@@ -489,7 +645,7 @@ def map_generic_to_specific(generic: str) -> Optional[str]:
             "WIN": ["WIN", "IND"],
             "WDO": ["WDO", "DOL"],
             "SMALL": ["SMLL", "SMAL", "SMALL"],
-            "WSP": ["WSP", "SP"]
+            "WSP": ["WSP", "SP"],
         }
         bases = alt.get(base, [base])
         for b in bases:
@@ -499,7 +655,10 @@ def map_generic_to_specific(generic: str) -> Optional[str]:
                     cands = get_futures_candidates(b) or []
                     cands_sorted = sorted(
                         cands,
-                        key=lambda c: (-float(c.get("volume", 0.0) or 0.0), int(c.get("days_to_exp", 9999) or 9999))
+                        key=lambda c: (
+                            -float(c.get("volume", 0.0) or 0.0),
+                            int(c.get("days_to_exp", 9999) or 9999),
+                        ),
                     )
                     log_mapping_details(base, cands_sorted, selected)
                 except Exception:
@@ -509,6 +668,8 @@ def map_generic_to_specific(generic: str) -> Optional[str]:
         return None
     except Exception:
         return None
+
+
 def discover_all_futures() -> dict:
     try:
         generics = ["WIN$", "WDO$", "SMALL$", "WSP$", "BGI$"]
@@ -546,6 +707,7 @@ def discover_all_futures() -> dict:
     except Exception:
         return {}
 
+
 def find_and_enable_active_futures(asset_patterns: List[str]) -> Dict[str, str]:
     try:
         if mt5 is None:
@@ -559,7 +721,9 @@ def find_and_enable_active_futures(asset_patterns: List[str]) -> Dict[str, str]:
             connected = False
         if not connected:
             try:
-                init_ok = mt5.initialize(path=getattr(config, "MT5_TERMINAL_PATH", None))
+                init_ok = mt5.initialize(
+                    path=getattr(config, "MT5_TERMINAL_PATH", None)
+                )
                 if init_ok:
                     term = mt5.terminal_info()
                     connected = bool(term and getattr(term, "connected", False))
@@ -578,7 +742,10 @@ def find_and_enable_active_futures(asset_patterns: List[str]) -> Dict[str, str]:
                     continue
                 sorted_cands = sorted(
                     candidates,
-                    key=lambda c: (-float(c.get("volume", 0.0) or 0.0), int(c.get("days_to_exp", 9999) or 9999))
+                    key=lambda c: (
+                        -float(c.get("volume", 0.0) or 0.0),
+                        int(c.get("days_to_exp", 9999) or 9999),
+                    ),
                 )
                 active = sorted_cands[0].get("symbol") if sorted_cands else None
                 if not active:
@@ -588,41 +755,51 @@ def find_and_enable_active_futures(asset_patterns: List[str]) -> Dict[str, str]:
                 # --- INÍCIO DO NOVO BLOCO DE FILTROS ---
                 conf = config_futures.FUTURES_CONFIGS.get(pattern, {})
                 specs = conf.get("specs", {})
-                
+
                 min_volume = specs.get("min_tick_volume", 0)
                 min_atr_pct = specs.get("min_atr_pct", 0.0)
-                max_spread = specs.get("max_spread_points", float('inf'))
+                max_spread = specs.get("max_spread_points", float("inf"))
 
                 # 1. Filtro de Liquidez
                 hist_data = market_screener.get_historical_data(active, days=2)
                 if hist_data is None or len(hist_data) < 2:
-                    logger.warning(f"[{active}] Sem dados históricos suficientes para análise. Ativo ignorado.")
+                    logger.warning(
+                        f"[{active}] Sem dados históricos suficientes para análise. Ativo ignorado."
+                    )
                     continue
-                
-                last_day_volume = hist_data.iloc[-2]['tick_volume']
+
+                last_day_volume = hist_data.iloc[-2]["tick_volume"]
                 if last_day_volume < min_volume:
-                    logger.info(f"[{active}] Reprovado no filtro de liquidez. Volume D-1: {last_day_volume} < Mínimo: {min_volume}.")
+                    logger.info(
+                        f"[{active}] Reprovado no filtro de liquidez. Volume D-1: {last_day_volume} < Mínimo: {min_volume}."
+                    )
                     continue
 
                 # 2. Filtro de Volatilidade (ATR)
                 hist_data_atr = market_screener.get_historical_data(active, days=20)
                 atr_value = market_screener.calculate_atr(hist_data_atr)
-                last_close = hist_data.iloc[-2]['close']
-                
+                last_close = hist_data.iloc[-2]["close"]
+
                 if last_close > 0:
                     atr_pct = (atr_value / last_close) * 100
                     if atr_pct < min_atr_pct:
-                        logger.info(f"[{active}] Reprovado no filtro de volatilidade. ATR %: {atr_pct:.2f}% < Mínimo: {min_atr_pct}%.")
+                        logger.info(
+                            f"[{active}] Reprovado no filtro de volatilidade. ATR %: {atr_pct:.2f}% < Mínimo: {min_atr_pct}%."
+                        )
                         continue
-                
+
                 # 3. Filtro de Spread (executado mais perto da abertura)
                 # Nota: Idealmente, isso rodaria um pouco antes do pregão.
                 live_spread = market_screener.get_live_spread(active)
                 if live_spread is not None and live_spread > max_spread:
-                    logger.info(f"[{active}] Reprovado no filtro de spread. Spread atual: {live_spread} > Máximo: {max_spread}.")
+                    logger.info(
+                        f"[{active}] Reprovado no filtro de spread. Spread atual: {live_spread} > Máximo: {max_spread}."
+                    )
                     continue
-                
-                logger.info(f"✅ [{active}] Aprovado em todos os filtros. Ativando para o dia.")
+
+                logger.info(
+                    f"✅ [{active}] Aprovado em todos os filtros. Ativando para o dia."
+                )
                 # --- FIM DO NOVO BLOCO DE FILTROS ---
 
                 try:
@@ -652,17 +829,18 @@ def find_and_enable_active_futures(asset_patterns: List[str]) -> Dict[str, str]:
     except Exception:
         return {}
 
+
 def diagnose_futures_status() -> dict:
     """
     Diagnóstico completo do status dos futuros.
     Útil para debug quando futuros não operam.
-    
+
     Verifica:
     - Cache ACTIVE_FUTURES em config
     - Símbolos de futuros em SECTOR_MAP
     - Status no Market Watch (exists, visible, select)
     - Disponibilidade de dados (barras M5)
-    
+
     Returns:
         dict com resultado do diagnóstico
     """
@@ -670,21 +848,23 @@ def diagnose_futures_status() -> dict:
         "active_futures_cache": getattr(config, "ACTIVE_FUTURES", {}),
         "futures_in_sector_map": [],
         "market_watch_status": {},
-        "data_availability": {}
+        "data_availability": {},
     }
-    
+
     try:
         # 1. Futuros no SECTOR_MAP
         sector_map = getattr(config, "SECTOR_MAP", {})
         result["futures_in_sector_map"] = [
-            sym for sym, sector in sector_map.items() 
-            if sector == "FUTUROS"
+            sym for sym, sector in sector_map.items() if sector == "FUTUROS"
         ]
-        
+
         # 2. Status no Market Watch
-        all_futures = list(result["active_futures_cache"].values()) + result["futures_in_sector_map"]
+        all_futures = (
+            list(result["active_futures_cache"].values())
+            + result["futures_in_sector_map"]
+        )
         unique_futures = list(set(all_futures))
-        
+
         for symbol in unique_futures:
             if not symbol:
                 continue
@@ -693,9 +873,9 @@ def diagnose_futures_status() -> dict:
                 "exists": info is not None,
                 "visible": getattr(info, "visible", False) if info else False,
                 "select": getattr(info, "select", False) if info else False,
-                "expiration": getattr(info, "expiration_time", None) if info else None
+                "expiration": getattr(info, "expiration_time", None) if info else None,
             }
-        
+
         # 3. Disponibilidade de dados
         for symbol in unique_futures:
             if not symbol:
@@ -704,23 +884,25 @@ def diagnose_futures_status() -> dict:
                 rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_M5, 0, 10)
                 result["data_availability"][symbol] = {
                     "has_data": rates is not None and len(rates) > 0,
-                    "bars_available": len(rates) if rates is not None else 0
+                    "bars_available": len(rates) if rates is not None else 0,
                 }
             except Exception as e:
                 result["data_availability"][symbol] = {
                     "has_data": False,
-                    "error": str(e)
+                    "error": str(e),
                 }
-        
+
         # 4. Log formatado
         logger.info("=" * 60)
         logger.info("🔍 DIAGNÓSTICO DE FUTUROS")
         logger.info("=" * 60)
-        
-        logger.info(f"\n1️⃣ Cache ACTIVE_FUTURES ({len(result['active_futures_cache'])} items):")
+
+        logger.info(
+            f"\n1️⃣ Cache ACTIVE_FUTURES ({len(result['active_futures_cache'])} items):"
+        )
         for k, v in result["active_futures_cache"].items():
             logger.info(f"   {k} → {v}")
-        
+
         logger.info(f"\n2️⃣ SECTOR_MAP ({len(result['futures_in_sector_map'])} futuros):")
         for sym in result["futures_in_sector_map"]:
             status = result["market_watch_status"].get(sym, {})
@@ -730,7 +912,7 @@ def diagnose_futures_status() -> dict:
                 f"Visível={status.get('visible')} | "
                 f"Selecionado={status.get('select')}"
             )
-        
+
         logger.info(f"\n3️⃣ Disponibilidade de Dados:")
         for sym, data in result["data_availability"].items():
             logger.info(
@@ -738,12 +920,12 @@ def diagnose_futures_status() -> dict:
                 f"Dados={'OK' if data.get('has_data') else 'FALHA'} | "
                 f"Barras={data.get('bars_available', 0)}"
             )
-        
+
         logger.info("=" * 60)
-        
+
     except Exception as e:
         logger.error(f"Erro no diagnóstico: {e}", exc_info=True)
-    
+
     return result
 
 
@@ -755,7 +937,13 @@ def monitor_futures_rollover():
             cands = get_futures_candidates(base)
             if not cands:
                 continue
-            cands_sorted = sorted(cands, key=lambda c: (-calculate_contract_score(c), c.get("days_to_exp", 9999)))
+            cands_sorted = sorted(
+                cands,
+                key=lambda c: (
+                    -calculate_contract_score(c),
+                    c.get("days_to_exp", 9999),
+                ),
+            )
             next_contract = cands_sorted[0]
             if not next_contract or next_contract.get("symbol") == current:
                 continue
@@ -766,9 +954,12 @@ def monitor_futures_rollover():
             vol_curr = float(curr_meta.get("volume", 0.0) or 0.0)
             days_to_exp = int(curr_meta.get("days_to_exp", 999))
             if days_to_exp <= 5 or vol_next > vol_curr:
-                logger.warning(f"ROLLOVER {generic}: {current} → {next_contract['symbol']} (expira em {days_to_exp}d, vol cross={vol_next:.0f}>{vol_curr:.0f})")
+                logger.warning(
+                    f"ROLLOVER {generic}: {current} → {next_contract['symbol']} (expira em {days_to_exp}d, vol cross={vol_next:.0f}>{vol_curr:.0f})"
+                )
     except Exception:
         pass
+
 
 def initiate_rollover(generic_code: str, confirm_fn=None) -> bool:
     try:
@@ -780,7 +971,10 @@ def initiate_rollover(generic_code: str, confirm_fn=None) -> bool:
         cands = get_futures_candidates(base)
         if not cands:
             return False
-        cands_sorted = sorted(cands, key=lambda c: (-calculate_contract_score(c), c.get("days_to_exp", 9999)))
+        cands_sorted = sorted(
+            cands,
+            key=lambda c: (-calculate_contract_score(c), c.get("days_to_exp", 9999)),
+        )
         next_symbol = cands_sorted[0]["symbol"]
         with mt5_lock:
             positions = mt5.positions_get(symbol=current) or []
@@ -788,7 +982,7 @@ def initiate_rollover(generic_code: str, confirm_fn=None) -> bool:
             mapping[generic_code] = next_symbol
             setattr(config, "ACTIVE_FUTURES", mapping)
             return True
- 
+
         pos = positions[0]
         side = "BUY" if pos.type == mt5.POSITION_TYPE_BUY else "SELL"
         volume = float(pos.volume)
@@ -798,7 +992,9 @@ def initiate_rollover(generic_code: str, confirm_fn=None) -> bool:
             return False
         price_next = tick_next.ask if side == "BUY" else tick_next.bid
         ord_type = mt5.ORDER_TYPE_BUY if side == "BUY" else mt5.ORDER_TYPE_SELL
-        est_margin = float(mt5.order_calc_margin(ord_type, next_symbol, price_next, volume) or 0.0)
+        est_margin = float(
+            mt5.order_calc_margin(ord_type, next_symbol, price_next, volume) or 0.0
+        )
         acc = mt5.account_info()
         free_margin = float(getattr(acc, "margin_free", 0.0) or 0.0)
         if free_margin < est_margin * 1.30:
@@ -827,14 +1023,24 @@ def initiate_rollover(generic_code: str, confirm_fn=None) -> bool:
         }
         with mt5_lock:
             r1 = mt5.order_send(close_req)
-            r2 = mt5.order_send(open_req) if r1 and r1.retcode == mt5.TRADE_RETCODE_DONE else None
-        if r1 and r1.retcode == mt5.TRADE_RETCODE_DONE and r2 and r2.retcode == mt5.TRADE_RETCODE_DONE:
+            r2 = (
+                mt5.order_send(open_req)
+                if r1 and r1.retcode == mt5.TRADE_RETCODE_DONE
+                else None
+            )
+        if (
+            r1
+            and r1.retcode == mt5.TRADE_RETCODE_DONE
+            and r2
+            and r2.retcode == mt5.TRADE_RETCODE_DONE
+        ):
             mapping[generic_code] = next_symbol
             setattr(config, "ACTIVE_FUTURES", mapping)
             return True
         return False
     except Exception:
         return False
+
 
 def enforce_stopout_prevention():
     try:
@@ -850,11 +1056,19 @@ def enforce_stopout_prevention():
             if not tick:
                 continue
             price = tick.ask if p.type == mt5.POSITION_TYPE_BUY else tick.bid
-            ord_type = mt5.ORDER_TYPE_BUY if p.type == mt5.POSITION_TYPE_BUY else mt5.ORDER_TYPE_SELL
-            total_req += float(mt5.order_calc_margin(ord_type, p.symbol, price, float(p.volume)) or 0.0)
+            ord_type = (
+                mt5.ORDER_TYPE_BUY
+                if p.type == mt5.POSITION_TYPE_BUY
+                else mt5.ORDER_TYPE_SELL
+            )
+            total_req += float(
+                mt5.order_calc_margin(ord_type, p.symbol, price, float(p.volume)) or 0.0
+            )
         if total_req > 0 and free_margin < total_req * 0.50:
-            positions_sorted = sorted(positions, key=lambda p: float(p.volume), reverse=True)
-            for p in positions_sorted[:max(1, len(positions_sorted)//2)]:
+            positions_sorted = sorted(
+                positions, key=lambda p: float(p.volume), reverse=True
+            )
+            for p in positions_sorted[: max(1, len(positions_sorted) // 2)]:
                 vol_close = max(float(p.volume) * 0.5, 0.01)
                 tick = mt5.symbol_info_tick(p.symbol)
                 if not tick:
@@ -863,7 +1077,9 @@ def enforce_stopout_prevention():
                     "action": mt5.TRADE_ACTION_DEAL,
                     "symbol": p.symbol,
                     "volume": float(vol_close),
-                    "type": mt5.ORDER_TYPE_SELL if p.type == mt5.POSITION_TYPE_BUY else mt5.ORDER_TYPE_BUY,
+                    "type": mt5.ORDER_TYPE_SELL
+                    if p.type == mt5.POSITION_TYPE_BUY
+                    else mt5.ORDER_TYPE_BUY,
                     "price": tick.bid if p.type == mt5.POSITION_TYPE_BUY else tick.ask,
                     "comment": "STOP_OUT_PREVENTION",
                     "type_time": mt5.ORDER_TIME_GTC,
@@ -874,9 +1090,24 @@ def enforce_stopout_prevention():
     except Exception:
         pass
 
+
 def _month_letter(m: int) -> str:
-    letters = {1: "F", 2: "G", 3: "H", 4: "J", 5: "K", 6: "M", 7: "N", 8: "Q", 9: "U", 10: "V", 11: "X", 12: "Z"}
+    letters = {
+        1: "F",
+        2: "G",
+        3: "H",
+        4: "J",
+        5: "K",
+        6: "M",
+        7: "N",
+        8: "Q",
+        9: "U",
+        10: "V",
+        11: "X",
+        12: "Z",
+    }
     return letters.get(int(m), "Z")
+
 
 def _next_even_month(now: datetime) -> tuple[int, int]:
     m = now.month
@@ -888,19 +1119,20 @@ def _next_even_month(now: datetime) -> tuple[int, int]:
         return (2, y + 1)
     return (nm, y)
 
+
 def _fallback_future_symbol(base_code: str) -> Optional[str]:
     try:
         now = datetime.now()
         if base_code in ("WIN", "WDO", "WSP", "BGI", "IND", "DOL"):
             # Detectar broker para escolher o formato correto
             broker = detect_broker().lower()
-            
+
             # Para XP: usar formato novo com N (ex: WINN, WDOZ)
             if "xp" in broker:
                 # Alternar entre N e Z baseado no mês
                 suffix = "N" if now.month % 2 == 1 else "Z"
                 return f"{base_code}{suffix}"
-            
+
             # Para outros brokers: usar formato tradicional (ex: WING26)
             m, y = _next_even_month(now)
             letter = _month_letter(m)
@@ -910,13 +1142,14 @@ def _fallback_future_symbol(base_code: str) -> Optional[str]:
     except Exception:
         return None
 
+
 def check_b3_circuit_breaker() -> str:
     try:
         df = safe_copy_rates("IBOV", mt5.TIMEFRAME_D1, 5)
         if not is_valid_dataframe(df, 2):
             return "OK"
-        today = df['close'].iloc[-1]
-        prev = df['close'].iloc[-2]
+        today = df["close"].iloc[-1]
+        prev = df["close"].iloc[-2]
         drop = (today / prev) - 1.0
         if drop <= -0.10:
             return "CLOSE_ALL"
@@ -925,6 +1158,7 @@ def check_b3_circuit_breaker() -> str:
         return "OK"
     except Exception:
         return "OK"
+
 
 def should_block_opening_gap(symbol: str, max_gap_pct: float = None) -> bool:
     try:
@@ -937,8 +1171,8 @@ def should_block_opening_gap(symbol: str, max_gap_pct: float = None) -> bool:
         if df_today.empty:
             return False
         first = df_today.iloc[0]
-        prev_close = df[df.index < df_today.index[0]]['close'].iloc[-1]
-        gap = float(first['open'] / prev_close - 1.0)
+        prev_close = df[df.index < df_today.index[0]]["close"].iloc[-1]
+        gap = float(first["open"] / prev_close - 1.0)
         now_time = datetime.now().time()
         if datetime_time(10, 0) <= now_time <= datetime_time(10, 15):
             return True
@@ -948,7 +1182,10 @@ def should_block_opening_gap(symbol: str, max_gap_pct: float = None) -> bool:
     except Exception:
         return False
 
-def block_if_high_portfolio_correlation(candidate_symbol: str, threshold: float = 0.70) -> bool:
+
+def block_if_high_portfolio_correlation(
+    candidate_symbol: str, threshold: float = 0.70
+) -> bool:
     try:
         with mt5_lock:
             positions = mt5.positions_get() or []
@@ -967,7 +1204,10 @@ def block_if_high_portfolio_correlation(candidate_symbol: str, threshold: float 
     except Exception:
         return False
 
-def get_yahoo_rates_fallback(symbol: str, timeframe, count: int) -> Optional[pd.DataFrame]:
+
+def get_yahoo_rates_fallback(
+    symbol: str, timeframe, count: int
+) -> Optional[pd.DataFrame]:
     try:
         import yfinance as yf
     except Exception:
@@ -989,21 +1229,28 @@ def get_yahoo_rates_fallback(symbol: str, timeframe, count: int) -> Optional[pd.
             mt5.TIMEFRAME_D1: ("1d", "365d"),
         }
         interval, period = tf_map.get(timeframe, ("15m", "30d"))
-        df = yf.Ticker(ticker).history(period=period, interval=interval, auto_adjust=True, actions=False)
+        df = yf.Ticker(ticker).history(
+            period=period, interval=interval, auto_adjust=True, actions=False
+        )
         if df is None or df.empty:
             return None
-        df = df[['Open', 'High', 'Low', 'Close', 'Volume']].rename(columns={
-            'Open': 'open', 'High': 'high', 'Low': 'low', 'Close': 'close', 'Volume': 'real_volume'
-        })
+        df = df[["Open", "High", "Low", "Close", "Volume"]].rename(
+            columns={
+                "Open": "open",
+                "High": "high",
+                "Low": "low",
+                "Close": "close",
+                "Volume": "real_volume",
+            }
+        )
         df.index = pd.to_datetime(df.index).tz_localize(None)
-        df['tick_volume'] = df['real_volume']
+        df["tick_volume"] = df["real_volume"]
         if count and count > 0 and len(df) > count:
             df = df.tail(count)
         return df
     except Exception as e:
         logger.error(f"Erro Yahoo Fallback ({symbol}): {e}")
         return None
-
 
 
 # =========================================================
@@ -1013,9 +1260,9 @@ def atomic_save_json(filename: str, data: dict):
     """Salva JSON de forma atômica para evitar corrupção"""
     temp_file = f"{filename}.tmp"
     try:
-        with open(temp_file, 'w') as f:
+        with open(temp_file, "w") as f:
             json.dump(data, f, indent=2)
-        
+
         # Replace atômico (Linux/Unix) ou remove+rename (Windows)
         if os.path.exists(filename):
             os.remove(filename)
@@ -1028,20 +1275,24 @@ def atomic_save_json(filename: str, data: dict):
             except:
                 pass
 
+
 # =========================================================
 # 📊 HELPERS FINANCEIROS & METAS
 # =========================================================
 
 _symbol_consecutive_losses = defaultdict(int)
 
+
 def get_loss_streak(symbol: str) -> int:
     return _symbol_consecutive_losses[symbol]
+
 
 def get_vix_br() -> float:
     """Retorna VIX Brasil (Estimado ou via API se disponível)"""
     # Placeholder: Se tiver acesso a dados reais, implementar aqui.
     # Por enquanto, retorna valor seguro ou tenta inferir.
-    return 22.5 # Valor médio seguro para não travar
+    return 22.5  # Valor médio seguro para não travar
+
 
 def is_future(symbol: str) -> bool:
     """
@@ -1049,30 +1300,59 @@ def is_future(symbol: str) -> bool:
     Mantida para compatibilidade com código legado.
     """
     return True
+
+
 def get_asset_type(symbol: str) -> str:
     try:
         return "FUTURE" if is_future(symbol) else "STOCK"
     except Exception:
         return "STOCK"
 
+
 class AssetInspector:
     @staticmethod
     def detect(symbol: str) -> dict:
         s = (symbol or "").upper().strip()
         if "SMALL" in s:
-            return {"type": "FUTURE", "point_value": 20.0, "tick_size": 0.1, "fee_type": "FIXED", "fee_val": 0.50}
+            return {
+                "type": "FUTURE",
+                "point_value": 20.0,
+                "tick_size": 0.1,
+                "fee_type": "FIXED",
+                "fee_val": 0.50,
+            }
         if any(x in s for x in ["WIN", "IND", "WSP"]):
-            return {"type": "FUTURE", "point_value": 0.20, "tick_size": 5.0, "fee_type": "FIXED", "fee_val": 0.25}
+            return {
+                "type": "FUTURE",
+                "point_value": 0.20,
+                "tick_size": 5.0,
+                "fee_type": "FIXED",
+                "fee_val": 0.25,
+            }
         if any(x in s for x in ["WDO", "DOL", "BGI"]):
-            return {"type": "FUTURE", "point_value": 10.0, "tick_size": 0.5, "fee_type": "FIXED", "fee_val": 1.10}
+            return {
+                "type": "FUTURE",
+                "point_value": 10.0,
+                "tick_size": 0.5,
+                "fee_type": "FIXED",
+                "fee_val": 1.10,
+            }
         # AÇÃO B3: padrão 4 letras + dígito (ex: PETR4)
-        return {"type": "STOCK", "point_value": 1.0, "tick_size": 0.01, "fee_type": "PERCENT", "fee_val": 0.00055}
+        return {
+            "type": "STOCK",
+            "point_value": 1.0,
+            "tick_size": 0.01,
+            "fee_type": "PERCENT",
+            "fee_val": 0.00055,
+        }
+
 
 class AssetClassManager:
     @staticmethod
     def get_class(symbol: str) -> str:
         """Sempre retorna FUTURE (bot exclusivo para futuros)"""
         return "FUTURE"
+
     @staticmethod
     def get_risk_pct(symbol: str) -> float:
         """Retorna % de risco para futuros"""
@@ -1083,16 +1363,19 @@ class AssetClassManager:
             return max(minp, min(base, maxp))
         except Exception:
             return 0.006  # Padrão para futuros
+
     @staticmethod
     def get_min_lot(symbol: str) -> int:
         """Sempre retorna 1 (futuros usam lote=1)"""
         return 1
+
     @staticmethod
     def get_time_window(symbol: str) -> tuple[str, str]:
         """Retorna janela de horário para futuros"""
         start = "09:05"
         end = getattr(config, "FUTURES_CLOSE_ALL_BY", "17:50")
         return start, end
+
     @staticmethod
     def _count_positions() -> tuple[int, int]:
         try:
@@ -1108,6 +1391,7 @@ class AssetClassManager:
             else:
                 stk += 1
         return fut, stk
+
     @staticmethod
     def get_dynamic_buckets() -> tuple[float, float]:
         """
@@ -1116,60 +1400,68 @@ class AssetClassManager:
         Mantido para compatibilidade com código legado.
         """
         return (1.0, 0.0)  # 100% futuros, 0% ações
+
     @staticmethod
     def get_bucket_for(symbol: str) -> float:
         """Retorna 1.0 (100% para futuros)"""
         return 1.0
 
+
 # ============================================
 # 🔧 SOLUÇÕES B3 IMPLEMENTADAS
 # ============================================
+
 
 def filter_trading_hours(df: pd.DataFrame, asset_class: str) -> pd.DataFrame:
     """
     SOLUÇÃO 5: Filtro de Horário de Pregão
     Remove after-market e pré-market indesejados.
     """
-    if df is None or df.empty: return df
-    
+    if df is None or df.empty:
+        return df
+
     # ⚠️ FALLBACK ROBUSTO PARA ÍNDICE (IBOV)
     # Se receber dados inválidos/zerados para IBOV, tenta usar futuros (IND/WIN)
     if "IBOV" in str(df.columns) or (hasattr(df, "name") and "IBOV" in str(df.name)):
-         if df['close'].iloc[-1] == 0 or pd.isna(df['close'].iloc[-1]):
-             logger.warning("⚠️ IBOV Spot com dados inválidos. Tentando fallback via Futuros (IND)...")
-             # Tenta pegar IND$ ou WIN$
-             fut_df = safe_copy_rates("IND$", mt5.TIMEFRAME_M5, len(df))
-             if fut_df is not None and not fut_df.empty and fut_df['close'].iloc[-1] > 0:
-                 logger.info("✅ Fallback IBOV -> IND Futuro realizado com sucesso.")
-                 return fut_df
-             
-             fut_df = safe_copy_rates("WIN$", mt5.TIMEFRAME_M5, len(df))
-             if fut_df is not None and not fut_df.empty and fut_df['close'].iloc[-1] > 0:
-                 logger.info("✅ Fallback IBOV -> WIN Futuro realizado com sucesso.")
-                 return fut_df
-    
+        if df["close"].iloc[-1] == 0 or pd.isna(df["close"].iloc[-1]):
+            logger.warning(
+                "⚠️ IBOV Spot com dados inválidos. Tentando fallback via Futuros (IND)..."
+            )
+            # Tenta pegar IND$ ou WIN$
+            fut_df = safe_copy_rates("IND$", mt5.TIMEFRAME_M5, len(df))
+            if fut_df is not None and not fut_df.empty and fut_df["close"].iloc[-1] > 0:
+                logger.info("✅ Fallback IBOV -> IND Futuro realizado com sucesso.")
+                return fut_df
+
+            fut_df = safe_copy_rates("WIN$", mt5.TIMEFRAME_M5, len(df))
+            if fut_df is not None and not fut_df.empty and fut_df["close"].iloc[-1] > 0:
+                logger.info("✅ Fallback IBOV -> WIN Futuro realizado com sucesso.")
+                return fut_df
+
     cfg = config_futures.FUTURES_CONFIGS.get(asset_class)
-    if not cfg: return df
-    
-    start_h, end_h = cfg['hours']
-    
+    if not cfg:
+        return df
+
+    start_h, end_h = cfg["hours"]
+
     # Filtra horas
     # Assumindo end_h=18 (fecha as 18:00, então < 18 ou <= 17:59)
     # df.index deve ser datetime
-    
+
     # Horario regular: >= 9 e < 18
     # Se after market existe, ele é tratado a parte? O usuario quer REMOVER barras 18h15-08h45
     # Ou seja, MANTER 09:00 - 18:00 (e talvez after se config permitir)
-    
+
     mask = (df.index.hour >= start_h) & (df.index.hour < end_h)
-    
+
     # Se incluir after:
     # after = cfg.get('after_market')
     # if after:
-        # mask = mask | ((df.index.hour >= 18) & (df.index.time <= ...))
-        # Mas usuário pediu para FILTRAR (Remover) barras fora do padrão.
-    
+    # mask = mask | ((df.index.hour >= 18) & (df.index.time <= ...))
+    # Mas usuário pediu para FILTRAR (Remover) barras fora do padrão.
+
     return df[mask]
+
 
 def is_liquid_futures(symbol: str, mt5_conn) -> bool:
     """
@@ -1178,11 +1470,13 @@ def is_liquid_futures(symbol: str, mt5_conn) -> bool:
     try:
         base = symbol[:3]
         cfg = config_futures.FUTURES_CONFIGS.get(base)
-        if not cfg: return True # Default allow if unknown
-        
+        if not cfg:
+            return True  # Default allow if unknown
+
         info = mt5_conn.symbol_info(symbol)
-        if not info: return False
-        
+        if not info:
+            return False
+
         # Check OI
         oi = getattr(info, "session_open_interest", None)
         if oi in (None, 0):
@@ -1190,46 +1484,51 @@ def is_liquid_futures(symbol: str, mt5_conn) -> bool:
         if oi in (None, 0):
             oi = max(
                 float(getattr(info, "volume", 0) or 0),
-                float(getattr(info, "volumehigh", 0) or 0)
+                float(getattr(info, "volumehigh", 0) or 0),
             )
-        if float(oi or 0) < float(cfg.get('min_oi', 0) or 0):
+        if float(oi or 0) < float(cfg.get("min_oi", 0) or 0):
             return False
-            
+
         # Check Volume (Last 20 days avg)
-        # rates = mt5_conn.copy_rates... seria pesado fazer aqui a cada check. 
+        # rates = mt5_conn.copy_rates... seria pesado fazer aqui a cada check.
         # Idealmente cacheado. assumimos que caller cuida disso ou check simples.
-        
+
         return True
     except:
         return True
+
 
 def get_future_beta(symbol: str) -> float:
     """
     SOLUÇÃO 11: Beta = 1.0 para Futuros de Índice
     """
     s = symbol.upper()
-    if s.startswith(('WIN', 'IND')):
+    if s.startswith(("WIN", "IND")):
         return 1.00
-    if s.startswith(('WDO', 'DOL', 'DI1')):
+    if s.startswith(("WDO", "DOL", "DI1")):
         return 0.00
     return 1.00
+
 
 def calculate_atr_points(df: pd.DataFrame, period=14):
     """
     SOLUÇÃO 7: ATR em Pontos Absolutos (Não dividir por preço!)
     """
-    high = df['high']
-    low = df['low']
-    close = df['close']
+    high = df["high"]
+    low = df["low"]
+    close = df["close"]
     prev_close = close.shift(1)
-    
+
     tr1 = high - low
     tr2 = (high - prev_close).abs()
     tr3 = (low - prev_close).abs()
-    
+
     tr = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
-    atr = tr.ewm(span=period).mean() # Usando EMA como sugerido ou rolling? Usuário disse ema.
+    atr = tr.ewm(
+        span=period
+    ).mean()  # Usando EMA como sugerido ou rolling? Usuário disse ema.
     return atr
+
 
 def round_to_tick(price: float, tick_size: float) -> float:
     try:
@@ -1239,11 +1538,14 @@ def round_to_tick(price: float, tick_size: float) -> float:
     except Exception:
         return float(price)
 
+
 sector_weights: Dict[str, Dict[str, float]] = {}
 symbol_weights: Dict[str, Dict[str, float]] = {}
 # Conexão Redis (ajuste se necessário)
 try:
-    redis_client = redis.Redis(host='localhost', port=6379, db=0, decode_responses=False)
+    redis_client = redis.Redis(
+        host="localhost", port=6379, db=0, decode_responses=False
+    )
     redis_client.ping()  # Testa conexão
     REDIS_AVAILABLE = True
     logger.info("✅ Redis conectado - cache ativado")
@@ -1256,12 +1558,14 @@ except Exception as e:
 # MT5 SAFE COPY (ANTI-DEADLOCK)
 # =========================================================
 
+
 def _is_futures_contract_symbol(symbol: str) -> bool:
     try:
         s = (symbol or "").upper().strip()
         return bool(re.match(r"^[A-Z]{2,10}[FGHJKMNQUVXZ]\d{2}$", s))
     except Exception:
         return False
+
 
 def _futures_base_from_symbol(symbol: str) -> str:
     s = (symbol or "").upper().strip()
@@ -1272,6 +1576,7 @@ def _futures_base_from_symbol(symbol: str) -> str:
         return m.group(1)
     m2 = re.match(r"^([A-Z]{2,10})", s)
     return m2.group(1) if m2 else s
+
 
 def _mt5_pick_best_symbol_by_group(group: str) -> Optional[str]:
     try:
@@ -1288,7 +1593,10 @@ def _mt5_pick_best_symbol_by_group(group: str) -> Optional[str]:
     except Exception:
         return None
 
-def _mt5_copy_rates_threaded(symbol: str, timeframe, count: int, timeout: int) -> Optional[pd.DataFrame]:
+
+def _mt5_copy_rates_threaded(
+    symbol: str, timeframe, count: int, timeout: int
+) -> Optional[pd.DataFrame]:
     q = queue.Queue()
 
     def worker():
@@ -1319,12 +1627,14 @@ def _mt5_copy_rates_threaded(symbol: str, timeframe, count: int, timeout: int) -
         df.set_index("time", inplace=True)
     return df.sort_index()
 
+
 def _mt5_force_history(symbol: str, timeframe, count: int) -> None:
     try:
         start = datetime.now() - timedelta(days=30)
         mt5.copy_rates_from(symbol, timeframe, start, max(1, min(count, 5000)))
     except Exception:
         return
+
 
 def _try_mt5_symbol_select(symbol: str) -> Optional[str]:
     s = (symbol or "").upper().strip()
@@ -1361,6 +1671,7 @@ def _try_mt5_symbol_select(symbol: str) -> Optional[str]:
                 pass
     return None
 
+
 def _fallback_data_symbols_for_contract(symbol: str) -> List[str]:
     base = _futures_base_from_symbol(symbol)
     alts = {"WDO": "DOL", "DOL": "WDO"}
@@ -1371,6 +1682,7 @@ def _fallback_data_symbols_for_contract(symbol: str) -> List[str]:
     for b in bases:
         out.extend([f"{b}$N", f"{b}$"])
     return out
+
 
 def _df_has_valid_ohlc(df: Optional[pd.DataFrame], min_rows: int = 50) -> bool:
     try:
@@ -1395,10 +1707,13 @@ def _df_has_valid_ohlc(df: Optional[pd.DataFrame], min_rows: int = 50) -> bool:
     except Exception:
         return False
 
-def safe_copy_rates(symbol: str, timeframe, count: int = 500, timeout: int = 12) -> Optional[pd.DataFrame]:
+
+def safe_copy_rates(
+    symbol: str, timeframe, count: int = 500, timeout: int = 12
+) -> Optional[pd.DataFrame]:
     # 🚫 BLACKLIST DE SÍMBOLOS PROBLEMÁTICOS
     # Evita tentativas de download em ativos suspensos ou sem dados no MT5
-    if symbol in ["OSXB3", "OIBR3", "VVAR3"]: 
+    if symbol in ["OSXB3", "OIBR3", "VVAR3"]:
         return None
 
     try:
@@ -1414,7 +1729,9 @@ def safe_copy_rates(symbol: str, timeframe, count: int = 500, timeout: int = 12)
 
     df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
     if df is not None and not _df_has_valid_ohlc(df):
-        logger.warning(f"⚠️ MT5 retornou OHLC inválido para {symbol} (zeros/NaN). Tentando fallback...")
+        logger.warning(
+            f"⚠️ MT5 retornou OHLC inválido para {symbol} (zeros/NaN). Tentando fallback..."
+        )
         df = None
 
     if df is None or len(df) == 0:
@@ -1422,18 +1739,30 @@ def safe_copy_rates(symbol: str, timeframe, count: int = 500, timeout: int = 12)
         time.sleep(0.2)
         df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
         if df is not None and not _df_has_valid_ohlc(df):
-            logger.warning(f"⚠️ MT5 ainda com OHLC inválido para {symbol} após force_history. Tentando fallback...")
+            logger.warning(
+                f"⚠️ MT5 ainda com OHLC inválido para {symbol} após force_history. Tentando fallback..."
+            )
             df = None
 
-    if (df is None or len(df) == 0) and futures_core and (_is_futures_contract_symbol(symbol) or "$N" in symbol or "$" in symbol):
+    if (
+        (df is None or len(df) == 0)
+        and futures_core
+        and (_is_futures_contract_symbol(symbol) or "$N" in symbol or "$" in symbol)
+    ):
         try:
             base = _futures_base_from_symbol(symbol)
             mgr = futures_core.get_manager()
-            dfc = mgr.concatenate_history(base, bars=max(count, 800), timeframe=timeframe)
+            dfc = mgr.concatenate_history(
+                base, bars=max(count, 800), timeframe=timeframe
+            )
             if isinstance(dfc, pd.DataFrame) and not dfc.empty:
                 if "volume" in dfc.columns and "tick_volume" not in dfc.columns:
                     dfc = dfc.rename(columns={"volume": "tick_volume"})
-                if "real_volume" not in dfc.columns and "tick_volume" in dfc.columns and "close" in dfc.columns:
+                if (
+                    "real_volume" not in dfc.columns
+                    and "tick_volume" in dfc.columns
+                    and "close" in dfc.columns
+                ):
                     dfc["real_volume"] = dfc["tick_volume"] * dfc["close"]
                 dfc = dfc.sort_index().tail(count)
                 if _df_has_valid_ohlc(dfc):
@@ -1461,7 +1790,11 @@ def safe_copy_rates(symbol: str, timeframe, count: int = 500, timeout: int = 12)
                     continue
                 act_sel = _try_mt5_symbol_select(active) or active
                 df_act = _mt5_copy_rates_threaded(act_sel, timeframe, count, timeout)
-                if df_act is not None and len(df_act) > 0 and _df_has_valid_ohlc(df_act):
+                if (
+                    df_act is not None
+                    and len(df_act) > 0
+                    and _df_has_valid_ohlc(df_act)
+                ):
                     logger.info(f"🔁 Fallback de contrato: {symbol} → {act_sel}")
                     return df_act
         except Exception:
@@ -1470,27 +1803,37 @@ def safe_copy_rates(symbol: str, timeframe, count: int = 500, timeout: int = 12)
     if df is None or len(df) == 0:
         try:
             if mt5 and timeframe == getattr(mt5, "TIMEFRAME_M15", None):
-                df_m5 = _mt5_copy_rates_threaded(symbol, mt5.TIMEFRAME_M5, count, timeout)
+                df_m5 = _mt5_copy_rates_threaded(
+                    symbol, mt5.TIMEFRAME_M5, count, timeout
+                )
                 if df_m5 is not None and len(df_m5) > 0 and _df_has_valid_ohlc(df_m5):
                     logger.info(f"↩️ Fallback M5 aplicado para {symbol} (M15 vazio)")
                     return df_m5
         except Exception:
             pass
-        logger.warning(f"⚠️ MT5 Falhou em {requested_symbol}. Acionando Polygon.io fallback...")
+        logger.warning(
+            f"⚠️ MT5 Falhou em {requested_symbol}. Acionando Polygon.io fallback..."
+        )
         return get_polygon_rates_fallback(requested_symbol, timeframe, count)
 
     return df
 
-def get_training_rates(symbol: str, timeframe, bars: int = 2000) -> Optional[pd.DataFrame]:
+
+def get_training_rates(
+    symbol: str, timeframe, bars: int = 2000
+) -> Optional[pd.DataFrame]:
     try:
         df = safe_copy_rates(symbol, timeframe, bars)
         return df
     except Exception as e:
         logger.error(f"get_training_rates: {e}")
         return None
+
+
 # =========================================================
 # AWS LAMBDA HOOK (SCALABILITY)
 # =========================================================
+
 
 def lambda_invoke(function_name: str, payload: dict) -> Optional[dict]:
     """
@@ -1499,13 +1842,16 @@ def lambda_invoke(function_name: str, payload: dict) -> Optional[dict]:
     try:
         import boto3
         import json
-        client = boto3.client('lambda', region_name=getattr(config, 'AWS_REGION', 'us-east-1'))
+
+        client = boto3.client(
+            "lambda", region_name=getattr(config, "AWS_REGION", "us-east-1")
+        )
         response = client.invoke(
             FunctionName=function_name,
-            InvocationType='RequestResponse',
-            Payload=json.dumps(payload)
+            InvocationType="RequestResponse",
+            Payload=json.dumps(payload),
         )
-        return json.loads(response['Payload'].read())
+        return json.loads(response["Payload"].read())
     except ImportError:
         logger.debug("Boto3 não instalado. AWS Lambda desabilitado.")
         return None
@@ -1513,9 +1859,11 @@ def lambda_invoke(function_name: str, payload: dict) -> Optional[dict]:
         logger.error(f"Erro ao invocar Lambda {function_name}: {e}")
         return None
 
+
 # =========================================================
 # REDIS CACHE HELPERS
 # =========================================================
+
 
 def cached_symbol_info(symbol: str) -> Optional[mt5.SymbolInfo]:
     """
@@ -1523,20 +1871,23 @@ def cached_symbol_info(symbol: str) -> Optional[mt5.SymbolInfo]:
     """
     if not REDIS_AVAILABLE:
         return mt5.symbol_info(symbol)
-        
+
     cache_key = f"symbol_info:{symbol}"
     try:
         cached = redis_client.get(cache_key)
         if cached:
             return pickle.loads(cached)
-            
+
         info = mt5.symbol_info(symbol)
         if info:
-            redis_client.setex(cache_key, config.REDIS_CACHE_TTL_INFO, pickle.dumps(info))
+            redis_client.setex(
+                cache_key, config.REDIS_CACHE_TTL_INFO, pickle.dumps(info)
+            )
         return info
     except Exception as e:
         logger.debug(f"Redis Info Error: {e}")
         return mt5.symbol_info(symbol)
+
 
 def cached_symbol_info_tick(symbol: str):
     """
@@ -1544,16 +1895,18 @@ def cached_symbol_info_tick(symbol: str):
     """
     if not REDIS_AVAILABLE:
         return mt5.symbol_info_tick(symbol)
-        
+
     cache_key = f"tick:{symbol}"
     try:
         cached = redis_client.get(cache_key)
         if cached:
             return pickle.loads(cached)
-            
+
         tick = mt5.symbol_info_tick(symbol)
         if tick:
-            redis_client.setex(cache_key, config.REDIS_CACHE_TTL_TICK, pickle.dumps(tick))
+            redis_client.setex(
+                cache_key, config.REDIS_CACHE_TTL_TICK, pickle.dumps(tick)
+            )
         return tick
     except Exception as e:
         logger.debug(f"Redis Tick Error: {e}")
@@ -1568,53 +1921,54 @@ def cached_symbol_info_tick(symbol: str):
 _trade_history = {}  # {symbol: [timestamps]}
 _trade_history_lock = RLock()
 
-def check_anti_overtrading(symbol: str, max_trades_per_hour: int = 5, 
-                            max_trades_per_day: int = 20) -> Tuple[bool, str]:
+
+def check_anti_overtrading(
+    symbol: str, max_trades_per_hour: int = 5, max_trades_per_day: int = 20
+) -> Tuple[bool, str]:
     """
     ✅ Verifica se está fazendo trades demais em um símbolo.
-    
+
     Regras:
     - Máximo 3 trades/hora por símbolo
     - Máximo 10 trades/dia por símbolo
-    
+
     Returns:
         (allowed: bool, reason: str)
     """
     global _trade_history
-    
+
     with _trade_history_lock:
         now = datetime.now()
-        
+
         if symbol not in _trade_history:
             _trade_history[symbol] = []
-        
+
         # Limpa histórico antigo (>24h)
         _trade_history[symbol] = [
-            t for t in _trade_history[symbol] 
-            if (now - t).total_seconds() < 86400
+            t for t in _trade_history[symbol] if (now - t).total_seconds() < 86400
         ]
-        
+
         # Conta trades na última hora
         hour_ago = now - timedelta(hours=1)
         trades_last_hour = sum(1 for t in _trade_history[symbol] if t >= hour_ago)
-        
+
         # Conta trades hoje
         today = now.replace(hour=0, minute=0, second=0, microsecond=0)
         trades_today = sum(1 for t in _trade_history[symbol] if t >= today)
-        
+
         if trades_last_hour >= max_trades_per_hour:
             return False, f"Overtrading/hora: {trades_last_hour}/{max_trades_per_hour}"
-        
+
         if trades_today >= max_trades_per_day:
             return False, f"Overtrading/dia: {trades_today}/{max_trades_per_day}"
-        
+
         return True, f"OK ({trades_last_hour}/h, {trades_today}/d)"
 
 
 def register_trade_for_overtrading(symbol: str):
     """Registra um trade para controle de overtrading."""
     global _trade_history
-    
+
     with _trade_history_lock:
         if symbol not in _trade_history:
             _trade_history[symbol] = []
@@ -1625,10 +1979,11 @@ def register_trade_for_overtrading(symbol: str):
 # 📊 WIN RATE EM TEMPO REAL
 # =========================================================
 
+
 def get_realtime_win_rate(lookback_trades: int = 20) -> Dict[str, float]:
     """
     ✅ Calcula win rate em tempo real dos últimos N trades.
-    
+
     Returns:
         {
             'win_rate': float (0-1),
@@ -1644,41 +1999,42 @@ def get_realtime_win_rate(lookback_trades: int = 20) -> Dict[str, float]:
     try:
         with mt5_lock:
             deals = mt5.history_deals_get(
-                datetime.now() - timedelta(days=7), 
-                datetime.now()
+                datetime.now() - timedelta(days=7), datetime.now()
             )
-        
+
         if not deals:
             return _default_win_rate_result()
-        
+
         # Filtra fechamentos
-        out_deals = [d for d in deals if d.entry == mt5.DEAL_ENTRY_OUT][-lookback_trades:]
-        
+        out_deals = [d for d in deals if d.entry == mt5.DEAL_ENTRY_OUT][
+            -lookback_trades:
+        ]
+
         if len(out_deals) < 5:
             return _default_win_rate_result()
-        
+
         wins = [d for d in out_deals if d.profit > 0]
         losses = [d for d in out_deals if d.profit <= 0]
-        
+
         win_rate = len(wins) / len(out_deals)
-        
+
         avg_win = sum(d.profit for d in wins) / len(wins) if wins else 0
         avg_loss = abs(sum(d.profit for d in losses) / len(losses)) if losses else 0
-        
-        profit_factor = avg_win / avg_loss if avg_loss > 0 else float('inf')
+
+        profit_factor = avg_win / avg_loss if avg_loss > 0 else float("inf")
         expectancy = (win_rate * avg_win) - ((1 - win_rate) * avg_loss)
-        
+
         return {
-            'win_rate': win_rate,
-            'total_trades': len(out_deals),
-            'wins': len(wins),
-            'losses': len(losses),
-            'avg_win': avg_win,
-            'avg_loss': avg_loss,
-            'profit_factor': profit_factor,
-            'expectancy': expectancy
+            "win_rate": win_rate,
+            "total_trades": len(out_deals),
+            "wins": len(wins),
+            "losses": len(losses),
+            "avg_win": avg_win,
+            "avg_loss": avg_loss,
+            "profit_factor": profit_factor,
+            "expectancy": expectancy,
         }
-        
+
     except Exception as e:
         logger.error(f"Erro ao calcular win rate real-time: {e}")
         return _default_win_rate_result()
@@ -1687,14 +2043,14 @@ def get_realtime_win_rate(lookback_trades: int = 20) -> Dict[str, float]:
 def _default_win_rate_result() -> Dict[str, float]:
     """Resultado padrão quando não há dados suficientes."""
     return {
-        'win_rate': 0.50,
-        'total_trades': 0,
-        'wins': 0,
-        'losses': 0,
-        'avg_win': 0,
-        'avg_loss': 0,
-        'profit_factor': 1.0,
-        'expectancy': 0
+        "win_rate": 0.50,
+        "total_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "avg_win": 0,
+        "avg_loss": 0,
+        "profit_factor": 1.0,
+        "expectancy": 0,
     }
 
 
@@ -1705,44 +2061,45 @@ def get_symbol_performance(symbol: str, lookback_days: int = 30) -> Dict[str, fl
     try:
         with mt5_lock:
             deals = mt5.history_deals_get(
-                datetime.now() - timedelta(days=lookback_days), 
-                datetime.now()
+                datetime.now() - timedelta(days=lookback_days), datetime.now()
             )
-        
+
         if not deals:
-            return {'win_rate': 0.55, 'trades': 0}
-        
-        symbol_deals = [d for d in deals if d.symbol == symbol and d.entry == mt5.DEAL_ENTRY_OUT]
-        
+            return {"win_rate": 0.55, "trades": 0}
+
+        symbol_deals = [
+            d for d in deals if d.symbol == symbol and d.entry == mt5.DEAL_ENTRY_OUT
+        ]
+
         if len(symbol_deals) < 3:
-            return {'win_rate': 0.55, 'trades': len(symbol_deals)}
-        
+            return {"win_rate": 0.55, "trades": len(symbol_deals)}
+
         wins = sum(1 for d in symbol_deals if d.profit > 0)
         total_pnl = sum(d.profit for d in symbol_deals)
-        
+
         return {
-            'win_rate': wins / len(symbol_deals),
-            'trades': len(symbol_deals),
-            'wins': wins,
-            'losses': len(symbol_deals) - wins,
-            'total_pnl': total_pnl
+            "win_rate": wins / len(symbol_deals),
+            "trades": len(symbol_deals),
+            "wins": wins,
+            "losses": len(symbol_deals) - wins,
+            "total_pnl": total_pnl,
         }
-        
+
     except Exception as e:
         logger.error(f"Erro ao buscar performance {symbol}: {e}")
-        return {'win_rate': 0.55, 'trades': 0}
+        return {"win_rate": 0.55, "trades": 0}
 
 
 def get_dynamic_rr_min() -> float:
     """
     ✅ R:R DINÂMICO MULTI-FATOR
-    
+
     Fatores:
     1. Regime de mercado (IBOV trend)
     2. VIX Brasil (BVIX)
     3. Volatilidade histórica (ATR agregado)
     4. Drawdown atual
-    
+
     Ranges:
     - RISK_ON + vol baixa: 1.2
     - RISK_OFF + vol alta: 2.5
@@ -1750,20 +2107,20 @@ def get_dynamic_rr_min() -> float:
     regime = detect_market_regime()
     if regime not in ("RISK_ON", "RISK_OFF"):
         regime = "RISK_ON"
-    
+
     # ✅ NOVO: Fator 1 - Regime base
     if regime == "RISK_ON":
         base_rr = 1.2
     else:
         base_rr = 1.5
-    
+
     # ✅ NOVO: Fator 2 - Volatilidade histórica
     try:
         ibov_df = safe_copy_rates("IBOV", mt5.TIMEFRAME_D1, 30)
-        
+
         if ibov_df is not None:
-            hvol = ibov_df['close'].pct_change().std() * 100
-            
+            hvol = ibov_df["close"].pct_change().std() * 100
+
             # Multiplica RR se vol > 2%
             if hvol > 2.0:
                 vol_multiplier = 1.3
@@ -1775,15 +2132,16 @@ def get_dynamic_rr_min() -> float:
             vol_multiplier = 1.0
     except:
         vol_multiplier = 1.0
-    
+
     # ✅ NOVO: Fator 3 - Drawdown atual
     try:
         from botfuturo import daily_max_equity
+
         acc = mt5.account_info()
-        
+
         if acc and daily_max_equity > 0:
             current_dd = (daily_max_equity - acc.equity) / daily_max_equity
-            
+
             # Aumenta RR mínimo se em drawdown
             if current_dd > 0.03:  # >3%
                 dd_multiplier = 1.5
@@ -1795,18 +2153,20 @@ def get_dynamic_rr_min() -> float:
             dd_multiplier = 1.0
     except:
         dd_multiplier = 1.0
-    
+
     # Cálculo Final
     final_rr = base_rr * vol_multiplier * dd_multiplier
     final_rr = min(final_rr, 2.2)
-   
+
     # logger.info(f"📊 R:R Dinâmico | Regime: {regime} | Base: {base_rr:.2f} | Vol×: {vol_multiplier:.2f} | DD×: {dd_multiplier:.2f} | Final: {final_rr:.2f}")
-    
+
     return final_rr
+
 
 # =========================================================
 # 🌐 POLYGON.IO INTEGRATION
 # =========================================================
+
 
 def get_vix_br() -> float:
     """
@@ -1815,7 +2175,8 @@ def get_vix_br() -> float:
     """
     if REDIS_AVAILABLE:
         cached = redis_client.get("vix_br")
-        if cached: return float(cached)
+        if cached:
+            return float(cached)
 
     vix = 20.0
     try:
@@ -1827,14 +2188,17 @@ def get_vix_br() -> float:
             # Fallback: Volatilidade do IBOV
             df = safe_copy_rates("IBOV", mt5.TIMEFRAME_H1, 100)
             if is_valid_dataframe(df):
-                vix = df['close'].pct_change().std() * 100 * np.sqrt(252 * 7) # Proxy volatilidade anualizada
+                vix = (
+                    df["close"].pct_change().std() * 100 * np.sqrt(252 * 7)
+                )  # Proxy volatilidade anualizada
                 vix = max(10, min(vix, 80))
     except:
         vix = 22.0
 
     if REDIS_AVAILABLE:
-        redis_client.setex("vix_br", 300, str(vix)) # 5 min cache
+        redis_client.setex("vix_br", 300, str(vix))  # 5 min cache
     return float(vix)
+
 
 def get_order_flow(symbol: str, bars: int = 20) -> Dict[str, float]:
     """
@@ -1844,37 +2208,40 @@ def get_order_flow(symbol: str, bars: int = 20) -> Dict[str, float]:
     ticker = symbol.replace(".SA", "")
     end = datetime.now().strftime("%Y-%m-%d")
     endpoint = f"v2/aggs/ticker/{ticker}/range/1/minute/{end}/{end}"
-    
+
     data = get_polygon_data(endpoint, {"limit": bars})
     if data:
         res = data.get("results", [])
         if res:
-            buy_v = sum(r['v'] for r in res if r['c'] >= r['o'])
-            sell_v = sum(r['v'] for r in res if r['c'] < r['o'])
+            buy_v = sum(r["v"] for r in res if r["c"] >= r["o"])
+            sell_v = sum(r["v"] for r in res if r["c"] < r["o"])
             total = buy_v + sell_v
             return {
                 "imbalance": (buy_v - sell_v) / total if total > 0 else 0,
                 "cvd": buy_v - sell_v,
                 "buy_volume": buy_v,
-                "sell_volume": sell_v
+                "sell_volume": sell_v,
             }
 
     # 2. Fallback MT5 (Estimado)
     df = safe_copy_rates(symbol, mt5.TIMEFRAME_M1, bars)
     if not is_valid_dataframe(df):
         return {"imbalance": 0.0, "cvd": 0.0, "buy_volume": 0, "sell_volume": 0}
-    
-    df['delta'] = np.where(df['close'] >= df['open'], df['tick_volume'], -df['tick_volume'])
-    buy_v = df[df['delta'] > 0]['tick_volume'].sum()
-    sell_v = df[df['delta'] < 0]['tick_volume'].sum()
+
+    df["delta"] = np.where(
+        df["close"] >= df["open"], df["tick_volume"], -df["tick_volume"]
+    )
+    buy_v = df[df["delta"] > 0]["tick_volume"].sum()
+    sell_v = df[df["delta"] < 0]["tick_volume"].sum()
     total = buy_v + sell_v
-    
+
     return {
         "imbalance": (buy_v - sell_v) / total if total > 0 else 0,
-        "cvd": float(df['delta'].sum()),
+        "cvd": float(df["delta"].sum()),
         "buy_volume": float(buy_v),
-        "sell_volume": float(sell_v)
+        "sell_volume": float(sell_v),
     }
+
 
 def get_order_flow_polygon(symbol: str) -> Dict[str, float]:
     return get_order_flow(symbol, bars=20)
@@ -1888,11 +2255,13 @@ class AggressionTracker:
         except Exception:
             return 0.0
 
+
 aggression_tracker = AggressionTracker()
 
 # =========================================================
 # SLIPPAGE
 # =========================================================
+
 
 def get_real_slippage(symbol: str) -> float:
     tick = mt5.symbol_info_tick(symbol)
@@ -1913,17 +2282,18 @@ def get_real_slippage(symbol: str) -> float:
     return max(spread_pct * mult, mapped)
 
 
-def check_and_alert_slippage(symbol: str, requested_price: float, 
-                               executed_price: float, side: str) -> bool:
+def check_and_alert_slippage(
+    symbol: str, requested_price: float, executed_price: float, side: str
+) -> bool:
     """
     Verifica se houve slippage excessivo na execução e notifica o usuário.
-    
+
     Args:
         symbol: Símbolo do ativo
         requested_price: Preço solicitado
         executed_price: Preço executado
         side: BUY ou SELL
-    
+
     Returns:
         bool: True se slippage foi excessivo
     """
@@ -1931,19 +2301,19 @@ def check_and_alert_slippage(symbol: str, requested_price: float,
         info = mt5.symbol_info(symbol)
         if not info or info.point <= 0:
             return False
-        
+
         # Calcula slippage em ticks
         slippage = abs(executed_price - requested_price)
         slippage_ticks = slippage / info.point
-        
+
         # Verifica direção (adverso = pior para o trader)
         if side == "BUY":
             is_adverse = executed_price > requested_price
         else:
             is_adverse = executed_price < requested_price
-        
-        max_slippage_ticks = getattr(config, 'SLIPPAGE_ALERT_TICKS', 3)
-        
+
+        max_slippage_ticks = getattr(config, "SLIPPAGE_ALERT_TICKS", 3)
+
         if is_adverse and slippage_ticks > max_slippage_ticks:
             logger.warning(
                 f"⚠️ SLIPPAGE EXCESSIVO {symbol} | "
@@ -1951,7 +2321,7 @@ def check_and_alert_slippage(symbol: str, requested_price: float,
                 f"Executado: {executed_price:.2f} | "
                 f"Slippage: {slippage_ticks:.1f} ticks"
             )
-            
+
             # Envia alerta Telegram
             try:
                 send_telegram_message(
@@ -1965,11 +2335,11 @@ def check_and_alert_slippage(symbol: str, requested_price: float,
                 )
             except Exception as e:
                 logger.debug(f"Erro ao enviar alerta slippage: {e}")
-            
+
             return True
-        
+
         return False
-        
+
     except Exception as e:
         logger.error(f"Erro ao verificar slippage: {e}")
         return False
@@ -1978,6 +2348,7 @@ def check_and_alert_slippage(symbol: str, requested_price: float,
 # =========================================================
 # REGIME DE MERCADO
 # =========================================================
+
 
 def detect_market_regime() -> str:
     ibov = safe_copy_rates("IBOV", mt5.TIMEFRAME_D1, 50)
@@ -2002,6 +2373,7 @@ def detect_market_regime() -> str:
 # EXPOSIÇÃO SETORIAL
 # =========================================================
 
+
 def calculate_sector_exposure_pct(equity: float) -> Dict[str, float]:
     with mt5_lock:
         positions = mt5.positions_get() or []
@@ -2013,6 +2385,7 @@ def calculate_sector_exposure_pct(equity: float) -> Dict[str, float]:
 
     return {s: v / equity for s, v in sector_risk.items()} if equity > 0 else {}
 
+
 def get_ibov_correlation(symbol: str, lookback: int = 50) -> float:
     """
     Calcula a correlação de Pearson entre o ativo e o IBOVESPA.
@@ -2020,27 +2393,26 @@ def get_ibov_correlation(symbol: str, lookback: int = 50) -> float:
     try:
         df_sym = safe_copy_rates(symbol, mt5.TIMEFRAME_D1, lookback)
         df_ibov = safe_copy_rates("IBOV", mt5.TIMEFRAME_D1, lookback)
-        
+
         if df_sym is None or df_ibov is None or len(df_sym) < 20 or len(df_ibov) < 20:
             return 0.0
-            
-        returns_sym = df_sym['close'].pct_change().dropna()
-        returns_ibov = df_ibov['close'].pct_change().dropna()
-        
+
+        returns_sym = df_sym["close"].pct_change().dropna()
+        returns_ibov = df_ibov["close"].pct_change().dropna()
+
         # Alinha os índices
         combined = pd.concat([returns_sym, returns_ibov], axis=1).dropna()
         if len(combined) < 10:
             return 0.0
-            
+
         correlation = combined.corr().iloc[0, 1]
         return float(correlation)
     except Exception as e:
         logger.error(f"Erro ao calcular correlação IBOV para {symbol}: {e}")
         return 0.0
 
+
 # deleted for debug
-
-
 
 
 def validate_subsetor_exposure(symbol: str) -> Tuple[bool, str]:
@@ -2049,30 +2421,35 @@ def validate_subsetor_exposure(symbol: str) -> Tuple[bool, str]:
     """
     try:
         subsetor = config.SUBSETOR_MAP.get(symbol, "Outros")
-        
+
         with mt5_lock:
             positions = mt5.positions_get()
-            
+
         if not positions:
             return True, "OK"
-            
+
         acc = mt5.account_info()
         total_equity = acc.equity if acc else 100000.0
-        
+
         subsetor_value = 0
         for pos in positions:
             if config.SUBSETOR_MAP.get(pos.symbol) == subsetor:
                 subsetor_value += pos.volume * pos.price_open
-                
-        risk_per_trade = float(getattr(config, "RISK_PER_TRADE", getattr(config, "RISK_PER_TRADE_PCT", 0.01)) or 0.01)
+
+        risk_per_trade = float(
+            getattr(
+                config, "RISK_PER_TRADE", getattr(config, "RISK_PER_TRADE_PCT", 0.01)
+            )
+            or 0.01
+        )
         projected_total = subsetor_value + (total_equity * risk_per_trade)
         exposure = projected_total / total_equity
-        
+
         limit = getattr(config, "MAX_SUBSETOR_EXPOSURE", 0.20)
-        
+
         if exposure > limit:
             return False, f"Exposição excessiva em {subsetor}: {exposure:.1%}"
-            
+
         return True, "OK"
     except Exception as e:
         logger.error(f"Erro validação subsetor: {e}")
@@ -2111,6 +2488,7 @@ def get_book_imbalance(symbol: str) -> float:
 
 _last_bar_time = {}
 
+
 def get_fast_rates(symbol, timeframe):
     df = safe_copy_rates(symbol, timeframe, 3)
     if not is_valid_dataframe(df):
@@ -2124,21 +2502,29 @@ def get_fast_rates(symbol, timeframe):
     _last_bar_time[key] = last
     return df
 
+
 # =========================================================
 # INDICADORES BÁSICOS
 # =========================================================
 
+
 def get_atr(df: pd.DataFrame, period: int = 14) -> Optional[float]:
-    tr = pd.concat([
-        df["high"] - df["low"],
-        (df["high"] - df["close"].shift()).abs(),
-        (df["low"] - df["close"].shift()).abs()
-    ], axis=1).max(axis=1)
+    tr = pd.concat(
+        [
+            df["high"] - df["low"],
+            (df["high"] - df["close"].shift()).abs(),
+            (df["low"] - df["close"].shift()).abs(),
+        ],
+        axis=1,
+    ).max(axis=1)
 
     atr = tr.ewm(alpha=1 / period, adjust=False).mean()
     return float(atr.iloc[-1])
 
-def get_psar(df: pd.DataFrame, af: float = 0.02, af_max: float = 0.2) -> Optional[float]:
+
+def get_psar(
+    df: pd.DataFrame, af: float = 0.02, af_max: float = 0.2
+) -> Optional[float]:
     try:
         if df is None or len(df) < 5:
             return None
@@ -2176,6 +2562,8 @@ def get_psar(df: pd.DataFrame, af: float = 0.02, af_max: float = 0.2) -> Optiona
         return float(psar[-1])
     except Exception:
         return None
+
+
 def get_adx(df: pd.DataFrame, period: int = 14) -> Optional[float]:
     if df is None or len(df) < period * 2:
         return None
@@ -2186,11 +2574,9 @@ def get_adx(df: pd.DataFrame, period: int = 14) -> Optional[float]:
     down_move = -low.diff()
     plus_dm = up_move.where((up_move > down_move) & (up_move > 0), 0.0)
     minus_dm = down_move.where((down_move > up_move) & (down_move > 0), 0.0)
-    tr = pd.concat([
-        high - low,
-        (high - close.shift()).abs(),
-        (low - close.shift()).abs()
-    ], axis=1).max(axis=1)
+    tr = pd.concat(
+        [high - low, (high - close.shift()).abs(), (low - close.shift()).abs()], axis=1
+    ).max(axis=1)
     atr = tr.ewm(alpha=1 / period, adjust=False).mean()
     eps = 1e-10
     plus_di = 100 * plus_dm.ewm(alpha=1 / period, adjust=False).mean() / (atr + eps)
@@ -2202,6 +2588,7 @@ def get_adx(df: pd.DataFrame, period: int = 14) -> Optional[float]:
         return None
     return float(v)
 
+
 def get_adx_series(df: pd.DataFrame, period: int = 14) -> pd.Series:
     if df is None or len(df) < period * 2:
         return pd.Series(dtype=float)
@@ -2212,11 +2599,9 @@ def get_adx_series(df: pd.DataFrame, period: int = 14) -> pd.Series:
     down_move = -low.diff()
     plus_dm = up_move.where((up_move > down_move) & (up_move > 0), 0.0)
     minus_dm = down_move.where((down_move > up_move) & (down_move > 0), 0.0)
-    tr = pd.concat([
-        high - low,
-        (high - close.shift()).abs(),
-        (low - close.shift()).abs()
-    ], axis=1).max(axis=1)
+    tr = pd.concat(
+        [high - low, (high - close.shift()).abs(), (low - close.shift()).abs()], axis=1
+    ).max(axis=1)
     atr = tr.ewm(alpha=1 / period, adjust=False).mean()
     eps = 1e-10
     plus_di = 100 * plus_dm.ewm(alpha=1 / period, adjust=False).mean() / (atr + eps)
@@ -2233,18 +2618,18 @@ def get_intraday_vwap(df: pd.DataFrame) -> Optional[float]:
     now = datetime.now()
     today = now.date()
     market_open = datetime.combine(today, datetime.strptime("10:00", "%H:%M").time())
-    
+
     df_today = df[df.index >= market_open]
-    
+
     if df_today.empty or len(df_today) < 3:
         return None
-    
-    typical_price = (df_today['high'] + df_today['low'] + 2 * df_today['close']) / 4
-    volume = df_today.get('real_volume', df_today['tick_volume'])
-    
+
+    typical_price = (df_today["high"] + df_today["low"] + 2 * df_today["close"]) / 4
+    volume = df_today.get("real_volume", df_today["tick_volume"])
+
     pv = (typical_price * volume).sum()
     total_vol = volume.sum()
-    
+
     return float(pv / total_vol) if total_vol > 0 else None
 
 
@@ -2255,8 +2640,8 @@ def get_intraday_vwap_stats(df: pd.DataFrame) -> Optional[dict]:
     df_today = df[df.index >= market_open]
     if df_today.empty or len(df_today) < 3:
         return None
-    typical_price = (df_today['high'] + df_today['low'] + 2 * df_today['close']) / 4
-    volume = df_today.get('real_volume', df_today['tick_volume'])
+    typical_price = (df_today["high"] + df_today["low"] + 2 * df_today["close"]) / 4
+    volume = df_today.get("real_volume", df_today["tick_volume"])
     pv = (typical_price * volume).sum()
     total_vol = volume.sum()
     vwap = float(pv / total_vol) if total_vol > 0 else None
@@ -2266,6 +2651,7 @@ def get_intraday_vwap_stats(df: pd.DataFrame) -> Optional[dict]:
     upper_2sd = vwap + std * getattr(config, "VWAP_OVEREXT_STD_MULT", 2.0)
     lower_2sd = vwap - std * getattr(config, "VWAP_OVEREXT_STD_MULT", 2.0)
     return {"vwap": vwap, "std": std, "upper_2sd": upper_2sd, "lower_2sd": lower_2sd}
+
 
 def timeframe_to_minutes(tf) -> int:
     m = {
@@ -2278,6 +2664,7 @@ def timeframe_to_minutes(tf) -> int:
         getattr(mt5, "TIMEFRAME_D1", None): 1440,
     }
     return m.get(tf, 15)
+
 
 def get_avg_spread_pct(symbol: str, timeframe, bars: int = 10) -> Optional[float]:
     try:
@@ -2296,20 +2683,27 @@ def get_avg_spread_pct(symbol: str, timeframe, bars: int = 10) -> Optional[float
     except Exception:
         return None
 
+
 def check_spread(symbol: str, timeframe, bars: int = None) -> tuple[bool, float, float]:
     with mt5_lock:
         tick = mt5.symbol_info_tick(symbol)
     if not tick or tick.ask <= 0 or tick.bid <= 0:
         return False, 0.0, 0.0
     current_pct = (tick.ask - tick.bid) / tick.bid * 100
-    lookback = bars if bars is not None else int(getattr(config, "SPREAD_LOOKBACK_BARS", 10))
+    lookback = (
+        bars if bars is not None else int(getattr(config, "SPREAD_LOOKBACK_BARS", 10))
+    )
     avg_pct = get_avg_spread_pct(symbol, timeframe, lookback) or 0.0
     if current_pct > avg_pct and avg_pct > 0:
         return False, float(current_pct), float(avg_pct)
     return True, float(current_pct), float(avg_pct)
+
+
 def get_spread_trend(symbol: str, timeframe, bars: int = None) -> Optional[float]:
     try:
-        minutes = timeframe_to_minutes(timeframe) * max(int(bars or getattr(config, "SPREAD_LOOKBACK_BARS", 10)), 1)
+        minutes = timeframe_to_minutes(timeframe) * max(
+            int(bars or getattr(config, "SPREAD_LOOKBACK_BARS", 10)), 1
+        )
         start = datetime.now() - timedelta(minutes=minutes)
         with mt5_lock:
             ticks = mt5.copy_ticks_from(symbol, start, 100000, mt5.COPY_TICKS_ALL)
@@ -2329,6 +2723,8 @@ def get_spread_trend(symbol: str, timeframe, bars: int = None) -> Optional[float
         return float(late_mean - early_mean)
     except Exception:
         return None
+
+
 def get_threshold_for_symbol(symbol: str, key: str, default: float) -> float:
     try:
         s = str(symbol).upper()
@@ -2345,33 +2741,35 @@ def get_threshold_for_symbol(symbol: str, key: str, default: float) -> float:
         return float(v if v is not None else default)
     except Exception:
         return float(default)
+
+
 def get_obv(df: pd.DataFrame) -> Optional[float]:
     """
     Calcula OBV ignorando candle em aberto.
     """
     if df is None or len(df) < 20:
         return None
-    
+
     try:
         # 1. Escolha do volume (B3 usa tick_volume se real_volume for zero)
-        volume = df['tick_volume'].values
-        close = df['close'].values
-        
+        volume = df["tick_volume"].values
+        close = df["close"].values
+
         # 2. Lógica Vetorizada (MUITO mais rápida que loop 'for')
         # Cria array de direção: 1 se subiu, -1 se caiu, 0 se igual
         direction = np.sign(np.diff(close))
-        
+
         # O diff reduz o tamanho em 1, então alinhamos o volume do candle [1:]
         obv_changes = direction * volume[1:]
-        
+
         # Soma acumulada para gerar a linha do OBV
         # Usamos apenas até o candle [-2] para análise estável
         full_obv = np.cumsum(np.concatenate(([volume[0]], obv_changes)))
-        
+
         # 3. Retornamos o valor do ÚLTIMO CANDLE FECHADO (-2)
         # Isso garante que o volume da análise é real e completo
         return float(full_obv[-2])
-    
+
     except Exception as e:
         logger.error(f"Erro ao calcular OBV: {e}")
         return None
@@ -2381,45 +2779,46 @@ def get_obv(df: pd.DataFrame) -> Optional[float]:
 def is_obv_trending_up(df: pd.DataFrame, lookback: int = 20) -> bool:
     """
     ✅ Valida se OBV está em tendência de alta
-    
+
     Retorna True se:
     - OBV atual > média móvel de 20 períodos
     - OBV subiu nos últimos 5 candles
     """
     if df is None or len(df) < lookback + 5:
         return False
-    
+
     try:
         # Calcula OBV completo
-        volume = df.get('real_volume', df['tick_volume']).values
-        close = df['close'].values
+        volume = df.get("real_volume", df["tick_volume"]).values
+        close = df["close"].values
         price_changes = np.diff(close, prepend=close[0])
-        
+
         obv = np.zeros(len(close))
         for i in range(1, len(close)):
             if price_changes[i] > 0:
-                obv[i] = obv[i-1] + volume[i]
+                obv[i] = obv[i - 1] + volume[i]
             elif price_changes[i] < 0:
-                obv[i] = obv[i-1] - volume[i]
+                obv[i] = obv[i - 1] - volume[i]
             else:
-                obv[i] = obv[i-1]
-        
+                obv[i] = obv[i - 1]
+
         # Média móvel do OBV
-        obv_ma = np.convolve(obv, np.ones(lookback)/lookback, mode='valid')
-        
+        obv_ma = np.convolve(obv, np.ones(lookback) / lookback, mode="valid")
+
         obv_above_ma = obv[-1] > obv_ma[-1]
         obv_rising = obv[-1] > obv[-3]  # reduz lookback
-        
+
         return obv_above_ma or obv_rising
 
-    
     except Exception as e:
         logger.error(f"Erro ao validar OBV: {e}")
         return False
 
+
 # =========================================================
 # MACRO TREND
 # =========================================================
+
 
 def macro_trend_ok(symbol: str, side: str) -> bool:
     df = safe_copy_rates(symbol, TIMEFRAME_MACRO, 300)
@@ -2436,11 +2835,12 @@ def macro_trend_ok(symbol: str, side: str) -> bool:
 
     adx = get_adx(df)
     min_adx = 17 if TIMEFRAME_MACRO >= mt5.TIMEFRAME_H1 else 14
-    
+
     if adx is not None and adx < min_adx:
         return False
 
     return price > ema if side == "BUY" else price < ema
+
 
 class MultiTimeframeEngine:
     def _get_hierarchy(self, symbol: str) -> list:
@@ -2448,11 +2848,19 @@ class MultiTimeframeEngine:
         if is_future(s):
             return [mt5.TIMEFRAME_M5, mt5.TIMEFRAME_M15, mt5.TIMEFRAME_H1]
         return [mt5.TIMEFRAME_M15, mt5.TIMEFRAME_H1, mt5.TIMEFRAME_D1]
+
     def _calculate_signal(self, symbol: str, timeframe) -> dict:
         data_symbol = resolve_indicator_symbol(symbol)
         df = safe_copy_rates(data_symbol, timeframe, 200)
         if df is None or len(df) < 50:
-            return {"side": "NEUTRAL", "score": 0.0, "adx": 0.0, "ema_diff": 0.0, "volume_ratio": 0.0, "error": "no_data"}
+            return {
+                "side": "NEUTRAL",
+                "score": 0.0,
+                "adx": 0.0,
+                "ema_diff": 0.0,
+                "volume_ratio": 0.0,
+                "error": "no_data",
+            }
         ind = quick_indicators_custom(symbol, timeframe, df=df, params={})
         ema_fast = float(ind.get("ema_fast", 0) or 0)
         ema_slow = float(ind.get("ema_slow", 0) or 0)
@@ -2462,7 +2870,15 @@ class MultiTimeframeEngine:
         side = "BUY" if ema_fast > ema_slow else "SELL"
         diff = abs(ema_fast - ema_slow) / max(close, 1e-9)
         score = max(0.0, min(1.0, (diff * 100.0) / 2.0))
-        return {"side": side, "score": score, "adx": adx, "ema_diff": diff, "volume_ratio": vr, "data_symbol": data_symbol}
+        return {
+            "side": side,
+            "score": score,
+            "adx": adx,
+            "ema_diff": diff,
+            "volume_ratio": vr,
+            "data_symbol": data_symbol,
+        }
+
     def _check_conflicts(self, signals: dict, intended_side: str) -> list:
         conflicts = []
         keys = list(signals.keys())
@@ -2472,6 +2888,7 @@ class MultiTimeframeEngine:
             if side != "NEUTRAL" and side != intended_side:
                 conflicts.append(str(tf))
         return conflicts
+
     def _calculate_alignment(self, signals: dict, intended_side: str) -> float:
         total = 0
         aligned = 0
@@ -2484,33 +2901,69 @@ class MultiTimeframeEngine:
         if total == 0:
             return 0.0
         return float(aligned) / float(total)
-    def validate_entry(self, symbol: str, side: str, base_timeframe) -> tuple[bool, str, dict]:
+
+    def validate_entry(
+        self, symbol: str, side: str, base_timeframe
+    ) -> tuple[bool, str, dict]:
         hierarchy = self._get_hierarchy(symbol)
         signals = {}
         for tf in hierarchy:
             signals[tf] = self._calculate_signal(symbol, tf)
         conflicts = self._check_conflicts(signals, side)
         if conflicts:
-            return False, f"Conflito MTF em {', '.join(conflicts)}", {"signals": signals, "conflicts": conflicts, "alignment": 0.0}
+            return (
+                False,
+                f"Conflito MTF em {', '.join(conflicts)}",
+                {"signals": signals, "conflicts": conflicts, "alignment": 0.0},
+            )
         alignment = self._calculate_alignment(signals, side)
         if alignment < 0.70:
-            return False, f"Alinhamento {alignment:.0%}", {"signals": signals, "conflicts": conflicts, "alignment": alignment}
-        return True, f"MTF OK ({alignment:.0%})", {"signals": signals, "conflicts": conflicts, "alignment": alignment}
+            return (
+                False,
+                f"Alinhamento {alignment:.0%}",
+                {"signals": signals, "conflicts": conflicts, "alignment": alignment},
+            )
+        return (
+            True,
+            f"MTF OK ({alignment:.0%})",
+            {"signals": signals, "conflicts": conflicts, "alignment": alignment},
+        )
+
 
 class FilterChain:
     def __init__(self):
         self.filters = {
-            "capital_available": {"priority": 1, "mandatory": True, "bypass_conditions": None},
-            "mtf_alignment": {"priority": 2, "mandatory": True, "bypass_conditions": None},
-            "spread_gate": {"priority": 2, "mandatory": True, "bypass_conditions": None},
-            "risk_limits": {"priority": 3, "mandatory": True, "bypass_conditions": None},
+            "capital_available": {
+                "priority": 1,
+                "mandatory": True,
+                "bypass_conditions": None,
+            },
+            "mtf_alignment": {
+                "priority": 2,
+                "mandatory": True,
+                "bypass_conditions": None,
+            },
+            "spread_gate": {
+                "priority": 2,
+                "mandatory": True,
+                "bypass_conditions": None,
+            },
+            "risk_limits": {
+                "priority": 3,
+                "mandatory": True,
+                "bypass_conditions": None,
+            },
             "ml_confidence": {
                 "priority": 4,
                 "mandatory": False,
                 "bypass_conditions": {
                     "high_adx": lambda ind: float(ind.get("adx", 0) or 0) > 40,
-                    "strong_trend": lambda ind: float(ind.get("ema_diff", 0) or 0) > 0.02,
-                    "high_volume": lambda ind: float(ind.get("volume_ratio", 0) or 0) > 2.0,
+                    "strong_trend": lambda ind: (
+                        float(ind.get("ema_diff", 0) or 0) > 0.02
+                    ),
+                    "high_volume": lambda ind: (
+                        float(ind.get("volume_ratio", 0) or 0) > 2.0
+                    ),
                 },
                 "bypass_threshold": 2,
             },
@@ -2533,7 +2986,10 @@ class FilterChain:
                 "bypass_threshold": 1,
             },
         }
-    def _execute_filter(self, name: str, symbol: str, side: str, indicators: dict) -> tuple[bool, str]:
+
+    def _execute_filter(
+        self, name: str, symbol: str, side: str, indicators: dict
+    ) -> tuple[bool, str]:
         if name == "capital_available":
             tick = cached_symbol_info_tick(symbol)
             if not tick:
@@ -2567,6 +3023,7 @@ class FilterChain:
         if name == "ml_confidence":
             try:
                 from ml_signals import MLSignalPredictor
+
                 pred = MLSignalPredictor()
                 p = pred.predict(symbol, indicators)
                 conf = float(p.get("confidence", 0) or 0)
@@ -2604,6 +3061,7 @@ class FilterChain:
             ok, reason = check_anti_chop_filter(symbol, price, atr)
             return ok, reason or ""
         return True, ""
+
     def _check_bypass(self, filter_name: str, indicators: dict, config: dict) -> bool:
         conditions_met = 0
         for _, fn in (config.get("bypass_conditions") or {}).items():
@@ -2613,6 +3071,7 @@ class FilterChain:
             except Exception:
                 continue
         return conditions_met >= int(config.get("bypass_threshold", 99) or 99)
+
     def validate(self, symbol: str, side: str, indicators: dict) -> tuple[bool, str]:
         for fname, cfg in sorted(self.filters.items(), key=lambda x: x[1]["priority"]):
             passed, reason = self._execute_filter(fname, symbol, side, indicators)
@@ -2624,9 +3083,11 @@ class FilterChain:
                 return False, f"{fname}: {reason}"
         return True, "OK"
 
+
 class _TTLCache:
     def __init__(self):
         self._data = {}
+
     def get(self, key: str, max_age: int):
         v = self._data.get(key)
         if not v:
@@ -2635,14 +3096,18 @@ class _TTLCache:
         if (time.time() - ts) > max_age:
             return None
         return val
+
     def set(self, key: str, value, ttl: int):
         self._data[key] = (time.time(), value)
+
 
 class ConcurrentMarketScanner:
     def __init__(self, max_workers: int = 4):
         from concurrent.futures import ThreadPoolExecutor
+
         self.executor = ThreadPoolExecutor(max_workers=max_workers)
         self.cache = _TTLCache()
+
     def _scan_futures_fast(self, symbols: list) -> dict:
         results = {}
         for symbol in symbols:
@@ -2658,18 +3123,21 @@ class ConcurrentMarketScanner:
                 "rsi": get_rsi(df, period=14),
                 "ema_fast": float(df["close"].ewm(span=9).mean().iloc[-1]),
                 "ema_slow": float(df["close"].ewm(span=21).mean().iloc[-1]),
-                "volume_ratio": float(df["volume"].iloc[-1]) / max(float(df["volume"].rolling(20).mean().iloc[-1]), 1.0),
+                "volume_ratio": float(df["volume"].iloc[-1])
+                / max(float(df["volume"].rolling(20).mean().iloc[-1]), 1.0),
                 "price": float(df["close"].iloc[-1]),
             }
             self.cache.set(symbol, ind, 5)
             results[symbol] = ind
         return results
+
     def _analyze_symbol(self, s: str) -> tuple[str, dict]:
         df = safe_copy_rates(s, mt5.TIMEFRAME_M15, 100)
         if df is None or len(df) < 20:
             return s, {}
         ind = quick_indicators_custom(s, mt5.TIMEFRAME_M15, df=df, params={})
         return s, ind
+
     def scan_market(self, symbols: list) -> dict:
         futures = [s for s in symbols if is_future(s)]
         stocks = [s for s in symbols if not is_future(s)]
@@ -2682,7 +3150,10 @@ class ConcurrentMarketScanner:
                 pass
         if stocks:
             from concurrent.futures import as_completed
-            futures_list = [self.executor.submit(self._analyze_symbol, s) for s in stocks]
+
+            futures_list = [
+                self.executor.submit(self._analyze_symbol, s) for s in stocks
+            ]
             try:
                 for fut in as_completed(futures_list, timeout=10):
                     k, v = fut.result()
@@ -2691,31 +3162,33 @@ class ConcurrentMarketScanner:
                 pass
         return results
 
+
 # =========================================================
 # INDICADORES CONSOLIDADOS (SEM SCORE)
 # =========================================================
 
+
 def get_momentum(df: pd.DataFrame, period: int = 10) -> Optional[float]:
     """
     Calcula momentum (Rate of Change)
-    
+
     Momentum = (preço_atual - preço_passado) / preço_passado
-    
+
     Args:
         df: DataFrame com coluna 'close'
         period: Quantos candles olhar para trás (padrão: 10)
-    
+
     Returns:
         Momentum como float (ex: 0.05 = 5% de alta)
     """
     if df is None or len(df) < period + 1:
         return None
-    
-    close = df['close']
-    
+
+    close = df["close"]
+
     # Momentum = mudança percentual em N períodos
     momentum = (close.iloc[-1] - close.iloc[-period - 1]) / close.iloc[-period - 1]
-    
+
     return float(momentum)
 
 
@@ -2774,20 +3247,22 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
             df2 = safe_copy_rates(data_symbol, timeframe, 300)
             if df2 is not None and _df_has_valid_ohlc(df2):
                 df = df2
-                close = df["close"]; high = df["high"]; low = df["low"]
+                close = df["close"]
+                high = df["high"]
+                low = df["low"]
                 price = float(close.iloc[-1])
                 delta = close.diff()
                 up = delta.clip(lower=0).rolling(14).mean()
                 down = -delta.clip(upper=0).rolling(14).mean()
                 rsi = (100 - (100 / (1 + up / down))).iloc[-1]
                 atr = get_atr(df)
-                adx = (get_adx(df) or 0.0)
+                adx = get_adx(df) or 0.0
     except Exception:
         pass
 
     # --- ✅ MOMENTUM (NOVO!) ---
     momentum = get_momentum(df, period=10)  # ROC de 10 períodos
-    
+
     # Tratamento de valores extremos
     if momentum is not None:
         # Cap em ±50% (protege contra outliers)
@@ -2804,7 +3279,7 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
         atr_price = atr * point
     else:
         atr_price = atr
-    
+
     atr_pct_real = (atr_price / price) * 100 if price > 0 else 0
 
     # --- ✅ SPREAD REAL-TIME (LAND TRADING STYLE) ---
@@ -2812,7 +3287,7 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
     spread_nominal = 0
     spread_pct = 0
     spread_points = 0
-    
+
     if tick and tick.ask > 0 and tick.bid > 0:
         spread_nominal = tick.ask - tick.bid
         info_tick = mt5.symbol_info(trade_symbol) or mt5.symbol_info(data_symbol)
@@ -2823,7 +3298,7 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
         spread_pct = (spread_nominal / tick.bid) * 100 if tick.bid > 0 else 0
 
     # --- Z-SCORE DE VOLATILIDADE ---
-    vol_series = df['close'].pct_change().rolling(20).std() * 100
+    vol_series = df["close"].pct_change().rolling(20).std() * 100
     atr_mean = vol_series.mean()
     atr_std = vol_series.std()
     z_score = (atr_pct_real - atr_mean) / atr_std if (atr_std and atr_std > 0) else 0
@@ -2832,12 +3307,18 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
     # --- VOLUME ---
     avg_vol = get_avg_volume(df)
 
-    min_avg_vol = getattr(config, "MIN_AVG_VOLUME_FUTURES", 0) if is_future(trade_symbol) else getattr(config, "MIN_AVG_VOLUME", 4000)
+    min_avg_vol = (
+        getattr(config, "MIN_AVG_VOLUME_FUTURES", 0)
+        if is_future(trade_symbol)
+        else getattr(config, "MIN_AVG_VOLUME", 4000)
+    )
 
     if avg_vol < min_avg_vol:
-        logger.info(f"{requested_symbol}: Bloqueado por micro-liquidez ({avg_vol:,.0f})")
+        logger.info(
+            f"{requested_symbol}: Bloqueado por micro-liquidez ({avg_vol:,.0f})"
+        )
         return {"error": "low_liquidity"}
-    
+
     # ✅ CORREÇÃO MIOPIA DE VOLUME: Ignorar candle em aberto (-1) e usar o último fechado (-2)
     cur_vol = 0
     if len(df) > 1:
@@ -2847,15 +3328,18 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
         v_col = "real_volume" if "real_volume" in df.columns else "tick_volume"
         cur_vol = df[v_col].iloc[-1]
 
-            
     volume_ratio = round(cur_vol / max(avg_vol, 1), 2)
     volume_ratio = min(volume_ratio, 3.0)
 
-    atr_series_data = pd.concat([
-        high - low,
-        (high - close.shift()).abs(),
-        (low - close.shift()).abs()
-    ], axis=1).max(axis=1).ewm(alpha=1 / 14, adjust=False).mean()
+    atr_series_data = (
+        pd.concat(
+            [high - low, (high - close.shift()).abs(), (low - close.shift()).abs()],
+            axis=1,
+        )
+        .max(axis=1)
+        .ewm(alpha=1 / 14, adjust=False)
+        .mean()
+    )
 
     atr_mean_val = atr_series_data.rolling(20).mean().iloc[-1]
     side = "BUY" if ema_fast > ema_slow else "SELL"
@@ -2863,7 +3347,9 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
     obv_value = get_obv(df)
     obv_trend_up = is_obv_trending_up(df)
     vwap_stats = get_intraday_vwap_stats(df)
-    vwap_val = vwap_stats["vwap"] if isinstance(vwap_stats, dict) else get_intraday_vwap(df)
+    vwap_val = (
+        vwap_stats["vwap"] if isinstance(vwap_stats, dict) else get_intraday_vwap(df)
+    )
     vwap_std = vwap_stats["std"] if isinstance(vwap_stats, dict) else None
     vwap_upper = vwap_stats["upper_2sd"] if isinstance(vwap_stats, dict) else None
     vwap_lower = vwap_stats["lower_2sd"] if isinstance(vwap_stats, dict) else None
@@ -2888,7 +3374,9 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
         "atr_zscore": round(z_score, 2),
         "momentum": round(momentum, 6),  # ✅ NOVO!
         "volume_ratio": volume_ratio,
-        "vol_breakout": is_volatility_breakout(df, atr, atr_mean_val, volume_ratio, side),
+        "vol_breakout": is_volatility_breakout(
+            df, atr, atr_mean_val, volume_ratio, side
+        ),
         "vwap": vwap_val,
         "vwap_std": vwap_std,
         "vwap_upper_2sd": vwap_upper,
@@ -2900,76 +3388,93 @@ def quick_indicators_custom(symbol, timeframe, df=None, params=None):
         "spread_pct": round(spread_pct, 4),  # 🆕 NOVO (%)
         "close": price,
         "macro_trend_ok": macro_trend_ok(symbol, side),
-        "tick_size": mt5.symbol_info(symbol).point,
+        "tick_size": mt5.symbol_info(symbol).point if mt5.symbol_info(symbol) else 0.0,
         "params": params,
-        "error": None
+        "error": None,
     }
 
-def check_volatility_filter(symbol: str, atr: float, current_price: float) -> tuple[bool, str]:
+
+def check_volatility_filter(
+    symbol: str, atr: float, current_price: float
+) -> tuple[bool, str]:
     """
     🌊 FILTRO DE VOLATILIDADE ADAPTATIVO
-    
+
     Bloqueia entradas em condições extremas:
     - Volatilidade >3 desvios padrão
     - ATR expandindo muito rápido (>50% em 5 candles)
     - "Chop zones" (oscilação sem direção)
-    
+
     Returns:
         (pode_entrar: bool, motivo: str)
-    
+
     Impacto: +5-8% win rate (evita whipsaws)
     """
     try:
         df = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_M15, 50)
-        
+
         if df is None or len(df) < 30:
             return True, ""
-        
+
         # 1. Z-Score de Volatilidade (já existe no código)
-        vol_series = df['close'].pct_change().rolling(20).std() * 100
+        vol_series = df["close"].pct_change().rolling(20).std() * 100
         atr_pct_real = (atr / current_price) * 100 if current_price > 0 else 0
-        
-        z_score = (atr_pct_real - vol_series.mean()) / vol_series.std() if vol_series.std() > 0 else 0
-        
+
+        z_score = (
+            (atr_pct_real - vol_series.mean()) / vol_series.std()
+            if vol_series.std() > 0
+            else 0
+        )
+
         # ✅ NOVO: Threshold mais restritivo
         if abs(z_score) > 3.0:
             return False, f"Volatilidade extrema (z={z_score:.2f})"
-        
+
         # 2. ✅ NOVO: Detecta expansão rápida de ATR
-        atr_series = pd.concat([
-            df['high'] - df['low'],
-            (df['high'] - df['close'].shift()).abs(),
-            (df['low'] - df['close'].shift()).abs()
-        ], axis=1).max(axis=1).ewm(alpha=1/14, adjust=False).mean()
-        
+        atr_series = (
+            pd.concat(
+                [
+                    df["high"] - df["low"],
+                    (df["high"] - df["close"].shift()).abs(),
+                    (df["low"] - df["close"].shift()).abs(),
+                ],
+                axis=1,
+            )
+            .max(axis=1)
+            .ewm(alpha=1 / 14, adjust=False)
+            .mean()
+        )
+
         recent_atr = atr_series.tail(5)
         atr_change = (recent_atr.iloc[-1] - recent_atr.iloc[0]) / recent_atr.iloc[0]
-        
+
         if atr_change > 0.75:  # >50% em 5 candles
-            return False, f"ATR expandindo rápido ({atr_change*100:.0f}%)"
-        
+            return False, f"ATR expandindo rápido ({atr_change * 100:.0f}%)"
+
         # 3. ✅ NOVO: Detecta "Chop Zones" (Range sem direção)
         # ADX baixo + ATR alto = mercado lateral violento
         adx = utils.get_adx(df) or 0
-        
+
         if adx < 13 and atr_pct_real > 2.5:
             return False, f"Chop Zone (ADX {adx:.0f}, ATR {atr_pct_real:.1f}%)"
-        
+
         # 4. ✅ NOVO: Valida se está em "squeeze" (Bollinger Bands apertadas)
-        bb_std = df['close'].rolling(20).std()
-        bb_width = (bb_std.iloc[-1] / df['close'].iloc[-1]) * 100
-        
+        bb_std = df["close"].rolling(20).std()
+        bb_width = (bb_std.iloc[-1] / df["close"].iloc[-1]) * 100
+
         if bb_width < 1.0 and atr_change > 0.30:
             # Bollinger estreitando + ATR subindo = possível breakout falso
             return False, "Possível falso breakout"
-        
+
         return True, ""
-    
+
     except Exception as e:
         logger.error(f"Erro filtro volatilidade {symbol}: {e}")
         return True, ""
 
+
 from datetime import datetime, date
+
 
 def calculate_daily_dd() -> float:
     """
@@ -2994,14 +3499,17 @@ def calculate_daily_dd() -> float:
         logger.error(f"Erro ao calcular DD diário: {e}")
         return 0.0
 
+
 # =========================================================
 # SCORE FINAL
 # =========================================================
-def calculate_signal_score(ind: dict, regime: str = "NEUTRAL", adx_min: float = 15.0) -> float:
+def calculate_signal_score(
+    ind: dict, regime: str = "NEUTRAL", adx_min: float = 15.0
+) -> float:
     """
     ✅ VERSÃO v5.6 (ADAPTATIVA)
     Score dinâmico baseado no regime de mercado e custo operacional.
-    
+
     Args:
         ind: Dicionário de indicadores
         regime: "TREND", "REVERSION", "NEUTRAL"
@@ -3028,7 +3536,9 @@ def calculate_signal_score(ind: dict, regime: str = "NEUTRAL", adx_min: float = 
     try:
         min_ticks = getattr(config, "MIN_VOLATILITY_TICKS", 12)
         if symbol:
-            tick_size = mt5.symbol_info(symbol).point if mt5.symbol_info(symbol) else 0.0
+            tick_size = (
+                mt5.symbol_info(symbol).point if mt5.symbol_info(symbol) else 0.0
+            )
             if tick_size > 0:
                 min_atr_val = min_ticks * tick_size
                 if atr_real < min_atr_val:
@@ -3041,48 +3551,48 @@ def calculate_signal_score(ind: dict, regime: str = "NEUTRAL", adx_min: float = 
     if regime == "TREND":
         # 🚀 REGIME DE TENDÊNCIA
         # Foca em cruzamento de médias e ADX forte
-        
+
         # 1. TENDÊNCIA EMA (Peso Aumentado: 40 pts)
         if ema_fast > 0 and ema_slow > 0:
             if ema_fast > ema_slow:
                 score += 40
                 score_log["EMA_TREND_STRONG"] = 40
             else:
-                score -= 30 # Penaliza mais forte contra a tendência
+                score -= 30  # Penaliza mais forte contra a tendência
                 score_log["EMA_COUNTER_TREND"] = -30
 
         # 2. RSI (Mais permissivo: aceita até 80 em tendência forte)
         if 40 <= rsi <= 80:
             score += 15
             score_log["RSI_TREND_OK"] = 15
-            
+
         # 3. ADX (Peso Aumentado: 25 pts)
         if adx >= adx_min:
             score += 25
             score_log["ADX_STRONG"] = 25
-            
+
     elif regime == "REVERSION":
         # 🔄 REGIME DE REVERSÃO (Lateral)
         # Foca em RSI esticado e ignora médias longas
-        
+
         # 1. TENDÊNCIA EMA (Peso Reduzido: 15 pts)
         # Em lateralidade, médias cruzam toda hora (ruído)
         if ema_fast > ema_slow:
             score += 15
             score_log["EMA_WEAK"] = 15
-            
+
         # 2. RSI (Foca em reversão à média: 30-70 é "meio de campo")
         # Se RSI cruzou 30 pra cima ou 70 pra baixo recentemente (difícil ver aqui sem histórico)
         # Por enquanto, mantemos lógica segura: operar "meio" é seguro, extremos perigosos.
         if 35 <= rsi <= 65:
             score += 30
             score_log["RSI_MEAN_REVERSION"] = 30
-            
+
         # 3. ADX (Deve ser BAIXO em reversão)
         if adx < 25:
             score += 20
             score_log["ADX_LOW_REVERSION"] = 20
-            
+
     else:
         # 😐 NEUTRAL (Lógica Padrão v5.5)
         if ema_fast > ema_slow:
@@ -3091,11 +3601,11 @@ def calculate_signal_score(ind: dict, regime: str = "NEUTRAL", adx_min: float = 
         else:
             score -= 20
             score_log["EMA_COUNTER_TREND"] = -20
-            
+
         if 30 <= rsi <= 70:
             score += 20
             score_log["RSI_HEALTHY"] = 20
-            
+
         if adx >= adx_min:
             score += 20
             score_log["ADX_OK"] = 20
@@ -3106,7 +3616,9 @@ def calculate_signal_score(ind: dict, regime: str = "NEUTRAL", adx_min: float = 
         score_log["VOLUME_OK"] = 25
 
     # 5. MACD BONUS (+10 pts)
-    if (ema_fast > ema_slow and macd > macd_signal) or (ema_fast < ema_slow and macd < macd_signal):
+    if (ema_fast > ema_slow and macd > macd_signal) or (
+        ema_fast < ema_slow and macd < macd_signal
+    ):
         score += 10
         score_log["MACD_BONUS"] = 10
 
@@ -3126,7 +3638,7 @@ def calculate_signal_score(ind: dict, regime: str = "NEUTRAL", adx_min: float = 
         if ind.get("symbol"):
             flow = analyze_flow_sentiment(ind["symbol"], 30)
             sentiment = flow.get("sentiment", "NEUTRAL")
-            
+
             # Bonifica se fluxo concorda com a tendência
             if sentiment == "BULLISH" and ema_fast > ema_slow:
                 score += 15
@@ -3145,6 +3657,7 @@ def calculate_signal_score(ind: dict, regime: str = "NEUTRAL", adx_min: float = 
 
     return round(final_score, 1)
 
+
 def check_arbitrage_opp(sym1: str, sym2: str) -> bool:
     """
     Detecta arbitragem entre pares correlacionados (ex: PETR3 vs PETR4, web:5).
@@ -3153,16 +3666,17 @@ def check_arbitrage_opp(sym1: str, sym2: str) -> bool:
     df2 = safe_copy_rates(sym2, mt5.TIMEFRAME_M15, 10)
     if df1 is None or df2 is None:
         return False
-    
-    ratio = df1['close'] / df2['close']
+
+    ratio = df1["close"] / df2["close"]
     current_ratio = ratio.iloc[-1]
     mean_ratio = ratio.mean()
     std_ratio = ratio.std()
 
     if abs(current_ratio - mean_ratio) > 2.2 * std_ratio:
         return True
-    
+
     return False
+
 
 def check_and_close_orphans(active_signals: dict):
     with mt5_lock:
@@ -3173,9 +3687,10 @@ def check_and_close_orphans(active_signals: dict):
             if pos.time_update + 120 < time.time():  # 2 minutos de tolerância
                 logger.warning(f"Posição órfã detectada: {pos.symbol}")
                 send_telegram_exit(
-                    symbol=pos.symbol,
-                    reason="Posição órfã (sem sinal ativo)"
+                    symbol=pos.symbol, reason="Posição órfã (sem sinal ativo)"
                 )
+
+
 def get_avg_volume(df, window: int = 20):
     if not is_valid_dataframe(df):
         return 0
@@ -3188,7 +3703,8 @@ def get_avg_volume(df, window: int = 20):
         return 0
 
     # Corrigido para usar os últimos 'window' candles FECHADOS (ignorando iloc[-1])
-    return df[vol_col].iloc[-(window+1):-1].mean()
+    return df[vol_col].iloc[-(window + 1) : -1].mean()
+
 
 def get_open_gap(symbol: str, timeframe) -> float | None:
     df = safe_copy_rates(symbol, timeframe, 2)
@@ -3202,8 +3718,10 @@ def get_open_gap(symbol: str, timeframe) -> float | None:
 
     return abs((open_price - prev_close) / prev_close) * 100.0
 
-def resolve_signal_weights(symbol, sector, base_weights,
-                           sector_weights=None, symbol_weights=None):
+
+def resolve_signal_weights(
+    symbol, sector, base_weights, sector_weights=None, symbol_weights=None
+):
     w = base_weights.copy()
 
     if sector_weights and sector in sector_weights:
@@ -3215,6 +3733,7 @@ def resolve_signal_weights(symbol, sector, base_weights,
             w[k] *= v
 
     return w
+
 
 def update_symbol_weights(symbol, sector, score_log, trade_result):
     global symbol_weights
@@ -3233,6 +3752,7 @@ def update_symbol_weights(symbol, sector, score_log, trade_result):
 
 _bot_instance = None
 
+
 # =========================================================
 # 📊 ANÁLISE DE FLUXO (TAPE READING)
 # =========================================================
@@ -3245,67 +3765,67 @@ def analyze_flow_sentiment(symbol: str, duration_seconds: int = 60) -> dict:
         # Pega ticks reais (com flags de agressão)
         now = datetime.now()
         ticks = mt5.copy_ticks_range(
-            symbol, 
-            now - timedelta(seconds=duration_seconds), 
-            now, 
-            mt5.COPY_TICKS_ALL
+            symbol, now - timedelta(seconds=duration_seconds), now, mt5.COPY_TICKS_ALL
         )
-        
+
         if ticks is None or len(ticks) < 10:
             return {"sentiment": "NEUTRAL", "aggression_delta": 0, "flow_ratio": 0.5}
-            
+
         # Converte para DataFrame
         df = pd.DataFrame(ticks)
-        
+
         # Filtra agressões (TICK_FLAG_BUY = 32, TICK_FLAG_SELL = 64)
         # Nota: As flags podem variar, mas geralmente:
         # Buy: (flags & mt5.TICK_FLAG_BUY) == mt5.TICK_FLAG_BUY
         # Sell: (flags & mt5.TICK_FLAG_SELL) == mt5.TICK_FLAG_SELL
-        
+
         buy_aggression_vol = 0.0
         sell_aggression_vol = 0.0
-        
+
         # Iteração otimizada
-        buy_mask = (df['flags'] & mt5.TICK_FLAG_BUY) == mt5.TICK_FLAG_BUY
-        sell_mask = (df['flags'] & mt5.TICK_FLAG_SELL) == mt5.TICK_FLAG_SELL
-        
-        if 'volume' in df.columns:
-            buy_aggression_vol = df.loc[buy_mask, 'volume'].sum()
-            sell_aggression_vol = df.loc[sell_mask, 'volume'].sum()
-            
+        buy_mask = (df["flags"] & mt5.TICK_FLAG_BUY) == mt5.TICK_FLAG_BUY
+        sell_mask = (df["flags"] & mt5.TICK_FLAG_SELL) == mt5.TICK_FLAG_SELL
+
+        if "volume" in df.columns:
+            buy_aggression_vol = df.loc[buy_mask, "volume"].sum()
+            sell_aggression_vol = df.loc[sell_mask, "volume"].sum()
+
         total_aggression = buy_aggression_vol + sell_aggression_vol
-        
+
         if total_aggression == 0:
             return {"sentiment": "NEUTRAL", "aggression_delta": 0, "flow_ratio": 0.5}
-            
+
         aggression_delta = buy_aggression_vol - sell_aggression_vol
-        flow_ratio = buy_aggression_vol / total_aggression # > 0.5 = Comprador
-        
+        flow_ratio = buy_aggression_vol / total_aggression  # > 0.5 = Comprador
+
         sentiment = "NEUTRAL"
         if flow_ratio > 0.60:
             sentiment = "BULLISH"
         elif flow_ratio < 0.40:
             sentiment = "BEARISH"
-            
+
         # Calcula aceleração do fluxo (últimos 10s vs média)
         # TODO: Implementar se necessário
-        
+
         return {
             "sentiment": sentiment,
             "aggression_delta": aggression_delta,
             "flow_ratio": flow_ratio,
-            "total_volume": total_aggression
+            "total_volume": total_aggression,
         }
-        
+
     except Exception as e:
         logger.error(f"Erro na análise de fluxo {symbol}: {e}")
         return {"sentiment": "NEUTRAL", "aggression_delta": 0, "flow_ratio": 0.5}
+
 
 def get_telegram_bot():
     global _bot_instance
     if _bot_instance is None and getattr(config, "ENABLE_TELEGRAM_NOTIF", False):
         if telebot is None:
-            logger.error("telebot não está instalado. Instale com: pip install pyTelegramBotAPI")
+            logger.error(
+                "telebot não está instalado. Instale com: pip install pyTelegramBotAPI"
+            )
             return None
         try:
             _bot_instance = telebot.TeleBot(config.TELEGRAM_BOT_TOKEN)
@@ -3315,7 +3835,16 @@ def get_telegram_bot():
             _bot_instance = None
     return _bot_instance
 
-def send_telegram_exit(symbol: str, side: str = "", volume: float = 0, entry_price: float = 0, exit_price: float = 0, profit_loss: float = 0, reason: str = ""):
+
+def send_telegram_exit(
+    symbol: str,
+    side: str = "",
+    volume: float = 0,
+    entry_price: float = 0,
+    exit_price: float = 0,
+    profit_loss: float = 0,
+    reason: str = "",
+):
     bot = get_telegram_bot()
     if not bot:
         logger.warning("⚠️ Telegram: Bot não disponível para saída")
@@ -3323,6 +3852,7 @@ def send_telegram_exit(symbol: str, side: str = "", volume: float = 0, entry_pri
     try:
         if (profit_loss < 0) or ("stop" in (reason or "").lower()):
             from validation import register_stop_loss
+
             register_stop_loss(symbol)
     except Exception:
         pass
@@ -3332,9 +3862,13 @@ def send_telegram_exit(symbol: str, side: str = "", volume: float = 0, entry_pri
     lucro_realizado_total, _ = calcular_lucro_realizado_txt()
 
     # Cálculo do Valor Total da Operação
-    total_value = volume * exit_price 
+    total_value = volume * exit_price
     pl_emoji = "🟢" if profit_loss > 0 else "🔴"
-    pl_pct = (profit_loss / max(entry_price * volume, 1)) * 100 if entry_price > 0 and volume > 0 else 0
+    pl_pct = (
+        (profit_loss / max(entry_price * volume, 1)) * 100
+        if entry_price > 0 and volume > 0
+        else 0
+    )
 
     msg = (
         f"{pl_emoji} <b>XP3 — POSIÇÃO ENCERRADA</b>\n\n"
@@ -3345,29 +3879,32 @@ def send_telegram_exit(symbol: str, side: str = "", volume: float = 0, entry_pri
         f"<b>Resultado:</b> R${profit_loss:+.2f} ({pl_pct:+.2f}%)\n"
         f"<b>Motivo:</b> {reason}\n"
         f"---------------------------\n"
-        f"💰 <b>LUCRO NO BOLSO HOJE: R$ {lucro_realizado_total:,.2f}</b>\n" # AQUI A NOVIDADE!
+        f"💰 <b>LUCRO NO BOLSO HOJE: R$ {lucro_realizado_total:,.2f}</b>\n"  # AQUI A NOVIDADE!
         f"---------------------------\n"
         f"<i>⏱ {datetime.now().strftime('%H:%M:%S')}</i>"
     )
 
     try:
-        bot.send_message(
-            chat_id=config.TELEGRAM_CHAT_ID,
-            text=msg,
-            parse_mode="HTML"
-        )
+        bot.send_message(chat_id=config.TELEGRAM_CHAT_ID, text=msg, parse_mode="HTML")
         logger.info(f"✅ Telegram: Notificação de SAÍDA enviada com Lucro Acumulado")
     except Exception as e:
         logger.error(f"Erro ao enviar Telegram: {e}")
 
-def close_position(symbol: str, ticket: int, volume: float, price: float, reason: str = "Saída Estratégica"):
-    
-    
+
+def close_position(
+    symbol: str,
+    ticket: int,
+    volume: float,
+    price: float,
+    reason: str = "Saída Estratégica",
+):
+
     # CVM Compliance: Log em CSV
-    
+
     import csv
     import os
     from datetime import datetime
+
     # Identifica o tipo da posição pelo ticket para saber o lado oposto
     pos = mt5.positions_get(ticket=ticket)
     if not pos:
@@ -3376,8 +3913,10 @@ def close_position(symbol: str, ticket: int, volume: float, price: float, reason
 
     pos = pos[0]
     # Se a posição é de COMPRA (0), fechamos com VENDA (1) e vice-versa
-    order_type = mt5.ORDER_TYPE_SELL if pos.type == mt5.POSITION_TYPE_BUY else mt5.ORDER_TYPE_BUY
-    
+    order_type = (
+        mt5.ORDER_TYPE_SELL if pos.type == mt5.POSITION_TYPE_BUY else mt5.ORDER_TYPE_BUY
+    )
+
     # Validar tick antes de montar request
     tick = mt5.symbol_info_tick(symbol)
     if not tick:
@@ -3390,7 +3929,7 @@ def close_position(symbol: str, ticket: int, volume: float, price: float, reason
         "symbol": symbol,
         "volume": float(volume),
         "type": order_type,
-        "position": ticket, # OBRIGATÓRIO para fechar a posição correta
+        "position": ticket,  # OBRIGATÓRIO para fechar a posição correta
         "price": price_exec,
         "deviation": get_dynamic_slippage(symbol, datetime.now().hour),
         "magic": 2026,
@@ -3404,10 +3943,12 @@ def close_position(symbol: str, ticket: int, volume: float, price: float, reason
         if result.retcode != mt5.TRADE_RETCODE_DONE:
             logger.error(f"❌ Falha ao fechar {symbol}: {result.comment}")
             return False
-        
+
         # Se fechou com sucesso, envia o log de saída e notifica Telegram
-        logger.info(f"✅ SAÍDA EXECUTADA: {symbol} | Motivo: {reason} | P&L: R${pos.profit:.2f}")
-        
+        logger.info(
+            f"✅ SAÍDA EXECUTADA: {symbol} | Motivo: {reason} | P&L: R${pos.profit:.2f}"
+        )
+
         # Chama sua função de Telegram já existente no utils.py
         send_telegram_exit(
             symbol=symbol,
@@ -3416,9 +3957,9 @@ def close_position(symbol: str, ticket: int, volume: float, price: float, reason
             entry_price=pos.price_open,
             exit_price=price,
             profit_loss=result.profit if hasattr(result, "profit") else pos.profit,
-            reason=reason
+            reason=reason,
         )
-        
+
         # ✅ Atualiza Streak de Perdas/Ganhos
         pl = result.profit if hasattr(result, "profit") else pos.profit
         if pl < 0:
@@ -3428,6 +3969,7 @@ def close_position(symbol: str, ticket: int, volume: float, price: float, reason
 
         try:
             from validation import register_stop_loss
+
             if pl < 0:
                 register_stop_loss(symbol)
         except Exception:
@@ -3436,24 +3978,48 @@ def close_position(symbol: str, ticket: int, volume: float, price: float, reason
         # ✅ Compliance CVM: trades_compliance.csv
         compliance_file = "trades_compliance.csv"
         file_exists = os.path.isfile(compliance_file)
-        
+
         try:
             import csv
-            with open(compliance_file, mode='a', newline='', encoding='utf-8') as f:
+
+            with open(compliance_file, mode="a", newline="", encoding="utf-8") as f:
                 writer = csv.writer(f)
                 if not file_exists:
-                    writer.writerow(["Timestamp", "Ticket", "Symbol", "Volume", "Entry_Price", "Exit_Price", "Profit", "Reason"])
-                writer.writerow([datetime.now().isoformat(), ticket, symbol, volume, pos.price_open, price, pos.profit, reason])
+                    writer.writerow(
+                        [
+                            "Timestamp",
+                            "Ticket",
+                            "Symbol",
+                            "Volume",
+                            "Entry_Price",
+                            "Exit_Price",
+                            "Profit",
+                            "Reason",
+                        ]
+                    )
+                writer.writerow(
+                    [
+                        datetime.now().isoformat(),
+                        ticket,
+                        symbol,
+                        volume,
+                        pos.price_open,
+                        price,
+                        pos.profit,
+                        reason,
+                    ]
+                )
         except Exception as e:
             logger.error(f"Erro ao salvar compliance CSV: {e}")
 
         return True
+
+
 adaptive_lock = threading.Lock()
+
+
 def save_adaptive_weights():
-    data = {
-        "symbol": symbol_weights,
-        "sector": sector_weights
-    }
+    data = {"symbol": symbol_weights, "sector": sector_weights}
 
     tmp_path = "adaptive_weights.tmp"
     final_path = "adaptive_weights.json"
@@ -3506,6 +4072,7 @@ def load_adaptive_weights():
 
     return
 
+
 def update_adaptive_weights():
     """
     Inicializa pesos adaptativos de forma segura e compatível
@@ -3531,7 +4098,7 @@ def update_adaptive_weights():
         "EMA_COUNTER",
         "MOMENTUM_POS",
         "MACD_CROSS",
-        "ML_BOOST"
+        "ML_BOOST",
     ]
 
     # =========================
@@ -3606,7 +4173,10 @@ def check_liquidity(symbol: str, threshold_pct: float = 0.4):
         logger.error(f"Erro check_liquidity real-time {symbol}: {e}")
         return False
 
-def calculate_position_size_atr(symbol: str, atr_dist: float, risk_money: float = None) -> float:
+
+def calculate_position_size_atr(
+    symbol: str, atr_dist: float, risk_money: float = None
+) -> float:
     """
     ✅ POSITION SIZING B3: Risco 1% com base no ATR (Jan/2026)
     """
@@ -3634,9 +4204,9 @@ def calculate_position_size_atr(symbol: str, atr_dist: float, risk_money: float 
                 f"({risk_min_lot:,.0f} > {equity_tolerance_cap:,.0f})"
             )
             return 0.0
-            
+
         num_lots = int(risk_money / risk_min_lot)
-        
+
         # ✅ PROPORCIONALIDADE ESTRITA (Land Trading):
         # Impede trades desproporcionais onde 1 lote viola o gerenciamento de risco.
         if num_lots <= 0:
@@ -3650,7 +4220,7 @@ def calculate_position_size_atr(symbol: str, atr_dist: float, risk_money: float 
                     "Trade ignorado."
                 )
                 return 0.0
-                
+
         return float(num_lots * min_lot)
 
     except Exception as e:
@@ -3689,7 +4259,10 @@ def get_effective_exposure_limit() -> float:
         logger.error(f"Erro get_effective_exposure_limit: {e}")
         return float(getattr(config, "MAX_TOTAL_EXPOSURE", 1_000_000))
 
-def check_capital_allocation(symbol: str, planned_volume: float, entry_price: float) -> tuple[bool, str]:
+
+def check_capital_allocation(
+    symbol: str, planned_volume: float, entry_price: float
+) -> tuple[bool, str]:
     try:
         with mt5_lock:
             acc = mt5.account_info()
@@ -3704,7 +4277,9 @@ def check_capital_allocation(symbol: str, planned_volume: float, entry_price: fl
         for p in positions:
             si = mt5.symbol_info(p.symbol)
             contract = float(si.trade_contract_size) if si else 1.0
-            price = float(getattr(p, "price_current", getattr(p, "price_open", 0.0)) or 0.0)
+            price = float(
+                getattr(p, "price_current", getattr(p, "price_open", 0.0)) or 0.0
+            )
             exp = float(p.volume) * (contract if is_future(p.symbol) else 1.0) * price
             if is_future(p.symbol):
                 fut_exposure += exp
@@ -3713,20 +4288,31 @@ def check_capital_allocation(symbol: str, planned_volume: float, entry_price: fl
         is_fut = is_future(symbol)
         si_new = mt5.symbol_info(symbol)
         contract_new = float(si_new.trade_contract_size) if si_new else 1.0
-        add_exp = float(planned_volume) * (contract_new if is_fut else 1.0) * float(entry_price)
+        add_exp = (
+            float(planned_volume)
+            * (contract_new if is_fut else 1.0)
+            * float(entry_price)
+        )
         fut_pct, stk_pct = AssetClassManager.get_dynamic_buckets()
         cap_fut = equity * float(fut_pct)
         cap_stk = equity * float(stk_pct)
         if is_fut:
             if fut_exposure + add_exp > cap_fut:
-                return False, f"Exposição Futuros {fut_exposure + add_exp:,.2f} > {cap_fut:,.2f}"
+                return (
+                    False,
+                    f"Exposição Futuros {fut_exposure + add_exp:,.2f} > {cap_fut:,.2f}",
+                )
             return True, "OK"
         else:
             if stk_exposure + add_exp > cap_stk:
-                return False, f"Exposição Ações {stk_exposure + add_exp:,.2f} > {cap_stk:,.2f}"
+                return (
+                    False,
+                    f"Exposição Ações {stk_exposure + add_exp:,.2f} > {cap_stk:,.2f}",
+                )
             return True, "OK"
     except Exception as e:
         return False, f"Erro alocação: {e}"
+
 
 def signal_handler(sig, frame):
     with mt5_lock:
@@ -3735,7 +4321,16 @@ def signal_handler(sig, frame):
         mt5.shutdown()
     exit(0)
 
-def send_telegram_trade(symbol: str, side: str, volume: float, price: float, sl: float, tp: float, comment: str = ""):
+
+def send_telegram_trade(
+    symbol: str,
+    side: str,
+    volume: float,
+    price: float,
+    sl: float,
+    tp: float,
+    comment: str = "",
+):
     bot = get_telegram_bot()
     if not bot:
         logger.warning("⚠️ Telegram: Bot não inicializado (token ausente ou inválido)")
@@ -3770,14 +4365,11 @@ def send_telegram_trade(symbol: str, side: str, volume: float, price: float, sl:
     )
 
     try:
-        bot.send_message(
-            chat_id=config.TELEGRAM_CHAT_ID,
-            text=msg,
-            parse_mode="HTML"
-        )
+        bot.send_message(chat_id=config.TELEGRAM_CHAT_ID, text=msg, parse_mode="HTML")
         logger.info(f"✅ Telegram: Notificação de ENTRADA enviada para {symbol}")
     except Exception as e:
         logger.error(f"❌ ERRO ao enviar Telegram (entrada {symbol}): {e}")
+
 
 def validate_mt5_connection():
     """
@@ -3788,20 +4380,21 @@ def validate_mt5_connection():
         if terminal_info is None:
             logger.critical("❌ MT5 não está inicializado")
             return False
-        
+
         if not terminal_info.connected:
             logger.critical("❌ MT5 não está conectado ao servidor")
             return False
-        
+
         if not terminal_info.trade_allowed:
             logger.error("⚠️ Trading não permitido no MT5")
             return False
-        
+
         return True
-    
+
     except Exception as e:
         logger.error(f"Erro ao validar conexão MT5: {e}")
         return False
+
 
 def send_order_with_sl_tp(symbol, side, volume, sl, tp, comment="XP3_BOT"):
     if not validate_mt5_connection():
@@ -3824,9 +4417,13 @@ def send_order_with_sl_tp(symbol, side, volume, sl, tp, comment="XP3_BOT"):
     if status_cb in ("CLOSE_ALL", "PAUSE_AND_TIGHTEN"):
         return False
     price = tick.ask if side == "BUY" else tick.bid
-    if is_future(symbol) and should_block_opening_gap(symbol, getattr(config, "MAX_ACCEPTABLE_GAP_PCT", 0.015)):
+    if is_future(symbol) and should_block_opening_gap(
+        symbol, getattr(config, "MAX_ACCEPTABLE_GAP_PCT", 0.015)
+    ):
         return False
-    if block_if_high_portfolio_correlation(symbol, getattr(config, "MIN_CORRELATION_SCORE_TO_BLOCK", 0.70)):
+    if block_if_high_portfolio_correlation(
+        symbol, getattr(config, "MIN_CORRELATION_SCORE_TO_BLOCK", 0.70)
+    ):
         return False
     now_t = datetime.now().time()
     if not is_future(symbol):
@@ -3849,11 +4446,17 @@ def send_order_with_sl_tp(symbol, side, volume, sl, tp, comment="XP3_BOT"):
                     return False
         except Exception:
             pass
-    fm_start = datetime.strptime(getattr(config, "FUTURES_AFTERMARKET_START", "16:00"), "%H:%M").time()
-    fm_end = datetime.strptime(getattr(config, "FUTURES_AFTERMARKET_END", "17:50"), "%H:%M").time()
+    fm_start = datetime.strptime(
+        getattr(config, "FUTURES_AFTERMARKET_START", "16:00"), "%H:%M"
+    ).time()
+    fm_end = datetime.strptime(
+        getattr(config, "FUTURES_AFTERMARKET_END", "17:50"), "%H:%M"
+    ).time()
     if is_future(symbol):
         try:
-            close_by = datetime.strptime(getattr(config, "FUTURES_CLOSE_ALL_BY", "17:50"), "%H:%M").time()
+            close_by = datetime.strptime(
+                getattr(config, "FUTURES_CLOSE_ALL_BY", "17:50"), "%H:%M"
+            ).time()
             if now_t >= close_by:
                 return False
         except Exception:
@@ -3879,12 +4482,16 @@ def send_order_with_sl_tp(symbol, side, volume, sl, tp, comment="XP3_BOT"):
         acc = mt5.account_info()
         free_margin = float(getattr(acc, "margin_free", 0.0) or 0.0)
         ord_type = mt5.ORDER_TYPE_BUY if side == "BUY" else mt5.ORDER_TYPE_SELL
-        est_margin = float(mt5.order_calc_margin(ord_type, symbol, price, float(volume)) or 0.0)
+        est_margin = float(
+            mt5.order_calc_margin(ord_type, symbol, price, float(volume)) or 0.0
+        )
         eff_margin = free_margin
         try:
             with mt5_lock:
                 positions = mt5.positions_get() or []
-            floating_profit = sum(float(getattr(p, "profit", 0.0) or 0.0) for p in positions)
+            floating_profit = sum(
+                float(getattr(p, "profit", 0.0) or 0.0) for p in positions
+            )
             eff_margin = free_margin + max(0.0, floating_profit) * 0.7
         except Exception:
             eff_margin = free_margin
@@ -3917,7 +4524,11 @@ def send_order_with_sl_tp(symbol, side, volume, sl, tp, comment="XP3_BOT"):
                         if not t:
                             continue
                         px = t.ask if p.type == mt5.POSITION_TYPE_BUY else t.bid
-                        total_exposure += abs(float(getattr(p, "volume", 0.0) or 0.0)) * pv * float(px or 0.0)
+                        total_exposure += (
+                            abs(float(getattr(p, "volume", 0.0) or 0.0))
+                            * pv
+                            * float(px or 0.0)
+                        )
                 except Exception:
                     continue
             add_exposure = abs(float(volume)) * pv * float(price)
@@ -3931,7 +4542,7 @@ def send_order_with_sl_tp(symbol, side, volume, sl, tp, comment="XP3_BOT"):
         fee_type = insp.get("fee_type", "PERCENT")
         fee_val = float(insp.get("fee_val", 0.00055))
         spread = abs(tick.ask - tick.bid) / max(price, 1e-9)
-        fee_pct = (fee_val if fee_type == "PERCENT" else 0.0005)
+        fee_pct = fee_val if fee_type == "PERCENT" else 0.0005
         cost_pct = spread + (fee_pct * 2.0)
         rr = rr_now
         if cost_pct > 0.015:
@@ -4020,16 +4631,16 @@ def send_order_with_retry(symbol, side, volume, sl, tp, max_retries=3):
         result = send_order_with_sl_tp(symbol, side, volume, sl, tp)
 
         if result and result.retcode == mt5.TRADE_RETCODE_DONE:
-            logger.info(f"✅ Ordem executada após {attempt+1} tentativa(s)")
+            logger.info(f"✅ Ordem executada após {attempt + 1} tentativa(s)")
             return result
 
         if result and result.retcode in (
             mt5.TRADE_RETCODE_REQUOTE,
             mt5.TRADE_RETCODE_PRICE_OFF,
-            mt5.TRADE_RETCODE_TIMEOUT
+            mt5.TRADE_RETCODE_TIMEOUT,
         ):
             logger.warning(
-                f"⚠️ Retry {attempt+1}/{max_retries} {symbol} | "
+                f"⚠️ Retry {attempt + 1}/{max_retries} {symbol} | "
                 f"Retcode={result.retcode} | {result.comment}"
             )
             time.sleep(0.5)
@@ -4049,7 +4660,9 @@ def send_order_with_retry(symbol, side, volume, sl, tp, max_retries=3):
     return None
 
 
-def validate_order_params(symbol: str, side: str, volume: float, price: float, sl: float, tp: float) -> bool:
+def validate_order_params(
+    symbol: str, side: str, volume: float, price: float, sl: float, tp: float
+) -> bool:
     with mt5_lock:
         info = mt5.symbol_info(symbol)
         tick = mt5.symbol_info_tick(symbol)
@@ -4073,11 +4686,15 @@ def validate_order_params(symbol: str, side: str, volume: float, price: float, s
         min_stop = info.point * 5  # fallback B3 seguro
 
     if abs(price - sl) < min_stop:
-        logger.error(f"{symbol}: SL muito próximo ({abs(price-sl):.4f} < {min_stop:.4f})")
+        logger.error(
+            f"{symbol}: SL muito próximo ({abs(price - sl):.4f} < {min_stop:.4f})"
+        )
         return False
 
     if abs(tp - price) < min_stop:
-        logger.error(f"{symbol}: TP muito próximo ({abs(tp-price):.4f} < {min_stop:.4f})")
+        logger.error(
+            f"{symbol}: TP muito próximo ({abs(tp - price):.4f} < {min_stop:.4f})"
+        )
         return False
 
     # ✅ Lógica correta por lado
@@ -4098,11 +4715,12 @@ def validate_order_params(symbol: str, side: str, volume: float, price: float, s
 
     return True
 
+
 def get_time_bucket():
     now = datetime.now().time()
     for bucket, cfg in config.TIME_SCORE_RULES.items():
         start = datetime.strptime(cfg["start"], "%H:%M").time()
-        end   = datetime.strptime(cfg["end"], "%H:%M").time()
+        end = datetime.strptime(cfg["end"], "%H:%M").time()
         if start <= end:
             if start <= now <= end:
                 return bucket, cfg
@@ -4111,17 +4729,19 @@ def get_time_bucket():
                 return bucket, cfg
     return "MID", config.TIME_SCORE_RULES["MID"]
 
+
 def is_power_hour():
     now = datetime.now().time()
     cfg = config.POWER_HOUR
     if not cfg["enabled"]:
         return False
     start = datetime.strptime(cfg["start"], "%H:%M").time()
-    end   = datetime.strptime(cfg["end"], "%H:%M").time()
+    end = datetime.strptime(cfg["end"], "%H:%M").time()
     if start <= end:
         return start <= now <= end
     else:
         return now >= start or now <= end
+
 
 def is_volatility_breakout(df, atr_now, atr_mean, volume_ratio, side=None):
     if not config.VOL_BREAKOUT["enabled"]:
@@ -4141,11 +4761,10 @@ def is_volatility_breakout(df, atr_now, atr_mean, volume_ratio, side=None):
         return False
 
     high_roll = df["high"].rolling(lookback).max()
-    low_roll  = df["low"].rolling(lookback).min()
+    low_roll = df["low"].rolling(lookback).min()
 
     high_break = df["high"].iloc[-1] > high_roll.iloc[-2]
-    low_break  = df["low"].iloc[-1]  < low_roll.iloc[-2]
-
+    low_break = df["low"].iloc[-1] < low_roll.iloc[-2]
 
     if side == "BUY":
         return high_break
@@ -4154,7 +4773,9 @@ def is_volatility_breakout(df, atr_now, atr_mean, volume_ratio, side=None):
 
     return high_break or low_break
 
+
 # ===== SUBSTITUIR A FUNÇÃO get_current_risk_pct() NO utils.py =====
+
 
 def get_current_risk_pct() -> float:
     """
@@ -4220,13 +4841,20 @@ def get_dynamic_slippage(symbol: str, hour: int) -> int:
         base = 3
     else:
         # Ações: converte percentuais de SLIPPAGE_MAP para pontos (ticks) dinamicamente
-        pct = float(config.SLIPPAGE_MAP.get(symbol, config.SLIPPAGE_MAP.get("DEFAULT", 0.003)) or 0.003)
+        pct = float(
+            config.SLIPPAGE_MAP.get(symbol, config.SLIPPAGE_MAP.get("DEFAULT", 0.003))
+            or 0.003
+        )
         try:
             info = mt5.symbol_info(symbol)
             tick = mt5.symbol_info_tick(symbol)
             price = float(getattr(tick, "bid", getattr(tick, "ask", 0.0)) or 0.0)
             tick_size = float(getattr(info, "point", 0.01) or 0.01)
-            base = int(max(2, (pct * price) / tick_size)) if price > 0 and tick_size > 0 else 6
+            base = (
+                int(max(2, (pct * price) / tick_size))
+                if price > 0 and tick_size > 0
+                else 6
+            )
         except Exception:
             base = 6
 
@@ -4248,9 +4876,9 @@ def get_dynamic_slippage(symbol: str, hour: int) -> int:
     if s.startswith(("WIN", "IND")):
         base = min(base, 20)  # WIN/IND ≤ 20 pontos
     elif s.startswith(("WDO", "DOL")):
-        base = min(base, 3)   # WDO/DOL ≤ 3 pontos
+        base = min(base, 3)  # WDO/DOL ≤ 3 pontos
     else:
-        base = min(base, 100) # Ações: teto técnico
+        base = min(base, 100)  # Ações: teto técnico
     base = max(min_slip, base)
 
     return base
@@ -4267,38 +4895,41 @@ def calculate_smart_sl(symbol, entry_price, side, atr, df):
     if atr < 0.01:
         atr = 0.01
         logger.warning(f"{symbol}: ATR muito baixo - usando mínimo 0.01")
-    
+
     base_distance = atr * 2.0
-    
+
     # Encontra suporte/resistência relevante
     lookback = 50
     if side == "BUY":
         # Para compra: busca último fundo relevante
-        recent_lows = df['low'].tail(lookback)
+        recent_lows = df["low"].tail(lookback)
         support = recent_lows.min()
-        
+
         # Stop 0.5 ATR abaixo do suporte
         structure_stop = support - (atr * 0.5)
-        
+
         # Usa o MENOR entre estrutura e ATR (mais conservador)
         final_sl = max(structure_stop, entry_price - base_distance)
-        
+
     else:  # SELL
-        recent_highs = df['high'].tail(lookback)
+        recent_highs = df["high"].tail(lookback)
         resistance = recent_highs.max()
         structure_stop = resistance + (atr * 0.5)
         final_sl = min(structure_stop, entry_price + base_distance)
-    
+
     # Garante mínimo de 1.5 ATR
     min_distance = atr * 1.5
     if side == "BUY":
         final_sl = min(final_sl, entry_price - min_distance)
     else:
         final_sl = max(final_sl, entry_price + min_distance)
-    
+
     return round(final_sl, 2)
 
-def analyze_order_book_depth(symbol, side, volume_needed, multiplier: float | None = None):
+
+def analyze_order_book_depth(
+    symbol, side, volume_needed, multiplier: float | None = None
+):
     try:
         if multiplier is None:
             multiplier = float(getattr(config, "ORDER_BOOK_DEPTH_MULTIPLIER", 3) or 3)
@@ -4326,61 +4957,74 @@ def analyze_order_book_depth(symbol, side, volume_needed, multiplier: float | No
             for item in filtered:
                 try:
                     if item.volume >= inst_thresh:
-                        logger.warning(f"🏦 {symbol}: Nível institucional detectado ({item.volume:,.0f} ≥ {inst_thresh:,.0f})")
+                        logger.warning(
+                            f"🏦 {symbol}: Nível institucional detectado ({item.volume:,.0f} ≥ {inst_thresh:,.0f})"
+                        )
                         return False
                 except Exception:
                     continue
             return True
 
         df = safe_copy_rates(symbol, mt5.TIMEFRAME_M5, 20)
-        
+
         if df is not None and not df.empty:
-            if 'real_volume' in df.columns and df['real_volume'].sum() > 0:
-                median_vol = df['real_volume'].median()
+            if "real_volume" in df.columns and df["real_volume"].sum() > 0:
+                median_vol = df["real_volume"].median()
             else:
-                median_vol = df['tick_volume'].median() * 100
-            
+                median_vol = df["tick_volume"].median() * 100
+
             if median_vol <= 0:
                 return True
-            
+
             now = datetime.now()
             is_power_hour = False
             try:
                 ph = getattr(config, "POWER_HOUR", {}) or {}
                 if ph.get("enabled", True):
-                    start = datetime.strptime(str(ph.get("start", "15:30")), "%H:%M").time()
+                    start = datetime.strptime(
+                        str(ph.get("start", "15:30")), "%H:%M"
+                    ).time()
                     end = datetime.strptime(str(ph.get("end", "16:55")), "%H:%M").time()
                     is_power_hour = start <= now.time() <= end
             except Exception:
                 is_power_hour = False
 
-            impact_cfg = getattr(config, "ADAPTIVE_FILTERS", {}).get("volume_impact", {})
-            max_impact = float(impact_cfg.get("power_hour" if is_power_hour else "normal", 0.20) or 0.20)
-            
+            impact_cfg = getattr(config, "ADAPTIVE_FILTERS", {}).get(
+                "volume_impact", {}
+            )
+            max_impact = float(
+                impact_cfg.get("power_hour" if is_power_hour else "normal", 0.20)
+                or 0.20
+            )
+
             impact_ratio = volume_needed / median_vol
-            
+
             if impact_ratio > max_impact:
                 logger.warning(
                     f"⚠️ {symbol}: Alto impacto no volume | "
                     f"Ordem: {volume_needed:.0f} | Mediana: {median_vol:.0f} | "
-                    f"Impacto: {impact_ratio*100:.1f}% (máx {max_impact*100:.0f}%)"
+                    f"Impacto: {impact_ratio * 100:.1f}% (máx {max_impact * 100:.0f}%)"
                 )
                 return False
-            
-            logger.debug(f"✅ Volume OK: {symbol} (impacto {impact_ratio*100:.1f}%)")
-                
+
+            logger.debug(f"✅ Volume OK: {symbol} (impacto {impact_ratio * 100:.1f}%)")
+
         return True
 
     except Exception as e:
         logger.error(f"Erro ao analisar profundidade de {symbol}: {e}", exc_info=True)
         return True  # Fail-open
 
+
 def detect_calendar_spread(base: str = "WIN") -> dict:
     try:
         cands = get_futures_candidates(base)
         if not cands or len(cands) < 2:
             return {"ok": False}
-        cands_sorted = sorted(cands, key=lambda c: (-calculate_contract_score(c), c.get("days_to_exp", 9999)))
+        cands_sorted = sorted(
+            cands,
+            key=lambda c: (-calculate_contract_score(c), c.get("days_to_exp", 9999)),
+        )
         a = cands_sorted[0]
         b = cands_sorted[1]
         sa = a.get("symbol")
@@ -4396,11 +5040,20 @@ def detect_calendar_spread(base: str = "WIN") -> dict:
         ts = float(info.get("tick_size", 5.0) or 5.0)
         pv = float(info.get("point_value", 0.20) or 0.20)
         spread_pts = spread / ts if ts > 0 else 0.0
-        thresh_pts = float(getattr(config, "CALENDAR_SPREAD_THRESHOLD_POINTS", 80) or 80)
+        thresh_pts = float(
+            getattr(config, "CALENDAR_SPREAD_THRESHOLD_POINTS", 80) or 80
+        )
         ok = abs(spread_pts) >= thresh_pts
-        return {"ok": ok, "a": sa, "b": sb, "spread_points": spread_pts, "spread_value": spread * pv}
+        return {
+            "ok": ok,
+            "a": sa,
+            "b": sb,
+            "spread_points": spread_pts,
+            "spread_value": spread * pv,
+        }
     except Exception:
         return {"ok": False}
+
 
 def apply_trailing_stop(symbol: str, current_price: float, atr: float):
     if atr is None or atr <= 0:
@@ -4421,37 +5074,61 @@ def apply_trailing_stop(symbol: str, current_price: float, atr: float):
             initial_r = abs(pos.price_open - (pos.sl or pos.price_open)) or (atr * 2.0)
             if initial_r <= 0:
                 initial_r = atr * 2.0
-            profit_move = (current_price - pos.price_open) if pos.type == mt5.POSITION_TYPE_BUY else (pos.price_open - current_price)
+            profit_move = (
+                (current_price - pos.price_open)
+                if pos.type == mt5.POSITION_TYPE_BUY
+                else (pos.price_open - current_price)
+            )
             r_ratio = profit_move / initial_r if initial_r > 0 else 0.0
         except Exception:
             continue
         new_sl = None
         if r_ratio >= 2.0:
-            half_profit_sl = (pos.price_open + profit_move * 0.5) if pos.type == mt5.POSITION_TYPE_BUY else (pos.price_open - profit_move * 0.5)
+            half_profit_sl = (
+                (pos.price_open + profit_move * 0.5)
+                if pos.type == mt5.POSITION_TYPE_BUY
+                else (pos.price_open - profit_move * 0.5)
+            )
             if psar_val is not None:
                 if pos.type == mt5.POSITION_TYPE_BUY:
                     candidate_sl = max(half_profit_sl, psar_val)
-                    if (current_price - candidate_sl) >= min_stop_distance and (not pos.sl or candidate_sl > pos.sl):
+                    if (current_price - candidate_sl) >= min_stop_distance and (
+                        not pos.sl or candidate_sl > pos.sl
+                    ):
                         new_sl = candidate_sl
                 else:
                     candidate_sl = min(half_profit_sl, psar_val)
-                    if (candidate_sl - current_price) >= min_stop_distance and (not pos.sl or candidate_sl < pos.sl):
+                    if (candidate_sl - current_price) >= min_stop_distance and (
+                        not pos.sl or candidate_sl < pos.sl
+                    ):
                         new_sl = candidate_sl
             else:
                 if pos.type == mt5.POSITION_TYPE_BUY:
-                    if (current_price - half_profit_sl) >= min_stop_distance and (not pos.sl or half_profit_sl > pos.sl):
+                    if (current_price - half_profit_sl) >= min_stop_distance and (
+                        not pos.sl or half_profit_sl > pos.sl
+                    ):
                         new_sl = half_profit_sl
                 else:
-                    if (half_profit_sl - current_price) >= min_stop_distance and (not pos.sl or half_profit_sl < pos.sl):
+                    if (half_profit_sl - current_price) >= min_stop_distance and (
+                        not pos.sl or half_profit_sl < pos.sl
+                    ):
                         new_sl = half_profit_sl
         elif r_ratio >= 1.0:
             be_offset = 0.2 * atr
-            be_sl = (pos.price_open + be_offset) if pos.type == mt5.POSITION_TYPE_BUY else (pos.price_open - be_offset)
+            be_sl = (
+                (pos.price_open + be_offset)
+                if pos.type == mt5.POSITION_TYPE_BUY
+                else (pos.price_open - be_offset)
+            )
             if pos.type == mt5.POSITION_TYPE_BUY:
-                if (current_price - be_sl) >= min_stop_distance and (not pos.sl or be_sl > pos.sl):
+                if (current_price - be_sl) >= min_stop_distance and (
+                    not pos.sl or be_sl > pos.sl
+                ):
                     new_sl = be_sl
             else:
-                if (be_sl - current_price) >= min_stop_distance and (not pos.sl or be_sl < pos.sl):
+                if (be_sl - current_price) >= min_stop_distance and (
+                    not pos.sl or be_sl < pos.sl
+                ):
                     new_sl = be_sl
         else:
             continue
@@ -4460,11 +5137,21 @@ def apply_trailing_stop(symbol: str, current_price: float, atr: float):
         rounded = float(round(new_sl / tick_size) * tick_size)
         if pos.sl and abs(rounded - pos.sl) < tick_size * 5:
             continue
-        req = {"action": mt5.TRADE_ACTION_SLTP, "position": pos.ticket, "symbol": symbol, "sl": rounded, "tp": pos.tp, "magic": 2026}
+        req = {
+            "action": mt5.TRADE_ACTION_SLTP,
+            "position": pos.ticket,
+            "symbol": symbol,
+            "sl": rounded,
+            "tp": pos.tp,
+            "magic": 2026,
+        }
         with mt5_lock:
             res = mt5.order_send(req)
         if res and res.retcode == mt5.TRADE_RETCODE_DONE:
-            logger.info(f"🔄 Trailing {symbol} {'BUY' if pos.type==0 else 'SELL'} -> {rounded}")
+            logger.info(
+                f"🔄 Trailing {symbol} {'BUY' if pos.type == 0 else 'SELL'} -> {rounded}"
+            )
+
 
 def manage_dynamic_trailing(symbol: str, ticket: int) -> None:
     """
@@ -4481,7 +5168,9 @@ def manage_dynamic_trailing(symbol: str, ticket: int) -> None:
             positions = mt5.positions_get(symbol=symbol)
         if not positions:
             return
-        pos = next((p for p in positions if int(getattr(p, "ticket", 0)) == int(ticket)), None)
+        pos = next(
+            (p for p in positions if int(getattr(p, "ticket", 0)) == int(ticket)), None
+        )
         if not pos:
             return
 
@@ -4497,7 +5186,11 @@ def manage_dynamic_trailing(symbol: str, ticket: int) -> None:
         trail_mult = 2.0 if is_fut else 1.5
 
         initial_r = abs(pos.price_open - (pos.sl or pos.price_open)) or (atr * 2.0)
-        profit_move = (pos.price_current - pos.price_open) if pos.type == mt5.POSITION_TYPE_BUY else (pos.price_open - pos.price_current)
+        profit_move = (
+            (pos.price_current - pos.price_open)
+            if pos.type == mt5.POSITION_TYPE_BUY
+            else (pos.price_open - pos.price_current)
+        )
         r_ratio = profit_move / initial_r if initial_r > 0 else 0.0
 
         info = mt5.symbol_info(symbol)
@@ -4510,14 +5203,32 @@ def manage_dynamic_trailing(symbol: str, ticket: int) -> None:
         if r_ratio >= 1.5:
             if pos.type == mt5.POSITION_TYPE_BUY:
                 be_sl = pos.price_open + be_offset
-                if (pos.sl is None or be_sl > pos.sl) and (pos.price_current - be_sl) >= min_stop_distance:
-                    req = {"action": mt5.TRADE_ACTION_SLTP, "position": pos.ticket, "symbol": symbol, "sl": float(round(be_sl / tick_size) * tick_size), "tp": pos.tp, "magic": 2026}
+                if (pos.sl is None or be_sl > pos.sl) and (
+                    pos.price_current - be_sl
+                ) >= min_stop_distance:
+                    req = {
+                        "action": mt5.TRADE_ACTION_SLTP,
+                        "position": pos.ticket,
+                        "symbol": symbol,
+                        "sl": float(round(be_sl / tick_size) * tick_size),
+                        "tp": pos.tp,
+                        "magic": 2026,
+                    }
                     with mt5_lock:
                         mt5.order_send(req)
             elif pos.type == mt5.POSITION_TYPE_SELL:
                 be_sl = pos.price_open - be_offset
-                if (pos.sl is None or be_sl < pos.sl) and (be_sl - pos.price_current) >= min_stop_distance:
-                    req = {"action": mt5.TRADE_ACTION_SLTP, "position": pos.ticket, "symbol": symbol, "sl": float(round(be_sl / tick_size) * tick_size), "tp": pos.tp, "magic": 2026}
+                if (pos.sl is None or be_sl < pos.sl) and (
+                    be_sl - pos.price_current
+                ) >= min_stop_distance:
+                    req = {
+                        "action": mt5.TRADE_ACTION_SLTP,
+                        "position": pos.ticket,
+                        "symbol": symbol,
+                        "sl": float(round(be_sl / tick_size) * tick_size),
+                        "tp": pos.tp,
+                        "magic": 2026,
+                    }
                     with mt5_lock:
                         mt5.order_send(req)
 
@@ -4527,9 +5238,14 @@ def manage_dynamic_trailing(symbol: str, ticket: int) -> None:
     except Exception:
         logger.exception(f"manage_dynamic_trailing error for {symbol}:{ticket}")
 
+
 def apply_partial_exit_after_pyr(symbol: str, pct: Optional[float] = None) -> None:
     try:
-        close_pct = pct if pct is not None else float(getattr(config, "PYRAMID_PARTIAL_CLOSE", 0.3) or 0.3)
+        close_pct = (
+            pct
+            if pct is not None
+            else float(getattr(config, "PYRAMID_PARTIAL_CLOSE", 0.3) or 0.3)
+        )
         if close_pct <= 0:
             return
         with mt5_lock:
@@ -4545,10 +5261,16 @@ def apply_partial_exit_after_pyr(symbol: str, pct: Optional[float] = None) -> No
         positions = sorted(positions, key=lambda p: p.time)
         anchor = positions[0]
         current = positions[-1]
-        initial_r = abs(anchor.price_open - (anchor.sl or anchor.price_open)) or (atr * 2.0)
+        initial_r = abs(anchor.price_open - (anchor.sl or anchor.price_open)) or (
+            atr * 2.0
+        )
         if initial_r <= 0:
             initial_r = atr * 2.0
-        profit_move = (current.price_current - anchor.price_open) if current.type == mt5.POSITION_TYPE_BUY else (anchor.price_open - current.price_current)
+        profit_move = (
+            (current.price_current - anchor.price_open)
+            if current.type == mt5.POSITION_TYPE_BUY
+            else (anchor.price_open - current.price_current)
+        )
         r_ratio = profit_move / initial_r if initial_r > 0 else 0.0
         if r_ratio < 2.0:
             return
@@ -4556,7 +5278,11 @@ def apply_partial_exit_after_pyr(symbol: str, pct: Optional[float] = None) -> No
         volume_to_close = max(0.0, round(total_volume * close_pct, 2))
         if volume_to_close <= 0:
             return
-        side = mt5.ORDER_TYPE_SELL if current.type == mt5.POSITION_TYPE_BUY else mt5.ORDER_TYPE_BUY
+        side = (
+            mt5.ORDER_TYPE_SELL
+            if current.type == mt5.POSITION_TYPE_BUY
+            else mt5.ORDER_TYPE_BUY
+        )
         price = current.price_current
         req = {
             "action": mt5.TRADE_ACTION_DEAL,
@@ -4565,7 +5291,7 @@ def apply_partial_exit_after_pyr(symbol: str, pct: Optional[float] = None) -> No
             "volume": float(volume_to_close),
             "price": float(price),
             "deviation": 200,
-            "type_filling": mt5.ORDER_FILLING_RETURN
+            "type_filling": mt5.ORDER_FILLING_RETURN,
         }
         with mt5_lock:
             res = mt5.order_send(req)
@@ -4574,7 +5300,10 @@ def apply_partial_exit_after_pyr(symbol: str, pct: Optional[float] = None) -> No
     except Exception:
         logger.exception(f"apply_partial_exit_after_pyr error for {symbol}")
 
+
 _last_trailing_check_ts = 0.0
+
+
 def check_and_apply_dynamic_trailing(interval_sec: int = 300) -> None:
     try:
         now = time.time()
@@ -4592,7 +5321,11 @@ def check_and_apply_dynamic_trailing(interval_sec: int = 300) -> None:
             atr = get_atr(df, 14) or 0.0
             if atr <= 0:
                 continue
-            price = float(mt5.symbol_info_tick(sym).last or 0.0) if mt5.symbol_info_tick(sym) else 0.0
+            price = (
+                float(mt5.symbol_info_tick(sym).last or 0.0)
+                if mt5.symbol_info_tick(sym)
+                else 0.0
+            )
             if price <= 0:
                 info = mt5.symbol_info_tick(sym)
                 price = float((info.ask or info.bid) if info else 0.0)
@@ -4602,34 +5335,42 @@ def check_and_apply_dynamic_trailing(interval_sec: int = 300) -> None:
     except Exception:
         logger.exception("check_and_apply_dynamic_trailing error")
 
+
 def is_time_allowed_for_symbol(symbol: str, mode: str) -> bool:
     try:
         now = datetime.now().time()
-        horarios = getattr(config, "HORARIOS_OPERACAO", {
-            "FUTUROS": [(datetime.time(9,0), datetime.time(18,0))],
-            "ACOES": [(datetime.time(10,0), datetime.time(17,0))],
-            "AMBOS": [(datetime.time(10,0), datetime.time(17,0))],
-            "SO_FUTUROS": [(datetime.time(9,0), datetime.time(10,0)), (datetime.time(17,0), datetime.time(18,0))]
-        })
+        horarios = getattr(
+            config,
+            "HORARIOS_OPERACAO",
+            {
+                "FUTUROS": [(datetime.time(9, 0), datetime.time(18, 0))],
+                "ACOES": [(datetime.time(10, 0), datetime.time(17, 0))],
+                "AMBOS": [(datetime.time(10, 0), datetime.time(17, 0))],
+                "SO_FUTUROS": [
+                    (datetime.time(9, 0), datetime.time(10, 0)),
+                    (datetime.time(17, 0), datetime.time(18, 0)),
+                ],
+            },
+        )
         is_fut = is_future(symbol)
-        
+
         # 🔥 CORREÇÃO: Commodities Agrícolas (CCM, BGI, ICF) fecham mais cedo (16:20)
         if is_fut and any(sub in symbol.upper() for sub in ["CCM", "BGI", "ICF"]):
-             # Horário aproximado B3 (09:00 - 16:20)
-             ranges = [(datetime.time(9,0), datetime.time(16,20))]
-             for start, end in ranges:
+            # Horário aproximado B3 (09:00 - 16:20)
+            ranges = [(datetime.time(9, 0), datetime.time(16, 20))]
+            for start, end in ranges:
                 if start <= now <= end:
                     return True
-             return False
+            return False
 
         # 🔥 CORREÇÃO: Se for Futuro (WIN/WDO), usa horário de FUTUROS (09:00-18:00)
         # mesmo se o modo for "NORMAL" (que cai em "AMBOS" 10:00-17:00 incorretamente)
         if is_fut:
-             ranges = horarios.get("FUTUROS", [])
-             for start, end in ranges:
+            ranges = horarios.get("FUTUROS", [])
+            for start, end in ranges:
                 if start <= now <= end:
                     return True
-             return False
+            return False
 
         key = str(mode or "").strip().upper()
         if key == "AMBOS":
@@ -4640,20 +5381,22 @@ def is_time_allowed_for_symbol(symbol: str, mode: str) -> bool:
             ranges = horarios.get("ACOES", [])
         else:
             ranges = horarios.get("AMBOS", [])
-            
+
         if key == "SO_FUTUROS" and not is_fut:
             return False
         if key == "FUTUROS" and not is_fut:
             return False
         if key == "ACOES" and is_fut:
             return False
-            
+
         for start, end in ranges:
             if start <= now <= end:
                 return True
         return False
     except Exception:
         return True
+
+
 def can_enter_symbol(symbol: str, equity: float) -> bool:
     """
     Verifica se pode abrir nova posição no símbolo considerando
@@ -4675,7 +5418,9 @@ def can_enter_symbol(symbol: str, equity: float) -> bool:
     for p in positions:
         # ❌ Se não tem SL → risco infinito → bloqueia
         if not p.sl or p.sl <= 0:
-            logger.warning(f"{symbol}: posição sem SL detectada — bloqueando nova entrada")
+            logger.warning(
+                f"{symbol}: posição sem SL detectada — bloqueando nova entrada"
+            )
             return False
 
         # Risco real = distância até SL * volume
@@ -4689,41 +5434,43 @@ def can_enter_symbol(symbol: str, equity: float) -> bool:
     if risk_pct >= config.MAX_RISK_PER_SYMBOL_PCT:
         logger.warning(
             f"{symbol}: Limite de risco por símbolo atingido "
-            f"({risk_pct*100:.2f}% ≥ {config.MAX_RISK_PER_SYMBOL_PCT*100:.2f}%)"
+            f"({risk_pct * 100:.2f}% ≥ {config.MAX_RISK_PER_SYMBOL_PCT * 100:.2f}%)"
         )
         return False
 
     return True
 
 
-def calculate_correlation_matrix(symbols: List[str], lookback: int = 60) -> Dict[str, Dict[str, float]]:
+def calculate_correlation_matrix(
+    symbols: List[str], lookback: int = 60
+) -> Dict[str, Dict[str, float]]:
     """
     Calcula matriz de correlação entre símbolos.
     Retorna: {symbol1: {symbol2: corr_value}}
     """
     if not symbols or len(symbols) < 2:
         return {}
-    
+
     # Coleta dados de fechamento
     closes = {}
     for sym in symbols:
         df = safe_copy_rates(sym, mt5.TIMEFRAME_D1, lookback)
         if df is not None and not df.empty and len(df) >= 30:
-            closes[sym] = df['close']
-    
+            closes[sym] = df["close"]
+
     if len(closes) < 2:
         return {}
-    
+
     # Alinha datas
     df_all = pd.DataFrame(closes)
     df_all = df_all.dropna()
-    
+
     if df_all.empty or len(df_all) < 30:
         return {}
-    
+
     # Calcula correlação
     corr_matrix = df_all.corr()
-    
+
     # Converte para dict
     result = {}
     for sym1 in symbols:
@@ -4734,8 +5481,9 @@ def calculate_correlation_matrix(symbols: List[str], lookback: int = 60) -> Dict
             if sym2 not in corr_matrix.columns:
                 continue
             result[sym1][sym2] = float(corr_matrix.loc[sym1, sym2])
-    
+
     return result
+
 
 # =========================================================
 # RASTREAMENTO DE PERFORMANCE POR ATIVO (LOSS STREAK)
@@ -4764,12 +5512,15 @@ def load_loss_streak_data():
         now = datetime.now()
 
         with loss_streak_lock:
-
             # === STREAK ===
             streak_raw = raw.get("streak", {})
             _symbol_loss_streak = defaultdict(
                 int,
-                {k: int(v) for k, v in streak_raw.items() if isinstance(v, (int, float))}
+                {
+                    k: int(v)
+                    for k, v in streak_raw.items()
+                    if isinstance(v, (int, float))
+                },
             )
 
             # === LAST LOSS TIME ===
@@ -4804,7 +5555,7 @@ def save_loss_streak_data():
     data = {
         "streak": dict(_symbol_loss_streak),
         "last_loss": {k: v.isoformat() for k, v in _symbol_last_loss_time.items()},
-        "block_until": {k: v.isoformat() for k, v in _symbol_block_until.items()}
+        "block_until": {k: v.isoformat() for k, v in _symbol_block_until.items()},
     }
     try:
         with open(LOSS_STREAK_FILE, "w") as f:
@@ -4812,6 +5563,7 @@ def save_loss_streak_data():
         logger.info("💾 Loss streak salvo.")
     except Exception as e:
         logger.error(f"Erro ao salvar loss streak: {e}")
+
 
 def record_trade_outcome(symbol: str, profit_loss: float):
     """
@@ -4824,7 +5576,6 @@ def record_trade_outcome(symbol: str, profit_loss: float):
     now = datetime.now()
 
     with loss_streak_lock:
-
         # Garante inicialização
         _symbol_loss_streak.setdefault(symbol, 0)
 
@@ -4858,9 +5609,7 @@ def record_trade_outcome(symbol: str, profit_loss: float):
                 streak >= config.SYMBOL_MAX_CONSECUTIVE_LOSSES
                 and symbol not in _symbol_block_until
             ):
-                block_until = now + timedelta(
-                    hours=config.SYMBOL_COOLDOWN_HOURS
-                )
+                block_until = now + timedelta(hours=config.SYMBOL_COOLDOWN_HOURS)
                 _symbol_block_until[symbol] = block_until
 
                 logger.critical(
@@ -4883,7 +5632,6 @@ def is_symbol_blocked(symbol: str) -> tuple[bool, str]:
     now = datetime.now()
 
     with loss_streak_lock:
-
         # =========================
         # 🧹 LIMPA BLOQUEIO EXPIRADO
         # =========================
@@ -4907,18 +5655,13 @@ def is_symbol_blocked(symbol: str) -> tuple[bool, str]:
             return (
                 True,
                 f"Bloqueado ({remaining_min} min restantes) — "
-                f"{config.SYMBOL_MAX_CONSECUTIVE_LOSSES} perdas seguidas"
+                f"{config.SYMBOL_MAX_CONSECUTIVE_LOSSES} perdas seguidas",
             )
 
     return False, ""
 
 
-def get_cached_indicators(
-    symbol: str,
-    timeframe,
-    count: int = 300,
-    ttl: int = 15
-):
+def get_cached_indicators(symbol: str, timeframe, count: int = 300, ttl: int = 15):
     """
     Cache seguro de indicadores (Redis)
     - Não cacheia erro
@@ -4972,7 +5715,9 @@ def get_cached_indicators(
         return ind
 
     # Timestamp do candle fechado
-    ind["candle_time"] = df.index[-1].timestamp() if hasattr(df.index[-1], "timestamp") else time.time()
+    ind["candle_time"] = (
+        df.index[-1].timestamp() if hasattr(df.index[-1], "timestamp") else time.time()
+    )
 
     # =========================
     # 💾 SALVA CACHE
@@ -4986,9 +5731,7 @@ def get_cached_indicators(
 
 
 def mt5_with_retry(
-    max_retries: int = 4,
-    base_delay: float = 1.0,
-    retry_on_none: bool = True
+    max_retries: int = 4, base_delay: float = 1.0, retry_on_none: bool = True
 ):
     """
     Decorator robusto para operações MT5
@@ -5038,14 +5781,13 @@ def mt5_with_retry(
 
                 except Exception:
                     # ❌ Erro lógico → NÃO RETENTA
-                    logger.exception(
-                        f"❌ Erro não recuperável em {func.__name__}"
-                    )
+                    logger.exception(f"❌ Erro não recuperável em {func.__name__}")
                     raise
 
             raise last_exception  # segurança
 
         return wrapper
+
     return decorator
 
 
@@ -5055,34 +5797,37 @@ def calculate_advanced_metrics(trades_df: pd.DataFrame) -> Dict[str, float]:
     if not is_valid_dataframe(trades_df, min_rows=5):
         return metrics
 
-    pnl = trades_df['pnl_money']
+    pnl = trades_df["pnl_money"]
 
     # Profit Factor
     gross_profit = pnl[pnl > 0].sum()
     gross_loss = abs(pnl[pnl < 0].sum())
-    metrics['profit_factor'] = gross_profit / gross_loss if gross_loss > 0 else float('inf')
+    metrics["profit_factor"] = (
+        gross_profit / gross_loss if gross_loss > 0 else float("inf")
+    )
 
     # MAE / MFE
-    if {'mae', 'mfe'}.issubset(trades_df.columns):
-        metrics['avg_mae'] = trades_df['mae'].mean()
-        metrics['avg_mfe'] = trades_df['mfe'].mean()
+    if {"mae", "mfe"}.issubset(trades_df.columns):
+        metrics["avg_mae"] = trades_df["mae"].mean()
+        metrics["avg_mfe"] = trades_df["mfe"].mean()
 
     # Equity curve
-    initial_equity = trades_df.get('equity_start', pd.Series([100000])).iloc[0]
+    initial_equity = trades_df.get("equity_start", pd.Series([100000])).iloc[0]
     equity_curve = initial_equity + pnl.cumsum().values
 
     peak = np.maximum.accumulate(equity_curve)
     drawdown_pct = ((equity_curve - peak) / peak) * 100
 
-    metrics['ulcer_index'] = np.sqrt(np.mean(drawdown_pct ** 2))
+    metrics["ulcer_index"] = np.sqrt(np.mean(drawdown_pct**2))
 
     max_dd = np.min((equity_curve - peak) / peak)
     total_return = (equity_curve[-1] / equity_curve[0]) - 1
 
-    metrics['recovery_factor'] = total_return / abs(max_dd) if max_dd < 0 else float('inf')
+    metrics["recovery_factor"] = (
+        total_return / abs(max_dd) if max_dd < 0 else float("inf")
+    )
 
     return metrics
-
 
 
 def is_spread_acceptable(symbol: str, max_spread_pct: float | None = None) -> bool:
@@ -5113,7 +5858,10 @@ def is_spread_acceptable(symbol: str, max_spread_pct: float | None = None) -> bo
 
     return True
 
-def adjust_global_sl_after_pyr(symbol: str, side: str, current_price: float, atr: float):
+
+def adjust_global_sl_after_pyr(
+    symbol: str, side: str, current_price: float, atr: float
+):
     """
     Ajusta SL global após pyramiding:
     - Protege lucro da primeira perna
@@ -5161,7 +5909,7 @@ def adjust_global_sl_after_pyr(symbol: str, side: str, current_price: float, atr
             "symbol": symbol,
             "sl": new_sl,
             "tp": p.tp,
-            "magic": 2026
+            "magic": 2026,
         }
 
         with mt5_lock:
@@ -5172,7 +5920,10 @@ def adjust_global_sl_after_pyr(symbol: str, side: str, current_price: float, atr
         else:
             logger.error(f"Erro ao ajustar SL {symbol}: {res.comment}")
 
-def apply_partial_exit_after_pyr(symbol: str, side: str, current_price: float, atr: float):
+
+def apply_partial_exit_after_pyr(
+    symbol: str, side: str, current_price: float, atr: float
+):
     """
     Fecha parcialmente a ÚLTIMA perna após pyramiding
     Condições:
@@ -5230,7 +5981,7 @@ def apply_partial_exit_after_pyr(symbol: str, side: str, current_price: float, a
         "price": current_price,
         "deviation": get_dynamic_slippage(symbol, datetime.now().hour),
         "magic": 2026,
-        "comment": "Partial Exit +1R"
+        "comment": "Partial Exit +1R",
     }
 
     with mt5_lock:
@@ -5243,8 +5994,6 @@ def apply_partial_exit_after_pyr(symbol: str, side: str, current_price: float, a
         )
 
 
-
-
 def apply_anti_martingale(loss_streak: int) -> float:
     """
     Anti-Martingale: Reduz volume pós-perdas (risco, para win rate psicológico).
@@ -5252,10 +6001,12 @@ def apply_anti_martingale(loss_streak: int) -> float:
     if loss_streak >= 2:
         return 0.5  # 50% volume normal
     return 1.0
+
+
 def calculate_dynamic_sl_tp(symbol, side, entry_price, ind):
     atr = ind.get("atr", 0.10)
     adx = ind.get("adx", 20)
-    
+
     # Detecta regime
     if adx >= 30:
         regime = "TRENDING"
@@ -5266,22 +6017,23 @@ def calculate_dynamic_sl_tp(symbol, side, entry_price, ind):
     else:
         regime = "RANGING"
         tp_mult = 2.5  # Conservador
-    
+
     sl_mult = 2.0  # Mantém fixo
-    
+
     if side == "BUY":
         sl = entry_price - (atr * sl_mult)
         tp = entry_price + (atr * tp_mult)
     else:
         sl = entry_price + (atr * sl_mult)
         tp = entry_price - (atr * tp_mult)
-    
+
     # Normalização
     info = mt5.symbol_info(symbol)
     sl = round(sl / info.trade_tick_size) * info.trade_tick_size
     tp = round(tp / info.trade_tick_size) * info.trade_tick_size
-    
+
     return sl, tp
+
 
 def calculate_strict_sl_tp(symbol, side, entry_price, ind, params: dict):
     atr = float(ind.get("atr", 0.10) or 0.10)
@@ -5295,12 +6047,23 @@ def calculate_strict_sl_tp(symbol, side, entry_price, ind, params: dict):
             tp_mult = 3.0
     tp_mult = float(tp_mult or 3.0)
     use_ema_exit = bool(getattr(config, "EXIT_AT_EMA200", False))
-    ema_tf = getattr(mt5, f"TIMEFRAME_{getattr(config, 'MACRO_TIMEFRAME', 'H1')}", mt5.TIMEFRAME_H1)
+    ema_tf = getattr(
+        mt5, f"TIMEFRAME_{getattr(config, 'MACRO_TIMEFRAME', 'H1')}", mt5.TIMEFRAME_H1
+    )
     ema_val = None
     if use_ema_exit:
         df_macro = safe_copy_rates(symbol, ema_tf, 250)
-        if df_macro is not None and len(df_macro) > int(getattr(config, "MACRO_EMA_LONG", 200) or 200):
-            ser = df_macro["close"].ewm(span=int(getattr(config, "MACRO_EMA_LONG", 200) or 200), adjust=False).mean()
+        if df_macro is not None and len(df_macro) > int(
+            getattr(config, "MACRO_EMA_LONG", 200) or 200
+        ):
+            ser = (
+                df_macro["close"]
+                .ewm(
+                    span=int(getattr(config, "MACRO_EMA_LONG", 200) or 200),
+                    adjust=False,
+                )
+                .mean()
+            )
             try:
                 ema_val = float(ser.iloc[-1])
             except Exception:
@@ -5316,19 +6079,24 @@ def calculate_strict_sl_tp(symbol, side, entry_price, ind, params: dict):
         if use_ema_exit and ema_val and ema_val < entry_price:
             tp = ema_val
     info = mt5.symbol_info(symbol)
-    tick = getattr(info, "trade_tick_size", getattr(info, "point", 0.0)) if info else 0.0
+    tick = (
+        getattr(info, "trade_tick_size", getattr(info, "point", 0.0)) if info else 0.0
+    )
     if tick and tick > 0:
         sl = round(sl / tick) * tick
         tp = round(tp / tick) * tick
     return float(sl), float(tp)
 
+
 def normalize_price(symbol, price):
     info = mt5.symbol_info(symbol)
-    if not info: return price
-    
+    if not info:
+        return price
+
     # Use trade_tick_size aqui também
     normalized = round(price / info.trade_tick_size) * info.trade_tick_size
     return round(normalized, info.digits)
+
 
 def check_and_apply_breakeven(symbol, current_indicators, move_threshold_atr=1.0):
     """
@@ -5339,23 +6107,24 @@ def check_and_apply_breakeven(symbol, current_indicators, move_threshold_atr=1.0
         return
 
     ind = current_indicators.get(symbol)
-    if not ind: 
+    if not ind:
         return
 
     atr = ind.get("atr", 0.10)
-    
+
     for p in positions:
         if p.type == mt5.POSITION_TYPE_BUY:
             if p.price_current >= (p.price_open + (atr * move_threshold_atr)):
                 if p.sl < p.price_open:
                     logger.info(f"🛡️ {symbol}: Movendo para Breakeven (COMPRA)")
                     modify_sl_tp(p.ticket, p.price_open + (atr * 0.1), p.tp)
-        
+
         elif p.type == mt5.POSITION_TYPE_SELL:
             if p.price_current <= (p.price_open - (atr * move_threshold_atr)):
                 if p.sl > p.price_open or p.sl == 0:
                     logger.info(f"🛡️ {symbol}: Movendo para Breakeven (VENDA)")
                     modify_sl_tp(p.ticket, p.price_open - (atr * 0.1), p.tp)
+
 
 def modify_sl_tp(ticket, new_sl, new_tp):
     """
@@ -5363,8 +6132,9 @@ def modify_sl_tp(ticket, new_sl, new_tp):
     """
     # Normaliza os preços antes de enviar para evitar erro de tick_size
     pos = mt5.positions_get(ticket=ticket)
-    if not pos: return False
-    
+    if not pos:
+        return False
+
     symbol = pos[0].symbol
     new_sl = normalize_price(symbol, new_sl)
     new_tp = normalize_price(symbol, new_tp)
@@ -5378,12 +6148,13 @@ def modify_sl_tp(ticket, new_sl, new_tp):
 
     with mt5_lock:
         result = mt5.order_send(request)
-    
+
     if result.retcode != mt5.TRADE_RETCODE_DONE:
         logger.error(f"❌ Falha ao mover Stop: {result.comment}")
         return False
-    
+
     return True
+
 
 def update_correlations(top15_symbols):
     """
@@ -5392,38 +6163,42 @@ def update_correlations(top15_symbols):
     """
     # ✅ CORREÇÃO: Era 'symbols', agora é 'top15_symbols'
     if not isinstance(top15_symbols, (list, tuple)):
-        logger.error(f"update_correlations recebeu tipo inválido: {type(top15_symbols)}")
+        logger.error(
+            f"update_correlations recebeu tipo inválido: {type(top15_symbols)}"
+        )
         return
-    
+
     if not top15_symbols:
         logger.warning("update_correlations: Lista de símbolos vazia")
         return
-    
+
     logger.info(f"📊 Atualizando correlação para {len(top15_symbols)} ativos...")
-    
+
     try:
         # Coleta dados de fechamento dos últimos 50 candles
         data = {}
         for sym in top15_symbols:
             rates = mt5.copy_rates_from_pos(sym, mt5.TIMEFRAME_M15, 0, 50)
             if rates is not None:
-                data[sym] = [r['close'] for r in rates]
-        
+                data[sym] = [r["close"] for r in rates]
+
         if len(data) > 1:
             df = pd.DataFrame(data)
             corr_matrix = df.corr()
-            
+
             # Salva na variável global
             global last_corr_matrix
             last_corr_matrix = corr_matrix
             logger.info("✅ Matriz de correlação atualizada")
-            
+
     except Exception as e:
         logger.error(f"Erro ao calcular correlações: {e}", exc_info=True)
+
 
 # =========================================================
 # 📤 TELEGRAM & REPORTING
 # =========================================================
+
 
 def send_telegram_message(text: str):
     """
@@ -5436,10 +6211,11 @@ def send_telegram_message(text: str):
                 chat_id=config.TELEGRAM_CHAT_ID,
                 text=text,
                 parse_mode="HTML",
-                disable_web_page_preview=True
+                disable_web_page_preview=True,
             )
         except Exception as e:
             logger.warning(f"Erro ao enviar mensagem para o Telegram: {e}")
+
 
 def send_daily_performance_report():
     """
@@ -5448,20 +6224,22 @@ def send_daily_performance_report():
     try:
         from database import get_trades_by_date
         from datetime import date
-        
+
         today = date.today()
         trades = get_trades_by_date(today)
-        
+
         if not is_valid_dataframe(trades):
-            send_telegram_message(f"📊 <b>RELATÓRIO {today.strftime('%d/%m/%Y')}</b>\nNenhum trade realizado hoje.")
+            send_telegram_message(
+                f"📊 <b>RELATÓRIO {today.strftime('%d/%m/%Y')}</b>\nNenhum trade realizado hoje."
+            )
             return
 
         acc = mt5.account_info()
         equity = acc.equity if acc else 0
-        
-        total_pnl = trades['pnl_money'].sum()
-        win_rate = (len(trades[trades['pnl_money'] > 0]) / len(trades)) * 100
-        
+
+        total_pnl = trades["pnl_money"].sum()
+        win_rate = (len(trades[trades["pnl_money"] > 0]) / len(trades)) * 100
+
         msg = (
             f"📊 <b>RELATÓRIO FINAL XP3 - {today.strftime('%d/%m/%Y')}</b>\n\n"
             f"💰 Equity: R$ {equity:,.2f}\n"
@@ -5474,9 +6252,11 @@ def send_daily_performance_report():
     except Exception as e:
         logger.error(f"Erro no relatório diário: {e}")
 
+
 # =========================================================
 # 📰 NEWS & EVENTS
 # =========================================================
+
 
 def send_news_alert(message: str):
     """
@@ -5484,14 +6264,15 @@ def send_news_alert(message: str):
     """
     if not getattr(config, "ENABLE_TELEGRAM_NOTIF", False):
         return
-    
+
     full_message = f"📰 <b>CALENDÁRIO ECONÔMICO</b>\n\n{message}"
-    
+
     try:
         send_telegram_message(full_message)
         logger.info(f"News alert enviado: {message}")
     except Exception as e:
         logger.error(f"Falha ao enviar news alert: {e}")
+
 
 def send_next_high_impact_event():
     """
@@ -5499,10 +6280,13 @@ def send_next_high_impact_event():
     """
     try:
         from news_filter import get_next_high_impact_event
+
         message = get_next_high_impact_event()
         emoji = "🔴" if "em" in message and "min" in message else "🟢"
         send_news_alert(f"{emoji} <b>PRÓXIMO EVENTO</b>\n\n{message}")
-    except: pass
+    except:
+        pass
+
 
 def send_current_blackout_status():
     """
@@ -5510,19 +6294,23 @@ def send_current_blackout_status():
     """
     try:
         from news_filter import check_news_blackout, get_upcoming_events
+
         blocked, reason = check_news_blackout()
-        
+
         if blocked:
             status = f"🚫 <b>BOT EM BLACKOUT</b>\n\n{reason}"
         else:
             status = "✅ <b>Trading Liberado</b> - Sem eventos críticos próximos."
-        
+
         send_news_alert(status)
-    except: pass
+    except:
+        pass
+
 
 # =========================================================
 # 🛡️ RECOVERY & RISK
 # =========================================================
+
 
 def mt5_crash_recovery():
     """
@@ -5533,6 +6321,7 @@ def mt5_crash_recovery():
         return
     logger.info("Recuperação MT5 completa")
 
+
 def get_daily_volume() -> float:
     """Calcula o volume total negociado PELO BOT no dia (em R$)."""
     try:
@@ -5542,64 +6331,78 @@ def get_daily_volume() -> float:
             deals = mt5.history_deals_get(from_date, to_date)
         if not deals:
             return 0.0
-        total_volume = sum(abs(deal.volume * deal.price) for deal in deals if deal.entry == mt5.DEAL_ENTRY_OUT)  # Sum of closed trades' value
+        total_volume = sum(
+            abs(deal.volume * deal.price)
+            for deal in deals
+            if deal.entry == mt5.DEAL_ENTRY_OUT
+        )  # Sum of closed trades' value
         return total_volume
     except Exception as e:
         logger.error(f"Erro ao calcular volume: {e}")
         return 0.0
 
+
 def get_realtime_win_rate(lookback_trades: int = 20) -> Dict[str, Any]:
     """
     Calcula win rate em tempo real a partir do histórico do MT5.
-    
+
     Args:
         lookback_trades: Quantos últimos trades considerar.
-        
+
     Returns:
         Dict com win_rate (float 0.0-1.0), total_trades e profit_factor.
     """
     try:
         from datetime import datetime, timedelta
         import MetaTrader5 as mt5
-        
+
         # Define período de busca (últimos 30 dias para garantir dados)
         end_date = datetime.now()
         start_date = end_date - timedelta(days=30)
-        
+
         with mt5_lock:
             # Pega histórico de negócios (DEALS)
             deals = mt5.history_deals_get(start_date, end_date)
-        
+
         if deals is None or len(deals) == 0:
             return {"win_rate": 0.0, "total_trades": 0, "profit_factor": 0.0}
-        
+
         # Filtra apenas DEALS de SAÍDA que tenham PnL Realizado
         # (entry != alignment)
-        valid_trades = [d for d in deals if d.entry != mt5.DEAL_ENTRY_IN and d.profit != 0]
-        
+        valid_trades = [
+            d for d in deals if d.entry != mt5.DEAL_ENTRY_IN and d.profit != 0
+        ]
+
         # Pega apenas os últimos N
-        last_trades = valid_trades[-lookback_trades:] if len(valid_trades) > lookback_trades else valid_trades
-        
+        last_trades = (
+            valid_trades[-lookback_trades:]
+            if len(valid_trades) > lookback_trades
+            else valid_trades
+        )
+
         if not last_trades:
             return {"win_rate": 0.0, "total_trades": 0, "profit_factor": 0.0}
-            
+
         wins = sum(1 for d in last_trades if d.profit > 0)
         total = len(last_trades)
-        
+
         gross_profit = sum(d.profit for d in last_trades if d.profit > 0)
         gross_loss = abs(sum(d.profit for d in last_trades if d.profit < 0))
-        
-        profit_factor = gross_profit / gross_loss if gross_loss > 0 else 2.0 # Default favorável se não houver losses
-        
+
+        profit_factor = (
+            gross_profit / gross_loss if gross_loss > 0 else 2.0
+        )  # Default favorável se não houver losses
+
         return {
             "win_rate": wins / total if total > 0 else 0.0,
             "total_trades": total,
-            "profit_factor": round(profit_factor, 2)
+            "profit_factor": round(profit_factor, 2),
         }
-        
+
     except Exception as e:
         logger.error(f"Erro em get_realtime_win_rate: {e}")
         return {"win_rate": 0.0, "total_trades": 0, "profit_factor": 0.0}
+
 
 def calculate_daily_dd() -> float:
     """
@@ -5607,17 +6410,21 @@ def calculate_daily_dd() -> float:
     """
     try:
         acc = mt5.account_info()
-        if not acc: return 0.0
-        
+        if not acc:
+            return 0.0
+
         # Tenta buscar a global do bot
         import sys
-        bot_mod = sys.modules.get('bot')
-        if bot_mod and hasattr(bot_mod, 'daily_max_equity'):
-            m_equity = getattr(bot_mod, 'daily_max_equity')
+
+        bot_mod = sys.modules.get("bot")
+        if bot_mod and hasattr(bot_mod, "daily_max_equity"):
+            m_equity = getattr(bot_mod, "daily_max_equity")
             if m_equity > acc.equity:
                 return (m_equity - acc.equity) / m_equity
         return 0.0
-    except: return 0.0
+    except:
+        return 0.0
+
 
 # ============================================
 # 🔥 PRIORIDADE 1 - ANTI-CHOP & LIMITS
@@ -5632,6 +6439,7 @@ _symbol_sl_timestamps = {}  # {symbol: timestamp_último_sl}
 _symbol_sl_prices = {}  # {symbol: preço_quando_bateu_sl}
 _daily_symbol_trades = defaultdict(lambda: {"total": 0, "losses": 0})  # Contador diário
 
+
 def load_anti_chop_data():
     """Carrega dados de cooldown"""
     global _symbol_sl_timestamps, _symbol_sl_prices
@@ -5640,7 +6448,7 @@ def load_anti_chop_data():
             with open(ANTI_CHOP_FILE, "r") as f:
                 data = json.load(f)
                 _symbol_sl_timestamps = {
-                    k: datetime.fromisoformat(v) 
+                    k: datetime.fromisoformat(v)
                     for k, v in data.get("timestamps", {}).items()
                 }
                 _symbol_sl_prices = data.get("prices", {})
@@ -5648,13 +6456,15 @@ def load_anti_chop_data():
         except Exception as e:
             logger.error(f"Erro ao carregar anti-chop: {e}")
 
+
 def save_anti_chop_data():
     """Salva dados de cooldown"""
     data = {
         "timestamps": {k: v.isoformat() for k, v in _symbol_sl_timestamps.items()},
-        "prices": _symbol_sl_prices
+        "prices": _symbol_sl_prices,
     }
     atomic_save_json(ANTI_CHOP_FILE, data)
+
 
 def load_daily_limits():
     """Carrega contadores diários"""
@@ -5667,8 +6477,7 @@ def load_daily_limits():
                 today = datetime.now().date().isoformat()
                 if saved_date == today:
                     _daily_symbol_trades = defaultdict(
-                        lambda: {"total": 0, "losses": 0},
-                        data.get("trades", {})
+                        lambda: {"total": 0, "losses": 0}, data.get("trades", {})
                     )
                     logger.info("✅ Limites diários carregados")
                 else:
@@ -5676,13 +6485,15 @@ def load_daily_limits():
         except Exception as e:
             logger.error(f"Erro ao carregar limites: {e}")
 
+
 def save_daily_limits():
     """Salva contadores diários"""
     data = {
         "date": datetime.now().date().isoformat(),
-        "trades": dict(_daily_symbol_trades)
+        "trades": dict(_daily_symbol_trades),
     }
     atomic_save_json(DAILY_LIMITS_FILE, data)
+
 
 def register_sl_hit(symbol: str, sl_price: float):
     """Registra que o SL foi atingido"""
@@ -5693,7 +6504,10 @@ def register_sl_hit(symbol: str, sl_price: float):
     save_anti_chop_data()
     logger.info(f"🛑 {symbol}: SL registrado @ R${sl_price:.2f}")
 
-def check_anti_chop_filter(symbol: str, current_price: float, atr: float) -> Tuple[bool, str]:
+
+def check_anti_chop_filter(
+    symbol: str, current_price: float, atr: float
+) -> Tuple[bool, str]:
     """Valida se o ativo está em cooldown após SL ou volatilidade excedida"""
     if not getattr(config, "ANTI_CHOP", {}).get("enabled", False):
         return True, ""
@@ -5712,6 +6526,7 @@ def check_anti_chop_filter(symbol: str, current_price: float, atr: float) -> Tup
             return False, f"Cooldown SL ({int(cooldown_min - elapsed)} min rest)"
     return True, ""
 
+
 def clear_anti_chop_cooldown(symbol: str):
     """Limpa cooldown após entrada bem-sucedida"""
     try:
@@ -5722,9 +6537,12 @@ def clear_anti_chop_cooldown(symbol: str):
                 return
     except Exception:
         pass
-    if symbol in _symbol_sl_timestamps: del _symbol_sl_timestamps[symbol]
-    if symbol in _symbol_sl_prices: del _symbol_sl_prices[symbol]
+    if symbol in _symbol_sl_timestamps:
+        del _symbol_sl_timestamps[symbol]
+    if symbol in _symbol_sl_prices:
+        del _symbol_sl_prices[symbol]
     save_anti_chop_data()
+
 
 def check_daily_symbol_limit(symbol: str) -> Tuple[bool, str]:
     """Verifica limites diários por ativo"""
@@ -5739,11 +6557,16 @@ def check_daily_symbol_limit(symbol: str) -> Tuple[bool, str]:
     except Exception:
         pass
     stats = _daily_symbol_trades[symbol]
-    if stats["losses"] >= config.DAILY_SYMBOL_LIMITS.get("max_losing_trades_per_symbol", 2):
+    if stats["losses"] >= config.DAILY_SYMBOL_LIMITS.get(
+        "max_losing_trades_per_symbol", 2
+    ):
         return False, "Limite de perdas diário"
-    if stats["total"] >= config.DAILY_SYMBOL_LIMITS.get("max_total_trades_per_symbol", 5):
+    if stats["total"] >= config.DAILY_SYMBOL_LIMITS.get(
+        "max_total_trades_per_symbol", 5
+    ):
         return False, "Limite total diário"
     return True, ""
+
 
 def register_trade_result(symbol: str, is_loss: bool):
     """Registra resultado do trade para limites diários"""
@@ -5754,26 +6577,39 @@ def register_trade_result(symbol: str, is_loss: bool):
         _daily_symbol_trades[symbol]["losses"] += 1
     save_daily_limits()
 
+
 def reset_daily_limits():
     """Reseta contadores diários"""
     global _daily_symbol_trades
     _daily_symbol_trades.clear()
     save_daily_limits()
 
+
 def check_pyramid_eligibility(symbol: str, side: str, ind: dict) -> Tuple[bool, str]:
     """Valida se pode adicionar perna (pirâmide) na posição atual"""
     with mt5_lock:
         positions = [p for p in mt5.positions_get(symbol=symbol) or []]
-    if not positions: return True, "Primeira entrada"
+    if not positions:
+        return True, "Primeira entrada"
     pos = positions[0]
     existing_side = "BUY" if pos.type == mt5.POSITION_TYPE_BUY else "SELL"
-    if existing_side != side: return False, "Direção oposta"
+    if existing_side != side:
+        return False, "Direção oposta"
     pyr_count = pos.comment.count("PYR") if pos.comment else 0
     if pyr_count >= getattr(config, "PYRAMID_MAX_LEGS", 3):
         return False, "Limite de pirâmide atingido"
     return True, "Elegível"
 
-def send_telegram_trade(symbol: str, side: str, volume: float, price: float, sl: float, tp: float, comment: str = ""):
+
+def send_telegram_trade(
+    symbol: str,
+    side: str,
+    volume: float,
+    price: float,
+    sl: float,
+    tp: float,
+    comment: str = "",
+):
     msg = (
         f"🚀 <b>NOVA OPERAÇÃO: {symbol}</b>\n"
         f"━━━━━━━━━━━━━━━━━━━━\n"
@@ -5785,7 +6621,16 @@ def send_telegram_trade(symbol: str, side: str, volume: float, price: float, sl:
     )
     send_telegram_message(msg)
 
-def send_telegram_exit(symbol: str, side: str, volume: float, entry_price: float, exit_price: float, profit_loss: float, reason: str = ""):
+
+def send_telegram_exit(
+    symbol: str,
+    side: str,
+    volume: float,
+    entry_price: float,
+    exit_price: float,
+    profit_loss: float,
+    reason: str = "",
+):
     emoji = "✅" if profit_loss >= 0 else "❌"
     msg = (
         f"{emoji} <b>SAÍDA DE POSIÇÃO: {symbol}</b>\n"
@@ -5797,30 +6642,31 @@ def send_telegram_exit(symbol: str, side: str, volume: float, entry_price: float
     )
     send_telegram_message(msg)
 
+
 def calcular_lucro_realizado_txt():
     import os
     import re
     from datetime import datetime
-    
+
     filename = f"trades_log_{datetime.now().strftime('%Y-%m-%d')}.txt"
-    
+
     if not os.path.exists(filename):
         return 0.0, 0
-    
+
     total_pnl = 0.0
     contagem_trades = 0
-    
+
     with open(filename, "r", encoding="utf-8") as f:
         conteudo = f.read()
-        
+
         # ✅ REGEX MAIS ROBUSTO
         # Busca linhas de fechamento (não de abertura)
-        for linha in conteudo.split('\n'):
+        for linha in conteudo.split("\n"):
             if "Abertura de Posição" in linha or "---" in linha:
                 continue
-            
+
             # Match: P&L: +1550.00 ou P&L: -320.50
-            match = re.search(r'P&L:\s*([+-]?\d+\.?\d*)', linha)
+            match = re.search(r"P&L:\s*([+-]?\d+\.?\d*)", linha)
             if match:
                 try:
                     pnl = float(match.group(1))
@@ -5828,17 +6674,22 @@ def calcular_lucro_realizado_txt():
                     contagem_trades += 1
                 except ValueError:
                     continue
-                    
+
     return total_pnl, contagem_trades
+
 
 def obter_resumo_financeiro_do_dia():
     lucro_realizado, total_ordens = calcular_lucro_realizado_txt()
-    lucro_aberto_total = sum(p.profit for p in mt5.positions_get()) if mt5.positions_get() else 0.0
+    lucro_aberto_total = (
+        sum(p.profit for p in mt5.positions_get()) if mt5.positions_get() else 0.0
+    )
     return lucro_realizado, lucro_aberto_total, total_ordens
+
 
 def responder_comando_lucro(message):
     bot = get_telegram_bot()
-    if not bot: return
+    if not bot:
+        return
 
     # 1. Busca o Lucro Realizado no seu arquivo TXT (o que já está no bolso)
     realizado, qtd = calcular_lucro_realizado_txt()
@@ -5847,9 +6698,9 @@ def responder_comando_lucro(message):
     posicoes_abertas = mt5.positions_get()
     aberto = sum(p.profit for p in posicoes_abertas) if posicoes_abertas else 0.0
     total_do_dia = realizado + aberto
-    
+
     emoji = "🚀" if total_do_dia >= 0 else "⚠️"
-    
+
     msg = (
         f"{emoji} <b>STATUS XP3 - AGORA</b>\n\n"
         f"💰 <b>Realizado:</b> R$ {realizado:,.2f}\n"
@@ -5861,27 +6712,31 @@ def responder_comando_lucro(message):
 
     bot.reply_to(message, msg, parse_mode="HTML")
 
-def check_minimum_price_movement(symbol: str, df: pd.DataFrame, atr: float) -> Tuple[bool, str]:
+
+def check_minimum_price_movement(
+    symbol: str, df: pd.DataFrame, atr: float
+) -> Tuple[bool, str]:
     """
     Valida se houve movimento mínimo antes de entrar
     """
     if not getattr(config, "MIN_PRICE_MOVEMENT", {}).get("enabled", False):
         return True, ""
-    
+
     lookback = config.MIN_PRICE_MOVEMENT.get("lookback_candles", 5)
-    
+
     if df is None or len(df) < lookback:
         return True, ""  # Fail-open
-    
+
     recent = df.tail(lookback)
     price_range = recent["high"].max() - recent["low"].min()
-    
+
     min_movement = atr * config.MIN_PRICE_MOVEMENT.get("min_atr_multiplier", 1.5)
-    
+
     if price_range < min_movement:
         return False, f"Range baixo ({price_range:.2f} < {min_movement:.2f})"
-    
+
     return True, ""
+
 
 # Final calls for data persistence
 try:
@@ -5889,6 +6744,8 @@ try:
     load_daily_limits()
 except:
     pass
+
+
 def diagnose_symbol_failure(symbol: str) -> str:
     try:
         info = mt5.symbol_info(symbol)
@@ -5899,14 +6756,18 @@ def diagnose_symbol_failure(symbol: str) -> str:
         if not getattr(info, "visible", False):
             return "Símbolo não visível"
         from datetime import datetime
+
         exp = getattr(info, "expiration_time", None)
         if isinstance(exp, datetime) and exp < datetime.now():
             return "Contrato vencido"
         return "Falha na seleção"
     except Exception as e:
         return f"Erro na verificação: {str(e)}"
+
+
 def ensure_market_watch_symbols():
     import config
+
     logger.info("📋 Sincronizando Market Watch (Strict Mode)...")
     desired = set(config.SECTOR_MAP.keys())
     try:
@@ -5925,15 +6786,25 @@ def ensure_market_watch_symbols():
                 added_names.add(symbol)
                 continue
             reason = diagnose_symbol_failure(symbol)
-            logger.warning(f"⚠️ Corretora {broker}: Falha ao adicionar {symbol} - {reason}")
+            logger.warning(
+                f"⚠️ Corretora {broker}: Falha ao adicionar {symbol} - {reason}"
+            )
             s_up = (symbol or "").upper()
-            is_fut_like = ("$" in s_up) or s_up.startswith(("WIN", "WDO", "WSP", "IND", "DOL", "SMALL"))
+            is_fut_like = ("$" in s_up) or s_up.startswith(
+                ("WIN", "WDO", "WSP", "IND", "DOL", "SMALL")
+            )
             if is_fut_like:
                 base = s_up.replace("$", "")
                 base = base[:4] if base.startswith(("SMAL", "SMALL")) else base[:3]
                 cands = get_futures_candidates(base)
                 if cands:
-                    cands_sorted = sorted(cands, key=lambda c: (-calculate_contract_score(c), c.get("days_to_exp", 9999)))
+                    cands_sorted = sorted(
+                        cands,
+                        key=lambda c: (
+                            -calculate_contract_score(c),
+                            c.get("days_to_exp", 9999),
+                        ),
+                    )
                     best = cands_sorted[0]
                     cand_sym = best.get("symbol")
                     if cand_sym and mt5.symbol_select(cand_sym, True):
@@ -5963,9 +6834,14 @@ def ensure_market_watch_symbols():
             if s.select and s.name not in keep_set:
                 if mt5.symbol_select(s.name, False):
                     removed_count += 1
-    logger.info(f"✅ Market Watch Sincronizado: {count_added} ativos mantidos/adicionados, {removed_count} removidos.")
+    logger.info(
+        f"✅ Market Watch Sincronizado: {count_added} ativos mantidos/adicionados, {removed_count} removidos."
+    )
 
-def calculate_portfolio_heat(positions: list, equity: float, indicators_snapshot: dict) -> float:
+
+def calculate_portfolio_heat(
+    positions: list, equity: float, indicators_snapshot: dict
+) -> float:
     """Calcula quão 'quente' está a carteira (0.0 = fria, 1.0 = superaquecida)"""
     if not positions or len(positions) < 2:
         return 0.0
@@ -5979,11 +6855,7 @@ def calculate_portfolio_heat(positions: list, equity: float, indicators_snapshot
         for sym2 in symbols:
             if sym1 >= sym2:
                 continue
-            corr = (
-                calculate_correlation_matrix([sym1, sym2])
-                .get(sym1, {})
-                .get(sym2, 0)
-            )
+            corr = calculate_correlation_matrix([sym1, sym2]).get(sym1, {}).get(sym2, 0)
             total_corr += abs(corr)
             count += 1
     avg_corr = total_corr / count if count > 0 else 0.0
@@ -6002,4 +6874,3 @@ def calculate_portfolio_heat(positions: list, equity: float, indicators_snapshot
 
     heat = (avg_corr * 0.4) + (hhi * 0.3) + (min(total_atr_pct / 10.0, 1.0) * 0.3)
     return round(min(heat, 1.0), 3)
-
