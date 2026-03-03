@@ -101,7 +101,7 @@ class DailyAnalysisLogger:
                     pass
                 
                 if rejected:
-                    adx_threshold = 20
+                    adx_threshold = 15
                     try:
                         symu = (symbol or "").upper().strip()
                         elite = getattr(config, "ELITE_SYMBOLS", {}) or {}
@@ -202,7 +202,7 @@ class DailyAnalysisLogger:
                 # ✅ NOVO: Pesos e Travas Land Trading
                 raw_score = display_score
 
-                adx_threshold2 = 20
+                adx_threshold2 = 15
                 try:
                     symu2 = (symbol or "").upper().strip()
                     elite2 = getattr(config, "ELITE_SYMBOLS", {}) or {}
@@ -222,8 +222,9 @@ class DailyAnalysisLogger:
                 except Exception:
                     pass
                 if adx < adx_threshold2:
-                    display_score = min(display_score, 40)
-                    progress_warning = " (Score reduzido: tendência fraca)"
+                    # ✅ REMOVIDO CORTE AGRESSIVO DE SCORE (Antes: min(display_score, 40))
+                    # Apenas marcamos como um aviso.
+                    progress_warning = " (⚠️ alerta de tendência fraca)"
 
                 log_entry.append(
                     f"📊 Score real: {raw_score:.0f} | Score filtrado: {display_score:.0f}"

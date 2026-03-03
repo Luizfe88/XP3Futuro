@@ -1360,8 +1360,8 @@ class AssetClassManager:
     @staticmethod
     def get_time_window(symbol: str) -> tuple[str, str]:
         """Retorna janela de horário para futuros"""
-        start = "09:05"
-        end = getattr(config, "FUTURES_CLOSE_ALL_BY", "17:50")
+        start = "09:30"
+        end = getattr(config, "FUTURES_CLOSE_ALL_BY", "17:30")
         return start, end
 
     @staticmethod
@@ -2838,7 +2838,8 @@ class MultiTimeframeEngine:
     def _get_hierarchy(self, symbol: str) -> list:
         s = (symbol or "").upper()
         if is_future(s):
-            return [mt5.TIMEFRAME_M5, mt5.TIMEFRAME_M15, mt5.TIMEFRAME_H1]
+            # Removido TIMEFRAME_H1 para day trade não depender de tendência tão longa
+            return [mt5.TIMEFRAME_M5, mt5.TIMEFRAME_M15]
         return [mt5.TIMEFRAME_M15, mt5.TIMEFRAME_H1, mt5.TIMEFRAME_D1]
 
     def _calculate_signal(self, symbol: str, timeframe) -> dict:
@@ -3616,16 +3617,24 @@ def calculate_signal_score(
             score += 35
             score_log["EMA_TREND_OK"] = 35
         else:
-            score -= 20
-            score_log["EMA_COUNTER_TREND"] = -20
+            if rsi < 15 or rsi > 85:
+                # Gatilho contra a tendência permitido em exaustão extrema!
+                score += 25
+                score_log["EMA_COUNTER_EXHAUSTION"] = 25
+            else:
+                score -= 20
+                score_log["EMA_COUNTER_TREND"] = -20
 
         if 30 <= rsi <= 70:
             score += 20
             score_log["RSI_HEALTHY"] = 20
 
-        if adx >= adx_min:
-            score += 20
+    # Adiciona ADX_OK independentemente do regime se adx >= adx_min para o logger não falhar
+    if adx >= adx_min:
+        if "ADX_OK" not in score_log:
             score_log["ADX_OK"] = 20
+            if regime == "NEUTRAL":
+                score += 20
 
     # 4. VOLUME RATIO > 0.4 (25 pts) - Sempre importante
     if volume_ratio >= 0.4:

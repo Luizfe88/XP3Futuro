@@ -4197,6 +4197,14 @@ def try_enter_position(symbol, side, risk_factor=1.0, rsi_limit_high=70, rsi_lim
     rsi = ind_data.get("rsi", 50)
     score_now = float(ind_data.get("score", 0) or 0)
     
+    # 🔥 NOVO: Inversão por exaustão extrema
+    if side == "SELL" and rsi < 15:
+        logger.info(f"🔄 {symbol}: Exaustão extrema de VENDA (RSI {rsi:.1f}). Revertendo alerta para COMPRA!")
+        side = "BUY"
+    elif side == "BUY" and rsi > 85:
+        logger.info(f"🔄 {symbol}: Exaustão extrema de COMPRA (RSI {rsi:.1f}). Revertendo alerta para VENDA!")
+        side = "SELL"
+    
     # 1. RSI (Exaustão) - UNIFICADO E DINÂMICO
     symu = (symbol or "").upper()
     is_index = symu.startswith("WIN") or symu.startswith("IND")
@@ -4297,6 +4305,9 @@ def try_enter_position(symbol, side, risk_factor=1.0, rsi_limit_high=70, rsi_lim
         min_score = base_min_score + float(getattr(config, "ENTRY_SCORE_DELTA_LUNCH", 10) or 10)
     else:
         min_score = base_min_score + float(getattr(config, "ENTRY_SCORE_DELTA_AFTERNOON", 0) or 0)
+
+    # ⛔ REMOVIDO: O bypass forced_signal foi desativado a pedido do usuário
+    forced_signal = False 
 
     if score < min_score and not (forced_signal or adx_exception):
         reason = f"📊 Setup fraco ({period_name}): Score {score:.0f} < {min_score:.0f}"

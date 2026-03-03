@@ -275,10 +275,10 @@ DAILY_VOLUME_LIMIT = 1000000000  # R$ 1 bilhão (limite financeiro diário)
 # HORÁRIOS ESPECÍFICOS (FUTUROS)
 # ===========================
 HORARIOS_OPERACAO = {
-    "FUTUROS": [(time(9, 0), time(18, 0))],  # Horário completo de futuros
+    "FUTUROS": [(time(9, 30), time(17, 30))],  # Horário completo de futuros
     "SO_FUTUROS": [
-        (time(9, 0), time(10, 0)),
-        (time(17, 0), time(18, 0)),
+        (time(9, 30), time(10, 0)),
+        (time(17, 0), time(17, 30)),
     ],  # Apenas janelas específicas
 }
 
@@ -328,11 +328,11 @@ MIN_SIGNAL_SCORE = 35
 # ===========================
 # HORÁRIOS DE OPERAÇÃO
 # ===========================
-TRADING_START = "09:25"  # Após estabilização da abertura
-NO_ENTRY_AFTER = "17:15"  # Fim das entradas (antes do fechamento nervoso)
-CLOSE_ALL_BY = "17:40"  # FECHAMENTO FORÇADO (nunca posar no after)
+TRADING_START = "09:30"  # Após estabilização da abertura
+NO_ENTRY_AFTER = "17:00"  # Fim das entradas (antes do fechamento nervoso)
+CLOSE_ALL_BY = "17:30"  # FECHAMENTO FORÇADO (nunca posar no after)
 NO_ENTRY_BEFORE_CLOSE_MINUTES = (
-    15  # Bloqueia novas entradas quando faltar pouco p/ fechar
+    30  # Bloqueia novas entradas quando faltar pouco p/ fechar
 )
 DAILY_RESET_TIME = "00:00"  # Reset diário do circuit breaker
 DAY_ONLY_MODE = True
@@ -346,9 +346,9 @@ FRIDAY_DISABLE_PYRAMID_AFTER = "16:30"
 # ✅ Pausa operacional entre 11:45 e 13:15
 TRADING_LUNCH_BREAK_START = "11:45"
 TRADING_LUNCH_BREAK_END = "13:15"
-FUTURES_CLOSE_ALL_BY = "17:50"
+FUTURES_CLOSE_ALL_BY = "17:30"
 FUTURES_AFTERMARKET_START = "16:00"
-FUTURES_AFTERMARKET_END = "17:50"
+FUTURES_AFTERMARKET_END = "17:30"
 MAX_ACCEPTABLE_GAP_PCT = 0.015
 # ===========================
 # GESTÃO DE RISCO
