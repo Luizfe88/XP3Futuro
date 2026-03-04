@@ -1,0 +1,22 @@
+╔══════════════════════════════════════════════════════╗
+║  📚 RELATÓRIO DE APRENDIZADO - 2026-03-04          ║
+╚══════════════════════════════════════════════════════╝
+
+📊 RESUMO DO DIA
+────────────────────────────────────────
+Trades fechados : 0
+Win Rate geral  : ⚠️ 50.0% (0W / 0L)
+PnL total       : 🟢 R$ +0.00
+
+🧠 LIÇÕES APRENDIDAS
+────────────────────────────────────────
+  ℹ️  Nenhum trade fechado hoje — sem lições para extrair.
+
+🔧 AJUSTES AUTO-APLICADOS
+────────────────────────────────────────
+  ✅ Nenhum ajuste necessário — pesos mantidos.
+
+──────────────────────────────────────────────────────
+  Gerado em: 04/03/2026 14:26:38
+  XP3 PRO — Sistema de Aprendizado Adaptativo
+──────────────────────────────────────────────────────

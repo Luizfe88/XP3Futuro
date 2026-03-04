@@ -4267,6 +4267,16 @@ def save_adaptive_weights():
     except Exception as e:
         logger.error(f"❌ Erro ao salvar pesos adaptativos: {e}")
 
+    # ✅ Também persiste no banco (para carga no próximo boot)
+    try:
+        import database as _db
+        _db.save_adaptive_weights_snapshot(
+            symbol_weights=symbol_weights,
+            sector_weights=sector_weights,
+        )
+    except Exception as e:
+        logger.warning(f"⚠️ Não foi possível salvar pesos no banco: {e}")
+
 
 def load_adaptive_weights():
     global symbol_weights, sector_weights
@@ -4275,8 +4285,26 @@ def load_adaptive_weights():
     symbol_weights = {}
     sector_weights = {}
 
+    # ✅ Passo 1: Tenta carregar do banco (snapshot de ontem)
+    try:
+        import database as _db
+        sym_db, sec_db = _db.load_adaptive_weights_snapshot()  # ontem por padrão
+        if sym_db and sec_db:
+            symbol_weights = sym_db
+            sector_weights = sec_db
+            from datetime import timedelta
+            yesterday = (__import__('datetime').datetime.now().date() - timedelta(days=1)).isoformat()
+            logger.info(
+                f"🧠 Pesos de ontem ({yesterday}) carregados do banco: "
+                f"{len(symbol_weights)} símbolos | {len(sector_weights)} setores"
+            )
+            return
+    except Exception as e:
+        logger.warning(f"⚠️ Não foi possível carregar pesos do banco: {e}")
+
+    # ✅ Passo 2: Fallback para adaptive_weights.json
     if not os.path.exists(path):
-        logger.info("ℹ️ Pesos adaptativos não encontrados. Usando padrão.")
+        logger.info("ℹ️ Pesos adaptativos não encontrados (nem banco nem JSON). Usando padrão.")
         return
 
     try:
@@ -4293,7 +4321,7 @@ def load_adaptive_weights():
             raise ValueError("Estrutura inválida em adaptive_weights.json")
 
         logger.info(
-            f"🧠 Pesos adaptativos carregados: "
+            f"🧠 Pesos adaptativos carregados do JSON (fallback): "
             f"{len(symbol_weights)} símbolos | {len(sector_weights)} setores"
         )
 

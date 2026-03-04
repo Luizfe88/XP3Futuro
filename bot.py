@@ -1469,7 +1469,7 @@ def handle_daily_cycle():
         except Exception as e:
             logger.error(f"❌ Erro ao enviar relatório: {e}")
 
-        # 🆕 NOVO: Relatório de Rejeições (Console e Log)
+        # 🆕 Relatório de Rejeições (Console e Log)
         try:
             rejection_report = daily_logger.get_daily_rejection_summary()
             logger.info(rejection_report)
@@ -1478,13 +1478,23 @@ def handle_daily_cycle():
         except Exception as e:
             logger.error(f"Erro ao gerar resumo de rejeições: {e}")
 
+        # 📚 RELATÓRIO DE APRENDIZADO DIÁRIO (auto-aplica lições nos pesos)
+        try:
+            from daily_learning_report import DailyLearningReport
+            telegram_learning = DailyLearningReport().generate_and_apply()
+            logger.info("📚 Relatório de aprendizado gerado e ajustes aplicados.")
+            if telegram_learning and getattr(config, "ENABLE_TELEGRAM_NOTIF", False):
+                utils.send_telegram_message(telegram_learning)
+        except Exception as e:
+            logger.error(f"Erro ao gerar relatório de aprendizado: {e}")
+
     # ============================================
     # 4️⃣ SALVA DADOS PERSISTENTES
     # ============================================
     if daily_cycle_completed:
         try:
             utils.save_loss_streak_data()
-            utils.save_adaptive_weights()
+            utils.save_adaptive_weights()   # Persiste JSON + banco (inclui ajustes das lições)
             save_anti_chop_data()
             save_daily_limits()
         except Exception as e:

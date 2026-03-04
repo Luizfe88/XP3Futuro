@@ -1,5 +1,6 @@
 import sqlite3
 import os
+import json
 from datetime import datetime, timedelta
 import pandas as pd
 import logging
@@ -315,3 +316,112 @@ def get_symbol_statistics(symbol: str, lookback_days: int = 30) -> dict:
     except Exception as e:
         logger.error(f"Erro stats {symbol}: {e}")
         return {"win_rate": 0.55, "avg_rr": 2.0, "total_trades": 0}
+
+
+# =============================================================================
+# 📦 HISTÓRICO DE PESOS ADAPTATIVOS
+# =============================================================================
+
+def init_adaptive_weights_table(db_path: str = DB_PATH):
+    """Cria a tabela adaptive_weights_history se não existir."""
+    try:
+        conn = sqlite3.connect(db_path)
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS adaptive_weights_history (
+                date         TEXT PRIMARY KEY,
+                symbol_weights TEXT NOT NULL,
+                sector_weights TEXT NOT NULL,
+                saved_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        logger.error(f"Erro ao criar tabela adaptive_weights_history: {e}")
+
+
+def save_adaptive_weights_snapshot(
+    symbol_weights: dict,
+    sector_weights: dict,
+    date_str: str = None,
+    db_path: str = DB_PATH,
+):
+    """
+    Salva um snapshot dos pesos adaptativos no banco para a data informada.
+    Se date_str for None, usa a data de hoje.
+    """
+    if date_str is None:
+        date_str = datetime.now().date().isoformat()
+    try:
+        init_adaptive_weights_table(db_path)
+        conn = sqlite3.connect(db_path)
+        conn.execute("""
+            INSERT OR REPLACE INTO adaptive_weights_history
+                (date, symbol_weights, sector_weights, saved_at)
+            VALUES (?, ?, ?, CURRENT_TIMESTAMP)
+        """, (
+            date_str,
+            json.dumps(symbol_weights, ensure_ascii=False),
+            json.dumps(sector_weights, ensure_ascii=False),
+        ))
+        conn.commit()
+        conn.close()
+        logger.info(f"💾 Pesos adaptativos salvos no banco (data: {date_str})")
+    except Exception as e:
+        logger.error(f"Erro ao salvar pesos adaptativos no banco: {e}")
+
+
+def load_adaptive_weights_snapshot(
+    date_str: str = None,
+    db_path: str = DB_PATH,
+) -> tuple:
+    """
+    Carrega o snapshot de pesos adaptativos para a data informada.
+    Se date_str for None, usa ONTEM (para carregar ao iniciar o bot).
+    Retorna (symbol_weights, sector_weights) ou (None, None) se não encontrado.
+    """
+    if date_str is None:
+        date_str = (datetime.now().date() - timedelta(days=1)).isoformat()
+    try:
+        init_adaptive_weights_table(db_path)
+        conn = sqlite3.connect(db_path)
+        row = conn.execute(
+            "SELECT symbol_weights, sector_weights FROM adaptive_weights_history WHERE date = ?",
+            (date_str,),
+        ).fetchone()
+        conn.close()
+        if row:
+            symbol_w = json.loads(row[0])
+            sector_w = json.loads(row[1])
+            if isinstance(symbol_w, dict) and isinstance(sector_w, dict):
+                return symbol_w, sector_w
+        return None, None
+    except Exception as e:
+        logger.error(f"Erro ao carregar pesos adaptativos do banco ({date_str}): {e}")
+        return None, None
+
+
+def get_recent_weight_snapshots(last_n_days: int = 7, db_path: str = DB_PATH) -> list:
+    """
+    Retorna lista de (date, symbol_weights, sector_weights) dos últimos N dias.
+    Útil para o relatório de aprendizado comparar evolução dos pesos.
+    """
+    try:
+        init_adaptive_weights_table(db_path)
+        conn = sqlite3.connect(db_path)
+        rows = conn.execute(
+            "SELECT date, symbol_weights, sector_weights FROM adaptive_weights_history "
+            "ORDER BY date DESC LIMIT ?",
+            (last_n_days,),
+        ).fetchall()
+        conn.close()
+        result = []
+        for date_s, sym_j, sec_j in rows:
+            try:
+                result.append((date_s, json.loads(sym_j), json.loads(sec_j)))
+            except Exception:
+                pass
+        return result
+    except Exception as e:
+        logger.error(f"Erro ao buscar histórico de pesos: {e}")
+        return []
