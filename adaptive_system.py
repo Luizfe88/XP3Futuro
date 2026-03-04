@@ -293,7 +293,13 @@ def check_panic_mode():
             return True
 
     # 2. Surto de Liquidez (RVOL)
-    # A lógica de RVOL precisa ser implementada primeiro.
+    # Pega o RVOL do Índice Futuro, que reflete o apetite/pânico instantâneo mais que o mercado à vista
+    rvol, _ = _calculate_rvol("WIN$N", period=10)
+    if rvol > 3.5:
+        adaptive_logger.critical(f"🚨 PANIC MODE: Surto de liquidez detectado! RVOL = {rvol:.2f}x a média.")
+        # Força proteção imediata contra volatilidade predatória
+        adjust_parameters("REVERSION")
+        return True
 
     return False
 

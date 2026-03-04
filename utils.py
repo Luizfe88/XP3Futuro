@@ -39,6 +39,11 @@ try:
 except ImportError:
     futures_core = None
 
+try:
+    import redis
+except ImportError:
+    redis = None
+
 logger = logging.getLogger(__name__)
 
 # Cache global para símbolos resolvidos
@@ -1713,12 +1718,45 @@ def _mt5_copy_rates_threaded(
     return df.sort_index()
 
 
-def _mt5_force_history(symbol: str, timeframe, count: int) -> None:
+def _mt5_force_history(symbol: str, timeframe, count: int) -> Optional[pd.DataFrame]:
+    """Força carregamento real do histórico no MT5 e RETORNA o DataFrame carregado."""
+    logger.info(f"🔧 Forçando download completo de histórico para {symbol}...")
+
+    # 1. Força seleção do símbolo no Market Watch
     try:
-        start = datetime.now() - timedelta(days=30)
-        mt5.copy_rates_from(symbol, timeframe, start, max(1, min(count, 5000)))
+        if not mt5.symbol_select(symbol, True):
+            logger.warning(f"❌ Não foi possível selecionar {symbol} no Market Watch")
     except Exception:
-        return
+        pass
+
+    # 2. Busca via copy_rates_from (data absoluta — evita cache corrompido de pos)
+    rates = None
+    try:
+        start_date = datetime.now() - timedelta(days=180)
+        rates = mt5.copy_rates_from(symbol, timeframe, start_date, max(count, 3000))
+        if rates is not None and len(rates) > 100:
+            logger.info(f"✅ Histórico carregado com sucesso: {len(rates)} barras para {symbol}")
+        else:
+            logger.warning(f"⚠️ copy_rates_from ainda falhou para {symbol}. Tentando copy_rates_range...")
+            end = datetime.now()
+            rates = mt5.copy_rates_range(symbol, timeframe, start_date, end)
+    except Exception as e:
+        logger.debug(f"_mt5_force_history: {e}")
+        rates = None
+
+    time.sleep(2.0)  # Espera obrigatória para o terminal processar
+
+    # 3. Converte em DataFrame e retorna
+    if rates is not None and len(rates) > 0:
+        try:
+            df_fh = pd.DataFrame(rates)
+            if "time" in df_fh.columns:
+                df_fh["time"] = pd.to_datetime(df_fh["time"], unit="s")
+                df_fh.set_index("time", inplace=True)
+            return df_fh.sort_index()
+        except Exception as e_conv:
+            logger.debug(f"_mt5_force_history conv error: {e_conv}")
+    return None
 
 
 def _try_mt5_symbol_select(symbol: str) -> Optional[str]:
@@ -1846,22 +1884,59 @@ def safe_copy_rates(
     selected = _try_mt5_symbol_select(requested_symbol)
     symbol = selected or requested_symbol
 
-    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
-    if df is not None and not _df_has_valid_ohlc(df):
-        logger.warning(
-            f"⚠️ MT5 retornou OHLC inválido para {symbol} (zeros/NaN). Tentando fallback..."
-        )
-        df = None
+    # ⚡ FAST-PATH: Símbolos genéricos ($N, $) e contratos datados NUNCA têm cache válido
+    # em copy_rates_from_pos — pulamos direto para force_history (copy_rates_from por data)
+    _is_generic = "$" in symbol or _is_futures_contract_symbol(symbol)
 
-    if df is None or len(df) == 0:
-        _mt5_force_history(symbol, timeframe, count)
-        time.sleep(0.2)
+    df = None
+    if not _is_generic:
         df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
         if df is not None and not _df_has_valid_ohlc(df):
             logger.warning(
-                f"⚠️ MT5 ainda com OHLC inválido para {symbol} após force_history. Tentando fallback..."
+                f"⚠️ MT5 retornou OHLC inválido para {symbol} (zeros/NaN). Tentando fallback..."
             )
             df = None
+
+    if df is None or len(df) == 0:
+        # Usa copy_rates_from (absoluto) em vez de copy_rates_from_pos
+        # IMPORTANTE: force_history RETORNA o df que carregou — reutilizamos diretamente
+        df_fh = _mt5_force_history(symbol, timeframe, count)
+        if df_fh is not None and _df_has_valid_ohlc(df_fh):
+            logger.info(f"✅ MT5 recuperado via force_history direto para {symbol}")
+            return df_fh.tail(count)
+        else:
+            # Tenta uma vez mais via threaded (terminal pode ter atualizado cache)
+            df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+            if df is not None and not _df_has_valid_ohlc(df):
+                logger.warning(
+                    f"⚠️ MT5 ainda com OHLC inválido para {symbol} após force_history. Tentando fallback..."
+                )
+                df = None
+            # Se force_history trouxe dados mas OHLC ainda ruim, usa ele como base
+            if df is None and df_fh is not None and len(df_fh) > 50:
+                logger.warning(f"⚠️ OHLC inválido persistente em {symbol} — usando dados brutos do force_history")
+                df = df_fh  # Dados podem ter OHLC parcialmente bons
+
+    # === CAMADA DE SEGURANÇA ANTI-ZEROS: dispara mesmo se df é None ===
+    if df is None or (len(df) > 50 and not _df_has_valid_ohlc(df)):
+        logger.warning(f"⚠️ Último recurso para {symbol}: symbol_select + copy_rates_from por intervalo...")
+        try:
+            mt5.symbol_select(symbol, True)
+            time.sleep(1)
+            start_lr = datetime.now() - timedelta(days=30)
+            rates_lr = mt5.copy_rates_from(symbol, timeframe, start_lr, max(count, 500))
+            if rates_lr is not None and len(rates_lr) > 0:
+                df_lr = pd.DataFrame(rates_lr)
+                if "time" in df_lr.columns:
+                    df_lr["time"] = pd.to_datetime(df_lr["time"], unit="s")
+                    df_lr.set_index("time", inplace=True)
+                df_lr = df_lr.sort_index()
+                if _df_has_valid_ohlc(df_lr):
+                    logger.info(f"✅ Recuperado com sucesso via copy_rates_from (last resort) para {symbol}")
+                    return df_lr
+        except Exception as e_lr:
+            logger.debug(f"Último recurso falhou para {symbol}: {e_lr}")
+        df = None
 
     if (
         (df is None or len(df) == 0)

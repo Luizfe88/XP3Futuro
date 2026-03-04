@@ -2,7 +2,31 @@ import MetaTrader5 as mt5
 import pandas as pd
 from datetime import datetime, timedelta
 from typing import Optional, Dict
+import logging
 import utils
+
+logger = logging.getLogger("market_screener")
+
+
+def _check_mt5_health() -> bool:
+    """
+    Teste de saúde rápido do MT5. Retorna True se os dados são válidos.
+    Deve ser chamado antes de iniciar o ranking para evitar listas vazias.
+    """
+    test_symbol = utils.resolve_symbol("WIN$N")  # Usa o contrato atual
+    try:
+        df = utils.safe_copy_rates(test_symbol, mt5.TIMEFRAME_M15, 200)
+        if df is None or len(df) < 100:
+            logger.error(
+                "❌ MT5 HEALTH CHECK FALHOU - Nenhum dado válido. Verifique terminal!"
+            )
+            return False
+        logger.info(f"✅ MT5 Health Check OK — {len(df)} barras recebidas para {test_symbol}")
+        return True
+    except Exception as e:
+        logger.error(f"❌ MT5 Health Check exceção: {e}")
+        return False
+
 
 def get_historical_data(symbol: str, days: int = 20) -> Optional[pd.DataFrame]:
     """
