@@ -4230,6 +4230,13 @@ def try_enter_position(symbol, side, risk_factor=1.0, rsi_limit_high=70, rsi_lim
         rsi_exhaust = float(getattr(config, "RSI_EXHAUSTION_INDEX", 80) or 80)
         rsi_exhaust_sell = float(getattr(config, "RSI_EXHAUSTION_INDEX_SELL", 20) or 20)
 
+    # 🚀 NOVO: Expansão de RSI Dinâmico Baseado em Força de Tendência (ADX)
+    adx_now = float(ind_data.get("adx", 0) or 0)
+    if adx_now > 30:
+        rsi_exhaust = max(rsi_exhaust, 85)
+        rsi_exhaust_sell = min(rsi_exhaust_sell, 15)
+        logger.debug(f"📈 {symbol}: ADX Forte ({adx_now:.1f}) indicando super tendência -> RSI Limit expandido para {rsi_exhaust}/{rsi_exhaust_sell}")
+
     # 🔥 HOTFIX CRIPTO/BREAKOUT (BIT/BTC)
     # Se for Cripto, Score Alto e Breakout Confirmado -> Libera RSI para 95
     if 'BIT' in symu or 'BTC' in symu:
@@ -4302,7 +4309,30 @@ def try_enter_position(symbol, side, risk_factor=1.0, rsi_limit_high=70, rsi_lim
     forced_signal = (side == "BUY" and forced_buy) or (side == "SELL" and forced_sell)
     ema_diff_pct = abs(ema_fast - ema_slow) / max(close_price, 1)
     ema_tilt_ok = ema_diff_pct > 0.0005
-    adx_exception = (15 <= adx <= 20) and ema_tilt_ok
+    
+    # 🚀 NOVO: ADX Dinâmico e Reversal Bypass
+    is_lunch_time = (datetime.strptime("12:00","%H:%M").time() <= current_time <= datetime.strptime("13:30","%H:%M").time())
+    
+    # Reduz requisito de ADX no almoço onde a volatilidade cai
+    adx_threshold = float(_get_strict_params(symbol).get("adx_threshold", 25.0))
+    if is_lunch_time:
+        adx_threshold = adx_threshold * 0.8  # Desconto de 20%
+    
+    adx_exception = (adx >= adx_threshold * 0.6) and ema_tilt_ok
+    
+    # Bypass de Contra-Tendência (Reversão Forte)
+    reversal_bypass = False
+    is_counter_trend = (side == "BUY" and ema_trend == "DOWN") or (side == "SELL" and ema_trend == "UP")
+    if is_counter_trend and vol_ratio > 1.8:
+        if (side == "BUY" and rsi > 50) or (side == "SELL" and rsi < 50):
+            logger.info(f"⚡ {symbol}: Bypass de Reversão Ativado. Momentum forte e Volume>1.8x contra a EMA ({ema_trend}).")
+            reversal_bypass = True
+            forced_signal = True # Libera o trade no score_gate
+            # Engana a validação estrita para não bloquear por contra-tendência
+            bot_state.set_score(symbol, score, 0.0) # Reset timer
+            bot_state.indicators[symbol]['ema_fast'] = ema_slow + 1 if side == "BUY" else ema_slow - 1
+            bot_state.indicators[symbol]['adx'] = max(adx, adx_threshold) # Força ADX para passar
+            bot_state.record_indicator(symbol, "reversal_bypass", True)
 
     base_min_score = float(getattr(config, "MIN_SIGNAL_SCORE", 35) or 35)
     if period_name == "Manhã":
