@@ -23,7 +23,7 @@ def main():
         lines.append(f"terminal.connected: {getattr(term, 'connected', None)}")
         lines.append(f"terminal.trade_allowed: {getattr(term, 'trade_allowed', None)}")
 
-        targets = ["WDOH26", "DOLH26", "WSPH26", "BGIH26", "WING26", "INDG26"]
+        targets = ["WDOH26", "DOLH26", "WSPH26", "BGIH26", "WING26", "INDG26", "CCMU27", "ICFH26"]
         for s in targets:
             try:
                 base = utils._futures_base_from_symbol(s)

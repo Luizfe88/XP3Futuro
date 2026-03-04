@@ -519,14 +519,11 @@ def validate_mt5_connection():
     
     for attempt in range(1, max_attempts + 1):
         try:
-            # Tenta inicializar com o caminho específico
-            if mt5.initialize(path=config.MT5_TERMINAL_PATH):
+            # Tenta inicializar usando a nova função centralizada
+            if utils.initialize_mt5():
                 terminal = mt5.terminal_info()
-                
                 if terminal and terminal.connected:
-                    logger.info(f"✅ MT5 conectado: {config.MT5_TERMINAL_PATH}")
-                    logger.info(f"   📊 Conta: {mt5.account_info().login}")
-                    logger.info(f"   🏢 Corretora: {mt5.account_info().company}")
+                    logger.info("✅ MT5 validado e conectado via XP Terminal.")
                     return True
             
             logger.warning(f"⚠️ Tentativa {attempt}/{max_attempts} falhou")
@@ -2118,9 +2115,8 @@ def health_watcher_thread():
                 if (terminal is None) or (not getattr(terminal, "connected", False)):
                     logger.warning("MT5 desconectado - Reconectando...")
                     path = getattr(config, "MT5_TERMINAL_PATH", None)
-                    ok = False
                     try:
-                        ok = mt5.initialize(path=path) if path else mt5.initialize()
+                        ok = utils.initialize_mt5()
                     except Exception:
                         ok = False
                     if ok:
@@ -3471,8 +3467,8 @@ def force_mt5_reconnect(max_attempts: int = 3) -> bool:
             mt5.shutdown()
             time.sleep(2)
             
-            # 2. Tenta reinicializar
-            if mt5.initialize(path=config.MT5_TERMINAL_PATH):
+            # 2. Tenta reinicializar via função centralizada
+            if utils.initialize_mt5():
                 # 3. Valida conexão
                 terminal = mt5.terminal_info()
                 account = mt5.account_info()
@@ -5712,7 +5708,7 @@ def ensure_mt5_connection():
         logger.warning("⚠️ MT5 desconectado! Tentando reconectar...")
         mt5.shutdown()
         time.sleep(1)
-        if mt5.initialize():
+        if utils.initialize_mt5():
             logger.info("✅ MT5 Reconectado com sucesso.")
         else:
             logger.error("❌ Falha ao reconectar MT5.")
@@ -6926,9 +6922,9 @@ def main():
     except Exception as e:
         logger.warning(f"⚠️ Erro na limpeza de logs: {e}")
 
-    # 1. Inicialização do MetaTrader 5
-    if not mt5.initialize(path=config.MT5_TERMINAL_PATH):
-        logger.critical(f"❌ Falha ao conectar no MT5: {config.MT5_TERMINAL_PATH}")
+    # 1. Inicialização do MetaTrader 5 (Enforçado XP)
+    if not utils.initialize_mt5():
+        logger.critical("❌ Falha crítica ao conectar no MT5 via XP Terminal.")
         try:
             mapping = utils.discover_all_futures()
             if mapping:
@@ -6937,7 +6933,7 @@ def main():
             logger.warning(f"Falha no fallback de mapeamento de futuros: {e}")
         return
     else:
-        logger.info(f"✅ Conectado ao MT5 correto: {config.MT5_TERMINAL_PATH}")
+        logger.info("✅ Conectado ao MT5 XP com sucesso.")
 
     # ✅ VALIDAÇÃO CRÍTICA: Apenas futuros permitidos
     if not validate_futures_only_mode():

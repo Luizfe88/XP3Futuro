@@ -30,6 +30,7 @@ MAGIC_NUMBER = 987654
 DEVIATION = 20
 TIMEFRAME_BASE = "M5"
 MT5_TERMINAL_PATH = r"C:\MetaTrader 5 Terminal\terminal64.exe"
+ALLOWED_BROKERS = ["XP-PRIME", "XP-TRADE", "XP-GLOBAL", "XP", "XP-INSTITUTIONAL", "CLEAR", "CLEAR-INVESTIMENTOS"]
 
 # ===========================
 # ✅ SISTEMA DE CONFIGURAÇÃO DINÂMICA VIA YAML
@@ -431,6 +432,34 @@ SLIPPAGE_TICKS = {
 }
 MAX_SPREAD_FUTURE_POINTS = 20  # Máx spread em pontos para futuros
 FUTURE_FEE_PER_CONTRACT = 1.0  # Taxa por contrato
+
+# =========================================================
+# 📋 MAPEAMENTO DE FUTUROS ACTIVOS (ACTIVE_FUTURES)
+# =========================================================
+# Mapeia símbolos genéricos para o contrato real atual na corretora.
+# Para XP Investimentos, os símbolos contínuos são usados diretamente (WIN$N, WDO$N).
+# Se a corretora usar contratos datados (WINJ26), atualize aqui.
+ACTIVE_FUTURES = {
+    "WIN$N": "WIN$N",    # Mini Índice Bovespa (contínuo XP)
+    "WDO$N": "WDO$N",    # Mini Dólar (contínuo XP)
+    "IND$N": "WIN$N",    # IND → resolve para WIN (mini-índice)
+    "WSP$N": "WDO$N",    # WSP → resolve para WDO (mini-dólar)
+    "DOL$N": "DOL$N",    # Dólar cheio
+    "DI1$N": "DI1$N",    # DI Futuro
+    "CCM$N": "CCM$N",    # Café (pode ser substituído por CCMU27)
+    "BGI$N": "BGI$N",    # Boi Gordo
+    "ICF$N": "ICF$N",    # Açúcar
+    "BIT$N": "BIT$N",    # Bitcoin Futuro (se disponível)
+    "SFI$N": "SFI$N",    # S&P 500 Futuro
+    # Aliases sem sufixo (base pura)
+    "WIN":   "WIN$N",
+    "WDO":   "WDO$N",
+    "IND":   "WIN$N",
+    "WSP":   "WDO$N",
+    "DOL":   "DOL$N",
+    "DI1":   "DI1$N",
+}
+
 
 # =========================================================
 # 📊 PARÂMETROS DINÂMICOS POR WIN RATE

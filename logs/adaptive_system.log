@@ -3831,3 +3831,2418 @@
 2026-03-03 18:56:39,531 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
 2026-03-03 18:56:44,005 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
 2026-03-03 18:56:49,050 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-03 19:04:54,499 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 19:04:54,655 - INFO - 🔄 Coletando métricas para IND → IND
+2026-03-03 19:04:58,587 - INFO - 🔄 Coletando métricas para WSP$N → WSP$N
+2026-03-03 19:05:02,423 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-03 19:10:19,240 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 19:10:19,409 - INFO - 🔄 Coletando métricas para CCMU27 → CCMU27
+2026-03-03 19:10:26,482 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-03 19:55:47,648 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 19:55:47,699 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-03 19:55:52,150 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-03-03 19:55:56,276 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-03-03 19:56:00,167 - INFO - 🔄 Coletando métricas para BGIJ26 → BGIJ26
+2026-03-03 19:56:05,229 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-03-03 19:56:10,481 - INFO - 🔄 Coletando métricas para CCMU27 → CCMU27
+2026-03-03 19:56:14,926 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 19:56:19,433 - INFO - 🔄 Coletando métricas para IND → IND
+2026-03-03 19:56:23,731 - INFO - 🤖 SENSOR: Métricas atualizadas para 8 ativos.
+2026-03-03 19:56:25,030 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 17 ativos.
+2026-03-03 20:02:55,270 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 20:02:55,488 - INFO - 🔄 Coletando métricas para IND → IND
+2026-03-03 21:03:00,680 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:00,764 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:00,775 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:00,852 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:00,900 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:00,905 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:00,930 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:00,962 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:00,966 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:00,994 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:01,042 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:01,046 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:01,099 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:01,143 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:01,147 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:01,182 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:01,216 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:01,221 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:01,258 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:01,299 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:01,304 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:01,337 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:01,370 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:01,374 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:01,399 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:01,435 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:01,441 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:01,481 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:01,522 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:01,526 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:01,552 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:01,583 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:01,587 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:01,648 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:01,701 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:01,707 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:01,737 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:01,871 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:01,877 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:01,914 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:01,987 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:01,996 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:02,042 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:02,095 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:02,100 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:02,148 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:02,222 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:02,228 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:02,258 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:02,348 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:02,357 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:02,390 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:02,461 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:02,472 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:02,531 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:02,576 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:02,581 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:02,609 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:02,649 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:02,654 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:02,693 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:02,745 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:02,749 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:02,803 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:02,887 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:02,891 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:02,915 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:02,960 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:02,968 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:03,017 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:03,081 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:03,089 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:03,150 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:03,217 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:03,223 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:03,268 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:03,348 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:03,353 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:03,378 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:03,423 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:03,427 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:03,486 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:03,525 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:03,529 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:03,570 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:03,656 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:03,662 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:03,695 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:03,772 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:03,784 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:03,834 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:03,894 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:03,898 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:03,939 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:03,993 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:03,998 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:04,036 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:04,086 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:04,091 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:04,138 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:04,213 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:04,218 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:04,266 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:04,342 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:04,350 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:04,379 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:04,430 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:04,436 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:04,484 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:04,524 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:04,528 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:04,565 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:04,628 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:04,635 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:04,666 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:04,739 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:04,744 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:04,808 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:04,911 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:04,917 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:04,973 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:05,052 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:05,056 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:05,080 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:05,138 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:05,143 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:05,183 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:05,232 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:05,236 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:05,271 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:05,314 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:05,319 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:05,349 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:05,386 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:05,392 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:05,438 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:05,486 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:05,492 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:05,519 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:05,570 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:05,576 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:05,622 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:05,678 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:05,682 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:05,709 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:05,836 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:05,841 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:05,886 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:05,955 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:05,963 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:06,008 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:06,072 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:06,077 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:06,115 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:06,155 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:06,161 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:06,204 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:06,242 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:06,248 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:06,279 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:06,325 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:06,330 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:06,369 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:06,412 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:06,417 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:06,448 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:06,503 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:06,509 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:06,550 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:06,585 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:06,589 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:06,620 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:06,664 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:06,670 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:06,706 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:06,759 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:06,764 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:06,814 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:06,938 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:06,945 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:06,977 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:07,052 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:07,056 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:07,093 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:07,136 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:07,140 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:07,169 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:07,208 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:07,213 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:07,247 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:07,289 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:07,293 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:07,319 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:07,364 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:07,369 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:07,412 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:07,458 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:07,464 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:07,519 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:07,564 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:07,568 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:07,594 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:07,636 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:07,641 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:07,680 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:07,718 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:07,722 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:07,747 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:07,801 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:07,807 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:07,851 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:07,931 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:07,936 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:07,968 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:08,033 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:08,038 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:08,083 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:08,131 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:08,137 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:08,167 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:08,227 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:08,232 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:08,263 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:08,325 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:08,331 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:08,377 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:08,421 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:08,425 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:08,452 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:08,490 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:08,495 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:08,527 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:08,569 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:08,573 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:08,598 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:08,634 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:08,638 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:08,663 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:08,734 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:08,738 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:08,776 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:08,831 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:08,842 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:08,872 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:08,920 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:08,924 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:08,968 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:09,014 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:09,019 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:09,045 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:09,110 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:09,114 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:09,161 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:09,231 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:09,236 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:09,262 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:09,313 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:09,318 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:09,354 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:09,428 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:09,441 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:09,491 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:09,599 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:09,612 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:09,695 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:09,736 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:09,740 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:09,763 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:09,909 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:09,936 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:09,975 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:10,017 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:10,021 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:10,048 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:10,209 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:10,240 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:10,299 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:10,370 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:10,375 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:10,408 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:10,446 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:10,454 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:10,484 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:10,532 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:10,536 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:10,563 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:10,606 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:10,610 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:10,738 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:10,863 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:10,873 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:10,913 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:10,953 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:11,626 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:12,269 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:12,297 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:12,398 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:12,667 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:12,740 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:12,759 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:12,808 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:12,908 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:12,913 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:12,937 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:12,974 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:12,977 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:13,007 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:13,050 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:13,055 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:13,300 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:13,340 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:13,344 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:13,367 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:13,398 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:13,414 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:13,447 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:13,502 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:13,507 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:13,534 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:13,575 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:13,579 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:14,134 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:14,174 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:14,178 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:14,202 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:14,241 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:14,245 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:14,270 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:14,457 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:14,462 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:14,507 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:14,549 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:14,553 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:14,578 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:14,701 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:14,723 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:14,791 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:14,843 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:14,847 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:14,875 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:14,991 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:15,017 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:15,473 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:15,517 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:15,520 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:15,544 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:15,579 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:15,583 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:15,887 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:15,930 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:15,935 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:15,962 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:15,999 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:16,003 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:16,029 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:16,090 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:16,095 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:16,157 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:16,390 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:16,407 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:25,716 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:25,740 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:25,743 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:25,761 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:25,786 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:25,790 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:33,717 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:33,874 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:33,882 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:33,927 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:34,035 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:34,041 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:34,077 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:34,154 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:34,837 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:42,582 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:42,610 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:42,614 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:42,640 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:42,665 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:42,669 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:42,693 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:42,727 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:42,732 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:42,772 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:42,830 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:42,852 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:42,915 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:42,973 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:42,982 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:43,120 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:43,202 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:43,207 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:43,477 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:43,540 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:43,546 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:43,577 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:43,906 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:43,932 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:44,172 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:44,255 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:44,261 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:44,503 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:44,780 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:44,786 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:45,087 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:45,387 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:45,392 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:45,479 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:45,559 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:45,565 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:45,623 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:45,686 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:45,690 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:45,766 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:45,893 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:45,901 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:46,040 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:46,257 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:46,269 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:46,376 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:46,481 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:46,487 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:46,539 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:46,590 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:46,594 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:46,640 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:46,698 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:46,703 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:46,774 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:46,847 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:46,851 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:46,891 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:46,936 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:46,940 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:46,973 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:47,006 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:47,013 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:47,089 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:47,349 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:47,429 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:47,636 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:47,865 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:47,870 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:47,914 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:47,959 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:47,966 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:48,018 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:48,205 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:48,212 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:48,305 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:48,369 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:48,373 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:48,417 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:48,567 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:48,575 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:48,745 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:49,004 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:49,014 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:49,235 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:49,715 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:49,730 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:49,947 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:50,230 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:50,254 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:50,367 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:50,536 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:50,546 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:50,651 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:50,816 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:50,822 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:50,955 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:51,086 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:51,099 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:51,224 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:51,623 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:51,646 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:51,839 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:52,083 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:52,090 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:52,254 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:52,419 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:52,435 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:52,622 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:52,803 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:52,809 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:52,920 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:53,069 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:53,087 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:53,223 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:53,362 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:53,371 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:53,520 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:53,686 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:53,700 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:03:53,917 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:03:54,549 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:03:54,579 - ERROR - Erro na coleta de dados do SENSOR: name 'queue' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 94, in collect_sensor_data
+    atr_d1 = _calculate_average_atr_d1(real_sym)
+  File "C:\Users\luizf\Documents\xp3future\adaptive_system.py", line 140, in _calculate_average_atr_d1
+    df_d1 = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_D1, days + period)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1781, in safe_copy_rates
+    df = _mt5_copy_rates_threaded(symbol, timeframe, count, timeout)
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 1648, in _mt5_copy_rates_threaded
+    q = queue.Queue()
+        ^^^^^
+NameError: name 'queue' is not defined. Did you forget to import 'queue'?
+2026-03-03 21:07:39,817 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:07:39,906 - INFO - 🔄 Coletando métricas para BGIJ26 → BGIJ26
+2026-03-03 21:07:46,534 - INFO - 🔄 Coletando métricas para CCMU27 → CCMU27
+2026-03-03 21:07:52,215 - INFO - 🔄 Coletando métricas para BIT → BIT
+2026-03-03 21:07:58,317 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-03-03 21:08:04,534 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-03-03 21:08:10,089 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-03-03 21:08:15,788 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-03 21:08:21,253 - INFO - 🔄 Coletando métricas para IND → IND
+2026-03-03 21:08:29,507 - INFO - 🤖 SENSOR: Métricas atualizadas para 8 ativos.
+2026-03-03 21:08:31,506 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 17 ativos.
+2026-03-03 21:26:57,140 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 21:26:57,149 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-03-03 21:27:02,274 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-03-03 21:27:06,537 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-03-03 21:27:10,971 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-03-03 21:27:15,531 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-03-03 21:27:20,561 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-03-03 21:27:25,323 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-03-03 21:27:29,884 - INFO - 🤖 SENSOR: Métricas atualizadas para 7 ativos.
+2026-03-03 21:27:31,261 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 17 ativos.
+2026-03-03 22:06:43,302 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 22:06:43,306 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-03-03 22:06:47,884 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-03-03 22:06:52,064 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-03-03 22:06:55,780 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-03-03 22:06:59,690 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-03-03 22:07:03,582 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-03-03 22:07:07,405 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-03-03 22:07:11,508 - INFO - 🤖 SENSOR: Métricas atualizadas para 7 ativos.
+2026-03-03 22:07:12,722 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 17 ativos.
+2026-03-03 22:15:40,160 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-03 22:15:40,165 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-03-03 22:15:47,304 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-03-03 22:15:53,007 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-03-03 22:15:58,188 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-03-03 22:16:02,334 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-03-03 22:16:06,587 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-03-03 22:16:10,855 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-03-03 22:16:15,533 - INFO - 🤖 SENSOR: Métricas atualizadas para 7 ativos.
+2026-03-03 22:16:17,129 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 17 ativos.
+2026-03-04 06:51:52,910 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-04 06:51:52,973 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-03-04 06:51:57,919 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-03-04 06:52:02,034 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-03-04 06:52:06,145 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-03-04 06:52:10,207 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-03-04 06:52:14,091 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-03-04 06:52:18,199 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-03-04 06:52:22,413 - INFO - 🤖 SENSOR: Métricas atualizadas para 7 ativos.
+2026-03-04 06:52:23,672 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 17 ativos.
+2026-03-04 07:53:25,569 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-04 07:53:25,571 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-03-04 07:53:29,399 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-03-04 07:53:32,651 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-03-04 07:53:35,531 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-03-04 07:53:38,423 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-03-04 07:53:41,852 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-03-04 07:53:45,220 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-03-04 07:53:48,583 - INFO - 🤖 SENSOR: Métricas atualizadas para 7 ativos.
+2026-03-04 07:53:49,630 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 17 ativos.
+2026-03-04 07:55:12,294 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-04 07:55:12,295 - INFO - 🔄 Coletando métricas para DOL$N → DOL$N
+2026-03-04 07:55:18,772 - INFO - 🔄 Coletando métricas para WIN$N → WIN$N
+2026-03-04 07:55:24,169 - INFO - 🔄 Coletando métricas para BIT$N → BIT$N
+2026-03-04 07:55:29,293 - INFO - 🔄 Coletando métricas para CCM$N → CCM$N
+2026-03-04 07:55:37,040 - INFO - 🔄 Coletando métricas para WDO$N → WDO$N
+2026-03-04 07:55:46,825 - INFO - 🔄 Coletando métricas para BGI$N → BGI$N
+2026-03-04 07:56:34,925 - INFO - 🔄 Coletando métricas para ICF$N → ICF$N
+2026-03-04 07:57:10,408 - INFO - 🤖 SENSOR: Métricas atualizadas para 7 ativos.
+2026-03-04 07:57:12,447 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 21 ativos.

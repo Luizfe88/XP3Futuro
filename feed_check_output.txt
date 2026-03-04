@@ -1,9 +1,11 @@
 MT5.initialize: True
 terminal.connected: True
 terminal.trade_allowed: True
-WDOH26 | base=WDO | current=None | data=WDO$N | trade=WDOH26 | tick=5237.0000/5237.5000 | rows=300 | last_close=5237.0000 | rsi=36.4865 | adx=34.6541 | volx=0.5000 | err=None
-DOLH26 | base=DOL | current=None | data=DOL$N | trade=DOLH26 | tick=5237.0000/5237.5000 | rows=300 | last_close=5237.0000 | rsi=35.8209 | adx=36.1628 | volx=0.3400 | err=None
-WSPH26 | base=WSP | current=None | data=WSP$N | trade=WSPH26 | tick=6881.2500/6882.0000 | rows=300 | last_close=6882.0000 | rsi=70.1031 | adx=19.6570 | volx=0.2400 | err=None
-BGIH26 | base=BGI | current=None | data=BGI$N | trade=BGIH26 | tick=345.9500/346.0000 | rows=300 | last_close=346.0000 | rsi=27.9070 | adx=24.0364 | volx=0.4300 | err=None
-WING26 | base=WIN | current=None | data=WIN$N | trade=WING26 | tick=186330.0000/186335.0000 | rows=300 | last_close=186335.0000 | rsi=79.6804 | adx=17.7147 | volx=0.7000 | err=None
-INDG26 | base=IND | current=None | data=IND$N | trade=INDG26 | tick=186315.0000/186350.0000 | rows=300 | last_close=186285.0000 | rsi=82.2943 | adx=18.5266 | volx=0.5900 | err=None
+WDOH26 | base=WDO | current=None | data=WDOH26 | trade=WDOH26 | tick=0.0000/0.0000 | rows=300 | last_close=5319.0000 | rsi=47.9167 | adx=21.0095 | volx=0.4100 | err=None
+DOLH26 | base=DOL | current=None | data=DOLH26 | trade=DOLH26 | tick=0.0000/0.0000 | rows=300 | last_close=5319.0000 | rsi=47.2222 | adx=21.8586 | volx=0.2700 | err=None
+WSPH26 | base=WSP | current=None | data=WSPH26 | trade=WSPH26 | tick=6820.2500/6826.5000 | rows=300 | last_close=6826.5000 | rsi=60.2778 | adx=16.0436 | volx=1.9300 | err=None
+BGIH26 | base=BGI | current=None | data=BGIH26 | trade=BGIH26 | tick=340.7000/340.9500 | rows=300 | last_close=341.0000 | rsi=32.2034 | adx=60.0738 | volx=0.7900 | err=None
+WING26 | base=WIN | current=None | data=WING26 | trade=WING26 | tick=0.0000/0.0000 | rows=300 | last_close=185000.0000 | rsi=39.3891 | adx=23.3546 | volx=0.1700 | err=None
+INDG26 | base=IND | current=None | data=INDG26 | trade=INDG26 | tick=0.0000/0.0000 | rows=300 | last_close=184945.0000 | rsi=38.9748 | adx=22.0229 | volx=0.4600 | err=None
+CCMU27 | base=CCM | current=None | data=CCMU27 | trade=CCMU27 | tick=68.7000/0.0000 | rows=300 | last_close=72.5000 | rsi=36.6313 | adx=4.8501 | volx=0.1100 | err=None
+ICFH26 | base=ICF | current=None | data=ICFH26 | trade=ICFH26 | tick=366.5000/375.0000 | rows=300 | last_close=374.7500 | rsi=67.3667 | adx=11.9144 | volx=0.1900 | err=None

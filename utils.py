@@ -1,141 +1,54 @@
 # utils.py
 import functools
-
-print = functools.partial(print, flush=True)
-print("[DEBUG] Importando market_screener...", flush=True)
-import market_screener
-
-print("[DEBUG] market_screener importado.", flush=True)
-print("[DEBUG] Importando time...", flush=True)
 import time
-
-print("[DEBUG] time importado.", flush=True)
-print("[DEBUG] Importando logging...", flush=True)
 import logging
-
-print("[DEBUG] logging importado.", flush=True)
-print("[DEBUG] Importando datetime...", flush=True)
 from datetime import datetime, timedelta, time as datetime_time
-
-print("[DEBUG] datetime importado.", flush=True)
-print("[DEBUG] Importando typing...", flush=True)
 from typing import Optional, Dict, Any, List, Tuple
-
-print("[DEBUG] typing importado.", flush=True)
-print("[DEBUG] Importando collections...", flush=True)
 from collections import defaultdict, deque
-
-print("[DEBUG] collections importado.", flush=True)
-print("[DEBUG] Importando json...", flush=True)
 import json
-
-print("[DEBUG] json importado.", flush=True)
-try:
-    print("[DEBUG] Importando MetaTrader5...", flush=True)
-    import MetaTrader5 as mt5
-
-    print("[DEBUG] MetaTrader5 importado.", flush=True)
-except Exception:
-    mt5 = None
-    print("[DEBUG] MetaTrader5 indisponível.", flush=True)
-print("[DEBUG] Importando pandas...", flush=True)
-import pandas as pd
-
-print("[DEBUG] pandas importado.", flush=True)
-print("[DEBUG] Importando numpy...", flush=True)
-import numpy as np
-
-print("[DEBUG] numpy importado.", flush=True)
-print("[DEBUG] Importando config...", flush=True)
-import config as config
-
-print("[DEBUG] config importado.", flush=True)
-print("[DEBUG] Importando config_futures...", flush=True)
-import config_futures
-
-print("[DEBUG] config_futures importado.", flush=True)
-try:
-    print("[DEBUG] Importando futures_core...", flush=True)
-    import futures_core
-
-    print("[DEBUG] futures_core importado.", flush=True)
-except ImportError:
-    futures_core = None
-    print("[DEBUG] futures_core indisponível.", flush=True)
-print("[DEBUG] Importando threading...", flush=True)
+import os
+import re
+import sys
+import queue
+import signal
+import pickle
+import hashlib
+from pathlib import Path
+import threading
 from threading import RLock, Lock
 
-print("[DEBUG] threading importado.", flush=True)
-print("[DEBUG] Importando threading (módulo)...", flush=True)
-import threading
-
-print("[DEBUG] threading(módulo) importado.", flush=True)
-print("[DEBUG] Importando queue...", flush=True)
-import queue
-
-print("[DEBUG] queue importado.", flush=True)
-print("[DEBUG] Importando os...", flush=True)
-import os
-
-print("[DEBUG] os importado.", flush=True)
-print("[DEBUG] Importando pathlib.Path...", flush=True)
-from pathlib import Path
-
-print("[DEBUG] pathlib.Path importado.", flush=True)
 try:
-    print("[DEBUG] Importando redis...", flush=True)
-    import redis
-
-    print("[DEBUG] redis importado.", flush=True)
+    import requests
 except Exception:
-    redis = None
-    print("[DEBUG] redis indisponível.", flush=True)
-print("[DEBUG] Importando pickle...", flush=True)
-import pickle
+    requests = None
 
-print("[DEBUG] pickle importado.", flush=True)
-print("[DEBUG] Importando hashlib...", flush=True)
-import hashlib
 
-print("[DEBUG] hashlib importado.", flush=True)
-print("[DEBUG] Importando signal...", flush=True)
-import signal
-
-print("[DEBUG] signal importado.", flush=True)
-print("[DEBUG] Importando sys...", flush=True)
-import sys
-
-print("[DEBUG] sys importado.", flush=True)
-print("[DEBUG] Importando requests...", flush=True)
-import requests
-
-print("[DEBUG] requests importado.", flush=True)
 try:
-    print("[DEBUG] Importando news_calendar.apply_blackout...", flush=True)
-    from news_calendar import apply_blackout
-
-    print("[DEBUG] news_calendar.apply_blackout importado.", flush=True)
+    import MetaTrader5 as mt5
 except Exception:
+    mt5 = None
 
-    def apply_blackout(*args, **kwargs):
-        return (False, "")
+# Imports pesados movidos para dentro de funções ou mantidos se necessários
+import pandas as pd
+import numpy as np
+import config as config
+import config_futures
 
-    print("[DEBUG] news_calendar indisponível.", flush=True)
+try:
+    import futures_core
+except ImportError:
+    futures_core = None
+
+logger = logging.getLogger(__name__)
+
+# Cache global para símbolos resolvidos
+_RESOLVED_SYMBOLS_CACHE: Dict[str, str] = {}
+_LAST_CACHE_CLEANUP = 0.0
+
 ml_optimizer = None
-print("[DEBUG] Importando re...", flush=True)
-import re
-
-print("[DEBUG] re importado.", flush=True)
 RandomForestClassifier = None
 StandardScaler = None
-try:
-    print("[DEBUG] Importando joblib...", flush=True)
-    import joblib
-
-    print("[DEBUG] joblib importado.", flush=True)
-except Exception:
-    joblib = None
-    print("[DEBUG] joblib indisponível.", flush=True)
+joblib = None
 anti_chop_rf = None
 anti_chop_scaler = None
 ANTI_CHOP_MODEL_PATH = "anti_chop_rf.pkl"
@@ -406,22 +319,39 @@ def resolve_symbol(symbol: str) -> str:
         return s
 
     # 1. Se já for um contrato específico válido (ex: WINJ26) ou formato XP (WINN)
-    if re.match(r"^[A-Z]{3}[FGHJKMNQUVXZ]\d{2}$", s) or re.match(r"^[A-Z]{3}[NZ]$", s):
+    import re as _re2
+    if _re2.match(r"^[A-Z]{3}[FGHJKMNQUVXZ]\d{2}$", s) or _re2.match(r"^[A-Z]{3}[NZ]$", s):
         return s
 
     # 2. Tenta resolver via ACTIVE_FUTURES no config
     active_map = getattr(config, "ACTIVE_FUTURES", {})
     if s in active_map:
         return active_map[s]
+    # Tenta tambem sem o sufixo $N (ex: WIN de WIN$N)
+    base_key = s.replace("$N", "").replace("$", "")
+    if base_key in active_map:
+        return active_map[base_key]
+    if (s + "$N") in active_map:
+        return active_map[s + "$N"]
     
     # 3. Extrai o base (ex: WIN de WIN$N)
     base = "".join([c for c in s.replace("$", "").replace("N", "") if c.isalpha()])
     if not base: return s
 
-    # 4. Tenta resolver via MT5 (procurando contratos reais)
-    resolved = get_contrato_atual(base)
-    if resolved:
-        return resolved
+    # 3.1 🔄 HOTFIX: Mapeia bases de índices contínuos B3 que falham na corretora
+    if base == "IND":
+        base = "WIN"
+    elif base == "WSP":
+        base = "WDO"
+    elif base == "ICF":
+        pass # Sem base equivalente principal, segue normal
+
+    # 4. Tenta resolver via MT5 (APENAS se for símbolo com indicativo de futuro genérico $ ou N ou se for base de 3 letras pura)
+    is_generic = "$" in symbol or "WSP" in s or "IND" in s or (len(base) == 3 and len(s) == 3)
+    if is_generic:
+        resolved = get_contrato_atual(base)
+        if resolved:
+            return resolved
 
     # 5. Fallback: elite_symbols_latest.json
     try:
@@ -454,20 +384,105 @@ def resolve_indicator_symbol(symbol: str) -> str:
     return resolve_symbol(symbol)
 
 
+def calculate_current_b3_contract(base: str) -> str:
+    """
+    Calcula determinística e matematicamente o contrato atual da B3 (ex: WINJ26).
+    Suporta Índices, Dólar e Commodities (Milho, Boi, Café).
+    """
+    base = base.upper().strip()
+    now = datetime.now()
+    month = now.month
+    year = now.year
+    year_2d = str(year)[-2:]
+    
+    # Mapeamento de meses válidos para cada ativo
+    VALID_MONTHS = {
+        "WIN": [2, 4, 6, 8, 10, 12],   # meses pares
+        "IND": [2, 4, 6, 8, 10, 12],
+        "WSP": [2, 4, 6, 8, 10, 12],
+        "WDO": list(range(1, 13)),       # todos os meses
+        "DOL": list(range(1, 13)),
+        "CCM": [3, 5, 7, 9, 12],        # março, maio, julho, setembro, dezembro
+        "BGI": [1, 3, 5, 7, 9, 11],     # meses ímpares
+        "ICF": [3, 5, 7, 9, 12],
+        "BIT": list(range(1, 13)),
+        "DI1": list(range(1, 13)),
+    }
+    
+    MONTH_CODES = {
+        1: "F", 2: "G", 3: "H", 4: "J", 5: "K", 6: "M",
+        7: "N", 8: "Q", 9: "U", 10: "V", 11: "X", 12: "Z"
+    }
+
+    valid = VALID_MONTHS.get(base, list(range(1, 13)))
+    
+    # --- AJUSTE DE ROLAGEM (ROLLOVER) ---
+    search_month = month
+    
+    # 1. Índices (WIN, IND, WSP) vencem na quarta feira mais próxima do dia 15 do mês PAR.
+    # Se já passou do dia 15, com certeza já rodou pro próximo.
+    if base in ["WIN", "IND", "WSP"] and search_month in valid and now.day > 15:
+        search_month += 1
+    
+    # 2. Dólar (WDO, DOL) vence no PRIMEIRO dia útil do mês.
+    # Portanto, se estamos no dia 1 em diante, o contrato do mês ATUAL já está vencendo/vencido.
+    # O contrato 'H' (Março) vence no dia 1 de Março. Então em Março opera-se o 'J' (Abril).
+    if base in ["WDO", "DOL", "BIT"]:
+        search_month += 1
+
+    # 3. Commodities (CCM, BGI, ICF)
+    # CCM vence dia 15. BGI vence no último dia. ICF vence no final do mês.
+    # Vamos simplificar: se passou do dia 15, assume que o próximo já tem mais liquidez.
+    if base in ["CCM"] and now.day > 15:
+        search_month += 1
+
+    # Algoritmo para encontrar o próximo mês de vencimento válido
+    found_month = search_month
+    found_year = year
+    for _ in range(13):
+        if found_month > 12:
+            found_month = 1
+            found_year += 1
+        if found_month in valid:
+            break
+        found_month += 1
+    
+    month_letter = MONTH_CODES.get(found_month, "Z")
+    year_suffix = str(found_year)[-2:]
+    
+    return f"{base}{month_letter}{year_suffix}"
+
 def get_contrato_atual(simbolo: str) -> Optional[str]:
     """
     Retorna o contrato futuro vigente (ex: WINJ26) com base no símbolo genérico (WIN, WDO, IND, etc).
     Prioriza contratos com maior liquidez e vencimento futuro.
     """
-    s = (simbolo or "").upper().strip().replace("$", "").replace("N", "")
+    # Extrai a base corretamente: WIN$N -> WIN, WDO$N -> WDO, WIN -> WIN
+    s = (simbolo or "").upper().strip()
+    if "$" in s:
+        s = s.split("$")[0]  # WIN$N -> WIN
     base = "".join([c for c in s if c.isalpha()])
 
-    # Se já for um símbolo completo válido, retorna
-    if len(base) < len(s) and mt5.symbol_info(s):
-        return s
+    # Se já for um símbolo completo válido (ex: WINJ26), retorna diretamente
+    import re
+    if re.match(r'^[A-Z]{2,10}[FGHJKMNQUVXZ]\d{2}$', base):
+        try:
+            if mt5.symbol_info(base):
+                return base
+        except Exception:
+            pass
 
-    candidates = get_futures_candidates(base)
+    # Ao procurar contrato atual específico, NUNCA queremos o genérico de volta. Queremos o datado (ex: WINJ26)
+    candidates = get_futures_candidates(base, ignore_generic=True)
     if not candidates:
+        # FALLBACK MATHEMATICAL FATAL (Se a corretora esconde os ativos no Market Watch)
+        calc = calculate_current_b3_contract(base)
+        if calc != base:
+            logger.info(f"🔮 Resolução matemática ativada para {base}: {calc} (Corretora Ocultou)")
+            try:
+                mt5.symbol_select(calc, True)  # Força a habilitação
+            except: pass
+            return calc
         return None
 
     # Ordena: Volume Decrescente -> Expiração Crescente
@@ -499,89 +514,158 @@ def detect_broker() -> str:
         return ""
 
 
-def get_futures_candidates(base_code: str) -> list:
+
+def get_futures_candidates(base_code: str, ignore_generic: bool = False) -> list:
+    """
+    Encontra contratos futuros vigentes para a base dada (ex: WIN, WDO, IND).
+    """
+    logger.debug(f"🔍 [get_futures_candidates] Iniciando para {base_code}...")
+    import re as _re
     try:
         if mt5 is None:
+            logger.error("❌ [get_futures_candidates] MT5 não importado.")
             return []
-        masks = [f"{base_code}*", f"{base_code}$*", f"{base_code}@*"]
-        broker = detect_broker().lower()
-        if "xp" in broker:
-            masks += [f"{base_code}N*", f"{base_code}Z*"]
-        if "btg" in broker or "clear" in broker:
-            masks += [f"{base_code}?*"]
-        seen = set()
-        names = []
-        for m in masks:
-            try:
-                res = mt5.symbols_get(m) or []
-                for s in res:
-                    n = getattr(s, "name", "")
-                    if n and n not in seen:
-                        seen.add(n)
-                        names.append(n)
-            except Exception:
-                pass
-        import re
 
+        base_code = (base_code or "").upper().strip()
         today = datetime.now()
-        out = []
-        for n in names:
-            info = mt5.symbol_info(n)
-            selectable = bool(info and getattr(info, "selectable", False))
-            visible = bool(info and getattr(info, "visible", False))
-            exp_raw = getattr(info, "expiration_time", None)
-            exp = None
-            try:
-                if isinstance(exp_raw, datetime):
-                    exp = exp_raw
-                elif isinstance(exp_raw, (int, float)) and float(exp_raw) > 0:
-                    exp = datetime.fromtimestamp(float(exp_raw))
-            except Exception:
-                exp = None
-            # Para XP: aceita tanto formato tradicional (WINH25) quanto novo (WINN, WINZ)
-            broker = detect_broker().lower()
-            if "xp" in broker:
-                is_contract = bool(
-                    re.search(rf"^{base_code}([FGHJKMNQUVXZ]\d{{2}}|[NZ])$", n)
-                )
-            else:
-                is_contract = bool(re.search(rf"^{base_code}[FGHJKMNQUVXZ]\d{{2}}$", n))
-            if not is_contract:
-                continue
-            if not selectable:
-                continue
-            if isinstance(exp, datetime) and exp <= today:
-                continue
-            try:
-                mt5.symbol_select(n, True)
+
+        candidates_raw = []
+        seen = set()
+
+        # --- Estratégia 0: tenta o símbolo genérico BASE$N da corretora diretamente ---
+        # A XP Investimentos usa WIN$N, WDO$N etc. como símbolos reais (contínuos)
+        if not ignore_generic:
+            generic_variants = [f"{base_code}$N", f"{base_code}N", f"{base_code}@N"]
+            for gv in generic_variants:
                 try:
-                    _mt5_force_history(n, mt5.TIMEFRAME_M15, 300)
-                    time.sleep(0.05)
+                    if mt5.symbol_select(gv, True):
+                        info_gv = mt5.symbol_info(gv)
+                        if info_gv is not None:
+                            candidates_raw.append({
+                                "symbol": gv,
+                                "exp": None,
+                                "days_to_exp": 9999,
+                            })
+                            seen.add(gv)
+                            break  # Achou o genérico – não precisa gerar mais
                 except Exception:
                     pass
-                rates = mt5.copy_rates_from_pos(n, mt5.TIMEFRAME_M15, 0, 120)
+
+        # Se achou um genérico, pula a geração de nomes
+        if candidates_raw:
+            out = []
+            for cand in candidates_raw:
+                n = cand["symbol"]
                 vol = 0.0
+                try:
+                    rates = mt5.copy_rates_from_pos(n, mt5.TIMEFRAME_M15, 0, 30)
+                    if rates is not None and len(rates) > 0:
+                        df_v = pd.DataFrame(rates)
+                        vol = float(df_v.get("tick_volume", pd.Series(dtype=float)).tail(20).sum() or 0.0)
+                except Exception:
+                    vol = 0.0
+                cand["volume"] = vol
+                out.append(cand)
+            return out
+
+        # --- Mapeamento mês -> letra B3 ---
+        MONTH_CODES = {
+            1: 'F', 2: 'G', 3: 'H', 4: 'J', 5: 'K', 6: 'M',
+            7: 'N', 8: 'Q', 9: 'U', 10: 'V', 11: 'X', 12: 'Z'
+        }
+
+        # --- Estratégia 1: Busca via symbols_get do MT5 ---
+        # Extremamente mais rápido do que tentar 'adivinhar' e testar nomes de meses gerados.
+        try:
+            # Busca todos os símbolos que contenham a base (ex: *WIN*)
+            syms = mt5.symbols_get(group=f"*{base_code}*")
+            if syms:
+                for s in syms:
+                    n = s.name
+                    if n in seen:
+                        continue
+                    
+                    # Ignora BDRs e afins (ex: BWIN.NAS, IBOV)
+                    if ".NAS" in n.upper() or ".NYSE" in n.upper():
+                        continue
+                    if n.startswith("BWIN") or n.startswith("BSGI"):
+                        continue
+                        
+                    # Verifica se o nome obedece o formato padrão de contratos datados (ex: WINJ26)
+                    # Não pega os genéricos (WIN$N) porque já foram tentados na Estratégia 0.
+                    if not _re.match(rf"^{base_code}[FGHJKMNQUVXZ]\d{{2}}$", n):
+                        continue
+                        
+                    seen.add(n)
+                    
+                    # Pega a validade e verifica se é futuro válido
+                    exp_raw = getattr(s, "expiration_time", None)
+                    exp = None
+                    try:
+                        if isinstance(exp_raw, datetime):
+                            exp = exp_raw
+                        elif isinstance(exp_raw, (int, float)) and float(exp_raw) > 0:
+                            exp = datetime.fromtimestamp(float(exp_raw))
+                    except Exception:
+                        exp = None
+
+                    if isinstance(exp, datetime) and exp <= today:
+                        continue
+                    
+                    # Se não tem expiração definida pela API, a gente estima pela letra do mês
+                    if exp is None:
+                         # Mapeamento reverso Letra -> Mês
+                         letter_to_month = {v: k for k, v in MONTH_CODES.items()}
+                         letra = n[len(base_code):len(base_code)+1]
+                         mes = letter_to_month.get(letra, 1)
+                         ano = int("20" + n[-2:])
+                         try:
+                             exp = datetime(ano, mes, 15)
+                             if exp <= today: continue
+                         except Exception:
+                             exp = None
+
+                    days_to_exp = (exp - today).days if isinstance(exp, datetime) else 9999
+                    
+                    # Usa o select para garantir que esteja visível
+                    try:
+                        mt5.symbol_select(n, True)
+                    except Exception:
+                        pass
+                        
+                    candidates_raw.append({
+                        "symbol": n,
+                        "exp": exp,
+                        "days_to_exp": days_to_exp,
+                    })
+        except Exception as e:
+            logger.error(f"Erro na busca de candidatos via symbols_get para {base_code}: {e}")
+
+        if not candidates_raw:
+            return []
+
+        # Ordena pelo mais próximo do vencimento e limita a verificação de volume ao TOP 3
+        candidates_raw.sort(key=lambda x: x["days_to_exp"])
+        top_candidates = candidates_raw[:3]
+
+        out = []
+        for cand in top_candidates:
+            n = cand["symbol"]
+            vol = 0.0
+            try:
+                rates = mt5.copy_rates_from_pos(n, mt5.TIMEFRAME_M15, 0, 30)
                 if rates is not None and len(rates) > 0:
-                    df = pd.DataFrame(rates)
-                    vol = float(
-                        df.get("tick_volume", pd.Series(dtype=float)).tail(80).sum()
-                        or 0.0
-                    )
+                    df_v = pd.DataFrame(rates)
+                    vol = float(df_v.get("tick_volume", pd.Series(dtype=float)).tail(20).sum() or 0.0)
             except Exception:
                 vol = 0.0
-            days_to_exp = (exp - today).days if isinstance(exp, datetime) else 9999
-            out.append(
-                {
-                    "symbol": n,
-                    "exp": exp,
-                    "days_to_exp": days_to_exp,
-                    "visible": visible,
-                    "selectable": selectable,
-                    "volume": vol,
-                }
-            )
+            cand["volume"] = vol
+            out.append(cand)
+
         return out
-    except Exception:
+
+    except Exception as e:
+        logger.error(f"Erro em get_futures_candidates: {e}")
         return []
 
 
@@ -696,38 +780,98 @@ def discover_all_futures() -> dict:
         return {}
 
 
-def find_and_enable_active_futures(asset_patterns: List[str]) -> Dict[str, str]:
+def initialize_mt5() -> bool:
+    """
+    Inicializa o MT5 com prioridade de caminho e validação de broker.
+    Garante que o bot conecte apenas na XP Investimentos.
+    """
     try:
-        if mt5 is None:
-            logger.error("MT5 indisponível")
-            return {}
-        connected = False
+        # 1. Verifica se já está conectado e é o broker correto
+        term = mt5.terminal_info()
+        if term is not None and getattr(term, "connected", False):
+            acc = mt5.account_info()
+            if acc:
+                server = str(acc.server).upper()
+                allowed = getattr(config, "ALLOWED_BROKERS", ["XP"])
+                if any(broker.upper() in server for broker in allowed):
+                    return True
+                else:
+                    logger.warning(f"⚠️ [MT5] Conectado ao servidor ERRADO: {acc.server}. Reiniciando...")
+                    mt5.shutdown()
+            else:
+                # Se não tem acc, pode estar com bug na API, melhor resetar
+                mt5.shutdown()
+
+        # 2. Estratégia PATH-FIRST (Caminho configurado da XP)
+        path = getattr(config, "MT5_TERMINAL_PATH", r"C:\MetaTrader 5 Terminal\terminal64.exe")
+        logger.info(f"📡 [MT5] Tentando conexão prioritária via path: {path}")
+        
         try:
-            term = mt5.terminal_info()
-            connected = bool(term and getattr(term, "connected", False))
-        except Exception:
-            connected = False
-        if not connected:
-            try:
-                init_ok = mt5.initialize(
-                    path=getattr(config, "MT5_TERMINAL_PATH", None)
-                )
-                if init_ok:
-                    term = mt5.terminal_info()
-                    connected = bool(term and getattr(term, "connected", False))
-            except Exception:
-                connected = False
-        if not connected:
-            logger.error("Falha ao conectar MT5")
+            init_ok = mt5.initialize(path=path)
+            if init_ok:
+                logger.debug("📡 [MT5] mt5.initialize(path) retornado com SUCESSO")
+                acc = mt5.account_info()
+                if acc:
+                    server = str(acc.server).upper()
+                    allowed = getattr(config, "ALLOWED_BROKERS", ["XP"])
+                    if any(broker.upper() in server for broker in allowed):
+                        logger.info(f"🛡️ [MT5] Conectado e validado: {acc.server}")
+                        return True
+                    else:
+                        logger.error(f"🚨 [BROKER MISMATCH] Terminal abreu mas conectou em {acc.server}. Não permitido.")
+                        mt5.shutdown()
+                else:
+                    logger.warning("⚠️ [MT5] Terminal inicializado mas account_info retornou None")
+            else:
+                err = mt5.last_error()
+                logger.warning(f"⚠️ [MT5] falha ao inicializar via path ({path}). Erro MT5: {err}")
+        except Exception as ex_init:
+            logger.error(f"❌ [MT5] Exceção ao chamar mt5.initialize(path): {ex_init}")
+        
+        # 3. Fallback sem path (último recurso)
+        logger.warning("📡 [MT5] Tentando inicialização genérica (fallback)...")
+        if mt5.initialize():
+             logger.debug("📡 [MT5] mt5.initialize() fallback retornado com SUCESSO")
+             acc = mt5.account_info()
+             if acc:
+                server = str(acc.server).upper()
+                allowed = getattr(config, "ALLOWED_BROKERS", ["XP"])
+                if any(broker.upper() in server for broker in allowed):
+                    logger.info(f"🛡️ [MT5] Conectado e validado (fallback): {acc.server}")
+                    return True
+                else:
+                    logger.error(f"🚨 [MT5] Fallback conectou em servidor não permitido: {acc.server}")
+                    mt5.shutdown()
+
+    except Exception as e:
+        logger.error(f"❌ [MT5] Erro fatal na inicialização: {e}")
+    
+    return False
+
+
+def find_and_enable_active_futures(asset_patterns: List[str]) -> Dict[str, str]:
+    logger.info(f"🔍 [find_and_enable_active_futures] Processando {len(asset_patterns)} padrões...")
+    try:
+        if not initialize_mt5():
+            logger.error("❌ [find_and_enable_active_futures] Falha críitica ao conectar MT5")
             return {}
+            
         result: Dict[str, str] = {}
         for pattern in asset_patterns:
             try:
-                base = "".join([c for c in (pattern or "") if c.isalpha()])
+                logger.info(f"🎯 [Screener] Processando padrão: {pattern}")
+                # Remove o sufixo $N (e variantes) antes de extrair a base
+                pat = (pattern or "").upper().strip()
+                if "$" in pat:
+                    pat = pat.split("$")[0]  # WIN$N -> WIN
+                base = "".join([c for c in pat if c.isalpha()])
+
+                logger.debug(f"   Buscando candidatos para base: {base}")
                 candidates = get_futures_candidates(base) or []
                 if not candidates:
-                    logger.warning(f"Nenhum candidato para {pattern}")
+                    logger.warning(f"   ⚠️ Nenhum candidato para {pattern}")
                     continue
+                
                 sorted_cands = sorted(
                     candidates,
                     key=lambda c: (
@@ -737,84 +881,23 @@ def find_and_enable_active_futures(asset_patterns: List[str]) -> Dict[str, str]:
                 )
                 active = sorted_cands[0].get("symbol") if sorted_cands else None
                 if not active:
-                    logger.warning(f"Falha ao selecionar contrato ativo para {pattern}")
+                    logger.warning(f"   ⚠️ Falha ao selecionar contrato ativo para {pattern}")
                     continue
 
-                # --- INÍCIO DO NOVO BLOCO DE FILTROS ---
-                conf = config_futures.FUTURES_CONFIGS.get(pattern, {})
-                specs = conf.get("specs", {})
-
-                min_volume = specs.get("min_tick_volume", 0)
-                min_atr_pct = specs.get("min_atr_pct", 0.0)
-                max_spread = specs.get("max_spread_points", float("inf"))
-
-                # 1. Filtro de Liquidez
-                hist_data = market_screener.get_historical_data(active, days=2)
-                if hist_data is None or len(hist_data) < 2:
-                    logger.warning(
-                        f"[{active}] Sem dados históricos suficientes para análise. Ativo ignorado."
-                    )
-                    continue
-
-                last_day_volume = hist_data.iloc[-2]["tick_volume"]
-                if last_day_volume < min_volume:
-                    logger.info(
-                        f"[{active}] Reprovado no filtro de liquidez. Volume D-1: {last_day_volume} < Mínimo: {min_volume}."
-                    )
-                    continue
-
-                # 2. Filtro de Volatilidade (ATR)
-                hist_data_atr = market_screener.get_historical_data(active, days=20)
-                atr_value = market_screener.calculate_atr(hist_data_atr)
-                last_close = hist_data.iloc[-2]["close"]
-
-                if last_close > 0:
-                    atr_pct = (atr_value / last_close) * 100
-                    if atr_pct < min_atr_pct:
-                        logger.info(
-                            f"[{active}] Reprovado no filtro de volatilidade. ATR %: {atr_pct:.2f}% < Mínimo: {min_atr_pct}%."
-                        )
-                        continue
-
-                # 3. Filtro de Spread (executado mais perto da abertura)
-                # Nota: Idealmente, isso rodaria um pouco antes do pregão.
-                live_spread = market_screener.get_live_spread(active)
-                if live_spread is not None and live_spread > max_spread:
-                    logger.info(
-                        f"[{active}] Reprovado no filtro de spread. Spread atual: {live_spread} > Máximo: {max_spread}."
-                    )
-                    continue
-
-                logger.info(
-                    f"✅ [{active}] Aprovado em todos os filtros. Ativando para o dia."
-                )
-                # --- FIM DO NOVO BLOCO DE FILTROS ---
-
-                try:
-                    if not mt5.symbol_select(active, True):
-                        logger.warning(f"Falha ao adicionar {active} ao Market Watch")
-                    else:
-                        logger.info(f"Ativo habilitado: {pattern} → {active}")
-                except Exception as e:
-                    logger.warning(f"Erro ao selecionar {active}: {e}")
+                logger.info(f"✅ [Screener] {pattern} -> {active}")
                 result[pattern] = active
+                
+                # Habilita o símbolo
+                mt5.symbol_select(active, True)
+                
             except Exception as e:
-                logger.error(f"Erro no processamento de {pattern}: {e}")
-        if result:
-            try:
-                current = getattr(config, "ACTIVE_FUTURES", {})
-                current.update(result)
-                setattr(config, "ACTIVE_FUTURES", current)
-                sector = getattr(config, "SECTOR_MAP", {})
-                for g, real in result.items():
-                    if g in sector:
-                        sector.pop(g, None)
-                    sector[real] = "FUTUROS"
-                setattr(config, "SECTOR_MAP", sector)
-            except Exception:
-                pass
+                logger.error(f"❌ [Screener] Erro ao processar {pattern}: {e}")
+                continue
+
+        logger.info(f"🏁 [find_and_enable_active_futures] Concluído. {len(result)} ativos mapeados.")
         return result
-    except Exception:
+    except Exception as e:
+        logger.error(f"❌ [find_and_enable_active_futures] Erro fatal: {e}")
         return {}
 
 
@@ -1573,6 +1656,12 @@ def _mt5_pick_best_symbol_by_group(group: str) -> Optional[str]:
         best_v = -1.0
         for s in syms:
             name = getattr(s, "name", "") or ""
+            # Block invalid aliases for B3 futures found in XP
+            if ".NAS" in name.upper() or ".NYSE" in name.upper():
+                continue
+            if name.startswith("BWIN") or name.startswith("BSGI"):
+                continue
+
             v = float(getattr(s, "volume", 0.0) or 0.0)
             if name and v > best_v:
                 best_v = v
@@ -1586,11 +1675,18 @@ def _mt5_copy_rates_threaded(
     symbol: str, timeframe, count: int, timeout: int
 ) -> Optional[pd.DataFrame]:
     q = queue.Queue()
+    logger.debug(f"🧵 [MT5 Copy] Iniciando thread para {symbol} ({count} bars)...")
 
     def worker():
         try:
-            q.put(mt5.copy_rates_from_pos(symbol, timeframe, 0, count))
+            res = mt5.copy_rates_from_pos(symbol, timeframe, 0, count)
+            if res is None:
+                logger.debug(f"🧵 [MT5 Copy] copy_rates_from_pos retornou None para {symbol}")
+            elif len(res) == 0:
+                logger.debug(f"🧵 [MT5 Copy] copy_rates_from_pos retornou 0 barras para {symbol}")
+            q.put(res)
         except Exception as e:
+            logger.error(f"🧵 [MT5 Copy] Erro na thread MT5 para {symbol}: {e}")
             q.put(e)
 
     t = threading.Thread(target=worker, daemon=True)
@@ -1613,6 +1709,7 @@ def _mt5_copy_rates_threaded(
     if "time" in df.columns:
         df["time"] = pd.to_datetime(df["time"], unit="s")
         df.set_index("time", inplace=True)
+    logger.debug(f"✅ [MT5 Copy] {symbol} retornou {len(df)} candles.")
     return df.sort_index()
 
 
@@ -1625,22 +1722,38 @@ def _mt5_force_history(symbol: str, timeframe, count: int) -> None:
 
 
 def _try_mt5_symbol_select(symbol: str) -> Optional[str]:
+    """Tenta selecionar o símbolo no MT5 com fallbacks."""
     s = (symbol or "").upper().strip()
     if not s:
         return None
+
+    # Tenta resolver explicitamente primeiro via ACTIVE_FUTURES
+    res_s = resolve_symbol(s)
+    if res_s != s:
+        logger.debug(f"🔍 [Symbol Select] Resolvendo {s} -> {res_s}")
+    s = res_s
+
     try:
         if mt5.symbol_select(s, True):
+            logger.debug(f"✅ [Symbol Select] Sucesso ao selecionar {s}")
             return s
-    except Exception:
+        else:
+            logger.debug(f"❌ [Symbol Select] Falha ao selecionar {s} no MT5")
+    except Exception as e:
+        logger.error(f"❌ [Symbol Select] Erro ao selecionar {s}: {e}")
         pass
+
     if "$N" in s:
         base = s.replace("$N", "")
-        for name in [s, base, f"{base}#", f"{base}!", f"{base}_C"]:
+        # Tenta formatos da XP diretamente
+        for name in [s, base, f"{base}$N", f"{base}N", f"{base}@N"]:
             try:
                 if mt5.symbol_select(name, True):
                     return name
             except Exception:
                 pass
+        
+        # Tenta buscar pelo grupo base (sem o $)
         best = _mt5_pick_best_symbol_by_group(group=f"*{base}*")
         if best:
             try:
@@ -1648,6 +1761,7 @@ def _try_mt5_symbol_select(symbol: str) -> Optional[str]:
                     return best
             except Exception:
                 pass
+
     if _is_futures_contract_symbol(s):
         base = _futures_base_from_symbol(s)
         best = _mt5_pick_best_symbol_by_group(group=f"*{base}*")
@@ -1657,7 +1771,7 @@ def _try_mt5_symbol_select(symbol: str) -> Optional[str]:
                     return best
             except Exception:
                 pass
-    return None
+    return s  # Retornamos o s validado pela Config ao invés de None para que force_history e Cia re-tentem.
 
 
 def _fallback_data_symbols_for_contract(symbol: str) -> List[str]:
@@ -1674,25 +1788,39 @@ def _fallback_data_symbols_for_contract(symbol: str) -> List[str]:
 
 def _df_has_valid_ohlc(df: Optional[pd.DataFrame], min_rows: int = 50) -> bool:
     try:
-        if df is None or not isinstance(df, pd.DataFrame) or len(df) < min_rows:
+        if df is None:
             return False
+        if not isinstance(df, pd.DataFrame):
+            return False
+        if len(df) < min_rows:
+            logger.debug(f"📉 [Valid OHLC] DataFrame muito curto: {len(df)} < {min_rows}")
+            return False
+            
         for c in ("open", "high", "low", "close"):
             if c not in df.columns:
+                logger.debug(f"📉 [Valid OHLC] Coluna ausente: {c}")
                 return False
+        
         tail = df[["open", "high", "low", "close"]].tail(min(200, len(df))).copy()
         tail = tail.replace([np.inf, -np.inf], np.nan)
         if tail.isna().any().any():
+            logger.debug("📉 [Valid OHLC] Detectados NaN/Inf nos dados")
             return False
         if float(tail["close"].max()) <= 0.0:
+            logger.debug("📉 [Valid OHLC] Todos os preços de fechamento são <= 0")
             return False
         if (tail[["open", "high", "low", "close"]] <= 0).all().all():
+            logger.debug("📉 [Valid OHLC] OHLC zerado detectado")
             return False
         if (tail["high"] < tail["low"]).any():
+            logger.debug("📉 [Valid OHLC] High < Low detectado")
             return False
         if float((tail["high"] - tail["low"]).abs().sum()) <= 0.0:
+            logger.debug("📉 [Valid OHLC] Ativo sem variação de preço (Flatline)")
             return False
         return True
-    except Exception:
+    except Exception as e:
+        logger.error(f"📉 [Valid OHLC] Erro na validação: {e}")
         return False
 
 
@@ -1761,7 +1889,10 @@ def safe_copy_rates(
         except Exception:
             pass
 
-    if (df is None or len(df) == 0) and _is_futures_contract_symbol(symbol):
+    # Fallback final no MT5: tentar usar o contrato datado atual (ex: WINJ26) ou aliases se os dados de WIN$N falharem
+    if (df is None or len(df) == 0) and (
+        _is_futures_contract_symbol(symbol) or "$N" in symbol or "$" in symbol
+    ):
         for alt in _fallback_data_symbols_for_contract(symbol):
             alt_sel = _try_mt5_symbol_select(alt)
             if not alt_sel:

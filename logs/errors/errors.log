@@ -1,1 +1,11 @@
-2026-03-03 18:56:15,095 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-03-04 06:51:49,212 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-03-04 07:53:20,517 | ERROR | utils | 🚨 [BROKER MISMATCH] Terminal abreu mas conectou em ClearInvestimentos-DEMO. Não permitido.
+2026-03-04 07:53:20,564 | ERROR | utils | 🚨 [MT5] Fallback conectou em servidor não permitido: ClearInvestimentos-DEMO
+2026-03-04 07:53:20,572 | ERROR | utils | ❌ [find_and_enable_active_futures] Falha críitica ao conectar MT5
+2026-03-04 07:53:20,592 | ERROR | utils | 🚨 [BROKER MISMATCH] Terminal abreu mas conectou em ClearInvestimentos-DEMO. Não permitido.
+2026-03-04 07:53:20,645 | ERROR | utils | 🚨 [MT5] Fallback conectou em servidor não permitido: ClearInvestimentos-DEMO
+2026-03-04 07:53:20,651 | ERROR | utils | ❌ [find_and_enable_active_futures] Falha críitica ao conectar MT5
+2026-03-04 07:53:20,655 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
+2026-03-04 07:53:25,443 | ERROR | utils | 🚨 [BROKER MISMATCH] Terminal abreu mas conectou em ClearInvestimentos-DEMO. Não permitido.
+2026-03-04 07:53:25,456 | ERROR | utils | 🚨 [MT5] Fallback conectou em servidor não permitido: ClearInvestimentos-DEMO
+2026-03-04 07:53:25,456 | ERROR | bot | ❌ Falha ao reconectar MT5.
