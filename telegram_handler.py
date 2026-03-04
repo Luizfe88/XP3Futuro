@@ -99,6 +99,22 @@ def handle_blackout(message):
     upcoming = get_upcoming_events(hours_ahead=8)
     
     if blocked:
+        status = f"🚫 <b>BOT EM BLACKOUT</b>\n\n{reason}\n\nEntradas bloqueadas até passar o evento."
+    else:
+        if upcoming:
+            ev = upcoming[0]
+            mins = int((ev["time"] - datetime.now()).total_seconds() / 60)
+            emoji = "🔴" if ev["impact"] == "High" else "🟡"
+            status = (
+                f"✅ <b>TRADING LIBERADO</b>\n\n"
+                f"{emoji} Próximo: <b>{ev['title']}</b>\n"
+                f"⏰ Em {mins} minutos ({ev['impact']} impacto)"
+            )
+        else:
+            status = "✅ <b>TRADING LIBERADO</b>\n\nSem eventos nas próximas 8 horas."
+    
+    bot.reply_to(message, status, parse_mode="HTML")
+
 
 @bot.message_handler(commands=['aprendizado', 'learning'])
 def handle_aprendizado(message):
@@ -120,24 +136,6 @@ def handle_aprendizado(message):
     except Exception as e:
         logger.error(f"Erro no /aprendizado: {e}", exc_info=True)
         bot.reply_to(message, "❌ Ocorreu um erro ao gerar o relatório de aprendizado.", parse_mode="HTML")
-
-        status = f"🚫 <b>BOT EM BLACKOUT</b>\n\n{reason}\n\nEntradas bloqueadas até passar o evento."
-    else:
-        if upcoming:
-            ev = upcoming[0]
-            mins = int((ev["time"] - datetime.now()).total_seconds() / 60)
-            emoji = "🔴" if ev["impact"] == "High" else "🟡"
-            status = (
-                f"✅ <b>TRADING LIBERADO</b>\n\n"
-                f"{emoji} Próximo: <b>{ev['title']}</b>\n"
-                f"⏰ Em {mins} minutos ({ev['impact']} impacto)"
-            )
-        else:
-            status = "✅ <b>TRADING LIBERADO</b>\n\nSem eventos nas próximas 8 horas."
-    
-    bot.reply_to(message, status, parse_mode="HTML")
-
-
 @bot.message_handler(commands=['health'])
 def handle_health(message):
     """
