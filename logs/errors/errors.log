@@ -1,11 +1,13 @@
-2026-03-04 06:51:49,212 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
-2026-03-04 07:53:20,517 | ERROR | utils | 🚨 [BROKER MISMATCH] Terminal abreu mas conectou em ClearInvestimentos-DEMO. Não permitido.
-2026-03-04 07:53:20,564 | ERROR | utils | 🚨 [MT5] Fallback conectou em servidor não permitido: ClearInvestimentos-DEMO
-2026-03-04 07:53:20,572 | ERROR | utils | ❌ [find_and_enable_active_futures] Falha críitica ao conectar MT5
-2026-03-04 07:53:20,592 | ERROR | utils | 🚨 [BROKER MISMATCH] Terminal abreu mas conectou em ClearInvestimentos-DEMO. Não permitido.
-2026-03-04 07:53:20,645 | ERROR | utils | 🚨 [MT5] Fallback conectou em servidor não permitido: ClearInvestimentos-DEMO
-2026-03-04 07:53:20,651 | ERROR | utils | ❌ [find_and_enable_active_futures] Falha críitica ao conectar MT5
-2026-03-04 07:53:20,655 | ERROR | bot | 🚨 FALHA CRÍTICA: Fallback também falhou. Verifique a conexão com o MT5 e as configurações.
-2026-03-04 07:53:25,443 | ERROR | utils | 🚨 [BROKER MISMATCH] Terminal abreu mas conectou em ClearInvestimentos-DEMO. Não permitido.
-2026-03-04 07:53:25,456 | ERROR | utils | 🚨 [MT5] Fallback conectou em servidor não permitido: ClearInvestimentos-DEMO
-2026-03-04 07:53:25,456 | ERROR | bot | ❌ Falha ao reconectar MT5.
+2026-03-04 17:09:13,596 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 6446, in update_correlations
+    df = pd.DataFrame(data)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\frame.py", line 769, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 460, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, consolidate=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 113, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 643, in _extract_index
+    raise ValueError("All arrays must be of the same length")
+ValueError: All arrays must be of the same length

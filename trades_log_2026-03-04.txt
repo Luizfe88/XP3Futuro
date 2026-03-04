@@ -1,0 +1,15 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-03-04 17:09:15 | SAÍDA    | CAML3  | BUY  | Vol:    2500 | Price:   6.61 | P&L:  -225.00 R$ (-1.34%) | Motivo: Stop Loss | DealId: 1726146517 | Pos: 2362674762
+2026-03-04 17:09:15 | SAÍDA    | FIQE3  | BUY  | Vol:    3000 | Price:   5.36 | P&L:  -240.00 R$ (-1.47%) | Motivo: Stop Loss | DealId: 1726154315 | Pos: 2362674371
+2026-03-04 17:09:15 | SAÍDA    | GMAT3  | BUY  | Vol:    2900 | Price:   5.50 | P&L:  -261.00 R$ (-1.61%) | Motivo: Stop Loss | DealId: 1726178472 | Pos: 2362674735
+2026-03-04 17:09:15 | SAÍDA    | QUAL3  | BUY  | Vol:    8200 | Price:   2.02 | P&L:   -82.00 R$ (-0.49%) | Motivo: Fechamento | DealId: 1726593585 | Pos: 2362674308
+2026-03-04 17:09:15 | SAÍDA    | TTEN3  | BUY  | Vol:     900 | Price:  17.64 | P&L:   +45.00 R$ (+0.28%) | Motivo: Fechamento | DealId: 1726593592 | Pos: 2362674333
+2026-03-04 17:09:15 | SAÍDA    | ITUB4  | BUY  | Vol:     300 | Price:  44.99 | P&L:   +24.00 R$ (+0.18%) | Motivo: Fechamento | DealId: 1726593595 | Pos: 2362674653
+2026-03-04 17:09:15 | SAÍDA    | PGMN3  | BUY  | Vol:    2500 | Price:   6.64 | P&L:  +200.00 R$ (+1.22%) | Motivo: Fechamento | DealId: 1726593598 | Pos: 2362674691
+2026-03-04 17:09:15 | SAÍDA    | RENT3  | BUY  | Vol:     300 | Price:  50.39 | P&L:   +75.00 R$ (+0.50%) | Motivo: Fechamento | DealId: 1726593601 | Pos: 2362674812
+2026-03-04 17:09:15 | SAÍDA    | B3SA3  | BUY  | Vol:     900 | Price:  18.18 | P&L:  +234.00 R$ (+1.45%) | Motivo: Fechamento | DealId: 1726593604 | Pos: 2362674861
+2026-03-04 17:09:15 | SAÍDA    | EVEN3  | BUY  | Vol:    2000 | Price:   7.92 | P&L:  -240.00 R$ (-1.49%) | Motivo: Fechamento | DealId: 1726593606 | Pos: 2362674936
+2026-03-04 17:09:15 | SAÍDA    | AURE3  | BUY  | Vol:    1300 | Price:  12.02 | P&L:   -13.00 R$ (-0.08%) | Motivo: Fechamento | DealId: 1726593610 | Pos: 2362784832
+2026-03-04 17:09:15 | SAÍDA    | GFSA3  | SELL | Vol:    8800 | Price:   1.92 | P&L:  -176.00 R$ (-1.05%) | Motivo: Fechamento | DealId: 1726593612 | Pos: 2362801094
+2026-03-04 17:09:15 | SAÍDA    | DASA3  | BUY  | Vol:    4300 | Price:   3.93 | P&L:  +258.00 R$ (+1.55%) | Motivo: Fechamento | DealId: 1726593613 | Pos: 2363063186

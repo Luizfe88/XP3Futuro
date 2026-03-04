@@ -31,6 +31,7 @@ def handle_help(message):
 /health         → Latência, memória e status do sistema
 /proximoevento  → Próximo evento econômico importante
 /blackout ou /news → Status de blackout por notícia
+/aprendizado    → Relatório diário de aprendizado do ML
 
 ℹ️ Bot opera automaticamente na B3.
     """
@@ -98,6 +99,28 @@ def handle_blackout(message):
     upcoming = get_upcoming_events(hours_ahead=8)
     
     if blocked:
+
+@bot.message_handler(commands=['aprendizado', 'learning'])
+def handle_aprendizado(message):
+    bot.reply_to(message, "⏳ <i>Gerando relatório de aprendizado. Isso pode levar alguns instantes...</i>", parse_mode="HTML")
+    try:
+        from daily_learning_report import daily_learner
+        report_html = daily_learner.generate_and_apply()
+        
+        if report_html:
+            # Telegram has message length limits, handle long reports if necessary
+            if len(report_html) > 3900:
+                parts = [report_html[i:i+3900] for i in range(0, len(report_html), 3900)]
+                for part in parts[:3]: # Limit to avoid spamming
+                    bot.send_message(message.chat.id, part, parse_mode="HTML")
+            else:
+                bot.reply_to(message, report_html, parse_mode="HTML")
+        else:
+            bot.reply_to(message, "❌ Nenhum aprendizado novo gerado ou sem dados suficientes hoje.", parse_mode="HTML")
+    except Exception as e:
+        logger.error(f"Erro no /aprendizado: {e}", exc_info=True)
+        bot.reply_to(message, "❌ Ocorreu um erro ao gerar o relatório de aprendizado.", parse_mode="HTML")
+
         status = f"🚫 <b>BOT EM BLACKOUT</b>\n\n{reason}\n\nEntradas bloqueadas até passar o evento."
     else:
         if upcoming:

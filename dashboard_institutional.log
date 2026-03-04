@@ -1086,3 +1086,6 @@
 2026-02-25 10:47:03,472 - utils - INFO - ✅ Redis conectado - cache ativado
 2026-02-25 10:47:03,475 - utils - INFO - ✅ Dados anti-chop carregados
 2026-02-25 10:47:03,478 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-04 17:14:00,930 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-04 17:14:00,933 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-04 17:14:00,933 - utils - INFO - ✅ Limites diários carregados

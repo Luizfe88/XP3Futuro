@@ -6,6 +6,10 @@ from datetime import time
 from pathlib import Path
 from typing import Dict, Any
 import logging
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # ============================================
 # LOGGING CONFIGURATION
@@ -716,9 +720,9 @@ PER_ASSET_THRESHOLDS = {
 # ===========================
 # NOTIFICAÇÕES TELEGRAM
 # ===========================
-ENABLE_TELEGRAM_NOTIF = True
-TELEGRAM_BOT_TOKEN = "8474186435:AAGpRE6ou0a-aUqKATKRI4mVpzxYDotWeuQ"
-TELEGRAM_CHAT_ID = 8400631213
+ENABLE_TELEGRAM_NOTIF = os.getenv("ENABLE_TELEGRAM_NOTIF", "True").lower() == "true"
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8474186435:AAGpRE6ou0a-aUqKATKRI4mVpzxYDotWeuQ")
+TELEGRAM_CHAT_ID = int(os.getenv("TELEGRAM_CHAT_ID", "8400631213"))
 ENABLE_TELEGRAM_REJECTION_SUMMARY = False
 EOD_REPORT_ENABLED = True
 EOD_REPORT_TIME = "16:55"  # Seu chat_id (número inteiro)

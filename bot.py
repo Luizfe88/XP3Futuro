@@ -6704,8 +6704,10 @@ def handle_rejections(message):
         return
 
     try:
+        import html
         summary = daily_logger.get_daily_rejection_summary()
-        payload = f"📊 <b>REJEIÇÕES (HOJE)</b>\n<pre>{summary}</pre>"
+        safe_summary = html.escape(summary)
+        payload = f"📊 <b>REJEIÇÕES (HOJE)</b>\n<pre>{safe_summary}</pre>"
         if len(payload) <= 3900:
             bot.reply_to(message, payload, parse_mode="HTML")
             return
@@ -6991,6 +6993,12 @@ def main():
             pass
         return
 
+    # ✅ Inicia Telegram imediatamente para dar feedback rápido ao usuário
+    if getattr(config, "ENABLE_TELEGRAM_NOTIF", False):
+        t_pol = threading.Thread(target=telegram_polling_thread, daemon=True, name="TelegramPolling")
+        t_pol.start()
+        logger.info("🚀 Thread 'TelegramPolling' iniciada antecipadamente para feedback mais rápido.")
+
     # ✅ GARANTE MARKET WATCH (LAND TRADING)
     try:
         utils.ensure_market_watch_symbols()
@@ -7133,14 +7141,7 @@ def main():
         threading.Thread(target=log_maintenance_thread, daemon=True, name="LogMaintenance"),
         threading.Thread(target=auto_save_state_thread, daemon=True, name="AutoSave"),
     ]
-
-    # Adiciona thread do Telegram se estiver habilitado
-    if getattr(config, "ENABLE_TELEGRAM_NOTIF", False):
-        threads.append(
-            threading.Thread(target=telegram_polling_thread, daemon=True, name="TelegramPolling")
-        )
-        logger.info("   -> Thread 'TelegramPolling' adicionada com comandos")
-
+    # (Thread do Telegram já foi iniciada antecipadamente)
     # Inicia TODAS as threads de uma vez (sem duplicar)
     for t in threads:
         t.start()

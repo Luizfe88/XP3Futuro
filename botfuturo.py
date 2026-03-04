@@ -9,11 +9,14 @@ try:
     import bot
     
     # Executa a função main() ou o código de inicialização do bot
-    if hasattr(bot, 'fast_loop'):
-        # Se bot.py não tiver main(), executa o setup e o loop
-        print("✅ Módulo bot importado. Iniciando sistema...", flush=True)
+    # Prioritiza a execução do main() do bot.py que gerencia todas as threads
+    if hasattr(bot, 'main'):
+        print("✅ Ponto de entrada main() encontrado. Iniciando sistema completo...", flush=True)
+        bot.main()
+    elif hasattr(bot, 'fast_loop'):
+        # Fallback para versão sem main()
+        print("✅ Módulo bot importado. Iniciando modo fast_loop...", flush=True)
         
-        # Chama setup se necessário (bot.py executa setup no import, mas fast_loop precisa ser chamado)
         if hasattr(bot, 'setup_logging'):
             bot.setup_logging()
             
@@ -24,14 +27,7 @@ try:
         if hasattr(bot, 'load_optimized_params'):
             bot.load_optimized_params()
             
-        if hasattr(bot, 'utils') and hasattr(bot.utils, 'start_watchdog'):
-            bot.utils.start_watchdog()
-            
-        # Inicia o loop principal
         bot.fast_loop()
-        
-    elif hasattr(bot, 'main'):
-        bot.main()
     else:
         print("❌ Erro: Não foi possível encontrar o ponto de entrada no bot.py")
         
