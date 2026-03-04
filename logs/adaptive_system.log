@@ -6591,3 +6591,43 @@ NameError: name 'queue' is not defined. Did you forget to import 'queue'?
 2026-03-04 17:14:22,179 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
 2026-03-04 17:14:31,359 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
 2026-03-04 17:14:41,046 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-04 17:20:02,529 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-04 17:20:02,638 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-04 17:20:11,974 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-04 17:20:18,243 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-04 17:20:25,291 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-04 17:20:34,100 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-04 17:20:42,588 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-04 17:20:48,733 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-04 17:20:54,851 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-04 17:21:01,026 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-04 17:22:59,455 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-04 17:22:59,564 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-04 17:23:05,763 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-04 17:23:12,852 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-04 17:23:18,951 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-04 17:23:25,089 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-04 17:23:33,554 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-04 17:23:41,998 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-04 17:23:48,078 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-04 17:23:57,434 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-04 17:35:36,026 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-04 17:35:36,133 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-04 17:35:45,462 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-04 17:35:51,583 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-04 17:35:57,745 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-04 17:36:06,328 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-04 17:36:14,819 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-04 17:36:20,987 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-04 17:36:27,099 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-04 17:36:33,293 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-04 17:38:28,067 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-04 17:38:28,631 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-04 17:38:34,964 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-04 17:38:41,281 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-04 17:38:47,401 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-04 17:38:53,542 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-04 17:39:02,643 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-04 17:39:13,023 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-04 17:39:19,153 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-04 17:39:29,064 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.

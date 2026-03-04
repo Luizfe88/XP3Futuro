@@ -6459,7 +6459,7 @@ def telegram_polling_thread():
     try:
         import socket
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # No Windows, SO_REUSEADDR neutraliza a exclusividade. Removendo para forçar o lock real.
         s.bind(("127.0.0.1", 56234))
         s.listen(1)
         _telegram_lock_socket = s

@@ -31,17 +31,17 @@ MT5_TIMEOUT_SECONDS = 10               # Timeout para testar MT5
 
 
 def is_bot_running():
-    """Verifica se o processo do bot.py está ativo (exclui o watchdog)"""
+    \"\"\"Verifica se o processo do bot.py está ativo (exclui o watchdog)\"\"\"
     current_dir = os.path.dirname(os.path.abspath(__file__))  # Pasta do watchdog (xp3future)
     for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
         try:
             if proc.info['cmdline']:
-                cmd = ' '.join(proc.info['cmdline'])
+                cmd = ' '.join(proc.info['cmdline']).lower()
                 # Verifica se é Python, tem bot.py, não é watchdog E está no diretório correto
                 if ('python' in proc.info['name'].lower() and 
-                    BOT_SCRIPT in cmd and 
-                    'watchdog.py' not in cmd and
-                    'xp3future' in cmd.lower()):  # CRÍTICO: apenas processos do xp3future
+                    ('bot.py' in cmd or 'botfuturo.py' in cmd) and 
+                    'watchdog.py' not in cmd and 'botwatchdog.py' not in cmd and
+                    'xp3future' in cmd):  # CRÍTICO: apenas processos do xp3future
                     return proc.pid
         except (psutil.NoSuchProcess, psutil.AccessDenied):
             pass
