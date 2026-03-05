@@ -490,7 +490,7 @@ def validate_subsetor_exposure(symbol: str) -> tuple:
             return False, "Sem dados de conta"
 
         equity = acc.equity
-        positions = mt5.positions_get() or []
+        positions = utils.get_bot_positions()  # 🔒 Apenas futuros deste bot
 
         # Calcula exposição financeira do subsetor
         subsetor_vol = 0.0

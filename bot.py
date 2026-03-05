@@ -1396,7 +1396,7 @@ def handle_daily_cycle():
         
         for attempt in range(1, max_attempts + 1):
             with utils.mt5_lock:
-                positions = mt5.positions_get() or []
+                positions = utils.get_bot_positions()  # 🔒 Apenas futuros deste bot
 
             if not is_valid_dataframe(positions):
                 logger.info("✅ Todas as posições fechadas!")
@@ -1420,7 +1420,7 @@ def handle_daily_cycle():
             
             # Verifica se realmente fechou
             with utils.mt5_lock:
-                remaining = mt5.positions_get() or []
+                remaining = utils.get_bot_positions()  # 🔒 Apenas futuros deste bot
             
             if not remaining:
                 logger.info("✅ Fechamento confirmado")
@@ -1891,7 +1891,7 @@ def manage_positions_refactored():
     manager = PositionManager(config)
     
     with utils.mt5_lock:
-        positions = mt5.positions_get() or []
+        positions = utils.get_bot_positions()  # 🔒 Apenas futuros deste bot
     
     if not is_valid_dataframe(positions):
         return
@@ -2506,9 +2506,9 @@ def save_daily_state():
             "open_positions": []
         }
         
-        # Salva tickets das posições abertas
+        # Salva tickets das posições abertas (apenas futuros deste bot)
         with utils.mt5_lock:
-            positions = mt5.positions_get() or []
+            positions = utils.get_bot_positions()  # 🔒 Filtra ações de outros bots
         
         for pos in positions:
             state["open_positions"].append({
@@ -2656,13 +2656,13 @@ def load_daily_state():
         logger.info(f"🔄 Ciclo completo: {'Sim' if daily_cycle_completed else 'Não'}")
         logger.info("=" * 60)
         
-        # ✅ VALIDA POSIÇÕES (AVISO SE DISCREPÂNCIA)
+        # ✅ VALIDA POSIÇÕES (AVISO SE DISCREPÂNCIA - apenas futuros)
         with utils.mt5_lock:
-            current_positions = mt5.positions_get() or []
+            current_positions = utils.get_bot_positions()  # 🔒 Apenas futuros deste bot
         
         if len(current_positions) != len(open_positions):
             logger.warning(
-                f"⚠️ ATENÇÃO: Estado salvo tinha {len(open_positions)} posições, "
+                f"⚠️ ATENÇÃO: Estado salvo tinha {len(open_positions)} posições de futuros, "
                 f"mas MT5 tem {len(current_positions)} agora!"
             )
         

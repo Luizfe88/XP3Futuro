@@ -6812,3 +6812,32 @@ NameError: name 'queue' is not defined. Did you forget to import 'queue'?
 2026-03-05 10:54:43,957 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
 2026-03-05 10:54:50,333 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
 2026-03-05 10:54:56,528 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 11:01:03,499 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 11:01:03,709 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 11:01:10,318 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 11:01:19,939 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-05 11:01:26,904 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 11:01:37,284 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 11:01:43,436 - INFO - 🔄 Coletando métricas para ICFK26 → ICFK26
+2026-03-05 11:01:50,548 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 11:02:00,883 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 11:02:20,814 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 11:06:00,203 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 25 ativos.
+2026-03-05 11:10:10,307 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 11:10:10,380 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 11:10:19,505 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 11:10:27,731 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-05 11:10:36,131 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 11:10:44,508 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 11:10:51,677 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 11:10:57,812 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-05 11:11:04,246 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 11:11:10,422 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 11:16:23,762 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 11:16:23,897 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 11:16:32,880 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 11:16:39,375 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-05 11:16:46,258 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 11:16:57,302 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 11:17:03,370 - INFO - 🔄 Coletando métricas para ICFK26 → ICFK26
+2026-03-05 11:17:09,493 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26

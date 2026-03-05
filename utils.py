@@ -6362,7 +6362,7 @@ def check_and_apply_breakeven(symbol, current_indicators, move_threshold_atr=1.0
     """
     Se o preço undou 1x o ATR a favor, move o SL para o preço de entrada.
     """
-    positions = mt5.positions_get(symbol=symbol)
+    positions = get_bot_positions(symbol=symbol)  # 🔒 Apenas futuros deste bot
     if not is_valid_dataframe(positions):
         return
 
@@ -6582,7 +6582,47 @@ def mt5_crash_recovery():
     logger.info("Recuperação MT5 completa")
 
 
+def get_bot_positions(symbol: str = None):
+    """
+    🔒 FILTRO CENTRAL: Retorna APENAS posições deste bot de futuros.
+    
+    - Filtra por prefixo de símbolo (WIN, WDO, IND, DOL, CCM, BGI, ICF, SFI, BIT, T10, WSP)
+    - Filtra por Magic Number configurado (MAGIC_NUMBER no config.py)
+    - Ignora completamente ações e outros ativos do mesmo MT5 (ex: RAIZ4, SMTO3)
+    
+    Substitua toda chamada a `mt5.positions_get()` no bot por esta função.
+    """
+    import config as _cfg
+    try:
+        if symbol:
+            raw = mt5.positions_get(symbol=symbol) or []
+        else:
+            raw = mt5.positions_get() or []
+    except Exception:
+        return []
+
+    if not raw:
+        return []
+
+    FUTURES_PREFIXES = (
+        'WIN', 'WDO', 'IND', 'DOL', 'CCM', 'BGI', 'ICF',
+        'SFI', 'BIT', 'T10', 'WSP', 'DI1', 'JSE',
+    )
+    magic_filter = int(getattr(_cfg, "MAGIC_NUMBER", 0) or 0)
+
+    filtered = []
+    for p in raw:
+        sym_upper = p.symbol.upper()
+        is_futures = sym_upper.startswith(FUTURES_PREFIXES)
+        magic_ok = (magic_filter == 0) or (p.magic == magic_filter)
+        if is_futures and magic_ok:
+            filtered.append(p)
+
+    return filtered
+
+
 def get_daily_volume() -> float:
+
     """Calcula o volume total negociado PELO BOT no dia (em R$)."""
     try:
         from_date = datetime.combine(datetime.now().date(), datetime_time.min)
@@ -6954,8 +6994,8 @@ def responder_comando_lucro(message):
     # 1. Busca o Lucro Realizado no seu arquivo TXT (o que já está no bolso)
     realizado, qtd = calcular_lucro_realizado_txt()
 
-    # 2. Busca o Lucro Flutuante (o que está aberto agora no MT5)
-    posicoes_abertas = mt5.positions_get()
+    # 2. Busca o Lucro Flutuante (apenas futuros deste bot)
+    posicoes_abertas = get_bot_positions()  # 🔒 Filtra ações de outros bots
     aberto = sum(p.profit for p in posicoes_abertas) if posicoes_abertas else 0.0
     total_do_dia = realizado + aberto
 
