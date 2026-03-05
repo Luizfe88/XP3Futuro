@@ -1,15 +1,116 @@
 {
-  "date": "2026-03-04",
-  "timestamp": "2026-03-04T17:42:59.586964",
+  "date": "2026-03-05",
+  "timestamp": "2026-03-05T11:02:59.628360",
   "equity_inicio_dia": 931126.66,
   "daily_max_equity": 931126.66,
   "daily_trades_per_symbol": {},
   "last_entry_time": {},
-  "current_trading_day": "2026-03-04",
-  "daily_cycle_completed": true,
+  "current_trading_day": "2026-03-05",
+  "daily_cycle_completed": false,
   "daily_target_hit_day": null,
   "daily_target_hit_pct": null,
   "symbol_pyramid_leg": {},
   "last_entry_price": {},
-  "open_positions": []
+  "open_positions": [
+    {
+      "ticket": 2363908667,
+      "symbol": "RAIZ4",
+      "side": "BUY",
+      "volume": 26600.0,
+      "entry_price": 0.63,
+      "sl": 0.6,
+      "tp": 0.7,
+      "time": 1772706730
+    },
+    {
+      "ticket": 2363908784,
+      "symbol": "SMTO3",
+      "side": "BUY",
+      "volume": 900.0,
+      "entry_price": 18.08,
+      "sl": 17.85,
+      "tp": 18.36,
+      "time": 1772706732
+    },
+    {
+      "ticket": 2363908869,
+      "symbol": "RANI3",
+      "side": "BUY",
+      "volume": 1600.0,
+      "entry_price": 10.06,
+      "sl": 9.93,
+      "tp": 10.22,
+      "time": 1772706734
+    },
+    {
+      "ticket": 2363909031,
+      "symbol": "POSI3",
+      "side": "BUY",
+      "volume": 4000.0,
+      "entry_price": 4.11,
+      "sl": 4.06,
+      "tp": 4.17,
+      "time": 1772706735
+    },
+    {
+      "ticket": 2363909323,
+      "symbol": "MYPK3",
+      "side": "BUY",
+      "volume": 1600.0,
+      "entry_price": 9.9,
+      "sl": 9.8,
+      "tp": 10.02,
+      "time": 1772706739
+    },
+    {
+      "ticket": 2363909523,
+      "symbol": "CASH3",
+      "side": "SELL",
+      "volume": 5200.0,
+      "entry_price": 3.57,
+      "sl": 3.65,
+      "tp": 3.4,
+      "time": 1772706740
+    },
+    {
+      "ticket": 2363909620,
+      "symbol": "BRKM5",
+      "side": "BUY",
+      "volume": 1500.0,
+      "entry_price": 11.05,
+      "sl": 10.76,
+      "tp": 11.7,
+      "time": 1772706742
+    },
+    {
+      "ticket": 2363909775,
+      "symbol": "RECV3",
+      "side": "BUY",
+      "volume": 1300.0,
+      "entry_price": 12.63,
+      "sl": 12.47,
+      "tp": 12.83,
+      "time": 1772706744
+    },
+    {
+      "ticket": 2363909890,
+      "symbol": "COGN3",
+      "side": "SELL",
+      "volume": 5700.0,
+      "entry_price": 3.22,
+      "sl": 3.2800000000000002,
+      "tp": 3.1,
+      "time": 1772706745
+    },
+    {
+      "ticket": 2364015103,
+      "symbol": "TCSA3",
+      "side": "BUY",
+      "volume": 11100.0,
+      "entry_price": 1.5,
+      "sl": 1.47,
+      "tp": 1.54,
+      "time": 1772708553
+    }
+  ]
 }

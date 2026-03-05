@@ -6631,3 +6631,184 @@ NameError: name 'queue' is not defined. Did you forget to import 'queue'?
 2026-03-04 17:39:13,023 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
 2026-03-04 17:39:19,153 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
 2026-03-04 17:39:29,064 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-04 17:57:41,590 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-04 17:57:41,710 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-04 17:57:48,202 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-04 17:57:56,634 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-04 17:58:09,088 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-04 17:58:15,373 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-04 17:58:21,605 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-04 17:58:27,832 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-04 17:58:42,203 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-04 17:58:53,853 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-04 17:58:58,535 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 23 ativos.
+2026-03-04 18:13:21,351 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-04 18:13:21,438 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-04 18:13:32,460 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-04 18:13:41,448 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-04 18:13:47,598 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-04 18:13:53,860 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-04 18:14:00,091 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-04 18:14:06,260 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-04 18:14:14,904 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-04 18:14:21,057 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-04 18:16:24,951 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-04 18:16:25,050 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-04 18:16:35,223 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-04 18:16:41,395 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-04 18:16:47,505 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-04 18:16:56,340 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-04 18:17:05,009 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-04 18:17:11,091 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-04 18:17:17,270 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-04 18:17:23,450 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 08:59:38,111 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 08:59:38,207 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 08:59:47,199 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 08:59:56,614 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-05 09:00:02,720 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 09:00:12,195 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 09:00:18,307 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 09:00:24,379 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-05 09:00:30,516 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 09:00:36,623 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 09:02:59,069 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 09:02:59,149 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 09:03:05,481 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 09:03:11,541 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-05 09:03:17,606 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 09:03:25,695 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 09:03:31,808 - INFO - 🔄 Coletando métricas para ICFK26 → ICFK26
+2026-03-05 09:03:37,969 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 09:03:46,223 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 09:03:54,336 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 09:15:13,190 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 09:15:13,239 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 09:15:21,285 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 09:15:29,300 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-05 09:15:35,380 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 09:15:43,370 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 09:15:52,859 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 09:15:58,925 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-05 09:16:04,994 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 09:16:11,072 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 09:19:55,594 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 09:19:55,681 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 09:20:01,800 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 09:20:07,908 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-05 09:20:13,981 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 09:20:22,390 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 09:20:28,482 - INFO - 🔄 Coletando métricas para ICFK26 → ICFK26
+2026-03-05 09:20:34,558 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 09:20:42,585 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 09:20:50,736 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 09:31:00,045 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 09:31:00,103 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 09:31:08,263 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 09:31:16,831 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-05 09:31:22,896 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 09:31:31,023 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 09:31:39,409 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 09:31:45,470 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-05 09:31:51,525 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 09:31:57,672 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 09:37:24,227 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 09:37:24,297 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 09:37:30,452 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 09:37:36,559 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-05 09:37:42,639 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 09:37:51,857 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 09:37:58,031 - INFO - 🔄 Coletando métricas para ICFK26 → ICFK26
+2026-03-05 09:38:04,105 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 09:38:12,170 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 09:38:20,170 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 09:46:38,684 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 09:46:38,743 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 09:46:46,783 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 09:46:54,817 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-05 09:47:00,894 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 09:47:08,970 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 09:47:15,089 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 09:47:21,139 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-05 09:47:27,304 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 09:47:33,374 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 09:54:38,796 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 09:54:38,870 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 09:54:44,972 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 09:54:51,032 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-05 09:54:57,091 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 09:55:05,170 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 09:55:11,266 - INFO - 🔄 Coletando métricas para ICFK26 → ICFK26
+2026-03-05 09:55:17,384 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 09:55:25,354 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 09:55:33,415 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 10:03:18,593 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 10:03:18,650 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 10:03:27,033 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 10:03:35,406 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-05 10:03:41,512 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 10:03:51,414 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 10:04:00,697 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 10:04:07,391 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-05 10:04:14,041 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 10:04:20,137 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 10:10:35,075 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 10:10:35,192 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 10:10:41,401 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 10:10:47,478 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-05 10:10:53,599 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 10:11:02,632 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 10:11:08,723 - INFO - 🔄 Coletando métricas para ICFK26 → ICFK26
+2026-03-05 10:11:14,829 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 10:11:23,116 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 10:11:31,381 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 10:19:25,125 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 10:19:25,179 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 10:19:33,309 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 10:19:41,646 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-05 10:19:47,734 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 10:19:55,964 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 10:20:02,075 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 10:20:08,174 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-05 10:20:14,271 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 10:20:20,393 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 10:28:07,970 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 10:28:08,086 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 10:28:17,591 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 10:28:23,678 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-05 10:28:29,824 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 10:28:38,056 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 10:28:44,201 - INFO - 🔄 Coletando métricas para ICFK26 → ICFK26
+2026-03-05 10:28:50,253 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 10:28:59,036 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 10:29:08,081 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 10:36:34,625 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 10:36:34,692 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 10:36:43,261 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 10:36:51,542 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-05 10:36:57,628 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 10:37:06,072 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 10:37:12,292 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 10:37:18,371 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-05 10:37:24,453 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 10:37:30,551 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 10:44:38,999 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 10:44:39,073 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 10:44:47,849 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 10:44:53,947 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-05 10:45:00,027 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 10:45:08,076 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 10:45:14,201 - INFO - 🔄 Coletando métricas para ICFK26 → ICFK26
+2026-03-05 10:45:20,292 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 10:45:28,593 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 10:45:36,847 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-05 10:53:54,965 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-05 10:53:55,065 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-05 10:54:03,754 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-05 10:54:15,463 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-05 10:54:22,358 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-05 10:54:30,872 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-05 10:54:37,038 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-05 10:54:43,957 - INFO - 🔄 Coletando métricas para CCMH26 → CCMH26
+2026-03-05 10:54:50,333 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-05 10:54:56,528 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
