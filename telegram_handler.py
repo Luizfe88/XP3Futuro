@@ -5,7 +5,7 @@ import logging
 from datetime import datetime
 import MetaTrader5 as mt5
 import config
-from utils import send_telegram_message  # opcional, se quiser usar sua função
+from utils import send_telegram_message, get_bot_positions
 from news_filter import get_next_high_impact_event, check_news_blackout, get_upcoming_events
 
 logger = logging.getLogger("telegram")
@@ -46,7 +46,7 @@ def handle_status(message):
         acc = mt5.account_info()
         balance = acc.balance if acc else 0
         equity = acc.equity if acc else 0
-        positions_count = len(mt5.positions_get() or [])
+        positions_count = len(get_bot_positions())
         
         status = (
             f"🤖 <b>XP3 PRO - STATUS</b>\n\n"
@@ -68,7 +68,7 @@ def handle_lucro(message):
         return
     
     profit_today = acc.profit
-    positions = mt5.positions_get() or []
+    positions = get_bot_positions()
     
     msg = (
         f"📊 <b>RESUMO DO DIA</b>\n\n"
@@ -195,7 +195,7 @@ def handle_health(message):
         health_info.append(f"⚠️ <b>Memória:</b> Erro ({e})")
     
     # 3. Posições abertas
-    positions = mt5.positions_get() or []
+    positions = get_bot_positions()
     health_info.append(f"📊 <b>Posições:</b> {len(positions)}")
     
     # 4. Timestamp

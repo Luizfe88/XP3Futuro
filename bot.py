@@ -3438,7 +3438,7 @@ def additional_filters_ok(symbol: str) -> bool:
 
 def get_sector_counts() -> defaultdict:
     with utils.mt5_lock:
-        positions = mt5.positions_get() or []
+        positions = utils.get_bot_positions()
     counts = defaultdict(int)
     for p in positions:
         sector = config.SECTOR_MAP.get(p.symbol, "UNKNOWN")

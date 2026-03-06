@@ -34,3 +34,20 @@ ValueError: All arrays must be of the same length
 2026-03-05 10:37:04,641 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
 2026-03-05 11:04:53,033 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
 2026-03-05 11:08:21,410 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-05 11:20:46,914 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 6446, in update_correlations
+    df = pd.DataFrame(data)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\frame.py", line 769, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 460, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, consolidate=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 113, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 643, in _extract_index
+    raise ValueError("All arrays must be of the same length")
+ValueError: All arrays must be of the same length
+2026-03-05 11:21:48,279 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-05 11:52:58,553 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-05 12:24:14,220 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-05 12:55:23,648 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels

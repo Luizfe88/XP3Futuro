@@ -6980,9 +6980,8 @@ def calcular_lucro_realizado_txt():
 
 def obter_resumo_financeiro_do_dia():
     lucro_realizado, total_ordens = calcular_lucro_realizado_txt()
-    lucro_aberto_total = (
-        sum(p.profit for p in mt5.positions_get()) if mt5.positions_get() else 0.0
-    )
+    posicoes = get_bot_positions()
+    lucro_aberto_total = sum(p.profit for p in posicoes) if posicoes else 0.0
     return lucro_realizado, lucro_aberto_total, total_ordens
 
 

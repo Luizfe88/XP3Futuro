@@ -847,3 +847,5 @@
 2026-03-05 08:55:23,684 INFO Bot process started via shell command: start "XP3 FUTURE BOT" cmd /k "C:\Users\luizf\AppData\Local\Programs\Python\Python313\python.exe C:\Users\luizf\Documents\xp3future\botfuturo.py"
 2026-03-05 08:56:20,103 INFO Start bot GUI: system=Windows
 2026-03-05 08:56:20,115 INFO Bot process started via shell command: start "XP3 FUTURE BOT" cmd /k "C:\Users\luizf\AppData\Local\Programs\Python\Python313\python.exe C:\Users\luizf\Documents\xp3future\botfuturo.py"
+2026-03-05 11:17:22,328 INFO Start bot GUI: system=Windows
+2026-03-05 11:17:22,426 INFO Bot process started via shell command: start "XP3 FUTURE BOT" cmd /k "C:\Users\luizf\AppData\Local\Programs\Python\Python313\python.exe C:\Users\luizf\Documents\xp3future\botfuturo.py"

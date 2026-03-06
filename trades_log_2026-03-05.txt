@@ -1,3 +1,9 @@
 DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
 ---------------------------------------------------------------------------------------------------------
 2026-03-05 10:47:59 | SAÍDA    | ODPV3  | BUY  | Vol:    1200 | Price:  13.66 | P&L:  -228.00 R$ (-1.37%) | Motivo: Stop Loss | DealId: 1727061087 | Pos: 2363909202
+2026-03-05 11:30:58 | SAÍDA    | RANI3  | BUY  | Vol:    1600 | Price:   9.93 | P&L:  -208.00 R$ (-1.29%) | Motivo: Stop Loss | DealId: 1727182655 | Pos: 2363908869
+2026-03-05 11:30:58 | SAÍDA    | MYPK3  | BUY  | Vol:    1600 | Price:   9.80 | P&L:  -160.00 R$ (-1.01%) | Motivo: Stop Loss | DealId: 1727186195 | Pos: 2363909323
+2026-03-05 11:41:05 | SAÍDA    | SMTO3  | BUY  | Vol:     900 | Price:  17.85 | P&L:  -207.00 R$ (-1.27%) | Motivo: Stop Loss | DealId: 1727230195 | Pos: 2363908784
+2026-03-05 11:46:07 | SAÍDA    | TCSA3  | BUY  | Vol:   11100 | Price:   1.47 | P&L:  -333.00 R$ (-2.00%) | Motivo: Stop Loss | DealId: 1727247649 | Pos: 2364015103
+2026-03-05 11:56:18 | SAÍDA    | AALR3  | SELL | Vol:    3600 | Price:   4.79 | P&L:  -684.00 R$ (-4.13%) | Motivo: Stop Loss | DealId: 1727281180 | Pos: 2364184125
+2026-03-05 12:56:37 | SAÍDA    | BRKM5  | BUY  | Vol:    1500 | Price:  11.70 | P&L:  +975.00 R$ (+5.88%) | Motivo: Take Profit | DealId: 1727442775 | Pos: 2363909620
