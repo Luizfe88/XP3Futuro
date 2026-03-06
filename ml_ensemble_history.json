@@ -1,6 +1,26 @@
 {
-  "history": [],
-  "history_by_symbol": {},
-  "last_train_at": 1772720446.9823666,
-  "saved_at": 1772726288.2893302
-}
+  "history": [
+    {
+      "ts": 1772822106.9475145,
+      "symbol": "CASH3",
+      "pnl_pct": 0.0,
+      "indicators": {
+        "symbol": "CASH3",
+        "ema_fast": 3.336416542868391,
+        "ema_slow": 3.3539402525212565,
+        "rsi": 54.545454545454476,
+        "adx": 31.644468277618532,
+        "adx_slope": 0.7554,
+        "atr": 0.02692709503341167,
+        "atr_pct": 0.806,
+        "atr_real": 0.806,
+        "atr_zscore": 0.38,
+        "momentum": 0.0,
+        "volume_ratio": 0.52,
+        "vol_breakout": false,
+        "vwap": 3.3499662540085016,
+        "vwap_std": 0.035515379133685875,
+        "vwap_upper_2sd": 3.4209970122758735,
+        "vwap_lower_2sd": 3.2789354957411296,
+        "obv": 250.0,
+        "obv_trend_up": 

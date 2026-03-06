@@ -3206,7 +3206,11 @@ def build_portfolio_and_top15():
         
         # EXCEÇÃO ADX 15-20 (Com inclinação)
         ema_diff_pct = abs(ind["ema_fast"] - ind["ema_slow"]) / max(ind["close"], 1)
-        ema_tilt_ok = ema_diff_pct > 0.0005 # > 0.05% de inclinacao/gap
+        
+        # Reduz inclinação necessária em modo AGRESSIVO
+        op_mode = getattr(config, "DEFAULT_OPERATION_MODE", "BALANCED").upper()
+        tilt_thresh = 0.0003 if op_mode == "AGRESSIVO" else 0.0005
+        ema_tilt_ok = ema_diff_pct > tilt_thresh 
         adx_exception = (15 <= adx <= 20) and ema_tilt_ok
 
         # Determina DIREÇÃO e SINAL FINAL
@@ -3253,16 +3257,20 @@ def build_portfolio_and_top15():
                         window = df_tr.iloc[-(lb + 1):-1]
                         hi = float(window["high"].max())
                         lo = float(window["low"].min())
-                        # Obtém regime atual
+                        # Obtém regime atual e modo
                         current_regime = getattr(adaptive_system, "current_regime", "NEUTRAL")
+                        op_mode = getattr(config, "DEFAULT_OPERATION_MODE", "BALANCED").upper()
+
+                        # Tolerância baseada no modo (0.1% a 0.5%)
+                        mode_tol_mult = 0.001 if op_mode == "CONSERVADOR" else (0.003 if op_mode == "BALANCED" else 0.005)
 
                         if signal == "BUY":
                             trigger_ok = close_now > hi
                             used_tolerance = False
                             
-                            # Tolerância para Reversão (permite tocar ou levemente abaixo da resistência)
-                            if not trigger_ok and current_regime == "REVERSION":
-                                tolerance = 0.0005 * hi
+                            # Tolerância para Reversão ou Modo Agressivo/Balanced
+                            if not trigger_ok:
+                                tolerance = mode_tol_mult * hi
                                 if close_now >= (hi - tolerance):
                                     trigger_ok = True
                                     used_tolerance = True
@@ -3282,9 +3290,9 @@ def build_portfolio_and_top15():
                             trigger_ok = close_now < lo
                             used_tolerance = False
                             
-                            # Tolerância para Reversão (permite tocar ou levemente acima do suporte)
-                            if not trigger_ok and current_regime == "REVERSION":
-                                tolerance = 0.0005 * lo
+                            # Tolerância para Reversão ou Modo Agressivo/Balanced
+                            if not trigger_ok:
+                                tolerance = mode_tol_mult * lo
                                 if close_now <= (lo + tolerance):
                                     trigger_ok = True
                                     used_tolerance = True
@@ -3323,8 +3331,12 @@ def build_portfolio_and_top15():
 
             checks = []
             try:
-                rsi_limit_buy = 80.0 if score >= 75 else 70.0
-                rsi_limit_sell = 20.0 if score >= 75 else 30.0
+                # RSI Adaptativo (mais permissivo em tendências fortes)
+                rsi_limit_buy = 80.0 if (score >= 75 or adx > 35) else 70.0
+                if op_mode == "AGRESSIVO": rsi_limit_buy = 85.0
+                
+                rsi_limit_sell = 20.0 if (score >= 75 or adx > 35) else 30.0
+                if op_mode == "AGRESSIVO": rsi_limit_sell = 15.0
                 
                 checks.append({"name": "Score mínimo", "passed": bool(score >= float(config.MIN_SIGNAL_SCORE)), "current": float(score), "required": float(config.MIN_SIGNAL_SCORE), "op": ">="})
                 if adx_threshold:

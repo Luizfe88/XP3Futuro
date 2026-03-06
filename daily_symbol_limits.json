@@ -1,4 +1,45 @@
 {
-  "date": "2026-03-04",
-  "trades": {}
+  "date": "2026-03-06",
+  "trades": {
+    "CASH3": {
+      "total": 1,
+      "losses": 0
+    },
+    "SHUL4": {
+      "total": 1,
+      "losses": 0
+    },
+    "HAPV3": {
+      "total": 1,
+      "losses": 0
+    },
+    "GGBR4": {
+      "total": 1,
+      "losses": 0
+    },
+    "QUAL3": {
+      "total": 1,
+      "losses": 0
+    },
+    "DIRR3": {
+      "total": 1,
+      "losses": 1
+    },
+    "AURE3": {
+      "total": 1,
+      "losses": 0
+    },
+    "LEVE3": {
+      "total": 1,
+      "losses": 0
+    },
+    "SUZB3": {
+      "total": 1,
+      "losses": 0
+    },
+    "VVEO3": {
+      "total": 1,
+      "losses": 1
+    }
+  }
 }

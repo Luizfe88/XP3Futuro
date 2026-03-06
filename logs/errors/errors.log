@@ -1,4 +1,4 @@
-2026-03-05 08:59:37,714 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
+2026-03-06 09:00:38,455 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
 Traceback (most recent call last):
   File "C:\Users\luizf\Documents\xp3future\utils.py", line 6446, in update_correlations
     df = pd.DataFrame(data)
@@ -11,8 +11,14 @@ Traceback (most recent call last):
   File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 643, in _extract_index
     raise ValueError("All arrays must be of the same length")
 ValueError: All arrays must be of the same length
-2026-03-05 09:00:17,965 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
-2026-03-05 09:02:58,986 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
+2026-03-06 09:01:52,877 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 09:02:14,271 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 09:04:55,677 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
 Traceback (most recent call last):
   File "C:\Users\luizf\Documents\xp3future\utils.py", line 6446, in update_correlations
     df = pd.DataFrame(data)
@@ -25,16 +31,71 @@ Traceback (most recent call last):
   File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 643, in _extract_index
     raise ValueError("All arrays must be of the same length")
 ValueError: All arrays must be of the same length
-2026-03-05 09:03:35,173 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
-2026-03-05 09:31:25,572 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
-2026-03-05 09:34:45,195 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
-2026-03-05 10:02:34,256 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
-2026-03-05 10:05:55,426 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
-2026-03-05 10:33:42,360 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
-2026-03-05 10:37:04,641 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
-2026-03-05 11:04:53,033 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
-2026-03-05 11:08:21,410 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
-2026-03-05 11:20:46,914 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
+2026-03-06 09:05:55,375 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 09:06:20,954 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 09:07:52,455 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 09:08:14,666 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 09:12:00,242 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 09:12:25,234 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 09:13:54,852 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 09:14:19,291 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 09:18:05,748 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 09:18:35,539 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 09:19:55,401 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 09:20:20,052 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 09:24:11,597 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 09:24:36,511 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 09:25:56,373 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 09:26:19,452 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 09:30:15,738 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 09:31:55,519 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 09:46:30,979 | ERROR | bot | ❌ Erro crítico ao atualizar bot_bridge: [WinError 5] Acesso negado: 'bot_bridge.json.tmp' -> 'bot_bridge.json'
+2026-03-06 10:03:07,386 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 10:04:40,606 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 10:34:47,041 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 10:35:49,157 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:07:03,004 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:28:25,057 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
 Traceback (most recent call last):
   File "C:\Users\luizf\Documents\xp3future\utils.py", line 6446, in update_correlations
     df = pd.DataFrame(data)
@@ -47,7 +108,509 @@ Traceback (most recent call last):
   File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 643, in _extract_index
     raise ValueError("All arrays must be of the same length")
 ValueError: All arrays must be of the same length
-2026-03-05 11:21:48,279 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
-2026-03-05 11:52:58,553 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
-2026-03-05 12:24:14,220 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
-2026-03-05 12:55:23,648 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:29:36,826 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:29:54,794 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 11:33:23,233 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 6446, in update_correlations
+    df = pd.DataFrame(data)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\frame.py", line 769, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 460, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, consolidate=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 113, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 643, in _extract_index
+    raise ValueError("All arrays must be of the same length")
+ValueError: All arrays must be of the same length
+2026-03-06 11:34:16,629 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:34:30,120 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 11:35:42,809 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:35:58,525 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 11:40:07,463 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:40:21,143 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 11:41:41,472 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:41:56,574 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 11:46:08,224 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:46:21,732 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 11:47:34,577 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:47:48,138 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 11:51:56,287 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:52:09,553 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 11:53:24,081 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:53:33,320 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 11:57:43,772 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:57:53,095 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 11:59:08,978 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 11:59:18,364 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:03:31,984 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:03:41,204 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:04:58,661 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:05:07,876 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:09:18,070 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:09:27,458 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:10:47,873 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:10:57,184 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:15:03,751 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:15:13,062 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:16:32,167 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:16:41,491 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:20:49,411 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:20:58,666 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:22:16,478 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:22:25,683 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:26:34,935 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:26:44,252 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:28:00,842 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:28:10,169 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:32:20,257 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:32:27,466 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:33:44,936 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:33:54,925 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:38:04,031 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:38:11,305 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:39:32,028 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:39:39,238 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:43:47,381 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:43:54,634 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:45:15,439 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:45:22,712 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:49:30,893 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:49:40,060 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:50:58,621 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:51:11,185 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:55:16,104 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:55:25,349 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 12:56:46,611 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 12:57:01,028 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 13:01:01,602 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 13:01:10,855 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 13:02:36,016 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 13:02:47,297 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 13:06:45,719 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 13:06:52,865 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 13:08:22,278 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 13:08:31,478 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 13:12:26,746 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 13:12:36,300 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 13:14:06,694 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 13:14:21,179 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 13:19:03,370 | ERROR | bot | ❌ Erro ao salvar estado diário: [WinError 32] O arquivo já está sendo usado por outro processo: 'daily_bot_state.json.tmp'
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 856, in move
+    os.rename(src, real_dst)
+    ~~~~~~~~~^^^^^^^^^^^^^^^
+PermissionError: [WinError 32] O arquivo já está sendo usado por outro processo: 'daily_bot_state.json.tmp' -> 'daily_bot_state.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2532, in save_daily_state
+    shutil.move(temp_file, DAILY_STATE_FILE)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 877, in move
+    os.unlink(src)
+    ~~~~~~~~~^^^^^
+PermissionError: [WinError 32] O arquivo já está sendo usado por outro processo: 'daily_bot_state.json.tmp'
+2026-03-06 13:19:46,133 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 13:19:55,487 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 13:20:00,440 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 13:20:11,128 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 13:24:45,278 | ERROR | bot | ❌ Erro ao salvar estado diário: [WinError 32] O arquivo já está sendo usado por outro processo: 'daily_bot_state.json.tmp'
+Traceback (most recent call last):
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 856, in move
+    os.rename(src, real_dst)
+    ~~~~~~~~~^^^^^^^^^^^^^^^
+PermissionError: [WinError 32] O arquivo já está sendo usado por outro processo: 'daily_bot_state.json.tmp' -> 'daily_bot_state.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2532, in save_daily_state
+    shutil.move(temp_file, DAILY_STATE_FILE)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 877, in move
+    os.unlink(src)
+    ~~~~~~~~~^^^^^
+PermissionError: [WinError 32] O arquivo já está sendo usado por outro processo: 'daily_bot_state.json.tmp'
+2026-03-06 13:26:42,622 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 13:26:42,765 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 13:28:49,973 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 13:28:52,435 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 13:34:28,367 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 13:34:33,739 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 13:56:56,310 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 6446, in update_correlations
+    df = pd.DataFrame(data)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\frame.py", line 769, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 460, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, consolidate=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 113, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 643, in _extract_index
+    raise ValueError("All arrays must be of the same length")
+ValueError: All arrays must be of the same length
+2026-03-06 13:57:52,596 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 13:58:19,089 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 14:00:37,719 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 6446, in update_correlations
+    df = pd.DataFrame(data)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\frame.py", line 769, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 460, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, consolidate=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 113, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 643, in _extract_index
+    raise ValueError("All arrays must be of the same length")
+ValueError: All arrays must be of the same length
+2026-03-06 14:01:15,093 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 14:01:46,693 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 14:04:03,320 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 14:04:37,031 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 14:07:20,461 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 14:10:13,275 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 14:38:24,365 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 14:38:48,932 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 14:41:18,402 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 14:41:37,727 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 14:44:22,887 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 14:44:49,366 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 14:47:11,912 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 14:47:35,354 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 14:50:23,344 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 14:50:50,768 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 14:53:10,271 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 14:53:33,829 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 14:56:25,054 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 14:59:10,303 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 15:27:30,032 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 15:30:14,899 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 15:35:00,417 | CRITICAL | bot | 🚨 FAILSAFE ATIVADO! Fechamento normal FALHOU às 15:35:00
+2026-03-06 15:35:00,421 | CRITICAL | bot | 🚨 FAILSAFE: 9 posições não fecharam no horário!
+2026-03-06 15:35:05,425 | CRITICAL | bot | 🔥 EMERGÊNCIA: 9 posições AINDA abertas após failsafe!
+2026-03-06 15:39:18,493 | CRITICAL | bot | 🚨 FAILSAFE ATIVADO! Fechamento normal FALHOU às 15:39:18
+2026-03-06 15:39:18,496 | CRITICAL | bot | 🚨 FAILSAFE: 10 posições não fecharam no horário!
+2026-03-06 15:39:23,515 | CRITICAL | bot | 🔥 EMERGÊNCIA: 10 posições AINDA abertas após failsafe!
+2026-03-06 15:58:41,374 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 15:59:10,695 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 16:01:24,324 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:01:55,501 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 16:04:46,230 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:07:32,952 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:08:03,606 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 16:13:39,104 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:14:10,656 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 16:19:47,487 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:20:10,965 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 16:25:46,221 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:25:59,785 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 16:31:37,916 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:31:51,437 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 16:35:55,104 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:36:05,111 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 16:37:30,575 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:37:38,235 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined

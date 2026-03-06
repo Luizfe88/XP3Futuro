@@ -36,6 +36,9 @@ TIMEFRAME_BASE = "M5"
 MT5_TERMINAL_PATH = r"C:\MetaTrader 5 Terminal\terminal64.exe"
 ALLOWED_BROKERS = ["XP-PRIME", "XP-TRADE", "XP-GLOBAL", "XP", "XP-INSTITUTIONAL", "CLEAR", "CLEAR-INVESTIMENTOS"]
 
+# ✅ NOVO: MODO DE OPERAÇÃO PADRÃO (CONSERVADOR, BALANCED, AGRESSIVO)
+DEFAULT_OPERATION_MODE = "BALANCED" 
+
 # ===========================
 # ✅ SISTEMA DE CONFIGURAÇÃO DINÂMICA VIA YAML
 # ===========================
@@ -600,15 +603,15 @@ MAX_TRADE_DURATION_CANDLES = 40  # Time-stop
 # config.py - ADICIONAR
 ADAPTIVE_THRESHOLDS = {
     "RISK_ON": {
-        "min_signal_score": 45,
-        "min_adx": 12,
-        "min_volume_ratio": 0.40,
+        "min_signal_score": 40, # Reduzido de 45
+        "min_adx": 10,       # Reduzido de 12
+        "min_volume_ratio": 0.35, # Reduzido de 0.40
     },
     "RISK_OFF": {
-        "min_signal_score": 50,
-        "min_adx": 15,
-        "min_volume_ratio": 0.50,
-        "anti_chop_cooldown": 240,
+        "min_signal_score": 45, # Reduzido de 50
+        "min_adx": 12,       # Reduzido de 15
+        "min_volume_ratio": 0.45, # Reduzido de 0.50
+        "anti_chop_cooldown": 180, # Reduzido de 240
     },
 }
 
@@ -883,7 +886,7 @@ ELITE_SYMBOLS = {
             "ema_long": 54,
             "rsi_low": 40,
             "rsi_high": 67,
-            "adx_threshold": 20,
+            "adx_threshold": 15, # Reduzido de 20
             "sl_atr_multiplier": 1.6,
             "tp_ratio": 1.0,
         },
@@ -927,7 +930,7 @@ ELITE_SYMBOLS = {
             "ema_long": 54,
             "rsi_low": 40,
             "rsi_high": 67,
-            "adx_threshold": 20,
+            "adx_threshold": 18, # Reduzido de 20
             "sl_atr_multiplier": 2.8,
             "tp_ratio": 1.5,
         },

@@ -1,0 +1,60 @@
+╔══════════════════════════════════════════════════════╗
+║  📚 RELATÓRIO DE APRENDIZADO - 2026-03-06          ║
+╚══════════════════════════════════════════════════════╝
+
+📊 RESUMO DO DIA
+────────────────────────────────────────
+Trades fechados : 30
+Win Rate geral  : ⚠️ 43.3% (13W / 17L)
+PnL total       : 🟢 R$ +258.00
+
+🎯 PERFORMANCE POR ESTRATÉGIA
+────────────────────────────────────────
+  ⚠️ ELITE           WR 43%  (13W/17L)
+
+🏆 PERFORMANCE POR SÍMBOLO
+────────────────────────────────────────
+  ✅ BMGB4      WR 100%  (1W/0L)  PnL R$ +76.00
+  ✅ SBSP3      WR 100%  (1W/0L)  PnL R$ +128.00
+  ✅ SAPR11     WR 100%  (1W/0L)  PnL R$ +152.00
+  ✅ CSED3      WR 100%  (1W/0L)  PnL R$ +182.00
+  ✅ EQTL3      WR 100%  (1W/0L)  PnL R$ +52.00
+  ✅ TRIS3      WR 100%  (1W/0L)  PnL R$ +48.00
+  ✅ COGN3      WR 100%  (1W/0L)  PnL R$ +59.00
+  ✅ HAPV3      WR 100%  (1W/0L)  PnL R$ +19.00
+  ✅ AURE3      WR 100%  (1W/0L)  PnL R$ +64.00
+  ✅ LEVE3      WR 100%  (1W/0L)  PnL R$ +28.00
+  ✅ PSSA3      WR 100%  (1W/0L)  PnL R$ +9.00
+  ✅ AMER3      WR 100%  (1W/0L)  PnL R$ +66.00
+  ⚠️ GGBR4      WR 50%  (1W/1L)  PnL R$ +9.00
+  ❌ BRSR6      WR 0%  (0W/1L)  PnL R$ -100.00
+  ❌ SOJA3      WR 0%  (0W/1L)  PnL R$ -42.00
+  ❌ USIM5      WR 0%  (0W/1L)  PnL R$ -112.00
+  ❌ CASH3      WR 0%  (0W/1L)  PnL R$ +0.00
+  ❌ SHUL4      WR 0%  (0W/1L)  PnL R$ +0.00
+  ❌ QUAL3      WR 0%  (0W/1L)  PnL R$ +0.00
+  ❌ DIRR3      WR 0%  (0W/1L)  PnL R$ -36.00
+  ❌ SUZB3      WR 0%  (0W/2L)  PnL R$ -27.00
+  ❌ GFSA3      WR 0%  (0W/1L)  PnL R$ +0.00
+  ❌ DEXP3      WR 0%  (0W/1L)  PnL R$ +0.00
+  ❌ MATD3      WR 0%  (0W/1L)  PnL R$ +0.00
+  ❌ MYPK3      WR 0%  (0W/1L)  PnL R$ -19.00
+  ❌ KEPL3      WR 0%  (0W/1L)  PnL R$ -132.00
+  ❌ FIQE3      WR 0%  (0W/1L)  PnL R$ -31.00
+  ❌ VVEO3      WR 0%  (0W/1L)  PnL R$ -135.00
+
+🧠 LIÇÕES APRENDIDAS
+────────────────────────────────────────
+  1. GGBR4: WR 50% (1W/1L) | PnL R$ +9.00 → resultado neutro, pesos mantidos
+  2. SUZB3: WR 0% (0W/2L) | PnL R$ -27.00 → sinal fraco, atenuando filtros agressivos
+
+🔧 AJUSTES AUTO-APLICADOS (em vigor amanhã)
+────────────────────────────────────────
+  ↓ SUZB3      ADX forte           : 1.0000 → 0.9820  (-0.0180)
+  ↓ SUZB3      RSI extremo         : 1.0000 → 0.9910  (-0.0090)
+  ↓ SUZB3      Momentum positivo   : 1.0000 → 0.9820  (-0.0180)
+
+──────────────────────────────────────────────────────
+  Gerado em: 06/03/2026 15:42:26
+  XP3 PRO — Sistema de Aprendizado Adaptativo
+──────────────────────────────────────────────────────

@@ -3728,19 +3728,31 @@ def calculate_daily_dd() -> float:
 # SCORE FINAL
 # =========================================================
 def calculate_signal_score(
-    ind: dict, regime: str = "NEUTRAL", adx_min: float = 15.0
+    ind: dict, regime: str = "NEUTRAL", adx_min: float = None
 ) -> float:
     """
-    ✅ VERSÃO v5.6 (ADAPTATIVA)
-    Score dinâmico baseado no regime de mercado e custo operacional.
+    ✅ VERSÃO v5.7 (ADAPTATIVA + OPERATION MODE)
+    Score dinâmico baseado no regime de mercado, custo operacional e modo de operação.
 
     Args:
         ind: Dicionário de indicadores
         regime: "TREND", "REVERSION", "NEUTRAL"
-        adx_min: Threshold mínimo de ADX (vem do sistema adaptativo)
+        adx_min: Threshold mínimo de ADX (opcional, usa modo de operação se None)
     """
     if not isinstance(ind, dict) or ind.get("error"):
         return 0.0
+
+    # Carrega Modo de Operação
+    op_mode = getattr(config, "DEFAULT_OPERATION_MODE", "BALANCED").upper()
+    
+    # Ajusta adx_min padrão se não fornecido
+    if adx_min is None:
+        if op_mode == "AGRESSIVO":
+            adx_min = 10.0
+        elif op_mode == "CONSERVADOR":
+            adx_min = 20.0
+        else: # BALANCED
+            adx_min = 15.0
 
     score = 0.0
     score_log = {}

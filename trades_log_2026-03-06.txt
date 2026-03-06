@@ -1,0 +1,36 @@
+DATA/HORA           | TIPO     | ATIVO  | LADO |   VOLUME |  PREÇO |     P&L R$    |   %    | MOTIVO
+---------------------------------------------------------------------------------------------------------
+2026-03-06 10:54:56 | SAÍDA    | CXSE3  | SELL | Vol:     900 | Price:  17.31 | P&L:  +162.00 R$ (+1.03%) | Motivo: Take Profit | DealId: 1728439096 | Pos: 2365574549
+2026-03-06 11:43:23 | SAÍDA    | VALE3  | SELL | Vol:     200 | Price:  79.13 | P&L:  +358.00 R$ (+2.21%) | Motivo: Take Profit | DealId: 1728641975 | Pos: 2365573744
+2026-03-06 11:48:23 | SAÍDA    | VVEO3  | SELL | Vol:   12600 | Price:   1.26 | P&L:  +756.00 R$ (+4.55%) | Motivo: Take Profit | DealId: 1728653008 | Pos: 2365591924
+2026-03-06 15:31:01 | SAÍDA    | BMGB4  | SELL | Vol:    3800 | Price:   4.79 | P&L:   +76.00 R$ (+0.42%) | Motivo: Day-Only Close | DealId: 0 | Pos: 2365573614
+2026-03-06 15:32:28 | SAÍDA    | BMGB4  | SELL | Vol:    3800 | Price:   4.79 | P&L:   +38.00 R$ (+0.21%) | Motivo: Fechamento | DealId: 1729166612 | Pos: 2365573614
+2026-03-06 15:32:28 | SAÍDA    | SBSP3  | SELL | Vol:     100 | Price: 145.06 | P&L:  +129.00 R$ (+0.88%) | Motivo: Fechamento | DealId: 1729166627 | Pos: 2365573914
+2026-03-06 15:32:28 | SAÍDA    | BRSR6  | SELL | Vol:    1000 | Price:  17.93 | P&L:  -100.00 R$ (-0.56%) | Motivo: Fechamento | DealId: 1729166637 | Pos: 2365574089
+2026-03-06 15:32:28 | SAÍDA    | SAPR11 | SELL | Vol:     400 | Price:  40.59 | P&L:  +152.00 R$ (+0.93%) | Motivo: Fechamento | DealId: 1729166641 | Pos: 2365574228
+2026-03-06 15:32:28 | SAÍDA    | CSED3  | SELL | Vol:    2600 | Price:   6.19 | P&L:  +130.00 R$ (+0.80%) | Motivo: Fechamento | DealId: 1729166651 | Pos: 2365574332
+2026-03-06 15:32:28 | SAÍDA    | EQTL3  | SELL | Vol:     400 | Price:  40.38 | P&L:   +52.00 R$ (+0.32%) | Motivo: Fechamento | DealId: 1729166997 | Pos: 2365574471
+2026-03-06 15:32:28 | SAÍDA    | SOJA3  | SELL | Vol:    2100 | Price:   7.95 | P&L:   -42.00 R$ (-0.25%) | Motivo: Fechamento | DealId: 1729167863 | Pos: 2365574623
+2026-03-06 15:32:28 | SAÍDA    | TRIS3  | SELL | Vol:    2400 | Price:   6.86 | P&L:   +48.00 R$ (+0.29%) | Motivo: Fechamento | DealId: 1729167960 | Pos: 2365681931
+2026-03-06 15:32:28 | SAÍDA    | USIM5  | SELL | Vol:    2800 | Price:   6.53 | P&L:  -140.00 R$ (-0.77%) | Motivo: Fechamento | DealId: 1729168051 | Pos: 2365919108
+2026-03-06 15:32:28 | SAÍDA    | COGN3  | SELL | Vol:    5900 | Price:   3.11 | P&L:   +59.00 R$ (+0.32%) | Motivo: Fechamento | DealId: 1729168066 | Pos: 2365919197
+2026-03-06 15:35:40 | SAÍDA    | CASH3  | SELL | Vol:    5500 | Price:   3.35 | P&L:   -55.00 R$ (-0.30%) | Motivo: Fechamento | DealId: 1729177221 | Pos: 2366531293
+2026-03-06 15:35:40 | SAÍDA    | SHUL4  | SELL | Vol:    3100 | Price:   5.27 | P&L:   -62.00 R$ (-0.38%) | Motivo: Fechamento | DealId: 1729177222 | Pos: 2366531346
+2026-03-06 15:35:40 | SAÍDA    | HAPV3  | SELL | Vol:    1900 | Price:   9.63 | P&L:    +0.00 R$ (+0.00%) | Motivo: Fechamento | DealId: 1729177227 | Pos: 2366531467
+2026-03-06 15:35:40 | SAÍDA    | GGBR4  | SELL | Vol:     900 | Price:  18.98 | P&L:    +0.00 R$ (+0.00%) | Motivo: Fechamento | DealId: 1729177231 | Pos: 2366531729
+2026-03-06 15:35:40 | SAÍDA    | QUAL3  | SELL | Vol:    9300 | Price:   2.00 | P&L:   -93.00 R$ (-0.50%) | Motivo: Fechamento | DealId: 1729177235 | Pos: 2366531801
+2026-03-06 15:35:40 | SAÍDA    | DIRR3  | SELL | Vol:    1200 | Price:  14.97 | P&L:   -36.00 R$ (-0.20%) | Motivo: Fechamento | DealId: 1729177295 | Pos: 2366531871
+2026-03-06 15:35:40 | SAÍDA    | AURE3  | SELL | Vol:    1600 | Price:  11.58 | P&L:   +48.00 R$ (+0.26%) | Motivo: Fechamento | DealId: 1729177302 | Pos: 2366531930
+2026-03-06 15:35:40 | SAÍDA    | LEVE3  | SELL | Vol:     400 | Price:  34.86 | P&L:   +20.00 R$ (+0.14%) | Motivo: Fechamento | DealId: 1729177341 | Pos: 2366531964
+2026-03-06 15:37:42 | SAÍDA    | SUZB3  | SELL | Vol:     300 | Price:  54.91 | P&L:    +0.00 R$ (+0.00%) | Motivo: Fechamento | DealId: 1729177349 | Pos: 2366532105
+2026-03-06 15:40:40 | SAÍDA    | PSSA3  | SELL | Vol:     300 | Price:  48.98 | P&L:    +6.00 R$ (+0.04%) | Motivo: Fechamento | DealId: 1729183202 | Pos: 2366537766
+2026-03-06 15:40:40 | SAÍDA    | GGBR4  | SELL | Vol:     900 | Price:  18.96 | P&L:    -9.00 R$ (-0.05%) | Motivo: Fechamento | DealId: 1729183219 | Pos: 2366537794
+2026-03-06 15:40:40 | SAÍDA    | GFSA3  | SELL | Vol:    8700 | Price:   1.93 | P&L:   -87.00 R$ (-0.52%) | Motivo: Fechamento | DealId: 1729183233 | Pos: 2366537819
+2026-03-06 15:40:40 | SAÍDA    | SUZB3  | SELL | Vol:     300 | Price:  54.99 | P&L:   -27.00 R$ (-0.16%) | Motivo: Fechamento | DealId: 1729183239 | Pos: 2366537855
+2026-03-06 15:40:40 | SAÍDA    | AMER3  | SELL | Vol:    3300 | Price:   5.00 | P&L:   +33.00 R$ (+0.20%) | Motivo: Fechamento | DealId: 1729183241 | Pos: 2366537877
+2026-03-06 15:40:40 | SAÍDA    | DEXP3  | SELL | Vol:    2200 | Price:   7.34 | P&L:   -22.00 R$ (-0.14%) | Motivo: Fechamento | DealId: 1729183245 | Pos: 2366538018
+2026-03-06 15:40:40 | SAÍDA    | MATD3  | SELL | Vol:    2800 | Price:   5.92 | P&L:   -28.00 R$ (-0.17%) | Motivo: Fechamento | DealId: 1729183275 | Pos: 2366538040
+2026-03-06 15:40:40 | SAÍDA    | MYPK3  | SELL | Vol:    1900 | Price:   9.55 | P&L:   -19.00 R$ (-0.10%) | Motivo: Fechamento | DealId: 1729183281 | Pos: 2366538080
+2026-03-06 15:40:40 | SAÍDA    | KEPL3  | SELL | Vol:    2200 | Price:   8.20 | P&L:  -154.00 R$ (-0.86%) | Motivo: Fechamento | DealId: 1729183282 | Pos: 2366538090
+2026-03-06 15:40:40 | SAÍDA    | FIQE3  | SELL | Vol:    3100 | Price:   5.30 | P&L:   -31.00 R$ (-0.19%) | Motivo: Fechamento | DealId: 1729183292 | Pos: 2366538110
+2026-03-06 15:40:40 | SAÍDA    | VVEO3  | SELL | Vol:   13500 | Price:   1.25 | P&L:  -135.00 R$ (-0.81%) | Motivo: Fechamento | DealId: 1729183382 | Pos: 2366542952
