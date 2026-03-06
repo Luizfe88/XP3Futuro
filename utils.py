@@ -6449,10 +6449,15 @@ def update_correlations(top15_symbols):
     try:
         # Coleta dados de fechamento dos últimos 50 candles
         data = {}
+        target_len = 50
         for sym in top15_symbols:
-            rates = mt5.copy_rates_from_pos(sym, mt5.TIMEFRAME_M15, 0, 50)
-            if rates is not None:
+            rates = mt5.copy_rates_from_pos(sym, mt5.TIMEFRAME_M15, 0, target_len)
+            if rates is not None and len(rates) == target_len:
                 data[sym] = [r["close"] for r in rates]
+            elif rates is not None:
+                logger.warning(
+                    f"Símbolo {sym} retornado com apenas {len(rates)} bars, ignorando na correlação."
+                )
 
         if len(data) > 1:
             df = pd.DataFrame(data)

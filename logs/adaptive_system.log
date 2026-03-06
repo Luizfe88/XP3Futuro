@@ -7755,3 +7755,52 @@ NameError: name 'queue' is not defined. Did you forget to import 'queue'?
 2026-03-06 16:40:53,242 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
 2026-03-06 16:41:02,196 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
 2026-03-06 16:41:08,336 - INFO - 🔄 Coletando métricas para ICFK26 → ICFK26
+2026-03-06 16:41:14,427 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-06 16:41:22,858 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-06 16:41:31,376 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-06 16:41:37,509 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-06 16:41:46,195 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-06 16:41:52,296 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-06 16:47:15,691 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-06 16:47:15,789 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-06 16:47:25,812 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-06 16:47:32,132 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-06 16:47:38,264 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-06 16:47:48,631 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-06 16:47:54,692 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-06 16:48:01,125 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-06 16:48:09,754 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-06 16:48:15,825 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-06 16:50:53,858 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-06 16:50:53,941 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-06 16:51:07,189 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-06 16:51:13,258 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-06 16:51:19,453 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-06 16:51:25,585 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-06 16:51:31,703 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-06 16:51:40,194 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-06 16:51:52,085 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-06 16:52:00,484 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-06 16:52:04,566 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 26 ativos.
+2026-03-06 17:06:05,319 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-06 17:06:06,218 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-06 17:06:13,348 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-06 17:06:19,606 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-06 17:06:28,323 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-06 17:06:34,652 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-06 17:06:40,788 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-06 17:06:49,721 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-06 17:06:58,130 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-06 17:07:06,864 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-06 17:07:11,217 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 26 ativos.
+2026-03-06 17:09:36,137 - INFO - 🤖 SENSOR: Coletando métricas de mercado por ativo...
+2026-03-06 17:09:36,308 - INFO - 🔄 Coletando métricas para ICFH26 → ICFH26
+2026-03-06 17:09:42,601 - INFO - 🔄 Coletando métricas para BITH26 → BITH26
+2026-03-06 17:09:51,638 - INFO - 🔄 Coletando métricas para WIN$N → WIH26
+2026-03-06 17:10:00,489 - INFO - 🔄 Coletando métricas para INDJ26 → INDJ26
+2026-03-06 17:10:09,269 - INFO - 🔄 Coletando métricas para CCMK26 → CCMK26
+2026-03-06 17:10:15,331 - INFO - 🔄 Coletando métricas para WDOJ26 → WDOJ26
+2026-03-06 17:10:21,425 - INFO - 🔄 Coletando métricas para BGIH26 → BGIH26
+2026-03-06 17:10:27,711 - INFO - 🔄 Coletando métricas para DOLJ26 → DOLJ26
+2026-03-06 17:10:36,773 - INFO - 🤖 SENSOR: Métricas atualizadas para 10 ativos.
+2026-03-06 17:10:40,858 - INFO - 🔧 MECÂNICO: Parâmetros ajustados individualmente para 26 ativos.

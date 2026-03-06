@@ -50,11 +50,11 @@ PnL total       : 🟢 R$ +258.00
 
 🔧 AJUSTES AUTO-APLICADOS (em vigor amanhã)
 ────────────────────────────────────────
-  ↓ SUZB3      ADX forte           : 1.0000 → 0.9820  (-0.0180)
-  ↓ SUZB3      RSI extremo         : 1.0000 → 0.9910  (-0.0090)
-  ↓ SUZB3      Momentum positivo   : 1.0000 → 0.9820  (-0.0180)
+  ↓ SUZB3      ADX forte           : 0.8740 → 0.8560  (-0.0180)
+  ↓ SUZB3      RSI extremo         : 0.9370 → 0.9280  (-0.0090)
+  ↓ SUZB3      Momentum positivo   : 0.8740 → 0.8560  (-0.0180)
 
 ──────────────────────────────────────────────────────
-  Gerado em: 06/03/2026 15:42:26
+  Gerado em: 06/03/2026 17:09:35
   XP3 PRO — Sistema de Aprendizado Adaptativo
 ──────────────────────────────────────────────────────

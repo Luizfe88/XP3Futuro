@@ -207,6 +207,11 @@
       "MOMENTUM_POS": 1.0,
       "MACD_CROSS": 1.0,
       "ML_BOOST": 1.0
+    },
+    "SUZB3": {
+      "ADX_STRONG": 0.892,
+      "RSI_EXTREME": 0.946,
+      "MOMENTUM_POS": 0.892
     }
   },
   "sector": {

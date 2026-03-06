@@ -614,3 +614,106 @@ Traceback (most recent call last):
     block_symbol(sym, reason="Alta volatilidade")
     ^^^^^^^^^^^^
 NameError: name 'block_symbol' is not defined
+2026-03-06 16:41:47,382 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:42:00,916 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 16:47:12,544 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 6458, in update_correlations
+    df = pd.DataFrame(data)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\frame.py", line 769, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 460, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, consolidate=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 113, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 643, in _extract_index
+    raise ValueError("All arrays must be of the same length")
+ValueError: All arrays must be of the same length
+2026-03-06 16:47:53,159 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:48:02,509 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 16:50:51,217 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 6458, in update_correlations
+    df = pd.DataFrame(data)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\frame.py", line 769, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 460, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, consolidate=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 113, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 643, in _extract_index
+    raise ValueError("All arrays must be of the same length")
+ValueError: All arrays must be of the same length
+2026-03-06 16:51:31,797 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:51:42,028 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 16:53:40,563 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:53:47,758 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 16:57:24,883 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:57:34,245 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 16:59:27,074 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 16:59:34,289 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 17:03:13,027 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 17:03:22,370 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 17:05:59,857 | ERROR | utils | Erro ao calcular correlações: All arrays must be of the same length
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\utils.py", line 6458, in update_correlations
+    logger.warning(
+     ^^^^^^^^^^^^^^
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\frame.py", line 769, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 460, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, consolidate=copy)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 113, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "C:\Users\luizf\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\construction.py", line 643, in _extract_index
+    raise ValueError("All arrays must be of the same length")
+ValueError: All arrays must be of the same length
+2026-03-06 17:06:39,261 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 17:06:44,499 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
+2026-03-06 17:10:06,087 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 17:10:17,576 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
