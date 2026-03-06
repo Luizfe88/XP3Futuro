@@ -1,5 +1,5 @@
 {
-    "timestamp": "2026-03-06T17:13:00.752878",
+    "timestamp": "17:13:03",
     "top15": [
         {
             "rank": 1,
@@ -7,12 +7,10 @@
             "score": 100.0,
             "direction": "\u2191 LONG",
             "rsi": 43.7,
-            "atr_pct": 1.1,
+            "atr_pct": 0.21,
             "price": 336.55,
             "sector": "FUTUROS",
-            "status": "\u274c REJEITADO",
-            "rejection_reason": "\u23f3 Aguardando Gatilho (breakout pendente: close 336.6 <= resist\u00eancia 339.2 (faltam 2.6)) | Score 100 | For\u00e7ado: False | 17:10:41",
-            "whats_missing": "Sinal t\u00e9cnico melhorar"
+            "status": "\u2714\ufe0f ABERTO"
         },
         {
             "rank": 2,
@@ -20,12 +18,10 @@
             "score": 80.0,
             "direction": "\u2191 LONG",
             "rsi": 71.0,
-            "atr_pct": 0.21,
+            "atr_pct": 0.04,
             "price": 14.75,
-            "sector": "UNKNOWN",
-            "status": "\ud83d\udfe2 PRONTO",
-            "rejection_reason": "-",
-            "whats_missing": "-"
+            "sector": "OUTROS",
+            "status": "\u2714\ufe0f ABERTO"
         },
         {
             "rank": 3,
@@ -33,12 +29,10 @@
             "score": 80.0,
             "direction": "\u2191 LONG",
             "rsi": 57.5,
-            "atr_pct": 9.9,
+            "atr_pct": 1.87,
             "price": 75.0,
             "sector": "FUTUROS",
-            "status": "\ud83d\udfe2 PRONTO",
-            "rejection_reason": "-",
-            "whats_missing": "-"
+            "status": "\u2714\ufe0f ABERTO"
         },
         {
             "rank": 4,
@@ -46,12 +40,10 @@
             "score": 80.0,
             "direction": "\u2191 LONG",
             "rsi": 78.8,
-            "atr_pct": 3.14,
+            "atr_pct": 0.59,
             "price": 398.5,
             "sector": "FUTUROS",
-            "status": "\ud83d\udfe2 PRONTO",
-            "rejection_reason": "-",
-            "whats_missing": "-"
+            "status": "\u2714\ufe0f ABERTO"
         },
         {
             "rank": 5,
@@ -59,12 +51,10 @@
             "score": 80.0,
             "direction": "\u2191 LONG",
             "rsi": 55.4,
-            "atr_pct": 0.94,
+            "atr_pct": 0.18,
             "price": 344.1,
-            "sector": "UNKNOWN",
-            "status": "\ud83d\udfe2 PRONTO",
-            "rejection_reason": "-",
-            "whats_missing": "-"
+            "sector": "OUTROS",
+            "status": "\u2714\ufe0f ABERTO"
         },
         {
             "rank": 6,
@@ -72,12 +62,10 @@
             "score": 80.0,
             "direction": "\u2191 LONG",
             "rsi": 46.6,
-            "atr_pct": 1.56,
+            "atr_pct": 0.29,
             "price": 186300.0,
-            "sector": "UNKNOWN",
-            "status": "\u274c REJEITADO",
-            "rejection_reason": "\u23f3 Aguardando Gatilho (breakout pendente: close 186300.0 <= resist\u00eancia 186905.0 (faltam 605.0)) | Score 80 | For\u00e7ado: False | 17:12:26",
-            "whats_missing": "Sinal t\u00e9cnico melhorar"
+            "sector": "OUTROS",
+            "status": "\u2714\ufe0f ABERTO"
         },
         {
             "rank": 7,
@@ -85,12 +73,10 @@
             "score": 75.0,
             "direction": "\u2191 LONG",
             "rsi": 43.3,
-            "atr_pct": 0.75,
+            "atr_pct": 0.14,
             "price": 73.51,
-            "sector": "UNKNOWN",
-            "status": "\ud83d\udfe2 PRONTO",
-            "rejection_reason": "-",
-            "whats_missing": "-"
+            "sector": "OUTROS",
+            "status": "\u2714\ufe0f ABERTO"
         },
         {
             "rank": 8,
@@ -98,12 +84,10 @@
             "score": 60.0,
             "direction": "\u2191 LONG",
             "rsi": 46.8,
-            "atr_pct": 1.58,
+            "atr_pct": 0.3,
             "price": 182390.0,
             "sector": "FUTUROS",
-            "status": "\u274c REJEITADO",
-            "rejection_reason": "Sem for\u00e7a (ADX 14.3 < 18) | 17:11:18",
-            "whats_missing": "Rever filtros t\u00e9cnicos"
+            "status": "\u2714\ufe0f ABERTO"
         },
         {
             "rank": 9,
@@ -111,12 +95,10 @@
             "score": 60.0,
             "direction": "\u2191 LONG",
             "rsi": 46.7,
-            "atr_pct": 1.7,
+            "atr_pct": 0.32,
             "price": 182360.0,
             "sector": "FUTUROS",
-            "status": "\u274c REJEITADO",
-            "rejection_reason": "Sem for\u00e7a (ADX 13.1 < 15) | 17:11:27",
-            "whats_missing": "Rever filtros t\u00e9cnicos"
+            "status": "\u2714\ufe0f ABERTO"
         },
         {
             "rank": 10,
@@ -124,12 +106,10 @@
             "score": 45.0,
             "direction": "\u2193 SHORT",
             "rsi": 37.2,
-            "atr_pct": 1.31,
+            "atr_pct": 0.25,
             "price": 5277.0,
-            "sector": "UNKNOWN",
-            "status": "\ud83d\udfe2 PRONTO",
-            "rejection_reason": "-",
-            "whats_missing": "-"
+            "sector": "OUTROS",
+            "status": "\u23f8\ufe0f AGUARDANDO"
         },
         {
             "rank": 11,
@@ -137,12 +117,10 @@
             "score": 45.0,
             "direction": "\u2193 SHORT",
             "rsi": 36.5,
-            "atr_pct": 2.54,
+            "atr_pct": 0.48,
             "price": 360460.0,
             "sector": "FUTUROS",
-            "status": "\ud83d\udfe2 PRONTO",
-            "rejection_reason": "-",
-            "whats_missing": "-"
+            "status": "\u23f8\ufe0f AGUARDANDO"
         },
         {
             "rank": 12,
@@ -150,12 +128,10 @@
             "score": 45.0,
             "direction": "\u2193 SHORT",
             "rsi": 45.2,
-            "atr_pct": 2.46,
+            "atr_pct": 0.47,
             "price": 5311.0,
             "sector": "FUTUROS",
-            "status": "\ud83d\udfe2 PRONTO",
-            "rejection_reason": "-",
-            "whats_missing": "-"
+            "status": "\u23f8\ufe0f AGUARDANDO"
         },
         {
             "rank": 13,
@@ -163,12 +139,10 @@
             "score": 45.0,
             "direction": "\u2193 SHORT",
             "rsi": 37.7,
-            "atr_pct": 1.27,
+            "atr_pct": 0.24,
             "price": 5277.5,
             "sector": "FUTUROS",
-            "status": "\ud83d\udfe2 PRONTO",
-            "rejection_reason": "-",
-            "whats_missing": "-"
+            "status": "\u23f8\ufe0f AGUARDANDO"
         },
         {
             "rank": 14,
@@ -176,12 +150,10 @@
             "score": 25.0,
             "direction": "\u2193 SHORT",
             "rsi": 45.3,
-            "atr_pct": 4.41,
+            "atr_pct": 0.83,
             "price": 338.05,
-            "sector": "UNKNOWN",
-            "status": "\u23f8\ufe0f AGUARDANDO",
-            "rejection_reason": "-",
-            "whats_missing": "-"
+            "sector": "OUTROS",
+            "status": "\u23f8\ufe0f AGUARDANDO"
         },
         {
             "rank": 15,
@@ -189,12 +161,10 @@
             "score": 25.0,
             "direction": "\u2193 SHORT",
             "rsi": 39.9,
-            "atr_pct": 0.94,
+            "atr_pct": 0.18,
             "price": 71.86,
-            "sector": "UNKNOWN",
-            "status": "\u23f8\ufe0f AGUARDANDO",
-            "rejection_reason": "-",
-            "whats_missing": "-"
+            "sector": "OUTROS",
+            "status": "\u23f8\ufe0f AGUARDANDO"
         }
     ],
     "indicators": {

@@ -717,3 +717,10 @@ Traceback (most recent call last):
     block_symbol(sym, reason="Alta volatilidade")
     ^^^^^^^^^^^^
 NameError: name 'block_symbol' is not defined
+2026-03-06 17:12:22,911 | ERROR | bot | ❌ Falha no cálculo da matriz: cannot reindex on an axis with duplicate labels
+2026-03-06 17:12:28,439 | ERROR | bot | 🚨 Erro na thread de correlação: name 'block_symbol' is not defined
+Traceback (most recent call last):
+  File "C:\Users\luizf\Documents\xp3future\bot.py", line 2763, in correlation_updater_thread
+    block_symbol(sym, reason="Alta volatilidade")
+    ^^^^^^^^^^^^
+NameError: name 'block_symbol' is not defined
