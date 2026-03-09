@@ -21,9 +21,9 @@ logging.basicConfig(
 )
 
 # ==================== CONFIGURAÇÕES ====================
-BOT_SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "botfuturo.py")
-LOG_FILE = "xp3_bot.log"               # Arquivo de log do bot
-MAX_INACTIVITY_SECONDS = 180           # 3 minutos sem log = suspeito
+BOT_SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bot_quant_portfolio.py")
+LOG_FILE = os.path.join("logs", "portfolio_bot.log") # Arquivo de log do bot
+MAX_INACTIVITY_SECONDS = 300           # 5 minutos sem log = suspeito (M1 data can be slow)
 CHECK_INTERVAL = 30                    # Verifica a cada 30s
 MT5_TIMEOUT_SECONDS = 10               # Timeout para testar MT5
 # ======================================================
@@ -39,7 +39,7 @@ def is_bot_running():
                 cmd = ' '.join(proc.info['cmdline']).lower()
                 # Verifica se é Python, tem bot.py, não é watchdog E está no diretório correto
                 if ('python' in proc.info['name'].lower() and 
-                    ('bot.py' in cmd or 'botfuturo.py' in cmd) and 
+                    ('bot.py' in cmd or 'botfuturo.py' in cmd or 'bot_quant_portfolio.py' in cmd) and 
                     'watchdog.py' not in cmd and 'botwatchdog.py' not in cmd and
                     'xp3future' in cmd):  # CRÍTICO: apenas processos do xp3future
                     return proc.pid
