@@ -8,6 +8,8 @@ from datetime import datetime
 from execution_engine import ExecutionEngine
 from risk_validation import BayesianRiskManager
 from hmm_validation import KalmanFilter1D, train_and_plot_hmm
+import json
+import os
 
 # ==========================================
 # 1. CONFIGURAÇÃO DE LOGGING
@@ -68,10 +70,33 @@ class AssetWorker:
         self.capital_total = capital_total
         self.engine = ExecutionEngine(symbol=symbol, magic_number=999000 + list(PORTFOLIO_CONFIG.keys()).index(symbol))
         
-        self.kf = KalmanFilter1D(process_variance=1e-4, measurement_variance=1e-3)
+        kalman_q = 1e-4
+        kalman_r = 1e-3
+        base_win_rate = config['base_win_rate']
+        base_payout = config['base_payout']
+        
+        if os.path.exists("calibrated_assets.json"):
+            try:
+                with open("calibrated_assets.json", "r") as f:
+                    calib_data = json.load(f)
+                    if symbol in calib_data:
+                        kalman_q = calib_data[symbol].get("kalman_q", 1e-4)
+                        kalman_r = calib_data[symbol].get("kalman_r", 1e-3)
+                        base_win_rate = calib_data[symbol].get("wfa_p", base_win_rate)
+                        base_payout = calib_data[symbol].get("wfa_b", base_payout)
+                        logger.info(f"[{symbol}] ✅ Calibração Ativa: Q={kalman_q}, R={kalman_r}, p={base_win_rate}, b={base_payout}")
+                    else:
+                        logger.warning(f"[{symbol}] ⚠️ Usando Defaults (Ativo não calibrado)")
+            except Exception as e:
+                logger.error(f"[{symbol}] Erro ao ler calibração: {e}")
+        else:
+            logger.warning(f"[{symbol}] ⚠️ Usando Defaults (Arquivo não encontrado)")
+
+
+        self.kf = KalmanFilter1D(process_variance=kalman_q, measurement_variance=kalman_r)
         self.risk_manager = BayesianRiskManager(
-            base_win_rate=config['base_win_rate'],
-            base_payout=config['base_payout'],
+            base_win_rate=base_win_rate,
+            base_payout=base_payout,
             kelly_fraction=config['kelly_fraction'],
             tick_value=config['tick_value'],
             capital_allocation=self.allocation

@@ -7,6 +7,8 @@ from datetime import datetime
 from execution_engine import ExecutionEngine
 from hmm_validation import KalmanFilter1D, train_and_plot_hmm
 from risk_validation import BayesianRiskManager
+import json
+import os
 
 # Configuração de Logging Centralizado
 logging.basicConfig(
@@ -24,8 +26,32 @@ class WINQuantBot:
         self.symbol = symbol
         self.capital = capital_base
         self.engine = ExecutionEngine(symbol=symbol)
-        self.kf = KalmanFilter1D(process_variance=1e-4, measurement_variance=1e-3)
-        self.risk_manager = BayesianRiskManager(base_win_rate=0.55, base_payout=1.5, kelly_fraction=0.1)
+
+        # Carrega parâmetros dinâmicos se existirem
+        kalman_q = 1e-4
+        kalman_r = 1e-3
+        base_win_rate = 0.55
+        base_payout = 1.5
+
+        if os.path.exists("calibrated_assets.json"):
+            try:
+                with open("calibrated_assets.json", "r") as f:
+                    calib_data = json.load(f)
+                    if symbol in calib_data:
+                        kalman_q = calib_data[symbol].get("kalman_q", 1e-4)
+                        kalman_r = calib_data[symbol].get("kalman_r", 1e-3)
+                        base_win_rate = calib_data[symbol].get("wfa_p", 0.55)
+                        base_payout = calib_data[symbol].get("wfa_b", 1.5)
+                        logger.info(f"[{symbol}] ✅ Calibração Ativa: Q={kalman_q}, R={kalman_r}, p={base_win_rate}, b={base_payout}")
+                    else:
+                        logger.warning(f"[{symbol}] ⚠️ Usando Defaults (Ativo não calibrado)")
+            except Exception as e:
+                logger.error(f"Erro ao carregar calibração: {e}")
+        else:
+            logger.warning(f"[{symbol}] ⚠️ Usando Defaults (Arquivo 'calibrated_assets.json' não encontrado)")
+
+        self.kf = KalmanFilter1D(process_variance=kalman_q, measurement_variance=kalman_r)
+        self.risk_manager = BayesianRiskManager(base_win_rate=base_win_rate, base_payout=base_payout, kelly_fraction=0.1)
         
         self.hmm_model = None
         self.last_bar_time = None
