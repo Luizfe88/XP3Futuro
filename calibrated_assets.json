@@ -1,20 +1,226 @@
 {
     "WIN$N": {
-        "kalman_q": 0.001,
-        "kalman_r": 0.001,
-        "wfa_p": 0.4773,
-        "wfa_b": 0.9543,
         "tick_value_base": 0.2,
         "slippage_cost_base": 1.0,
-        "calibrated_at": "2026-03-09T08:59:02.998714"
+        "calibrated_at": "2026-03-11T14:09:33.265615",
+        "M5": {
+            "kalman_q": 1e-06,
+            "kalman_r": 0.1,
+            "wfa_p": 0.5625,
+            "wfa_b": 1.2596
+        },
+        "M15": {
+            "kalman_q": 5e-05,
+            "kalman_r": 0.0001,
+            "wfa_p": 0.6262,
+            "wfa_b": 1.0
+        },
+        "M30": {
+            "kalman_q": 1e-06,
+            "kalman_r": 0.0001,
+            "wfa_p": 0.6029,
+            "wfa_b": 1.1176
+        }
     },
     "IND$N": {
-        "kalman_q": 0.001,
-        "kalman_r": 0.001,
-        "wfa_p": 0.4263,
-        "wfa_b": 0.9885,
         "tick_value_base": 1.0,
         "slippage_cost_base": 10.0,
-        "calibrated_at": "2026-03-09T08:59:28.082064"
+        "calibrated_at": "2026-03-11T17:37:16.242488",
+        "M5": {
+            "kalman_q": 1e-06,
+            "kalman_r": 0.1,
+            "wfa_p": 0.5856,
+            "wfa_b": 1.8263
+        },
+        "M15": {
+            "kalman_q": 5e-05,
+            "kalman_r": 0.0001,
+            "wfa_p": 0.625,
+            "wfa_b": 1.0
+        },
+        "M30": {
+            "kalman_q": 1e-06,
+            "kalman_r": 0.1,
+            "wfa_p": 0.4931,
+            "wfa_b": 1.4285
+        }
+    },
+    "WSP$N": {
+        "tick_value_base": 0.2,
+        "slippage_cost_base": 2.0,
+        "calibrated_at": "2026-03-10T10:12:41.741533",
+        "M5": {
+            "kalman_q": 0.005,
+            "kalman_r": 0.05,
+            "wfa_p": 0.2,
+            "wfa_b": 1.2
+        },
+        "M15": {
+            "kalman_q": 0.001,
+            "kalman_r": 0.005,
+            "wfa_p": 0.2,
+            "wfa_b": 1.2
+        },
+        "M30": {
+            "kalman_q": 0.005,
+            "kalman_r": 0.05,
+            "wfa_p": 0.2,
+            "wfa_b": 1.2
+        }
+    },
+    "WDO$N": {
+        "tick_value_base": 10.0,
+        "slippage_cost_base": 10.0,
+        "calibrated_at": "2026-03-11T14:47:27.915052",
+        "M5": {
+            "kalman_q": 0.001,
+            "kalman_r": 0.0005,
+            "wfa_p": 0.4366,
+            "wfa_b": 1.1275
+        },
+        "M15": {
+            "kalman_q": 0.0005,
+            "kalman_r": 1e-05,
+            "wfa_p": 0.4575,
+            "wfa_b": 1.0603
+        },
+        "M30": {
+            "kalman_q": 5e-05,
+            "kalman_r": 0.001,
+            "wfa_p": 0.5083,
+            "wfa_b": 1.2709
+        }
+    },
+    "DOL$N": {
+        "tick_value_base": 50.0,
+        "slippage_cost_base": 100.0,
+        "calibrated_at": "2026-03-11T15:17:54.299003",
+        "M5": {
+            "kalman_q": 0.001,
+            "kalman_r": 0.0005,
+            "wfa_p": 0.4161,
+            "wfa_b": 1.0316
+        },
+        "M15": {
+            "kalman_q": 1e-06,
+            "kalman_r": 0.05,
+            "wfa_p": 0.4091,
+            "wfa_b": 1.0
+        },
+        "M30": {
+            "kalman_q": 5e-05,
+            "kalman_r": 0.001,
+            "wfa_p": 0.478,
+            "wfa_b": 1.4125
+        }
+    },
+    "CCM$N": {
+        "tick_value_base": 450.0,
+        "slippage_cost_base": 9.0,
+        "calibrated_at": "2026-03-11T16:38:51.539559",
+        "M15": {
+            "kalman_q": 0.0001,
+            "kalman_r": 1e-05,
+            "wfa_p": 0.4396,
+            "wfa_b": 1.1967
+        },
+        "M30": {
+            "kalman_q": 5e-05,
+            "kalman_r": 0.1,
+            "wfa_p": 0.4711,
+            "wfa_b": 1.0
+        }
+    },
+    "BGI$N": {
+        "tick_value_base": 0.2,
+        "slippage_cost_base": 2.0,
+        "calibrated_at": "2026-03-11T15:43:02.916031",
+        "M5": {
+            "kalman_q": 1e-06,
+            "kalman_r": 1e-05,
+            "wfa_p": 0.05,
+            "wfa_b": 1.0
+        },
+        "M15": {
+            "kalman_q": 1e-06,
+            "kalman_r": 1e-05,
+            "wfa_p": 0.05,
+            "wfa_b": 1.0
+        },
+        "M30": {
+            "kalman_q": 5e-05,
+            "kalman_r": 0.1,
+            "wfa_p": 0.0536,
+            "wfa_b": 1.0366
+        }
+    },
+    "ICF$N": {
+        "tick_value_base": 100.0,
+        "slippage_cost_base": 10.0,
+        "calibrated_at": "2026-03-11T17:11:10.401926",
+        "M5": {
+            "kalman_q": 0.001,
+            "kalman_r": 0.0005,
+            "wfa_p": 0.54,
+            "wfa_b": 1.0
+        },
+        "M15": {
+            "kalman_q": 0.001,
+            "kalman_r": 1e-05,
+            "wfa_p": 0.526,
+            "wfa_b": 1.0
+        },
+        "M30": {
+            "kalman_q": 1e-06,
+            "kalman_r": 0.05,
+            "wfa_p": 0.4963,
+            "wfa_b": 1.6703
+        }
+    },
+    "BIT$N": {
+        "tick_value_base": 0.1,
+        "slippage_cost_base": 2.0,
+        "calibrated_at": "2026-03-10T10:21:58.046659",
+        "M5": {
+            "kalman_q": 0.005,
+            "kalman_r": 0.05,
+            "wfa_p": 0.5,
+            "wfa_b": 1.0
+        },
+        "M15": {
+            "kalman_q": 0.001,
+            "kalman_r": 0.005,
+            "wfa_p": 0.5,
+            "wfa_b": 1.0
+        },
+        "M30": {
+            "kalman_q": 0.0001,
+            "kalman_r": 0.0005,
+            "wfa_p": 0.5,
+            "wfa_b": 1.0
+        }
+    },
+    "DI1$N": {
+        "tick_value_base": 0.2,
+        "slippage_cost_base": 2.0,
+        "calibrated_at": "2026-03-11T16:07:48.601770",
+        "M5": {
+            "kalman_q": 1e-06,
+            "kalman_r": 1e-05,
+            "wfa_p": 0.05,
+            "wfa_b": 1.0
+        },
+        "M15": {
+            "kalman_q": 1e-06,
+            "kalman_r": 1e-05,
+            "wfa_p": 0.05,
+            "wfa_b": 1.0
+        },
+        "M30": {
+            "kalman_q": 1e-06,
+            "kalman_r": 1e-05,
+            "wfa_p": 0.05,
+            "wfa_b": 1.0
+        }
     }
 }

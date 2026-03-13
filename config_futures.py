@@ -38,31 +38,6 @@ FUTURES_CONFIGS = {
     "note": "🌟 ATIVO ELITE: Calmar 5.66. Configuração Sniper."
   },
 
-  "DOL$N": {
-    "strategy": "MEAN_REVERSION",
-    "active": True,
-    "params": {
-      "bb_period": 23,
-      "bb_std": 2.86,
-      "tp_mult": 5.85,
-      "sl_atr_multiplier": 2.80,
-      "adx_threshold": 20.0
-    },
-    "specs": {
-      "tick_size": 0.50,
-      "point_value": 50.00,
-      "value_per_tick": 25.00,
-      "margin": 750.00,
-      "margin_stress": 15000.00,
-      "min_oi": 10000,
-      "fees_roundtrip": 3.50,
-      "hours": ["09:00", "18:00"],
-      "after_market": ["18:00", "18:30"],
-      "expiry_day": "First_Business_Day_Month",
-      "slippage_base": {"high": 10.0, "avg": 2.0, "low": 1.0, "after": 15.0}
-    },
-    "note": "Dólar Cheio. Requer margem muito maior."
-  },
 
   "WIN$N": {
     "strategy": "MEAN_REVERSION",
@@ -91,105 +66,7 @@ FUTURES_CONFIGS = {
     "note": "⚠️ CORREÇÃO: Setup Híbrido aplicado."
   },
 
-  "BIT$N": {
-    "strategy": "MEAN_REVERSION",
-    "active": True,
-    "params": {
-      "bb_period": 20,
-      "bb_std": 2.50,
-      "tp_mult": 3.50,
-      "sl_atr_multiplier": 2.00,
-      "adx_threshold": 25.0
-    },
-    "specs": {
-      "tick_size": 10.0,
-      "point_value": 0.10,
-      "value_per_tick": 1.00,
-      "margin": 300.00,
-      "margin_stress": 5000.00,
-      "min_oi": 1000,
-      "fees_roundtrip": 1.50,
-      "hours": ["09:00", "18:00"],
-      "after_market": ["18:00", "18:30"],
-      "expiry_day": "Last_Friday_Month",
-      "slippage_base": {"high": 50.0, "avg": 20.0, "low": 10.0, "after": 100.0}
-    },
-    "note": "🚀 CRIPTO: Alta volatilidade, slippage ajustado para cima."
-  },
 
-  "ICF$N": {
-    "strategy": "MEAN_REVERSION",
-    "active": True,
-    "params": {
-      "bb_period": 22,
-      "bb_std": 2.20,
-      "tp_mult": 3.00,
-      "sl_atr_multiplier": 1.50,
-      "adx_threshold": 18.0
-    },
-    "specs": {
-      "tick_size": 0.05,
-      "point_value": 100.00,
-      "value_per_tick": 5.00,
-      "margin": 5000.00,
-      "margin_stress": 10000.00,
-      "min_oi": 500,
-      "fees_roundtrip": 5.00,
-      "hours": ["09:00", "16:00"],
-      "after_market": None,
-      "expiry_day": "Variable_Agricultural",
-      "slippage_base": {"high": 0.20, "avg": 0.10, "low": 0.05, "after": 0.50}
-    },
-    "note": "☕ CAFÉ: Valor por tick em USD (convertido). Alavancagem alta."
-  },
-
-  "CCM$N": {
-    "strategy": "MEAN_REVERSION",
-    "active": True,
-    "params": {
-        "bb_period": 20,
-        "bb_std": 2.00,
-        "tp_mult": 3.00,
-        "sl_atr_multiplier": 1.80,
-        "adx_threshold": 18.0
-    },
-    "specs": {
-        "tick_size": 0.01,
-        "point_value": 450.00,  # 450 sacas por contrato
-        "value_per_tick": 4.50, # 0.01 * 450
-        "margin": 2500.00,
-        "margin_stress": 5000.00,
-        "min_oi": 1000,
-        "fees_roundtrip": 3.00,
-        "hours": ["09:00", "16:20"],
-        "after_market": None,
-        "expiry_day": "Variable_Agricultural",
-        "slippage_base": {"high": 0.05, "avg": 0.02, "low": 0.01, "after": 0.10}
-    },
-    "note": "🌽 MILHO: Alta alavancagem, cuidado com gap de abertura."
-  },
-
-  "IND$N": {
-    "strategy": "MEAN_REVERSION",
-    "active": False,
-    "params": {
-      "bb_period": 20,
-      "bb_std": 2.00
-    },
-    "specs": {
-      "tick_size": 5.0,
-      "point_value": 1.00,
-      "value_per_tick": 5.00,
-      "margin": 600.00,
-      "margin_stress": 12500.00,
-      "min_oi": 5000,
-      "fees_roundtrip": 2.50,
-      "hours": ["09:00", "17:55"],
-      "after_market": ["18:00", "18:25"],
-      "expiry_day": "Wednesday_closest_15th_Even_Month",
-      "slippage_base": {"high": 25.0, "avg": 10.0, "low": 5.0, "after": 50.0}
-    }
-  }
 }
 
 # ============================================

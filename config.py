@@ -257,8 +257,12 @@ PYRAMID_MAX_LEGS = 3  # Máximo de pernas em pirâmide
 FUTURES_RISK_MULTIPLIER = 1.5  # Multiplicador de risco para futuros
 
 # ✅ KELLY CRITERION & POSITION SIZING
-KELLY_MULTIPLIER = 0.3  # Fractional Kelly (0.3x) for capital preservation
+KELLY_MULTIPLIER = 0.5  # Fractional Kelly (0.5x) for capital preservation (Half-Kelly)
 KELLY_MIN_TRADES_FOR_CALC = 30  # Minimum trades to calculate dynamic Kelly
+
+# 🛡️ PROTEÇÕES GLOBAIS DA CONTA (CIRCUIT BREAKER)
+MAX_LOSS_DAILY = -200.0         # Stop diário de capital (R$)
+DAILY_PROFIT_TARGET_BRL = 300.0 # Meta diária de lucro (R$)
 
 # ✅ ATR VOLATILITY FILTERS
 MAX_ATR_PCT = 5.0  # Base ATR limit (5.0% for blue chips)
@@ -303,16 +307,7 @@ HORARIOS_OPERACAO = {
 # Mapa de setores - APENAS ÍNDICES FUTUROS B3
 SECTOR_MAP = {
     "WIN$N": "FUTUROS",
-    "IND$N": "FUTUROS",
     "WDO$N": "FUTUROS",
-    "DOL$N": "FUTUROS",
-    "WSP$N": "FUTUROS",
-    "CCM$N": "FUTUROS",
-    "BGI$N": "FUTUROS",
-    "ICF$N": "FUTUROS",
-    "DI1$N": "FUTUROS",
-    "BIT$N": "FUTUROS",
-    "T10$N": "FUTUROS",
 }
 
 
@@ -361,7 +356,11 @@ MAX_ACCEPTABLE_GAP_PCT = 0.015
 # ===========================
 # GESTÃO DE RISCO
 # ===========================
-ENABLE_NEWS_FILTER = True
+# 🛡️ PROTEÇÕES FINANCEIRAS (BRL)
+MAX_LOSS_BRL = -60.0                     # Hard BRL Stop
+BREAK_EVEN_TRIGGER_BRL = 30.0            # Auto Break-Even Risco Zero
+PROFIT_ACTIVATION_THRESHOLD_BRL = 70.0   # Gatilho do Escudo (Trailing Shield)
+PROFIT_TRAILING_PERCENT = 0.30           # % Máxima de devolução de lucro alcançado
 NEWS_BLOCK_BEFORE_MIN = 30  # Bloqueia 30min antes do evento
 NEWS_BLOCK_MEDIUM_TOO = False  # True = bloqueia também eventos Medium (ex: IPCA)
 NEWS_INCLUDE_MEDIUM = True

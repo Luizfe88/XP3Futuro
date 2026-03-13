@@ -800,34 +800,46 @@ def global_profit_protector() -> tuple:
             return False, "Equity inicial não definido"
         
         # Calcula lucro do dia
-        current_profit_pct = (acc.equity - equity_inicio_dia) / equity_inicio_dia
+        daily_pnl = acc.equity - equity_inicio_dia
+        current_profit_pct = daily_pnl / equity_inicio_dia
+        
+        # 🎯 Meta em Percentual (Config Antiga)
         target_pct = getattr(config, 'DAILY_PROFIT_TARGET_PCT', 0.02)
         
-        if current_profit_pct >= target_pct:
-            logger.info(
-                f"🎯 META DIÁRIA ATINGIDA! "
-                f"Lucro: {current_profit_pct:.2%} >= {target_pct:.2%}"
-            )
+        # 💰 Meta em BRL (Nova Config)
+        target_brl = getattr(config, 'DAILY_PROFIT_TARGET_BRL', 300.0)
+        
+        # Verifica se bateu qualquer uma das metas
+        reached_pct = current_profit_pct >= target_pct
+        reached_brl = daily_pnl >= target_brl
+        
+        if reached_pct or reached_brl:
+            reason_msg = f"Lucro: {current_profit_pct:.2%}"
+            if reached_brl:
+                reason_msg = f"Lucro BRL: R$ {daily_pnl:,.2f}"
+            
+            logger.info(f"🎯 META DIÁRIA ATINGIDA! {reason_msg}")
+            
             daily_target_hit_day = today
             daily_target_hit_pct = float(current_profit_pct)
-            daily_pnl = acc.equity - equity_inicio_dia
             apply_profit_lock_actions(daily_pnl=daily_pnl, daily_pnl_pct=current_profit_pct, reason="Meta Diária Atingida")
             
             # Notifica
             try:
-                utils.send_telegram_message(
+                msg = (
                     f"🎉 <b>META DIÁRIA ATINGIDA!</b>\n\n"
-                    f"💰 Lucro: <b>{current_profit_pct:.2%}</b>\n"
+                    f"💰 Lucro: <b>R$ {daily_pnl:,.2f}</b> ({current_profit_pct:.2%})\n"
                     f"📊 Equity: R$ {acc.equity:,.2f}\n\n"
                     f"🛡️ Proteção aplicada (fechar winners e/ou trailing apertado)\n"
                     f"🛑 Novas entradas bloqueadas até amanhã."
                 )
+                utils.send_telegram_message(msg)
             except:
                 pass
             
-            return True, f"Meta atingida: {current_profit_pct:.2%}"
+            return True, f"Meta atingida: {reason_msg}"
         
-        return False, f"Lucro atual: {current_profit_pct:.2%}"
+        return False, f"Lucro atual: R$ {daily_pnl:,.2f} ({current_profit_pct:.2%})"
         
     except Exception as e:
         logger.error(f"Erro no profit protector: {e}")
@@ -1883,11 +1895,14 @@ health_monitor = BotHealthMonitor()
 
 # === ADICIONAR APÓS a classe PositionManager (linha ~266 de bot.py) ===
 
+# Dicionário global para rastrear o pico do P&L (em R$) por ticket para a regra High-Water Mark
+global_max_floating_profit = {}
 
 def manage_positions_refactored():
     """
     ✅ NOVA VERSÃO: Gestão modular com trailing stop adaptativo
     """
+    global global_max_floating_profit
     manager = PositionManager(config)
     
     with utils.mt5_lock:
@@ -1900,6 +1915,92 @@ def manage_positions_refactored():
     
     for pos in positions:
         try:
+            # ============================================
+            # 🛡️ CAMADA DE GESTÃO DE RISCO FINANCEIRO SOBERANA
+            # ============================================
+            ticket = pos.ticket
+            volume = float(pos.volume)
+            profit = float(pos.profit)
+            symbol = pos.symbol
+            entry_price = float(pos.price_open)
+            current_sl = float(pos.sl) if pos.sl else 0.0
+
+            # 1. Atualizar o max profit rastreado
+            if ticket not in global_max_floating_profit:
+                global_max_floating_profit[ticket] = profit
+            else:
+                global_max_floating_profit[ticket] = max(global_max_floating_profit[ticket], profit)
+            
+            max_profit = global_max_floating_profit[ticket]
+
+            # 2. Hard BRL Stop (Travão de Emergência Financeiro)
+            max_loss_limit = getattr(config, "MAX_LOSS_BRL", -60.0) * volume
+            if profit <= max_loss_limit:
+                logger.critical(
+                    f"🔥 [EMERGENCY EXIT] 🛑 Limite de Perda Financeira Atingido!\n"
+                    f"   💰 P&L Atual: R$ {profit:.2f} | 📉 Limite (Hard Stop): R$ {max_loss_limit:.2f}\n"
+                    f"   🚀 Fechando {symbol} (ticket {ticket}) IMEDIATAMENTE a mercado para defender o Alpha."
+                )
+                with utils.mt5_lock:
+                    tick = mt5.symbol_info_tick(symbol)
+                if tick:
+                    price = tick.bid if pos.type == mt5.POSITION_TYPE_BUY else tick.ask
+                    close_position(symbol, ticket, volume, price, reason=f"🛑 Hard BRL Stop ({profit:.2f})")
+                continue
+
+            # 3. High-Water Mark (Profit Trailing Shield)
+            activation_threshold = getattr(config, "PROFIT_ACTIVATION_THRESHOLD_BRL", 70.0) * volume
+            if max_profit >= activation_threshold:
+                trailing_percent = getattr(config, "PROFIT_TRAILING_PERCENT", 0.30)
+                trailing_stop_level_brl = max_profit * (1 - trailing_percent)
+                
+                if profit <= trailing_stop_level_brl:
+                    logger.warning(
+                        f"🛡️ [DYNAMIC EXIT] ⚔️ Profit Trailing Shield ACIONADO!\n"
+                        f"   💎 Pico de Lucro (HWM): R$ {max_profit:.2f}\n"
+                        f"   🎚️ Gatilho de Defesa (-{trailing_percent*100:.0f}%): R$ {trailing_stop_level_brl:.2f}\n"
+                        f"   📉 Lucro Atual: R$ {profit:.2f} | 🚪 Encerrando para garantir o ganho!"
+                    )
+                    with utils.mt5_lock:
+                        tick = mt5.symbol_info_tick(symbol)
+                    if tick:
+                        price = tick.bid if pos.type == mt5.POSITION_TYPE_BUY else tick.ask
+                        close_position(symbol, ticket, volume, price, reason=f"⚔️ Trailing Shield SL ({profit:.2f} BRL)")
+                    continue
+
+            # 4. Auto Break-Even (Risco Zero Financeiro)
+            break_even_trigger = getattr(config, "BREAK_EVEN_TRIGGER_BRL", 30.0) * volume
+            if profit >= break_even_trigger:
+                # Calculando o custo do spread (assumindo 2 a 3 ticks para zerar)
+                with utils.mt5_lock:
+                    tick = mt5.symbol_info_tick(symbol)
+                
+                if tick:
+                    side = "BUY" if pos.type == mt5.POSITION_TYPE_BUY else "SELL"
+                    spread_price = (tick.ask - tick.bid)
+                    if spread_price <= 0:
+                        spread_price = 0.0001
+                    
+                    if side == "BUY":
+                        new_sl = entry_price + spread_price
+                        if current_sl < new_sl and pos.price_current > new_sl:
+                            modify_sl(symbol, ticket, new_sl)
+                            logger.info(
+                                f"✨ [RISK-FREE] 🟢 Operação Blindada! Risco Zero Ativado.\n"
+                                f"   📈 Lucro >= Gatilho (R$ {break_even_trigger:.2f}).\n"
+                                f"   🔒 SL Virtual movido para Preço de Entrada + Spread (R$ {new_sl:.2f})."
+                            )
+                    else:
+                        new_sl = entry_price - spread_price
+                        if (current_sl == 0.0 or current_sl > new_sl) and pos.price_current < new_sl:
+                            modify_sl(symbol, ticket, new_sl)
+                            logger.info(
+                                f"✨ [RISK-FREE] 🟢 Operação Blindada! Risco Zero Ativado.\n"
+                                f"   📉 Lucro >= Gatilho (R$ {break_even_trigger:.2f}).\n"
+                                f"   🔒 SL Virtual movido para Preço de Entrada - Spread (R$ {new_sl:.2f})."
+                            )
+            # ============================================
+
             status = _compute_close_gap_status(pos)
             if not status.startswith("TRIGGER:"):
                 ticket = pos.ticket
@@ -2097,10 +2198,10 @@ def calculate_dynamic_trailing(pos, ind: dict, atr: float) -> Optional[float]:
                 return None
         
         logger.info(
-            f"🎯 Trailing {symbol} | "
-            f"Lucro: {profit_in_atr:.1f}R | "
-            f"Mult: {final_mult:.2f} (Vol:{vol_adjustment:.2f}, Mom:{momentum_adjustment:.2f}) | "
-            f"SL: {current_sl:.2f} → {new_sl:.2f}"
+            f"🎯 [TRAILING] 📏 Ajuste Dinâmico em {symbol}\n"
+            f"   💰 Lucro em ATR: {profit_in_atr:.1f}R | 🧬 Multiplicador: {final_mult:.2f}\n"
+            f"   ⚙️ Ajustes: (Vol:{vol_adjustment:.2f}, Mom:{momentum_adjustment:.2f})\n"
+            f"   🔒 Stop Move: {current_sl:.2f} ➔ {new_sl:.2f}"
         )
         
         return round(new_sl, 2)
@@ -5228,34 +5329,38 @@ def check_for_circuit_breaker():
         daily_max_equity = acc.equity
 
     drawdown_pct = (daily_max_equity - acc.equity) / daily_max_equity
-    if drawdown_pct >= config.MAX_DAILY_DRAWDOWN_PCT and not trading_paused:
+    
+    # 📉 Drawdown BRL (Capital Realizado + Flutuante do Dia)
+    daily_pnl_brl = acc.equity - equity_inicio_dia
+    max_loss_brl = getattr(config, 'MAX_LOSS_DAILY', -200.0)
+    
+    # Circuit Breaker: % Drawdown OU Limite Financeiro BRL
+    triggered_dd = drawdown_pct >= config.MAX_DAILY_DRAWDOWN_PCT
+    triggered_loss = daily_pnl_brl <= max_loss_brl
+    
+    if (triggered_dd or triggered_loss) and not trading_paused:
         trading_paused = True
-        push_alert("🚨 CIRCUIT BREAKER ATIVADO - Trading pausado!", "CRITICAL", True)
+        reason_type = "DRAWDOWN" if triggered_dd else "DAILY_LOSS"
+        reason_val = f"{drawdown_pct:.2%}" if triggered_dd else f"R$ {daily_pnl_brl:,.2f}"
+        
+        push_alert(f"🚨 CIRCUIT BREAKER ATIVADO ({reason_type}: {reason_val}) - Trading pausado!", "CRITICAL", True)
         try:
             with utils.mt5_lock:
                 positions = mt5.positions_get() or []
-            for p in positions:
-                try:
-                    with utils.mt5_lock:
-                        tick = mt5.symbol_info_tick(p.symbol)
-                    if not tick:
-                        continue
-                    price = tick.bid if p.type == mt5.POSITION_TYPE_BUY else tick.ask
-                    close_position(
-                        p.symbol,
-                        p.ticket,
-                        p.volume,
-                        price,
-                        reason=f"KillSwitch DD {drawdown_pct:.2%}"
-                    )
-                except Exception as e:
-                    logger.error(f"Erro ao fechar posição {p.symbol} (ticket {p.ticket}): {e}")
+            
+            if len(positions) > 0:
+                logger.warning(f"🛑 Fechando {len(positions)} posições por Circuit Breaker...")
+                close_all_positions(reason=f"KillSwitch {reason_type} {reason_val}")
+            
             try:
-                utils.send_telegram_message(
+                msg = (
                     f"🚨 <b>KILL-SWITCH ATIVADO</b>\n\n"
-                    f"🔻 Drawdown: {drawdown_pct:.2%} ≥ {getattr(config, 'MAX_DAILY_DRAWDOWN_PCT', 0.0):.2%}\n"
-                    f"🛑 Todas as posições foram fechadas e novas entradas bloqueadas."
+                    f"🔻 P&L Diário: <b>R$ {daily_pnl_brl:,.2f}</b>\n"
+                    f"📉 Drawdown: {drawdown_pct:.2%}\n"
+                    f"🛑 Motivo: {reason_type} ({reason_val})\n\n"
+                    f"⚠️ Todas as posições foram fechadas e novas entradas bloqueadas até o reset."
                 )
+                utils.send_telegram_message(msg)
             except Exception:
                 pass
         except Exception as e:
@@ -5400,9 +5505,10 @@ def check_profit_lock():
             locked_profit = stats.get("locked_profit", 0.0)
             target_lock = stats.get("target_lock", 0.0)
             push_alert(
-                f"🎯 META DIÁRIA ATINGIDA! Lucro: R${daily_pnl:+.2f} ({daily_pnl_pct * 100:.1f}%) | "
-                f"Fechadas {stats.get('closed', 0)} posições em lucro (travado ~R${locked_profit:,.2f}/{target_lock:,.2f}) | "
-                f"Trailing apertado: {stats.get('tightened', 0)}",
+                f"🎯 [META DIÁRIA] 💰 OBJETIVO ATINGIDO!\n"
+                f"   📈 Lucro do Dia: R$ {daily_pnl:+.2f} ({daily_pnl_pct * 100:.1f}%)\n"
+                f"   🚪 Fechadas: {stats.get('closed', 0)} posições (Realizado ~R$ {locked_profit:,.2f}/{target_lock:,.2f})\n"
+                f"   🛡️ Proteção: Trailing Stop apertado em {stats.get('tightened', 0)} ativos para defender o lucro.",
                 "INFO",
                 True,
             )

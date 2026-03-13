@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import MetaTrader5 as mt5
 from hmmlearn.hmm import GaussianHMM
+from sklearn.preprocessing import StandardScaler
 
 from config_futures import FUTURES_CONFIGS
 from hmm_validation import KalmanFilter1D
@@ -16,7 +17,7 @@ logger = logging.getLogger("Calibration")
 CALIBRATION_FILE = "calibrated_assets.json"
 
 class WalkForwardValidator:
-    """Minimal WFA Motor just to extract p and b."""
+    """WFA Motor evoluído para 3 regimes (0, 1, 2)."""
     def __init__(self, data, q, r, tick_value, slippage_cost, train_window_size=3000, test_window_size=500):
         self.data = data
         self.q = q
@@ -25,18 +26,21 @@ class WalkForwardValidator:
         self.slippage_cost = slippage_cost
         self.train_window_size = train_window_size
         self.test_window_size = test_window_size
-        self.oos_results = []
-    
+        
     def run(self):
+        n_windows = max(1, (len(self.data) - self.train_window_size) // self.test_window_size)
         total_bars = len(self.data)
         current_idx = 0
-        winning_trades = 0
-        losing_trades = 0
-        gross_profit = 0.0
-        gross_loss = 0.0
+        
+        # Metrics per regime
+        # 0: Sideways, 1: Trend, 2: Protection
+        regime_metrics = {
+            0: {"total": 0, "wins": 0, "pnl": 0.0, "gross_profit": 0.0, "gross_loss": 0.0},
+            1: {"total": 0, "wins": 0, "pnl": 0.0, "gross_profit": 0.0, "gross_loss": 0.0},
+            2: {"total": 0, "wins": 0, "pnl": 0.0, "gross_profit": 0.0, "gross_loss": 0.0}
+        }
         
         kf = KalmanFilter1D(process_variance=self.q, measurement_variance=self.r)
-        # Pre-calculate Kalmans to save time
         self.data['kalman'] = [kf.update(z) for z in self.data['close']]
 
         while (current_idx + self.train_window_size + self.test_window_size) <= total_bars:
@@ -45,23 +49,34 @@ class WalkForwardValidator:
             oos_end = is_end + self.test_window_size
             df_oos = self.data.iloc[is_end:oos_end].copy()
             
-            # --- In-Sample HMM ---
+            # --- In-Sample HMM (3 States) ---
             df_is['returns'] = df_is['kalman'].pct_change()
             df_is['vol'] = df_is['returns'].rolling(15).std()
             is_clean = df_is.dropna(subset=['returns', 'vol'])
             
-            if is_clean.empty:
+            if is_clean.empty or len(is_clean) < 100:
                current_idx += self.test_window_size
                continue
 
             X_is = is_clean[['returns', 'vol']].values
             X_is += np.random.normal(0, 1e-9, X_is.shape)
+            scaler = StandardScaler()
+            X_is_scaled = scaler.fit_transform(X_is)
 
             try:
-                model = GaussianHMM(n_components=2, covariance_type="full", n_iter=100, random_state=42)
-                model.fit(X_is)
-                trend_regime = np.argmin(model.means_[:, 1])
-            except Exception as e:
+                # Evolução: 3 Estados
+                model = GaussianHMM(n_components=3, covariance_type="full", n_iter=100, random_state=42, min_covar=1e-3)
+                model.fit(X_is_scaled)
+                
+                # Identificação Soberana por Volatilidade
+                vols = model.means_[:, 1]
+                sorted_vols = np.argsort(vols)
+                regime_map = {
+                    sorted_vols[0]: 0, # SIDEWAYS (Low Vol)
+                    sorted_vols[1]: 1, # TREND (Mid Vol)
+                    sorted_vols[2]: 2  # PROTECTION (High Vol)
+                }
+            except Exception:
                 current_idx += self.test_window_size
                 continue
 
@@ -73,43 +88,77 @@ class WalkForwardValidator:
             if not oos_clean.empty:
                 X_oos = oos_clean[['returns', 'vol']].values
                 X_oos += np.random.normal(0, 1e-9, X_oos.shape)
+                X_oos_scaled = scaler.transform(X_oos)
                 try:
-                    oos_regimes = model.predict(X_oos)
+                    raw_regimes = model.predict(X_oos_scaled)
+                    oos_regimes = [regime_map[r] for r in raw_regimes]
+
+                    in_trade = False
+                    entry_price = None
+                    last_regime = None
                     
-                    for i in range(len(oos_clean)):
+                    for i in range(len(oos_regimes)):
                         regime = oos_regimes[i]
-                        if regime == trend_regime:
-                            # Simplistic trade assumption: If close > open, we make points equivalent to the bar body
-                            points_diff = oos_clean.iloc[i]['close'] - oos_clean.iloc[i]['open']
-                            financial_diff = (points_diff * self.tick_value)
-                            
-                            trade_pnl = financial_diff - self.slippage_cost
-                            
+                        price = oos_clean.iloc[i]['close']
+                        
+                        if not in_trade:
+                            # Inicia trade em qualquer regime para medir performance
+                            in_trade = True
+                            entry_price = price
+                            last_regime = regime
+                        elif regime != last_regime:
+                            # Fecha quando muda o regime (Troca Dinâmica)
+                            trade_pnl = (price - entry_price) * self.tick_value - self.slippage_cost
+                            met = regime_metrics[last_regime]
+                            met["total"] += 1
+                            met["pnl"] += trade_pnl
                             if trade_pnl > 0:
-                                winning_trades += 1
-                                gross_profit += trade_pnl
-                            elif trade_pnl < 0:
-                                losing_trades += 1
-                                gross_loss += abs(trade_pnl)
-                except Exception as e:
+                                met["wins"] += 1
+                                met["gross_profit"] += trade_pnl
+                            else:
+                                met["gross_loss"] += abs(trade_pnl)
+                            
+                            # Re-abre no novo regime
+                            entry_price = price
+                            last_regime = regime
+                            
+                    # Fecha trade final
+                    if in_trade:
+                        price = oos_clean.iloc[-1]['close']
+                        trade_pnl = (price - entry_price) * self.tick_value - self.slippage_cost
+                        met = regime_metrics[last_regime]
+                        met["total"] += 1
+                        met["pnl"] += trade_pnl
+                        if trade_pnl > 0:
+                            met["wins"] += 1
+                            met["gross_profit"] += trade_pnl
+                        else:
+                            met["gross_loss"] += abs(trade_pnl)
+                except Exception:
                     pass
 
             current_idx += self.test_window_size
             
-        total_trades = winning_trades + losing_trades
-        if total_trades == 0:
-            return 0.5, 1.0 # fallback
-
-        win_rate = winning_trades / total_trades
-        avg_win = gross_profit / winning_trades if winning_trades > 0 else 0
-        avg_loss = gross_loss / losing_trades if losing_trades > 0 else 0
-        payout_ratio = avg_win / avg_loss if avg_loss > 0 else 1.0
-        
-        # Cap limits to prevent extreme Kelly
-        win_rate = min(max(win_rate, 0.2), 0.8)
-        payout_ratio = min(max(payout_ratio, 0.5), 5.0)
-
-        return win_rate, payout_ratio
+        final_results = {}
+        for r, m in regime_metrics.items():
+            if m["total"] < 5:
+                final_results[r] = {"wr": 0.0, "payout": 1.0, "total": m["total"]}
+                continue
+                
+            wr = m["wins"] / m["total"]
+            avg_win = m["gross_profit"] / m["wins"] if m["wins"] > 0 else 0
+            loss_count = m["total"] - m["wins"]
+            avg_loss = m["gross_loss"] / loss_count if loss_count > 0 else 1.0
+            payout = avg_win / avg_loss if avg_loss > 0 else 1.0
+            
+            final_results[r] = {
+                "wr": round(wr, 4),
+                "payout": round(payout, 4),
+                "total": m["total"],
+                "pnl": round(m["pnl"], 2)
+            }
+            
+        return final_results
 
 
 class AssetCalibrator:
@@ -117,113 +166,128 @@ class AssetCalibrator:
         self.symbol = symbol
         self_config = FUTURES_CONFIGS.get(symbol, {})
         if not self_config:
-            logger.warning(f"No config found in config_futures for {symbol}. Using defaults.")
+            logger.warning(f"No config found in config_futures for {self.symbol}. Using defaults.")
             self.tick_value = 0.20
             self.slippage_base = 2.0
+            self.margin = 1000.0
         else:
-            specs = self_config.get('specs', {})
-            self.tick_value = specs.get('value_per_tick', 1.0) / specs.get('tick_size', 1.0) # Normalizing point value roughly
-            
-            # Extract slippage points/ticks and convert to financial cost
-            slip_map = specs.get('slippage_base', {})
-            base_slip_points = slip_map.get('avg', 1.0)
-            self.slippage_base = base_slip_points * specs.get('value_per_tick', 1.0) / specs.get('tick_size', 1.0)
+            specs = self_config.get('specs', {}) # Wait, config_futures might have different structure
+            # Re-checking config_futures structure from previous view_file (if I had it)
+            # Based on futures_optimizer view: tick_size, point_value, fees, margin
+            self.tick_size = self_config.get('tick_size', 1.0)
+            self.point_value = self_config.get('point_value', 1.0)
+            self.tick_value = self.point_value # points to financial
+            self.slippage_base = self_config.get('slippage_base', {}).get('avg', 10) * self.point_value
+            self.margin = self_config.get('margin', 1000.0)
 
     def calibrate(self):
-        logger.info(f"🚀 Iniciando Calibração Completa para {self.symbol}...")
+        logger.info(f"🚀 Iniciando Triple Calibração (TREND, SIDEWAYS, PROTECTION) para {self.symbol}...")
         
         terminal_path = r"C:\MetaTrader 5 Terminal\terminal64.exe"
         if not mt5.initialize(path=terminal_path):
             logger.error("❌ Falha ao inicializar MT5")
             return
 
-        # Busca dados H1 e M1 (para WFA longo)
-        logger.info(f"📡 Extraindo dados de {self.symbol}...")
-        rates = mt5.copy_rates_from_pos(self.symbol, mt5.TIMEFRAME_M1, 0, 15000)
+        timeframes = ["M5", "M15"] # Foco nos principais para velocidade
+        all_calibrations = {}
+
+        for tf_name in timeframes:
+            tf_val = mt5.TIMEFRAME_M5 if tf_name == "M5" else mt5.TIMEFRAME_M15
+            logger.info(f"📡 Extraindo dados de {tf_name} para {self.symbol}...")
+            rates = mt5.copy_rates_from_pos(self.symbol, tf_val, 0, 15000)
+            
+            if rates is None or len(rates) < 2000:
+                logger.error(f"❌ Dados insuficientes para {self.symbol} no {tf_name}.")
+                continue
+                
+            df = pd.DataFrame(rates)
+            df['time'] = pd.to_datetime(df['time'], unit='s')
+            df.set_index('time', inplace=True)
+            
+            # Triple Grid Search: Um set de Q/R para cada objetivo de regime
+            regimes_params = {}
+            
+            # 1. TREND: Maximizar WR e Payout
+            logger.info(f"🔍 Otimizando TREND (Regime 1) para {tf_name}...")
+            regimes_params["TREND"] = self.tune_for_regime(df, target_regime=1)
+            
+            # 2. SIDEWAYS: Maximizar estabilidade (Maior R para ignorar ruído)
+            logger.info(f"🔍 Otimizando SIDEWAYS (Regime 0) para {tf_name}...")
+            regimes_params["SIDEWAYS"] = self.tune_for_regime(df, target_regime=0)
+            
+            # 3. PROTECTION: Reatividade máxima (Menor R)
+            logger.info(f"🔍 Otimizando PROTECTION (Regime 2) para {tf_name}...")
+            regimes_params["PROTECTION"] = self.tune_for_regime(df, target_regime=2)
+            
+            all_calibrations[tf_name] = regimes_params
+            
         mt5.shutdown()
         
-        if rates is None or len(rates) == 0:
-            logger.error(f"❌ Falha ao extrair dados para {self.symbol}")
-            return
-            
-        df = pd.DataFrame(rates)
-        df['time'] = pd.to_datetime(df['time'], unit='s')
-        df.set_index('time', inplace=True)
-        
-        # 1. Kalman Tuning
-        # Procuramos o par Q, R que minimize a divergência mantendo smoothness.
-        best_q, best_r = self.tune_kalman(df)
-        logger.info(f"✅ Kalman Tuning completado: Q={best_q}, R={best_r}")
-        
-        # 2. HMM & WFA para Expectativa
-        logger.info(f"⏳ Executando Walk-Forward Analysis (WFA) para descobrir p e b...")
-        wfa = WalkForwardValidator(df.copy(), q=best_q, r=best_r, 
-                                   tick_value=self.tick_value, 
-                                   slippage_cost=self.slippage_base)
-        
-        win_rate, payout_ratio = wfa.run()
-        
-        logger.info(f"✅ WFA completado: p={win_rate:.2f}, b={payout_ratio:.2f}")
-        
-        self.save_calibration(best_q, best_r, win_rate, payout_ratio)
+        if all_calibrations:
+            self.save_calibration(all_calibrations)
 
-
-    def tune_kalman(self, df):
-        """Simplistic heuristic grid search for Kalman params based on variance tests."""
-        # For simplicity, returning stable hard-coded values logic depending on asset type, 
-        # or conducting a small evaluation of var/lag.
+    def tune_for_regime(self, df, target_regime):
+        """Busca Q/R que melhor performam ou se comportam no regime alvo."""
+        # Grid reduzido para não demorar tando (Triple Search = 3x tempo)
+        q_options = [1e-5, 1e-4, 5e-4, 1e-3]
+        r_options = [1e-4, 1e-3, 1e-2, 5e-2]
         
-        prices = df['close'].values[-2000:]
-        configs = [
-            (1e-5, 1e-3),
-            (1e-4, 1e-3),
-            (1e-3, 1e-3),
-            (1e-4, 1e-2)
-        ]
+        best_score = -999999.0
+        best_params = {"kalman_q": 1e-4, "kalman_r": 1e-3, "wr": 0.0, "payout": 0.0}
         
-        best_score = float('inf')
-        best_cfg = (1e-4, 1e-3)
-        
-        for q, r in configs:
-            kf = KalmanFilter1D(process_variance=q, measurement_variance=r)
-            purified = np.array([kf.update(z) for z in prices])
-            
-            # Penalty for lag (diff to price) + Penalty for noise (variance of diff)
-            diffs = prices - purified
-            lag_penalty = np.mean(np.abs(diffs))
-            noise_penalty = np.std(purified)
-            
-            score = (lag_penalty * 0.5) + (noise_penalty * 0.5)
-            if score < best_score:
-                best_score = score
-                best_cfg = (q, r)
+        for q in q_options:
+            for r in r_options:
+                wfa = WalkForwardValidator(df.copy(), q, r, self.tick_value, self.slippage_base)
+                results = wfa.run()
                 
-        return best_cfg[0], best_cfg[1]
+                res = results.get(target_regime)
+                if not res: continue
+                
+                # Fitness Function baseada no regime
+                if target_regime == 1: # TREND: WR + Payout
+                    score = res["wr"] * 100 + res["payout"] * 20
+                elif target_regime == 0: # SIDEWAYS: Queremos detectar MUITO (total alto) com PnL estável
+                    score = res["total"] * 0.1 - abs(res["pnl"]) * 0.001
+                else: # PROTECTION: Queremos Payout alto (saída rápida de perdedores)
+                    score = res["payout"] * 50 + res["wr"] * 10
+                
+                if score > best_score:
+                    best_score = score
+                    best_params = {
+                        "kalman_q": q,
+                        "kalman_r": r,
+                        "wr": res["wr"],
+                        "payout": res["payout"],
+                        "total_trades": res["total"]
+                    }
+        
+        return best_params
 
-    def save_calibration(self, q, r, p, b):
+    def save_calibration(self, all_calibrations):
         filepath = CALIBRATION_FILE
         data = {}
         if os.path.exists(filepath):
             try:
                 with open(filepath, 'r') as f:
                     data = json.load(f)
-            except:
-                pass
+            except: pass
                 
         data[self.symbol] = {
-            "kalman_q": q,
-            "kalman_r": r,
-            "wfa_p": round(p, 4),
-            "wfa_b": round(b, 4),
-            "tick_value_base": self.tick_value,
-            "slippage_cost_base": self.slippage_base,
-            "calibrated_at": pd.Timestamp.now().isoformat()
+            "calibrated_at": pd.Timestamp.now().isoformat(),
+            "profiles": all_calibrations
         }
         
+        # Log de Desempenho Histórico por Regime
+        logger.info(f"\n--- RELATÓRIO DE CALIBRAÇÃO: {self.symbol} ---")
+        for tf, profiles in all_calibrations.items():
+            t = profiles["TREND"]
+            s = profiles["SIDEWAYS"]
+            p = profiles["PROTECTION"]
+            logger.info(f"[{tf}] TREND WR: {t['wr']:.1%} | SIDEWAYS Block Rate (Total): {s['total_trades']} | PROTECTION Payout: {p['payout']:.2f}")
+
         with open(filepath, 'w') as f:
             json.dump(data, f, indent=4)
-            
-        logger.info(f"💾 Calibração do ativo {self.symbol} salva com sucesso em {filepath}")
+        logger.info(f"💾 Calibração Tripla salva em {filepath}")
 
 
 if __name__ == "__main__":

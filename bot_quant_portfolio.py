@@ -1,5 +1,6 @@
 import time
 import logging
+import logging.handlers
 import pandas as pd
 import numpy as np
 import MetaTrader5 as mt5
@@ -10,16 +11,40 @@ from risk_validation import BayesianRiskManager
 from hmm_validation import KalmanFilter1D, train_and_plot_hmm
 import json
 import os
+import sys
+import io
+from sklearn.preprocessing import StandardScaler
+
+# Force UTF-8 for standard output/error to handle emojis on Windows
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 # ==========================================
-# 1. CONFIGURAÇÃO DE LOGGING
+# 1. CONFIGURAÇÃO DE LOGGING E CORES
 # ==========================================
+class LogColors:
+    RESET = "\033[0m"
+    BOLD = "\033[1m"
+    BLUE = "\033[94m"
+    GREEN = "\033[92m"
+    YELLOW = "\033[93m"
+    RED = "\033[91m"
+    CYAN = "\033[96m"
+    GRAY = "\033[90m"
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s | %(levelname)s | %(name)s | %(message)s',
     handlers=[
-        logging.FileHandler("logs/portfolio_bot.log"),
-        logging.StreamHandler()
+        logging.handlers.TimedRotatingFileHandler(
+            "logs/portfolio_bot.log", 
+            when="H", 
+            interval=4, 
+            backupCount=18, 
+            encoding="utf-8"
+        ),
+        logging.StreamHandler(sys.stdout)
     ]
 )
 logger = logging.getLogger("PortfolioBot")
@@ -29,49 +54,39 @@ logger = logging.getLogger("PortfolioBot")
 # ==========================================
 PORTFOLIO_CONFIG = {
     "WDO$N": {
-        "allocation": 0.30, 
+        "allocation": 0.50, 
         "tick_value": 5.0, 
         "base_win_rate": 0.55, 
         "base_payout": 1.5,
         "n_states": 2,
         "kelly_fraction": 0.10
     },
-    "WSP$N": {
-        "allocation": 0.30, 
-        "tick_value": 25.0, 
-        "base_win_rate": 0.52, 
-        "base_payout": 2.0,
-        "n_states": 3,
-        "kelly_fraction": 0.15
-    },
     "WIN$N": {
-        "allocation": 0.20, 
+        "allocation": 0.50, 
         "tick_value": 0.20, 
         "base_win_rate": 0.54, 
         "base_payout": 1.5,
         "n_states": 2,
-        "kelly_fraction": 0.08  # Tensão/Ruído alto no WIN, Kelly bem reduzido
-    },
-    "DI1$N": {
-        "allocation": 0.20, 
-        "tick_value": 1.0, 
-        "base_win_rate": 0.60, 
-        "base_payout": 1.2,
-        "n_states": 2,
-        "kelly_fraction": 0.05
+        "kelly_fraction": 0.08
     }
-}
-
 class AssetWorker:
-    """Instância individual para cada ativo do portfólio."""
+    """Instância individual para cada ativo com Troca de Regimes Soberana."""
     def __init__(self, symbol, config, capital_total):
         self.symbol = symbol
         self.allocation = config['allocation']
         self.capital_total = capital_total
         self.engine = ExecutionEngine(symbol=symbol, magic_number=999000 + list(PORTFOLIO_CONFIG.keys()).index(symbol))
         
-        kalman_q = 1e-4
-        kalman_r = 1e-3
+        self.timeframes = {
+            "M5": mt5.TIMEFRAME_M5,
+            "M15": mt5.TIMEFRAME_M15
+        }
+        
+        # Estrutura de Perfis Triplos
+        self.profiles = {}
+        self.current_q = {tf: 1e-4 for tf in self.timeframes}
+        self.current_r = {tf: 1e-3 for tf in self.timeframes}
+        
         base_win_rate = config['base_win_rate']
         base_payout = config['base_payout']
         
@@ -80,20 +95,26 @@ class AssetWorker:
                 with open("calibrated_assets.json", "r") as f:
                     calib_data = json.load(f)
                     if symbol in calib_data:
-                        kalman_q = calib_data[symbol].get("kalman_q", 1e-4)
-                        kalman_r = calib_data[symbol].get("kalman_r", 1e-3)
-                        base_win_rate = calib_data[symbol].get("wfa_p", base_win_rate)
-                        base_payout = calib_data[symbol].get("wfa_b", base_payout)
-                        logger.info(f"[{symbol}] ✅ Calibração Ativa: Q={kalman_q}, R={kalman_r}, p={base_win_rate}, b={base_payout}")
+                        symbol_data = calib_data[symbol]
+                        self.profiles = symbol_data.get("profiles", {})
+                        
+                        # Set initial defaults from TREND profile
+                        for tf in self.timeframes:
+                            if tf in self.profiles:
+                                trend = self.profiles[tf].get("TREND", {})
+                                self.current_q[tf] = trend.get("kalman_q", 1e-4)
+                                self.current_r[tf] = trend.get("kalman_r", 1e-3)
+                                if tf == "M5":
+                                    base_win_rate = trend.get("wr", base_win_rate)
+                                    base_payout = trend.get("payout", base_payout)
+                        
+                        logger.info(f"[{symbol}] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.")
                     else:
                         logger.warning(f"[{symbol}] ⚠️ Usando Defaults (Ativo não calibrado)")
             except Exception as e:
                 logger.error(f"[{symbol}] Erro ao ler calibração: {e}")
-        else:
-            logger.warning(f"[{symbol}] ⚠️ Usando Defaults (Arquivo não encontrado)")
 
-
-        self.kf = KalmanFilter1D(process_variance=kalman_q, measurement_variance=kalman_r)
+        self.kfs = {tf: KalmanFilter1D(process_variance=self.current_q[tf], measurement_variance=self.current_r[tf]) for tf in self.timeframes}
         self.risk_manager = BayesianRiskManager(
             base_win_rate=base_win_rate,
             base_payout=base_payout,
@@ -102,116 +123,173 @@ class AssetWorker:
             capital_allocation=self.allocation
         )
         
-        self.n_states = config['n_states']
-        self.hmm_model = None
-        self.initialized = False
+        self.n_states = 3 # Evolução para 3 estados
+        self.hmm_models = {tf: None for tf in self.timeframes}
+        self.scalers = {tf: StandardScaler() for tf in self.timeframes}
+        self.regime_maps = {tf: {} for tf in self.timeframes}
+        self.initialized = {tf: False for tf in self.timeframes}
 
     def startup(self):
-        """Treina o HMM para o ativo."""
-        logger.info(f"[{self.symbol}] Inicializando...")
+        """Treina os HMMs e identifica os regimes soberanos."""
+        logger.info(f"[{self.symbol}] Inicializando Regimes Soberanos...")
         if not self.engine.connect():
             return False
-        
-        # Coleta dados para treino (WFA janelas de 3000)
-        df_init = self.engine.get_latest_m1_data(count=3000)
-        if df_init is None or len(df_init) < 1000:
-            logger.error(f"[{self.symbol}] Dados insuficientes para startup.")
-            return False
-        
-        # Prep Kalman
-        df_init['kalman'] = [self.kf.update(z) for z in df_init['close']]
-        
-        # Treino HMM
-        try:
-            # Adiciona jitter para evitar matrizes singulares em ativos de baixa vol (DI1)
-            df_init['returns'] = df_init['kalman'].pct_change()
-            df_init['vol'] = df_init['returns'].rolling(15).std()
-            clean = df_init.dropna().copy()
-            X = clean[['returns', 'vol']].values.copy()
-            X += np.random.normal(0, 1e-9, X.shape)
             
-            from hmmlearn.hmm import GaussianHMM
-            self.hmm_model = GaussianHMM(n_components=self.n_states, covariance_type="full", n_iter=100, random_state=42)
-            self.hmm_model.fit(X)
-            self.initialized = True
-            logger.info(f"[OK] [{self.symbol}] HMM treinado.")
-            return True
-        except Exception as e:
-            logger.error(f"[{self.symbol}] Falha no treino HMM: {e}")
-            return False
+        all_initialized = True
+        for tf_name, tf_val in self.timeframes.items():
+            df_init = self.engine.get_latest_data(tf_val, count=3000)
+            if df_init is None or len(df_init) < 1000:
+                all_initialized = False
+                continue
+            
+            df_init['kalman'] = [self.kfs[tf_name].update(z) for z in df_init['close']]
+            
+            try:
+                df_init['returns'] = df_init['kalman'].pct_change()
+                df_init['vol'] = df_init['returns'].rolling(15).std()
+                clean = df_init.dropna().copy()
+                X = clean[['returns', 'vol']].values.copy()
+                X += np.random.normal(0, 1e-9, X.shape)
+                
+                X_scaled = self.scalers[tf_name].fit_transform(X)
+                
+                from hmmlearn.hmm import GaussianHMM
+                self.hmm_models[tf_name] = GaussianHMM(n_components=self.n_states, covariance_type="full", n_iter=100, random_state=42, min_covar=1e-2)
+                self.hmm_models[tf_name].fit(X_scaled)
+                
+                # Mapeamento do Regime (Soberania por Volatilidade)
+                vols = self.hmm_models[tf_name].means_[:, 1]
+                sorted_vols = np.argsort(vols)
+                self.regime_maps[tf_name] = {
+                    sorted_vols[0]: 0, # SIDEWAYS
+                    sorted_vols[1]: 1, # TREND
+                    sorted_vols[2]: 2  # PROTECTION
+                }
+                
+                self.initialized[tf_name] = True
+                logger.info(f"[OK] [{self.symbol}] HMM 3-States treinado no {tf_name}.")
+            except Exception as e:
+                logger.error(f"[{self.symbol}] Falha no startup {tf_name}: {e}")
+                all_initialized = False
+
+        return all_initialized
 
     def process_tick(self):
-        """Executa um ciclo M1 para o ativo."""
-        if not self.initialized: return
+        """Loop de SCAN com Troca de Parâmetros e Kelly Dinâmico."""
+        if not all(self.initialized.values()): return
 
-        df = self.engine.get_latest_m1_data(count=50)
-        if df is None: return
+        regimes = {}
+        confidences = {}
+        current_price = None
+        atr_m5 = None
 
-        current_price = df['close'].iloc[-1]
-        kalman_val = self.kf.update(current_price)
+        # 1. Identificar Regimes e Trocar Parâmetros em Tempo Real
+        for tf_name, tf_val in self.timeframes.items():
+            df = self.engine.get_latest_data(tf_val, count=50)
+            if df is None: return
+
+            close_price = df['close'].iloc[-1]
+            if tf_name == "M5":
+                current_price = close_price
+                df['tr'] = np.maximum(df['high'] - df['low'], 
+                                     np.maximum(abs(df['high'] - df['close'].shift(1)), 
+                                               abs(df['low'] - df['close'].shift(1))))
+                atr_m5 = df['tr'].rolling(14).mean().iloc[-1]
+            
+            # Predição do Regime
+            df['kalman_tmp'] = [self.kfs[tf_name].update(z) for z in df['close']]
+            df['returns'] = df['kalman_tmp'].pct_change()
+            df['vol'] = df['returns'].rolling(15).std()
+            
+            feat = df[['returns', 'vol']].dropna().iloc[-1:].values.copy()
+            if len(feat) == 0: return
+            
+            try:
+                feat_scaled = self.scalers[tf_name].transform(feat + np.random.normal(0, 1e-9, feat.shape))
+                raw_regime = self.hmm_models[tf_name].predict(feat_scaled)[0]
+                regime = self.regime_maps[tf_name][raw_regime]
+                regimes[tf_name] = regime
+                confidences[tf_name] = self.hmm_models[tf_name].predict_proba(feat_scaled)[0][raw_regime]
+                
+                # --- TROCA DE PARÂMETROS KALMAN (Soberania) ---
+                profile_name = "TREND" if regime == 1 else ("SIDEWAYS" if regime == 0 else "PROTECTION")
+                if tf_name in self.profiles and profile_name in self.profiles[tf_name]:
+                    p = self.profiles[tf_name][profile_name]
+                    self.kfs[tf_name].Q = p.get("kalman_q", self.kfs[tf_name].Q)
+                    self.kfs[tf_name].R = p.get("kalman_r", self.kfs[tf_name].R)
+            except Exception as e:
+                regimes[tf_name] = 0
+                confidences[tf_name] = 0.5
+
+        if current_price is None or atr_m5 is None: return
+
+        # 2. Ajuste Dinâmico de Kelly
+        m5_regime = regimes["M5"]
+        kelly_mult = 0.5 if m5_regime == 1 else (0.1 if m5_regime == 2 else 0.0)
         
-        # Predict Regime and Confidence
-        df['kalman'] = [self.kf.update(z) for z in df['close']]
-        df['returns'] = df['kalman'].pct_change()
-        df['vol'] = df['returns'].rolling(15).std()
-        
-        feat = df[['returns', 'vol']].dropna().iloc[-1:].values.copy()
-        if len(feat) == 0: return
-        feat_jitter = feat + np.random.normal(0, 1e-9, feat.shape)
-        
-        # Predict Regime and Posterior Probabilities (IA Confidence)
-        regime = self.hmm_model.predict(feat_jitter)[0]
-        probs = self.hmm_model.predict_proba(feat_jitter)[0]
-        confidence = probs[regime]
-        
-        # ATR para Sizing
-        df['tr'] = np.maximum(df['high'] - df['low'], 
-                             np.maximum(abs(df['high'] - df['close'].shift(1)), 
-                                      abs(df['low'] - df['close'].shift(1))))
-        atr = df['tr'].rolling(14).mean().iloc[-1]
-        
-        # Portfolio Kelly Sizing com Confiança Dinâmica
-        contracts, risk_pct, debug = self.risk_manager.calculate_position_size(
+        contracts, _, debug = self.risk_manager.calculate_position_size(
             total_capital=self.capital_total,
-            hmm_regime=regime,
-            atr_points=atr,
-            confidence=confidence
+            hmm_regime=1, # Forçamos calculo base como trend
+            atr_points=atr_m5,
+            confidence=confidences["M5"]
         )
         
-        # Determinar Viés (Direção)
-        bias = "COMPRA" if current_price > kalman_val else "VENDA"
-        if contracts == 0:
-            bias = "AGUARDAR"
+        # Aplica o multiplicador do regime
+        contracts = int(contracts * kelly_mult)
+        if m5_regime == 0:
+            contracts = 0
+            debug += " | [BLOCK] Sideways Regime"
+        elif m5_regime == 2:
+            debug += " | [REDUCED] Protection Regime (0.1x)"
 
-        logger.info(f"| {self.symbol: <6} | {bias: <8} | Preço: {current_price: >8.2f} | Regime: {regime} | Lote: {contracts: >2} | {debug}")
-
-        # Shadow Trading Execution & Management
-        positions = mt5.positions_get(symbol=self.symbol, magic=self.engine.magic)
+        # 3. Refinamento do Consenso Ensemble
+        # M5=1 & M15=1 obrigatório apenas para COMPRA/VENDA em TREND
+        is_trend_consensus = (regimes["M5"] == 1) and (regimes["M15"] == 1)
         
+        can_trade = False
+        if m5_regime == 1 and is_trend_consensus:
+            can_trade = True
+        elif m5_regime == 2 and contracts > 0:
+            can_trade = True # Permite entradas pequenas em exaustão se configurado
+        
+        if not can_trade and contracts > 0:
+            contracts = 0
+            debug += " | [BLOCKED] No Trend Consensus"
+
+        # 4. Saída Soberana (M15 PROTECTION)
+        positions = mt5.positions_get(symbol=self.symbol, magic=self.engine.magic)
         if positions:
-            # 1. SAÍDA POR MUDANÇA DE REGIME (HMM)
-            if regime == 0:
-                logger.info(f"[EXIT] {self.symbol} | Saída Antecipada: Fim do Regime de Volatilidade (Regime 0)")
+            # Se o M15 detectar Regime 2 (Exaustão), fecha tudo (Soberania de Proteção)
+            if regimes["M15"] == 2:
+                logger.info(f"🛡️ {LogColors.RED}[SOVEREIGN EXIT]{LogColors.RESET} {self.symbol} | M15 detectou Exaustão (Regime 2)")
                 self.engine.close_all_positions()
                 return
 
-            # 2. TRAILING STOP VIA KALMAN
-            pos = positions[0]
-            if pos.type == mt5.ORDER_TYPE_BUY:
-                if current_price < kalman_val:
-                    logger.info(f"[EXIT] {self.symbol} | Saída Kalman: Crossover detectado (Price < Kalman)")
-                    self.engine.close_all_positions()
-            elif pos.type == mt5.ORDER_TYPE_SELL:
-                if current_price > kalman_val:
-                    logger.info(f"[EXIT] {self.symbol} | Saída Kalman: Crossover detectado (Price > Kalman)")
-                    self.engine.close_all_positions()
+            if regimes["M5"] == 0:
+                logger.info(f"🚪 {LogColors.YELLOW}[EXIT]{LogColors.RESET} {self.symbol} | M5 em Consolidação (Regime 0)")
+                self.engine.close_all_positions()
+                return
+
+        # Execução
+        bias = "COMPRA" # Exemplo fixo, deve vir de lógica de direção
+        bias_label = f"{LogColors.GREEN}🟢 {bias}{LogColors.RESET}" if contracts > 0 else f"{LogColors.GRAY}⏳ AGUARDAR{LogColors.RESET}"
         
-        else:
-            # 3. ENTRADA COM ESCUDO DE VOLATILIDADE (2x ATR)
-            if contracts > 0 and regime != 0:
-                side = mt5.ORDER_TYPE_BUY if bias == "COMPRA" else mt5.ORDER_TYPE_SELL
-                sl_dist = atr * 2
-                self.engine.execute_market_order(side, contracts, current_price, sl_points=sl_dist)
+        def format_regime(r):
+            colors = {0: LogColors.YELLOW, 1: LogColors.GREEN, 2: LogColors.RED}
+            return f"{colors.get(r, '')}{r}{LogColors.RESET}"
+
+        logger.info(
+            f"🔍 {LogColors.BOLD}[SCAN]{LogColors.RESET} "
+            f"| {LogColors.CYAN}{self.symbol:<6}{LogColors.RESET} "
+            f"| {bias_label:<18} "
+            f"| 📊 Regimes: M5({format_regime(regimes['M5'])}), M15({format_regime(regimes['M15'])}) "
+            f"| 📦 Lote: {LogColors.BOLD}{contracts:>2}{LogColors.RESET} "
+            f"| {LogColors.GRAY}{debug}{LogColors.RESET}"
+        )
+
+        if contracts > 0 and not positions:
+            side = mt5.ORDER_TYPE_BUY if bias == "COMPRA" else mt5.ORDER_TYPE_SELL
+            self.engine.execute_market_order(side, contracts, current_price, sl_points=atr_m5*2)
 
 class PortfolioManager:
     """Gerenciador central do portfólio multi-ativo."""
@@ -236,7 +314,7 @@ class PortfolioManager:
 
     def run(self):
         self.running = True
-        logger.info("[START] Portfolio Bot Iniciado (WDO, WSP, DI1)")
+        logger.info(f"🚀 {LogColors.BOLD}[START]{LogColors.RESET} Portfolio Bot Iniciado (10 Símbolos Ativos)")
         last_minute = -1
         
         try:
@@ -264,7 +342,7 @@ class PortfolioManager:
         for worker in self.workers.values():
             worker.engine.close_all_positions()
             worker.engine.shutdown()
-        logger.info("[STOP] Portfolio Bot encerrado.")
+        logger.info(f"🛑 {LogColors.RED}[STOP]{LogColors.RESET} Portfolio Bot encerrado.")
 
 if __name__ == "__main__":
     # Capital base de exemplo

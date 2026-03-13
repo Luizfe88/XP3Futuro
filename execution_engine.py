@@ -39,6 +39,15 @@ class ExecutionEngine:
         df['time'] = pd.to_datetime(df['time'], unit='s')
         return df
 
+    def get_latest_data(self, timeframe, count=20):
+        """Busca os últimos candles de um timeframe específico."""
+        rates = mt5.copy_rates_from_pos(self.symbol, timeframe, 0, count)
+        if rates is None or len(rates) == 0:
+            return None
+        df = pd.DataFrame(rates)
+        df['time'] = pd.to_datetime(df['time'], unit='s')
+        return df
+
     def execute_market_order(self, type, volume, signal_price, sl_points=None):
         """
         Executa uma ordem a mercado com Stop Loss dinâmico.

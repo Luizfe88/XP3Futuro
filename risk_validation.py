@@ -68,14 +68,15 @@ class BayesianRiskManager:
         if risk_per_contract <= 0:
             return 0, 0.0, "Erro: ATR inválido."
 
-        # 5. Dimensionamento Final
-        contracts = np.floor(risk_brl / risk_per_contract)
+        # 5. Dimensionamento Final com Multiplicador Half-Kelly (0.5)
+        raw_contracts = risk_brl / risk_per_contract
+        contracts = np.floor(raw_contracts * 0.5) # Half-Kelly: cresce estável, reduz DD
         
         # Filtro de segurança adicional: se for Regime 0 (Choppy), força zero.
         if hmm_regime == 0:
             contracts = 0 
             
-        return int(contracts), risk_pct, f"Kelly_Opt: {kelly_optimal:.2%} | Confiança IA: {confidence:.2%} | WR: {p:.1%}"
+        return int(contracts), risk_pct, f"Kelly_Opt: {kelly_optimal:.2%} | Confiança IA: {confidence:.2%} | WR: {p:.1%} | Lote_Bruto: {raw_contracts:.2f}"
 
 # ==========================================
 # SIMULAÇÃO DE DECISÃO EM TEMPO REAL
@@ -87,21 +88,21 @@ if __name__ == "__main__":
     # Instancia o motor com Kelly Fracionário de 1/10
     risk_motor = BayesianRiskManager(base_win_rate=0.55, base_payout=1.5, kelly_fraction=0.1)
     
-    print(f"💰 Capital: R$ {capital_atual} | ATR: {atr_atual} pontos")
+    print(f"Capital: R$ {capital_atual} | ATR: {atr_atual} pontos")
     print(f"Prior Win Rate: {risk_motor.base_win_rate:.0%} | Payout: {risk_motor.base_payout}\n")
     
     # Simulando o Robô detectando o Regime 0 (Ruído/Consolidação)
     lote_r0, risco_r0, log_r0 = risk_motor.calculate_position_size(capital_atual, hmm_regime=0, atr_points=atr_atual)
-    print(f"📉 HMM Detectou Regime 0 (Consolidação):")
+    print(f"HMM Detectou Regime 0 (Consolidação):")
     print(f"   -> Ação: Operar {lote_r0} contratos. ({log_r0})\n")
     
     # Simulando o Robô detectando o Regime 1 (Tendência)
     lote_r1, risco_r1, log_r1 = risk_motor.calculate_position_size(capital_atual, hmm_regime=1, atr_points=atr_atual)
-    print(f"📈 HMM Detectou Regime 1 (Volatilidade/Tendência):")
+    print(f"HMM Detectou Regime 1 (Volatilidade/Tendência):")
     print(f"   -> Ação: Operar {lote_r1} contratos. Risco Alocado: {risco_r1:.2%} do capital. ({log_r1})")
     
     # Teste com ATR dobrado (Alta volatilidade na tendência)
     atr_alto = 300.0
     lote_vol, risco_vol, log_vol = risk_motor.calculate_position_size(capital_atual, hmm_regime=1, atr_points=atr_alto)
-    print(f"\n⚡ Alta Volatilidade detectada (ATR: {atr_alto} pontos):")
+    print(f"\nAlta Volatilidade detectada (ATR: {atr_alto} pontos):")
     print(f"   -> Ação: Operar {lote_vol} contratos. (Lote reduzido para equilibrar risco financeiro)")
