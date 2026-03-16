@@ -93,7 +93,7 @@ class ConfigManager:
             },
             "ml": {
                 "enabled": True,
-                "min_confidence": 0.52,  # Reduced from 0.70 for realistic ensemble performance
+                "min_confidence": 0.56,  # Moderado - Sweet Spot
                 "model_type": "ENSEMBLE",  # ENSEMBLE, LSTM, XGBOOST
                 "retrain_frequency_days": 7,
                 "min_samples_for_retrain": 500,
@@ -223,8 +223,8 @@ ELITE_SYMBOLS_JSON_PATH = config_manager.get(
 # ✅ NOVOS PARÂMETROS ML
 ENABLE_ML_SIGNALS = config_manager.get("ml.enabled", True)
 ML_MIN_CONFIDENCE = config_manager.get(
-    "ml.min_confidence", 0.52
-)  # Reduced from 0.78 to 0.65 for realistic ensemble
+    "ml.min_confidence", 0.56
+)  # Moderado - Sweet Spot
 ML_MODEL_TYPE = config_manager.get("ml.model_type", "ENSEMBLE")
 ML_MIN_SAMPLES_FOR_RETRAIN = config_manager.get("ml.min_samples_for_retrain", 500)
 ML_RETRAIN_THRESHOLD = 100  # Retreino após 100 trades (mais estável)
@@ -261,8 +261,8 @@ KELLY_MULTIPLIER = 0.7  # Fractional Kelly (0.7x) for capital preservation (Mode
 KELLY_MIN_TRADES_FOR_CALC = 30  # Minimum trades to calculate dynamic Kelly
 
 # 🛡️ PROTEÇÕES GLOBAIS DA CONTA (CIRCUIT BREAKER)
-MAX_LOSS_DAILY = -200.0         # Stop diário de capital (R$)
-DAILY_PROFIT_TARGET_BRL = 300.0 # Meta diária de lucro (R$)
+MAX_LOSS_DAILY = -300.0         # Stop diário de capital (R$)
+DAILY_PROFIT_TARGET_BRL = 400.0 # Meta diária de lucro (R$)
 
 # ✅ ATR VOLATILITY FILTERS
 MAX_ATR_PCT = 5.0  # Base ATR limit (5.0% for blue chips)
@@ -357,8 +357,8 @@ MAX_ACCEPTABLE_GAP_PCT = 0.015
 # GESTÃO DE RISCO
 # ===========================
 # 🛡️ PROTEÇÕES FINANCEIRAS (BRL)
-MAX_LOSS_BRL = -60.0                     # Hard BRL Stop
-BREAK_EVEN_TRIGGER_BRL = 20.0            # Auto Break-Even Risco Zero (Moderado)
+MAX_LOSS_BRL = -150.0                    # Hard BRL Stop
+BREAK_EVEN_TRIGGER_BRL = 50.0            # Auto Break-Even Risco Zero (Moderado)
 PROFIT_ACTIVATION_THRESHOLD_BRL = 70.0   # Gatilho do Escudo (Trailing Shield)
 PROFIT_TRAILING_PERCENT = 0.30           # % Máxima de devolução de lucro alcançado
 NEWS_BLOCK_BEFORE_MIN = 30  # Bloqueia 30min antes do evento
@@ -635,7 +635,7 @@ PYRAMID_REQUIREMENTS = {
 # ===========================
 # STOP LOSS / TAKE PROFIT
 # ===========================
-SL_ATR_MULTIPLIER = 0.8  # SL inicial = preço ± ATR × 2.0
+SL_ATR_MULTIPLIER = 1.5  # SL inicial = preço ± ATR × 1.5
 TP_ATR_MULT = 3.0  # TP opcional (não usado atualmente, mas disponível)
 TRAILING_STEP_ATR_MULTIPLIER = 1.0
 
