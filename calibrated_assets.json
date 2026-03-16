@@ -1,25 +1,76 @@
 {
     "WIN$N": {
-        "tick_value_base": 0.2,
-        "slippage_cost_base": 1.0,
-        "calibrated_at": "2026-03-11T14:09:33.265615",
-        "M5": {
-            "kalman_q": 1e-06,
-            "kalman_r": 0.1,
-            "wfa_p": 0.5625,
-            "wfa_b": 1.2596
-        },
-        "M15": {
-            "kalman_q": 5e-05,
-            "kalman_r": 0.0001,
-            "wfa_p": 0.6262,
-            "wfa_b": 1.0
-        },
-        "M30": {
-            "kalman_q": 1e-06,
-            "kalman_r": 0.0001,
-            "wfa_p": 0.6029,
-            "wfa_b": 1.1176
+        "calibrated_at": "2026-03-13T18:51:44.988655",
+        "profiles": {
+            "M5": {
+                "TREND": {
+                    "kalman_q": 0.001,
+                    "kalman_r": 0.00012,
+                    "wr": 0.4668,
+                    "payout": 1.2934,
+                    "total_trades": 919
+                },
+                "SIDEWAYS": {
+                    "kalman_q": 1e-05,
+                    "kalman_r": 0.05,
+                    "wr": 0.4653,
+                    "payout": 1.0742,
+                    "total_trades": 2394
+                },
+                "PROTECTION": {
+                    "kalman_q": 0.0005,
+                    "kalman_r": 0.012,
+                    "wr": 0.5128,
+                    "payout": 1.3417,
+                    "total_trades": 312
+                }
+            },
+            "M15": {
+                "TREND": {
+                    "kalman_q": 0.001,
+                    "kalman_r": 0.00012,
+                    "wr": 0.4936,
+                    "payout": 1.1368,
+                    "total_trades": 314
+                },
+                "SIDEWAYS": {
+                    "kalman_q": 0.001,
+                    "kalman_r": 0.05,
+                    "wr": 0.4594,
+                    "payout": 1.1841,
+                    "total_trades": 2854
+                },
+                "PROTECTION": {
+                    "kalman_q": 0.0005,
+                    "kalman_r": 0.05,
+                    "wr": 0.5054,
+                    "payout": 1.1828,
+                    "total_trades": 645
+                }
+            },
+            "M30": {
+                "TREND": {
+                    "kalman_q": 0.001,
+                    "kalman_r": 0.00012,
+                    "wr": 0.5137,
+                    "payout": 1.0969,
+                    "total_trades": 255
+                },
+                "SIDEWAYS": {
+                    "kalman_q": 0.0005,
+                    "kalman_r": 0.01,
+                    "wr": 0.4715,
+                    "payout": 1.1318,
+                    "total_trades": 3559
+                },
+                "PROTECTION": {
+                    "kalman_q": 1e-05,
+                    "kalman_r": 0.001,
+                    "wr": 0.5323,
+                    "payout": 1.1876,
+                    "total_trades": 697
+                }
+            }
         }
     },
     "IND$N": {
@@ -69,26 +120,77 @@
         }
     },
     "WDO$N": {
-        "tick_value_base": 10.0,
-        "slippage_cost_base": 10.0,
-        "calibrated_at": "2026-03-11T14:47:27.915052",
-        "M5": {
-            "kalman_q": 0.001,
-            "kalman_r": 0.0005,
-            "wfa_p": 0.4366,
-            "wfa_b": 1.1275
-        },
-        "M15": {
-            "kalman_q": 0.0005,
-            "kalman_r": 1e-05,
-            "wfa_p": 0.4575,
-            "wfa_b": 1.0603
-        },
-        "M30": {
-            "kalman_q": 5e-05,
-            "kalman_r": 0.001,
-            "wfa_p": 0.5083,
-            "wfa_b": 1.2709
+        "calibrated_at": "2026-03-13T20:04:19.650614",
+        "profiles": {
+            "M5": {
+                "TREND": {
+                    "kalman_q": 0.001,
+                    "kalman_r": 0.05,
+                    "wr": 0.0071,
+                    "payout": 1.5846,
+                    "total_trades": 2815
+                },
+                "SIDEWAYS": {
+                    "kalman_q": 0.0005,
+                    "kalman_r": 0.01,
+                    "wr": 0.0058,
+                    "payout": 1.0789,
+                    "total_trades": 3106
+                },
+                "PROTECTION": {
+                    "kalman_q": 1e-05,
+                    "kalman_r": 0.01,
+                    "wr": 0.0307,
+                    "payout": 1.8218,
+                    "total_trades": 652
+                }
+            },
+            "M15": {
+                "TREND": {
+                    "kalman_q": 0.001,
+                    "kalman_r": 0.0001,
+                    "wr": 0.2393,
+                    "payout": 0.6168,
+                    "total_trades": 305
+                },
+                "SIDEWAYS": {
+                    "kalman_q": 1e-05,
+                    "kalman_r": 0.0001,
+                    "wr": 0.0378,
+                    "payout": 1.1169,
+                    "total_trades": 3095
+                },
+                "PROTECTION": {
+                    "kalman_q": 0.001,
+                    "kalman_r": 0.05,
+                    "wr": 0.2243,
+                    "payout": 1.5986,
+                    "total_trades": 214
+                }
+            },
+            "M30": {
+                "TREND": {
+                    "kalman_q": 0.001,
+                    "kalman_r": 0.0001,
+                    "wr": 0.2022,
+                    "payout": 1.1248,
+                    "total_trades": 544
+                },
+                "SIDEWAYS": {
+                    "kalman_q": 0.0001,
+                    "kalman_r": 0.001,
+                    "wr": 0.086,
+                    "payout": 0.8734,
+                    "total_trades": 2908
+                },
+                "PROTECTION": {
+                    "kalman_q": 1e-05,
+                    "kalman_r": 0.01,
+                    "wr": 0.162,
+                    "payout": 1.6166,
+                    "total_trades": 574
+                }
+            }
         }
     },
     "DOL$N": {

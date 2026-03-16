@@ -188,11 +188,14 @@ class AssetCalibrator:
             logger.error("❌ Falha ao inicializar MT5")
             return
 
-        timeframes = ["M5", "M15"] # Foco nos principais para velocidade
+        timeframes = ["M5", "M15", "M30"] # M30 reativado para filtro de proteção soberana
         all_calibrations = {}
 
         for tf_name in timeframes:
-            tf_val = mt5.TIMEFRAME_M5 if tf_name == "M5" else mt5.TIMEFRAME_M15
+            if tf_name == "M5": tf_val = mt5.TIMEFRAME_M5
+            elif tf_name == "M15": tf_val = mt5.TIMEFRAME_M15
+            else: tf_val = mt5.TIMEFRAME_M30
+            
             logger.info(f"📡 Extraindo dados de {tf_name} para {self.symbol}...")
             rates = mt5.copy_rates_from_pos(self.symbol, tf_val, 0, 15000)
             

@@ -69,6 +69,7 @@ PORTFOLIO_CONFIG = {
         "n_states": 2,
         "kelly_fraction": 0.08
     }
+}
 class AssetWorker:
     """Instância individual para cada ativo com Troca de Regimes Soberana."""
     def __init__(self, symbol, config, capital_total):
@@ -79,7 +80,8 @@ class AssetWorker:
         
         self.timeframes = {
             "M5": mt5.TIMEFRAME_M5,
-            "M15": mt5.TIMEFRAME_M15
+            "M15": mt5.TIMEFRAME_M15,
+            "M30": mt5.TIMEFRAME_M30
         }
         
         # Estrutura de Perfis Triplos
@@ -225,7 +227,8 @@ class AssetWorker:
 
         # 2. Ajuste Dinâmico de Kelly
         m5_regime = regimes["M5"]
-        kelly_mult = 0.5 if m5_regime == 1 else (0.1 if m5_regime == 2 else 0.0)
+        # Perfil Moderado (KELLY=0.7)
+        kelly_mult = 0.7 if m5_regime == 1 else (0.3 if m5_regime == 2 else 0.0)
         
         contracts, _, debug = self.risk_manager.calculate_position_size(
             total_capital=self.capital_total,
@@ -234,34 +237,47 @@ class AssetWorker:
             confidence=confidences["M5"]
         )
         
-        # Aplica o multiplicador do regime
-        contracts = int(contracts * kelly_mult)
         if m5_regime == 0:
             contracts = 0
             debug += " | [BLOCK] Sideways Regime"
         elif m5_regime == 2:
-            debug += " | [REDUCED] Protection Regime (0.1x)"
+            debug += " | [REDUCED] Protection Regime"
 
-        # 3. Refinamento do Consenso Ensemble
-        # M5=1 & M15=1 obrigatório apenas para COMPRA/VENDA em TREND
+        # 3. Refinamento do Consenso Ensemble (Perfil Moderado)
+        # Se M5 e M15 confirmam Regime 1 com WR > 60%, pode boletar mesmo que M30 esteja em Regime 0
+        wr_m5 = confidences.get("M5", 0)
+        wr_m15 = confidences.get("M15", 0)
+        
         is_trend_consensus = (regimes["M5"] == 1) and (regimes["M15"] == 1)
         
+        # Flexibilização: M30 Sideways (0) é permitido se M5/M15 TREND (1) e WR > 60%
+        m30_ok = (regimes.get("M30", 0) == 1) or (regimes.get("M30", 0) == 0 and wr_m5 > 0.60 and wr_m15 > 0.60)
+        
+        # 🆕 Kalman Tolerance (Pullback Check)
+        # Tolerância de 0.6 ATR (0.5 base + 20%)
+        kf_val = self.kfs["M5"].x_hat
+        dist_kf = abs(current_price - kf_val)
+        max_dist = atr_m5 * 0.6
+        kalman_ready = dist_kf <= max_dist
+        
         can_trade = False
-        if m5_regime == 1 and is_trend_consensus:
+        if m5_regime == 1 and is_trend_consensus and m30_ok and kalman_ready:
             can_trade = True
         elif m5_regime == 2 and contracts > 0:
-            can_trade = True # Permite entradas pequenas em exaustão se configurado
+            can_trade = True # Permite entradas pequenas em exaustão
         
         if not can_trade and contracts > 0:
             contracts = 0
-            debug += " | [BLOCKED] No Trend Consensus"
+            reason = "No Trend Consensus" if not is_trend_consensus else ("M30 Block" if not m30_ok else "Kalman Dist")
+            debug += f" | [BLOCKED] {reason}"
 
-        # 4. Saída Soberana (M15 PROTECTION)
+        # 4. Saída Soberana (M15 e M30 PROTECTION)
         positions = mt5.positions_get(symbol=self.symbol, magic=self.engine.magic)
         if positions:
-            # Se o M15 detectar Regime 2 (Exaustão), fecha tudo (Soberania de Proteção)
-            if regimes["M15"] == 2:
-                logger.info(f"🛡️ {LogColors.RED}[SOVEREIGN EXIT]{LogColors.RESET} {self.symbol} | M15 detectou Exaustão (Regime 2)")
+            # Se o M15 ou M30 detectarem Regime 2 (Exaustão), fecha tudo
+            if regimes["M15"] == 2 or regimes.get("M30") == 2:
+                origin = "M30" if regimes.get("M30") == 2 else "M15"
+                logger.info(f"🛡️ {LogColors.RED}[SOVEREIGN EXIT]{LogColors.RESET} {self.symbol} | {origin} detectou Exaustão (Regime 2)")
                 self.engine.close_all_positions()
                 return
 

@@ -55293,3 +55293,6 @@ Traceback: Traceback (most recent call last):
 2026-03-06 16:40:52,558 - utils - INFO - ✅ Redis conectado - cache ativado
 2026-03-06 16:40:52,593 - utils - INFO - ✅ Dados anti-chop carregados
 2026-03-06 16:40:52,603 - utils - INFO - ✅ Limites diários carregados
+2026-03-16 09:10:39,935 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-16 09:10:39,939 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-16 09:10:39,941 - utils - INFO - 🔄 Novo dia detectado - resetando limites

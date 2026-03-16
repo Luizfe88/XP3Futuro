@@ -257,7 +257,7 @@ PYRAMID_MAX_LEGS = 3  # Máximo de pernas em pirâmide
 FUTURES_RISK_MULTIPLIER = 1.5  # Multiplicador de risco para futuros
 
 # ✅ KELLY CRITERION & POSITION SIZING
-KELLY_MULTIPLIER = 0.5  # Fractional Kelly (0.5x) for capital preservation (Half-Kelly)
+KELLY_MULTIPLIER = 0.7  # Fractional Kelly (0.7x) for capital preservation (Moderate)
 KELLY_MIN_TRADES_FOR_CALC = 30  # Minimum trades to calculate dynamic Kelly
 
 # 🛡️ PROTEÇÕES GLOBAIS DA CONTA (CIRCUIT BREAKER)
@@ -358,7 +358,7 @@ MAX_ACCEPTABLE_GAP_PCT = 0.015
 # ===========================
 # 🛡️ PROTEÇÕES FINANCEIRAS (BRL)
 MAX_LOSS_BRL = -60.0                     # Hard BRL Stop
-BREAK_EVEN_TRIGGER_BRL = 30.0            # Auto Break-Even Risco Zero
+BREAK_EVEN_TRIGGER_BRL = 20.0            # Auto Break-Even Risco Zero (Moderado)
 PROFIT_ACTIVATION_THRESHOLD_BRL = 70.0   # Gatilho do Escudo (Trailing Shield)
 PROFIT_TRAILING_PERCENT = 0.30           # % Máxima de devolução de lucro alcançado
 NEWS_BLOCK_BEFORE_MIN = 30  # Bloqueia 30min antes do evento

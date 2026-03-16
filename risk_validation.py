@@ -70,11 +70,16 @@ class BayesianRiskManager:
 
         # 5. Dimensionamento Final com Multiplicador Half-Kelly (0.5)
         raw_contracts = risk_brl / risk_per_contract
-        contracts = np.floor(raw_contracts * 0.5) # Half-Kelly: cresce estável, reduz DD
         
-        # Filtro de segurança adicional: se for Regime 0 (Choppy), força zero.
-        if hmm_regime == 0:
-            contracts = 0 
+        # Perfil Moderado (KELLY=0.7)
+        if hmm_regime == 1:  # TREND
+            kelly_mult = 0.7
+        elif hmm_regime == 2:  # PROTECTION
+            kelly_mult = 0.3
+        else: # Regime 0 (Choppy) ou outro
+            kelly_mult = 0.0
+            
+        contracts = int(round(raw_contracts * kelly_mult))
             
         return int(contracts), risk_pct, f"Kelly_Opt: {kelly_optimal:.2%} | Confiança IA: {confidence:.2%} | WR: {p:.1%} | Lote_Bruto: {raw_contracts:.2f}"
 
