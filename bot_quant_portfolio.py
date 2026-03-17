@@ -9,6 +9,7 @@ from datetime import datetime
 from execution_engine import ExecutionEngine
 from risk_validation import BayesianRiskManager
 from hmm_validation import KalmanFilter1D, train_and_plot_hmm
+from utils import resolve_symbol
 import json
 import os
 import sys
@@ -74,9 +75,10 @@ class AssetWorker:
     """Instância individual para cada ativo com Troca de Regimes Soberana."""
     def __init__(self, symbol, config, capital_total):
         self.symbol = symbol
+        self.resolved_symbol = resolve_symbol(symbol)
         self.allocation = config['allocation']
         self.capital_total = capital_total
-        self.engine = ExecutionEngine(symbol=symbol, magic_number=999000 + list(PORTFOLIO_CONFIG.keys()).index(symbol))
+        self.engine = ExecutionEngine(symbol=self.resolved_symbol, magic_number=999000 + list(PORTFOLIO_CONFIG.keys()).index(symbol))
         
         self.timeframes = {
             "M5": mt5.TIMEFRAME_M5,

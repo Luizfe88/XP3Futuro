@@ -445,26 +445,7 @@ FUTURE_FEE_PER_CONTRACT = 1.0  # Taxa por contrato
 # Mapeia símbolos genéricos para o contrato real atual na corretora.
 # Para XP Investimentos, os símbolos contínuos são usados diretamente (WIN$N, WDO$N).
 # Se a corretora usar contratos datados (WINJ26), atualize aqui.
-ACTIVE_FUTURES = {
-    "WIN$N": "WIN$N",    # Mini Índice Bovespa (contínuo XP)
-    "WDO$N": "WDO$N",    # Mini Dólar (contínuo XP)
-    "IND$N": "WIN$N",    # IND → resolve para WIN (mini-índice)
-    "WSP$N": "WDO$N",    # WSP → resolve para WDO (mini-dólar)
-    "DOL$N": "DOL$N",    # Dólar cheio
-    "DI1$N": "DI1$N",    # DI Futuro
-    "CCM$N": "CCM$N",    # Café (pode ser substituído por CCMU27)
-    "BGI$N": "BGI$N",    # Boi Gordo
-    "ICF$N": "ICF$N",    # Açúcar
-    "BIT$N": "BIT$N",    # Bitcoin Futuro (se disponível)
-    "SFI$N": "SFI$N",    # S&P 500 Futuro
-    # Aliases sem sufixo (base pura)
-    "WIN":   "WIN$N",
-    "WDO":   "WDO$N",
-    "IND":   "WIN$N",
-    "WSP":   "WDO$N",
-    "DOL":   "DOL$N",
-    "DI1":   "DI1$N",
-}
+ACTIVE_FUTURES = {}
 
 
 # =========================================================
@@ -726,8 +707,9 @@ ENABLE_TELEGRAM_NOTIF = os.getenv("ENABLE_TELEGRAM_NOTIF", "True").lower() == "t
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8474186435:AAGpRE6ou0a-aUqKATKRI4mVpzxYDotWeuQ")
 TELEGRAM_CHAT_ID = int(os.getenv("TELEGRAM_CHAT_ID", "8400631213"))
 ENABLE_TELEGRAM_REJECTION_SUMMARY = False
-EOD_REPORT_ENABLED = True
 EOD_REPORT_TIME = "16:55"  # Seu chat_id (número inteiro)
+MENTORSHIP_REPORT_ENABLED = True
+MENTORSHIP_REPORT_TIME = "17:00"
 # ===========================
 
 # =========================nn

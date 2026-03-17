@@ -399,6 +399,116 @@ class MLSignalPredictor:
         self.current_threshold = min(0.88, base)
         return self.current_threshold
 
+    def predict(self, symbol: str, indicators: Dict[str, float], history_df: Optional[pd.DataFrame] = None) -> Dict[str, Any]:
+        """
+        Prediz sinal com ensemble ponderado (v5.2)
+        RF: 25% | XGB: 45% | LSTM: 30%
+        """
+        if not self.rf_model or not self.xgb_model:
+            logger.error("Modelos não carregados!")
+            return {"direction": "HOLD", "confidence": 0.0, "reason": "models_not_loaded"}
+
+        features = self.extract_features(symbol, indicators)
+        
+        # 1. Probs dos Modelos
+        try:
+            rf_probs = self.rf_model.predict_proba(features.reshape(1, -1))[0]
+            xgb_probs = self.xgb_model.predict_proba(features.reshape(1, -1))[0]
+        except Exception as e:
+            logger.error(f"Erro inferência RF/XGB: {e}")
+            return {"direction": "HOLD", "confidence": 0.0, "reason": "inference_error"}
+        
+        lstm_probs = np.array([0.0, 0.0, 1.0])  # Default HOLD
+        
+        if self.lstm_model and history_df is not None and len(history_df) >= 100:
+            try:
+                # Placeholder for LSTM input prep
+                pass
+            except Exception as e:
+                logger.error(f"Erro inferência LSTM: {e}")
+
+        # 2. Média Ponderada – prioriza RF/XGB (0.4 / 0.6); LSTM opcional
+        if np.array_equal(lstm_probs, [0.0, 0.0, 1.0]):
+            weights = np.array([0.40, 0.60, 0.0])
+        else:
+            weights = np.array([0.40, 0.60, 0.00])
+
+        all_probs = np.vstack([rf_probs, xgb_probs, lstm_probs])
+        final_probs = np.average(all_probs, axis=0, weights=weights)
+        
+        pred_idx = np.argmax(final_probs)
+        confidence = final_probs[pred_idx]
+        directions = ["BUY", "SELL", "HOLD"]
+        label = directions[pred_idx]
+        
+        # 3. Microestrutura (Filtros Adicionais)
+        vwap = indicators.get('vwap')
+        close_price = indicators.get('close')
+        
+        if vwap and close_price and label != "HOLD":
+            if label == "BUY" and close_price < vwap:
+                label = "HOLD"
+            elif label == "SELL" and close_price > vwap:
+                label = "HOLD"
+        
+        # 4. Confirmação de Fluxo (Order Flow) — Veto obrigatório
+        veto_reason = None
+        if label != "HOLD":
+            import utils
+            imbalance = utils.get_book_imbalance(symbol)
+            if label == "BUY" and imbalance is not None and float(imbalance) < -0.10:
+                label = "HOLD"
+                veto_reason = "OrderFlowVeto: Sellers>55%"
+        
+        # 5. Filtro de Regime de Mercado (Market Breath)
+        regime = check_market_regime()
+        threshold = self.base_threshold
+        if regime.get("safety_mode", False):
+            threshold = 0.88
+        if label in ("BUY", "SELL") and confidence < threshold:
+            label = "HOLD"
+        else:
+            threshold = self.get_dynamic_threshold(symbol)
+        approved = confidence >= threshold if label != "HOLD" else False
+
+        # Cache logic
+        try:
+            if not hasattr(self, "_cache"):
+                self._cache = {}
+            now_ts = float(__import__("time").time())
+            cache_key = f"{symbol}:{label}"
+            prev = self._cache.get(symbol)
+            if prev and (now_ts - prev.get("ts", 0.0) < 20.0):
+                if abs(prev.get("confidence", 0.0) - confidence) <= 0.05:
+                    label = prev.get("label", label)
+                    confidence = prev.get("confidence", confidence)
+                    threshold = prev.get("threshold", threshold)
+                    approved = confidence >= threshold if label != "HOLD" else False
+            self._cache[symbol] = {"ts": now_ts, "label": label, "confidence": confidence, "threshold": threshold}
+        except Exception:
+            pass
+
+        return {
+            "direction": label if approved else "HOLD",
+            "confidence": float(confidence),
+            "threshold": float(threshold),
+            "approved": approved,
+            "market_regime": regime,
+            "probabilities": {
+                "BUY": float(final_probs[0]),
+                "SELL": float(final_probs[1]),
+                "HOLD": float(final_probs[2])
+            },
+            "models_raw": {
+                "rf": int(np.argmax(rf_probs)),
+                "xgb": int(np.argmax(xgb_probs)),
+                "lstm": int(np.argmax(lstm_probs))
+            },
+            "veto_reason": veto_reason,
+            "is_future": __import__("utils").is_future(symbol)
+        }
+
+
 class FeatureEngineer:
     def compute_all(self, df: pd.DataFrame) -> pd.DataFrame:
         if df is None or len(df) < 20:
@@ -524,135 +634,3 @@ class MLTradingSystem:
         if len(self.online_learner.buffer) >= 20:
             self.online_learner.buffer.clear()
 
-    def predict(self, symbol: str, indicators: Dict[str, float], history_df: Optional[pd.DataFrame] = None) -> Dict[str, Any]:
-        """
-        Prediz sinal com ensemble ponderado (v5.2)
-        RF: 25% | XGB: 45% | LSTM: 30%
-        """
-        if not self.rf_model or not self.xgb_model:
-            logger.error("Modelos não carregados!")
-            return {"direction": "HOLD", "confidence": 0.0, "reason": "models_not_loaded"}
-
-        features = self.extract_features(symbol, indicators)
-        
-        # 1. Probs dos Modelos
-        try:
-            rf_probs = self.rf_model.predict_proba(features.reshape(1, -1))[0]
-            xgb_probs = self.xgb_model.predict_proba(features.reshape(1, -1))[0]
-        except Exception as e:
-            logger.error(f"Erro inferência RF/XGB: {e}")
-            return {"direction": "HOLD", "confidence": 0.0, "reason": "inference_error"}
-        
-        lstm_probs = np.array([0.0, 0.0, 1.0])  # Default HOLD
-        
-        if self.lstm_model and history_df is not None and len(history_df) >= 50:
-            try:
-                # Prepare LSTM input
-                # We need sequence of 50 candles with 16 features each
-                # This requires recalculating features for past candles which is expensive
-                # Simplified: Use recent history indicators if available or skip if complex
-                # For robust implementation, we'll skip LSTM if history not properly preppable
-                # OR construct a simplified input if feasible
-                
-                # IMPORTANT: Generating 50 timesteps of 16 features is heavy.
-                # If history_df has columns matching features... but it likely doesn't have sentiment/fund for every candle.
-                # FALLBACK strategy for speed: Use current features repeated (not ideal) or Skip LSTM
-                # Given constraint, we will skip LSTM if complex data prep is missing, 
-                # BUT user wants thread safety for existing logic. 
-                # I will assume there's a way, or just use RF/XGB if data missing.
-                
-                # Logic: If we cannot easily fetch 50 steps of features, we rely on RF/XGB (70% weight)
-                # But to honor the request, we wrap the call.
-                # Assuming history detection logic existed or will be added. 
-                # For now, let's just make it Safe.
-                
-                pass # placeholder for complex data prep
-                
-                # If we HAD the input:
-                # with _ml_lock:
-                #    lstm_probs = self.lstm_model.predict(lstm_input, verbose=0)[0]
-                
-            except Exception as e:
-                logger.error(f"Erro inferência LSTM: {e}")
-
-        # 2. Média Ponderada – prioriza RF/XGB (0.4 / 0.6); LSTM opcional
-        if np.array_equal(lstm_probs, [0.0, 0.0, 1.0]):
-            weights = np.array([0.40, 0.60, 0.0])
-        else:
-            weights = np.array([0.40, 0.60, 0.00])
-
-        all_probs = np.vstack([rf_probs, xgb_probs, lstm_probs])
-        final_probs = np.average(all_probs, axis=0, weights=weights)
-        
-        pred_idx = np.argmax(final_probs)
-        confidence = final_probs[pred_idx]
-        directions = ["BUY", "SELL", "HOLD"]
-        label = directions[pred_idx]
-        
-        # 3. Microestrutura (Filtros Adicionais)
-        vwap = indicators.get('vwap')
-        close_price = indicators.get('close')
-        
-        if vwap and close_price and label != "HOLD":
-            if label == "BUY" and close_price < vwap:
-                label = "HOLD"
-            elif label == "SELL" and close_price > vwap:
-                label = "HOLD"
-        
-        # 4. Confirmação de Fluxo (Order Flow) — Veto obrigatório
-        veto_reason = None
-        if label != "HOLD":
-            import utils
-            imbalance = utils.get_book_imbalance(symbol)
-            if label == "BUY" and imbalance is not None and float(imbalance) < -0.10:
-                label = "HOLD"
-                veto_reason = "OrderFlowVeto: Sellers>55%"
-        
-        # 5. Filtro de Regime de Mercado (Market Breath)
-        regime = check_market_regime()
-        threshold = self.base_threshold
-        if regime.get("safety_mode", False):
-            threshold = 0.88
-        if label in ("BUY", "SELL") and confidence < threshold:
-            label = "HOLD"
-        else:
-            threshold = self.get_dynamic_threshold(symbol)
-        approved = confidence >= threshold if label != "HOLD" else False
-
-        # ✅ Cache leve de 20s por símbolo (reduz jitter de sinais)
-        try:
-            if not hasattr(self, "_cache"):
-                self._cache = {}
-            now_ts = float(__import__("time").time())
-            cache_key = f"{symbol}:{label}"
-            prev = self._cache.get(symbol)
-            if prev and (now_ts - prev.get("ts", 0.0) < 20.0):
-                # Dentro da janela: mantém decisão anterior se confiança similar
-                if abs(prev.get("confidence", 0.0) - confidence) <= 0.05:
-                    label = prev.get("label", label)
-                    confidence = prev.get("confidence", confidence)
-                    threshold = prev.get("threshold", threshold)
-                    approved = confidence >= threshold if label != "HOLD" else False
-            self._cache[symbol] = {"ts": now_ts, "label": label, "confidence": confidence, "threshold": threshold}
-        except Exception:
-            pass
-
-        return {
-            "direction": label if approved else "HOLD",
-            "confidence": float(confidence),
-            "threshold": float(threshold),
-            "approved": approved,
-            "market_regime": regime,
-            "probabilities": {
-                "BUY": float(final_probs[0]),
-                "SELL": float(final_probs[1]),
-                "HOLD": float(final_probs[2])
-            },
-            "models_raw": {
-                "rf": int(np.argmax(rf_probs)),
-                "xgb": int(np.argmax(xgb_probs)),
-                "lstm": int(np.argmax(lstm_probs))
-            },
-            "veto_reason": veto_reason,
-            "is_future": __import__("utils").is_future(symbol)
-        }

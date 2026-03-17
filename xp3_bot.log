@@ -55296,3 +55296,194 @@ Traceback: Traceback (most recent call last):
 2026-03-16 09:10:39,935 - utils - INFO - ✅ Redis conectado - cache ativado
 2026-03-16 09:10:39,939 - utils - INFO - ✅ Dados anti-chop carregados
 2026-03-16 09:10:39,941 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 09:55:03,338 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 09:55:03,342 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 09:55:03,343 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 09:55:03,368 - PortfolioBot - INFO - [WDO$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-17 09:55:03,369 - PortfolioBot - INFO - [WDO$N] Inicializando Regimes Soberanos...
+2026-03-17 09:55:03,370 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WDO$N
+2026-03-17 09:55:06,518 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M5.
+2026-03-17 09:55:07,233 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M15.
+2026-03-17 09:55:07,960 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M30.
+2026-03-17 09:55:07,962 - PortfolioBot - INFO - [WIN$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-17 09:55:07,963 - PortfolioBot - INFO - [WIN$N] Inicializando Regimes Soberanos...
+2026-03-17 09:55:07,964 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WIN$N
+2026-03-17 09:55:08,288 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M5.
+2026-03-17 09:55:08,903 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M15.
+2026-03-17 09:55:09,715 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M30.
+2026-03-17 09:55:09,715 - PortfolioBot - INFO - 🚀 [1m[START][0m Portfolio Bot Iniciado (10 Símbolos Ativos)
+2026-03-17 09:55:09,751 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 100.00%. Kelly zerado. | [REDUCED] Protection Regime[0m
+2026-03-17 09:55:09,782 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([92m1[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.22 | [BLOCKED] No Trend Consensus[0m
+2026-03-17 09:56:00,936 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([92m1[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.22 | [BLOCKED] No Trend Consensus[0m
+2026-03-17 09:56:00,959 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 100.00%. Kelly zerado. | [REDUCED] Protection Regime[0m
+2026-03-17 09:56:52,083 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 09:56:52,109 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 09:56:52,114 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 09:56:52,308 - PortfolioBot - INFO - [WDO$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-17 09:56:52,310 - PortfolioBot - INFO - [WDO$N] Inicializando Regimes Soberanos...
+2026-03-17 09:56:52,313 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WDO$N
+2026-03-17 09:57:52,972 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M5.
+2026-03-17 09:57:54,530 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M15.
+2026-03-17 09:57:56,436 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M30.
+2026-03-17 09:57:56,468 - PortfolioBot - INFO - [WIN$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-17 09:57:56,484 - PortfolioBot - INFO - [WIN$N] Inicializando Regimes Soberanos...
+2026-03-17 09:57:56,489 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WIN$N
+2026-03-17 09:57:57,062 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M5.
+2026-03-17 09:57:57,905 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M15.
+2026-03-17 09:57:59,727 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M30.
+2026-03-17 09:57:59,728 - PortfolioBot - INFO - 🚀 [1m[START][0m Portfolio Bot Iniciado (10 Símbolos Ativos)
+2026-03-17 09:57:59,859 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([92m1[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.19 | [BLOCKED] No Trend Consensus[0m
+2026-03-17 09:57:59,860 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 100.00%. Kelly zerado. | [REDUCED] Protection Regime[0m
+2026-03-17 09:58:00,927 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 100.00%. Kelly zerado. | [REDUCED] Protection Regime[0m
+2026-03-17 09:58:00,947 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([92m1[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.19 | [BLOCKED] No Trend Consensus[0m
+2026-03-17 09:59:00,183 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([92m1[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.19 | [BLOCKED] No Trend Consensus[0m
+2026-03-17 09:59:00,209 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 100.00%. Kelly zerado. | [REDUCED] Protection Regime[0m
+2026-03-17 10:00:00,394 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 100.00%. Kelly zerado. | [REDUCED] Protection Regime[0m
+2026-03-17 10:00:00,397 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([92m1[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.22 | [BLOCKED] No Trend Consensus[0m
+2026-03-17 10:00:45,488 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 10:00:45,520 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 10:00:45,536 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 10:00:46,262 - ml_signals - INFO - ✅ RandomForest carregado
+2026-03-17 10:00:46,650 - ml_signals - INFO - ✅ XGBoost carregado
+2026-03-17 10:00:47,855 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2026-03-17 10:00:47,886 - ml_signals - INFO - ✅ LSTM carregado
+2026-03-17 10:00:48,152 - ml_signals - INFO - ✅ RandomForest carregado
+2026-03-17 10:00:48,199 - ml_signals - INFO - ✅ XGBoost carregado
+2026-03-17 10:00:48,537 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2026-03-17 10:00:48,598 - ml_signals - INFO - ✅ LSTM carregado
+2026-03-17 10:00:51,843 - news_filter - INFO - 📰 Polygon News: 0 notícias para WIN$N
+2026-03-17 10:00:54,390 - utils - INFO - 🔧 Forçando download completo de histórico para WIN$N...
+2026-03-17 10:00:54,391 - utils - WARNING - ⚠️ copy_rates_from ainda falhou para WIN$N. Tentando copy_rates_range...
+2026-03-17 10:00:56,448 - utils - WARNING - ⚠️ Último recurso para WIN$N: symbol_select + copy_rates_from por intervalo...
+2026-03-17 10:00:57,502 - utils - INFO - 🔮 Resolução matemática ativada para WIN: WINJ26 (Corretora Ocultou)
+2026-03-17 10:00:57,506 - utils - WARNING - ⚠️ MT5 Falhou em WIN$N. Acionando Polygon.io fallback...
+2026-03-17 10:01:00,914 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 100.00%. Kelly zerado. | [REDUCED] Protection Regime[0m
+2026-03-17 10:01:00,915 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([92m1[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.16 | [BLOCKED] No Trend Consensus[0m
+2026-03-17 10:01:01,250 - news_filter - INFO - 📰 Polygon News: 0 notícias para WIN$N
+2026-03-17 10:01:03,663 - utils - INFO - 🔧 Forçando download completo de histórico para WIN$N...
+2026-03-17 10:01:03,664 - utils - WARNING - ⚠️ copy_rates_from ainda falhou para WIN$N. Tentando copy_rates_range...
+2026-03-17 10:01:05,706 - utils - WARNING - ⚠️ Último recurso para WIN$N: symbol_select + copy_rates_from por intervalo...
+2026-03-17 10:01:06,720 - utils - INFO - 🔮 Resolução matemática ativada para WIN: WINJ26 (Corretora Ocultou)
+2026-03-17 10:01:06,723 - utils - WARNING - ⚠️ MT5 Falhou em WIN$N. Acionando Polygon.io fallback...
+2026-03-17 10:02:08,460 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 10:02:08,464 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 10:02:08,466 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 10:02:08,538 - PortfolioBot - INFO - [WDO$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-17 10:02:08,541 - PortfolioBot - INFO - [WDO$N] Inicializando Regimes Soberanos...
+2026-03-17 10:02:08,548 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WDO$N
+2026-03-17 10:02:16,976 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M5.
+2026-03-17 10:02:18,421 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M15.
+2026-03-17 10:02:20,400 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M30.
+2026-03-17 10:02:20,402 - PortfolioBot - INFO - [WIN$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-17 10:02:20,403 - PortfolioBot - INFO - [WIN$N] Inicializando Regimes Soberanos...
+2026-03-17 10:02:20,433 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WIN$N
+2026-03-17 10:02:20,864 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M5.
+2026-03-17 10:02:24,234 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M15.
+2026-03-17 10:02:25,099 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M30.
+2026-03-17 10:02:25,100 - PortfolioBot - INFO - 🚀 [1m[START][0m Portfolio Bot Iniciado (10 Símbolos Ativos)
+2026-03-17 10:02:26,336 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 96.61%. Kelly zerado. | [BLOCK] Sideways Regime[0m
+2026-03-17 10:02:26,366 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [92m🟢 COMPRA[0m  | 📊 Regimes: M5([92m1[0m), M15([92m1[0m) | 📦 Lote: [1m 1[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.16[0m
+2026-03-17 10:02:26,442 - ExecutionEngine - WARNING - [WARN] Ordem rejeitada! Retcode: 10017
+2026-03-17 10:03:00,777 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [92m🟢 COMPRA[0m  | 📊 Regimes: M5([92m1[0m), M15([92m1[0m) | 📦 Lote: [1m 1[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.16[0m
+2026-03-17 10:03:00,785 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 94.52%. Kelly zerado. | [BLOCK] Sideways Regime[0m
+2026-03-17 10:03:00,786 - ExecutionEngine - WARNING - [WARN] Ordem rejeitada! Retcode: 10017
+2026-03-17 10:04:00,949 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 94.52%. Kelly zerado. | [BLOCK] Sideways Regime[0m
+2026-03-17 10:04:00,960 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [92m🟢 COMPRA[0m  | 📊 Regimes: M5([92m1[0m), M15([92m1[0m) | 📦 Lote: [1m 1[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.16[0m
+2026-03-17 10:04:00,961 - ExecutionEngine - WARNING - [WARN] Ordem rejeitada! Retcode: 10017
+2026-03-17 10:04:42,229 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 10:04:42,231 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 10:04:42,233 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 10:05:00,299 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [92m🟢 COMPRA[0m  | 📊 Regimes: M5([92m1[0m), M15([92m1[0m) | 📦 Lote: [1m 1[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.17[0m
+2026-03-17 10:05:00,316 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 94.99%. Kelly zerado. | [BLOCK] Sideways Regime[0m
+2026-03-17 10:05:00,316 - ExecutionEngine - WARNING - [WARN] Ordem rejeitada! Retcode: 10017
+2026-03-17 10:06:01,028 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 94.99%. Kelly zerado. | [BLOCK] Sideways Regime[0m
+2026-03-17 10:06:01,082 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [92m🟢 COMPRA[0m  | 📊 Regimes: M5([92m1[0m), M15([92m1[0m) | 📦 Lote: [1m 1[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.15[0m
+2026-03-17 10:06:01,083 - ExecutionEngine - WARNING - [WARN] Ordem rejeitada! Retcode: 10017
+2026-03-17 10:07:00,299 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 94.99%. Kelly zerado. | [BLOCK] Sideways Regime[0m
+2026-03-17 10:07:00,310 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [92m🟢 COMPRA[0m  | 📊 Regimes: M5([92m1[0m), M15([92m1[0m) | 📦 Lote: [1m 1[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.13[0m
+2026-03-17 10:07:00,310 - ExecutionEngine - WARNING - [WARN] Ordem rejeitada! Retcode: 10017
+2026-03-17 10:07:14,146 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 10:07:14,157 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 10:07:14,192 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 10:07:20,007 - utils - INFO - 🔮 Resolução matemática ativada para WI: WIH26 (Corretora Ocultou)
+2026-03-17 10:08:08,097 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 10:08:08,102 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 10:08:08,104 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 10:08:08,175 - utils - INFO - 🔮 Resolução matemática ativada para WI: WIH26 (Corretora Ocultou)
+2026-03-17 10:08:31,636 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 10:08:31,639 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 10:08:31,641 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 10:08:31,680 - PortfolioBot - INFO - [WDO$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-17 10:08:31,680 - PortfolioBot - INFO - [WDO$N] Inicializando Regimes Soberanos...
+2026-03-17 10:08:31,686 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WDO$N
+2026-03-17 10:08:38,973 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M5.
+2026-03-17 10:08:39,836 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M15.
+2026-03-17 10:08:40,801 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M30.
+2026-03-17 10:08:40,806 - PortfolioBot - INFO - [WIN$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-17 10:08:40,806 - PortfolioBot - INFO - [WIN$N] Inicializando Regimes Soberanos...
+2026-03-17 10:08:40,808 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WIN$N
+2026-03-17 10:08:41,142 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M5.
+2026-03-17 10:08:41,931 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M15.
+2026-03-17 10:08:45,512 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M30.
+2026-03-17 10:08:45,514 - PortfolioBot - INFO - 🚀 [1m[START][0m Portfolio Bot Iniciado (10 Símbolos Ativos)
+2026-03-17 10:08:45,615 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 100.00%. Kelly zerado. | [REDUCED] Protection Regime[0m
+2026-03-17 10:08:45,619 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [92m🟢 COMPRA[0m  | 📊 Regimes: M5([92m1[0m), M15([92m1[0m) | 📦 Lote: [1m 1[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.12[0m
+2026-03-17 10:08:45,633 - ExecutionEngine - WARNING - [WARN] Ordem rejeitada! Retcode: 10017
+2026-03-17 10:08:53,474 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 10:08:53,481 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 10:08:53,486 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 10:09:00,897 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 100.00%. Kelly zerado. | [REDUCED] Protection Regime[0m
+2026-03-17 10:09:00,898 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [92m🟢 COMPRA[0m  | 📊 Regimes: M5([92m1[0m), M15([92m1[0m) | 📦 Lote: [1m 1[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.12[0m
+2026-03-17 10:09:00,899 - ExecutionEngine - WARNING - [WARN] Ordem rejeitada! Retcode: 10017
+2026-03-17 10:09:47,870 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 10:09:47,876 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 10:09:47,879 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 10:09:47,938 - PortfolioBot - INFO - [WDO$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-17 10:09:47,939 - PortfolioBot - INFO - [WDO$N] Inicializando Regimes Soberanos...
+2026-03-17 10:09:47,943 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WDO$N
+2026-03-17 10:09:55,468 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 10:09:55,471 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 10:09:55,472 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 10:10:33,156 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 10:10:33,161 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 10:10:33,163 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 10:10:33,194 - PortfolioBot - INFO - [WDO$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-17 10:10:33,195 - PortfolioBot - INFO - [WDO$N] Inicializando Regimes Soberanos...
+2026-03-17 10:10:33,196 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WDO$N
+2026-03-17 10:10:37,811 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M5.
+2026-03-17 10:10:38,579 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M15.
+2026-03-17 10:10:39,614 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M30.
+2026-03-17 10:10:39,616 - PortfolioBot - INFO - [WIN$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-17 10:10:39,616 - PortfolioBot - INFO - [WIN$N] Inicializando Regimes Soberanos...
+2026-03-17 10:10:39,618 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WIN$N
+2026-03-17 10:10:39,980 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M5.
+2026-03-17 10:10:40,565 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M15.
+2026-03-17 10:10:41,427 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M30.
+2026-03-17 10:10:41,429 - PortfolioBot - INFO - 🚀 [1m[START][0m Portfolio Bot Iniciado (10 Símbolos Ativos)
+2026-03-17 10:10:41,500 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [92m🟢 COMPRA[0m  | 📊 Regimes: M5([92m1[0m), M15([92m1[0m) | 📦 Lote: [1m 1[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.30[0m
+2026-03-17 10:10:41,504 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 100.00%. Kelly zerado. | [REDUCED] Protection Regime[0m
+2026-03-17 10:10:41,505 - ExecutionEngine - WARNING - [WARN] Ordem rejeitada! Retcode: 10017
+2026-03-17 10:11:00,627 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [92m🟢 COMPRA[0m  | 📊 Regimes: M5([92m1[0m), M15([92m1[0m) | 📦 Lote: [1m 1[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.30[0m
+2026-03-17 10:11:00,633 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m | [90mExpectativa Negativa (WR:0.9%). Confiança IA: 100.00%. Kelly zerado. | [REDUCED] Protection Regime[0m
+2026-03-17 10:11:00,634 - ExecutionEngine - WARNING - [WARN] Ordem rejeitada! Retcode: 10017
+2026-03-17 10:11:54,928 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 10:11:54,931 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 10:11:54,932 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 10:12:14,481 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-17 10:12:14,486 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-17 10:12:14,487 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-17 10:12:14,587 - PortfolioBot - INFO - [WDO$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-17 10:12:14,624 - PortfolioBot - INFO - [WDO$N] Inicializando Regimes Soberanos...
+2026-03-17 10:12:14,646 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WDOJ26
+2026-03-17 10:12:18,820 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M5.
+2026-03-17 10:12:19,070 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M15.
+2026-03-17 10:12:19,126 - PortfolioBot - WARNING - [WARN] Ignorando WDO$N devido a falha na inicialização.
+2026-03-17 10:12:19,159 - PortfolioBot - INFO - [WIN$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-17 10:12:19,160 - PortfolioBot - INFO - [WIN$N] Inicializando Regimes Soberanos...
+2026-03-17 10:12:19,164 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WINJ26
+2026-03-17 10:12:19,786 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M5.
+2026-03-17 10:12:20,273 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M15.
+2026-03-17 10:12:21,014 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M30.
+2026-03-17 10:12:21,014 - PortfolioBot - INFO - 🚀 [1m[START][0m Portfolio Bot Iniciado (10 Símbolos Ativos)
+2026-03-17 10:12:21,039 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([92m1[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.28 | [BLOCKED] No Trend Consensus[0m
+2026-03-17 10:13:00,197 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([92m1[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m | [90mKelly_Opt: 30.29% | Confiança IA: 100.00% | WR: 60.7% | Lote_Bruto: 1.28 | [BLOCKED] No Trend Consensus[0m

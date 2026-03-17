@@ -297,6 +297,7 @@ _state_manager = StateManager()
 current_trading_day: Optional[date] = None
 daily_cycle_completed = False
 daily_report_sent = False
+mentorship_report_sent = False
 # =====================
 # Telegram (fallback seguro)
 # =====================
@@ -1309,7 +1310,7 @@ def handle_daily_cycle():
     """
     ✅ VERSÃO REFORÇADA: Garante fechamento com múltiplas tentativas
     """
-    global current_trading_day, daily_cycle_completed, daily_report_sent
+    global current_trading_day, daily_cycle_completed, daily_report_sent, mentorship_report_sent
     global equity_inicio_dia, daily_max_equity, last_reset_day
 
     now = datetime.now()
@@ -1325,6 +1326,7 @@ def handle_daily_cycle():
         current_trading_day = today
         daily_cycle_completed = False
         daily_report_sent = False
+        mentorship_report_sent = False
 
         with utils.mt5_lock:
             acc = mt5.account_info()
@@ -1480,6 +1482,23 @@ def handle_daily_cycle():
             logger.info("✅ Relatório enviado com sucesso")
         except Exception as e:
             logger.error(f"❌ Erro ao enviar relatório: {e}")
+
+    # ============================================
+    # 4️⃣ ENVIA MENTORIA DIÁRIA (17:00 BRT)
+    # ============================================
+    if not mentorship_report_sent:
+        try:
+            from mentorship_reporter import mentorship_reporter
+            ment_time_str = getattr(config, "MENTORSHIP_REPORT_TIME", "17:00")
+            ment_time = datetime.strptime(ment_time_str, "%H:%M").time()
+            
+            if now.time() >= ment_time:
+                logger.info("🎓 Iniciando envio da Mentoria Diária...")
+                if mentorship_reporter.send_report():
+                    mentorship_report_sent = True
+                    logger.info("✅ Mentoria Diária enviada com sucesso")
+        except Exception as e:
+            logger.error(f"Erro no gatilho da Mentoria: {e}")
 
         # 🆕 Relatório de Rejeições (Console e Log)
         try:
@@ -4020,7 +4039,7 @@ def select_trading_strategy(symbol: str) -> str:
     - ML habilitado → ML_ENSEMBLE (sobrepõe)
     """
     try:
-        df = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_M15, 50)
+        df = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_M15, 100)
         
         if df is None or len(df) < 30:
             return "TREND_FOLLOWING"  # Padrão

@@ -1,125 +1,41 @@
-2026-03-13 11:31:33,811 | INFO | ✅ Redis conectado - cache ativado
-2026-03-13 11:31:33,822 | INFO | ✅ Dados anti-chop carregados
-2026-03-13 11:31:33,834 | INFO | 🔄 Novo dia detectado - resetando limites
-2026-03-13 11:31:45,033 | INFO | 🚀 Iniciando Screener Diário de Ativos...
-2026-03-13 11:31:45,035 | INFO | 🔍 [find_and_enable_active_futures] Processando 7 padrões...
-2026-03-13 11:31:45,036 | INFO | 📡 [MT5] Tentando conexão prioritária via path: C:\MetaTrader 5 Terminal\terminal64.exe
-2026-03-13 11:31:45,099 | INFO | 🛡️ [MT5] Conectado e validado: ClearInvestimentos-DEMO
-2026-03-13 11:31:45,100 | INFO | 🎯 [Screener] Processando padrão: WDO$N
-2026-03-13 11:31:45,110 | INFO | ✅ [Screener] WDO$N -> WDO$N
-2026-03-13 11:31:45,282 | INFO | 🎯 [Screener] Processando padrão: DOL$N
-2026-03-13 11:31:45,293 | INFO | ✅ [Screener] DOL$N -> DOL$N
-2026-03-13 11:31:45,318 | INFO | 🎯 [Screener] Processando padrão: WIN$N
-2026-03-13 11:31:45,417 | INFO | ✅ [Screener] WIN$N -> WIN$N
-2026-03-13 11:31:45,433 | INFO | 🎯 [Screener] Processando padrão: BIT$N
-2026-03-13 11:31:47,312 | INFO | ✅ [Screener] BIT$N -> BIT$N
-2026-03-13 11:31:47,331 | INFO | 🎯 [Screener] Processando padrão: ICF$N
-2026-03-13 11:31:47,420 | INFO | ✅ [Screener] ICF$N -> ICF$N
-2026-03-13 11:31:47,453 | INFO | 🎯 [Screener] Processando padrão: CCM$N
-2026-03-13 11:31:47,469 | INFO | ✅ [Screener] CCM$N -> CCM$N
-2026-03-13 11:31:47,478 | INFO | 🎯 [Screener] Processando padrão: IND$N
-2026-03-13 11:31:48,576 | INFO | ✅ [Screener] IND$N -> IND$N
-2026-03-13 11:31:48,577 | INFO | 🏁 [find_and_enable_active_futures] Concluído. 7 ativos mapeados.
-2026-03-13 11:31:48,577 | INFO | ✅ Ativo para o dia: WDO$N -> WDO$N
-2026-03-13 11:31:48,578 | INFO | ✅ Ativo para o dia: DOL$N -> DOL$N
-2026-03-13 11:31:48,578 | INFO | ✅ Ativo para o dia: WIN$N -> WIN$N
-2026-03-13 11:31:48,579 | INFO | ✅ Ativo para o dia: BIT$N -> BIT$N
-2026-03-13 11:31:48,579 | INFO | ✅ Ativo para o dia: ICF$N -> ICF$N
-2026-03-13 11:31:48,580 | INFO | ✅ Ativo para o dia: CCM$N -> CCM$N
-2026-03-13 11:31:48,580 | INFO | ✅ Ativo para o dia: IND$N -> IND$N
-2026-03-13 11:31:48,581 | INFO | ✅ Screener Diário concluído.
-2026-03-13 11:31:56,129 | INFO | Bot do Telegram inicializado com sucesso
-2026-03-13 11:32:32,452 | INFO | ✅ Redis conectado - cache ativado
-2026-03-13 11:32:32,454 | INFO | ✅ Dados anti-chop carregados
-2026-03-13 11:32:32,456 | INFO | 🔄 Novo dia detectado - resetando limites
-2026-03-13 11:32:37,981 | INFO | 🚀 Iniciando Screener Diário de Ativos...
-2026-03-13 11:32:37,985 | INFO | 🔍 [find_and_enable_active_futures] Processando 6 padrões...
-2026-03-13 11:32:37,986 | INFO | 📡 [MT5] Tentando conexão prioritária via path: C:\MetaTrader 5 Terminal\terminal64.exe
-2026-03-13 11:32:37,993 | INFO | 🛡️ [MT5] Conectado e validado: ClearInvestimentos-DEMO
-2026-03-13 11:32:37,993 | INFO | 🎯 [Screener] Processando padrão: WDO$N
-2026-03-13 11:32:38,003 | INFO | ✅ [Screener] WDO$N -> WDO$N
-2026-03-13 11:32:38,003 | INFO | 🎯 [Screener] Processando padrão: WIN$N
-2026-03-13 11:32:38,008 | INFO | ✅ [Screener] WIN$N -> WIN$N
-2026-03-13 11:32:38,008 | INFO | 🎯 [Screener] Processando padrão: BIT$N
-2026-03-13 11:32:38,035 | INFO | ✅ [Screener] BIT$N -> BIT$N
-2026-03-13 11:32:38,060 | INFO | 🎯 [Screener] Processando padrão: ICF$N
-2026-03-13 11:32:38,068 | INFO | ✅ [Screener] ICF$N -> ICF$N
-2026-03-13 11:32:38,069 | INFO | 🎯 [Screener] Processando padrão: CCM$N
-2026-03-13 11:32:38,072 | INFO | ✅ [Screener] CCM$N -> CCM$N
-2026-03-13 11:32:38,073 | INFO | 🎯 [Screener] Processando padrão: IND$N
-2026-03-13 11:32:38,076 | INFO | ✅ [Screener] IND$N -> IND$N
-2026-03-13 11:32:38,082 | INFO | 🏁 [find_and_enable_active_futures] Concluído. 6 ativos mapeados.
-2026-03-13 11:32:38,083 | INFO | ✅ Ativo para o dia: WDO$N -> WDO$N
-2026-03-13 11:32:38,084 | INFO | ✅ Ativo para o dia: WIN$N -> WIN$N
-2026-03-13 11:32:38,086 | INFO | ✅ Ativo para o dia: BIT$N -> BIT$N
-2026-03-13 11:32:38,087 | INFO | ✅ Ativo para o dia: ICF$N -> ICF$N
-2026-03-13 11:32:38,087 | INFO | ✅ Ativo para o dia: CCM$N -> CCM$N
-2026-03-13 11:32:38,088 | INFO | ✅ Ativo para o dia: IND$N -> IND$N
-2026-03-13 11:32:38,088 | INFO | ✅ Screener Diário concluído.
-2026-03-13 11:32:39,899 | INFO | Bot do Telegram inicializado com sucesso
-2026-03-13 11:33:20,542 | INFO | ✅ Redis conectado - cache ativado
-2026-03-13 11:33:20,547 | INFO | ✅ Dados anti-chop carregados
-2026-03-13 11:33:20,556 | INFO | 🔄 Novo dia detectado - resetando limites
-2026-03-13 11:33:26,175 | INFO | 🚀 Iniciando Screener Diário de Ativos...
-2026-03-13 11:33:26,177 | INFO | 🔍 [find_and_enable_active_futures] Processando 5 padrões...
-2026-03-13 11:33:26,178 | INFO | 📡 [MT5] Tentando conexão prioritária via path: C:\MetaTrader 5 Terminal\terminal64.exe
-2026-03-13 11:33:27,458 | INFO | 🛡️ [MT5] Conectado e validado: ClearInvestimentos-DEMO
-2026-03-13 11:33:27,459 | INFO | 🎯 [Screener] Processando padrão: WDO$N
-2026-03-13 11:33:27,465 | INFO | ✅ [Screener] WDO$N -> WDO$N
-2026-03-13 11:33:27,476 | INFO | 🎯 [Screener] Processando padrão: WIN$N
-2026-03-13 11:33:27,493 | INFO | ✅ [Screener] WIN$N -> WIN$N
-2026-03-13 11:33:27,499 | INFO | 🎯 [Screener] Processando padrão: BIT$N
-2026-03-13 11:33:27,622 | INFO | ✅ [Screener] BIT$N -> BIT$N
-2026-03-13 11:33:29,035 | INFO | 🎯 [Screener] Processando padrão: ICF$N
-2026-03-13 11:33:29,129 | INFO | ✅ [Screener] ICF$N -> ICF$N
-2026-03-13 11:33:29,139 | INFO | 🎯 [Screener] Processando padrão: CCM$N
-2026-03-13 11:33:29,259 | INFO | ✅ [Screener] CCM$N -> CCM$N
-2026-03-13 11:33:29,260 | INFO | 🏁 [find_and_enable_active_futures] Concluído. 5 ativos mapeados.
-2026-03-13 11:33:29,261 | INFO | ✅ Ativo para o dia: WDO$N -> WDO$N
-2026-03-13 11:33:29,262 | INFO | ✅ Ativo para o dia: WIN$N -> WIN$N
-2026-03-13 11:33:29,262 | INFO | ✅ Ativo para o dia: BIT$N -> BIT$N
-2026-03-13 11:33:29,263 | INFO | ✅ Ativo para o dia: ICF$N -> ICF$N
-2026-03-13 11:33:29,263 | INFO | ✅ Ativo para o dia: CCM$N -> CCM$N
-2026-03-13 11:33:29,264 | INFO | ✅ Screener Diário concluído.
-2026-03-13 11:33:31,880 | INFO | Bot do Telegram inicializado com sucesso
-2026-03-13 11:39:18,870 | INFO | ✅ Redis conectado - cache ativado
-2026-03-13 11:39:18,872 | INFO | ✅ Dados anti-chop carregados
-2026-03-13 11:39:18,873 | INFO | 🔄 Novo dia detectado - resetando limites
-2026-03-13 11:39:24,518 | INFO | 🚀 Iniciando Screener Diário de Ativos...
-2026-03-13 11:39:24,519 | INFO | 🔍 [find_and_enable_active_futures] Processando 5 padrões...
-2026-03-13 11:39:24,520 | INFO | 📡 [MT5] Tentando conexão prioritária via path: C:\MetaTrader 5 Terminal\terminal64.exe
-2026-03-13 11:39:24,527 | INFO | 🛡️ [MT5] Conectado e validado: ClearInvestimentos-DEMO
-2026-03-13 11:39:24,528 | INFO | 🎯 [Screener] Processando padrão: WDO$N
-2026-03-13 11:39:24,536 | INFO | ✅ [Screener] WDO$N -> WDO$N
-2026-03-13 11:39:24,539 | INFO | 🎯 [Screener] Processando padrão: WIN$N
-2026-03-13 11:39:24,544 | INFO | ✅ [Screener] WIN$N -> WIN$N
-2026-03-13 11:39:24,546 | INFO | 🎯 [Screener] Processando padrão: BIT$N
-2026-03-13 11:39:24,552 | INFO | ✅ [Screener] BIT$N -> BIT$N
-2026-03-13 11:39:24,558 | INFO | 🎯 [Screener] Processando padrão: ICF$N
-2026-03-13 11:39:24,564 | INFO | ✅ [Screener] ICF$N -> ICF$N
-2026-03-13 11:39:24,568 | INFO | 🎯 [Screener] Processando padrão: CCM$N
-2026-03-13 11:39:24,571 | INFO | ✅ [Screener] CCM$N -> CCM$N
-2026-03-13 11:39:24,572 | INFO | 🏁 [find_and_enable_active_futures] Concluído. 5 ativos mapeados.
-2026-03-13 11:39:24,573 | INFO | ✅ Ativo para o dia: WDO$N -> WDO$N
-2026-03-13 11:39:24,573 | INFO | ✅ Ativo para o dia: WIN$N -> WIN$N
-2026-03-13 11:39:24,574 | INFO | ✅ Ativo para o dia: BIT$N -> BIT$N
-2026-03-13 11:39:24,575 | INFO | ✅ Ativo para o dia: ICF$N -> ICF$N
-2026-03-13 11:39:24,576 | INFO | ✅ Ativo para o dia: CCM$N -> CCM$N
-2026-03-13 11:39:24,576 | INFO | ✅ Screener Diário concluído.
-2026-03-13 11:39:26,126 | INFO | Bot do Telegram inicializado com sucesso
-2026-03-13 11:42:55,036 | INFO | ✅ Redis conectado - cache ativado
-2026-03-13 11:42:55,038 | INFO | ✅ Dados anti-chop carregados
-2026-03-13 11:42:55,040 | INFO | 🔄 Novo dia detectado - resetando limites
-2026-03-13 11:43:00,128 | INFO | 🚀 Iniciando Screener Diário de Ativos...
-2026-03-13 11:43:00,129 | INFO | 🔍 [find_and_enable_active_futures] Processando 2 padrões...
-2026-03-13 11:43:00,129 | INFO | 📡 [MT5] Tentando conexão prioritária via path: C:\MetaTrader 5 Terminal\terminal64.exe
-2026-03-13 11:43:00,214 | INFO | 🛡️ [MT5] Conectado e validado: ClearInvestimentos-DEMO
-2026-03-13 11:43:00,215 | INFO | 🎯 [Screener] Processando padrão: WDO$N
-2026-03-13 11:43:00,221 | INFO | ✅ [Screener] WDO$N -> WDO$N
-2026-03-13 11:43:00,223 | INFO | 🎯 [Screener] Processando padrão: WIN$N
-2026-03-13 11:43:00,234 | INFO | ✅ [Screener] WIN$N -> WIN$N
-2026-03-13 11:43:00,235 | INFO | 🏁 [find_and_enable_active_futures] Concluído. 2 ativos mapeados.
-2026-03-13 11:43:00,236 | INFO | ✅ Ativo para o dia: WDO$N -> WDO$N
-2026-03-13 11:43:00,237 | INFO | ✅ Ativo para o dia: WIN$N -> WIN$N
-2026-03-13 11:43:00,237 | INFO | ✅ Screener Diário concluído.
-2026-03-13 11:43:01,792 | INFO | Bot do Telegram inicializado com sucesso
+2026-03-17 09:44:06,922 | INFO | ✅ Redis conectado - cache ativado
+2026-03-17 09:44:06,930 | INFO | ✅ Dados anti-chop carregados
+2026-03-17 09:44:06,931 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-03-17 09:44:13,006 | INFO | 🚀 Iniciando Screener Diário de Ativos...
+2026-03-17 09:44:13,007 | INFO | 🔍 [find_and_enable_active_futures] Processando 2 padrões...
+2026-03-17 09:44:13,007 | INFO | 📡 [MT5] Tentando conexão prioritária via path: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-03-17 09:44:13,011 | INFO | 🛡️ [MT5] Conectado e validado: ClearInvestimentos-DEMO
+2026-03-17 09:44:13,011 | INFO | 🎯 [Screener] Processando padrão: WDO$N
+2026-03-17 09:44:13,015 | INFO | ✅ [Screener] WDO$N -> WDO$N
+2026-03-17 09:44:13,016 | INFO | 🎯 [Screener] Processando padrão: WIN$N
+2026-03-17 09:44:13,020 | INFO | ✅ [Screener] WIN$N -> WIN$N
+2026-03-17 09:44:13,021 | INFO | 🏁 [find_and_enable_active_futures] Concluído. 2 ativos mapeados.
+2026-03-17 09:44:13,022 | INFO | ✅ Ativo para o dia: WDO$N -> WDO$N
+2026-03-17 09:44:13,023 | INFO | ✅ Ativo para o dia: WIN$N -> WIN$N
+2026-03-17 09:44:13,023 | INFO | ✅ Screener Diário concluído.
+2026-03-17 09:44:15,621 | INFO | Bot do Telegram inicializado com sucesso
+2026-03-17 09:44:59,347 | INFO | ✅ RandomForest carregado
+2026-03-17 09:44:59,843 | INFO | ✅ XGBoost carregado
+2026-03-17 09:45:01,148 | WARNING | Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2026-03-17 09:45:01,157 | INFO | ✅ LSTM carregado
+2026-03-17 09:57:02,565 | INFO | ✅ Redis conectado - cache ativado
+2026-03-17 09:57:02,782 | INFO | ✅ Dados anti-chop carregados
+2026-03-17 09:57:02,789 | INFO | 🔄 Novo dia detectado - resetando limites
+2026-03-17 09:57:48,937 | INFO | 🚀 Iniciando Screener Diário de Ativos...
+2026-03-17 09:57:48,938 | INFO | 🔍 [find_and_enable_active_futures] Processando 2 padrões...
+2026-03-17 09:57:48,939 | INFO | 📡 [MT5] Tentando conexão prioritária via path: C:\MetaTrader 5 Terminal\terminal64.exe
+2026-03-17 09:57:48,962 | INFO | 🛡️ [MT5] Conectado e validado: ClearInvestimentos-DEMO
+2026-03-17 09:57:48,966 | INFO | 🎯 [Screener] Processando padrão: WDO$N
+2026-03-17 09:57:48,980 | INFO | ✅ [Screener] WDO$N -> WDO$N
+2026-03-17 09:57:48,988 | INFO | 🎯 [Screener] Processando padrão: WIN$N
+2026-03-17 09:57:49,005 | INFO | ✅ [Screener] WIN$N -> WIN$N
+2026-03-17 09:57:49,007 | INFO | 🏁 [find_and_enable_active_futures] Concluído. 2 ativos mapeados.
+2026-03-17 09:57:49,013 | INFO | ✅ Ativo para o dia: WDO$N -> WDO$N
+2026-03-17 09:57:49,014 | INFO | ✅ Ativo para o dia: WIN$N -> WIN$N
+2026-03-17 09:57:49,015 | INFO | ✅ Screener Diário concluído.
+2026-03-17 09:57:54,214 | INFO | Bot do Telegram inicializado com sucesso
+2026-03-17 09:58:22,657 | INFO | ✅ RandomForest carregado
+2026-03-17 09:58:22,916 | INFO | ✅ XGBoost carregado
+2026-03-17 09:58:24,152 | WARNING | Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2026-03-17 09:58:24,456 | INFO | ✅ LSTM carregado
+2026-03-17 09:58:29,321 | INFO | 📰 Polygon News: 0 notícias para WIN$N

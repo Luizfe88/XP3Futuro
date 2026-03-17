@@ -340,7 +340,7 @@ def resolve_symbol(symbol: str) -> str:
         return active_map[s + "$N"]
     
     # 3. Extrai o base (ex: WIN de WIN$N)
-    base = "".join([c for c in s.replace("$", "").replace("N", "") if c.isalpha()])
+    base = "".join([c for c in s.split("$")[0] if c.isalpha()])
     if not base: return s
 
     # 3.1 🔄 HOTFIX: Mapeia bases de índices contínuos B3 que falham na corretora

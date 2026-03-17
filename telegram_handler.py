@@ -136,6 +136,17 @@ def handle_aprendizado(message):
     except Exception as e:
         logger.error(f"Erro no /aprendizado: {e}", exc_info=True)
         bot.reply_to(message, "❌ Ocorreu um erro ao gerar o relatório de aprendizado.", parse_mode="HTML")
+
+@bot.message_handler(commands=['mentoria'])
+def handle_mentoria(message):
+    bot.reply_to(message, "⏳ <i>Gerando Mentoria Diária (Aprendizado + Didática)...</i>", parse_mode="HTML")
+    try:
+        from mentorship_reporter import mentorship_reporter
+        # Envia para o chat que solicitou
+        mentorship_reporter.send_report(chat_id=message.chat.id)
+    except Exception as e:
+        logger.error(f"Erro no /mentoria: {e}", exc_info=True)
+        bot.reply_to(message, "❌ Ocorreu um erro ao gerar a mentoria.", parse_mode="HTML")
 @bot.message_handler(commands=['health'])
 def handle_health(message):
     """
