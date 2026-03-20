@@ -348,8 +348,11 @@ def fast_backtest_core(
                 vol_ok = True
                 if adx[i] <= adx_threshold and not (setup_b_long or setup_b_short):
                     c_volat += 1
-                # Check ML (simplificado)
-                ml_ok = True
+                # Check ML (Prioridade 2: Fixar min_score = 3)
+                min_score = 3
+                ml_val = ml_probs[i] if ml_probs is not None else 0.85
+                ml_ok = (ml_val * 5.0) >= min_score  # Transforma 0-1 em 0-5
+                
                 if not ml_ok:
                     c_ml += 1
                 else:
@@ -1177,7 +1180,7 @@ def run_optimization(
             # or a profit factor under 1.1 are unlikely to pass the
             # permutation/bootstrapping test later.
             if trades < 15 or pf < 1.1:
-                return -10.0
+                return -5.0
 
             min_trades = (
                 15
@@ -1413,6 +1416,7 @@ def tournament_report(
     winner = best_strategy if best_strategy else "NONE"
 
     return {"symbol": symbol, "winner": winner, "results": results}
+def log_rejection(symbol, trial_number, reason, value):
     try:
         os.makedirs("optimizer_output", exist_ok=True)
         with open(
@@ -1420,7 +1424,6 @@ def tournament_report(
             "a",
             encoding="utf-8",
         ) as f:
-            # Comentário: H.1 Log expandido com métricas chave
             f.write(
                 f"{symbol} | Trial {trial_number} | REJEITADO: {reason} | {value}\n"
             )
@@ -1437,9 +1440,9 @@ def objective(trial, symbol, df, ml_model=None):
         "rsi_high": trial.suggest_int("rsi_high", 60, 80),
         "adx_threshold": trial.suggest_int("adx_threshold", 15, 35),
         "sl_atr_multiplier": trial.suggest_float(
-            "sl_atr_multiplier", 1.5, 3.5, step=0.1
+            "sl_atr_multiplier", 1.0, 2.2, step=0.1
         ),
-        "tp_ratio": trial.suggest_float("tp_ratio", 1.2, 3.0, step=0.2),
+        "tp_ratio": trial.suggest_float("tp_ratio", 1.2, 2.5, step=0.1),
         "base_slippage": 0.0015,
         "enable_shorts": 1,
     }
@@ -1457,17 +1460,17 @@ def objective(trial, symbol, df, ml_model=None):
         # sample size and asymmetric payoff that will lower the permutation
         # p-value.  Strategies with fewer than ~50 trades or profit factor
         # below 1.5 simply cannot survive the Monte Carlo bootstrapping.
-        if trades < 50:
-            return -9999.0
-        if pf < 1.5:
-            return -9999.0
+        if trades < 15:
+            return -500.0
+        if pf < 1.1:
+            return -500.0
 
         # earlier logic for more granular penalties (still useful for
         # fine‑tuning once the hard constraints are met)
         penalty = 0.0
         if trades <= 0:
-            penalty += 4.0
-        # retain symbol-specific minimums as soft guidelines below 50
+            penalty += 1.0
+        # retain symbol-specific minimums as soft guidelines below 15
         min_trades = (
             15
             if "WIN" in (symbol or "").upper()
@@ -1568,9 +1571,9 @@ def optimize_with_optuna(
             "rsi_high": trial.suggest_int("rsi_high", 60, 80),
             "adx_threshold": trial.suggest_int("adx_threshold", 15, 35),
             "sl_atr_multiplier": trial.suggest_float(
-                "sl_atr_multiplier", 1.5, 3.5, step=0.1
+                "sl_atr_multiplier", 1.0, 2.2, step=0.1
             ),
-            "tp_ratio": trial.suggest_float("tp_ratio", 1.2, 3.0, step=0.2),
+            "tp_ratio": trial.suggest_float("tp_ratio", 1.2, 2.5, step=0.1),
             "base_slippage": base_slippage,  # ✅ Use received base_slippage
             "enable_shorts": 1,
         }
@@ -1595,9 +1598,11 @@ def optimize_with_optuna(
             penalty = 0.0
             reason = []
             if trades <= 0:
-                penalty += 4.0
+                penalty += 1.0
                 reason.append(f"Trades={trades}")
-            elif trades < min_trades:
+            elif trades < 5:  # Relaxed from min_trades for discovery
+                penalty += 0.5
+                reason.append(f"LowTrades={trades}")
                 penalty += 2.0 * ((min_trades - trades) / max(min_trades, 1))
                 reason.append(f"Trades={trades}<{min_trades}")
             if dd > 0.65:

@@ -5898,6 +5898,14 @@ def execute_ranked_trade(symbol, side, ind_data):
     """
     global _last_entry_price, last_entry_time, daily_trades_per_symbol
 
+    # @priority 5: Limite de Posições Simultâneas
+    with utils.mt5_lock:
+        positions = mt5.positions_get() or []
+    
+    if len(positions) >= getattr(config, "MAX_SYMBOLS", 8):
+        logger.warning(f"🚫 [LIMIT] Máximo de posições atingido ({len(positions)}/{config.MAX_SYMBOLS}). Pulando {symbol}.")
+        return False
+
     logger.info(f"🚀 [RANKING] Tentando enviar ordem para {symbol} ({side})")
     
     # 1. Garante que é Conta Demo 
@@ -6148,6 +6156,9 @@ def fast_loop():
             # 5️⃣ GESTÃO DE POSIÇÕES (SE HOUVER)
             # ============================================
             try:
+                # @priority 4: Trailing Stop Ativo (Monitoramento Contínuo)
+                utils.trailing_stop_manager.update_all_positions()
+                
                 manage_positions_refactored()
             except Exception as e:
                 logger.error(f"Erro na gestão de posições: {e}")

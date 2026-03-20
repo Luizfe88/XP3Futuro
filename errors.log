@@ -61002,3 +61002,136 @@ Traceback: Traceback (most recent call last):
 2026-03-20 13:42:00,854 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.11 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
 2026-03-20 13:42:00,870 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mExpectativa Negativa (WR:1.3%). Confiança IA: 88.52%. Kelly zerado. | [BLOCK] Sideways Regime[0m
 2026-03-20 13:42:00,911 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([92m1[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mExpectativa Negativa (WR:10.5%). Confiança IA: 100.00%. Kelly zerado.[0m
+2026-03-20 13:45:14,371 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-20 13:45:14,417 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-20 13:45:14,493 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-20 13:45:14,776 - utils - INFO - 🔮 Resolução matemática ativada para WDO: WDOJ26 (Corretora Ocultou)
+2026-03-20 13:45:15,583 - PortfolioBot - INFO - [WDO$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-20 13:45:15,593 - PortfolioBot - INFO - [WDO$N] Inicializando Regimes Soberanos...
+2026-03-20 13:45:15,599 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WDOJ26
+2026-03-20 13:45:15,975 - PortfolioBot - INFO - [WDO$N] Dados de treino obtidos via WDO$N (3000 barras)
+2026-03-20 13:45:31,004 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M5.
+2026-03-20 13:45:31,017 - PortfolioBot - INFO - [WDO$N] Dados de treino obtidos via WDO$N (3000 barras)
+2026-03-20 13:45:35,224 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M15.
+2026-03-20 13:45:35,251 - PortfolioBot - INFO - [WDO$N] Dados de treino obtidos via WDO$N (3000 barras)
+2026-03-20 13:45:36,452 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M30.
+2026-03-20 13:45:47,419 - PortfolioBot - INFO - [WIN$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-20 13:45:47,420 - PortfolioBot - INFO - [WIN$N] Inicializando Regimes Soberanos...
+2026-03-20 13:45:47,422 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WINJ26
+2026-03-20 13:45:47,442 - PortfolioBot - INFO - [WIN$N] Dados de treino obtidos via WIN$N (3000 barras)
+2026-03-20 13:45:48,866 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M5.
+2026-03-20 13:45:48,886 - PortfolioBot - INFO - [WIN$N] Dados de treino obtidos via WIN$N (3000 barras)
+2026-03-20 13:45:49,992 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M15.
+2026-03-20 13:45:50,048 - PortfolioBot - INFO - [WIN$N] Dados de treino obtidos via WIN$N (3000 barras)
+2026-03-20 13:45:50,387 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M30.
+2026-03-20 13:45:50,888 - PortfolioBot - INFO - [WSP$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-20 13:45:50,891 - PortfolioBot - INFO - [WSP$N] Inicializando Regimes Soberanos...
+2026-03-20 13:45:50,954 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WSPM26
+2026-03-20 13:45:50,970 - PortfolioBot - INFO - [WSP$N] Dados de treino obtidos via WSP$N (3000 barras)
+2026-03-20 13:45:51,957 - PortfolioBot - INFO - [OK] [WSP$N] HMM 3-States treinado no M5.
+2026-03-20 13:45:52,037 - PortfolioBot - INFO - [WSP$N] Dados de treino obtidos via WSP$N (3000 barras)
+2026-03-20 13:45:52,752 - PortfolioBot - INFO - [OK] [WSP$N] HMM 3-States treinado no M15.
+2026-03-20 13:45:52,857 - PortfolioBot - INFO - [WSP$N] Dados de treino obtidos via WSP$N (3000 barras)
+2026-03-20 13:45:53,221 - PortfolioBot - INFO - [OK] [WSP$N] HMM 3-States treinado no M30.
+2026-03-20 13:45:53,222 - PortfolioBot - INFO - 🚀 [1m[START][0m Portfolio Bot Iniciado (3 Símbolos Ativos)
+2026-03-20 13:45:53,316 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.23 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:45:53,324 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.11 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:45:53,346 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [92m🟢 COMPRA[0m  | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 1[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.44 | [REDUCED] Protection Regime[0m
+2026-03-20 13:45:53,518 - ExecutionEngine - INFO - [ORDER] WSPM26 | Exec: 6606.25 | SL: 6592.75 | Slippage: 0.00
+2026-03-20 13:46:01,211 - PortfolioBot - INFO - 🛡️ [91m[SOVEREIGN EXIT][0m WSP$N | M30 detectou Exaustão (Regime 2)
+2026-03-20 13:46:01,261 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.11 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:46:01,261 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.23 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:46:01,357 - ExecutionEngine - INFO - 🧹 1 posições fechadas.
+2026-03-20 13:48:16,302 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [92m🟢 COMPRA[0m  | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 1[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.39 | [REDUCED] Protection Regime[0m
+2026-03-20 13:48:16,315 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.11 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:48:16,439 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.23 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:48:17,254 - ExecutionEngine - INFO - [ORDER] WSPM26 | Exec: 6604.0 | SL: 6590.00 | Slippage: 1.25
+2026-03-20 13:48:18,772 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.22 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:48:18,794 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.11 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:48:18,843 - PortfolioBot - INFO - 🛡️ [91m[SOVEREIGN EXIT][0m WSP$N | M30 detectou Exaustão (Regime 2)
+2026-03-20 13:48:18,959 - ExecutionEngine - INFO - 🧹 1 posições fechadas.
+2026-03-20 13:49:00,969 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.11 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:49:01,151 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.22 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:49:01,186 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [92m🟢 COMPRA[0m  | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 1[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.37 | [REDUCED] Protection Regime[0m
+2026-03-20 13:49:01,262 - ExecutionEngine - INFO - [ORDER] WSPM26 | Exec: 6602.25 | SL: 6588.00 | Slippage: 0.75
+2026-03-20 13:52:29,372 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-20 13:52:29,377 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-20 13:52:29,378 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-20 13:52:38,964 - PortfolioBot - INFO - [WDO$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-20 13:54:34,236 - utils - INFO - ✅ Redis conectado - cache ativado
+2026-03-20 13:54:34,240 - utils - INFO - ✅ Dados anti-chop carregados
+2026-03-20 13:54:34,241 - utils - INFO - 🔄 Novo dia detectado - resetando limites
+2026-03-20 13:54:43,229 - PortfolioBot - INFO - [WDO$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-20 13:54:43,229 - PortfolioBot - INFO - [WDO$N] Inicializando Regimes Soberanos...
+2026-03-20 13:54:43,231 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WDOJ26
+2026-03-20 13:54:43,268 - PortfolioBot - INFO - [WDO$N] Dados de treino obtidos via WDO$N (3000 barras)
+2026-03-20 13:54:53,229 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M5.
+2026-03-20 13:54:53,247 - PortfolioBot - INFO - [WDO$N] Dados de treino obtidos via WDO$N (3000 barras)
+2026-03-20 13:54:54,898 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M15.
+2026-03-20 13:54:54,933 - PortfolioBot - INFO - [WDO$N] Dados de treino obtidos via WDO$N (3000 barras)
+2026-03-20 13:54:56,102 - PortfolioBot - INFO - [OK] [WDO$N] HMM 3-States treinado no M30.
+2026-03-20 13:54:56,162 - PortfolioBot - INFO - [WIN$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-20 13:54:56,163 - PortfolioBot - INFO - [WIN$N] Inicializando Regimes Soberanos...
+2026-03-20 13:54:56,167 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WINJ26
+2026-03-20 13:54:56,180 - PortfolioBot - INFO - [WIN$N] Dados de treino obtidos via WIN$N (3000 barras)
+2026-03-20 13:54:57,230 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M5.
+2026-03-20 13:54:57,243 - PortfolioBot - INFO - [WIN$N] Dados de treino obtidos via WIN$N (3000 barras)
+2026-03-20 13:54:58,673 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M15.
+2026-03-20 13:54:58,682 - PortfolioBot - INFO - [WIN$N] Dados de treino obtidos via WIN$N (3000 barras)
+2026-03-20 13:54:59,164 - PortfolioBot - INFO - [OK] [WIN$N] HMM 3-States treinado no M30.
+2026-03-20 13:54:59,224 - PortfolioBot - INFO - [WSP$N] ✅ Perfis Triplos (TREND, SIDEWAYS, PROTECTION) Carregados.
+2026-03-20 13:54:59,225 - PortfolioBot - INFO - [WSP$N] Inicializando Regimes Soberanos...
+2026-03-20 13:54:59,227 - ExecutionEngine - INFO - [OK] MT5 Conectado. Ativo: WSPM26
+2026-03-20 13:54:59,235 - PortfolioBot - INFO - [WSP$N] Dados de treino obtidos via WSP$N (3000 barras)
+2026-03-20 13:55:00,815 - PortfolioBot - INFO - [OK] [WSP$N] HMM 3-States treinado no M5.
+2026-03-20 13:55:00,826 - PortfolioBot - INFO - [WSP$N] Dados de treino obtidos via WSP$N (3000 barras)
+2026-03-20 13:55:01,945 - PortfolioBot - INFO - [OK] [WSP$N] HMM 3-States treinado no M15.
+2026-03-20 13:55:01,957 - PortfolioBot - INFO - [WSP$N] Dados de treino obtidos via WSP$N (3000 barras)
+2026-03-20 13:55:02,417 - PortfolioBot - INFO - [OK] [WSP$N] HMM 3-States treinado no M30.
+2026-03-20 13:55:02,417 - PortfolioBot - INFO - 🚀 [1m[START][0m Portfolio Bot Iniciado (3 Símbolos Ativos)
+2026-03-20 13:55:02,601 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.11 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:55:02,614 - PortfolioBot - INFO - 🛡️ [91m[SOVEREIGN EXIT][0m WSP$N | M30 detectou Exaustão (Regime 2)
+2026-03-20 13:55:02,616 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.23 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:55:02,747 - ExecutionEngine - INFO - 🧹 1 posições fechadas.
+2026-03-20 13:56:00,631 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.22 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:56:00,755 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.42 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m
+2026-03-20 13:56:00,786 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.10 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:57:06,475 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.10 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:57:06,977 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.22 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:57:07,025 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.38 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m
+2026-03-20 13:58:01,166 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.10 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:58:01,498 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.22 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:58:01,549 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.37 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m
+2026-03-20 13:59:01,438 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.22 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:59:01,513 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.10 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 13:59:01,533 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.37 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m
+2026-03-20 14:00:10,791 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.11 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:00:11,439 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.22 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:00:11,451 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.36 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m
+2026-03-20 14:01:00,547 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.22 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:01:00,629 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.47 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m
+2026-03-20 14:01:00,656 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.11 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:02:01,086 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.11 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:02:01,100 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.22 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:02:01,166 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.45 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m
+2026-03-20 14:03:00,866 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.22 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:03:00,867 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.45 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m
+2026-03-20 14:03:00,874 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.11 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:04:08,808 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.21 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:04:09,619 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.11 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:04:09,622 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.45 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m
+2026-03-20 14:05:01,429 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.23 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:05:01,596 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.11 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:05:01,607 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.44 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m
+2026-03-20 14:06:18,650 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.20 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:06:19,148 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.10 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:06:19,830 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.34 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m
+2026-03-20 14:07:20,337 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.20 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:07:20,658 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.10 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:07:20,755 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.33 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m
+2026-03-20 14:08:01,082 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.20 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:08:01,308 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.10 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:08:02,544 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.33 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m
+2026-03-20 14:09:03,570 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWDO$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.81% | WR: 90.0% | Lote_Bruto: 0.19 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:09:04,223 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWIN$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([93m0[0m), M15([92m1[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.90% | WR: 90.0% | Lote_Bruto: 0.10 | Zerado: capital insuficiente para 1 contrato | [BLOCK] Sideways Regime[0m
+2026-03-20 14:09:04,231 - PortfolioBot - INFO - 🔍 [1m[SCAN][0m | [96mWSP$N [0m | [90m⏳ AGUARDAR[0m | 📊 Regimes: M5([91m2[0m), M15([91m2[0m) | 📦 Lote: [1m 0[0m (Pos: 0) | [90mKelly_Opt: 89.84% | Confiança IA: 100.00% | WR: 90.0% | Lote_Bruto: 1.33 | [REDUCED] Protection Regime | [BLOCK] High TF Exhaustion Consensus[0m

@@ -337,7 +337,12 @@ class AssetWorker:
         if m5_regime == 1 and is_trend_consensus and m30_ok and kalman_ready:
             can_trade = True
         elif m5_regime == 2 and contracts > 0:
-            can_trade = True # Permite entradas pequenas em exaustão
+            # Só permite se M15 e M30 NÃO estiverem em exaustão (senão fecharia logo após abrir)
+            if regimes.get("M15") != 2 and regimes.get("M30") != 2:
+                can_trade = True # Permite entradas pequenas em exaustão se o macro permitir
+            else:
+                contracts = 0
+                debug += " | [BLOCK] High TF Exhaustion Consensus"
         
         if not can_trade and contracts > 0:
             contracts = 0

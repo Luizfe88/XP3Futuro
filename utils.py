@@ -1203,9 +1203,14 @@ def _fallback_future_symbol(base_code: str) -> Optional[str]:
 
             # Para XP: usar formato novo com N (ex: WINN, WDOZ)
             if "xp" in broker:
-                # Alternar entre N e Z baseado no mês
-                suffix = "N" if now.month % 2 == 1 else "Z"
-                return f"{base_code}{suffix}"
+                # WIN (Índice): Vence meses PARES. WDO (Dólar): Vence TODO mês.
+                # A XP usa $N como padrão contínuo, mas se precisar de Z/N:
+                if base_code == "WIN":
+                    # Meses pares: G, J, M, Q, V, Z.
+                    suffix = "Z" if now.month >= 11 else "N" # Exemplo: N para o ano, Z para o final
+                    # Mas o mais comum na XP para automação é o $N
+                    return f"{base_code}$N"
+                return f"{base_code}$N"
 
             # Para outros brokers: usar formato tradicional (ex: WING26)
             m, y = _next_even_month(now)
@@ -2718,6 +2723,20 @@ def get_atr(df: pd.DataFrame, period: int = 14) -> Optional[float]:
     return float(atr.iloc[-1])
 
 
+def get_rsi(df: pd.DataFrame, period: int = 14) -> Optional[float]:
+    """Calcula o RSI (Relative Strength Index) padrão."""
+    if df is None or len(df) < period + 1:
+        return None
+    delta = df["close"].diff()
+    up = delta.clip(lower=0)
+    down = -delta.clip(upper=0)
+    ema_up = up.ewm(com=period - 1, adjust=False).mean()
+    ema_down = down.ewm(com=period - 1, adjust=False).mean()
+    rs = ema_up / (ema_down + 1e-10)
+    rsi = 100 - (100 / (1 + rs))
+    return float(rsi.iloc[-1])
+
+
 def get_psar(
     df: pd.DataFrame, af: float = 0.02, af_max: float = 0.2
 ) -> Optional[float]:
@@ -3633,7 +3652,7 @@ def check_volatility_filter(
     Impacto: +5-8% win rate (evita whipsaws)
     """
     try:
-        df = utils.safe_copy_rates(symbol, mt5.TIMEFRAME_M15, 50)
+        df = safe_copy_rates(symbol, mt5.TIMEFRAME_M15, 50)
 
         if df is None or len(df) < 30:
             return True, ""
@@ -3675,7 +3694,7 @@ def check_volatility_filter(
 
         # 3. ✅ NOVO: Detecta "Chop Zones" (Range sem direção)
         # ADX baixo + ATR alto = mercado lateral violento
-        adx = utils.get_adx(df) or 0
+        adx = get_adx(df) or 0
 
         if adx < 13 and atr_pct_real > 2.5:
             return False, f"Chop Zone (ADX {adx:.0f}, ATR {atr_pct_real:.1f}%)"
@@ -3700,23 +3719,22 @@ from datetime import datetime, date
 
 def calculate_daily_dd() -> float:
     """
-    Retorna o drawdown diário atual (0.0 a 1.0)
-    Ex: 0.03 = 3%
+    Calcula o drawdown diário (Equity vs Daily Max).
     """
     try:
-        account = mt5.account_info()
-        if not account:
+        acc = mt5.account_info()
+        if not acc:
             return 0.0
 
-        balance = account.balance
-        equity = account.equity
+        # Tenta buscar a global do bot
+        import sys
 
-        if balance <= 0:
-            return 0.0
-
-        dd = (balance - equity) / balance
-        return max(dd, 0.0)
-
+        bot_mod = sys.modules.get("bot")
+        if bot_mod and hasattr(bot_mod, "daily_max_equity"):
+            m_equity = getattr(bot_mod, "daily_max_equity")
+            if m_equity and m_equity > acc.equity:
+                return (m_equity - acc.equity) / m_equity
+        return 0.0
     except Exception as e:
         logger.error(f"Erro ao calcular DD diário: {e}")
         return 0.0
@@ -6191,77 +6209,6 @@ def adjust_global_sl_after_pyr(
             logger.error(f"Erro ao ajustar SL {symbol}: {res.comment}")
 
 
-def apply_partial_exit_after_pyr(
-    symbol: str, side: str, current_price: float, atr: float
-):
-    """
-    Fecha parcialmente a ÚLTIMA perna após pyramiding
-    Condições:
-    - Lucro >= +1R
-    - Apenas a perna mais recente
-    - Volume mínimo respeitado
-    """
-
-    if atr is None or atr <= 0:
-        return
-
-    with mt5_lock:
-        positions = mt5.positions_get(symbol=symbol)
-
-    if not positions or len(positions) < 2:
-        return  # Sem pyramiding
-
-    # 🔹 Ordena da mais recente para a mais antiga
-    positions = sorted(positions, key=lambda p: p.time, reverse=True)
-    last_leg = positions[0]
-
-    # 🔹 Distância de risco da perna
-    if last_leg.sl is None or last_leg.sl == 0:
-        return
-
-    if side == "BUY":
-        risk_dist = abs(last_leg.price_open - last_leg.sl)
-        profit_dist = current_price - last_leg.price_open
-    else:
-        risk_dist = abs(last_leg.sl - last_leg.price_open)
-        profit_dist = last_leg.price_open - current_price
-
-    if risk_dist <= 0:
-        return
-
-    r_multiple = profit_dist / risk_dist
-
-    if r_multiple < 1.0:
-        return  # Ainda não atingiu +1R
-
-    # 🔹 Volume parcial (50%)
-    close_volume = round(last_leg.volume * 0.5, 2)
-
-    info = mt5.symbol_info(symbol)
-    if not info or close_volume < info.volume_min:
-        return
-
-    # 🔹 Envia fechamento parcial
-    request = {
-        "action": mt5.TRADE_ACTION_DEAL,
-        "symbol": symbol,
-        "position": last_leg.ticket,
-        "volume": close_volume,
-        "type": mt5.ORDER_TYPE_SELL if side == "BUY" else mt5.ORDER_TYPE_BUY,
-        "price": current_price,
-        "deviation": get_dynamic_slippage(symbol, datetime.now().hour),
-        "magic": 2026,
-        "comment": "Partial Exit +1R",
-    }
-
-    with mt5_lock:
-        result = mt5.order_send(request)
-
-    if result and result.retcode == mt5.TRADE_RETCODE_DONE:
-        logger.info(
-            f"💰 Partial exit {symbol}: "
-            f"{close_volume} @ {current_price:.2f} (+{r_multiple:.2f}R)"
-        )
 
 
 def apply_anti_martingale(loss_streak: int) -> float:
@@ -6719,26 +6666,6 @@ def get_realtime_win_rate(lookback_trades: int = 20) -> Dict[str, Any]:
         return {"win_rate": 0.0, "total_trades": 0, "profit_factor": 0.0}
 
 
-def calculate_daily_dd() -> float:
-    """
-    Calcula o drawdown diário (Equity vs Daily Max).
-    """
-    try:
-        acc = mt5.account_info()
-        if not acc:
-            return 0.0
-
-        # Tenta buscar a global do bot
-        import sys
-
-        bot_mod = sys.modules.get("bot")
-        if bot_mod and hasattr(bot_mod, "daily_max_equity"):
-            m_equity = getattr(bot_mod, "daily_max_equity")
-            if m_equity > acc.equity:
-                return (m_equity - acc.equity) / m_equity
-        return 0.0
-    except:
-        return 0.0
 
 
 # ============================================
@@ -6916,46 +6843,8 @@ def check_pyramid_eligibility(symbol: str, side: str, ind: dict) -> Tuple[bool, 
     return True, "Elegível"
 
 
-def send_telegram_trade(
-    symbol: str,
-    side: str,
-    volume: float,
-    price: float,
-    sl: float,
-    tp: float,
-    comment: str = "",
-):
-    msg = (
-        f"🚀 <b>NOVA OPERAÇÃO: {symbol}</b>\n"
-        f"━━━━━━━━━━━━━━━━━━━━\n"
-        f"🔹 Direção: {'COMPRA 🟢' if side == 'BUY' else 'VENDA 🔴'}\n"
-        f"🔹 Volume: {volume:.2f}\n"
-        f"🔹 Entrada: R$ {price:,.2f}\n"
-        f"🔹 SL: R$ {sl:,.2f} | TP: R$ {tp:,.2f}\n"
-        f"🔹 Obs: {comment}\n"
-    )
-    send_telegram_message(msg)
 
 
-def send_telegram_exit(
-    symbol: str,
-    side: str,
-    volume: float,
-    entry_price: float,
-    exit_price: float,
-    profit_loss: float,
-    reason: str = "",
-):
-    emoji = "✅" if profit_loss >= 0 else "❌"
-    msg = (
-        f"{emoji} <b>SAÍDA DE POSIÇÃO: {symbol}</b>\n"
-        f"━━━━━━━━━━━━━━━━━━━━\n"
-        f"🔹 Direção: {side}\n"
-        f"🔹 Resultado: <b>R$ {profit_loss:+,.2f}</b>\n"
-        f"🔹 Preço Saída: R$ {exit_price:,.2f}\n"
-        f"🔹 Motivo: {reason}\n"
-    )
-    send_telegram_message(msg)
 
 
 def calcular_lucro_realizado_txt():
@@ -7188,3 +7077,58 @@ def calculate_portfolio_heat(
 
     heat = (avg_corr * 0.4) + (hhi * 0.3) + (min(total_atr_pct / 10.0, 1.0) * 0.3)
     return round(min(heat, 1.0), 3)
+
+class TrailingStopManager:
+    """
+    Gerencia trailing stops dinâmicos (Prioridade 4).
+    Regras:
+    1. Ativa após lucro >= 1.5 ATR
+    2. Ajusta SL para proteger 50% do lucro
+    """
+    def __init__(self):
+        self.activation_multiplier = 1.5 
+        self.protection_pct = 0.50
+        
+    def should_activate(self, entry_price, current_price, atr, side):
+        if atr <= 0: return False
+        if side == "BUY":
+            profit_dist = current_price - entry_price
+        else:
+            profit_dist = entry_price - current_price
+        return profit_dist >= (atr * self.activation_multiplier)
+        
+    def calculate_new_sl(self, entry_price, current_price, current_sl, atr, side):
+        if side == "BUY":
+            profit = current_price - entry_price
+            target_sl = entry_price + (profit * self.protection_pct)
+            if target_sl > current_sl:
+                return round(target_sl, 2)
+        else:
+            profit = entry_price - current_price
+            target_sl = entry_price - (profit * self.protection_pct)
+            if target_sl < current_sl:
+                return round(target_sl, 2)
+        return None
+
+    def update_position_sl(self, position_ticket, new_sl):
+        try:
+            pos = mt5.positions_get(ticket=position_ticket)
+            if not pos: return False
+            p = pos[0]
+            request = {
+                "action": mt5.TRADE_ACTION_SLTP,
+                "position": position_ticket,
+                "symbol": p.symbol,
+                "sl": float(new_sl),
+                "tp": p.tp
+            }
+            res = mt5.order_send(request)
+            if res.retcode == mt5.TRADE_RETCODE_DONE:
+                logger.info(f"✅ Trailing Stop Atualizado: {p.symbol} ticket={position_ticket} SL={new_sl}")
+                return True
+            return False
+        except Exception as e:
+            logger.error(f"Erro no trailing update: {e}")
+            return False
+
+trailing_stop_manager = TrailingStopManager()
