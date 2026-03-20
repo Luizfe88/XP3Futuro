@@ -75,11 +75,15 @@ class BayesianRiskManager:
         if hmm_regime == 1:  # TREND
             kelly_mult = 0.7
         elif hmm_regime == 2:  # PROTECTION
-            kelly_mult = 0.3
+            kelly_mult = 0.5  # Elevado de 0.3 para 0.5
         else: # Regime 0 (Choppy) ou outro
             kelly_mult = 0.0
             
-        contracts = int(round(raw_contracts * kelly_mult))
+        contracts_raw = raw_contracts * kelly_mult
+        contracts = int(round(contracts_raw))
+        
+        if contracts == 0 and contracts_raw > 0:
+            return 0, 0.0, f"Kelly_Opt: {kelly_optimal:.2%} | WR: {p:.1%} | Lote_Bruto: {raw_contracts:.2f} | Zerado: capital insuficiente para 1 contrato"
             
         return int(contracts), risk_pct, f"Kelly_Opt: {kelly_optimal:.2%} | Confiança IA: {confidence:.2%} | WR: {p:.1%} | Lote_Bruto: {raw_contracts:.2f}"
 

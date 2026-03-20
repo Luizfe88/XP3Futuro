@@ -96,19 +96,26 @@ class WalkForwardValidator:
                     in_trade = False
                     entry_price = None
                     last_regime = None
+                    bars_since_last_trade = 0
+                    MIN_BARS_BETWEEN_TRADES = 3
                     
                     for i in range(len(oos_regimes)):
                         regime = oos_regimes[i]
                         price = oos_clean.iloc[i]['close']
+                        bars_since_last_trade += 1
                         
                         if not in_trade:
                             # Inicia trade em qualquer regime para medir performance
                             in_trade = True
                             entry_price = price
                             last_regime = regime
-                        elif regime != last_regime:
+                            bars_since_last_trade = 0
+                        elif regime != last_regime and bars_since_last_trade >= MIN_BARS_BETWEEN_TRADES:
                             # Fecha quando muda o regime (Troca Dinâmica)
-                            trade_pnl = (price - entry_price) * self.tick_value - self.slippage_cost
+                            # Calcula movimento bruto (sem assumir direção)
+                            raw_move = abs(price - entry_price) * self.tick_value - self.slippage_cost
+                            trade_pnl = raw_move
+                            
                             met = regime_metrics[last_regime]
                             met["total"] += 1
                             met["pnl"] += trade_pnl
@@ -121,11 +128,14 @@ class WalkForwardValidator:
                             # Re-abre no novo regime
                             entry_price = price
                             last_regime = regime
+                            bars_since_last_trade = 0
                             
                     # Fecha trade final
                     if in_trade:
                         price = oos_clean.iloc[-1]['close']
-                        trade_pnl = (price - entry_price) * self.tick_value - self.slippage_cost
+                        raw_move = abs(price - entry_price) * self.tick_value - self.slippage_cost
+                        trade_pnl = raw_move
+                        
                         met = regime_metrics[last_regime]
                         met["total"] += 1
                         met["pnl"] += trade_pnl
@@ -171,14 +181,12 @@ class AssetCalibrator:
             self.slippage_base = 2.0
             self.margin = 1000.0
         else:
-            specs = self_config.get('specs', {}) # Wait, config_futures might have different structure
-            # Re-checking config_futures structure from previous view_file (if I had it)
-            # Based on futures_optimizer view: tick_size, point_value, fees, margin
-            self.tick_size = self_config.get('tick_size', 1.0)
-            self.point_value = self_config.get('point_value', 1.0)
+            specs = self_config.get('specs', {})
+            self.tick_size = specs.get('tick_size', 1.0)
+            self.point_value = specs.get('point_value', 1.0)
             self.tick_value = self.point_value # points to financial
-            self.slippage_base = self_config.get('slippage_base', {}).get('avg', 10) * self.point_value
-            self.margin = self_config.get('margin', 1000.0)
+            self.slippage_base = specs.get('fees_roundtrip', 1.10) # custo real roundtrip
+            self.margin = specs.get('margin', 1000.0)
 
     def calibrate(self):
         logger.info(f"🚀 Iniciando Triple Calibração (TREND, SIDEWAYS, PROTECTION) para {self.symbol}...")
@@ -212,15 +220,15 @@ class AssetCalibrator:
             
             # 1. TREND: Maximizar WR e Payout
             logger.info(f"🔍 Otimizando TREND (Regime 1) para {tf_name}...")
-            regimes_params["TREND"] = self.tune_for_regime(df, target_regime=1)
+            regimes_params["TREND"] = self.tune_for_regime(df, target_regime=1, tf_name=tf_name)
             
             # 2. SIDEWAYS: Maximizar estabilidade (Maior R para ignorar ruído)
             logger.info(f"🔍 Otimizando SIDEWAYS (Regime 0) para {tf_name}...")
-            regimes_params["SIDEWAYS"] = self.tune_for_regime(df, target_regime=0)
+            regimes_params["SIDEWAYS"] = self.tune_for_regime(df, target_regime=0, tf_name=tf_name)
             
             # 3. PROTECTION: Reatividade máxima (Menor R)
             logger.info(f"🔍 Otimizando PROTECTION (Regime 2) para {tf_name}...")
-            regimes_params["PROTECTION"] = self.tune_for_regime(df, target_regime=2)
+            regimes_params["PROTECTION"] = self.tune_for_regime(df, target_regime=2, tf_name=tf_name)
             
             all_calibrations[tf_name] = regimes_params
             
@@ -229,10 +237,18 @@ class AssetCalibrator:
         if all_calibrations:
             self.save_calibration(all_calibrations)
 
-    def tune_for_regime(self, df, target_regime):
+    def tune_for_regime(self, df, target_regime, tf_name=None):
         """Busca Q/R que melhor performam ou se comportam no regime alvo."""
         # Grid reduzido para não demorar tando (Triple Search = 3x tempo)
-        q_options = [1e-5, 1e-4, 5e-4, 1e-3]
+        if tf_name == "M5":
+            q_options = [1e-5, 1e-4, 5e-4]        # remove 1e-3
+        elif tf_name == "M15":
+            q_options = [1e-5, 1e-4, 5e-4, 1e-3]  # mantém
+        elif tf_name == "M30":
+            q_options = [1e-5, 1e-4, 2e-4]        # mais restrito
+        else:
+            q_options = [1e-5, 1e-4, 5e-4, 1e-3]
+
         r_options = [1e-4, 1e-3, 1e-2, 5e-2]
         
         best_score = -999999.0

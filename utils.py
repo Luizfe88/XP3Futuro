@@ -346,8 +346,6 @@ def resolve_symbol(symbol: str) -> str:
     # 3.1 🔄 HOTFIX: Mapeia bases de índices contínuos B3 que falham na corretora
     if base == "IND":
         base = "WIN"
-    elif base == "WSP":
-        base = "WDO"
     elif base == "ICF":
         pass # Sem base equivalente principal, segue normal
 

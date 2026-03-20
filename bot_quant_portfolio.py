@@ -55,7 +55,7 @@ logger = logging.getLogger("PortfolioBot")
 # ==========================================
 PORTFOLIO_CONFIG = {
     "WDO$N": {
-        "allocation": 0.50, 
+        "allocation": 0.33, 
         "tick_value": 5.0, 
         "base_win_rate": 0.55, 
         "base_payout": 1.5,
@@ -63,9 +63,17 @@ PORTFOLIO_CONFIG = {
         "kelly_fraction": 0.10
     },
     "WIN$N": {
-        "allocation": 0.50, 
+        "allocation": 0.33, 
         "tick_value": 0.20, 
         "base_win_rate": 0.54, 
+        "base_payout": 1.5,
+        "n_states": 2,
+        "kelly_fraction": 0.08
+    },
+    "WSP$N": {
+        "allocation": 0.34, 
+        "tick_value": 0.625, 
+        "base_win_rate": 0.52, 
         "base_payout": 1.5,
         "n_states": 2,
         "kelly_fraction": 0.08
@@ -132,6 +140,15 @@ class AssetWorker:
         self.scalers = {tf: StandardScaler() for tf in self.timeframes}
         self.regime_maps = {tf: {} for tf in self.timeframes}
         self.initialized = {tf: False for tf in self.timeframes}
+        
+        # Gestão de Risco "Conta Small" (R$ 500,00)
+        self.daily_goal = 50.0 # Meta Absoluta
+        self.daily_stop = 50.0 # Stop Absoluto
+        self.max_contracts = 1  # Trava de Segurança
+        self.trailing_gatilho_brl = 20.0 # Ativa em R$ 20 de lucro
+        self.trailing_activated = False
+        self.entry_price = 0.0
+        self.tick_value = config['tick_value']
 
     def startup(self):
         """Treina os HMMs e identifica os regimes soberanos."""
@@ -141,8 +158,19 @@ class AssetWorker:
             
         all_initialized = True
         for tf_name, tf_val in self.timeframes.items():
-            df_init = self.engine.get_latest_data(tf_val, count=3000)
-            if df_init is None or len(df_init) < 1000:
+            # Tenta buscar dados do símbolo contínuo ($N) para treinamento (historico longo)
+            # Se falhar, tenta o resolved_symbol (contrato atual)
+            df_init = None
+            for sym_to_try in [self.symbol, self.resolved_symbol]:
+                rates = mt5.copy_rates_from_pos(sym_to_try, tf_val, 0, 3000)
+                if rates is not None and len(rates) >= 500: # Mínimo flexível de 500 barras
+                    df_init = pd.DataFrame(rates)
+                    df_init['time'] = pd.to_datetime(df_init['time'], unit='s')
+                    logger.info(f"[{self.symbol}] Dados de treino obtidos via {sym_to_try} ({len(df_init)} barras)")
+                    break
+            
+            if df_init is None or len(df_init) < 500:
+                logger.error(f"[FAIL] [{self.symbol}] Dados insuficientes para {tf_name}. Encontrado: {len(df_init) if df_init is not None else 0}")
                 all_initialized = False
                 continue
             
@@ -178,9 +206,26 @@ class AssetWorker:
 
         return all_initialized
 
+    def get_daily_profit(self):
+        """Calcula o lucro realizado no dia para este ativo."""
+        from datetime import datetime, time
+        today_start = datetime.combine(datetime.now().date(), time.min)
+        deals = mt5.history_deals_get(today_start, datetime.now(), group=f"*{self.resolved_symbol}*")
+        if deals is None or len(deals) == 0:
+            return 0.0
+        
+        profit = sum(d.profit for d in deals if d.magic == self.engine.magic)
+        return profit
+
     def process_tick(self):
         """Loop de SCAN com Troca de Parâmetros e Kelly Dinâmico."""
         if not all(self.initialized.values()): return
+
+        # --- 0. CHECK STOP DIÁRIO ---
+        daily_pnl = self.get_daily_profit()
+        if daily_pnl <= -self.daily_stop:
+            logger.error(f"🚫 {LogColors.RED}[DAILY STOP]{LogColors.RESET} {self.symbol} Bloqueado. PnL: {daily_pnl:.2f} >= {self.daily_stop}")
+            return
 
         regimes = {}
         confidences = {}
@@ -189,8 +234,22 @@ class AssetWorker:
 
         # 1. Identificar Regimes e Trocar Parâmetros em Tempo Real
         for tf_name, tf_val in self.timeframes.items():
-            df = self.engine.get_latest_data(tf_val, count=50)
+            # Para o SCAN (identificação de regime), preferimos o símbolo contínuo se disponível
+            # para manter consistência com o treinamento do HMM
+            df = None
+            for sym_to_try in [self.symbol, self.resolved_symbol]:
+                rates = mt5.copy_rates_from_pos(sym_to_try, tf_val, 0, 50)
+                if rates is not None and len(rates) > 0:
+                    df = pd.DataFrame(rates)
+                    df['time'] = pd.to_datetime(df['time'], unit='s')
+                    break
+            
             if df is None: return
+            
+            # Pega informações do símbolo para normalização
+            sym_info = mt5.symbol_info(self.resolved_symbol)
+            tick_size = sym_info.trade_tick_size if sym_info else 1.0
+            digits = sym_info.digits if sym_info else 0
 
             close_price = df['close'].iloc[-1]
             if tf_name == "M5":
@@ -227,10 +286,8 @@ class AssetWorker:
 
         if current_price is None or atr_m5 is None: return
 
-        # 2. Ajuste Dinâmico de Kelly
+        # 2. Ajuste Dinâmico de Kelly (Com travas de Conta Small)
         m5_regime = regimes["M5"]
-        # Perfil Moderado (KELLY=0.7)
-        kelly_mult = 0.7 if m5_regime == 1 else (0.3 if m5_regime == 2 else 0.0)
         
         contracts, _, debug = self.risk_manager.calculate_position_size(
             total_capital=self.capital_total,
@@ -239,6 +296,20 @@ class AssetWorker:
             confidence=confidences["M5"]
         )
         
+        # --- TRAVA DE LOTE MÁXIMO (1 Contrato) ---
+        if contracts > self.max_contracts:
+            contracts = self.max_contracts
+            debug += f" | [CAP] Max {self.max_contracts} lot"
+        
+        # --- VALIDAÇÃO DE RISCO FINANCEIRO (Máximo R$ 50 por trade) ---
+        sl_points = atr_m5 * 2
+        risk_per_trade_brl = sl_points * self.tick_value * (contracts if contracts > 0 else 1)
+        if risk_per_trade_brl > self.daily_stop and contracts > 0:
+            contracts = 0
+            debug += f" | [BLOCK] Excesso de Risco: R$ {risk_per_trade_brl:.2f} > {self.daily_stop}"
+        
+        tp_points = sl_points * 1.5 # TP fixo 1.5x SL
+
         if m5_regime == 0:
             contracts = 0
             debug += " | [BLOCK] Sideways Regime"
@@ -273,9 +344,25 @@ class AssetWorker:
             reason = "No Trend Consensus" if not is_trend_consensus else ("M30 Block" if not m30_ok else "Kalman Dist")
             debug += f" | [BLOCKED] {reason}"
 
-        # 4. Saída Soberana (M15 e M30 PROTECTION)
-        positions = mt5.positions_get(symbol=self.symbol, magic=self.engine.magic)
+        # 4. Saída Soberana e Trailing Shield
+        positions = mt5.positions_get(symbol=self.resolved_symbol, magic=self.engine.magic)
+        n_pos = len(positions) if positions else 0
+        
         if positions:
+            pos = positions[0]
+            self.entry_price = pos.price_open
+            
+            # --- TRAILING SHIELD FINANCEIRO (R$ 20,00) ---
+            current_profit_points = (current_price - self.entry_price) if pos.type == mt5.ORDER_TYPE_BUY else (self.entry_price - current_price)
+            current_profit_brl = current_profit_points * self.tick_value * pos.volume
+            
+            if not self.trailing_activated and current_profit_brl >= self.trailing_gatilho_brl:
+                logger.info(f"🛡️ {LogColors.CYAN}[SHIELD ACTIVATED]{LogColors.RESET} {self.symbol} | Lucro atingiu R$ {current_profit_brl:.2f}. Protegendo no BE.")
+                new_sl = self.entry_price + (tick_size if pos.type == mt5.ORDER_TYPE_BUY else -tick_size) # BE + 1 tick
+                new_sl = self.engine.normalize_price(new_sl)
+                if self.engine.modify_sl(pos.ticket, new_sl):
+                    self.trailing_activated = True
+
             # Se o M15 ou M30 detectarem Regime 2 (Exaustão), fecha tudo
             if regimes["M15"] == 2 or regimes.get("M30") == 2:
                 origin = "M30" if regimes.get("M30") == 2 else "M15"
@@ -290,6 +377,15 @@ class AssetWorker:
 
         # Execução
         bias = "COMPRA" # Exemplo fixo, deve vir de lógica de direção
+        
+        # --- TRAVA DE REENTRADA (50% da Meta Diária) ---
+        daily_pnl = self.get_daily_profit()
+        reentry_locked = daily_pnl >= (self.daily_goal * 0.5)
+        
+        if reentry_locked and n_pos == 0:
+            contracts = 0
+            debug += f" | [LOCKED] Daily Goal 50% reached (PnL: {daily_pnl:.2f})"
+        
         bias_label = f"{LogColors.GREEN}🟢 {bias}{LogColors.RESET}" if contracts > 0 else f"{LogColors.GRAY}⏳ AGUARDAR{LogColors.RESET}"
         
         def format_regime(r):
@@ -301,13 +397,15 @@ class AssetWorker:
             f"| {LogColors.CYAN}{self.symbol:<6}{LogColors.RESET} "
             f"| {bias_label:<18} "
             f"| 📊 Regimes: M5({format_regime(regimes['M5'])}), M15({format_regime(regimes['M15'])}) "
-            f"| 📦 Lote: {LogColors.BOLD}{contracts:>2}{LogColors.RESET} "
+            f"| 📦 Lote: {LogColors.BOLD}{contracts:>2}{LogColors.RESET} (Pos: {n_pos}) "
             f"| {LogColors.GRAY}{debug}{LogColors.RESET}"
         )
 
         if contracts > 0 and not positions:
+            self.trailing_activated = False # Reseta flag na entrada
             side = mt5.ORDER_TYPE_BUY if bias == "COMPRA" else mt5.ORDER_TYPE_SELL
-            self.engine.execute_market_order(side, contracts, current_price, sl_points=atr_m5*2)
+            self.engine.execute_market_order(side, contracts, current_price, sl_points=sl_points, tp_points=tp_points)
+
 
 class PortfolioManager:
     """Gerenciador central do portfólio multi-ativo."""
@@ -332,13 +430,14 @@ class PortfolioManager:
 
     def run(self):
         self.running = True
-        logger.info(f"🚀 {LogColors.BOLD}[START]{LogColors.RESET} Portfolio Bot Iniciado (10 Símbolos Ativos)")
+        logger.info(f"🚀 {LogColors.BOLD}[START]{LogColors.RESET} Portfolio Bot Iniciado ({len(self.workers)} Símbolos Ativos)")
         last_minute = -1
         
         try:
             while self.running:
                 now = datetime.now()
                 if now.minute != last_minute:
+                    last_minute = now.minute # Lock imediato
                     # Rodamos o ciclo para todos os ativos
                     threads = []
                     for worker in self.workers.values():
@@ -348,8 +447,6 @@ class PortfolioManager:
                     
                     for t in threads:
                         t.join()
-                        
-                    last_minute = now.minute
                 
                 time.sleep(1)
         except KeyboardInterrupt:
@@ -363,7 +460,7 @@ class PortfolioManager:
         logger.info(f"🛑 {LogColors.RED}[STOP]{LogColors.RESET} Portfolio Bot encerrado.")
 
 if __name__ == "__main__":
-    # Capital base de exemplo
-    p_manager = PortfolioManager(capital=20000.0)
+    # Capital base AJUSTADO PARA CONTA SMALL (R$ 500)
+    p_manager = PortfolioManager(capital=500.0)
     if p_manager.startup():
         p_manager.run()

@@ -66,6 +66,32 @@ FUTURES_CONFIGS = {
     "note": "⚠️ CORREÇÃO: Setup Híbrido aplicado."
   },
 
+  "WSP$N": {
+    "strategy": "MEAN_REVERSION",
+    "active": True,
+    "params": {
+      "bb_period": 20,
+      "bb_std": 2.00,
+      "tp_mult": 1.50,
+      "sl_atr_multiplier": 1.50,
+      "adx_threshold": 20.0,
+      "enable_shorts": 1
+    },
+    "specs": {
+      "tick_size": 0.25,
+      "point_value": 2.50,
+      "value_per_tick": 0.625,
+      "margin": 150.00,
+      "margin_stress": 3000.00,
+      "min_oi": 10000,
+      "fees_roundtrip": 0.80,
+      "hours": ["09:00", "17:55"],
+      "expiry_day": "Third_Friday_Quarterly",
+      "slippage_base": {"high": 2.0, "avg": 0.5, "low": 0.0, "after": 5.0}
+    },
+    "note": "🆕 NOVO ATIVO: Micro S&P 500. Menor exposição nominal que o WIN."
+  },
+
 
 }
 
