@@ -308,6 +308,9 @@ HORARIOS_OPERACAO = {
 SECTOR_MAP = {
     "WIN$N": "FUTUROS",
     "WDO$N": "FUTUROS",
+    "IND$N": "FUTUROS",
+    "DOL$N": "FUTUROS",
+    "WSP$N": "FUTUROS",
 }
 
 

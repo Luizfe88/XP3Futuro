@@ -92,13 +92,63 @@ FUTURES_CONFIGS = {
     "note": "🆕 NOVO ATIVO: Micro S&P 500. Menor exposição nominal que o WIN."
   },
 
+  "IND$N": {
+    "strategy": "MEAN_REVERSION",
+    "active": True,
+    "params": {
+      "bb_period": 20,
+      "bb_std": 2.00,
+      "tp_mult": 1.50,
+      "sl_atr_multiplier": 1.50,
+      "adx_threshold": 20.0,
+      "enable_shorts": 1
+    },
+    "specs": {
+      "tick_size": 5.0,
+      "point_value": 1.00,
+      "value_per_tick": 5.00,
+      "margin": 600.00,
+      "margin_stress": 12500.00,
+      "min_oi": 10000,
+      "fees_roundtrip": 2.50,
+      "hours": ["09:00", "17:55"],
+      "expiry_day": "Wednesday_closest_15th_Even_Month"
+    },
+    "note": "📈 ATIVO ELITE: Índice Bovespa Cheio."
+  },
+
+  "DOL$N": {
+    "strategy": "MEAN_REVERSION",
+    "active": True,
+    "params": {
+      "bb_period": 23,
+      "bb_std": 2.86,
+      "tp_mult": 5.85,
+      "sl_atr_multiplier": 2.80,
+      "adx_threshold": 20.0,
+      "base_slippage": 0.0
+    },
+    "specs": {
+      "tick_size": 0.5,
+      "point_value": 50.00,
+      "value_per_tick": 25.00,
+      "margin": 750.00,
+      "margin_stress": 15000.00,
+      "min_oi": 50000,
+      "fees_roundtrip": 5.50,
+      "hours": ["09:00", "18:00"],
+      "after_market": ["18:00", "18:30"],
+      "expiry_day": "First_Business_Day_Month"
+    },
+    "note": "💰 ATIVO ELITE: Dólar Cheio."
+  },
 
 }
 
 # ============================================
 #  fallback
 # ============================================
-FALLBACK_SYMBOLS = ["WIN$N", "WDO$N"]
+FALLBACK_SYMBOLS = ["WIN$N", "WDO$N", "IND$N", "WSP$N", "DOL$N"]
 
 # ============================================
 # 🕒 HORÁRIOS DE PREGÃO
